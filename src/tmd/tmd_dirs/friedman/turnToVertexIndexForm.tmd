@@ -1,0 +1,20 @@
+input graph standardVertices i h1 h2 h3 h4 hl1 hl2 allVerticesInGraph viVertices !0 !1 !2 
+
+// Auto-generated code for function turnToVertexIndexForm
+
+function zeroAndLessThanLength2 i graph h1 !0 !1 !2 
+function empty viVertices !0 
+WHILE_TEST_0: function BUILTIN_assign !0 h1
+[!0] E (WHILE_STATE_0_FALSE); 1 ()
+function index2 graph i hl1 !0 !1 !2 
+function list2in hl1 standardVertices h1 h2 h3 allVerticesInGraph hl2 h4 !0 !1 !2 
+function append viVertices h4 !0 !1 !2 
+function incrAndLessThanLength2 i graph h1 !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: function sum viVertices h1 h2 h3 !0 !1 !2 
+function BUILTIN_assign !0 h3
+function BUILTIN_assign !1 standardVertices
+function BUILTIN_len2 !2 !1
+function BUILTIN_equal !1 !0 !2
+function BUILTIN_assign allVerticesInGraph !1
+return

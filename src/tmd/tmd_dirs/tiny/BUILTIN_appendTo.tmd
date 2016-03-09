@@ -1,0 +1,14 @@
+input x y
+
+// appends the int y to list x
+
+function BUILTIN_findFin x
+function BUILTIN_appendE x
+[y] 1 (POS_Y); E (R)
+[y] _ (L); 1 (); E ()
+NEG_Y: function BUILTIN_appendE x
+[x] E (ADD_TO)
+POS_Y: function BUILTIN_incr x
+ADD_TO: function BUILTIN_addTo x y
+function BUILTIN_getBackToStart2 x y
+return

@@ -1,0 +1,37 @@
+\section{TMD}
+
+The top-level representation is a program written in the TMD language, which is a language designed to give the user a simple interface with which to program a multi-tape, 3-symbol Turing Machine with a function stack. \\
+
+TMD code can be processed in two ways. First, it can be \emph{interpreted}; that is, it can be directly evaluated line-by-line. This is generally done to verify a program's correct behavior, and to correct errors which would result in thrown exceptions in the interpreter but might lead to undefined behavior in the compiled Turing machine (because the compiled Turing machine is optimized for parsimony, whereas the interpreter need not be). \\
+
+Second, TMD code can be \emph{compiled} down to a description of a single-tape, 2-symbol Turing machine. It is highly recommended, however, to first interpret any piece of TMD code before compiling it, because the interpreter is much better for catching programming errors. The compiler is general-purpose and not restricted to compiling the programs discussed in this thesis. It is optimized to minimize the number of states in the resulting Turing machine, not to make the resulting Turing machine time- or space-efficient. \\
+
+A TMD program is contained in a directory. It is a collection of \emph{functions}, each of which contains a sequence of \emph{commands}. Each function is given its own file. Commands are separated by newlines. Each command is given its own line. \\
+
+A TMD program also contains two special files which contain important information about the multi-tape Turing Machine: a file named {\tt functions.tff} and a file named {\tt initvar}.
+
+What follows is a brief description of the syntax of the TMD language. A much more detailed description is available at~\cite{github}. The brief description contained here should be enough for a reader to gain a reasonable understanding of the programs written for this paper; any reader wishing to write her own programs is strongly encouraged read the more detailed documentation before proceeding.
+
+\subsection{Function Files}
+
+Most of the logic contained within a TMD program lies in its function files. TMD functions can make reference to the tapes in the machine and read the symbol under the head of each tape, much as a standard multi-tape TM can. In addition, TMD functions can call other TMD functions, pushing those functions to the top of the stack. Finally, TMD functions can return, popping themselves from the function stack.
+
+A TMD function file is composed of four kinds of lines: an input line, calls to other functions, tape commands, and return statements. '
+
+\subsubsection{The Input Line}
+
+Every TMD function file begins with an input line. TMD function files cannot contain more than one input line. The input line describes what tapes are going to be passed in as arguments to the function, and will therefore be readable and writeable within the function. An example of an input line might be, 
+
+\texttt{input x y z}
+
+\subsubsection{Function Calls}
+
+TMD functions can contain calls to other functions. Function calls contain the name of the function being called, followed by which tapes will be passed as arguments to the function. An example of a function call might be,
+
+\texttt{function add x y}
+
+\subsubsection{Tape Commands}
+
+Tape commands begin with a marker that indicates which tape is going to be used in the command. They then explain what to do if each possible symbol is read.
+
+In TMD, there are three legal tape symbols; they are \texttt{1}, \texttt{E}, and \texttt{_}. \texttt{_} is the empty symbol (the only one which can appear an infinite number of times on any tape). Furthermore, in TMD, it is a requirement that each tape always have the form $\texttt{_}^{\infty}(\texttt{1}|\texttt{E})^{+}\texttt{_}^{\infty}$ (here, the $(.)^+$ operation denotes repetition any positive number of times). This requirement is for ease of compilation down to a single-tape TM; later, 

@@ -1,0 +1,7 @@
+input l !0 
+
+// Auto-generated code for function empty
+
+function BUILTIN_emptylist !0
+function BUILTIN_assign l !0
+return

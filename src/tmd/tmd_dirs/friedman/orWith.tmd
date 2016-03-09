@@ -1,0 +1,9 @@
+input x y !0 !1 !2 
+
+// Auto-generated code for function orWith
+
+function BUILTIN_assign !0 x
+function BUILTIN_assign !1 y
+function BUILTIN_or !2 !0 !1
+function BUILTIN_assign x !2
+return

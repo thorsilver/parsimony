@@ -1,0 +1,340 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{fullpage}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{courier}
+\usepackage[toc, page]{appendix}
+\usepackage{parskip}
+\usepackage{listings}
+
+\newtheorem{statement}{Statement}
+
+\newcommand{\statenumstate}{8,310-state }
+\newcommand{\statenum}{8,310 }
+\newcommand{\bbstatenum}{$BB($8,310) }
+\newcommand{\bbstatenumcomma}{$BB($8,310), }
+\newcommand{\bbstatenumperiod}{$BB($8,310). }
+
+\newcommand{\zhaltstate}{\texttt{8247}}
+\newcommand{\ghaltstate}{\texttt{5135}}
+\newcommand{\rhaltstate}{\texttt{5137}}
+
+\newcommand{\gbstatenum}{5,183 }
+\newcommand{\gbstatenumstate}{5,183-state }
+\newcommand{\bbgbstatenum}{$BB($5,183) }
+
+\newcommand{\rmstatenum}{5,185 }
+\newcommand{\rmstatenumstate}{5,185-state }
+\newcommand{\bbrmstatenum}{$BB($5,185) }
+
+\newenvironment{nscenter}
+ {\parskip=0pt\par\nopagebreak\centering}
+ {\par\noindent\ignorespacesafterend}
+
+\setcounter{secnumdepth}{4}
+
+\begin{document}
+
+\title{A Relatively Small Turing Machine Whose Behavior Is Independent of Set Theory}
+\author{Adam Yedidia}
+
+\maketitle
+
+\begin{abstract}
+
+Since the definition of the Busy Beaver function by Rad\'{o} in 1962, an interesting open question has been what the smallest value of $n$ for which $BB(n)$ is independent of ZFC. Is this $n$ approximately 10, or closer to 1,000,000, or is it unfathomably large? In this paper, we show that it is at most \statenum by presenting an explicit description of a \statenumstate Turing machine $Z$ with 1 tape and a 2-symbol alphabet whose behavior cannot be proved in ZFC, assuming ZFC is consistent. The machine is based on work of Harvey Friedman on independent statements involving order-invariant graphs. \cite{friedman}~
+In doing so, we give the first known upper bound on the highest provable Busy Beaver number in ZFC. We also present an explicit description of a \gbstatenumstate Turing machine $G$ that halts if and only if there's a counterexample to Goldbach's conjecture, and an explicit description of a \rmstatenumstate Turing machine $R$ that halts if and only if the Riemann hypothesis is false. In the process of creating $G$, $R$, and $Z$, we make use of a higher-level language, Laconic, which is much more convenient than direct state manipulation. 
+
+\end{abstract}
+
+\section{Introduction}
+
+This paper is devoted to demonstrating the extreme difficulty of finding the values of the Busy Beaver function beyond a certain point. We cannot ever prove an upper bound on $BB(x)$ for any $x > \gbstatenum$ or $x > \rmstatenum$ without simultaneously providing a proof (or disproof) of the Goldbach or Riemann hypotheses, respectively. And we cannot ever prove an upper bound on $BB(x)$ for any $x > \statenum$ without assuming axioms more powerful than the axioms of ZFC, assuming ZFC is consistent. \\ 
+
+We demonstrate these results by presenting explicit descriptions of Turing Machines, $G$, $R$, and $Z$ whose \emph{behavior} (whether or not they halt) implies the truth or falsehood of the Goldbach and Riemann hypotheses and the consistency of ZFC, respectively. If one knew a proof that $\bbstatenum < u_G$ for some $u_G$, one could find out if $G$ halts or loops by running $G$ for $u_G$ steps and seeing if it had halted by then; if it had not, we would be certain that $G$ will never halt. Thus, an execution history of $G$ for $u_G$ steps would constitute a proof of the truth or falsehood of Goldbach's conjecture. The same logic holds for $R$, \bbrmstatenum, and the Riemann hypothesis.
+
+Moreover, if one knew a proof that $\bbstatenum < u_Z$, one could find out if $Z$ halts or loops by running $Z$ for $u_Z$ steps $Z$ for $u_Z$ stepes and seeing if it had halted by then; if it had not, we would be certain that $Z$ will never halt. Thus, an execution history of $Z$ for $u_Z$ steps would constitute a proof in ZFC (since ZFC can encode arithmetic, and therefore Turing Machine execution histories) of the consistency or inconsistency of ZFC. By G\"{o}del's second incompleteness theorem, such a proof cannot exist if ZFC is consistent. Thus, no proof in ZFC exists of an upper bound on the value of \bbstatenum, assuming ZFC is consistent.
+
+\section{Laconic}
+
+The Laconic language is a programming language designed to be both user-friendly and easy to compile down to parsimonious Turing Machine descriptions. Laconic is so named because it's useful for demonstrating the simplicity of an algorithm by writing the shortest program possible that implements the algorithm. A short program will, in turn, compile to a Turing Machine with few states. \\
+
+Laconic can also be interpreted. This will cause the Laconic program to be run line-by-line. Interpreting a Laconic program before compiling it down to a Turing Machine is highly recommended in order to verify the program's correctness. \\
+
+Laconic is a strongly-typed language. It supports recursive functions. \\
+
+When Laconic is compiled, it is transformed into a TMD program, which is spread across many files (with one file per defined function). The TMD program is meant to represent a sequence of commands that could be given to a multi-tape, 3-symbol Turing Machine, using the Turing Machine abstraction that allows the machine to read and write from one head at a time. 
+
+For an example of a Laconic program, see Appendix A. For a visual illustration of the compilation process, see Figure~\ref{fig:compilation}
+
+\begin{figure} 
+\begin{center} 
+\includegraphics[scale=0.6]{figs/compilation.png}
+\caption{This figure gives a visual overview of the compilation process.) \label{fig:compilation}} 
+\end{center} 
+\end{figure}
+
+\section{TMD}
+
+The TMD language is a programming language designed to help the user describe the behavior of a multi-tape, 3-symbol Turing Machine with a function stack. It allows the user to use three symbols: \texttt{\_}, \texttt{1}, and \texttt{E}. The empty symbol is \texttt{\_}: that is, \texttt{\_} is the only symbol that can appear on the tape an infinite number of times. The tape must always have the form $\texttt{\_}^{\infty}(1|E)^*\texttt{\_}^{\infty}$; in other words, each tape must always contain an infinite number of copies of the \texttt{\_} symbol, followed by a string of \texttt{1}'s and \texttt{E}'s, followed by another infinite copies of the \texttt{\_} symbol. \\
+
+What is the purpose of having a language like TMD as an intermediary between Laconic and a description of a single-tape machine? The concept of tapes in a multi-tape Turing Machine and the concept of variables in standard imperative programming languages map to one another very nicely. The idea of the Laconic-to-TMD compiler is to encode the value of each variable on each tape. Then, each Laconic command which manipulates the value of one or more variables compiles down to a TMD function call which manipulates the tapes that correspond to those variables appropriately. \\
+
+As an example, consider the following Laconic command: \\ \\
+\texttt{a=b*c;} 
+
+This Laconic command assigns the value of \texttt{a} to the value of \texttt{b*c}. It compiles down to the following TMD function call: \\ \\
+\texttt{function BUILTIN\_multiply a b c}
+
+This function call will result in \texttt{BUILTIN\_add} being run on the three tapes \texttt{a}, \texttt{b}, and \texttt{c}. This will cause the symbols on tape \texttt{a} to take on a representation of an integer whose value is equal to $bc$.
+
+In turn, the TMD code compiles directly to a string of bits that are written onto the tape at the start of the Turing Machine's execution.
+
+A TMD directory consists of three types of files:
+
+\begin{enumerate}
+\item The \texttt{functions} file. This file contains a list of the names of all the functions used by the TMD program. The top function in the file is pushed onto the stack at initialization. Moreover, when this top function returns, the Turing machine halts.
+\item The \texttt{initvar} file. This file contains the non-\texttt{\_} symbols that start in each register at initialization. 
+\item Any files used to describe TMD functions. These files will all end in a \texttt{.tfn} extension and will only have any relevance to the compiled program if they show up in the functions file.
+\end{enumerate}
+
+\section{Compilation and Interpretation}
+
+A directory of TMD functions is converted at compilation time to a string of bits to be written onto the tape. The tape symbols can think of as being of one The resulting Turing Machine has three main components:
+
+\begin{enumerate}
+\item The \emph{initializer} sets up the basic structure of the variable registers and the function stack.
+\item The \emph{programmer} writes down the binary string that corresponds to the compiled TMD code.
+\item The \emph{interpreter} interprets the compiled binary, modifying the variable registers and the function stack as necessary.
+\end{enumerate}
+
+The Turing machine's control flow proceeds from the initializer to the the programmer to the interpreter. In other words, initializer states point only to initializer states or to programmer states, programmer states point only to programmer states or to interpreter states, and interpreter states point only to interpreter states or the \texttt{HALT} state. 
+
+When discussing the layout of the tape symbols and patterns, there are two ways to think about it: one is with a 4-symbol alphabet ($\{\texttt{\_}, \texttt{1}, \texttt{H}, \texttt{E}\}$, empty symbol \texttt{\_}), and one is with a 2-symbol alphabet ($\{\texttt{a}, \texttt{b}\}$, empty symbol \texttt{a}). Naturally, the 2-symbol alphabet version is the one that is ultimately used for the results in this paper, since we advertised a Turing machine that made use of only two symbols. However, in nearly all parts of the Turing machine, the 2-symbol version of the machine is a direct translation of the 4-symbol version, according to the following mapping:
+
+\begin{itemize}
+\item $\texttt{\_} \leftrightarrow \texttt{aa}$
+\item $\texttt{1} \leftrightarrow \texttt{ab}$
+\item $\texttt{H} \leftrightarrow \texttt{ba}$
+\item $\texttt{E} \leftrightarrow \texttt{bb}$
+\end{itemize}
+
+\subsection{The Initializer}
+
+The initializer creates each register, with demarkation patterns in between registers. Each register begins with the pattern of non-\texttt{\_} symbols laid out in the \texttt{initvar} file. It also initializes the function stack, which starts out with only a single function call to the top function in the \texttt{functions} file.
+
+Figure~\ref{fig:postinit} is a detailed diagram describing the tape's state when the initializer passes control to the programmer. 
+
+\begin{figure} 
+\begin{center} 
+\includegraphics[scale=0.6]{figs/postinit.png}
+\caption{This figure shows the state of the Turing machine tape after the initializer completes. The TMD program being expressed in Turing machine form is described in full in Appendix~\ref{sec:tmdappendix}. The top bar is a high-level description of what each part of the Turing machine tape represents. The middle bar is an encoding of the tape in the standard 4-symbol alphabet; the bottom bar is simply the translation of that tape into the 2-symbol alphabet. This figure is only meant to give the reader a sense for what the machine really looks like when written onto the Turing machine's tape. For a more detailed explanation of how to interpret the tape patterns, see~\cite{fig:github}. \label{fig:postinit}} 
+\end{center} 
+\end{figure}
+
+\subsection{The Programmer}
+
+\section{$Z$}
+
+We present a \statenumstate Turing Machine that is \emph{independent of ZFC}; it would not be possible to prove that this machine would halt or wouldn't halt using the axioms of ZFC, assuming that ZFC is consistent. It is therefore impossible to prove the value of \bbstatenum to be any given value without assuming axioms more powerful than ZFC, assuming that ZFC is consistent. \\
+
+We call this machine $Z$. One way to build this machine would be to start with the axioms of ZFC and apply the inference rules of first-order logic of ZFC repeatedly in each possible way so as to enumerate every statement ZFC could prove, and to halt if ever a contradiction was found. Such a machine's \emph{behavior} (whether or not it ultimately halts) would necessarily be independent of ZFC, because to a proof of the machine's behavior would necessarily imply a proof about the consistency or inconsistency of ZFC. While the idea for this method is simple, to actually construct such a machine would be very involved, because it would require creating a language in which to encode the axioms of ZFC that could be stored on a Turing machine tape. \\
+
+\subsection{Friedman's Mathematical Statement}
+
+Thankfully, a simpler method exists for creating $Z$. Friedman \cite{friedman}~
+was able to derive a graph-theoretical statement whose truth cannot be proved in ZFC if ZFC is consistent, and which is false if ZFC is not consistent. These two properties are what we ultimately need to prove an upper bound on the highest provable Busy Beaver value in ZFC, and they are true of Friedman's statement, which follows: \\
+
+\begin{statement} \label{eq:friedman}
+For all $k, n, r \ge 0$, every order invariant graph on $[Q]^{\le k}$ has a free $\{x_1,\dots,x_r, \\
+ush(x_1),...,ush(x_r)\}$ of complexity $\le (8knr)!$, each $\{x_1, \dots, x_{(8kni)!}\}$
+reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$. \cite{friedman}
+\end{statement}
+
+A number of \emph{complexity} at most $c$ refers to a number that can be written as a fraction $a/b$, where $a$ and $b$ are both integers less than or equal to $c$. A set has complexity at most $c$ if all the numbers it contains have complexity at most $c$. \\ 
+
+An \emph{order invariant graph} is a graph containing a countably infinite number of nodes. In particular, it has one node for each finite set of rational numbers. The only numbers relevant to the statement are numbers of complexity $(8knr)!$ or smaller. In every description of nodes that follows, the term \emph{node} refers both to the object in the order invariant graph and to the set of numbers that it represents. \\
+
+Also, in an order invariant graph, two nodes $(a,b)$ have an edge between them if and only if each other pair of nodes $(c,d)$ that is \emph{order equivalent} with $(a,b)$ have an edge between them. Two pairs of nodes $(a, b)$ and $(c, d)$ are \emph{order equivalent} if $a$ and $c$ are the same size and $b$ and $d$ are the same size and if for all $1 \le i \le |a|$ and $1 \le j \le |b|$, the $i$-th element of $a$ is less than the $j$-th element of $b$ if and only if the $i$-th element of $c$ is less than the $j$-th element of $d$. \\
+
+To give some trivial examples of order invariant graphs: the graph with no edges is order invariant, as is the complete graph. A less trivial example is a graph on $[Q]^2$, in which each node corresponds to a set of two real numbers, and there is an edge between two nodes if and only if their corresponding sets $a$ and $b$ satisfy $a_1 < b_1 < a_2 < b_2$. (Because edges are undirected in order invariant graphs, such an edge will exist if \emph{either} assignment of the vertices to $a$ and $b$ satisfies the inequality above). \\
+
+The \emph{ush()} function takes as input a set and returns a copy of that set with all non-negative numbers in that set incremented by 1. \\ 
+
+Finally, a set of vertices $X$ \emph{reduces} a set of vertices $Y$ if and only if for all $y \in Y$, there exists $x \in X$ such that $x \le_{rlex} y$ and an edge exists between $x$ and $y$. $x \le_{rlex} y$ if and only if $x = y$ or $x_i < y_i$ where $i$ is least such that $x_i \not= y_i$.~\cite{personalcomm} \\
+
+\subsection{Implementation Methods}
+
+In order to create $Z$, we needed to design a Turing Machine that would halt if Statement~\ref{eq:friedman} was false, and would loop if Statement~\ref{eq:friedman} was true. Such a Turning Machine's behavior would necessarily be independent of ZFC, because the truth or falsehood of  Statement~\ref{eq:friedman} is itself independent of ZFC.~\cite{friedman} \\
+
+To design such a Turing machine, we wrote a Laconic program which encoded Friedman's statements, then compiled the program down to a description of a single-tape, 2-symbol Turing machine. What follows is an extremely brief description of the design of the Laconic program; for the documented Laconic code itself, along with a very detailed explanation of the full compilation process, please see~\cite{ref:github}. \\
+
+Our Laconic program begins by looping over all non-negative values for $k$, $n$, and $r$. For each trio of values $(k, n, r)$, our program generates a list $N$ of all numbers of complexity at most $(8knr)!$. These numbers represent the vertices in our putative order invariant graph. Because Laconic does not support floating-point numbers, the list is entirely composed of integers; it is a list of all numbers that can be written in the form $(((8knr)!)!)((8kni)!)/((8knj)!)$, where $i$ and $j$ are integers satisfying $-(8knr)! \le i \le (8knr)!$ and $1 \le j \le (8knr)!$. (Note that any number that can be expressed in this form is necessarily an integer, because of the large scaling factor in front). \\
+
+After we generate $N$, we generate the nodes in a potential order invariant graph by adding to $N$ all possible lists of $k$ or fewer numbers from $N$. We call this list of lists $V$. \\
+
+We iterate over all binary lists of length $|V|^2$. Any such list $E$ represents a possible set of edges in the graph. To be more precise, we say that an edge exists between node $i$ and node $j$ (represented by $V_i$ and $V_j$ respectively) if and only if $E_{i|V| + j}$ is 1. \\
+
+For any graph $(V, E)$, we say that it is ``valid'' if the following three conditions hold:
+
+\begin{enumerate}
+
+\item No node has an edge to itself.
+\item If an edge exists between node $i$ and node $j$, an edge also exists between node $j$ and node $i$.
+\item The graph has a free $\{x_1,\dots,x_r, ush(x_1),...,ush(x_r)\}$, each  $\{x_1, \dots, x_{(8kni)!}\}$ reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$.
+
+\end{enumerate}
+
+For each list of nodes $V$, we loop over every possible binary list $E$, and if no pair $(V, E)$ yields a valid graph, we halt. \\
+
+When verifying the validity of a graph, checking the first two conditions is trivial, but the third merits further explanation. In order to verify that a given graph $(V, E)$ has a free \\ $\{x_1,\dots,x_r, ush(x_1),...,ush(x_r)\}$, each  $\{x_1, \dots, x_{(8kni)!}\}$ reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$, we look at every possible subset of the nodes in $V$. For each subset, we verify that it has length $r$, that $ush(x_1),...,ush(x_r)$ all exist in $V$, and for each $i$ such that $(8kni)! \le r$, that $\{x_1, \dots, x_{(8kni)!}\}$ reduces $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$. Once we have found such a subset, we know that the third conditon is satisfied.
+
+\subsection{An Explicit Description of $Z$}
+
+We present below an explicit description of $Z$. In order to prevent the Turing Machine from being outrageously long, our presentation is in a very compressed form. For a more easily readable version of $Z$, complete with descriptive state names, see~\cite{github}. \\
+
+Figure~\ref{fig:syntax} presents useful information for how to interpret the description shown below. In addition, note the following:
+
+\begin{enumerate}
+
+\item The tape has a 2-symbol alphabet, with tape symbols $\{\texttt{a}, \texttt{b}\}$ and empty symbol \texttt{a} (in other words, \texttt{a} is the only symbol that can appear an infinite times on the tape).
+\item The start state of $Z$ is state \texttt{0000}.
+\item $Z$ will never transition to the \texttt{ERROR} state. Any transition to the \texttt{ERROR} state could be replaced by a transition to any other state (including \texttt{HALT}) and the Turing Machine's behavior would remain identical.
+\item $Z$ contains only one transition to the \texttt{HALT} state, out of state \zhaltstate.
+
+\end{enumerate}
+
+\begin{figure} 
+\begin{center} 
+\includegraphics[scale=0.6]{figs/syntax.png}
+\caption{This figure explains how to read a description of a single state. Note that ``\texttt{ERROR-}'' or ``\texttt{HALT--}'' denote transitions to the \texttt{ERROR} or \texttt{HALT} states, respectively (no further information is provided because what symbol is written and which direction the head moves are at that point irrelevant.) \label{fig:syntax}} 
+\end{center} 
+\end{figure}
+
+\input{zfc_tm}
+
+\section{$G$}
+
+We present a \gbstatenumstate Turing Machine that is \emph{independent of Goldbach's conjecture}; in other words, to know whether or not this machine halts is to know whether or not Goldbach's conjecture is true. It is therefore impossible to prove the value of \bbgbstatenum without simultaneously implying a proof of the truth or falsehood of Goldbach's conjecture.
+
+Goldbach's conjecture is stated as follows:
+
+\begin{statement}
+\emph{Every even integer greater than 2 can be expressed as the sum of two primes.}
+\label{goldbachstatement}
+\end{statement}
+
+\subsection{Implementation Methods}
+
+Because Goldbach's conjecture is quite simply stated, the Laconic program encoding the statement is also quite simple. We very briefly describe it here; once again, the documented source code itself, a detailed explanation of the compilation process, and documentation for the Laconic language are available at~\cite{github}.
+
+In order to create $G$, we loop over all even integers $i > 2$. For each $i$, we loop over all positive integers $j$ such that $0 < j < i$. If no such $j$ exists such that both $j$ and $i - j$ are prime, we halt.
+
+To test the primality of a positive integer $j$, we first test to see if $j = 1$; if it is, we determine that $j$ is not prime. Otherwise, we loop over each integer $k$ such that $1 < k < j$. If a $k$ exists such that $j \% k = 0$ (where \% denotes the modulus operation) then we determine that $j$ is not prime; otherwise, we determine that it is.
+
+\subsection{An Explicit Description of $G$}
+
+We present below an explicit description of $G$. The same format is used below as was used for $Z$. Again, Figure~\ref{fig:syntax} contains useful information for interpreting our format, the tape alphabet is $\{\texttt{a}, \texttt{b}\}$ with \texttt{a} being the empty symbol, state \texttt{0000} is the start state, and $G$ will never follow a transition to the \texttt{ERROR} state. The only transition to the \texttt{HALT} state in $G$ is out of state \ghaltstate. \\
+
+\input{goldbach_tm}  
+
+\section{$R$}
+
+We present a \rmstatenumstate Turing Machine that is \emph{independent of Riemann's hypothesis}; in other words, to know whether or not this machine halts is to know whether or not Riemann's hypothesis is true. It is therefore impossible to prove the value of \bbrmstatenum without simultaneously implying a proof of the truth or falsehood of Riemann's hypothesis.
+
+Riemann's hypothesis is traditionally stated as follows:
+
+\begin{statement}
+\emph{The Riemann zeta function has its zeros only at the negative even integers and the complex numbers with real part 1/2.}
+\label{goldbachstatement}
+\end{statement}
+
+\subsection{Equivalent Statement}
+
+Instead of encoding the Riemann zeta function into a Laconic program, it is simpler to use the following statement, which has been shown to be equivalent to teh Riemann hypothesis:~\cite{riemann}\\
+
+\begin{statement} \label{eq:riemann}
+For all integers $n \ge 1$, 
+$$\left(\left(\sum_{k \le \delta(n)} \frac{1}{k}\right) - \frac{n^2}{2}\right)^2 < 36n^3$$
+\end{statement}
+
+The function $\delta(n)$ used in Statement~\ref{eq:riemann} is defined as follows: \\
+
+\begin{nscenter}
+$\eta(j)$ if $j = p^k$, $p$ is prime, $k$ is a positive integer \\
+$\eta(j) = 1$ otherwise
+\end{nscenter}
+$$\delta(x) = \prod_{n<x}\prod_{j \le n} \eta(j)$$
+
+\subsection{Implementation Methods}
+
+The statement can be manipulated to contain only positive integers as follows:
+
+$$\left(\left(\sum_{k \le \delta(n)} \frac{1}{k}\right) - \frac{n^2}{2}\right)^2 < 36n^3$$
+$$\left(\left(\sum_{k \le \delta(n)} \frac{\delta(n)!}{k}\right) - \delta(n)!\frac{n^2}{2}\right)^2 < 36n^3(\delta(n)!)^2$$
+$$\left(\sum_{k \le \delta(n)} \frac{\delta(n)!}{k}\right)^2 - 2\left(\sum_{k \le \delta(n)} \frac{\delta(n)!}{k}\right) \left(\delta(n)!\frac{n^2}{2}\right) + \left(\delta(n)!\frac{n^2}{2}\right)^2 < 36n^3(\delta(n)!)^2$$
+$$\left(\sum_{k \le \delta(n)} \frac{\delta(n)!}{k}\right)^2 + \left(\delta(n)!\frac{n^2}{2}\right)^2 < 36n^3(\delta(n)!)^2 + 2\left(\sum_{k \le \delta(n)} \frac{\delta(n)!}{k}\right) \left(\delta(n)!\frac{n^2}{2}\right)$$
+
+Further reorganizing the statement:
+
+$$a(n) = \sum_{k \le \delta(n)!} \frac{\delta(n)!}{k}$$
+$$b(n) = \delta(n)!\frac{n^2}{2}$$
+
+and let
+
+$$l(n) = (a(n))^2 + (b(n))^2$$
+$$r(n) = 36n^3(\delta(n)!)^2 + 2a(n)b(n)$$.
+
+When rewritten in terms of $l$ and $r$, Riemann's hypothesis is equivalent to whether or not $l(n) < r(n)$ for all positive integers $n$. \\
+
+To check the Riemann hypothesis, my program computes $a(n)$, $b(n)$, $l(n)$, and $r(n)$, in that order, for each possible value of $n$. If $l(n) \ge r(n)$, my program halts.
+
+\subsection{An Explicit Description of $R$}
+
+We present below an explicit description of $R$. The same format is used below as was used for $Z$. Again, Figure~\ref{fig:syntax} contains useful information for interpreting our format, the tape alphabet is $\{\texttt{a}, \texttt{b}\}$ with \texttt{a} being the empty symbol, state \texttt{0000} is the start state, and $G$ will never follow a transition to the \texttt{ERROR} state. The only transition to the \texttt{HALT} state in $R$ is out of state \rhaltstate. \\
+
+\begin{appendices}
+    
+\section{Example Laconic Program: Goldbach's Conjecture}
+
+The following is an example Laconic program, which compiles down to the aforementioned Turing Machine $G$ (which halts if and only Goldbach's Conjecture is false).
+
+\input{goldbach_lac}
+
+For detailed documentation of the Laconic programming language, see~\cite{github}.
+
+\section{Example TMD Program: Multiplication}
+
+The following is an example TMD program, which compiles down to a segment of Turing Machine code. It is the function that is called every time a multiplication is performed in a Laconic program.
+
+%\input{multiplytfn}
+
+For detailed documentation of the TMD programming language, see~\cite{github}.
+
+\section{Explicit Description of $Z$}
+
+\input{zfc_tm}
+
+\end{appendices}
+
+\begin{thebibliography}{100}
+\bibitem{friedman} Friedman, H. ``Order Invariant Graphs and Finite Incompleteness.'' https://u.osu.edu/friedman.8/files/2014/01/FIiniteSeqInc062214a-v9w7q4.pdf
+\bibitem{busybeaver} Rado, T. ``On Non-Computable Functions.'' 
+Bell System Technical Journal, 41: 3. May 1962 pp 877-884.
+\bibitem{bbvalues} http://www.drb.insel.de/~heiner/BB/
+\bibitem{codegolf} http://codegolf.stackexchange.com/
+\bibitem{grandconjecture} http://cs.nyu.edu/pipermail/fom/1999-April/003014.html
+\bibitem{bbimpossible} Marxen, H., Buntrock, J.``Attacking the Busy Beaver 5.'' 
+\bibitem{grothendieck} McLarty, C. ``What Does It Take To Prove Fermat's Last Theorem? Grothendieck and the Logic of Number Theory.'' The Bulletin of Symbolic Logic, Volume 00, Number 0.
+\bibitem{friedmanlist} Friedman, H. ``Order Theoretic Equations, Maximality, and Incompleteness.'' June 7, 2014. http://u.osu.edu/friedman.8/foundational-adventures/downloadable-manuscripts \#78.
+\bibitem{github} https://github.com/adamyedidia/thesis.git
+\bibitem{personalcomm} Personal communication between A. Yedidia and H. Friedman.
+\bibitem{riemann} Browder, F. ``Mathematical Developments Arising from Hilbert Problems.'' American Mathematical Society. Volume 28, Part 1.
+\end{thebibliography}
+
+\end{document}
+

@@ -1,0 +1,21 @@
+input deltaXFac k h out !0 !1 !2 
+
+// Auto-generated code for function a
+
+function zero out !0 
+function one k !0 
+WHILE_TEST_0: function BUILTIN_assign !0 k
+function BUILTIN_assign !1 deltaXFac
+function BUILTIN_greaterOrEqual !2 !1 !0
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function BUILTIN_assign !0 deltaXFac
+function BUILTIN_assign !1 k
+function BUILTIN_divide !2 !0 !1
+function BUILTIN_assign h !2
+function BUILTIN_assign !0 out
+function BUILTIN_assign !1 h
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign out !2
+function incr k !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

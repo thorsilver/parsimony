@@ -1,0 +1,24 @@
+input x y z
+
+// x <- y @ z
+
+function BUILTIN_clear x
+
+GET_PAST_FIRST_E_Y: [y] E (R)
+
+MOVE_ALONG_Z: [z] 1 (R); E (READ_OFF_FIRST_Y)
+GET_PAST_E_Y: [y] 1 (R); E (R) 
+MOVE_ALONG_Y: [y] 1 (R, MOVE_ALONG_Y); E (R, MOVE_ALONG_Z)
+
+READ_OFF_FIRST_Y: [y] 1 (COPY_Y_TO_X, R); E (R)
+NEG_X: function BUILTIN_appendE x
+[y] 1 (COPY_Y_TO_X); E ()
+[x] E (_, L, GBTS)
+
+COPY_Y_TO_X: [y] 1 (R); E (GBTS)
+function BUILTIN_incr x
+[x] E (COPY_Y_TO_X)
+
+GBTS: function BUILTIN_getBackToStart3 x y z
+return
+

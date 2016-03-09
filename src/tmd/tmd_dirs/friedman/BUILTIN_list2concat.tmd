@@ -1,0 +1,10 @@
+input x y z
+
+// x <- y ||* z
+
+function BUILTIN_listconcat x y z
+return
+
+// Turns out, the procedure for list2 concatenation is the exact same
+// as the one for list concatenation; assign x to y, get to the end of x,
+// then copy z on top of the final E of x. That works.

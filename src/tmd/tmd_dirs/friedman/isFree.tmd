@@ -1,0 +1,30 @@
+input vertexSet numVertices edges c1 c2 h1 h2 output !0 !1 !2 !3 
+
+// Auto-generated code for function isFree
+
+function zero c1 !0 
+WHILE_TEST_0: function BUILTIN_assign !0 c1
+function BUILTIN_assign !1 numVertices
+function BUILTIN_greaterThan !2 !1 !0
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function zero c2 !0 
+WHILE_TEST_1: function BUILTIN_assign !0 c2
+function BUILTIN_assign !1 numVertices
+function BUILTIN_greaterThan !2 !1 !0
+[!2] E (WHILE_STATE_1_FALSE); 1 ()
+function doubleIndexOneList vertexSet c1 c2 h1 h2 !0 !1 !2 
+function BUILTIN_assign !0 h1
+function BUILTIN_assign !1 h2
+function BUILTIN_and !2 !0 !1
+[!2] E (IF_STATE_0_FALSE); 1 ()
+function edgeIndex edges numVertices c1 c2 output !0 !1 !2 !3 
+function BUILTIN_assign !0 output
+[!0] E (IF_STATE_1_FALSE); 1 ()
+function zero output !0 
+return
+IF_STATE_1_FALSE: IF_STATE_0_FALSE: function incr c2 !0 !1 !2 
+[!0] E (WHILE_TEST_1); 1 (WHILE_TEST_1)
+WHILE_STATE_1_FALSE: function incr c1 !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: function one output !0 
+return

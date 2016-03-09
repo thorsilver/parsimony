@@ -1,0 +1,8 @@
+input x y
+
+// computes x <- not y (if x > 0, sets x to 0; if x = 0, sets x to 1).
+// Unary assumed
+
+function BUILTIN_assign x y
+function BUILTIN_notInPlace x
+return

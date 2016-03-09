@@ -1,0 +1,7 @@
+input x y z
+
+// x <- y ^ z
+
+function assign x y
+function appendTo x z
+return

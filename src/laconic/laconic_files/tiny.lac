@@ -1,0 +1,14 @@
+int w;
+int x;
+int y;
+int z;
+
+w = [3,~3];
+x = [2,~2];
+
+y = w || x;
+z = y @ 1;
+
+print z;
+
+halt;

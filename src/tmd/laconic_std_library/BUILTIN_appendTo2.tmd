@@ -1,0 +1,17 @@
+input x y
+
+// appends the list y to the list2 x
+
+function BUILTIN_findFin x
+function BUILTIN_appendE x
+
+READ_Y: [y] 1 (SEEN_1, R); E (R); _ (L, GBTS)
+
+// if you see an E, write E1; if you see a 1, write 1.
+
+SEEN_E: function BUILTIN_appendE x
+SEEN_1: function BUILTIN_incr x
+[x] E (READ_Y)
+
+GBTS: function BUILTIN_getBackToStart2 x y
+return

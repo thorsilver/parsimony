@@ -1,0 +1,7 @@
+input x l o !0 !1 !2 
+
+// Auto-generated code for function incrAndLessThanLength
+
+function incr x !0 !1 !2 
+function lessThanLength x l o !0 !1 !2 
+return

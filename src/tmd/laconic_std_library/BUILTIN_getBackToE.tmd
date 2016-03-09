@@ -1,0 +1,11 @@
+input x
+
+// gets the head back to the last E not counting the one it's pointed at,
+// or to the _, whichever comes first. Useful for getting to the start of the unsigned 
+// portion of signed numbers.
+
+// NON-STANDARD
+
+[x] E (L)
+GET_BACK_TO_E: [x] 1 (GET_BACK_TO_E, L); _ (R); E (R)
+return

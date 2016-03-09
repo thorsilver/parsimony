@@ -1,0 +1,45 @@
+input X Y graph edges numVertices x y c1 c2 h1 h2 h3 output !0 !1 !2 !3 
+
+// Auto-generated code for function reduces
+
+function zeroAndOne c1 h1 !0 
+WHILE_TEST_0: function BUILTIN_assign !0 c1
+function BUILTIN_assign !1 numVertices
+function BUILTIN_greaterThan !2 !1 !0
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function BUILTIN_assign !0 Y
+function BUILTIN_assign !1 c1
+function BUILTIN_listindex !2 !0 !1
+[!2] E (IF_STATE_0_FALSE); 1 ()
+function BUILTIN_assign !0 graph
+function BUILTIN_assign !1 c1
+function BUILTIN_list2index !2 !0 !1
+function BUILTIN_assign y !2
+function doubleZero c2 h1 !0 
+WHILE_TEST_1: function BUILTIN_assign !0 c2
+function BUILTIN_assign !1 numVertices
+function BUILTIN_greaterThan !2 !1 !0
+[!2] E (WHILE_STATE_1_FALSE); 1 ()
+function BUILTIN_assign !0 X
+function BUILTIN_assign !1 c2
+function BUILTIN_listindex !2 !0 !1
+[!2] E (IF_STATE_1_FALSE); 1 ()
+function BUILTIN_assign !0 graph
+function BUILTIN_assign !1 c2
+function BUILTIN_list2index !2 !0 !1
+function BUILTIN_assign x !2
+function ltrlex x y h2 h3 !0 !1 !2 
+function edgeIndex edges numVertices c1 c2 h2 !0 !1 !2 !3 
+function andWith h2 h3 !0 !1 !2 
+function orWith h1 h2 !0 !1 !2 
+IF_STATE_1_FALSE: function incr c2 !0 !1 !2 
+[!0] E (WHILE_TEST_1); 1 (WHILE_TEST_1)
+WHILE_STATE_1_FALSE: function BUILTIN_assign !0 h1
+function BUILTIN_assignNot !1 !0
+[!1] E (IF_STATE_2_FALSE); 1 ()
+function zero output !0 
+return
+IF_STATE_2_FALSE: IF_STATE_0_FALSE: function incr c1 !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: function one output !0 
+return

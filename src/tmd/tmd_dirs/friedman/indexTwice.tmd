@@ -1,0 +1,7 @@
+input l1 l2 i o1 o2 !0 !1 !2 
+
+// Auto-generated code for function indexTwice
+
+function index l1 i o1 !0 !1 !2 
+function index l2 i o2 !0 !1 !2 
+return

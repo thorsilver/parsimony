@@ -1,0 +1,10 @@
+input x y z
+
+// computes x = (y OR z) (sets x to 1 if true, and 0 if false)
+// Unary assumed
+
+function BUILTIN_clear x
+[y] 1 (RETURN_TRUE); E ()
+[z] 1 (); E (RETURN_FALSE)
+RETURN_TRUE: function BUILTIN_add1 x
+RETURN_FALSE: return

@@ -1,0 +1,8 @@
+input x y z
+
+// get to the beginning of three values.
+// NON-STANDARD
+
+function BUILTIN_getBackToStart2 x y
+function BUILTIN_getBackToStart z
+return

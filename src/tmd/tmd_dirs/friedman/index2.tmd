@@ -1,0 +1,9 @@
+input l i o !0 !1 !2 
+
+// Auto-generated code for function index2
+
+function BUILTIN_assign !0 l
+function BUILTIN_assign !1 i
+function BUILTIN_list2index !2 !0 !1
+function BUILTIN_assign o !2
+return

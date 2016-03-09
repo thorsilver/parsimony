@@ -1,0 +1,11 @@
+input x
+
+// does x <- ~x
+
+[x] 1 (E, R); E (1, PULL_BACK)
+PUSH_DOWN: [x] 1 (R, PUSH_DOWN); E (R, 1)
+[x] _ (E, GBTS)
+PULL_BACK: [x] 1 (R, PULL_BACK); E (L, _); _ (L)
+[x] 1 (E)
+GBTS: function BUILTIN_getBackToStart x
+return

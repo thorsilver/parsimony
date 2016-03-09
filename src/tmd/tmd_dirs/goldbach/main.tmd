@@ -1,0 +1,32 @@
+input h foundSum isThisOnePrime evenNumber primeCounter !0 !1 !2 
+
+// Auto-generated code for function main
+
+function BUILTIN_assign2 !0
+function BUILTIN_assign evenNumber !0
+function one foundSum !0 
+WHILE_TEST_0: function BUILTIN_assign !0 foundSum
+[!0] E (WHILE_STATE_0_FALSE); 1 ()
+function zero foundSum !0 
+function BUILTIN_assign !0 evenNumber
+function BUILTIN_assign2 !1
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign evenNumber !2
+function one primeCounter !0 
+WHILE_TEST_1: function BUILTIN_assign !0 primeCounter
+function BUILTIN_assign !1 evenNumber
+function BUILTIN_greaterThan !2 !1 !0
+[!2] E (WHILE_STATE_1_FALSE); 1 ()
+function isPrime primeCounter h isThisOnePrime !0 !1 !2 
+function BUILTIN_assign !0 isThisOnePrime
+[!0] E (IF_STATE_0_FALSE); 1 ()
+function assignXtoYminusX primeCounter evenNumber !0 !1 !2 
+function isPrime primeCounter h isThisOnePrime !0 !1 !2 
+function assignXtoYminusX primeCounter evenNumber !0 !1 !2 
+function BUILTIN_assign !0 isThisOnePrime
+[!0] E (IF_STATE_1_FALSE); 1 ()
+function one foundSum !0 
+IF_STATE_1_FALSE: IF_STATE_0_FALSE: function incr primeCounter !0 !1 !2 
+[!0] E (WHILE_TEST_1); 1 (WHILE_TEST_1)
+WHILE_STATE_1_FALSE: [!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

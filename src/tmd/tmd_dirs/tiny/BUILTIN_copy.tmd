@@ -1,0 +1,15 @@
+input x y
+
+// copies stuff from y onto x until it sees an underscore; used for concats, and 
+// does not necessarily expect to be at x's head.
+
+// NON-STANDARD
+
+READ_Y: [y] 1 (R); E (SAW_E, R); _ (L, GBTS)
+
+SAW_1: [x] 1 (R, READ_Y); E (1, R, READ_Y); _ (1, R, READ_Y)
+SAW_E: [x] 1 (R, E, READ_Y); E (R, READ_Y); _ (E, R, READ_Y)
+
+GBTS: [x] 1 (); E (); _ (L)
+function BUILTIN_getBackToStart2 x y
+return  

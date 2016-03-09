@@ -1,5 +1,7 @@
 grammar Laconic;
 
+// The grammar for the Laconic language.
+
 prog: trueprog ;
 trueprog: (command)* EOF ;
 command:  (funcdef | procdef | declare | nondefcommand)  ;

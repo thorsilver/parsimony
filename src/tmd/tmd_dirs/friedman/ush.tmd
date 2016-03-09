@@ -1,0 +1,19 @@
+input x eightKNRFacFac h i output !0 !1 !2 
+
+// Auto-generated code for function ush
+
+function zeroAndEmptyAndLessThanLength i x h output !0 !1 !2 
+WHILE_TEST_0: function BUILTIN_assign !0 h
+[!0] E (WHILE_STATE_0_FALSE); 1 ()
+function index x i h !0 !1 !2 
+function BUILTIN_assign !0 h
+function BUILTIN_clear  !1
+function BUILTIN_greaterOrEqual !2 !0 !1
+[!2] E (IF_STATE_0_FALSE); 1 ()
+function BUILTIN_assign !0 h
+function BUILTIN_assign !1 eightKNRFacFac
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign h !2
+IF_STATE_0_FALSE: function appendAndIncrAndLessThanLength output i x h !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

@@ -1,0 +1,25 @@
+input x nCount jCount h1 h2 etaOut out !0 !1 !2 
+
+// Auto-generated code for function delta
+
+function one out !0 
+function one nCount !0 
+WHILE_TEST_0: function BUILTIN_assign !0 nCount
+function BUILTIN_assign !1 x
+function BUILTIN_greaterThan !2 !1 !0
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function one jCount !0 
+WHILE_TEST_1: function BUILTIN_assign !0 jCount
+function BUILTIN_assign !1 nCount
+function BUILTIN_greaterOrEqual !2 !1 !0
+[!2] E (WHILE_STATE_1_FALSE); 1 ()
+function eta jCount h1 h2 etaOut !0 !1 !2 
+function BUILTIN_assign !0 out
+function BUILTIN_assign !1 etaOut
+function BUILTIN_multiply !2 !0 !1
+function BUILTIN_assign out !2
+function incr jCount !0 !1 !2 
+[!0] E (WHILE_TEST_1); 1 (WHILE_TEST_1)
+WHILE_STATE_1_FALSE: function incr nCount !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

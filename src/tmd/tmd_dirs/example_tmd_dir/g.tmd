@@ -1,0 +1,6 @@
+input x
+
+// Writes a 1 on the input tape.
+
+[x] E (1)
+return

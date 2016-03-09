@@ -1,0 +1,11 @@
+input l1 l2 o !0 !1 !2 
+
+// Auto-generated code for function notSameLength
+
+function BUILTIN_assign !0 l1
+function BUILTIN_len !1 !0
+function BUILTIN_assign !0 l2
+function BUILTIN_len !2 !0
+function BUILTIN_notEqual !0 !1 !2
+function BUILTIN_assign o !0
+return

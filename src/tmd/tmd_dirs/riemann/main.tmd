@@ -1,0 +1,18 @@
+input h1 deltaXFac h2 lOfX bOfX x aOfX rOfX !0 !1 !2 
+
+// Auto-generated code for function main
+
+function one rOfX !0 
+WHILE_TEST_0: function BUILTIN_assign !0 lOfX
+function BUILTIN_assign !1 rOfX
+function BUILTIN_greaterThan !2 !1 !0
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function incr x !0 !1 !2 
+function delta x aOfX bOfX lOfX rOfX h1 h2 !0 !1 !2 
+function factorial h2 aOfX deltaXFac !0 !1 !2 
+function a deltaXFac bOfX h2 aOfX !0 !1 !2 
+function b deltaXFac h2 bOfX !0 !1 !2 
+function r x deltaXFac aOfX bOfX h2 lOfX rOfX !0 !1 !2 
+function l aOfX bOfX h2 lOfX !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

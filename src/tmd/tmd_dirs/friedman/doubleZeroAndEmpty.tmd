@@ -1,0 +1,7 @@
+input x y l !0 
+
+// Auto-generated code for function doubleZeroAndEmpty
+
+function doubleZero x y !0 
+function empty l !0 
+return

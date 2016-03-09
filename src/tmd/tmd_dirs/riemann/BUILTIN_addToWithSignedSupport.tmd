@@ -1,0 +1,11 @@
+input x y
+
+// gets to the end of a number, addsTo, and then goes back to the last E
+// Useful for signed arithmetic
+
+// NON-STANDARD
+
+function BUILTIN_findFin x
+function BUILTIN_addTo x y
+function BUILTIN_getBackToE x
+return

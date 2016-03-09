@@ -1,0 +1,17 @@
+input x y z
+
+// x = y / z. Integer division. Signed unary assumed. Dividing by 0 
+// causes infinite loop.
+
+function BUILTIN_clear x
+function BUILTIN_doubleShift y z
+
+MOVE_Z: [z] 1 (R); E (GBTE_Z)
+MOVE_Y: [y] 1 (R, MOVE_Z); E (GBTS_Y)
+GBTE_Z: function BUILTIN_getBackToE z
+INCR_X: [x] E (1, R, INCR_X); _ (E, MOVE_Z)
+GBTS_Y: function BUILTIN_getBackToStart3 x y z
+
+function BUILTIN_multiplyBySign x y z
+
+return

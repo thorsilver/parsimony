@@ -1,0 +1,15 @@
+input x y 
+
+// Does x <- -y
+// Signed unary assumed
+
+//function BUILTIN_clear x
+//[y] E (R, COPY); 1 ()
+//function BUILTIN_appendE x
+//COPY: function BUILTIN_addTo x y
+//function BUILTIN_getBackToStart2 x y
+//return
+
+function BUILTIN_assign x y
+function BUILTIN_negate x
+return

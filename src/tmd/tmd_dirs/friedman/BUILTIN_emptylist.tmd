@@ -1,0 +1,6 @@
+input x
+
+// assigns x to the empty list
+
+function BUILTIN_clear x
+return

@@ -1,0 +1,13 @@
+input x y
+
+// x <- (# y)
+
+function BUILTIN_clear x
+
+GET_PAST_E_Y: [y] E (R)
+[y] _ (L, GBTS); E (R); 1 ()
+function BUILTIN_incr x
+GET_TO_NEXT_E_Y: [y] 1 (R, GET_TO_NEXT_E_Y); E (GET_PAST_E_Y)
+
+GBTS: function BUILTIN_getBackToStart2 x y
+return

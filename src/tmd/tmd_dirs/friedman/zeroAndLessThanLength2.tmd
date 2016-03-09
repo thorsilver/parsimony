@@ -1,0 +1,7 @@
+input x l2 o !0 !1 !2 
+
+// Auto-generated code for function zeroAndLessThanLength2
+
+function zero x !0 
+function lessThanLength2 x l2 o !0 !1 !2 
+return

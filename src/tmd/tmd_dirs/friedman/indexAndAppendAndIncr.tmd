@@ -1,0 +1,7 @@
+input l1 i l2 h !0 !1 !2 
+
+// Auto-generated code for function indexAndAppendAndIncr
+
+function index l1 i h !0 !1 !2 
+function appendAndIncr l2 h i !0 !1 !2 
+return

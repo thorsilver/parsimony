@@ -1,0 +1,8 @@
+input x
+
+// Auto-generated code for function BUILTIN_assign2
+// Assigns x to the value 2
+// Unary assumed
+function BUILTIN_assign1 x
+function BUILTIN_add1 x
+return

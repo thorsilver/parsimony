@@ -1,0 +1,7 @@
+input x l !0 
+
+// Auto-generated code for function zeroAndEmpty
+
+function zero x !0 
+function empty l !0 
+return

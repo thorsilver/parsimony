@@ -1,0 +1,11 @@
+input x y
+
+// x <- #* y
+
+function BUILTIN_clear x
+WALK_ALONG_Y_NO_E: [y] 1 (R, WALK_ALONG_Y_NO_E); E (R)
+WALK_ALONG_Y_SEEN_E: [y] 1 (R, WALK_ALONG_Y_NO_E); E (R); _ (L, GBTS)
+function BUILTIN_incr x
+[x] E (WALK_ALONG_Y_NO_E)
+GBTS: function BUILTIN_getBackToStart2 x y
+return

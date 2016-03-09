@@ -1,0 +1,7 @@
+src/tmd/tmd_histories/*.txt
+src/tm/tm2/tm2_histories/*.txt
+src/tm/tm4/tm4_histories/*.txt
+*.pyc
+*.log
+*.aux
+*.DS_STORE

@@ -1,0 +1,11 @@
+input x y z
+
+// computes x = y > z (sets x to 1 if true, and to 0 if false)
+// UNSIGNED unary assumed!
+// watch out! no clear x. That's because the function calling this calls clear x.
+// Also no getBackToStart! Again, that's because this is an inner function.
+
+MOVE_Y: [y] 1 (R); E (RETURN_FALSE)
+MOVE_Z: [z] 1 (R, MOVE_Y); E ()
+RETURN_TRUE: function BUILTIN_add1 x 
+RETURN_FALSE: return

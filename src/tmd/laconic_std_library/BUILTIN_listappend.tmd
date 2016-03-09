@@ -1,0 +1,7 @@
+input x y z
+
+// x <- y ^ z
+
+function BUILTIN_assign x y
+function BUILTIN_appendTo x z
+return

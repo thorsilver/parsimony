@@ -1,0 +1,35 @@
+input a b c d i j h1 h2 h3 h4 h5 h6 output !0 !1 !2 !3 
+
+// Auto-generated code for function isOrderEquivalent
+
+function zero output !0 
+function notSameLength a c h1 !0 !1 !2 
+function notSameLength b d h2 !0 !1 !2 
+function BUILTIN_assign !0 h1
+function BUILTIN_assign !1 h2
+function BUILTIN_or !2 !0 !1
+[!2] E (IF_STATE_0_FALSE); 1 ()
+return
+IF_STATE_0_FALSE: function zero i !0 
+function lessThanLength i a h1 !0 !1 !2 
+WHILE_TEST_0: function BUILTIN_assign !0 h1
+[!0] E (WHILE_STATE_0_FALSE); 1 ()
+function zero j !0 
+function lessThanLength j b h1 !0 !1 !2 
+WHILE_TEST_1: function BUILTIN_assign !0 h1
+[!0] E (WHILE_STATE_1_FALSE); 1 ()
+function doubleIndex a b i j h1 h2 !0 !1 !2 
+function doubleIndex c d i j h3 h4 !0 !1 !2 
+function aIsLessThanBAndCIsAtLeastD h1 h2 h3 h4 h5 !0 !1 !2 !3 
+function aIsLessThanBAndCIsAtLeastD h3 h4 h1 h2 h6 !0 !1 !2 !3 
+function BUILTIN_assign !0 h5
+function BUILTIN_assign !1 h6
+function BUILTIN_or !2 !0 !1
+[!2] E (IF_STATE_1_FALSE); 1 ()
+return
+IF_STATE_1_FALSE: function incrAndLessThanLength j b h1 !0 !1 !2 
+[!0] E (WHILE_TEST_1); 1 (WHILE_TEST_1)
+WHILE_STATE_1_FALSE: function incrAndLessThanLength i a h1 !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: function one output !0 
+return

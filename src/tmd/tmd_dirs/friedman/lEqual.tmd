@@ -1,0 +1,22 @@
+input l1 l2 i h1 h2 output !0 !1 !2 
+
+// Auto-generated code for function lEqual
+
+function zero output !0 
+function notSameLength l1 l2 i !0 !1 !2 
+function BUILTIN_assign !0 i
+[!0] E (IF_STATE_0_FALSE); 1 ()
+return
+IF_STATE_0_FALSE: function lessThanLength i l1 h1 !0 !1 !2 
+WHILE_TEST_0: function BUILTIN_assign !0 h1
+[!0] E (WHILE_STATE_0_FALSE); 1 ()
+function indexTwice l1 l2 i h1 h2 !0 !1 !2 
+function BUILTIN_assign !0 h1
+function BUILTIN_assign !1 h2
+function BUILTIN_notEqual !2 !0 !1
+[!2] E (IF_STATE_1_FALSE); 1 ()
+return
+IF_STATE_1_FALSE: function incrAndLessThanLength i l1 h1 !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: function one output !0 
+return

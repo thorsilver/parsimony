@@ -1,0 +1,10 @@
+input x l o !0 !1 !2 
+
+// Auto-generated code for function lessThanLength
+
+function BUILTIN_assign !0 x
+function BUILTIN_assign !1 l
+function BUILTIN_len !2 !1
+function BUILTIN_greaterThan !1 !2 !0
+function BUILTIN_assign o !1
+return

@@ -1,0 +1,9 @@
+input x y z
+
+// x <- x * sign(x) * sign(y)
+
+[y] 1 (NO_NEGATE_1); E ()
+function BUILTIN_negate x
+NO_NEGATE_1: [z] 1 (NO_NEGATE_2); E ()
+function BUILTIN_negate x
+NO_NEGATE_2: return

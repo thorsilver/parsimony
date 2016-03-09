@@ -1,0 +1,13 @@
+input a b c !0 !1 !2 
+
+// Auto-generated code for function multiplyByBoth
+
+function BUILTIN_assign !0 c
+function BUILTIN_assign !1 b
+function BUILTIN_multiply !2 !0 !1
+function BUILTIN_assign c !2
+function BUILTIN_assign !0 c
+function BUILTIN_assign !1 a
+function BUILTIN_multiply !2 !0 !1
+function BUILTIN_assign c !2
+return

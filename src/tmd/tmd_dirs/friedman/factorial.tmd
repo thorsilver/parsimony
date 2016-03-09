@@ -1,0 +1,16 @@
+input x c output !0 !1 !2 
+
+// Auto-generated code for function factorial
+
+function zeroAndOne c output !0 
+WHILE_TEST_0: function BUILTIN_assign !0 c
+function BUILTIN_assign !1 x
+function BUILTIN_greaterThan !2 !1 !0
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function incr c !0 !1 !2 
+function BUILTIN_assign !0 output
+function BUILTIN_assign !1 c
+function BUILTIN_multiply !2 !0 !1
+function BUILTIN_assign output !2
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

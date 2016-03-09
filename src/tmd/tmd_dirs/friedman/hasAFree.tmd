@@ -1,0 +1,37 @@
+input graph edges numVertices eightKN eightKNRFacFac k n r h1 h2 h3 h4 h5 h6 h7 h8 hl1 hl2 hl3 hl4 hl5 hl6 viFreeSet standardFreeSet ushFreeSet output !0 !1 !2 !3 
+
+// Auto-generated code for function hasAFree
+
+function zeroAndEmpty h2 viFreeSet !0 
+function lessThanLength2 h2 graph h1 !0 !1 !2 
+WHILE_TEST_0: function BUILTIN_assign !0 h1
+[!0] E (WHILE_STATE_0_FALSE); 1 ()
+function zero h1 !0 
+function appendAndIncr viFreeSet h1 h2 !0 !1 !2 
+function lessThanLength2 h2 graph h1 !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: WHILE_TEST_1: function BUILTIN_assign !0 h1
+function BUILTIN_assignNot !1 !0
+[!1] E (WHILE_STATE_1_FALSE); 1 ()
+function map2 graph viFreeSet h1 h2 standardFreeSet !0 !1 !2 
+function ush2 standardFreeSet eightKNRFacFac h1 h2 h3 hl1 hl2 ushFreeSet !0 !1 !2 
+function BUILTIN_assign !0 standardFreeSet
+function BUILTIN_assign !1 ushFreeSet
+function BUILTIN_list2concat !2 !0 !1
+function BUILTIN_assign standardFreeSet !2
+function turnToVertexIndexForm graph standardFreeSet h1 h2 h3 h4 h5 hl1 hl2 h6 hl3 !0 !1 !2 
+function BUILTIN_assign !0 h6
+[!0] E (IF_STATE_0_FALSE); 1 ()
+function isFree hl3 numVertices edges h1 h2 h3 h4 h5 !0 !1 !2 !3 
+function BUILTIN_assign !0 h5
+[!0] E (IF_STATE_1_FALSE); 1 ()
+function eachReducing hl3 graph edges numVertices k n eightKN h1 h2 h3 h4 h5 h6 h7 h8 hl1 hl2 hl4 hl5 hl6 output !0 !1 !2 !3 
+function BUILTIN_assign !0 output
+[!0] E (IF_STATE_2_FALSE); 1 ()
+return
+IF_STATE_2_FALSE: IF_STATE_1_FALSE: IF_STATE_0_FALSE: function incrementList viFreeSet h2 h3 h4 h1 hl1 !0 !1 !2 
+function BUILTIN_assign !0 hl1
+function BUILTIN_assign viFreeSet !0
+[!0] E (WHILE_TEST_1); 1 (WHILE_TEST_1)
+WHILE_STATE_1_FALSE: function zero output !0 
+return

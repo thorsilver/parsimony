@@ -1,0 +1,25 @@
+input set k mapper potentialVertex i h1 h2 h3 h4 output !0 !1 !2 
+
+// Auto-generated code for function toTheLessThanOrEqualToK
+
+function empty2 output !0 !1 
+function zeroAndEmptyAndLessThanLength i set h1 mapper !0 !1 !2 
+WHILE_TEST_0: function BUILTIN_assign !0 h1
+[!0] E (WHILE_STATE_0_FALSE); 1 ()
+function zero h1 !0 
+function appendAndIncrAndLessThanLength mapper i set h1 !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: WHILE_TEST_1: function BUILTIN_assign !0 h1
+function BUILTIN_assignNot !1 !0
+[!1] E (WHILE_STATE_1_FALSE); 1 ()
+function map set mapper h1 h2 potentialVertex !0 !1 !2 
+function lessThanLength k potentialVertex h1 !0 !1 !2 
+function BUILTIN_assign !0 h1
+function BUILTIN_assignNot !1 !0
+[!1] E (IF_STATE_0_FALSE); 1 ()
+function append2 output potentialVertex !0 !1 !2 
+IF_STATE_0_FALSE: function incrementList mapper h2 h3 h4 h1 potentialVertex !0 !1 !2 
+function BUILTIN_assign !0 potentialVertex
+function BUILTIN_assign mapper !0
+[!0] E (WHILE_TEST_1); 1 (WHILE_TEST_1)
+WHILE_STATE_1_FALSE: return

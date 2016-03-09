@@ -1,0 +1,21 @@
+input x y z
+
+// computes x <- y @* z
+
+function BUILTIN_clear x
+
+GET_PAST_E_Y: [y] E (R)
+WALK_ALONG_Z: [z] 1 (R); E (READ_OFF_Y)
+GET_TO_NEXT_ENTRY_NO_E_Y: [y] 1 (R, GET_TO_NEXT_ENTRY_NO_E_Y); E (R)
+GET_TO_NEXT_ENTRY_SEEN_E_Y: [y] 1 (R, GET_TO_NEXT_ENTRY_NO_E_Y); E (L, GET_PAST_E_Y)
+
+READ_OFF_Y: [y] E (R); 1 (R, WRITE_1)
+SEEN_E_Y: [y] E (GBTS); 1 (R); _ (L, GBTS)
+WRITE_E: function BUILTIN_appendE x
+[x] E (READ_OFF_Y)
+WRITE_1: function BUILTIN_incr x
+[x] E (READ_OFF_Y)
+
+GBTS: [x] E (_, L)
+function BUILTIN_getBackToStart3 x y z
+return

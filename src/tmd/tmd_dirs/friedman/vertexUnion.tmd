@@ -1,0 +1,39 @@
+input v1 v2 i1 i2 h1 h2 output !0 !1 !2 
+
+// Auto-generated code for function vertexUnion
+
+function doubleZero i1 i2 !0 
+function empty output !0 
+function doubleLessThanLength i1 i2 v1 v2 h1 h2 !0 !1 !2 
+WHILE_TEST_0: function BUILTIN_assign !0 h1
+function BUILTIN_assign !1 h2
+function BUILTIN_or !2 !0 !1
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function BUILTIN_assign !0 h2
+function BUILTIN_assignNot !1 !0
+[!1] E (IF_ELSE_STATE_0_FALSE); 1 ()
+function indexAndAppendAndIncr v1 i1 output h1 !0 !1 !2 
+[!0] E (IF_ELSE_STATE_0_TRUE); 1 (IF_ELSE_STATE_0_TRUE)
+IF_ELSE_STATE_0_FALSE: function BUILTIN_assign !0 h1
+function BUILTIN_assignNot !1 !0
+[!1] E (IF_ELSE_STATE_1_FALSE); 1 ()
+function indexAndAppendAndIncr v2 i2 output h2 !0 !1 !2 
+[!0] E (IF_ELSE_STATE_1_TRUE); 1 (IF_ELSE_STATE_1_TRUE)
+IF_ELSE_STATE_1_FALSE: function doubleIndex v1 v2 i1 i2 h1 h2 !0 !1 !2 
+function BUILTIN_assign !0 h1
+function BUILTIN_assign !1 h2
+function BUILTIN_greaterThan !2 !1 !0
+[!2] E (IF_ELSE_STATE_2_FALSE); 1 ()
+function appendAndIncr output h1 i1 !0 !1 !2 
+[!0] E (IF_ELSE_STATE_2_TRUE); 1 (IF_ELSE_STATE_2_TRUE)
+IF_ELSE_STATE_2_FALSE: function BUILTIN_assign !0 h1
+function BUILTIN_assign !1 h2
+function BUILTIN_greaterThan !2 !0 !1
+[!2] E (IF_ELSE_STATE_3_FALSE); 1 ()
+function appendAndIncr output h2 i2 !0 !1 !2 
+[!0] E (IF_ELSE_STATE_3_TRUE); 1 (IF_ELSE_STATE_3_TRUE)
+IF_ELSE_STATE_3_FALSE: function appendAndIncr output h1 i1 !0 !1 !2 
+function incr i2 !0 !1 !2 
+IF_ELSE_STATE_3_TRUE: IF_ELSE_STATE_2_TRUE: IF_ELSE_STATE_1_TRUE: IF_ELSE_STATE_0_TRUE: function doubleLessThanLength i1 i2 v1 v2 h1 h2 !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

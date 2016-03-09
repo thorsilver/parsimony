@@ -1,0 +1,8 @@
+input x y z
+
+// computes x = (y != z) (sets x to 1 if true, and 0 if false)
+// Unary assumed
+
+function BUILTIN_equal x y z
+function BUILTIN_notInPlace x
+return

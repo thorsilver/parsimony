@@ -1,0 +1,22 @@
+input x y z
+
+// computes x = y > z (sets x to 1 if true, and to 0 if false)
+// Signed unary assumed
+
+function BUILTIN_clear x
+[y] E (R); 1 (POS_Y)
+[y] _ (L); 1 (); E ()
+
+NEG_Y: [z] E (R); 1 (RETURN_FALSE)
+[z] _ (L); 1 (); E ()
+function BUILTIN_greaterThanUnsigned x z y
+// return whatever that returns
+[x] 1 (RETURN_FALSE); E (RETURN_FALSE)
+RETURN_TRUE: function BUILTIN_add1 x 
+[x] 1 (RETURN_FALSE)
+
+POS_Y: [z] E (RETURN_TRUE); 1 ()
+function BUILTIN_greaterThanUnsigned x y z
+
+RETURN_FALSE: function BUILTIN_getBackToStart2 y z
+return

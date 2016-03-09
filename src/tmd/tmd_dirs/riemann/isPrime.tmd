@@ -1,0 +1,26 @@
+input x hold out !0 !1 !2 
+
+// Auto-generated code for function isPrime
+
+function BUILTIN_assign !0 x
+function BUILTIN_assign1 !1
+function BUILTIN_equal !2 !0 !1
+[!2] E (IF_STATE_0_FALSE); 1 ()
+function zero out !0 
+return
+IF_STATE_0_FALSE: function BUILTIN_assign2 !0
+function BUILTIN_assign out !0
+WHILE_TEST_0: function BUILTIN_assign !0 x
+function BUILTIN_assign !1 out
+function BUILTIN_greaterThan !2 !0 !1
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function modulus x out hold !0 !1 !2 
+function BUILTIN_assign !0 hold
+function BUILTIN_clear  !1
+function BUILTIN_equal !2 !0 !1
+[!2] E (IF_STATE_1_FALSE); 1 ()
+function zero out !0 
+return
+IF_STATE_1_FALSE: function incr out !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

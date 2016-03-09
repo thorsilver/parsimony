@@ -1,0 +1,1947 @@
+/*----------------------------------------------------------*/
+/* SILLY HELPER FUNCTIONS */
+
+/* Executes o <- l @ i */
+
+func index(l, i, o) {
+    o = l @ i;
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func index2(l, i, o) {
+    o = l @* i;
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func indexTwice(l1, l2, i, o1, o2) {
+    index(l1, i, o1);
+    index(l2, i, o2);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func doubleIndexOneList(l, i1, i2, o1, o2) {
+    index(l, i1, o1);
+    index(l, i2, o2);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes o1 <- l @ i1 and o2 <- l @ i2 */
+
+func doubleIndex2OneList(l, i1, i2, o1, o2) {
+    index2(l, i1, o1);
+    index2(l, i2, o2);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes o1 <- l1 @ i1 and o2 <- l2 @ i2 */
+
+func doubleIndex(l1, l2, i1, i2, o1, o2) {
+    index(l1, i1, o1);
+    index(l2, i2, o2);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes x <- 0 */
+
+func zero(x) {
+    x = 0;
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes x <- 1 */
+
+func one(x) {
+    x = 1;
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes l <- [] */
+
+func empty(l) {
+    l = [];
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func empty2(l) {
+    l = ::;
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes x <- 0 and y <- 0 */
+
+func doubleZero(x, y) {
+    zero(x);
+    zero(y);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes x <- 0 and l <- [] */
+
+func zeroAndEmpty(x, l) {
+    zero(x);
+    empty(l);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func doubleZeroAndEmpty(x, y, l) {
+    doubleZero(x, y);
+    empty(l);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes x <- 0 and y <- 1 */
+
+func zeroAndOne(x, y) {
+    zero(x);
+    one(y);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes x <- x + 1; */
+
+func incr(x) {
+    x = x + 1;
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes l <- l.append(x); */
+
+func append(l, x) {
+    l = l ^ x;
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func append2(l, x) {
+    l = l ^* x;
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func appendAndIncr(l, x, i) {
+    append(l, x);
+    incr(i);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func indexAndAppendAndIncr(l1, i, l2, h) {
+    index(l1, i, h);
+    appendAndIncr(l2, h, i);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes x <- x or y */
+
+func orWith(x, y) {
+    x = x | y;
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes x <- x and y */
+
+func andWith(x, y) {
+    x = x & y;
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes o <- x < (#l) */
+
+func lessThanLength(x, l, o) {
+    o = x < (#l);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func lessThanLength2(x, l2, o) {
+    o = x < (#* l2);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func incrAndLessThanLength2(x, l2, o) {
+    incr(x);
+    lessThanLength2(x, l2, o);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func zeroAndLessThanLength2(x, l2, o) {
+    zero(x);
+    lessThanLength2(x, l2, o);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func zeroAndEmptyAndLessThanLength(x, l1, o, l2) {
+    zeroAndEmpty(x, l2);
+    lessThanLength(x, l1, o);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes o1 <- x < (#l1) and o2 <- x < (#l2) */
+
+func lessThanLengthTwice(x, l1, l2, o1, o2) {
+    lessThanLength(x, l1, o1);
+    lessThanLength(x, l2, o2); 
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func doubleLessThanLength(x1, x2, l1, l2, o1, o2) {
+    lessThanLength(x1, l1, o1);
+    lessThanLength(x2, l2, o2);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func incrAndLessThanLength(x, l, o) {
+    incr(x);
+    lessThanLength(x, l, o);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func appendAndIncrAndLessThanLength(l1, x, l2, o) {
+    append(l1, o);
+    incrAndLessThanLength(x, l2, o);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* Executes o <- (#l1) != (#l2) */
+
+func notSameLength(l1, l2, o) {
+    o = (#l1) != (#l2);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func aIsLessThanBAndCIsAtLeastD(a, b, c, d, o) {
+    o = (a < b) & (c >= d);
+    return;
+} 
+
+/* NO MORE SILLY HELPER FUNCTIONS */
+/*----------------------------------------------------------*/
+
+/* Two pairs of nodes (a,b) and (c,d) are order equivalent if a and c are the same size and b
+and d are the same size and if for all 1 <= i <= a and 1 <= j <= |b|, the i-th element of a
+is less than the j-th element of b if and only if the i-th element of c is less than the
+j-th element of d.
+
+a, b, c, d are as described above. i and j are holder variables. output is where the 
+resulting boolean is held. 
+
+a: inp list
+b: inp list
+c: inp list
+d: inp list
+i: hold int
+j: hold int
+h1: hold int
+h2: hold int
+h3: hold int
+h4: hold int
+h5: hold int
+h6: hold int
+output: out int
+*/
+
+func isOrderEquivalent(a, b, c, d, i, j, h1, h2, h3, h4, h5, h6, output) {
+    zero(output);
+    
+    /* a and c are the same size and b and d are the same size */
+    
+    notSameLength(a, c, h1);
+    notSameLength(b, d, h2);
+    
+    if (h1 | h2) {
+        return;
+    }
+    
+    /* for all 1 <= i <= |a| and 1 <= j <= |b|, the i-th element of a is less than the j-th 
+    element of b if and only if the i-th element of c is less than the
+    j-th element of d */
+    
+    zero(i);
+    
+    lessThanLength(i, a, h1);
+    
+    /* while i < len(a) */
+    while (h1) {
+    
+        zero(j);
+        
+        lessThanLength(j, b, h1);
+        
+        /* while j < len(b) */
+        while (h1) {
+            
+            doubleIndex(a, b, i, j, h1, h2);
+            doubleIndex(c, d, i, j, h3, h4);
+            
+            aIsLessThanBAndCIsAtLeastD(h1, h2, h3, h4, h5);
+            aIsLessThanBAndCIsAtLeastD(h3, h4, h1, h2, h6);
+        
+            if (h5 | h6) {
+                return;
+            }
+            
+            incrAndLessThanLength(j, b, h1);
+        }
+        
+        incrAndLessThanLength(i, a, h1);
+    }
+    
+    one(output);
+    return;
+}
+
+/* isOrderEquivalent test suite 
+
+list a;
+list b;
+list c;
+list d; 
+int i; 
+int j;
+int h1;
+int h2;
+int h3;
+int h4;
+int h5;
+int h6;
+int output;
+
+a = [2, 5];
+b = [1, 3];
+c = [1, 3];
+d = [~1, 2];
+i = 4;
+j = 6;
+h1 = 4;
+h2 = 4;
+h3 = 4;
+h4 = 4;
+h5 = 4;
+h6 = 4;
+output = ~2;
+
+isOrderEquivalent(a, b, c, d, i, j, h1, h2, h3, h4, h5, h6, output); 
+
+print output; */
+
+/*----------------------------------------------------------*/
+
+/* The ush() function takes as input a set and returns a copy of that set with all non-negative numbers in that set incremented by 1. 
+
+x: inp list
+eightKNRFacFac: inp int
+h: hold int
+i: hold int
+output: out list
+*/
+
+func ush(x, eightKNRFacFac, h, i, output) {
+    
+    zeroAndEmptyAndLessThanLength(i, x, h, output);
+    
+    /* while (i < (# x)) */
+    while (h) {
+        index(x, i, h);
+        if (h >= 0) {
+            h = h + eightKNRFacFac;
+        }
+                
+        appendAndIncrAndLessThanLength(output, i, x, h);
+    }
+    
+    return;
+}
+
+/* ush test suite 
+
+list x;
+int eightKNRFacFac;
+int h;
+int i;
+list output;
+
+x = [~3, 5, 2];
+eightKNRFacFac = 1;
+h = 5;
+i = 0;
+output = [5];
+
+ush(x, eightKNRFacFac, h, i, output);
+
+print output; */
+
+/*----------------------------------------------------------*/
+
+/* ushes every list in a list2 */
+
+/*
+l2: inp list2
+eightKNRFacFac: inp int
+i: hold int
+h1: hold int
+h2: hold int
+hl1: hold list
+hl2: hold list
+output: out list2
+*/
+
+func ush2(l2, eightKNRFacFac, i, h1, h2, hl1, hl2, output) {
+    empty2(output);
+    
+    zeroAndLessThanLength2(i, l2, h1);
+    while (h1) {
+        index2(l2, i, hl1);
+        ush(hl1, eightKNRFacFac, h1, h2, hl2);
+        
+        append2(output, hl2);
+        
+        incr(i);
+        lessThanLength2(i, l2, h1);
+    }
+    
+    return;
+}
+
+/* ush2 test suite 
+
+list2 l2;
+int eightKNRFacFac;
+int i;
+int h1;
+int h2;
+list hl1;
+list hl2;
+list2 output;
+
+l2 = :[~2, 3], [~3, 4]:;
+eightKNRFacFac = 1;
+i = 4;
+h1 = 4;
+h2 = 4;
+hl1 = [4];
+hl2 = [4];
+output = :[4]:;
+
+ush2(l2, eightKNRFacFac, i, h1, h2, hl1, hl2, output);
+
+print output; */
+
+/*----------------------------------------------------------*/
+
+/* x ltrlex y if and only if x = y or x_i < y_i where i is least such 
+that x_i != y_i 
+
+x: inp list
+y: inp list
+i: hold int
+h1: int
+h2: int
+output: out int
+*/
+
+func ltrlex(x, y, i, h1, h2, output) {
+    
+    doubleZero(i, output);
+    
+    /* while ((i < (# x)) & (i < (# y))) */
+    lessThanLengthTwice(i, x, y, h1, h2);
+    
+    while (h1 & h2) {
+        
+        indexTwice(x, y, i, h1, h2);
+    
+        if (h1 < h2) {
+            one(output);
+            return;
+        }
+        
+        if (h1 > h2) {
+            return;
+        }
+        
+        incr(i);
+        
+        lessThanLengthTwice(i, x, y, h1, h2);
+    }
+    
+    notSameLength(x, y, h1);
+    
+    if (h1) {
+        return;
+    }
+    
+    output = 1;
+    return;
+}
+
+/* ltrlex test suite 
+
+int x;
+int y;
+int i;
+int h1;
+int h2;
+int output;
+
+x = [~2,5,7];
+y = [~2,5,6];
+i = 3;
+h1 = 4;
+h2 = 4;
+output = 2;
+
+ltrlex(x, y, i, h1, h2, output);
+
+print output; */
+
+/*----------------------------------------------------------*/
+
+/* edgeIndex tells you if there's an edge between the vertex indexed at i
+and the vertex indexed at j */
+
+/*
+edges: inp list
+numVertices: inp int
+i: inp int
+j: inp int
+output: out int
+*/
+
+func edgeIndex(edges, numVertices, i, j, output) {
+    output = edges @ ((numVertices * i) + j);
+    return;
+}
+
+/* edgeIndex test suite 
+
+int numVertices;
+list edges;
+int i;
+int j;
+int output;
+
+numVertices = 3;
+edges = [~1,~2,~3,~4,~5,~6,~7,~8,~9];
+i = 1;
+j = 1;
+output = 4;
+
+edgeIndex(edges, numVertices, i, j, output);
+
+print output; */
+
+
+/*----------------------------------------------------------*/
+
+/* A set of vertices X *reduces* a set of vertices Y if and only if for all y \in Y, there exists x \in X such that x ltrlex y and an edge exists between x and y. */
+
+/*
+X: inp list
+Y: inp list
+graph: inp list2
+edges: inp list
+numVertices: inp int
+x: hold list
+y: hold list
+c1: hold int
+c2: hold int
+h1: hold int
+h2: hold int 
+h3: hold int
+output: out int
+*/
+
+func reduces(X, Y, graph, edges, numVertices, x, y, c1, c2, h1, h2, h3, output) { 
+    zeroAndOne(c1, h1);
+    
+    /* ...for all y \in Y... */
+    
+    while (c1 < numVertices) {
+        /* if there exists vertex-index c1 in the set
+        Y */
+        if (Y @ c1) {
+            /* set y equal to the actual vertex */
+            y = graph @* c1;
+            
+            doubleZero(c2, h1);
+            
+            /* h1 will hold the existence check */            
+            /* ...there exists x \in X... */
+            
+            /* c2 going 0...numVertices */
+            while (c2 < numVertices) {
+                if (X @ c2) {
+                    x = graph @* c2;
+                    
+                    /* ...such that x ltrlex y... */
+                    ltrlex(x, y, h2, h3);
+                    
+                    /* ...and an edge exists between x and y...*/
+                    edgeIndex(edges, numVertices, c1, c2, h2);
+                    
+                    /* h1 = h1 | (h2 & h3); */
+                    
+                    andWith(h2, h3);
+                    orWith(h1, h2);
+                    
+                }
+                
+                incr(c2);
+            }
+            
+            /* if non-existence, return false */
+            if (!h1) {
+                zero(output);
+                return;
+            }
+        }
+        
+        incr(c1);
+    }
+    
+    /* the forall is satisfied; return true */
+    one(output);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+/* A free set of vertices is one with no edges in between any pair of vertices
+in the set */
+
+/*
+vertexSet: inp list
+numVertices: inp int
+edges: inp list
+c1: hold int
+c2: hold int
+h1: hold int
+h2: hold int
+output: out int
+*/
+
+func isFree(vertexSet, numVertices, edges, c1, c2, h1, h2, output) {
+    zero(c1);
+    
+    /* check all pairs of vertices and make sure none of them have an edge */
+    
+    /* for c1 0...numVertices */
+    while (c1 < numVertices) {
+        zero(c2);   
+        
+        /* for c2 0...numVertices */
+        while (c2 < numVertices) {
+        
+            doubleIndexOneList(vertexSet, c1, c2, h1, h2);
+        
+            if (h1 & h2) { 
+                
+                edgeIndex(edges, numVertices, c1, c2, output);
+                
+                if (output) {
+                    zero(output);
+                    return;
+                }
+            }
+            incr(c2);
+        }
+        incr(c1);
+    }
+    
+    one(output);
+    return;
+}
+
+/* isFree test suite 
+
+list vertexSet;
+int numVertices;
+list edges;
+int c1;
+int c2;
+int h1;
+int h2;
+int output;
+
+vertexSet = [0,1,1];
+numVertices = 3;
+edges = [0,1,1,1,0,0,1,0,0];
+c1 = 3;
+c2 = ~9;
+h1 = 4;
+h2 = 4;
+output = 4;
+
+isFree(vertexSet, numVertices, edges, c1, c2, h1, h2, output);
+
+print output; */
+
+/*----------------------------------------------------------*/
+
+/*
+x: inp int
+c: hold int
+output: out int
+*/
+
+func factorial(x, c, output) {
+    zeroAndOne(c, output);
+    
+    while (c < x) {
+        incr(c);
+        output = output * c;
+    }
+    
+    return;
+}
+
+/* factorial test suite 
+
+int x;
+int c;
+int output;
+
+x = 5;
+c = ~2;
+output = 4;
+
+factorial(x, c, output);
+
+print output; */
+
+/*----------------------------------------------------------*/
+
+/* c <- a xor b */
+
+/* 
+a: inp int
+b: inp int
+c: out int
+*/
+
+func xor(a, b, c) {
+    zero(c);
+
+    if (a) {
+        if (b) {
+            return;
+        }
+        one(c);
+        return;
+    }
+    if (b) {
+        one(c);
+        return;
+    }
+    return;
+}
+
+/* xor test suite 
+
+int a;
+int b;
+int c;
+
+a = 1;
+b = 1;
+c = 5;
+
+xor(a,b,c);
+
+print c; */
+
+
+/*----------------------------------------------------------*/
+
+/* 
+l: inp list
+i: hold int
+currentEntry: hold int
+sumBit: hold int
+overflow: out int
+newList: out list
+*/
+
+func incrementList(l, i, currentEntry, sumBit, overflow, newList) {
+    one(overflow); 
+    
+    zeroAndEmptyAndLessThanLength(i, l, sumBit, newList);
+    
+    /* while (i < (# l)) */
+    while (sumBit) {
+        currentEntry = l @ i;
+        xor(currentEntry, overflow, sumBit);
+
+        andWith(overflow, currentEntry);
+        
+        appendAndIncrAndLessThanLength(newList, i, l, sumBit);
+    } 
+    
+    return;
+}
+
+/* incrementList test suite 
+
+list l;
+int i;
+int overflow;
+int currentEntry;
+int sumBit;
+list newList;
+
+l = [1,1,0,1];
+i = ~2;
+overflow = 3;
+currentEntry = ~5;
+sumBit = 4;
+newList = [3]; 
+
+incrementList(l, i, currentEntry, sumBit, overflow, newList); 
+
+print overflow;
+print newList;  */
+
+/*----------------------------------------------------------*/
+
+/* computes the union of two lists of vertices */
+/* because lists of vertices in this code are lists of bools indicating 
+the presence of each vertex, this is really just the elementwise OR */
+/* ASSUMES len(list1) == len(list2) */
+
+/*
+list1: inp list
+list2: inp list
+i: hold int
+h1: hold int
+h2: hold int
+output: out int
+*/
+
+/*
+func union(l1, l2, i, h1, h2, output) {
+    
+    zeroAndEmptyAndLessThanLength(i, l1, h1, output);
+    while (h1) {
+        indexTwice(l1, l2, i, h1, h2);
+        orWith(h1, h2);
+                
+        appendAndIncrAndLessThanLength(output, i, l1, h1);
+    }
+    
+    return;
+}
+*/
+
+/* I commented this function out because I currently believe it to 
+be useless for my purposes. It takes unions of sets of vertices when what 
+I want is unions of vertices. */
+
+/* union test suite 
+
+list l1;
+list l2;
+int i;
+int h1;
+int h2;
+int output;
+
+l1 = [0,0,1,1];
+l2 = [1,0,0,1];
+i = 4;
+h1 = 4;
+h2 = 4;
+output = ~4;
+
+union(l1, l2, i, h1, h2, output);
+print output; */
+
+/*----------------------------------------------------------*/
+
+/* ASSUMES sorted vertices */
+
+/*
+v1: inp list
+v2: inp list
+i1: hold int
+i2: hold int
+h1: hold int
+h2: hold int
+output: out list 
+*/
+
+func vertexUnion(v1, v2, i1, i2, h1, h2, output) {
+    doubleZero(i1, i2);
+    empty(output);
+    
+    doubleLessThanLength(i1, i2, v1, v2, h1, h2);
+    while (h1 | h2) {
+        ifelse (!h2) {
+            indexAndAppendAndIncr(v1, i1, output, h1);
+        }
+    
+        {
+            ifelse (!h1) {
+                indexAndAppendAndIncr(v2, i2, output, h2);
+            }
+            {
+                doubleIndex(v1, v2, i1, i2, h1, h2);
+                ifelse(h1 < h2) {
+                    appendAndIncr(output, h1, i1);
+                }
+                {
+                    ifelse(h1 > h2) {
+                        appendAndIncr(output, h2, i2);
+                    }
+                    {
+                        /* then the two elements are equal, so only append one */
+                        appendAndIncr(output, h1, i1);
+                        incr(i2);
+                    }
+                }
+            }
+        }
+        
+        doubleLessThanLength(i1, i2, v1, v2, h1, h2);                
+    }
+    
+    return;
+}
+
+/* vertexUnion test suite 
+
+list v1;
+list v2;
+int i1;
+int i2;
+int h1;
+int h2;
+list output;
+
+v1 = [~2, 4];
+v2 = [3, 4, 7];
+i1 = ~2;
+i2 = 4;
+h1 = 4;
+h2 = 4;
+output = [4];
+
+vertexUnion(v1, v2, i1, i2, h1, h2, output);
+
+print output; */
+
+/*----------------------------------------------------------*/
+
+/* maps the elements of l1 that correspond to 1's in the binary list l2 
+onto output */
+
+/*
+l1: inp list
+l2: inp list
+i: hold int
+h: hold int
+output: out list
+
+/* ASSUMES (#l1) == (#l2) */
+
+func map(l1, l2, i, h, output) {
+    
+    zeroAndEmptyAndLessThanLength(i, l1, h, output);
+
+    while (h) {
+        index(l2, i, h);
+        ifelse (h) {
+            indexAndAppendAndIncr(l1, i, output, h);
+        }
+        {
+            incr(i);
+        }
+        
+        lessThanLength(i, l1, h);
+    }
+    
+    return;
+}
+
+/* map test bench 
+
+list l1;
+list l2;
+int i;
+int h;
+list output;
+
+l1 = [~7, 3, 9];
+l2 = [1, 0, 1];
+i = 4;
+h = 4;
+output = [4];
+
+map(l1, l2, i, h, output);
+
+print output; */
+
+/*----------------------------------------------------------*/
+
+/*
+l2: inp list2
+l: inp list
+i: hold int
+h: hold int
+output: out list2;
+*/
+
+func map2(l2, l, i, h, output) {
+    empty2(output);
+    zeroAndLessThanLength2(i, l2, h);
+    
+    while(h) {
+        index(l, i, h);
+        
+        ifelse (h) {
+            index2(l2, i, h);
+            append2(output, h);
+            incr(i);
+        }
+        
+        {   
+            incr(i);
+        }
+        
+        lessThanLength(i, l, h);
+    }
+    
+    return;
+}
+
+/* map2 test bench 
+
+list2 l2;
+list l;
+int i;
+int h;
+list2 output;
+
+l2 = :[~7, 3], [9]:;
+l = [1, 0];
+i = 4;
+h = 4;
+output = :[4]:;
+
+map2(l2, l, i, h, output);
+
+print output; */
+
+/*----------------------------------------------------------*/
+
+/* implementing the {.}^{<=k} function */
+
+/*
+WATCH OUT! This is the first function that uses hold lists.
+
+set: inp list
+k: inp int
+mapper: hold list
+potentialVertex: hold list
+i: hold int
+h1: hold int
+h2: hold int
+h3: hold int
+h4: hold int
+output: out list2
+*/
+
+/* Takes as input a set, and returns a set of all subsets of that set 
+of size less than or equal to k. */
+
+func toTheLessThanOrEqualToK(set, k, mapper, potentialVertex, i, h1, h2, h3, h4, output) {
+    empty2(output);
+    
+    /* initialize mapper1 to [0]*(#set) */
+    zeroAndEmptyAndLessThanLength(i, set, h1, mapper);
+    while (h1) {
+        zero(h1);
+        appendAndIncrAndLessThanLength(mapper, i, set, h1);
+    }
+    
+    /* iterate through all binary lists on mapper */
+    while (!h1) {
+        map(set, mapper, h1, h2, potentialVertex);
+        
+        /* an unorthodox use of lessThanLength! */
+        lessThanLength(k, potentialVertex, h1);
+        
+        if (!h1) {
+            /* then (# potentialvertex) must be <= k */
+            append2(output, potentialVertex);            
+        }
+                
+        /* increment the list */
+        incrementList(mapper, h2, h3, h4, h1, potentialVertex);
+        mapper = potentialVertex;
+    }
+    
+    return;
+}
+
+/* toTheLessThanOrEqualToK test bench 
+
+list set;
+int k;
+list mapper;
+list potentialVertex;
+int i;
+int h1;
+int h2;
+int h3;
+int h4;
+list2 output;
+
+set = [1,2,3,4];
+k = 2;
+mapper = [4];
+potentialVertex = [4];
+i = 4;
+h1 = 4;
+h2 = 4;
+h3 = 4;
+h4 = 4;
+output = :[4]:;
+
+toTheLessThanOrEqualToK(set, k, mapper, potentialVertex, i, h1, h2, h3, h4, output);
+
+print output; */
+
+/*----------------------------------------------------------*/
+
+
+/* Take the sum of l */
+
+/*
+l: inp list
+i: hold int
+h: hold int
+x: out in
+*/
+
+
+func sum(l, i, h, x) {
+    doubleZero(i, x);
+    
+    lessThanLength(i, l, h); 
+    
+    while (h) {
+        index(l, i, h);
+        x = x + h;
+        incrAndLessThanLength(i, l, h);
+    }
+    
+    return;
+}
+
+
+/*----------------------------------------------------------*/
+
+/* tests if two lists are equal */
+
+/*
+l1: inp list
+l2: inp list
+i: inp int
+h1: inp int
+h2: inp int
+output: out int
+*/
+
+func lEqual(l1, l2, i, h1, h2, output) {
+    zero(output);
+
+    notSameLength(l1, l2, i);
+    if (i) {
+        return;
+    }
+    
+    /* i is guaranteed to be 0 here */
+    lessThanLength(i, l1, h1);
+    
+    while (h1) {
+        indexTwice(l1, l2, i, h1, h2);
+        if (h1 != h2) {
+            return;
+        }
+        
+        incrAndLessThanLength(i, l1, h1);
+    }
+    
+    one(output);
+    return;
+} 
+
+/* lEqual test bench 
+
+list l1;
+list l2;
+int i;
+int h1;
+int h2;
+int output;
+
+l1 = [3,4];
+l2 = [3,5];
+i = 4;
+h1 = 4;
+h2 = 4;
+output = 4;
+
+lEqual(l1, l2, i, h1, h2, output);
+
+print output; */
+
+/*----------------------------------------------------------*/
+
+/* finds the index2 of a given list in a given list2 */
+/* assumes the given list is in the list2 */
+
+/*
+l: inp list
+l2: inp list2
+h1: hold int
+h2: hold int
+h3: hold int
+h4: hold int
+hl: hold list
+output: out int
+*/
+
+/*
+Commented out; not useful for now
+
+func index2Of(l, l2, h1, h2, h3, h4, hl, output) {    
+    zeroAndLessThanLength2(output, l2, h1);
+    
+    while (h1) {
+        index2(l2, output, hl);
+        lEqual(l, hl, h1, h2, h3, h4);
+        
+        if (h4) {
+            return;
+        }
+        
+        incrAndLessThanLength2(output, l2, h1);
+    }
+    
+    return;
+}
+*/
+
+/* index2Of test bench 
+
+list l;
+list2 l2;
+int h1;
+int h2;
+int h3;
+int h4;
+list hl;
+int output;
+
+l = [4,7];
+l2 = :[1,3], [4,7], [~3, 4]:;
+h1 = 4;
+h2 = 4;
+h3 = 4;
+h4 = 4;
+hl = [4];
+output = 4;
+
+index2Of(l, l2, h1, h2, h3, h4, hl, output);
+
+print output; */
+
+/*----------------------------------------------------------*/
+
+/* finds out if a given list is in a given list2 */
+
+/*
+l: inp list
+l2: inp list2
+i: hold int
+h1: hold int
+h2: hold int
+h3: hold int
+hl: hold list
+output: out int
+*/
+
+func list2in(l, l2, i, h1, h2, h3, hl, output) {    
+    zeroAndLessThanLength2(i, l2, h1);
+    
+    while (h1) {
+        index2(l2, i, hl);
+        /* see if lists are equal */
+        lEqual(l, hl, h1, h2, h3, output);
+        
+        if (output) {
+            return;
+        }
+        
+        incrAndLessThanLength2(i, l2, h1);
+    }
+    
+    zero(output);
+    return;
+}
+
+
+/* list2in test bench 
+
+list l;
+list2 l2;
+int i;
+int h1;
+int h2;
+int h3;
+list hl;
+int output;
+
+l = [~3,4];
+l2 = :[1,3], [4,7], [~3, 4]:;
+int i;
+h1 = 4;
+h2 = 4;
+h3 = 4;
+hl = [4];
+output = 4;
+
+list2in(l, l2, i, h1, h2, h3, hl, output);
+
+print output; */
+
+
+/*----------------------------------------------------------*/
+
+/* takes as inputs a list2 of vertices in standard form (i.e. [[2,4], [1,9]] or something) and translates them
+to vertex index form (i.e. [0,0,1,0,1] or something) */
+
+/*
+graph: inp list2
+standardVertices: inp list2
+i: hold int
+h1: hold int
+h2: hold int
+h3: hold int
+h4: hold int
+hl1: hold list
+hl2: hold list
+allVerticesInGraph: out int
+viVertices: out list
+*/
+
+func turnToVertexIndexForm(graph, standardVertices, i, h1, h2, h3, h4, hl1, hl2, allVerticesInGraph, viVertices) {    
+    zeroAndLessThanLength2(i, graph, h1);
+    
+    empty(viVertices);
+    
+    while (h1) {
+        index2(graph, i, hl1);
+        
+        list2in(hl1, standardVertices, h1, h2, h3, allVerticesInGraph, hl2, h4);
+        
+        append(viVertices, h4);
+        
+        incrAndLessThanLength2(i, graph, h1);
+    }
+    
+    sum(viVertices, h1, h2, h3);
+    
+    allVerticesInGraph = (h3 == (#* standardVertices));
+    
+    return;
+}
+
+/* turnToVertexIndexForm test bench 
+
+list2 graph;
+list2 standardVertices;
+int i;
+int h1;
+int h2;
+int h3;
+int h4; 
+list hl1;
+list hl2;
+int allVerticesInGraph;
+list viVertices;
+
+graph = :[1,2], [1,3], [2,3]:;
+standardVertices = :[1,2], [2,4]:;
+i = 4;
+h1 = 4;
+h2 = 4;
+h3 = 4;
+h4 = 4;
+hl1 = [4];
+hl2 = [3];
+allVerticesInGraph = 5;
+viVertices = [23];
+
+turnToVertexIndexForm(graph, standardVertices, i, h1, h2, h3, h4, hl1, hl2, allVerticesInGraph, viVertices);
+
+print viVertices; 
+print allVerticesInGraph; */
+
+/*----------------------------------------------------------*/
+
+/* In an order invariant graph, two nodes (a,b) have an edge between them if and only if each other pair of
+nodes (c, d) that is order equivalent with (a, b) have an edge between them. */
+
+/* Order invariant graphs are undirected. */
+
+/* 
+graph: inp list2
+edges: inp list
+numVertices: inp int
+a: hold list
+b: hold list
+c: hold list
+d: hold list
+aIndex: hold int
+bIndex: hold int
+cIndex: hold int
+dIndex: hold int
+h1: hold int
+h2: hold int
+h3: hold int
+h4: hold int
+h5: hold int
+h6: hold int
+h7: hold int
+h8: hold int
+h9: hold int
+output: out int
+*/
+
+/* This function is the first of the Great Functions. */
+
+func checkGraphForOrderInvariance(graph, edges, numVertices, a, b, c, d, 
+    aIndex, bIndex, cIndex, dIndex, h1, h2, h3, h4, h5, h6, h7, h8, h9, output) {
+      
+    doubleZero(aIndex, output);
+
+    while (aIndex < numVertices) {
+        zero(bIndex);
+         
+        while (bIndex < numVertices) {
+            zero(cIndex);
+             
+            while (cIndex < numVertices) {
+                zero(dIndex);
+                 
+                while (dIndex < numVertices) { 
+                
+                    /* The vertices in the pairs must be distinct */
+                    if ((aIndex != bIndex) & (cIndex != dIndex)) {
+                
+                        doubleIndex2OneList(graph, aIndex, bIndex, a, b);
+                        doubleIndex2OneList(graph, cIndex, dIndex, c, d);
+                 
+                        /* h9 is whether or not (a,b) is order equivalent to (c,d) */
+                        isOrderEquivalent(a,b,c,d,h1,h2,h3,h4,h5,h6,h7,h8,h9);
+                        
+                        /* h1 is whether or not a and b have an edge */
+                        edgeIndex(edges, numVertices, aIndex, bIndex, h1);
+                        
+                        /* h2 is whether or not c and d have an edge */
+                        edgeIndex(edges, numVertices, cIndex, dIndex, h2);
+                        
+                        if (((h1 + h2) + h9) == 2) {
+                            /* exactly one of the pairs has an edge, and the pairs are order equivalent;
+                            or both pairs have edges, but the pairs are not order equivalent */
+                            
+                            return;
+                        }
+                    }
+                    incr(dIndex);
+                }
+                incr(cIndex);
+            }
+            
+            
+            /* This checks that all edges go both ways; i.e. that the graph is undirected. */
+            edgeIndex(edges, numVertices, aIndex, bIndex, h1);
+            edgeIndex(edges, numVertices, bIndex, aIndex, h2);
+            
+            xor(h1, h2, h3);
+            
+            if (h3) {
+                return;
+            }
+            
+            incr(bIndex);
+        }
+        incr(aIndex);
+    } 
+    one(output);
+    return;
+} 
+
+/*----------------------------------------------------------*/
+
+/* each {x_1, ..., x_{8kni!}} reducing [x_1 U ... U x_i U {0, ..., n}]^{<=k} */
+
+/*
+freeSet: inp list
+graph: inp list2
+edges: inp list
+numVertices: inp int
+k: inp int
+n: inp int
+eightKN: inp int
+i: hold int
+c1: hold int
+h1: hold int
+h2: hold int
+h3: hold int
+h4: hold int
+oneCounter: hold int
+eightKNIFac: hold int
+reducer: hold list
+union: hold list
+hl1: hold list
+hl2: hold list
+oxidizer: hold list
+output: hold int
+*/
+
+/* This is the second of the Great Functions. */
+
+func eachReducing(freeSet, graph, edges, numVertices, k, n, eightKN, i, c1, h1, h2, h3, h4, oneCounter, eightKNIFac, reducer, union, hl1, hl2, oxidizer, output) {
+    one(output);
+    one(i);
+    one(h1);
+    
+    while (h1) {
+        h2 = eightKN * i;
+        factorial(h2, h1, eightKNIFac);
+        
+        doubleZeroAndEmpty(c1, oneCounter, reducer);
+        
+        while (h2) {
+            indexAndAppendAndIncr(freeSet, c1, reducer, h1);
+            if (h1) {
+                incr(oneCounter);
+                /* counts the number of vertices in the reducing set; if it exceeds 8kni!, we have to stop */
+            }
+            
+            lessThanLength(c1, freeSet, h1);
+            /* if we have exceeded the length of the freeSet, then we also have to stop */
+            
+            if ((oneCounter == eightKNIFac) | (!h1)) {
+                zero(h2);
+            }
+        }    
+        
+        /* we have to fill the rest of it with zeroes if we exceeded 8kni! */
+        /* h1 was last modified by the lessThanLength above, so it's fine (the while loop is guaranteed
+        to have run at least once) */
+        
+        if (h1) {
+            while (h1) {
+                /* h2 is guaranteed to be 0 here because we just left the previous while loop */
+                appendAndIncr(freeSet, h2, c1);
+                lessThanLength(c1, freeSet, h1);
+            }
+            
+            /* now we have to set up the oxidizer */
+            
+            doubleZeroAndEmpty(c1, oneCounter, union);
+                        
+                        
+            /* set up [x_1 U ... U x_i] */            
+            while (h1) {
+            
+                index(freeSet, c1, h1);
+                incr(c1);
+            
+                if (h1) {
+                    incr(oneCounter);
+                
+                    index2(graph, c1, hl1);
+                    vertexUnion(union, hl1, h1, h2, h3, h4, hl2);
+                    
+                    union = hl2;
+                }
+                
+                h1 = (oneCounter < i);
+            }
+            
+            /* set up {0,...,n} */
+            zeroAndEmpty(c1, hl1);
+            
+            while (c1 <= n) {
+                append(hl1, c1);
+                incr(c1);
+                /* can't be consolidated */
+            }
+            
+            /* get [x_1 U ... U x_i U {0, ..., n}] */
+            vertexUnion(hl1, hl2, h1, h2, h3, h4, union);
+            
+            /* get [x_1 U ... U x_i U {0, ..., n}]^{<=k} */
+            toTheLessThanOrEqualToK(union, k, hl1, oxidizer, c1, h1, h2, h3, h4, hl2);
+            
+            /* put [x_1 U ... U x_i U {0, ..., n}]^{<=k} into vertex-index form */
+            turnToVertexIndexForm(graph, hl2, c1, oneCounter, h1, h2, h3, h4, union, hl1, oxidizer);
+            
+            /* check if {x_1, ..., x_{8kni!}} reduces [x_1 U ... U x_i U {0, ..., n}]^{<=k} */
+            reduces(reducer, oxidizer, graph, edges, numVertices, hl1, hl2, c1, oneCounter, h1, h2, h3, output);
+            
+            if (!output) {
+                return;
+            }
+        }
+        
+        incr(i);
+    }
+    
+    return;
+} 
+
+/*----------------------------------------------------------*/
+
+/* Every order invariant graph on [Q]^{<=k} has a free 
+{x_1, ..., x_r, ush(x_1), ..., ush(x_r)} of complexity (8knr)! each {x_1, ..., x_{8kni!}} 
+reducing [x_1 U ... U x_i U {0, ..., n}]^{<=k} */
+
+/* This function checks an order invariant graph for the existence
+of a free set of vertices as described above. If no such set exists,
+this function halts. */
+
+/*
+graph: inp list2
+edges: inp list
+numVertices: inp int
+eightKN: inp int
+eightKNRFacFac: inp int
+k: inp int
+n: inp int
+r: inp int
+h1: hold int
+h2: hold int
+h3: hold int
+h4: hold int
+h5: hold int
+h6: hold int
+h7: hold int
+h8: hold int
+h9: hold int
+hl1: hold list
+hl2: hold list
+hl3: hold list
+hl4: hold list
+hl5: hold list
+hl6: hold list
+viFreeSet: hold list
+standardFreeSet: hold list2
+ushFreeSet: hold list2
+*/
+
+/* This is the third of the Great Functions. This is also the One That Halts. */
+
+func hasAFree(graph, edges, numVertices, eightKN, eightKNRFacFac, k, n, r, h1, h2, h3, h4, h5, 
+    h6, h7, h8, hl1, hl2, hl3, hl4, hl5, hl6, viFreeSet, standardFreeSet, ushFreeSet, output) {
+    
+    /* initialize freeSet to [0]*(#* graph) */
+    zeroAndEmpty(h2, viFreeSet);
+    lessThanLength2(h2, graph, h1);
+    while (h1) {
+        zero(h1);
+        appendAndIncr(viFreeSet, h1, h2);
+        lessThanLength2(h2, graph, h1);
+    }
+    
+    /* as long as freeSet does not overflow */
+    while (!h1) {
+        map2(graph, viFreeSet, h1, h2, standardFreeSet);
+        ush2(standardFreeSet, eightKNRFacFac, h1, h2, h3, hl1, hl2, ushFreeSet);
+        /* set up the potentially free set out of ushes */
+        
+        /* then convert it back to vertex-index form */
+        
+        standardFreeSet = standardFreeSet ||* ushFreeSet;
+        
+        turnToVertexIndexForm(graph, standardFreeSet, h1, h2, h3, h4, h5, hl1, hl2, h6, hl3);
+        
+        /* is this joint set fitting in the graph? i.e. does it have the right complexity? */
+        /* ...of complexity (8knr)!... */
+        
+        if (h6) {
+            /* is the set free? */
+            isFree(hl3, numVertices, edges, h1, h2, h3, h4, h5);
+            
+            if (h5) {
+                /* does each {x_1, ..., x_{8kni!}} reduce [x_1 U ... U x_i U {0, ..., n}]^{<=k}? */
+                eachReducing(hl3, graph, edges, numVertices, k, n, eightKN, h1, h2, h3, h4, h5, h6, h7, h8,
+                    hl1, hl2, hl4, hl5, hl6, output);
+                    
+                if (output) {
+                    /* Then this order invariant graph does indeed have the property we wanted! */ 
+                    return;
+                }
+            }
+        } 
+        
+        incrementList(viFreeSet, h2, h3, h4, h1, hl1);
+        viFreeSet = hl1;
+    }
+    
+    /* We have gone over every possible free set, and none of them fit the bill! Time to HALT! */
+    
+    /* OHH SNAP */
+    
+    zero(output);
+    return;
+    
+    /* SNAPPP */
+} 
+
+/*----------------------------------------------------------*/
+
+/* This function creates a graph of complexity (8knr)! */
+
+/*
+k: inp int
+n: inp int
+r: inp int
+num: hold int
+denom: hold int
+h1: hold int
+h2: hold int
+h3: hold int
+eltsInGraph: hold list
+hl1: hold list
+hl2: hold list
+eightKN: out int
+eightKNRFacFac: out int
+numVertices: out int
+graph: out list2
+*/
+
+/* This is the fourth, and final, Great Function. */
+
+func everyGraph(k, n, r, num, denom, h1, h2, eltsInGraph, 
+    hl1, hl2, eightKN, eightKNRFacFac, numVertices, graph) {
+
+    
+    /* This is 8 but can be changed to 1 for debugging; remember to change it back!! */
+    eightKN = (8*k)*n;
+    
+    eightKNRFacFac = eightKN*r;
+    
+    factorial(eightKNRFacFac, h1, h2);
+    /* h2 holds (8knr)! */
+    
+    num = ~h2;
+    /* num will go from -(8knr)! to (8knr)! */
+    
+    factorial(h2, h1, eightKNRFacFac);
+    /* h1 holds ((8knr)!)! */
+    
+    empty(eltsInGraph);
+    
+    while (num < h2) {
+        one(denom);
+        /* denom will go from 1 to (8knr)! */
+    
+        while (denom < h2) {        
+            h1 = (num * eightKNRFacFac) / denom;
+                        
+            appendAndIncr(eltsInGraph, h1, denom);
+        }
+        
+        incr(num);
+    }    
+    
+    /* Take the set of all low-complexity numbers to the <=k */
+    toTheLessThanOrEqualToK(eltsInGraph, k, hl1, hl2, h1, h2, numVertices, num, denom, graph);
+    
+    numVertices = #* graph;
+    
+    return;
+}    
+
+/*----------------------------------------------------------*/
+/*--------------------  FINAL  BOSS  -----------------------*/
+
+/* THIS IS THE FINAL BOSS; this is where it all gets called */
+
+int maxKNR;
+int k;
+int n;
+int r;
+int eightKN;
+int eightKNRFacFac;
+int numVertices;
+int h1;
+int h2;
+int h3;
+int h4;
+int h5;
+int h6;
+int h7;
+int h8;
+int h9;
+int h10;
+int h11;
+int h12;
+int h13;
+int h14;
+list edges;
+list hl1;
+list hl2;
+list hl3;
+list hl4;
+list hl5;
+list hl6;
+list hl7;
+list hl8;
+list2 hll;
+list2 graph;
+
+/*
+quadrupleEmpty(l1, l2, l3, l4);
+quadrupleEmpty(l5, l6, l7, l8);
+empty(edges);
+
+empty2(hll);
+empty2(graph);
+*/
+
+
+one(maxKNR);
+
+/* this while loop is always on */
+while (maxKNR) {
+    one(k);
+    
+    while (k <= maxKNR) {
+        one(n);
+        
+        while (n <= maxKNR) {
+            one(r);
+            
+            while (r <= maxKNR) {
+                everyGraph(k, n, r, h1, h2, h3, h4, hl1, hl2, hl3, eightKN, eightKNRFacFac, numVertices, graph);
+                
+                /* generate all possible edge-sets */
+                
+                h1 = numVertices * numVertices;
+                
+                /* initialize edges to [0]*(h1) */
+                
+                zeroAndEmpty(h2, edges);
+                
+                while (h2 < h1) {
+                    zero(h3);
+                    appendAndIncr(edges, h3, h2);
+                }
+                
+                /* as long as we don't see an overflow from the edge binary list */
+                while (!h3) {
+                    
+                    /* check that these edges make sense and are order invariant and all that jazz */
+                    
+                    checkGraphForOrderInvariance(graph, edges, numVertices, hl1, hl2, hl3, hl4, h1, h2, 
+                        h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14);
+                        
+                    /* h14 = 1; */
+                    /* this is only here for debugging purposes! Remove this later! */    
+                        
+                    if (h14) {
+                        /* then it passes the test! */
+                        /* It MUST then contain a set with the right properties, or the machine will halt. */
+                        
+                        hasAFree(graph, edges, numVertices, eightKN, eightKNRFacFac, k, n, r, h1, h2, h3, h4, h5, 
+                            h6, h7, h8, hl1, hl2, hl3, hl4, hl5, hl6, hl7, hl8, hll, h9);
+                            
+                        if (!h9) {
+                            halt;
+                        }        
+                    }
+                    
+                
+                    /* we must make a new edge-set */
+                
+                    incrementList(edges, h1, h2, h4, h3, hl1);
+                    edges = hl1;
+                } 
+                incr(r);
+            }
+            incr(n);
+        }
+        incr(k);
+    }
+    incr(maxKNR);
+}
+
+/* We will never get here */
+
+halt;
+

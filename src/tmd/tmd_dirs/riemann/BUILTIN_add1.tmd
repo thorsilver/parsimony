@@ -1,0 +1,10 @@
+input x
+
+// Does x += 1
+// Basic Unary assumed; DO NOT use this function to add to anything that could be negative,
+// including -0!
+
+function BUILTIN_findFin x
+function BUILTIN_incr x
+function BUILTIN_getBackToStart x
+return

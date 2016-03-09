@@ -1,0 +1,7 @@
+input l x i !0 !1 !2 
+
+// Auto-generated code for function appendAndIncr
+
+function append l x !0 !1 !2 
+function incr i !0 !1 !2 
+return

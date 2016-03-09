@@ -1,0 +1,9 @@
+input x i0
+
+// Auto-generated code for function BUILTIN_assembleList1
+// Assigns x to the value [i0]
+// LPP list format assumed
+
+function BUILTIN_clear x
+function BUILTIN_appendTo x i0
+return

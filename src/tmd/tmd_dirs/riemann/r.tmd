@@ -1,0 +1,17 @@
+input x deltaXFac aOfX bOfX h1 h2 out !0 !1 !2 
+
+// Auto-generated code for function r
+
+function BUILTIN_assign3 !0
+function BUILTIN_assign h1 !0
+function squareBothAndMultiply deltaXFac h1 h2 out !0 !1 !2 
+function BUILTIN_assign2 !0
+function BUILTIN_assign h1 !0
+function squareBothAndMultiply h1 x deltaXFac h2 !0 !1 !2 
+function multiplyByBoth x h2 out !0 !1 !2 
+function multiplyByBoth aOfX bOfX h1 !0 !1 !2 
+function BUILTIN_assign !0 out
+function BUILTIN_assign !1 h1
+function BUILTIN_add !2 !0 !1
+function BUILTIN_assign out !2
+return

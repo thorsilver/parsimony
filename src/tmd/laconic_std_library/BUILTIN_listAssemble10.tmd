@@ -1,0 +1,9 @@
+input x i0 i1 i2 i3 i4 i5 i6 i7 i8 i9 
+
+// Auto-generated code for function BUILTIN_assembleList10
+// Assigns x to the value [i0, i1, i2, i3, i4, i5, i6, i7, i8, i9]
+// LPP list format assumed
+
+function BUILTIN_listAssemble9 x i0 i1 i2 i3 i4 i5 i6 i7 i8 
+function BUILTIN_appendTo x i9
+return

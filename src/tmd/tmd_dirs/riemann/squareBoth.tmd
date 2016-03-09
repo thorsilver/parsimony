@@ -1,0 +1,7 @@
+input x1 x2 out1 out2 !0 !1 !2 
+
+// Auto-generated code for function squareBoth
+
+function square x1 out1 !0 !1 !2 
+function square x2 out2 !0 !1 !2 
+return

@@ -1,0 +1,8 @@
+input x
+
+// Auto-generated code for function BUILTIN_assign20
+// Assigns x to the value 20
+// Unary assumed
+function BUILTIN_assign19 x
+function BUILTIN_add1 x
+return

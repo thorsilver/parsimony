@@ -1,0 +1,9 @@
+input x
+
+// Sets a variable to the zero state (____E____). 
+function BUILTIN_findFin x
+GO_LEFT: [x] 1 (L); E (L) 
+CHECK_FOR_UNDERSCORE: [x] _ (R, DONE); 1 (R); E (R)
+ERASE: [x] 1 (_, L, GO_LEFT); E (_, L, GO_LEFT)
+DONE: [x] 1 (E); E ()
+return

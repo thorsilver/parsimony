@@ -1,0 +1,19 @@
+input l2 l i h output !0 !1 !2 
+
+// Auto-generated code for function map2
+
+function empty2 output !0 !1 
+function zeroAndLessThanLength2 i l2 h !0 !1 !2 
+WHILE_TEST_0: function BUILTIN_assign !0 h
+[!0] E (WHILE_STATE_0_FALSE); 1 ()
+function index l i h !0 !1 !2 
+function BUILTIN_assign !0 h
+[!0] E (IF_ELSE_STATE_0_FALSE); 1 ()
+function index2 l2 i h !0 !1 !2 
+function append2 output h !0 !1 !2 
+function incr i !0 !1 !2 
+[!0] E (IF_ELSE_STATE_0_TRUE); 1 (IF_ELSE_STATE_0_TRUE)
+IF_ELSE_STATE_0_FALSE: function incr i !0 !1 !2 
+IF_ELSE_STATE_0_TRUE: function lessThanLength i l h !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

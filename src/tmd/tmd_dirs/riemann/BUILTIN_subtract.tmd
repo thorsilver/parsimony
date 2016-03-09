@@ -1,0 +1,9 @@
+input x y z
+
+// x <- y - z
+// Assumes signed unary format
+
+function BUILTIN_negate z
+function BUILTIN_add x y z
+function BUILTIN_negate z
+return

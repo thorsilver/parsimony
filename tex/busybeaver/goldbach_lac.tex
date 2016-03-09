@@ -1,0 +1,90 @@
+{\tiny \tt \noindent \onehalfspacing \parskip 0pt
+func zero(x) \{ \\
+\hspace{5mm} x = 0; \\
+    return; \\
+\} \\
+\\
+func one(x) \{ \\
+    x = 1; \\
+    return; \\
+\} \\
+\\
+func incr(x) \{ \\
+    x = x + 1; \\
+    return; \\
+\} \\
+\\
+/* Computes x modulo y */ \\
+func modulus(x, y, out) \{ \\
+    out = x; \\
+\\    
+    while (out >= y) \{ \\
+        out = out - y; \\
+    \} \\
+\\     
+    return; \\
+\} \\
+\\
+func assignXtoYminusX(x, y) \{ \\
+    x = y - x; \\
+    return; \\
+\} \\
+\\
+/* Figures out if x is prime, and puts the output in y */ \\
+/* Does not modify x, modifies y */ \\
+func isPrime(x, h, y) \{ \\
+    if (x == 1) \{ \\ 
+        zero(y); \\
+        return; \\
+    \} \\
+\\    
+    y = 2; \\
+\\    
+    while (x > y) \{ \\
+        modulus(x, y, h); \\
+\\    
+        if (h == 0) \{ \\
+            zero(y); \\
+            return; \\
+        \} \\
+        incr(y); \\
+    \} \\
+\\    
+    return; \\
+\} \\
+\\
+int evenNumber; \\
+int primeCounter; \\
+int isThisOnePrime; \\
+int foundSum; \\
+int h; \\
+\\
+evenNumber = 2;\\
+one(foundSum);\\
+\\
+while (foundSum) \{\\
+    zero(foundSum);\\
+    evenNumber = evenNumber + 2;\\
+    one(primeCounter);\\
+    \\
+    while (primeCounter < evenNumber) \{\\    
+        isPrime(primeCounter, h, isThisOnePrime);\\
+        \\
+        if (isThisOnePrime) \{\\
+            assignXtoYminusX(primeCounter, evenNumber);\\
+            isPrime(primeCounter, h, isThisOnePrime);\\
+            assignXtoYminusX(primeCounter, evenNumber);\\
+            \\
+            if (isThisOnePrime) \{\\
+                print evenNumber;\\
+                print primeCounter;\\
+                \\
+                one(foundSum);\\
+            \}\\
+        \}\\
+        \\
+        incr(primeCounter);  \\
+    \}         \\
+\}\\
+\\
+halt;\\ }

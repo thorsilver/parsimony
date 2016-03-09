@@ -1,0 +1,15 @@
+input x y z
+
+// x = y * z. Unsigned unary assumed.
+
+function BUILTIN_clear x
+[x] E (READ_Y)
+
+ADD_Z_TO_X: function BUILTIN_addTo x z
+
+[x] E (L)
+GET_BACK_TO_E_X: [x] 1 (L, GET_BACK_TO_E_X); E (R); _ (R)
+
+READ_Y: [y] 1 (R, ADD_Z_TO_X); E ()
+GET_BACK_TO_START_Y: function getbacktostart y
+return
