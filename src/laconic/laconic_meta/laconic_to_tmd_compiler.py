@@ -16,7 +16,7 @@ def pront(x):
 try:
     fileName = sys.argv[1]
 except:
-    raise Exception("Usage: python laconic_to_tmd_compiler [Laconic file name without extension]")
+    raise Exception("Usage: python laconic_to_tmd_compiler.py [Laconic file name without extension]")
 
 try:
     assert os.path.exists("../laconic_files/" + fileName + ".lac")
@@ -28,7 +28,7 @@ dirName = "../../tmd/tmd_dirs/" + fileName
 if not os.path.exists(dirName + "/"):
     os.system("mkdir " + dirName)
 
-print "Compiling..."
+print "Compiling to TMD..."
 os.system("python compiler_helper.py ../laconic_files/" + fileName + ".lac")
 print "Importing dependencies..."
 os.system("python importer.py " + dirName)

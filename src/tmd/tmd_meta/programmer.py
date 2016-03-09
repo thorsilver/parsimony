@@ -91,12 +91,19 @@ def incrementWord(word):
         return word[:-1] + "a"
 
 # Converts a number to a string of wordSize a's and b's
+
+# 2^wordSize < numWords 
 def indexToWordMaker(wordSize, numWords):
     indexToWordDict = {}
     
+    numEncoderStates = 2**wordSize
+    
+    for index in range(numWords - numEncoderStates):
+        indexToWordDict[index] = None
+    
     currentWord = "b"*wordSize
     
-    for index in range(numWords):
+    for index in range(numWords - numEncoderStates, numWords):
         
         indexToWordDict[index] = currentWord
         
@@ -131,6 +138,14 @@ def findAppropriateWordSize(numChars, wordSizeAttempt=2):
     else:
         return findAppropriateWordSize(numChars, wordSizeAttempt+1)
 
+def findAppropriateNumWordsAndWordSize(numChars):
+    # The appropriate word size given is an upper bound, reqs padding
+    wordSize = findAppropriateWordSize(numChars) - 1
+    
+    numWords = int(math.ceil(float(numChars)/wordSize))
+    
+    return numWords, wordSize
+
 def createBlankWord(inState, wordSize, listOfStates):
     previousState = inState
     
@@ -145,7 +160,7 @@ def breakUpCodeString(wordSize, numWords, codeStringInAB):
     
     paddedCodeString = codeStringInAB + pad
     
-#    print paddedCodeString
+ #   print paddedCodeString
     
     brokenUpWords = []
     
@@ -160,22 +175,26 @@ def breakUpCodeString(wordSize, numWords, codeStringInAB):
 # These states encode data via the way in which they point to each other.
 def organizeDataStates(inState, wordSize, numWords, codeStringInAB, listOfStates):
     indexToWord = indexToWordMaker(wordSize, numWords)
-        
-    listOfStates.append(inState)
-    
-    wordToState = {"b"*wordSize: inState}
-    indexToState = {0: inState}
+            
+    wordToState = {}
+    indexToState = {}
     
     brokenUpWords = breakUpCodeString(wordSize, numWords, codeStringInAB)
         
+        
     # start at 1 because inState is 0
-    for i in range(1, numWords):
+    for i in range(numWords):
         
         word = indexToWord[i]
         
-        state = State("data_" + str(i) + "_" + word, None, alphabetMSToTS())
+        if i == 0:
+            state = inState
+        elif word == None:
+            state = State("data_" + str(i), None, alphabetMSToTS())
+        else:
+            state = State("data_" + str(i) + "_" + word, None, alphabetMSToTS())
+            wordToState[word] = state
         
-        wordToState[word] = state
         indexToState[i] = state
         
         listOfStates.append(state)
@@ -192,7 +211,7 @@ def organizeDataStates(inState, wordSize, numWords, codeStringInAB, listOfStates
     lastDataState = indexToState[numWords-1]
     
     lastDataState.set3("a", outState, "R", "a")
-    lastDataState.set3("b", wordToState[indexToWord[numWords-1]], "R", "a")
+    lastDataState.set3("b", wordToState[brokenUpWords[numWords-1]], "R", "a")
         
     return outState        
 
@@ -360,8 +379,10 @@ def convertUnaryToBinary(inState, wordSize, firstDataState, name, listOfStates):
     
 def introspect(codeStringInAB):
     
-    wordSize = findAppropriateWordSize(len(codeStringInAB))
-    numWords = 2**wordSize
+#    wordSize = findAppropriateWordSize(len(codeStringInAB))
+#    numWords = 2**wordSize
+
+    numWords, wordSize = findAppropriateNumWordsAndWordSize(len(codeStringInAB))
         
     markerA = State("preamble_write_marker_a", None, alphabetMSToTS())
     firstBSignal = State("preamble_first_b_signal", None, alphabetMSToTS())
@@ -369,7 +390,7 @@ def introspect(codeStringInAB):
     lastCleanUp = State("epilogue_clean_up", None, alphabetMSToTS())
     findCodeHead = State("epilogue_find_code_head", None, alphabetMSToTS())
     foundCodeHead = State("epilogue_found_code_head", None, alphabetMSToTS())
-    firstDataState = State("data_0_" + ("b"*wordSize), None, alphabetMSToTS())
+    firstDataState = State("data_0", None, alphabetMSToTS())
 
     listOfStates = [markerA, firstBSignal, goLeft, lastCleanUp, findCodeHead, foundCodeHead]
 
@@ -477,7 +498,7 @@ if __name__ == "__main__":
 #    print codeString
             
     codeStringInAB = convertToAB(codeString)
-    
+        
 #    codeStringInAB = "bbbbb" + codeStringInAB[5:]
         
 #    codeBarf(codeStringInAB)
