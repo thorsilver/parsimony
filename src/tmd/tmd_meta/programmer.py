@@ -140,11 +140,16 @@ def findAppropriateWordSize(numChars, wordSizeAttempt=2):
 
 def findAppropriateNumWordsAndWordSize(numChars):
     # The appropriate word size given is an upper bound, reqs padding
-    wordSize = findAppropriateWordSize(numChars) - 1
+    wordSize1 = findAppropriateWordSize(numChars) - 1 
+    numWords1 = int(math.ceil(float(numChars)/wordSize1))
     
-    numWords = int(math.ceil(float(numChars)/wordSize))
-    
-    return numWords, wordSize
+    # Or maybe it's better to have bigger words and just pad a lot
+    wordSize2 = findAppropriateWordSize(numChars)
+    numWords2 = 2**wordSize2
+   
+    if True:    
+        return numWords1, wordSize1
+    return numWords2, wordSize2
 
 def createBlankWord(inState, wordSize, listOfStates):
     previousState = inState
@@ -175,7 +180,7 @@ def breakUpCodeString(wordSize, numWords, codeStringInAB):
 # These states encode data via the way in which they point to each other.
 def organizeDataStates(inState, wordSize, numWords, codeStringInAB, listOfStates):
     indexToWord = indexToWordMaker(wordSize, numWords)
-            
+                        
     wordToState = {}
     indexToState = {}
     
@@ -189,6 +194,9 @@ def organizeDataStates(inState, wordSize, numWords, codeStringInAB, listOfStates
         
         if i == 0:
             state = inState
+            if word != None:
+                wordToState[word] = inState
+            
         elif word == None:
             state = State("data_" + str(i), None, alphabetMSToTS())
         else:
@@ -498,6 +506,8 @@ if __name__ == "__main__":
 #    print codeString
             
     codeStringInAB = convertToAB(codeString)
+    
+#    print len(codeStringInAB)
         
 #    codeStringInAB = "bbbbb" + codeStringInAB[5:]
         
