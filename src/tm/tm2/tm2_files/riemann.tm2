@@ -1,4 +1,4 @@
-States: 5398
+States: 5372
 
 START start_read_:
 	a -> start_write_next; R; b
@@ -1509,4244 +1509,4100 @@ epilogue_found_code_head:
 	b -> ERROR; -; b
 
 data_0:
-	a -> data_1; R; b
-	b -> data_717_babababba; R; a
-
-data_1:
-	a -> data_2; R; b
-	b -> data_879_ababbabaa; R; a
-
-data_2:
-	a -> data_3; R; b
-	b -> data_570_bbbbabaab; R; a
-
-data_3:
-	a -> data_4; R; b
-	b -> data_691_babbbaaaa; R; a
-
-data_4:
-	a -> data_5; R; b
-	b -> data_680_babbbbabb; R; a
-
-data_5:
-	a -> data_6; R; b
-	b -> data_748_baabbabbb; R; a
-
-data_6:
-	a -> data_7; R; b
-	b -> data_955_aabbabaaa; R; a
-
-data_7:
-	a -> data_8; R; b
-	b -> data_870_ababbbbab; R; a
-
-data_8:
-	a -> data_9; R; b
-	b -> data_649_bbaabbaba; R; a
-
-data_9:
-	a -> data_10; R; b
-	b -> data_742_baabbbbab; R; a
-
-data_10:
-	a -> data_11; R; b
-	b -> data_1037_aaaababba; R; a
-
-data_11:
-	a -> data_12; R; b
-	b -> data_562_bbbbbaaab; R; a
-
-data_12:
-	a -> data_13; R; b
-	b -> data_573_bbbbaabba; R; a
-
-data_13:
-	a -> data_14; R; b
-	b -> data_726_babaabbab; R; a
-
-data_14:
-	a -> data_15; R; b
-	b -> data_671_bbaaaabaa; R; a
-
-data_15:
-	a -> data_16; R; b
-	b -> data_679_babbbbbaa; R; a
-
-data_16:
-	a -> data_17; R; b
-	b -> data_811_abbbbbaaa; R; a
-
-data_17:
-	a -> data_18; R; b
-	b -> data_722_bababaaab; R; a
-
-data_18:
-	a -> data_19; R; b
-	b -> data_899_ababaaaaa; R; a
-
-data_19:
-	a -> data_20; R; b
-	b -> data_878_ababbabab; R; a
-
-data_20:
-	a -> data_21; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_21:
-	a -> data_22; R; b
-	b -> data_839_abbabbbaa; R; a
-
-data_22:
-	a -> data_23; R; b
-	b -> data_635_bbababaaa; R; a
-
-data_23:
-	a -> data_24; R; b
-	b -> data_563_bbbbbaaaa; R; a
-
-data_24:
-	a -> data_25; R; b
-	b -> data_680_babbbbabb; R; a
-
-data_25:
-	a -> data_26; R; b
-	b -> data_734_babaaabab; R; a
-
-data_26:
-	a -> data_27; R; b
-	b -> data_933_aabbbbbba; R; a
-
-data_27:
-	a -> data_28; R; b
-	b -> data_944_aabbbaabb; R; a
-
-data_28:
-	a -> data_29; R; b
-	b -> data_901_abaabbbba; R; a
-
-data_29:
-	a -> data_30; R; b
-	b -> data_752_baabbaabb; R; a
-
-data_30:
-	a -> data_31; R; b
-	b -> data_648_bbaabbabb; R; a
-
-data_31:
-	a -> data_32; R; b
-	b -> data_750_baabbabab; R; a
-
-data_32:
-	a -> data_33; R; b
-	b -> data_997_aaabbbbba; R; a
-
-data_33:
-	a -> data_34; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_34:
-	a -> data_35; R; b
-	b -> data_613_bbabbbbba; R; a
-
-data_35:
-	a -> data_36; R; b
-	b -> data_816_abbbbaabb; R; a
-
-data_36:
-	a -> data_37; R; b
-	b -> data_577_bbbbaaaba; R; a
-
-data_37:
-	a -> data_38; R; b
-	b -> data_839_abbabbbaa; R; a
-
-data_38:
-	a -> data_39; R; b
-	b -> data_635_bbababaaa; R; a
-
-data_39:
-	a -> data_40; R; b
-	b -> data_563_bbbbbaaaa; R; a
-
-data_40:
-	a -> data_41; R; b
-	b -> data_677_babbbbbba; R; a
-
-data_41:
-	a -> data_42; R; b
-	b -> data_594_bbbabaaab; R; a
-
-data_42:
-	a -> data_43; R; b
-	b -> data_1002_aaabbbaab; R; a
-
-data_43:
-	a -> data_44; R; b
-	b -> data_596_bbbaabbbb; R; a
-
-data_44:
-	a -> data_45; R; b
-	b -> data_648_bbaabbabb; R; a
-
-data_45:
-	a -> data_46; R; b
-	b -> data_750_baabbabab; R; a
-
-data_46:
-	a -> data_47; R; b
-	b -> data_997_aaabbbbba; R; a
-
-data_47:
-	a -> data_48; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_48:
-	a -> data_49; R; b
-	b -> data_633_bbabababa; R; a
-
-data_49:
-	a -> data_50; R; b
-	b -> data_980_aabaabbbb; R; a
-
-data_50:
-	a -> data_51; R; b
-	b -> data_1002_aaabbbaab; R; a
-
-data_51:
-	a -> data_52; R; b
-	b -> data_688_babbbaabb; R; a
-
-data_52:
-	a -> data_53; R; b
-	b -> data_896_ababaaabb; R; a
-
-data_53:
-	a -> data_54; R; b
-	b -> data_609_bbbaaaaba; R; a
-
-data_54:
-	a -> data_55; R; b
-	b -> data_564_bbbbabbbb; R; a
-
-data_55:
-	a -> data_56; R; b
-	b -> data_734_babaaabab; R; a
-
-data_56:
-	a -> data_57; R; b
-	b -> data_1020_aaabaabbb; R; a
-
-data_57:
-	a -> data_58; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_58:
-	a -> data_59; R; b
-	b -> data_938_aabbbbaab; R; a
-
-data_59:
-	a -> data_60; R; b
-	b -> data_724_babaabbbb; R; a
-
-data_60:
-	a -> data_61; R; b
-	b -> data_904_abaabbabb; R; a
-
-data_61:
-	a -> data_62; R; b
-	b -> data_750_baabbabab; R; a
-
-data_62:
-	a -> data_63; R; b
-	b -> data_997_aaabbbbba; R; a
-
-data_63:
-	a -> data_64; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_64:
-	a -> data_65; R; b
-	b -> data_885_abababbba; R; a
-
-data_65:
-	a -> data_66; R; b
-	b -> data_807_abbbbbbaa; R; a
-
-data_66:
-	a -> data_67; R; b
-	b -> data_828_abbbaabbb; R; a
-
-data_67:
-	a -> data_68; R; b
-	b -> data_751_baabbabaa; R; a
-
-data_68:
-	a -> data_69; R; b
-	b -> data_618_bbabbbaab; R; a
-
-data_69:
-	a -> data_70; R; b
-	b -> data_722_bababaaab; R; a
-
-data_70:
-	a -> data_71; R; b
-	b -> data_578_bbbbaaaab; R; a
-
-data_71:
-	a -> data_72; R; b
-	b -> data_940_aabbbabbb; R; a
-
-data_72:
-	a -> data_73; R; b
-	b -> data_997_aaabbbbba; R; a
-
-data_73:
-	a -> data_74; R; b
-	b -> data_990_aabaaabab; R; a
-
-data_74:
-	a -> data_75; R; b
-	b -> data_923_abaaabaaa; R; a
-
-data_75:
-	a -> data_76; R; b
-	b -> data_921_abaaababa; R; a
-
-data_76:
-	a -> data_77; R; b
-	b -> data_652_bbaababbb; R; a
-
-data_77:
-	a -> data_78; R; b
-	b -> data_607_bbbaaabaa; R; a
-
-data_78:
-	a -> data_79; R; b
-	b -> data_965_aababbbba; R; a
-
-data_79:
-	a -> data_80; R; b
-	b -> data_599_bbbaabbaa; R; a
-
-data_80:
-	a -> data_81; R; b
-	b -> data_927_abaaaabaa; R; a
-
-data_81:
-	a -> data_82; R; b
-	b -> data_887_abababbaa; R; a
-
-data_82:
-	a -> data_83; R; b
-	b -> data_681_babbbbaba; R; a
-
-data_83:
-	a -> data_84; R; b
-	b -> data_865_abbaaaaba; R; a
-
-data_84:
-	a -> data_85; R; b
-	b -> data_634_bbababaab; R; a
-
-data_85:
-	a -> data_86; R; b
-	b -> data_795_baaaabaaa; R; a
-
-data_86:
-	a -> data_87; R; b
-	b -> data_714_bababbaab; R; a
-
-data_87:
-	a -> data_88; R; b
-	b -> data_839_abbabbbaa; R; a
-
-data_88:
-	a -> data_89; R; b
-	b -> data_671_bbaaaabaa; R; a
-
-data_89:
-	a -> data_90; R; b
-	b -> data_606_bbbaaabab; R; a
-
-data_90:
-	a -> data_91; R; b
-	b -> data_896_ababaaabb; R; a
-
-data_91:
-	a -> data_92; R; b
-	b -> data_595_bbbabaaaa; R; a
-
-data_92:
-	a -> data_93; R; b
-	b -> data_747_baabbbaaa; R; a
-
-data_93:
-	a -> data_94; R; b
-	b -> data_790_baaaabbab; R; a
-
-data_94:
-	a -> data_95; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_95:
-	a -> data_96; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_96:
-	a -> data_97; R; b
-	b -> data_578_bbbbaaaab; R; a
-
-data_97:
-	a -> data_98; R; b
-	b -> data_946_aabbbaaab; R; a
-
-data_98:
-	a -> data_99; R; b
-	b -> data_921_abaaababa; R; a
-
-data_99:
-	a -> data_100; R; b
-	b -> data_946_aabbbaaab; R; a
-
-data_100:
-	a -> data_101; R; b
-	b -> data_927_abaaaabaa; R; a
-
-data_101:
-	a -> data_102; R; b
-	b -> data_606_bbbaaabab; R; a
-
-data_102:
-	a -> data_103; R; b
-	b -> data_672_bbaaaaabb; R; a
-
-data_103:
-	a -> data_104; R; b
-	b -> data_611_bbbaaaaaa; R; a
-
-data_104:
-	a -> data_105; R; b
-	b -> data_782_baaababab; R; a
-
-data_105:
-	a -> data_106; R; b
-	b -> data_764_baabaabbb; R; a
-
-data_106:
-	a -> data_107; R; b
-	b -> data_1016_aaabababb; R; a
-
-data_107:
-	a -> data_108; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_108:
-	a -> data_109; R; b
-	b -> data_555_bbbbbbaaa; R; a
-
-data_109:
-	a -> data_110; R; b
-	b -> data_799_baaaaabaa; R; a
-
-data_110:
-	a -> data_111; R; b
-	b -> data_990_aabaaabab; R; a
-
-data_111:
-	a -> data_112; R; b
-	b -> data_856_abbaababb; R; a
-
-data_112:
-	a -> data_113; R; b
-	b -> data_829_abbbaabba; R; a
-
-data_113:
-	a -> data_114; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_114:
-	a -> data_115; R; b
-	b -> data_573_bbbbaabba; R; a
-
-data_115:
-	a -> data_116; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_116:
-	a -> data_117; R; b
-	b -> data_637_bbabaabba; R; a
-
-data_117:
-	a -> data_118; R; b
-	b -> data_1025_aaabaaaba; R; a
-
-data_118:
-	a -> data_119; R; b
-	b -> data_703_babbaabaa; R; a
-
-data_119:
-	a -> data_120; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_120:
-	a -> data_121; R; b
-	b -> data_811_abbbbbaaa; R; a
-
-data_121:
-	a -> data_122; R; b
-	b -> data_755_baabbaaaa; R; a
-
-data_122:
-	a -> data_123; R; b
-	b -> data_990_aabaaabab; R; a
-
-data_123:
-	a -> data_124; R; b
-	b -> data_858_abbaabaab; R; a
-
-data_124:
-	a -> data_125; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_125:
-	a -> data_126; R; b
-	b -> data_690_babbbaaab; R; a
-
-data_126:
-	a -> data_127; R; b
-	b -> data_565_bbbbabbba; R; a
-
-data_127:
-	a -> data_128; R; b
-	b -> data_992_aabaaaabb; R; a
-
-data_128:
-	a -> data_129; R; b
-	b -> data_1042_aaaabaaab; R; a
-
-data_129:
-	a -> data_130; R; b
-	b -> data_881_ababbaaba; R; a
-
-data_130:
-	a -> data_131; R; b
-	b -> data_570_bbbbabaab; R; a
-
-data_131:
-	a -> data_132; R; b
-	b -> data_794_baaaabaab; R; a
-
-data_132:
-	a -> data_133; R; b
-	b -> data_921_abaaababa; R; a
-
-data_133:
-	a -> data_134; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_134:
-	a -> data_135; R; b
-	b -> data_553_bbbbbbaba; R; a
-
-data_135:
-	a -> data_136; R; b
-	b -> data_994_aabaaaaab; R; a
-
-data_136:
-	a -> data_137; R; b
-	b -> data_834_abbbaaaab; R; a
-
-data_137:
-	a -> data_138; R; b
-	b -> data_946_aabbbaaab; R; a
-
-data_138:
-	a -> data_139; R; b
-	b -> data_1001_aaabbbaba; R; a
-
-data_139:
-	a -> data_140; R; b
-	b -> data_940_aabbbabbb; R; a
-
-data_140:
-	a -> data_141; R; b
-	b -> data_927_abaaaabaa; R; a
-
-data_141:
-	a -> data_142; R; b
-	b -> data_607_bbbaaabaa; R; a
-
-data_142:
-	a -> data_143; R; b
-	b -> data_571_bbbbabaaa; R; a
-
-data_143:
-	a -> data_144; R; b
-	b -> data_550_bbbbbbbab; R; a
-
-data_144:
-	a -> data_145; R; b
-	b -> data_1040_aaaabaabb; R; a
-
-data_145:
-	a -> data_146; R; b
-	b -> data_787_baaabaaaa; R; a
-
-data_146:
-	a -> data_147; R; b
-	b -> data_926_abaaaabab; R; a
-
-data_147:
-	a -> data_148; R; b
-	b -> data_591_bbbababaa; R; a
-
-data_148:
-	a -> data_149; R; b
-	b -> data_667_bbaaabaaa; R; a
-
-data_149:
-	a -> data_150; R; b
-	b -> data_921_abaaababa; R; a
-
-data_150:
-	a -> data_151; R; b
-	b -> data_652_bbaababbb; R; a
-
-data_151:
-	a -> data_152; R; b
-	b -> data_592_bbbabaabb; R; a
-
-data_152:
-	a -> data_153; R; b
-	b -> data_1036_aaaababbb; R; a
-
-data_153:
-	a -> data_154; R; b
-	b -> data_594_bbbabaaab; R; a
-
-data_154:
-	a -> data_155; R; b
-	b -> data_1042_aaaabaaab; R; a
-
-data_155:
-	a -> data_156; R; b
-	b -> data_881_ababbaaba; R; a
-
-data_156:
-	a -> data_157; R; b
-	b -> data_570_bbbbabaab; R; a
-
-data_157:
-	a -> data_158; R; b
-	b -> data_794_baaaabaab; R; a
-
-data_158:
-	a -> data_159; R; b
-	b -> data_916_abaaabbbb; R; a
-
-data_159:
-	a -> data_160; R; b
-	b -> data_606_bbbaaabab; R; a
-
-data_160:
-	a -> data_161; R; b
-	b -> data_905_abaabbaba; R; a
-
-data_161:
-	a -> data_162; R; b
-	b -> data_794_baaaabaab; R; a
-
-data_162:
-	a -> data_163; R; b
-	b -> data_923_abaaabaaa; R; a
-
-data_163:
-	a -> data_164; R; b
-	b -> data_990_aabaaabab; R; a
-
-data_164:
-	a -> data_165; R; b
-	b -> data_928_abaaaaabb; R; a
-
-data_165:
-	a -> data_166; R; b
-	b -> data_611_bbbaaaaaa; R; a
-
-data_166:
-	a -> data_167; R; b
-	b -> data_741_baabbbbba; R; a
-
-data_167:
-	a -> data_168; R; b
-	b -> data_932_aabbbbbbb; R; a
-
-data_168:
-	a -> data_169; R; b
-	b -> data_1017_aaabababa; R; a
-
-data_169:
-	a -> data_170; R; b
-	b -> data_943_aabbbabaa; R; a
-
-data_170:
-	a -> data_171; R; b
-	b -> data_980_aabaabbbb; R; a
-
-data_171:
-	a -> data_172; R; b
-	b -> data_787_baaabaaaa; R; a
-
-data_172:
-	a -> data_173; R; b
-	b -> data_921_abaaababa; R; a
-
-data_173:
-	a -> data_174; R; b
-	b -> data_796_baaaaabbb; R; a
-
-data_174:
-	a -> data_175; R; b
-	b -> data_674_bbaaaaaab; R; a
-
-data_175:
-	a -> data_176; R; b
-	b -> data_838_abbabbbab; R; a
-
-data_176:
-	a -> data_177; R; b
-	b -> data_956_aabbaabbb; R; a
-
-data_177:
-	a -> data_178; R; b
-	b -> data_787_baaabaaaa; R; a
-
-data_178:
-	a -> data_179; R; b
-	b -> data_747_baabbbaaa; R; a
-
-data_179:
-	a -> data_180; R; b
-	b -> data_722_bababaaab; R; a
-
-data_180:
-	a -> data_181; R; b
-	b -> data_640_bbabaaabb; R; a
-
-data_181:
-	a -> data_182; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_182:
-	a -> data_183; R; b
-	b -> data_926_abaaaabab; R; a
-
-data_183:
-	a -> data_184; R; b
-	b -> data_720_bababaabb; R; a
-
-data_184:
-	a -> data_185; R; b
-	b -> data_1040_aaaabaabb; R; a
-
-data_185:
-	a -> data_186; R; b
-	b -> data_782_baaababab; R; a
-
-data_186:
-	a -> data_187; R; b
-	b -> data_1001_aaabbbaba; R; a
-
-data_187:
-	a -> data_188; R; b
-	b -> data_1020_aaabaabbb; R; a
-
-data_188:
-	a -> data_189; R; b
-	b -> data_660_bbaaabbbb; R; a
-
-data_189:
-	a -> data_190; R; b
-	b -> data_742_baabbbbab; R; a
-
-data_190:
-	a -> data_191; R; b
-	b -> data_1017_aaabababa; R; a
-
-data_191:
-	a -> data_192; R; b
-	b -> data_1048_aaaaababb; R; a
-
-data_192:
-	a -> data_193; R; b
-	b -> data_826_abbbabaab; R; a
-
-data_193:
-	a -> data_194; R; b
-	b -> data_784_baaabaabb; R; a
-
-data_194:
-	a -> data_195; R; b
-	b -> data_670_bbaaaabab; R; a
-
-data_195:
-	a -> data_196; R; b
-	b -> data_591_bbbababaa; R; a
-
-data_196:
-	a -> data_197; R; b
-	b -> data_901_abaabbbba; R; a
-
-data_197:
-	a -> data_198; R; b
-	b -> data_1025_aaabaaaba; R; a
-
-data_198:
-	a -> data_199; R; b
-	b -> data_703_babbaabaa; R; a
-
-data_199:
-	a -> data_200; R; b
-	b -> data_734_babaaabab; R; a
-
-data_200:
-	a -> data_201; R; b
-	b -> data_832_abbbaaabb; R; a
-
-data_201:
-	a -> data_202; R; b
-	b -> data_598_bbbaabbab; R; a
-
-data_202:
-	a -> data_203; R; b
-	b -> data_1040_aaaabaabb; R; a
-
-data_203:
-	a -> data_204; R; b
-	b -> data_606_bbbaaabab; R; a
-
-data_204:
-	a -> data_205; R; b
-	b -> data_811_abbbbbaaa; R; a
-
-data_205:
-	a -> data_206; R; b
-	b -> data_563_bbbbbaaaa; R; a
-
-data_206:
-	a -> data_207; R; b
-	b -> data_969_aababbaba; R; a
-
-data_207:
-	a -> data_208; R; b
-	b -> data_755_baabbaaaa; R; a
-
-data_208:
-	a -> data_209; R; b
-	b -> data_782_baaababab; R; a
-
-data_209:
-	a -> data_210; R; b
-	b -> data_756_baababbbb; R; a
-
-data_210:
-	a -> data_211; R; b
-	b -> data_833_abbbaaaba; R; a
-
-data_211:
-	a -> data_212; R; b
-	b -> data_865_abbaaaaba; R; a
-
-data_212:
-	a -> data_213; R; b
-	b -> data_554_bbbbbbaab; R; a
-
-data_213:
-	a -> data_214; R; b
-	b -> data_609_bbbaaaaba; R; a
-
-data_214:
-	a -> data_215; R; b
-	b -> data_633_bbabababa; R; a
-
-data_215:
-	a -> data_216; R; b
-	b -> data_850_abbabaaab; R; a
-
-data_216:
-	a -> data_217; R; b
-	b -> data_939_aabbbbaaa; R; a
-
-data_217:
-	a -> data_218; R; b
-	b -> data_870_ababbbbab; R; a
-
-data_218:
-	a -> data_219; R; b
-	b -> data_650_bbaabbaab; R; a
-
-data_219:
-	a -> data_220; R; b
-	b -> data_737_babaaaaba; R; a
-
-data_220:
-	a -> data_221; R; b
-	b -> data_973_aabababba; R; a
-
-data_221:
-	a -> data_222; R; b
-	b -> data_870_ababbbbab; R; a
-
-data_222:
-	a -> data_223; R; b
-	b -> data_962_aabbaaaab; R; a
-
-data_223:
-	a -> data_224; R; b
-	b -> data_978_aababaaab; R; a
-
-data_224:
-	a -> data_225; R; b
-	b -> data_892_ababaabbb; R; a
-
-data_225:
-	a -> data_226; R; b
-	b -> data_594_bbbabaaab; R; a
-
-data_226:
-	a -> data_227; R; b
-	b -> data_555_bbbbbbaaa; R; a
-
-data_227:
-	a -> data_228; R; b
-	b -> data_911_abaababaa; R; a
-
-data_228:
-	a -> data_229; R; b
-	b -> data_929_abaaaaaba; R; a
-
-data_229:
-	a -> data_230; R; b
-	b -> data_935_aabbbbbaa; R; a
-
-data_230:
-	a -> data_231; R; b
-	b -> data_1017_aaabababa; R; a
-
-data_231:
-	a -> data_232; R; b
-	b -> data_1050_aaaaabaab; R; a
-
-data_232:
-	a -> data_233; R; b
-	b -> data_577_bbbbaaaba; R; a
-
-data_233:
-	a -> data_234; R; b
-	b -> data_726_babaabbab; R; a
-
-data_234:
-	a -> data_235; R; b
-	b -> data_660_bbaaabbbb; R; a
-
-data_235:
-	a -> data_236; R; b
-	b -> data_609_bbbaaaaba; R; a
-
-data_236:
-	a -> data_237; R; b
-	b -> data_811_abbbbbaaa; R; a
-
-data_237:
-	a -> data_238; R; b
-	b -> data_799_baaaaabaa; R; a
-
-data_238:
-	a -> data_239; R; b
-	b -> data_811_abbbbbaaa; R; a
-
-data_239:
-	a -> data_240; R; b
-	b -> data_975_aabababaa; R; a
-
-data_240:
-	a -> data_241; R; b
-	b -> data_1036_aaaababbb; R; a
-
-data_241:
-	a -> data_242; R; b
-	b -> data_551_bbbbbbbaa; R; a
-
-data_242:
-	a -> data_243; R; b
-	b -> data_670_bbaaaabab; R; a
-
-data_243:
-	a -> data_244; R; b
-	b -> data_550_bbbbbbbab; R; a
-
-data_244:
-	a -> data_245; R; b
-	b -> data_961_aabbaaaba; R; a
-
-data_245:
-	a -> data_246; R; b
-	b -> data_1020_aaabaabbb; R; a
-
-data_246:
-	a -> data_247; R; b
-	b -> data_997_aaabbbbba; R; a
-
-data_247:
-	a -> data_248; R; b
-	b -> data_975_aabababaa; R; a
-
-data_248:
-	a -> data_249; R; b
-	b -> data_964_aababbbbb; R; a
-
-data_249:
-	a -> data_250; R; b
-	b -> data_722_bababaaab; R; a
-
-data_250:
-	a -> data_251; R; b
-	b -> data_939_aabbbbaaa; R; a
-
-data_251:
-	a -> data_252; R; b
-	b -> data_911_abaababaa; R; a
-
-data_252:
-	a -> data_253; R; b
-	b -> data_891_abababaaa; R; a
-
-data_253:
-	a -> data_254; R; b
-	b -> data_935_aabbbbbaa; R; a
-
-data_254:
-	a -> data_255; R; b
-	b -> data_891_abababaaa; R; a
-
-data_255:
-	a -> data_256; R; b
-	b -> data_868_ababbbbbb; R; a
-
-data_256:
-	a -> data_257; R; b
-	b -> data_573_bbbbaabba; R; a
-
-data_257:
-	a -> data_258; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_258:
-	a -> data_259; R; b
-	b -> data_570_bbbbabaab; R; a
-
-data_259:
-	a -> data_260; R; b
-	b -> data_787_baaabaaaa; R; a
-
-data_260:
-	a -> data_261; R; b
-	b -> data_747_baabbbaaa; R; a
-
-data_261:
-	a -> data_262; R; b
-	b -> data_560_bbbbbaabb; R; a
-
-data_262:
-	a -> data_263; R; b
-	b -> data_891_abababaaa; R; a
-
-data_263:
-	a -> data_264; R; b
-	b -> data_868_ababbbbbb; R; a
-
-data_264:
-	a -> data_265; R; b
-	b -> data_637_bbabaabba; R; a
-
-data_265:
-	a -> data_266; R; b
-	b -> data_819_abbbbaaaa; R; a
-
-data_266:
-	a -> data_267; R; b
-	b -> data_747_baabbbaaa; R; a
-
-data_267:
-	a -> data_268; R; b
-	b -> data_560_bbbbbaabb; R; a
-
-data_268:
-	a -> data_269; R; b
-	b -> data_891_abababaaa; R; a
-
-data_269:
-	a -> data_270; R; b
-	b -> data_900_abaabbbbb; R; a
-
-data_270:
-	a -> data_271; R; b
-	b -> data_1017_aaabababa; R; a
-
-data_271:
-	a -> data_272; R; b
-	b -> data_807_abbbbbbaa; R; a
-
-data_272:
-	a -> data_273; R; b
-	b -> data_805_abbbbbbba; R; a
-
-data_273:
-	a -> data_274; R; b
-	b -> data_1020_aaabaabbb; R; a
-
-data_274:
-	a -> data_275; R; b
-	b -> data_667_bbaaabaaa; R; a
-
-data_275:
-	a -> data_276; R; b
-	b -> data_988_aabaaabbb; R; a
-
-data_276:
-	a -> data_277; R; b
-	b -> data_673_bbaaaaaba; R; a
-
-data_277:
-	a -> data_278; R; b
-	b -> data_739_babaaaaaa; R; a
-
-data_278:
-	a -> data_279; R; b
-	b -> data_677_babbbbbba; R; a
-
-data_279:
-	a -> data_280; R; b
-	b -> data_735_babaaabaa; R; a
-
-data_280:
-	a -> data_281; R; b
-	b -> data_578_bbbbaaaab; R; a
-
-data_281:
-	a -> data_282; R; b
-	b -> data_978_aababaaab; R; a
-
-data_282:
-	a -> data_283; R; b
-	b -> data_896_ababaaabb; R; a
-
-data_283:
-	a -> data_284; R; b
-	b -> data_732_babaaabbb; R; a
-
-data_284:
-	a -> data_285; R; b
-	b -> data_674_bbaaaaaab; R; a
-
-data_285:
-	a -> data_286; R; b
-	b -> data_804_abbbbbbbb; R; a
-
-data_286:
-	a -> data_287; R; b
-	b -> data_651_bbaabbaaa; R; a
-
-data_287:
-	a -> data_288; R; b
-	b -> data_903_abaabbbaa; R; a
-
-data_288:
-	a -> data_289; R; b
-	b -> data_811_abbbbbaaa; R; a
-
-data_289:
-	a -> data_290; R; b
-	b -> data_723_bababaaaa; R; a
-
-data_290:
-	a -> data_291; R; b
-	b -> data_680_babbbbabb; R; a
-
-data_291:
-	a -> data_292; R; b
-	b -> data_599_bbbaabbaa; R; a
-
-data_292:
-	a -> data_293; R; b
-	b -> data_901_abaabbbba; R; a
-
-data_293:
-	a -> data_294; R; b
-	b -> data_1025_aaabaaaba; R; a
-
-data_294:
-	a -> data_295; R; b
-	b -> data_703_babbaabaa; R; a
-
-data_295:
-	a -> data_296; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_296:
-	a -> data_297; R; b
-	b -> data_578_bbbbaaaab; R; a
-
-data_297:
-	a -> data_298; R; b
-	b -> data_946_aabbbaaab; R; a
-
-data_298:
-	a -> data_299; R; b
-	b -> data_963_aabbaaaaa; R; a
-
-data_299:
-	a -> data_300; R; b
-	b -> data_921_abaaababa; R; a
-
-data_300:
-	a -> data_301; R; b
-	b -> data_657_bbaabaaba; R; a
-
-data_301:
-	a -> data_302; R; b
-	b -> data_782_baaababab; R; a
-
-data_302:
-	a -> data_303; R; b
-	b -> data_660_bbaaabbbb; R; a
-
-data_303:
-	a -> data_304; R; b
-	b -> data_743_baabbbbaa; R; a
-
-data_304:
-	a -> data_305; R; b
-	b -> data_981_aabaabbba; R; a
-
-data_305:
-	a -> data_306; R; b
-	b -> data_940_aabbbabbb; R; a
-
-data_306:
-	a -> data_307; R; b
-	b -> data_922_abaaabaab; R; a
-
-data_307:
-	a -> data_308; R; b
-	b -> data_755_baabbaaaa; R; a
-
-data_308:
-	a -> data_309; R; b
-	b -> data_677_babbbbbba; R; a
-
-data_309:
-	a -> data_310; R; b
-	b -> data_607_bbbaaabaa; R; a
-
-data_310:
-	a -> data_311; R; b
-	b -> data_990_aabaaabab; R; a
-
-data_311:
-	a -> data_312; R; b
-	b -> data_858_abbaabaab; R; a
-
-data_312:
-	a -> data_313; R; b
-	b -> data_660_bbaaabbbb; R; a
-
-data_313:
-	a -> data_314; R; b
-	b -> data_737_babaaaaba; R; a
-
-data_314:
-	a -> data_315; R; b
-	b -> data_833_abbbaaaba; R; a
-
-data_315:
-	a -> data_316; R; b
-	b -> data_719_babababaa; R; a
-
-data_316:
-	a -> data_317; R; b
-	b -> data_925_abaaaabba; R; a
-
-data_317:
-	a -> data_318; R; b
-	b -> data_932_aabbbbbbb; R; a
-
-data_318:
-	a -> data_319; R; b
-	b -> data_1042_aaaabaaab; R; a
-
-data_319:
-	a -> data_320; R; b
-	b -> data_881_ababbaaba; R; a
-
-data_320:
-	a -> data_321; R; b
-	b -> data_833_abbbaaaba; R; a
-
-data_321:
-	a -> data_322; R; b
-	b -> data_690_babbbaaab; R; a
-
-data_322:
-	a -> data_323; R; b
-	b -> data_573_bbbbaabba; R; a
-
-data_323:
-	a -> data_324; R; b
-	b -> data_794_baaaabaab; R; a
-
-data_324:
-	a -> data_325; R; b
-	b -> data_921_abaaababa; R; a
-
-data_325:
-	a -> data_326; R; b
-	b -> data_562_bbbbbaaab; R; a
-
-data_326:
-	a -> data_327; R; b
-	b -> data_579_bbbbaaaaa; R; a
-
-data_327:
-	a -> data_328; R; b
-	b -> data_903_abaabbbaa; R; a
-
-data_328:
-	a -> data_329; R; b
-	b -> data_889_ababababa; R; a
-
-data_329:
-	a -> data_330; R; b
-	b -> data_934_aabbbbbab; R; a
-
-data_330:
-	a -> data_331; R; b
-	b -> data_1042_aaaabaaab; R; a
-
-data_331:
-	a -> data_332; R; b
-	b -> data_881_ababbaaba; R; a
-
-data_332:
-	a -> data_333; R; b
-	b -> data_569_bbbbababa; R; a
-
-data_333:
-	a -> data_334; R; b
-	b -> data_863_abbaaabaa; R; a
-
-data_334:
-	a -> data_335; R; b
-	b -> data_964_aababbbbb; R; a
-
-data_335:
-	a -> data_336; R; b
-	b -> data_724_babaabbbb; R; a
-
-data_336:
-	a -> data_337; R; b
-	b -> data_1042_aaaabaaab; R; a
-
-data_337:
-	a -> data_338; R; b
-	b -> data_881_ababbaaba; R; a
-
-data_338:
-	a -> data_339; R; b
-	b -> data_636_bbabaabbb; R; a
-
-data_339:
-	a -> data_340; R; b
-	b -> data_596_bbbaabbbb; R; a
-
-data_340:
-	a -> data_341; R; b
-	b -> data_926_abaaaabab; R; a
-
-data_341:
-	a -> data_342; R; b
-	b -> data_735_babaaabaa; R; a
-
-data_342:
-	a -> data_343; R; b
-	b -> data_571_bbbbabaaa; R; a
-
-data_343:
-	a -> data_344; R; b
-	b -> data_870_ababbbbab; R; a
-
-data_344:
-	a -> data_345; R; b
-	b -> data_645_bbaabbbba; R; a
-
-data_345:
-	a -> data_346; R; b
-	b -> data_787_baaabaaaa; R; a
-
-data_346:
-	a -> data_347; R; b
-	b -> data_680_babbbbabb; R; a
-
-data_347:
-	a -> data_348; R; b
-	b -> data_748_baabbabbb; R; a
-
-data_348:
-	a -> data_349; R; b
-	b -> data_962_aabbaaaab; R; a
-
-data_349:
-	a -> data_350; R; b
-	b -> data_836_abbabbbbb; R; a
-
-data_350:
-	a -> data_351; R; b
-	b -> data_953_aabbababa; R; a
-
-data_351:
-	a -> data_352; R; b
-	b -> data_839_abbabbbaa; R; a
-
-data_352:
-	a -> data_353; R; b
-	b -> data_571_bbbbabaaa; R; a
-
-data_353:
-	a -> data_354; R; b
-	b -> data_902_abaabbbab; R; a
-
-data_354:
-	a -> data_355; R; b
-	b -> data_916_abaaabbbb; R; a
-
-data_355:
-	a -> data_356; R; b
-	b -> data_750_baabbabab; R; a
-
-data_356:
-	a -> data_357; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_357:
-	a -> data_358; R; b
-	b -> data_801_baaaaaaba; R; a
-
-data_358:
-	a -> data_359; R; b
-	b -> data_636_bbabaabbb; R; a
-
-data_359:
-	a -> data_360; R; b
-	b -> data_742_baabbbbab; R; a
-
-data_360:
-	a -> data_361; R; b
-	b -> data_1036_aaaababbb; R; a
-
-data_361:
-	a -> data_362; R; b
-	b -> data_688_babbbaabb; R; a
-
-data_362:
-	a -> data_363; R; b
-	b -> data_636_bbabaabbb; R; a
-
-data_363:
-	a -> data_364; R; b
-	b -> data_792_baaaababb; R; a
-
-data_364:
-	a -> data_365; R; b
-	b -> data_618_bbabbbaab; R; a
-
-data_365:
-	a -> data_366; R; b
-	b -> data_690_babbbaaab; R; a
-
-data_366:
-	a -> data_367; R; b
-	b -> data_1036_aaaababbb; R; a
-
-data_367:
-	a -> data_368; R; b
-	b -> data_711_bababbbaa; R; a
-
-data_368:
-	a -> data_369; R; b
-	b -> data_634_bbababaab; R; a
-
-data_369:
-	a -> data_370; R; b
-	b -> data_688_babbbaabb; R; a
-
-data_370:
-	a -> data_371; R; b
-	b -> data_642_bbabaaaab; R; a
-
-data_371:
-	a -> data_372; R; b
-	b -> data_942_aabbbabab; R; a
-
-data_372:
-	a -> data_373; R; b
-	b -> data_997_aaabbbbba; R; a
-
-data_373:
-	a -> data_374; R; b
-	b -> data_836_abbabbbbb; R; a
-
-data_374:
-	a -> data_375; R; b
-	b -> data_1017_aaabababa; R; a
-
-data_375:
-	a -> data_376; R; b
-	b -> data_1048_aaaaababb; R; a
-
-data_376:
-	a -> data_377; R; b
-	b -> data_805_abbbbbbba; R; a
-
-data_377:
-	a -> data_378; R; b
-	b -> data_816_abbbbaabb; R; a
-
-data_378:
-	a -> data_379; R; b
-	b -> data_917_abaaabbba; R; a
-
-data_379:
-	a -> data_380; R; b
-	b -> data_976_aababaabb; R; a
-
-data_380:
-	a -> data_381; R; b
-	b -> data_637_bbabaabba; R; a
-
-data_381:
-	a -> data_382; R; b
-	b -> data_598_bbbaabbab; R; a
-
-data_382:
-	a -> data_383; R; b
-	b -> data_926_abaaaabab; R; a
-
-data_383:
-	a -> data_384; R; b
-	b -> data_583_bbbabbbaa; R; a
-
-data_384:
-	a -> data_385; R; b
-	b -> data_570_bbbbabaab; R; a
-
-data_385:
-	a -> data_386; R; b
-	b -> data_563_bbbbbaaaa; R; a
-
-data_386:
-	a -> data_387; R; b
-	b -> data_680_babbbbabb; R; a
-
-data_387:
-	a -> data_388; R; b
-	b -> data_748_baabbabbb; R; a
-
-data_388:
-	a -> data_389; R; b
-	b -> data_1019_aaababaaa; R; a
-
-data_389:
-	a -> data_390; R; b
-	b -> data_868_ababbbbbb; R; a
-
-data_390:
-	a -> data_391; R; b
-	b -> data_554_bbbbbbaab; R; a
-
-data_391:
-	a -> data_392; R; b
-	b -> data_720_bababaabb; R; a
-
-data_392:
-	a -> data_393; R; b
-	b -> data_637_bbabaabba; R; a
-
-data_393:
-	a -> data_394; R; b
-	b -> data_609_bbbaaaaba; R; a
-
-data_394:
-	a -> data_395; R; b
-	b -> data_565_bbbbabbba; R; a
-
-data_395:
-	a -> data_396; R; b
-	b -> data_807_abbbbbbaa; R; a
-
-data_396:
-	a -> data_397; R; b
-	b -> data_635_bbababaaa; R; a
-
-data_397:
-	a -> data_398; R; b
-	b -> data_878_ababbabab; R; a
-
-data_398:
-	a -> data_399; R; b
-	b -> data_645_bbaabbbba; R; a
-
-data_399:
-	a -> data_400; R; b
-	b -> data_815_abbbbabaa; R; a
-
-data_400:
-	a -> data_401; R; b
-	b -> data_618_bbabbbaab; R; a
-
-data_401:
-	a -> data_402; R; b
-	b -> data_723_bababaaaa; R; a
-
-data_402:
-	a -> data_403; R; b
-	b -> data_741_baabbbbba; R; a
-
-data_403:
-	a -> data_404; R; b
-	b -> data_772_baaabbbbb; R; a
-
-data_404:
-	a -> data_405; R; b
-	b -> data_937_aabbbbaba; R; a
-
-data_405:
-	a -> data_406; R; b
-	b -> data_975_aabababaa; R; a
-
-data_406:
-	a -> data_407; R; b
-	b -> data_571_bbbbabaaa; R; a
-
-data_407:
-	a -> data_408; R; b
-	b -> data_878_ababbabab; R; a
-
-data_408:
-	a -> data_409; R; b
-	b -> data_666_bbaaabaab; R; a
-
-data_409:
-	a -> data_410; R; b
-	b -> data_592_bbbabaabb; R; a
-
-data_410:
-	a -> data_411; R; b
-	b -> data_829_abbbaabba; R; a
-
-data_411:
-	a -> data_412; R; b
-	b -> data_737_babaaaaba; R; a
-
-data_412:
-	a -> data_413; R; b
-	b -> data_809_abbbbbaba; R; a
-
-data_413:
-	a -> data_414; R; b
-	b -> data_935_aabbbbbaa; R; a
-
-data_414:
-	a -> data_415; R; b
-	b -> data_577_bbbbaaaba; R; a
-
-data_415:
-	a -> data_416; R; b
-	b -> data_724_babaabbbb; R; a
-
-data_416:
-	a -> data_417; R; b
-	b -> data_1042_aaaabaaab; R; a
-
-data_417:
-	a -> data_418; R; b
-	b -> data_881_ababbaaba; R; a
-
-data_418:
-	a -> data_419; R; b
-	b -> data_613_bbabbbbba; R; a
-
-data_419:
-	a -> data_420; R; b
-	b -> data_852_abbaabbbb; R; a
-
-data_420:
-	a -> data_421; R; b
-	b -> data_1026_aaabaaaab; R; a
-
-data_421:
-	a -> data_422; R; b
-	b -> data_814_abbbbabab; R; a
-
-data_422:
-	a -> data_423; R; b
-	b -> data_907_abaabbaaa; R; a
-
-data_423:
-	a -> data_424; R; b
-	b -> data_921_abaaababa; R; a
-
-data_424:
-	a -> data_425; R; b
-	b -> data_656_bbaabaabb; R; a
-
-data_425:
-	a -> data_426; R; b
-	b -> data_782_baaababab; R; a
-
-data_426:
-	a -> data_427; R; b
-	b -> data_1024_aaabaaabb; R; a
-
-data_427:
-	a -> data_428; R; b
-	b -> data_598_bbbaabbab; R; a
-
-data_428:
-	a -> data_429; R; b
-	b -> data_1036_aaaababbb; R; a
-
-data_429:
-	a -> data_430; R; b
-	b -> data_727_babaabbaa; R; a
-
-data_430:
-	a -> data_431; R; b
-	b -> data_994_aabaaaaab; R; a
-
-data_431:
-	a -> data_432; R; b
-	b -> data_815_abbbbabaa; R; a
-
-data_432:
-	a -> data_433; R; b
-	b -> data_670_bbaaaabab; R; a
-
-data_433:
-	a -> data_434; R; b
-	b -> data_720_bababaabb; R; a
-
-data_434:
-	a -> data_435; R; b
-	b -> data_1042_aaaabaaab; R; a
-
-data_435:
-	a -> data_436; R; b
-	b -> data_881_ababbaaba; R; a
-
-data_436:
-	a -> data_437; R; b
-	b -> data_637_bbabaabba; R; a
-
-data_437:
-	a -> data_438; R; b
-	b -> data_775_baaabbbaa; R; a
-
-data_438:
-	a -> data_439; R; b
-	b -> data_965_aababbbba; R; a
-
-data_439:
-	a -> data_440; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_440:
-	a -> data_441; R; b
-	b -> data_962_aabbaaaab; R; a
-
-data_441:
-	a -> data_442; R; b
-	b -> data_812_abbbbabbb; R; a
-
-data_442:
-	a -> data_443; R; b
-	b -> data_1018_aaababaab; R; a
-
-data_443:
-	a -> data_444; R; b
-	b -> data_737_babaaaaba; R; a
-
-data_444:
-	a -> data_445; R; b
-	b -> data_613_bbabbbbba; R; a
-
-data_445:
-	a -> data_446; R; b
-	b -> data_807_abbbbbbaa; R; a
-
-data_446:
-	a -> data_447; R; b
-	b -> data_833_abbbaaaba; R; a
-
-data_447:
-	a -> data_448; R; b
-	b -> data_794_baaaabaab; R; a
-
-data_448:
-	a -> data_449; R; b
-	b -> data_555_bbbbbbaaa; R; a
-
-data_449:
-	a -> data_450; R; b
-	b -> data_562_bbbbbaaab; R; a
-
-data_450:
-	a -> data_451; R; b
-	b -> data_635_bbababaaa; R; a
-
-data_451:
-	a -> data_452; R; b
-	b -> data_723_bababaaaa; R; a
-
-data_452:
-	a -> data_453; R; b
-	b -> data_969_aababbaba; R; a
-
-data_453:
-	a -> data_454; R; b
-	b -> data_598_bbbaabbab; R; a
-
-data_454:
-	a -> data_455; R; b
-	b -> data_1003_aaabbbaaa; R; a
-
-data_455:
-	a -> data_456; R; b
-	b -> data_724_babaabbbb; R; a
-
-data_456:
-	a -> data_457; R; b
-	b -> data_670_bbaaaabab; R; a
-
-data_457:
-	a -> data_458; R; b
-	b -> data_678_babbbbbab; R; a
-
-data_458:
-	a -> data_459; R; b
-	b -> data_955_aabbabaaa; R; a
-
-data_459:
-	a -> data_460; R; b
-	b -> data_743_baabbbbaa; R; a
-
-data_460:
-	a -> data_461; R; b
-	b -> data_833_abbbaaaba; R; a
-
-data_461:
-	a -> data_462; R; b
-	b -> data_740_baabbbbbb; R; a
-
-data_462:
-	a -> data_463; R; b
-	b -> data_1036_aaaababbb; R; a
-
-data_463:
-	a -> data_464; R; b
-	b -> data_690_babbbaaab; R; a
-
-data_464:
-	a -> data_465; R; b
-	b -> data_645_bbaabbbba; R; a
-
-data_465:
-	a -> data_466; R; b
-	b -> data_1022_aaabaabab; R; a
-
-data_466:
-	a -> data_467; R; b
-	b -> data_660_bbaaabbbb; R; a
-
-data_467:
-	a -> data_468; R; b
-	b -> data_774_baaabbbab; R; a
-
-data_468:
-	a -> data_469; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_469:
-	a -> data_470; R; b
-	b -> data_801_baaaaaaba; R; a
-
-data_470:
-	a -> data_471; R; b
-	b -> data_636_bbabaabbb; R; a
-
-data_471:
-	a -> data_472; R; b
-	b -> data_775_baaabbbaa; R; a
-
-data_472:
-	a -> data_473; R; b
-	b -> data_965_aababbbba; R; a
-
-data_473:
-	a -> data_474; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_474:
-	a -> data_475; R; b
-	b -> data_962_aabbaaaab; R; a
-
-data_475:
-	a -> data_476; R; b
-	b -> data_812_abbbbabbb; R; a
-
-data_476:
-	a -> data_477; R; b
-	b -> data_1018_aaababaab; R; a
-
-data_477:
-	a -> data_478; R; b
-	b -> data_609_bbbaaaaba; R; a
-
-data_478:
-	a -> data_479; R; b
-	b -> data_613_bbabbbbba; R; a
-
-data_479:
-	a -> data_480; R; b
-	b -> data_807_abbbbbbaa; R; a
-
-data_480:
-	a -> data_481; R; b
-	b -> data_833_abbbaaaba; R; a
-
-data_481:
-	a -> data_482; R; b
-	b -> data_794_baaaabaab; R; a
-
-data_482:
-	a -> data_483; R; b
-	b -> data_555_bbbbbbaaa; R; a
-
-data_483:
-	a -> data_484; R; b
-	b -> data_562_bbbbbaaab; R; a
-
-data_484:
-	a -> data_485; R; b
-	b -> data_619_bbabbbaaa; R; a
-
-data_485:
-	a -> data_486; R; b
-	b -> data_723_bababaaaa; R; a
-
-data_486:
-	a -> data_487; R; b
-	b -> data_965_aababbbba; R; a
-
-data_487:
-	a -> data_488; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_488:
-	a -> data_489; R; b
-	b -> data_939_aabbbbaaa; R; a
-
-data_489:
-	a -> data_490; R; b
-	b -> data_870_ababbbbab; R; a
-
-data_490:
-	a -> data_491; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_491:
-	a -> data_492; R; b
-	b -> data_851_abbabaaaa; R; a
-
-data_492:
-	a -> data_493; R; b
-	b -> data_676_babbbbbbb; R; a
-
-data_493:
-	a -> data_494; R; b
-	b -> data_560_bbbbbaabb; R; a
-
-data_494:
-	a -> data_495; R; b
-	b -> data_576_bbbbaaabb; R; a
-
-data_495:
-	a -> data_496; R; b
-	b -> data_783_baaababaa; R; a
-
-data_496:
-	a -> data_497; R; b
-	b -> data_965_aababbbba; R; a
-
-data_497:
-	a -> data_498; R; b
-	b -> data_596_bbbaabbbb; R; a
-
-data_498:
-	a -> data_499; R; b
-	b -> data_933_aabbbbbba; R; a
-
-data_499:
-	a -> data_500; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_500:
-	a -> data_501; R; b
-	b -> data_832_abbbaaabb; R; a
-
-data_501:
-	a -> data_502; R; b
-	b -> data_743_baabbbbaa; R; a
-
-data_502:
-	a -> data_503; R; b
-	b -> data_965_aababbbba; R; a
-
-data_503:
-	a -> data_504; R; b
-	b -> data_606_bbbaaabab; R; a
-
-data_504:
-	a -> data_505; R; b
-	b -> data_962_aabbaaaab; R; a
-
-data_505:
-	a -> data_506; R; b
-	b -> data_838_abbabbbab; R; a
-
-data_506:
-	a -> data_507; R; b
-	b -> data_644_bbaabbbbb; R; a
-
-data_507:
-	a -> data_508; R; b
-	b -> data_775_baaabbbaa; R; a
-
-data_508:
-	a -> data_509; R; b
-	b -> data_898_ababaaaab; R; a
-
-data_509:
-	a -> data_510; R; b
-	b -> data_932_aabbbbbbb; R; a
-
-data_510:
-	a -> data_511; R; b
-	b -> data_997_aaabbbbba; R; a
-
-data_511:
-	a -> data_512; R; b
-	b -> data_934_aabbbbbab; R; a
-
-data_512:
-	a -> data_513; R; b
-	b -> data_1017_aaabababa; R; a
-
-data_513:
-	a -> data_514; R; b
-	b -> data_1051_aaaaabaaa; R; a
-
-data_514:
-	a -> data_515; R; b
-	b -> data_984_aabaababb; R; a
-
-data_515:
-	a -> data_516; R; b
-	b -> data_772_baaabbbbb; R; a
-
-data_516:
-	a -> data_517; R; b
-	b -> data_997_aaabbbbba; R; a
-
-data_517:
-	a -> data_518; R; b
-	b -> data_975_aabababaa; R; a
-
-data_518:
-	a -> data_519; R; b
-	b -> data_811_abbbbbaaa; R; a
-
-data_519:
-	a -> data_520; R; b
-	b -> data_908_abaababbb; R; a
-
-data_520:
-	a -> data_521; R; b
-	b -> data_997_aaabbbbba; R; a
-
-data_521:
-	a -> data_522; R; b
-	b -> data_990_aabaaabab; R; a
-
-data_522:
-	a -> data_523; R; b
-	b -> data_923_abaaabaaa; R; a
-
-data_523:
-	a -> data_524; R; b
-	b -> data_879_ababbabaa; R; a
-
-data_524:
-	a -> data_525; R; b
-	b -> data_640_bbabaaabb; R; a
-
-data_525:
-	a -> data_526; R; b
-	b -> data_795_baaaabaaa; R; a
-
-data_526:
-	a -> data_527; R; b
-	b -> data_714_bababbaab; R; a
-
-data_527:
-	a -> data_528; R; b
-	b -> data_812_abbbbabbb; R; a
-
-data_528:
-	a -> data_529; R; b
-	b -> data_954_aabbabaab; R; a
-
-data_529:
-	a -> data_530; R; b
-	b -> data_792_baaaababb; R; a
-
-data_530:
-	a -> data_531; R; b
-	b -> data_576_bbbbaaabb; R; a
-
-data_531:
-	a -> data_532; R; b
-	b -> data_792_baaaababb; R; a
-
-data_532:
-	a -> data_533; R; b
-	b -> data_821_abbbabbba; R; a
-
-data_533:
-	a -> data_534; R; b
-	b -> data_976_aababaabb; R; a
-
-data_534:
-	a -> data_535; R; b
-	b -> data_917_abaaabbba; R; a
-
-data_535:
-	a -> data_536; R; b
-	b -> data_1022_aaabaabab; R; a
-
-data_536:
-	a -> data_537; R; b
-	b -> data_916_abaaabbbb; R; a
-
-data_537:
-	a -> data_538; R; b
-	b -> data_740_baabbbbbb; R; a
-
-data_538:
-	a -> data_539; R; b
-	b -> data_1017_aaabababa; R; a
-
-data_539:
-	a -> data_540; R; b
-	b -> data_1048_aaaaababb; R; a
-
-data_540:
-	a -> data_541; R; b
-	b -> data_825_abbbababa; R; a
-
-data_541:
-	a -> data_542; R; b
-	b -> data_816_abbbbaabb; R; a
-
-data_542:
-	a -> data_543; R; b
-	b -> data_927_abaaaabaa; R; a
-
-data_543:
-	a -> data_544; R; b
-	b -> data_1014_aaababbab; R; a
-
-data_544:
-	a -> data_545; R; b
-	b -> data_810_abbbbbaab; R; a
-
-data_545:
-	a -> data_546; R; b
-	b -> data_737_babaaaaba; R; a
-
-data_546:
-	a -> data_547; R; b
-	b -> data_565_bbbbabbba; R; a
-
-data_547:
-	a -> data_548_bbbbbbbbb; R; b
-	b -> data_816_abbbbaabb; R; a
-
-data_548_bbbbbbbbb:
-	a -> data_549_bbbbbbbba; R; b
-	b -> data_926_abaaaabab; R; a
-
-data_549_bbbbbbbba:
-	a -> data_550_bbbbbbbab; R; b
-	b -> data_583_bbbabbbaa; R; a
-
-data_550_bbbbbbbab:
-	a -> data_551_bbbbbbbaa; R; b
-	b -> data_637_bbabaabba; R; a
-
-data_551_bbbbbbbaa:
-	a -> data_552_bbbbbbabb; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_552_bbbbbbabb:
-	a -> data_553_bbbbbbaba; R; b
-	b -> data_832_abbbaaabb; R; a
-
-data_553_bbbbbbaba:
-	a -> data_554_bbbbbbaab; R; b
-	b -> data_743_baabbbbaa; R; a
-
-data_554_bbbbbbaab:
-	a -> data_555_bbbbbbaaa; R; b
-	b -> data_968_aababbabb; R; a
-
-data_555_bbbbbbaaa:
-	a -> data_556_bbbbbabbb; R; b
-	b -> data_606_bbbaaabab; R; a
-
-data_556_bbbbbabbb:
-	a -> data_557_bbbbbabba; R; b
-	b -> data_955_aabbabaaa; R; a
-
-data_557_bbbbbabba:
-	a -> data_558_bbbbbabab; R; b
-	b -> data_609_bbbaaaaba; R; a
-
-data_558_bbbbbabab:
-	a -> data_559_bbbbbabaa; R; b
-	b -> data_891_abababaaa; R; a
-
-data_559_bbbbbabaa:
-	a -> data_560_bbbbbaabb; R; b
-	b -> data_560_bbbbbaabb; R; a
-
-data_560_bbbbbaabb:
-	a -> data_561_bbbbbaaba; R; b
-	b -> data_891_abababaaa; R; a
-
-data_561_bbbbbaaba:
-	a -> data_562_bbbbbaaab; R; b
-	b -> data_723_bababaaaa; R; a
-
-data_562_bbbbbaaab:
-	a -> data_563_bbbbbaaaa; R; b
-	b -> data_969_aababbaba; R; a
-
-data_563_bbbbbaaaa:
-	a -> data_564_bbbbabbbb; R; b
-	b -> data_592_bbbabaabb; R; a
-
-data_564_bbbbabbbb:
-	a -> data_565_bbbbabbba; R; b
-	b -> data_939_aabbbbaaa; R; a
-
-data_565_bbbbabbba:
-	a -> data_566_bbbbabbab; R; b
-	b -> data_751_baabbabaa; R; a
-
-data_566_bbbbabbab:
-	a -> data_567_bbbbabbaa; R; b
-	b -> data_833_abbbaaaba; R; a
-
-data_567_bbbbabbaa:
-	a -> data_568_bbbbababb; R; b
-	b -> data_792_baaaababb; R; a
-
-data_568_bbbbababb:
-	a -> data_569_bbbbababa; R; b
-	b -> data_618_bbabbbaab; R; a
-
-data_569_bbbbababa:
-	a -> data_570_bbbbabaab; R; b
-	b -> data_735_babaaabaa; R; a
-
-data_570_bbbbabaab:
-	a -> data_571_bbbbabaaa; R; b
-	b -> data_965_aababbbba; R; a
-
-data_571_bbbbabaaa:
-	a -> data_572_bbbbaabbb; R; b
-	b -> data_775_baaabbbaa; R; a
-
-data_572_bbbbaabbb:
-	a -> data_573_bbbbaabba; R; b
-	b -> data_968_aababbabb; R; a
-
-data_573_bbbbaabba:
-	a -> data_574_bbbbaabab; R; b
-	b -> data_690_babbbaaab; R; a
-
-data_574_bbbbaabab:
-	a -> data_575_bbbbaabaa; R; b
-	b -> data_905_abaabbaba; R; a
-
-data_575_bbbbaabaa:
-	a -> data_576_bbbbaaabb; R; b
-	b -> data_947_aabbbaaaa; R; a
-
-data_576_bbbbaaabb:
-	a -> data_577_bbbbaaaba; R; b
-	b -> data_761_baabababa; R; a
-
-data_577_bbbbaaaba:
-	a -> data_578_bbbbaaaab; R; b
-	b -> data_935_aabbbbbaa; R; a
-
-data_578_bbbbaaaab:
-	a -> data_579_bbbbaaaaa; R; b
-	b -> data_617_bbabbbaba; R; a
-
-data_579_bbbbaaaaa:
-	a -> data_580_bbbabbbbb; R; b
-	b -> data_975_aabababaa; R; a
-
-data_580_bbbabbbbb:
-	a -> data_581_bbbabbbba; R; b
-	b -> data_1037_aaaababba; R; a
-
-data_581_bbbabbbba:
-	a -> data_582_bbbabbbab; R; b
-	b -> data_591_bbbababaa; R; a
-
-data_582_bbbabbbab:
-	a -> data_583_bbbabbbaa; R; b
-	b -> data_573_bbbbaabba; R; a
-
-data_583_bbbabbbaa:
-	a -> data_584_bbbabbabb; R; b
-	b -> data_795_baaaabaaa; R; a
-
-data_584_bbbabbabb:
-	a -> data_585_bbbabbaba; R; b
-	b -> data_969_aababbaba; R; a
-
-data_585_bbbabbaba:
-	a -> data_586_bbbabbaab; R; b
-	b -> data_596_bbbaabbbb; R; a
-
-data_586_bbbabbaab:
-	a -> data_587_bbbabbaaa; R; b
-	b -> data_955_aabbabaaa; R; a
-
-data_587_bbbabbaaa:
-	a -> data_588_bbbababbb; R; b
-	b -> data_606_bbbaaabab; R; a
-
-data_588_bbbababbb:
-	a -> data_589_bbbababba; R; b
-	b -> data_1040_aaaabaabb; R; a
-
-data_589_bbbababba:
-	a -> data_590_bbbababab; R; b
-	b -> data_732_babaaabbb; R; a
-
-data_590_bbbababab:
-	a -> data_591_bbbababaa; R; b
-	b -> data_648_bbaabbabb; R; a
-
-data_591_bbbababaa:
-	a -> data_592_bbbabaabb; R; b
-	b -> data_782_baaababab; R; a
-
-data_592_bbbabaabb:
-	a -> data_593_bbbabaaba; R; b
-	b -> data_949_aabbabbba; R; a
-
-data_593_bbbabaaba:
-	a -> data_594_bbbabaaab; R; b
-	b -> data_1025_aaabaaaba; R; a
-
-data_594_bbbabaaab:
-	a -> data_595_bbbabaaaa; R; b
-	b -> data_702_babbaabab; R; a
-
-data_595_bbbabaaaa:
-	a -> data_596_bbbaabbbb; R; b
-	b -> data_588_bbbababbb; R; a
-
-data_596_bbbaabbbb:
-	a -> data_597_bbbaabbba; R; b
-	b -> data_961_aabbaaaba; R; a
-
-data_597_bbbaabbba:
-	a -> data_598_bbbaabbab; R; b
-	b -> data_819_abbbbaaaa; R; a
-
-data_598_bbbaabbab:
-	a -> data_599_bbbaabbaa; R; b
-	b -> data_747_baabbbaaa; R; a
-
-data_599_bbbaabbaa:
-	a -> data_600_bbbaababb; R; b
-	b -> data_723_bababaaaa; R; a
-
-data_600_bbbaababb:
-	a -> data_601_bbbaababa; R; b
-	b -> data_810_abbbbbaab; R; a
-
-data_601_bbbaababa:
-	a -> data_602_bbbaabaab; R; b
-	b -> data_737_babaaaaba; R; a
-
-data_602_bbbaabaab:
-	a -> data_603_bbbaabaaa; R; b
-	b -> data_568_bbbbababb; R; a
-
-data_603_bbbaabaaa:
-	a -> data_604_bbbaaabbb; R; b
-	b -> data_752_baabbaabb; R; a
-
-data_604_bbbaaabbb:
-	a -> data_605_bbbaaabba; R; b
-	b -> data_667_bbaaabaaa; R; a
-
-data_605_bbbaaabba:
-	a -> data_606_bbbaaabab; R; b
-	b -> data_921_abaaababa; R; a
-
-data_606_bbbaaabab:
-	a -> data_607_bbbaaabaa; R; b
-	b -> data_652_bbaababbb; R; a
-
-data_607_bbbaaabaa:
-	a -> data_608_bbbaaaabb; R; b
-	b -> data_735_babaaabaa; R; a
-
-data_608_bbbaaaabb:
-	a -> data_609_bbbaaaaba; R; b
-	b -> data_965_aababbbba; R; a
-
-data_609_bbbaaaaba:
-	a -> data_610_bbbaaaaab; R; b
-	b -> data_599_bbbaabbaa; R; a
-
-data_610_bbbaaaaab:
-	a -> data_611_bbbaaaaaa; R; b
-	b -> data_927_abaaaabaa; R; a
-
-data_611_bbbaaaaaa:
-	a -> data_612_bbabbbbbb; R; b
-	b -> data_887_abababbaa; R; a
-
-data_612_bbabbbbbb:
-	a -> data_613_bbabbbbba; R; b
-	b -> data_677_babbbbbba; R; a
-
-data_613_bbabbbbba:
-	a -> data_614_bbabbbbab; R; b
-	b -> data_865_abbaaaaba; R; a
-
-data_614_bbabbbbab:
-	a -> data_615_bbabbbbaa; R; b
-	b -> data_634_bbababaab; R; a
-
-data_615_bbabbbbaa:
-	a -> data_616_bbabbbabb; R; b
-	b -> data_795_baaaabaaa; R; a
-
-data_616_bbabbbabb:
-	a -> data_617_bbabbbaba; R; b
-	b -> data_714_bababbaab; R; a
-
-data_617_bbabbbaba:
-	a -> data_618_bbabbbaab; R; b
-	b -> data_812_abbbbabbb; R; a
-
-data_618_bbabbbaab:
-	a -> data_619_bbabbbaaa; R; b
-	b -> data_954_aabbabaab; R; a
-
-data_619_bbabbbaaa:
-	a -> data_620_bbabbabbb; R; b
-	b -> data_792_baaaababb; R; a
-
-data_620_bbabbabbb:
-	a -> data_621_bbabbabba; R; b
-	b -> data_618_bbabbbaab; R; a
-
-data_621_bbabbabba:
-	a -> data_622_bbabbabab; R; b
-	b -> data_598_bbbaabbab; R; a
-
-data_622_bbabbabab:
-	a -> data_623_bbabbabaa; R; b
-	b -> data_1036_aaaababbb; R; a
-
-data_623_bbabbabaa:
-	a -> data_624_bbabbaabb; R; b
-	b -> data_688_babbbaabb; R; a
-
-data_624_bbabbaabb:
-	a -> data_625_bbabbaaba; R; b
-	b -> data_901_abaabbbba; R; a
-
-data_625_bbabbaaba:
-	a -> data_626_bbabbaaab; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_626_bbabbaaab:
-	a -> data_627_bbabbaaaa; R; b
-	b -> data_832_abbbaaabb; R; a
-
-data_627_bbabbaaaa:
-	a -> data_628_bbababbbb; R; b
-	b -> data_787_baaabaaaa; R; a
-
-data_628_bbababbbb:
-	a -> data_629_bbababbba; R; b
-	b -> data_681_babbbbaba; R; a
-
-data_629_bbababbba:
-	a -> data_630_bbababbab; R; b
-	b -> data_606_bbbaaabab; R; a
-
-data_630_bbababbab:
-	a -> data_631_bbababbaa; R; b
-	b -> data_955_aabbabaaa; R; a
-
-data_631_bbababbaa:
-	a -> data_632_bbabababb; R; b
-	b -> data_609_bbbaaaaba; R; a
-
-data_632_bbabababb:
-	a -> data_633_bbabababa; R; b
-	b -> data_891_abababaaa; R; a
-
-data_633_bbabababa:
-	a -> data_634_bbababaab; R; b
-	b -> data_562_bbbbbaaab; R; a
-
-data_634_bbababaab:
-	a -> data_635_bbababaaa; R; b
-	b -> data_641_bbabaaaba; R; a
-
-data_635_bbababaaa:
-	a -> data_636_bbabaabbb; R; b
-	b -> data_739_babaaaaaa; R; a
-
-data_636_bbabaabbb:
-	a -> data_637_bbabaabba; R; b
-	b -> data_680_babbbbabb; R; a
-
-data_637_bbabaabba:
-	a -> data_638_bbabaabab; R; b
-	b -> data_751_baabbabaa; R; a
-
-data_638_bbabaabab:
-	a -> data_639_bbabaabaa; R; b
-	b -> data_578_bbbbaaaab; R; a
-
-data_639_bbabaabaa:
-	a -> data_640_bbabaaabb; R; b
-	b -> data_812_abbbbabbb; R; a
-
-data_640_bbabaaabb:
-	a -> data_641_bbabaaaba; R; b
-	b -> data_1003_aaabbbaaa; R; a
-
-data_641_bbabaaaba:
-	a -> data_642_bbabaaaab; R; b
-	b -> data_792_baaaababb; R; a
-
-data_642_bbabaaaab:
-	a -> data_643_bbabaaaaa; R; b
-	b -> data_885_abababbba; R; a
-
-data_643_bbabaaaaa:
-	a -> data_644_bbaabbbbb; R; b
-	b -> data_976_aababaabb; R; a
-
-data_644_bbaabbbbb:
-	a -> data_645_bbaabbbba; R; b
-	b -> data_917_abaaabbba; R; a
-
-data_645_bbaabbbba:
-	a -> data_646_bbaabbbab; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_646_bbaabbbab:
-	a -> data_647_bbaabbbaa; R; b
-	b -> data_828_abbbaabbb; R; a
-
-data_647_bbaabbbaa:
-	a -> data_648_bbaabbabb; R; b
-	b -> data_783_baaababaa; R; a
-
-data_648_bbaabbabb:
-	a -> data_649_bbaabbaba; R; b
-	b -> data_981_aabaabbba; R; a
-
-data_649_bbaabbaba:
-	a -> data_650_bbaabbaab; R; b
-	b -> data_772_baaabbbbb; R; a
-
-data_650_bbaabbaab:
-	a -> data_651_bbaabbaaa; R; b
-	b -> data_939_aabbbbaaa; R; a
-
-data_651_bbaabbaaa:
-	a -> data_652_bbaababbb; R; b
-	b -> data_720_bababaabb; R; a
-
-data_652_bbaababbb:
-	a -> data_653_bbaababba; R; b
-	b -> data_671_bbaaaabaa; R; a
-
-data_653_bbaababba:
-	a -> data_654_bbaababab; R; b
-	b -> data_887_abababbaa; R; a
-
-data_654_bbaababab:
-	a -> data_655_bbaababaa; R; b
-	b -> data_697_babbababa; R; a
-
-data_655_bbaababaa:
-	a -> data_656_bbaabaabb; R; b
-	b -> data_724_babaabbbb; R; a
-
-data_656_bbaabaabb:
-	a -> data_657_bbaabaaba; R; b
-	b -> data_1037_aaaababba; R; a
-
-data_657_bbaabaaba:
-	a -> data_658_bbaabaaab; R; b
-	b -> data_720_bababaabb; R; a
-
-data_658_bbaabaaab:
-	a -> data_659_bbaabaaaa; R; b
-	b -> data_1020_aaabaabbb; R; a
-
-data_659_bbaabaaaa:
-	a -> data_660_bbaaabbbb; R; b
-	b -> data_792_baaaababb; R; a
-
-data_660_bbaaabbbb:
-	a -> data_661_bbaaabbba; R; b
-	b -> data_889_ababababa; R; a
-
-data_661_bbaaabbba:
-	a -> data_662_bbaaabbab; R; b
-	b -> data_819_abbbbaaaa; R; a
-
-data_662_bbaaabbab:
-	a -> data_663_bbaaabbaa; R; b
-	b -> data_782_baaababab; R; a
-
-data_663_bbaaabbaa:
-	a -> data_664_bbaaababb; R; b
-	b -> data_764_baabaabbb; R; a
-
-data_664_bbaaababb:
-	a -> data_665_bbaaababa; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_665_bbaaababa:
-	a -> data_666_bbaaabaab; R; b
-	b -> data_774_baaabbbab; R; a
-
-data_666_bbaaabaab:
-	a -> data_667_bbaaabaaa; R; b
-	b -> data_955_aabbabaaa; R; a
-
-data_667_bbaaabaaa:
-	a -> data_668_bbaaaabbb; R; b
-	b -> data_903_abaabbbaa; R; a
-
-data_668_bbaaaabbb:
-	a -> data_669_bbaaaabba; R; b
-	b -> data_885_abababbba; R; a
-
-data_669_bbaaaabba:
-	a -> data_670_bbaaaabab; R; b
-	b -> data_774_baaabbbab; R; a
-
-data_670_bbaaaabab:
-	a -> data_671_bbaaaabaa; R; b
-	b -> data_671_bbaaaabaa; R; a
-
-data_671_bbaaaabaa:
-	a -> data_672_bbaaaaabb; R; b
-	b -> data_607_bbbaaabaa; R; a
-
-data_672_bbaaaaabb:
-	a -> data_673_bbaaaaaba; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_673_bbaaaaaba:
-	a -> data_674_bbaaaaaab; R; b
-	b -> data_1020_aaabaabbb; R; a
-
-data_674_bbaaaaaab:
-	a -> data_675_bbaaaaaaa; R; b
-	b -> data_1016_aaabababb; R; a
-
-data_675_bbaaaaaaa:
-	a -> data_676_babbbbbbb; R; b
-	b -> data_594_bbbabaaab; R; a
-
-data_676_babbbbbbb:
-	a -> data_677_babbbbbba; R; b
-	b -> data_667_bbaaabaaa; R; a
-
-data_677_babbbbbba:
-	a -> data_678_babbbbbab; R; b
-	b -> data_799_baaaaabaa; R; a
-
-data_678_babbbbbab:
-	a -> data_679_babbbbbaa; R; b
-	b -> data_981_aabaabbba; R; a
-
-data_679_babbbbbaa:
-	a -> data_680_babbbbabb; R; b
-	b -> data_967_aababbbaa; R; a
-
-data_680_babbbbabb:
-	a -> data_681_babbbbaba; R; b
-	b -> data_1036_aaaababbb; R; a
-
-data_681_babbbbaba:
-	a -> data_682_babbbbaab; R; b
-	b -> data_592_bbbabaabb; R; a
-
-data_682_babbbbaab:
-	a -> data_683_babbbbaaa; R; b
-	b -> data_1042_aaaabaaab; R; a
-
-data_683_babbbbaaa:
-	a -> data_684_babbbabbb; R; b
-	b -> data_881_ababbaaba; R; a
-
-data_684_babbbabbb:
-	a -> data_685_babbbabba; R; b
-	b -> data_570_bbbbabaab; R; a
-
-data_685_babbbabba:
-	a -> data_686_babbbabab; R; b
-	b -> data_792_baaaababb; R; a
-
-data_686_babbbabab:
-	a -> data_687_babbbabaa; R; b
-	b -> data_549_bbbbbbbba; R; a
-
-data_687_babbbabaa:
-	a -> data_688_babbbaabb; R; b
-	b -> data_784_baaabaabb; R; a
-
-data_688_babbbaabb:
-	a -> data_689_babbbaaba; R; b
-	b -> data_671_bbaaaabaa; R; a
-
-data_689_babbbaaba:
-	a -> data_690_babbbaaab; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_690_babbbaaab:
-	a -> data_691_babbbaaaa; R; b
-	b -> data_661_bbaaabbba; R; a
-
-data_691_babbbaaaa:
-	a -> data_692_babbabbbb; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_692_babbabbbb:
-	a -> data_693_babbabbba; R; b
-	b -> data_565_bbbbabbba; R; a
-
-data_693_babbabbba:
-	a -> data_694_babbabbab; R; b
-	b -> data_852_abbaabbbb; R; a
-
-data_694_babbabbab:
-	a -> data_695_babbabbaa; R; b
-	b -> data_1041_aaaabaaba; R; a
-
-data_695_babbabbaa:
-	a -> data_696_babbababb; R; b
-	b -> data_782_baaababab; R; a
-
-data_696_babbababb:
-	a -> data_697_babbababa; R; b
-	b -> data_571_bbbbabaaa; R; a
-
-data_697_babbababa:
-	a -> data_698_babbabaab; R; b
-	b -> data_563_bbbbbaaaa; R; a
-
-data_698_babbabaab:
-	a -> data_699_babbabaaa; R; b
-	b -> data_965_aababbbba; R; a
-
-data_699_babbabaaa:
-	a -> data_700_babbaabbb; R; b
-	b -> data_560_bbbbbaabb; R; a
-
-data_700_babbaabbb:
-	a -> data_701_babbaabba; R; b
-	b -> data_1020_aaabaabbb; R; a
-
-data_701_babbaabba:
-	a -> data_702_babbaabab; R; b
-	b -> data_792_baaaababb; R; a
-
-data_702_babbaabab:
-	a -> data_703_babbaabaa; R; b
-	b -> data_553_bbbbbbaba; R; a
-
-data_703_babbaabaa:
-	a -> data_704_babbaaabb; R; b
-	b -> data_754_baabbaaab; R; a
-
-data_704_babbaaabb:
-	a -> data_705_babbaaaba; R; b
-	b -> data_939_aabbbbaaa; R; a
-
-data_705_babbaaaba:
-	a -> data_706_babbaaaab; R; b
-	b -> data_921_abaaababa; R; a
-
-data_706_babbaaaab:
-	a -> data_707_babbaaaaa; R; b
-	b -> data_656_bbaabaabb; R; a
-
-data_707_babbaaaaa:
-	a -> data_708_bababbbbb; R; b
-	b -> data_772_baaabbbbb; R; a
-
-data_708_bababbbbb:
-	a -> data_709_bababbbba; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_709_bababbbba:
-	a -> data_710_bababbbab; R; b
-	b -> data_743_baabbbbaa; R; a
-
-data_710_bababbbab:
-	a -> data_711_bababbbaa; R; b
-	b -> data_981_aabaabbba; R; a
-
-data_711_bababbbaa:
-	a -> data_712_bababbabb; R; b
-	b -> data_994_aabaaaaab; R; a
-
-data_712_bababbabb:
-	a -> data_713_bababbaba; R; b
-	b -> data_1017_aaabababa; R; a
-
-data_713_bababbaba:
-	a -> data_714_bababbaab; R; b
-	b -> data_1050_aaaaabaab; R; a
-
-data_714_bababbaab:
-	a -> data_715_bababbaaa; R; b
-	b -> data_916_abaaabbbb; R; a
-
-data_715_bababbaaa:
-	a -> data_716_babababbb; R; b
-	b -> data_606_bbbaaabab; R; a
-
-data_716_babababbb:
-	a -> data_717_babababba; R; b
-	b -> data_917_abaaabbba; R; a
-
-data_717_babababba:
-	a -> data_718_babababab; R; b
-	b -> data_1022_aaabaabab; R; a
-
-data_718_babababab:
-	a -> data_719_babababaa; R; b
-	b -> data_1027_aaabaaaaa; R; a
-
-data_719_babababaa:
-	a -> data_720_bababaabb; R; b
-	b -> data_782_baaababab; R; a
-
-data_720_bababaabb:
-	a -> data_721_bababaaba; R; b
-	b -> data_1055_aaaaaabaa; R; a
-
-data_721_bababaaba:
-	a -> data_722_bababaaab; R; b
-	b -> data_887_abababbaa; R; a
-
-data_722_bababaaab:
-	a -> data_723_bababaaaa; R; b
-	b -> data_693_babbabbba; R; a
-
-data_723_bababaaaa:
-	a -> data_724_babaabbbb; R; b
-	b -> data_865_abbaaaaba; R; a
-
-data_724_babaabbbb:
-	a -> data_725_babaabbba; R; b
-	b -> data_549_bbbbbbbba; R; a
-
-data_725_babaabbba:
-	a -> data_726_babaabbab; R; b
-	b -> data_754_baabbaaab; R; a
-
-data_726_babaabbab:
-	a -> data_727_babaabbaa; R; b
-	b -> data_1036_aaaababbb; R; a
-
-data_727_babaabbaa:
-	a -> data_728_babaababb; R; b
-	b -> data_583_bbbabbbaa; R; a
-
-data_728_babaababb:
-	a -> data_729_babaababa; R; b
-	b -> data_671_bbaaaabaa; R; a
-
-data_729_babaababa:
-	a -> data_730_babaabaab; R; b
-	b -> data_887_abababbaa; R; a
-
-data_730_babaabaab:
-	a -> data_731_babaabaaa; R; b
-	b -> data_763_baababaaa; R; a
-
-data_731_babaabaaa:
-	a -> data_732_babaaabbb; R; b
-	b -> data_720_bababaabb; R; a
-
-data_732_babaaabbb:
-	a -> data_733_babaaabba; R; b
-	b -> data_660_bbaaabbbb; R; a
-
-data_733_babaaabba:
-	a -> data_734_babaaabab; R; b
-	b -> data_801_baaaaaaba; R; a
-
-data_734_babaaabab:
-	a -> data_735_babaaabaa; R; b
-	b -> data_633_bbabababa; R; a
-
-data_735_babaaabaa:
-	a -> data_736_babaaaabb; R; b
-	b -> data_755_baabbaaaa; R; a
-
-data_736_babaaaabb:
-	a -> data_737_babaaaaba; R; b
-	b -> data_741_baabbbbba; R; a
-
-data_737_babaaaaba:
-	a -> data_738_babaaaaab; R; b
-	b -> data_975_aabababaa; R; a
-
-data_738_babaaaaab:
-	a -> data_739_babaaaaaa; R; b
-	b -> data_832_abbbaaabb; R; a
-
-data_739_babaaaaaa:
-	a -> data_740_baabbbbbb; R; b
-	b -> data_611_bbbaaaaaa; R; a
-
-data_740_baabbbbbb:
-	a -> data_741_baabbbbba; R; b
-	b -> data_697_babbababa; R; a
-
-data_741_baabbbbba:
-	a -> data_742_baabbbbab; R; b
-	b -> data_727_babaabbaa; R; a
-
-data_742_baabbbbab:
-	a -> data_743_baabbbbaa; R; b
-	b -> data_990_aabaaabab; R; a
-
-data_743_baabbbbaa:
-	a -> data_744_baabbbabb; R; b
-	b -> data_856_abbaababb; R; a
-
-data_744_baabbbabb:
-	a -> data_745_baabbbaba; R; b
-	b -> data_618_bbabbbaab; R; a
-
-data_745_baabbbaba:
-	a -> data_746_baabbbaab; R; b
-	b -> data_727_babaabbaa; R; a
-
-data_746_baabbbaab:
-	a -> data_747_baabbbaaa; R; b
-	b -> data_965_aababbbba; R; a
-
-data_747_baabbbaaa:
-	a -> data_748_baabbabbb; R; b
-	b -> data_607_bbbaaabaa; R; a
-
-data_748_baabbabbb:
-	a -> data_749_baabbabba; R; b
-	b -> data_642_bbabaaaab; R; a
-
-data_749_baabbabba:
-	a -> data_750_baabbabab; R; b
-	b -> data_848_abbabaabb; R; a
-
-data_750_baabbabab:
-	a -> data_751_baabbabaa; R; b
-	b -> data_649_bbaabbaba; R; a
-
-data_751_baabbabaa:
-	a -> data_752_baabbaabb; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_752_baabbaabb:
-	a -> data_753_baabbaaba; R; b
-	b -> data_829_abbbaabba; R; a
-
-data_753_baabbaaba:
-	a -> data_754_baabbaaab; R; b
-	b -> data_787_baaabaaaa; R; a
-
-data_754_baabbaaab:
-	a -> data_755_baabbaaaa; R; b
-	b -> data_681_babbbbaba; R; a
-
-data_755_baabbaaaa:
-	a -> data_756_baababbbb; R; b
-	b -> data_947_aabbbaaaa; R; a
-
-data_756_baababbbb:
-	a -> data_757_baababbba; R; b
-	b -> data_692_babbabbbb; R; a
-
-data_757_baababbba:
-	a -> data_758_baababbab; R; b
-	b -> data_783_baaababaa; R; a
-
-data_758_baababbab:
-	a -> data_759_baababbaa; R; b
-	b -> data_640_bbabaaabb; R; a
-
-data_759_baababbaa:
-	a -> data_760_baabababb; R; b
-	b -> data_794_baaaabaab; R; a
-
-data_760_baabababb:
-	a -> data_761_baabababa; R; b
-	b -> data_896_ababaaabb; R; a
-
-data_761_baabababa:
-	a -> data_762_baababaab; R; b
-	b -> data_596_bbbaabbbb; R; a
-
-data_762_baababaab:
-	a -> data_763_baababaaa; R; b
-	b -> data_833_abbbaaaba; R; a
-
-data_763_baababaaa:
-	a -> data_764_baabaabbb; R; b
-	b -> data_739_babaaaaaa; R; a
-
-data_764_baabaabbb:
-	a -> data_765_baabaabba; R; b
-	b -> data_680_babbbbabb; R; a
-
-data_765_baabaabba:
-	a -> data_766_baabaabab; R; b
-	b -> data_751_baabbabaa; R; a
-
-data_766_baabaabab:
-	a -> data_767_baabaabaa; R; b
-	b -> data_578_bbbbaaaab; R; a
-
-data_767_baabaabaa:
-	a -> data_768_baabaaabb; R; b
-	b -> data_812_abbbbabbb; R; a
-
-data_768_baabaaabb:
-	a -> data_769_baabaaaba; R; b
-	b -> data_1003_aaabbbaaa; R; a
-
-data_769_baabaaaba:
-	a -> data_770_baabaaaab; R; b
-	b -> data_792_baaaababb; R; a
-
-data_770_baabaaaab:
-	a -> data_771_baabaaaaa; R; b
-	b -> data_548_bbbbbbbbb; R; a
-
-data_771_baabaaaaa:
-	a -> data_772_baaabbbbb; R; b
-	b -> data_783_baaababaa; R; a
-
-data_772_baaabbbbb:
-	a -> data_773_baaabbbba; R; b
-	b -> data_640_bbabaaabb; R; a
-
-data_773_baaabbbba:
-	a -> data_774_baaabbbab; R; b
-	b -> data_792_baaaababb; R; a
-
-data_774_baaabbbab:
-	a -> data_775_baaabbbaa; R; b
-	b -> data_618_bbabbbaab; R; a
-
-data_775_baaabbbaa:
-	a -> data_776_baaabbabb; R; b
-	b -> data_606_bbbaaabab; R; a
-
-data_776_baaabbabb:
-	a -> data_777_baaabbaba; R; b
-	b -> data_1036_aaaababbb; R; a
-
-data_777_baaabbaba:
-	a -> data_778_baaabbaab; R; b
-	b -> data_688_babbbaabb; R; a
-
-data_778_baaabbaab:
-	a -> data_779_baaabbaaa; R; b
-	b -> data_923_abaaabaaa; R; a
-
-data_779_baaabbaaa:
-	a -> data_780_baaababbb; R; b
-	b -> data_868_ababbbbbb; R; a
-
-data_780_baaababbb:
-	a -> data_781_baaababba; R; b
-	b -> data_1003_aaabbbaaa; R; a
-
-data_781_baaababba:
-	a -> data_782_baaababab; R; b
-	b -> data_878_ababbabab; R; a
-
-data_782_baaababab:
-	a -> data_783_baaababaa; R; b
-	b -> data_833_abbbaaaba; R; a
-
-data_783_baaababaa:
-	a -> data_784_baaabaabb; R; b
-	b -> data_751_baabbabaa; R; a
-
-data_784_baaabaabb:
-	a -> data_785_baaabaaba; R; b
-	b -> data_834_abbbaaaab; R; a
-
-data_785_baaabaaba:
-	a -> data_786_baaabaaab; R; b
-	b -> data_812_abbbbabbb; R; a
-
-data_786_baaabaaab:
-	a -> data_787_baaabaaaa; R; b
-	b -> data_1025_aaabaaaba; R; a
-
-data_787_baaabaaaa:
-	a -> data_788_baaaabbbb; R; b
-	b -> data_794_baaaabaab; R; a
-
-data_788_baaaabbbb:
-	a -> data_789_baaaabbba; R; b
-	b -> data_640_bbabaaabb; R; a
-
-data_789_baaaabbba:
-	a -> data_790_baaaabbab; R; b
-	b -> data_598_bbbaabbab; R; a
-
-data_790_baaaabbab:
-	a -> data_791_baaaabbaa; R; b
-	b -> data_1017_aaabababa; R; a
-
-data_791_baaaabbaa:
-	a -> data_792_baaaababb; R; b
-	b -> data_851_abbabaaaa; R; a
-
-data_792_baaaababb:
-	a -> data_793_baaaababa; R; b
-	b -> data_782_baaababab; R; a
-
-data_793_baaaababa:
-	a -> data_794_baaaabaab; R; b
-	b -> data_758_baababbab; R; a
-
-data_794_baaaabaab:
-	a -> data_795_baaaabaaa; R; b
-	b -> data_634_bbababaab; R; a
-
-data_795_baaaabaaa:
-	a -> data_796_baaaaabbb; R; b
-	b -> data_732_babaaabbb; R; a
-
-data_796_baaaaabbb:
-	a -> data_797_baaaaabba; R; b
-	b -> data_1037_aaaababba; R; a
-
-data_797_baaaaabba:
-	a -> data_798_baaaaabab; R; b
-	b -> data_786_baaabaaab; R; a
-
-data_798_baaaaabab:
-	a -> data_799_baaaaabaa; R; b
-	b -> data_670_bbaaaabab; R; a
-
-data_799_baaaaabaa:
-	a -> data_800_baaaaaabb; R; b
-	b -> data_583_bbbabbbaa; R; a
-
-data_800_baaaaaabb:
-	a -> data_801_baaaaaaba; R; b
-	b -> data_833_abbbaaaba; R; a
-
-data_801_baaaaaaba:
-	a -> data_802_baaaaaaab; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_802_baaaaaaab:
-	a -> data_803_baaaaaaaa; R; b
-	b -> data_833_abbbaaaba; R; a
-
-data_803_baaaaaaaa:
-	a -> data_804_abbbbbbbb; R; b
-	b -> data_755_baabbaaaa; R; a
-
-data_804_abbbbbbbb:
-	a -> data_805_abbbbbbba; R; b
-	b -> data_681_babbbbaba; R; a
-
-data_805_abbbbbbba:
-	a -> data_806_abbbbbbab; R; b
-	b -> data_596_bbbaabbbb; R; a
-
-data_806_abbbbbbab:
-	a -> data_807_abbbbbbaa; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_807_abbbbbbaa:
-	a -> data_808_abbbbbabb; R; b
-	b -> data_947_aabbbaaaa; R; a
-
-data_808_abbbbbabb:
-	a -> data_809_abbbbbaba; R; b
-	b -> data_740_baabbbbbb; R; a
-
-data_809_abbbbbaba:
-	a -> data_810_abbbbbaab; R; b
-	b -> data_772_baaabbbbb; R; a
-
-data_810_abbbbbaab:
-	a -> data_811_abbbbbaaa; R; b
-	b -> data_936_aabbbbabb; R; a
-
-data_811_abbbbbaaa:
-	a -> data_812_abbbbabbb; R; b
-	b -> data_782_baaababab; R; a
-
-data_812_abbbbabbb:
-	a -> data_813_abbbbabba; R; b
-	b -> data_1054_aaaaaabab; R; a
-
-data_813_abbbbabba:
-	a -> data_814_abbbbabab; R; b
-	b -> data_583_bbbabbbaa; R; a
-
-data_814_abbbbabab:
-	a -> data_815_abbbbabaa; R; b
-	b -> data_829_abbbaabba; R; a
-
-data_815_abbbbabaa:
-	a -> data_816_abbbbaabb; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_816_abbbbaabb:
-	a -> data_817_abbbbaaba; R; b
-	b -> data_833_abbbaaaba; R; a
-
-data_817_abbbbaaba:
-	a -> data_818_abbbbaaab; R; b
-	b -> data_787_baaabaaaa; R; a
-
-data_818_abbbbaaab:
-	a -> data_819_abbbbaaaa; R; b
-	b -> data_677_babbbbbba; R; a
-
-data_819_abbbbaaaa:
-	a -> data_820_abbbabbbb; R; b
-	b -> data_688_babbbaabb; R; a
-
-data_820_abbbabbbb:
-	a -> data_821_abbbabbba; R; b
-	b -> data_576_bbbbaaabb; R; a
-
-data_821_abbbabbba:
-	a -> data_822_abbbabbab; R; b
-	b -> data_783_baaababaa; R; a
-
-data_822_abbbabbab:
-	a -> data_823_abbbabbaa; R; b
-	b -> data_965_aababbbba; R; a
-
-data_823_abbbabbaa:
-	a -> data_824_abbbababb; R; b
-	b -> data_596_bbbaabbbb; R; a
-
-data_824_abbbababb:
-	a -> data_825_abbbababa; R; b
-	b -> data_933_aabbbbbba; R; a
-
-data_825_abbbababa:
-	a -> data_826_abbbabaab; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_826_abbbabaab:
-	a -> data_827_abbbabaaa; R; b
-	b -> data_832_abbbaaabb; R; a
-
-data_827_abbbabaaa:
-	a -> data_828_abbbaabbb; R; b
-	b -> data_751_baabbabaa; R; a
-
-data_828_abbbaabbb:
-	a -> data_829_abbbaabba; R; b
-	b -> data_965_aababbbba; R; a
-
-data_829_abbbaabba:
-	a -> data_830_abbbaabab; R; b
-	b -> data_606_bbbaaabab; R; a
-
-data_830_abbbaabab:
-	a -> data_831_abbbaabaa; R; b
-	b -> data_939_aabbbbaaa; R; a
-
-data_831_abbbaabaa:
-	a -> data_832_abbbaaabb; R; b
-	b -> data_878_ababbabab; R; a
-
-data_832_abbbaaabb:
-	a -> data_833_abbbaaaba; R; b
-	b -> data_900_abaabbbbb; R; a
-
-data_833_abbbaaaba:
-	a -> data_834_abbbaaaab; R; b
-	b -> data_775_baaabbbaa; R; a
-
-data_834_abbbaaaab:
-	a -> data_835_abbbaaaaa; R; b
-	b -> data_898_ababaaaab; R; a
-
-data_835_abbbaaaaa:
-	a -> data_836_abbabbbbb; R; b
-	b -> data_812_abbbbabbb; R; a
-
-data_836_abbabbbbb:
-	a -> data_837_abbabbbba; R; b
-	b -> data_954_aabbabaab; R; a
-
-data_837_abbabbbba:
-	a -> data_838_abbabbbab; R; b
-	b -> data_563_bbbbbaaaa; R; a
-
-data_838_abbabbbab:
-	a -> data_839_abbabbbaa; R; b
-	b -> data_696_babbababb; R; a
-
-data_839_abbabbbaa:
-	a -> data_840_abbabbabb; R; b
-	b -> data_786_baaabaaab; R; a
-
-data_840_abbabbabb:
-	a -> data_841_abbabbaba; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_841_abbabbaba:
-	a -> data_842_abbabbaab; R; b
-	b -> data_807_abbbbbbaa; R; a
-
-data_842_abbabbaab:
-	a -> data_843_abbabbaaa; R; b
-	b -> data_984_aabaababb; R; a
-
-data_843_abbabbaaa:
-	a -> data_844_abbababbb; R; b
-	b -> data_772_baaabbbbb; R; a
-
-data_844_abbababbb:
-	a -> data_845_abbababba; R; b
-	b -> data_939_aabbbbaaa; R; a
-
-data_845_abbababba:
-	a -> data_846_abbababab; R; b
-	b -> data_720_bababaabb; R; a
-
-data_846_abbababab:
-	a -> data_847_abbababaa; R; b
-	b -> data_671_bbaaaabaa; R; a
-
-data_847_abbababaa:
-	a -> data_848_abbabaabb; R; b
-	b -> data_887_abababbaa; R; a
-
-data_848_abbabaabb:
-	a -> data_849_abbabaaba; R; b
-	b -> data_681_babbbbaba; R; a
-
-data_849_abbabaaba:
-	a -> data_850_abbabaaab; R; b
-	b -> data_865_abbaaaaba; R; a
-
-data_850_abbabaaab:
-	a -> data_851_abbabaaaa; R; b
-	b -> data_548_bbbbbbbbb; R; a
-
-data_851_abbabaaaa:
-	a -> data_852_abbaabbbb; R; b
-	b -> data_735_babaaabaa; R; a
-
-data_852_abbaabbbb:
-	a -> data_853_abbaabbba; R; b
-	b -> data_578_bbbbaaaab; R; a
-
-data_853_abbaabbba:
-	a -> data_854_abbaabbab; R; b
-	b -> data_935_aabbbbbaa; R; a
-
-data_854_abbaabbab:
-	a -> data_855_abbaabbaa; R; b
-	b -> data_885_abababbba; R; a
-
-data_855_abbaabbaa:
-	a -> data_856_abbaababb; R; b
-	b -> data_935_aabbbbbaa; R; a
-
-data_856_abbaababb:
-	a -> data_857_abbaababa; R; b
-	b -> data_834_abbbaaaab; R; a
-
-data_857_abbaababa:
-	a -> data_858_abbaabaab; R; b
-	b -> data_978_aababaaab; R; a
-
-data_858_abbaabaab:
-	a -> data_859_abbaabaaa; R; b
-	b -> data_868_ababbbbbb; R; a
-
-data_859_abbaabaaa:
-	a -> data_860_abbaaabbb; R; b
-	b -> data_772_baaabbbbb; R; a
-
-data_860_abbaaabbb:
-	a -> data_861_abbaaabba; R; b
-	b -> data_933_aabbbbbba; R; a
-
-data_861_abbaaabba:
-	a -> data_862_abbaaabab; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_862_abbaaabab:
-	a -> data_863_abbaaabaa; R; b
-	b -> data_618_bbabbbaab; R; a
-
-data_863_abbaaabaa:
-	a -> data_864_abbaaaabb; R; b
-	b -> data_609_bbbaaaaba; R; a
-
-data_864_abbaaaabb:
-	a -> data_865_abbaaaaba; R; b
-	b -> data_832_abbbaaabb; R; a
-
-data_865_abbaaaaba:
-	a -> data_866_abbaaaaab; R; b
-	b -> data_686_babbbabab; R; a
-
-data_866_abbaaaaab:
-	a -> data_867_abbaaaaaa; R; b
-	b -> data_1021_aaabaabba; R; a
-
-data_867_abbaaaaaa:
-	a -> data_868_ababbbbbb; R; b
-	b -> data_819_abbbbaaaa; R; a
-
-data_868_ababbbbbb:
-	a -> data_869_ababbbbba; R; b
-	b -> data_680_babbbbabb; R; a
-
-data_869_ababbbbba:
-	a -> data_870_ababbbbab; R; b
-	b -> data_599_bbbaabbaa; R; a
-
-data_870_ababbbbab:
-	a -> data_871_ababbbbaa; R; b
-	b -> data_901_abaabbbba; R; a
-
-data_871_ababbbbaa:
-	a -> data_872_ababbbabb; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_872_ababbbabb:
-	a -> data_873_ababbbaba; R; b
-	b -> data_569_bbbbababa; R; a
-
-data_873_ababbbaba:
-	a -> data_874_ababbbaab; R; b
-	b -> data_863_abbaaabaa; R; a
-
-data_874_ababbbaab:
-	a -> data_875_ababbbaaa; R; b
-	b -> data_578_bbbbaaaab; R; a
-
-data_875_ababbbaaa:
-	a -> data_876_ababbabbb; R; b
-	b -> data_1016_aaabababb; R; a
-
-data_876_ababbabbb:
-	a -> data_877_ababbabba; R; b
-	b -> data_965_aababbbba; R; a
-
-data_877_ababbabba:
-	a -> data_878_ababbabab; R; b
-	b -> data_551_bbbbbbbaa; R; a
-
-data_878_ababbabab:
-	a -> data_879_ababbabaa; R; b
-	b -> data_901_abaabbbba; R; a
-
-data_879_ababbabaa:
-	a -> data_880_ababbaabb; R; b
-	b -> data_850_abbabaaab; R; a
-
-data_880_ababbaabb:
-	a -> data_881_ababbaaba; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_881_ababbaaba:
-	a -> data_882_ababbaaab; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_882_ababbaaab:
-	a -> data_883_ababbaaaa; R; b
-	b -> data_829_abbbaabba; R; a
-
-data_883_ababbaaaa:
-	a -> data_884_abababbbb; R; b
-	b -> data_743_baabbbbaa; R; a
-
-data_884_abababbbb:
-	a -> data_885_abababbba; R; b
-	b -> data_969_aababbaba; R; a
-
-data_885_abababbba:
-	a -> data_886_abababbab; R; b
-	b -> data_562_bbbbbaaab; R; a
-
-data_886_abababbab:
-	a -> data_887_abababbaa; R; b
-	b -> data_670_bbaaaabab; R; a
-
-data_887_abababbaa:
-	a -> data_888_ababababb; R; b
-	b -> data_558_bbbbbabab; R; a
-
-data_888_ababababb:
-	a -> data_889_ababababa; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_889_ababababa:
-	a -> data_890_abababaab; R; b
-	b -> data_850_abbabaaab; R; a
-
-data_890_abababaab:
-	a -> data_891_abababaaa; R; b
-	b -> data_670_bbaaaabab; R; a
-
-data_891_abababaaa:
-	a -> data_892_ababaabbb; R; b
-	b -> data_583_bbbabbbaa; R; a
-
-data_892_ababaabbb:
-	a -> data_893_ababaabba; R; b
-	b -> data_577_bbbbaaaba; R; a
-
-data_893_ababaabba:
-	a -> data_894_ababaabab; R; b
-	b -> data_792_baaaababb; R; a
-
-data_894_ababaabab:
-	a -> data_895_ababaabaa; R; b
-	b -> data_618_bbabbbaab; R; a
-
-data_895_ababaabaa:
-	a -> data_896_ababaaabb; R; b
-	b -> data_724_babaabbbb; R; a
-
-data_896_ababaaabb:
-	a -> data_897_ababaaaba; R; b
-	b -> data_1036_aaaababbb; R; a
-
-data_897_ababaaaba:
-	a -> data_898_ababaaaab; R; b
-	b -> data_690_babbbaaab; R; a
-
-data_898_ababaaaab:
-	a -> data_899_ababaaaaa; R; b
-	b -> data_651_bbaabbaaa; R; a
-
-data_899_ababaaaaa:
-	a -> data_900_abaabbbbb; R; b
-	b -> data_868_ababbbbbb; R; a
-
-data_900_abaabbbbb:
-	a -> data_901_abaabbbba; R; b
-	b -> data_555_bbbbbbaaa; R; a
-
-data_901_abaabbbba:
-	a -> data_902_abaabbbab; R; b
-	b -> data_726_babaabbab; R; a
-
-data_902_abaabbbab:
-	a -> data_903_abaabbbaa; R; b
-	b -> data_1003_aaabbbaaa; R; a
-
-data_903_abaabbbaa:
-	a -> data_904_abaabbabb; R; b
-	b -> data_870_ababbbbab; R; a
-
-data_904_abaabbabb:
-	a -> data_905_abaabbaba; R; b
-	b -> data_645_bbaabbbba; R; a
-
-data_905_abaabbaba:
-	a -> data_906_abaabbaab; R; b
-	b -> data_979_aababaaaa; R; a
-
-data_906_abaabbaab:
-	a -> data_907_abaabbaaa; R; b
-	b -> data_782_baaababab; R; a
-
-data_907_abaabbaaa:
-	a -> data_908_abaababbb; R; b
-	b -> data_756_baababbbb; R; a
-
-data_908_abaababbb:
-	a -> data_909_abaababba; R; b
-	b -> data_828_abbbaabbb; R; a
-
-data_909_abaababba:
-	a -> data_910_abaababab; R; b
-	b -> data_755_baabbaaaa; R; a
-
-data_910_abaababab:
-	a -> data_911_abaababaa; R; b
-	b -> data_680_babbbbabb; R; a
-
-data_911_abaababaa:
-	a -> data_912_abaabaabb; R; b
-	b -> data_751_baabbabaa; R; a
-
-data_912_abaabaabb:
-	a -> data_913_abaabaaba; R; b
-	b -> data_670_bbaaaabab; R; a
-
-data_913_abaabaaba:
-	a -> data_914_abaabaaab; R; b
-	b -> data_548_bbbbbbbbb; R; a
-
-data_914_abaabaaab:
-	a -> data_915_abaabaaaa; R; b
-	b -> data_661_bbaaabbba; R; a
-
-data_915_abaabaaaa:
-	a -> data_916_abaaabbbb; R; b
-	b -> data_816_abbbbaabb; R; a
-
-data_916_abaaabbbb:
-	a -> data_917_abaaabbba; R; b
-	b -> data_926_abaaaabab; R; a
-
-data_917_abaaabbba:
-	a -> data_918_abaaabbab; R; b
-	b -> data_583_bbbabbbaa; R; a
-
-data_918_abaaabbab:
-	a -> data_919_abaaabbaa; R; b
-	b -> data_917_abaaabbba; R; a
-
-data_919_abaaabbaa:
-	a -> data_920_abaaababb; R; b
-	b -> data_1025_aaabaaaba; R; a
-
-data_920_abaaababb:
-	a -> data_921_abaaababa; R; b
-	b -> data_702_babbaabab; R; a
-
-data_921_abaaababa:
-	a -> data_922_abaaabaab; R; b
-	b -> data_582_bbbabbbab; R; a
-
-data_922_abaaabaab:
-	a -> data_923_abaaabaaa; R; b
-	b -> data_645_bbaabbbba; R; a
-
-data_923_abaaabaaa:
-	a -> data_924_abaaaabbb; R; b
-	b -> data_792_baaaababb; R; a
-
-data_924_abaaaabbb:
-	a -> data_925_abaaaabba; R; b
-	b -> data_619_bbabbbaaa; R; a
-
-data_925_abaaaabba:
-	a -> data_926_abaaaabab; R; b
-	b -> data_596_bbbaabbbb; R; a
-
-data_926_abaaaabab:
-	a -> data_927_abaaaabaa; R; b
-	b -> data_926_abaaaabab; R; a
-
-data_927_abaaaabaa:
-	a -> data_928_abaaaaabb; R; b
-	b -> data_582_bbbabbbab; R; a
-
-data_928_abaaaaabb:
-	a -> data_929_abaaaaaba; R; b
-	b -> data_923_abaaabaaa; R; a
-
-data_929_abaaaaaba:
-	a -> data_930_abaaaaaab; R; b
-	b -> data_606_bbbaaabab; R; a
-
-data_930_abaaaaaab:
-	a -> data_931_abaaaaaaa; R; b
-	b -> data_933_aabbbbbba; R; a
-
-data_931_abaaaaaaa:
-	a -> data_932_aabbbbbbb; R; b
-	b -> data_815_abbbbabaa; R; a
-
-data_932_aabbbbbbb:
-	a -> data_933_aabbbbbba; R; b
-	b -> data_618_bbabbbaab; R; a
-
-data_933_aabbbbbba:
-	a -> data_934_aabbbbbab; R; b
-	b -> data_723_bababaaaa; R; a
-
-data_934_aabbbbbab:
-	a -> data_935_aabbbbbaa; R; b
-	b -> data_696_babbababb; R; a
-
-data_935_aabbbbbaa:
-	a -> data_936_aabbbbabb; R; b
-	b -> data_596_bbbaabbbb; R; a
-
-data_936_aabbbbabb:
-	a -> data_937_aabbbbaba; R; b
-	b -> data_926_abaaaabab; R; a
-
-data_937_aabbbbaba:
-	a -> data_938_aabbbbaab; R; b
-	b -> data_583_bbbabbbaa; R; a
-
-data_938_aabbbbaab:
-	a -> data_939_aabbbbaaa; R; b
-	b -> data_828_abbbaabbb; R; a
-
-data_939_aabbbbaaa:
-	a -> data_940_aabbbabbb; R; b
-	b -> data_737_babaaaaba; R; a
-
-data_940_aabbbabbb:
-	a -> data_941_aabbbabba; R; b
-	b -> data_565_bbbbabbba; R; a
-
-data_941_aabbbabba:
-	a -> data_942_aabbbabab; R; b
-	b -> data_732_babaaabbb; R; a
-
-data_942_aabbbabab:
-	a -> data_943_aabbbabaa; R; b
-	b -> data_961_aabbaaaba; R; a
-
-data_943_aabbbabaa:
-	a -> data_944_aabbbaabb; R; b
-	b -> data_976_aababaabb; R; a
-
-data_944_aabbbaabb:
-	a -> data_945_aabbbaaba; R; b
-	b -> data_637_bbabaabba; R; a
-
-data_945_aabbbaaba:
-	a -> data_946_aabbbaaab; R; b
-	b -> data_598_bbbaabbab; R; a
-
-data_946_aabbbaaab:
-	a -> data_947_aabbbaaaa; R; b
-	b -> data_926_abaaaabab; R; a
-
-data_947_aabbbaaaa:
-	a -> data_948_aabbabbbb; R; b
-	b -> data_588_bbbababbb; R; a
-
-data_948_aabbabbbb:
-	a -> data_949_aabbabbba; R; b
-	b -> data_907_abaabbaaa; R; a
-
-data_949_aabbabbba:
-	a -> data_950_aabbabbab; R; b
-	b -> data_724_babaabbbb; R; a
-
-data_950_aabbabbab:
-	a -> data_951_aabbabbaa; R; b
-	b -> data_645_bbaabbbba; R; a
-
-data_951_aabbabbaa:
-	a -> data_952_aabbababb; R; b
-	b -> data_748_baabbabbb; R; a
-
-data_952_aabbababb:
-	a -> data_953_aabbababa; R; b
-	b -> data_953_aabbababa; R; a
-
-data_953_aabbababa:
-	a -> data_954_aabbabaab; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_954_aabbabaab:
-	a -> data_955_aabbabaaa; R; b
-	b -> data_873_ababbbaba; R; a
-
-data_955_aabbabaaa:
-	a -> data_956_aabbaabbb; R; b
-	b -> data_816_abbbbaabb; R; a
-
-data_956_aabbaabbb:
-	a -> data_957_aabbaabba; R; b
-	b -> data_917_abaaabbba; R; a
-
-data_957_aabbaabba:
-	a -> data_958_aabbaabab; R; b
-	b -> data_815_abbbbabaa; R; a
-
-data_958_aabbaabab:
-	a -> data_959_aabbaabaa; R; b
-	b -> data_618_bbabbbaab; R; a
-
-data_959_aabbaabaa:
-	a -> data_960_aabbaaabb; R; b
-	b -> data_723_bababaaaa; R; a
-
-data_960_aabbaaabb:
-	a -> data_961_aabbaaaba; R; b
-	b -> data_680_babbbbabb; R; a
-
-data_961_aabbaaaba:
-	a -> data_962_aabbaaaab; R; b
-	b -> data_742_baabbbbab; R; a
-
-data_962_aabbaaaab:
-	a -> data_963_aabbaaaaa; R; b
-	b -> data_933_aabbbbbba; R; a
-
-data_963_aabbaaaaa:
-	a -> data_964_aababbbbb; R; b
-	b -> data_1012_aaababbbb; R; a
-
-data_964_aababbbbb:
-	a -> data_965_aababbbba; R; b
-	b -> data_829_abbbaabba; R; a
-
-data_965_aababbbba:
-	a -> data_966_aababbbab; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_966_aababbbab:
-	a -> data_967_aababbbaa; R; b
-	b -> data_1037_aaaababba; R; a
-
-data_967_aababbbaa:
-	a -> data_968_aababbabb; R; b
-	b -> data_720_bababaabb; R; a
-
-data_968_aababbabb:
-	a -> data_969_aababbaba; R; b
-	b -> data_892_ababaabbb; R; a
-
-data_969_aababbaba:
-	a -> data_970_aababbaab; R; b
-	b -> data_726_babaabbab; R; a
-
-data_970_aababbaab:
-	a -> data_971_aababbaaa; R; b
-	b -> data_670_bbaaaabab; R; a
-
-data_971_aababbaaa:
-	a -> data_972_aabababbb; R; b
-	b -> data_583_bbbabbbaa; R; a
-
-data_972_aabababbb:
-	a -> data_973_aabababba; R; b
-	b -> data_554_bbbbbbaab; R; a
-
-data_973_aabababba:
-	a -> data_974_aabababab; R; b
-	b -> data_723_bababaaaa; R; a
-
-data_974_aabababab:
-	a -> data_975_aabababaa; R; b
-	b -> data_782_baaababab; R; a
-
-data_975_aabababaa:
-	a -> data_976_aababaabb; R; b
-	b -> data_758_baababbab; R; a
-
-data_976_aababaabb:
-	a -> data_977_aababaaba; R; b
-	b -> data_810_abbbbbaab; R; a
-
-data_977_aababaaba:
-	a -> data_978_aababaaab; R; b
-	b -> data_792_baaaababb; R; a
-
-data_978_aababaaab:
-	a -> data_979_aababaaaa; R; b
-	b -> data_893_ababaabba; R; a
-
-data_979_aababaaaa:
-	a -> data_980_aabaabbbb; R; b
-	b -> data_1025_aaabaaaba; R; a
-
-data_980_aabaabbbb:
-	a -> data_981_aabaabbba; R; b
-	b -> data_702_babbaabab; R; a
-
-data_981_aabaabbba:
-	a -> data_982_aabaabbab; R; b
-	b -> data_588_bbbababbb; R; a
-
-data_982_aabaabbab:
-	a -> data_983_aabaabbaa; R; b
-	b -> data_651_bbaabbaaa; R; a
-
-data_983_aabaabbaa:
-	a -> data_984_aabaababb; R; b
-	b -> data_743_baabbbbaa; R; a
-
-data_984_aabaababb:
-	a -> data_985_aabaababa; R; b
-	b -> data_640_bbabaaabb; R; a
-
-data_985_aabaababa:
-	a -> data_986_aabaabaab; R; b
-	b -> data_783_baaababaa; R; a
-
-data_986_aabaabaab:
-	a -> data_987_aabaabaaa; R; b
-	b -> data_555_bbbbbbaaa; R; a
-
-data_987_aabaabaaa:
-	a -> data_988_aabaaabbb; R; b
-	b -> data_870_ababbbbab; R; a
-
-data_988_aabaaabbb:
-	a -> data_989_aabaaabba; R; b
-	b -> data_661_bbaaabbba; R; a
-
-data_989_aabaaabba:
-	a -> data_990_aabaaabab; R; b
-	b -> data_851_abbabaaaa; R; a
-
-data_990_aabaaabab:
-	a -> data_991_aabaaabaa; R; b
-	b -> data_680_babbbbabb; R; a
-
-data_991_aabaaabaa:
-	a -> data_992_aabaaaabb; R; b
-	b -> data_783_baaababaa; R; a
-
-data_992_aabaaaabb:
-	a -> data_993_aabaaaaba; R; b
-	b -> data_578_bbbbaaaab; R; a
-
-data_993_aabaaaaba:
-	a -> data_994_aabaaaaab; R; b
-	b -> data_804_abbbbbbbb; R; a
-
-data_994_aabaaaaab:
-	a -> data_995_aabaaaaaa; R; b
-	b -> data_572_bbbbaabbb; R; a
-
-data_995_aabaaaaaa:
-	a -> data_996_aaabbbbbb; R; b
-	b -> data_604_bbbaaabbb; R; a
-
-data_996_aaabbbbbb:
-	a -> data_997_aaabbbbba; R; b
-	b -> data_1019_aaababaaa; R; a
-
-data_997_aaabbbbba:
-	a -> data_998_aaabbbbab; R; b
-	b -> data_870_ababbbbab; R; a
-
-data_998_aaabbbbab:
-	a -> data_999_aaabbbbaa; R; b
-	b -> data_649_bbaabbaba; R; a
-
-data_999_aaabbbbaa:
-	a -> data_1000_aaabbbabb; R; b
-	b -> data_807_abbbbbbaa; R; a
-
-data_1000_aaabbbabb:
-	a -> data_1001_aaabbbaba; R; b
-	b -> data_990_aabaaabab; R; a
-
-data_1001_aaabbbaba:
-	a -> data_1002_aaabbbaab; R; b
-	b -> data_856_abbaababb; R; a
-
-data_1002_aaabbbaab:
-	a -> data_1003_aaabbbaaa; R; b
-	b -> data_612_bbabbbbbb; R; a
-
-data_1003_aaabbbaaa:
-	a -> data_1004_aaabbabbb; R; b
-	b -> data_752_baabbaabb; R; a
-
-data_1004_aaabbabbb:
-	a -> data_1005_aaabbabba; R; b
-	b -> data_661_bbaaabbba; R; a
-
-data_1005_aaabbabba:
-	a -> data_1006_aaabbabab; R; b
-	b -> data_976_aababaabb; R; a
-
-data_1006_aaabbabab:
-	a -> data_1007_aaabbabaa; R; b
-	b -> data_578_bbbbaaaab; R; a
-
-data_1007_aaabbabaa:
-	a -> data_1008_aaabbaabb; R; b
-	b -> data_812_abbbbabbb; R; a
-
-data_1008_aaabbaabb:
-	a -> data_1009_aaabbaaba; R; b
-	b -> data_577_bbbbaaaba; R; a
-
-data_1009_aaabbaaba:
-	a -> data_1010_aaabbaaab; R; b
-	b -> data_850_abbabaaab; R; a
-
-data_1010_aaabbaaab:
-	a -> data_1011_aaabbaaaa; R; b
-	b -> data_665_bbaaababa; R; a
-
-data_1011_aaabbaaaa:
-	a -> data_1012_aaababbbb; R; b
-	b -> data_807_abbbbbbaa; R; a
-
-data_1012_aaababbbb:
-	a -> data_1013_aaababbba; R; b
-	b -> data_990_aabaaabab; R; a
-
-data_1013_aaababbba:
-	a -> data_1014_aaababbab; R; b
-	b -> data_856_abbaababb; R; a
-
-data_1014_aaababbab:
-	a -> data_1015_aaababbaa; R; b
-	b -> data_618_bbabbbaab; R; a
-
-data_1015_aaababbaa:
-	a -> data_1016_aaabababb; R; b
-	b -> data_724_babaabbbb; R; a
-
-data_1016_aaabababb:
-	a -> data_1017_aaabababa; R; b
-	b -> data_1036_aaaababbb; R; a
-
-data_1017_aaabababa:
-	a -> data_1018_aaababaab; R; b
-	b -> data_690_babbbaaab; R; a
-
-data_1018_aaababaab:
-	a -> data_1019_aaababaaa; R; b
-	b -> data_667_bbaaabaaa; R; a
-
-data_1019_aaababaaa:
-	a -> data_1020_aaabaabbb; R; b
-	b -> data_868_ababbbbbb; R; a
-
-data_1020_aaabaabbb:
-	a -> data_1021_aaabaabba; R; b
-	b -> data_555_bbbbbbaaa; R; a
-
-data_1021_aaabaabba:
-	a -> data_1022_aaabaabab; R; b
-	b -> data_726_babaabbab; R; a
-
-data_1022_aaabaabab:
-	a -> data_1023_aaabaabaa; R; b
-	b -> data_1003_aaabbbaaa; R; a
-
-data_1023_aaabaabaa:
-	a -> data_1024_aaabaaabb; R; b
-	b -> data_870_ababbbbab; R; a
-
-data_1024_aaabaaabb:
-	a -> data_1025_aaabaaaba; R; b
-	b -> data_645_bbaabbbba; R; a
-
-data_1025_aaabaaaba:
-	a -> data_1026_aaabaaaab; R; b
-	b -> data_979_aababaaaa; R; a
-
-data_1026_aaabaaaab:
-	a -> data_1027_aaabaaaaa; R; b
-	b -> data_680_babbbbabb; R; a
-
-data_1027_aaabaaaaa:
-	a -> data_1028_aaaabbbbb; R; b
-	b -> data_751_baabbabaa; R; a
-
-data_1028_aaaabbbbb:
-	a -> data_1029_aaaabbbba; R; b
-	b -> data_578_bbbbaaaab; R; a
-
-data_1029_aaaabbbba:
-	a -> data_1030_aaaabbbab; R; b
-	b -> data_812_abbbbabbb; R; a
-
-data_1030_aaaabbbab:
-	a -> data_1031_aaaabbbaa; R; b
-	b -> data_1002_aaabbbaab; R; a
-
-data_1031_aaaabbbaa:
-	a -> data_1032_aaaabbabb; R; b
-	b -> data_792_baaaababb; R; a
-
-data_1032_aaaabbabb:
-	a -> data_1033_aaaabbaba; R; b
-	b -> data_548_bbbbbbbbb; R; a
-
-data_1033_aaaabbaba:
-	a -> data_1034_aaaabbaab; R; b
-	b -> data_783_baaababaa; R; a
-
-data_1034_aaaabbaab:
-	a -> data_1035_aaaabbaaa; R; b
-	b -> data_640_bbabaaabb; R; a
+	a -> data_1_bbbbbbbbba; R; b
+	b -> data_339_babababbaa; R; a
+
+data_1_bbbbbbbbba:
+	a -> data_2_bbbbbbbbab; R; b
+	b -> data_300_babbabaabb; R; a
+
+data_2_bbbbbbbbab:
+	a -> data_3_bbbbbbbbaa; R; b
+	b -> data_178_bbabaabbab; R; a
+
+data_3_bbbbbbbbaa:
+	a -> data_4_bbbbbbbabb; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_4_bbbbbbbabb:
+	a -> data_5_bbbbbbbaba; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_5_bbbbbbbaba:
+	a -> data_6_bbbbbbbaab; R; b
+	b -> data_562_abbbaabbab; R; a
+
+data_6_bbbbbbbaab:
+	a -> data_7_bbbbbbbaaa; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_7_bbbbbbbaaa:
+	a -> data_8_bbbbbbabbb; R; b
+	b -> data_562_abbbaabbab; R; a
+
+data_8_bbbbbbabbb:
+	a -> data_9_bbbbbbabba; R; b
+	b -> data_706_abaabbbbab; R; a
+
+data_9_bbbbbbabba:
+	a -> data_10_bbbbbbabab; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_10_bbbbbbabab:
+	a -> data_11_bbbbbbabaa; R; b
+	b -> data_56_bbbbaaabbb; R; a
+
+data_11_bbbbbbabaa:
+	a -> data_12_bbbbbbaabb; R; b
+	b -> data_202_bbaabbabab; R; a
+
+data_12_bbbbbbaabb:
+	a -> data_13_bbbbbbaaba; R; b
+	b -> data_803_aabbabbbaa; R; a
+
+data_13_bbbbbbaaba:
+	a -> data_14_bbbbbbaaab; R; b
+	b -> data_872_aabaababbb; R; a
+
+data_14_bbbbbbaaab:
+	a -> data_15_bbbbbbaaaa; R; b
+	b -> data_224_bbaaabbbbb; R; a
+
+data_15_bbbbbbaaaa:
+	a -> data_16_bbbbbabbbb; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_16_bbbbbabbbb:
+	a -> data_17_bbbbbabbba; R; b
+	b -> data_687_abababaaaa; R; a
+
+data_17_bbbbbabbba:
+	a -> data_18_bbbbbabbab; R; b
+	b -> data_842_aababbabab; R; a
+
+data_18_bbbbbabbab:
+	a -> data_19_bbbbbabbaa; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_19_bbbbbabbaa:
+	a -> data_20_bbbbbababb; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_20_bbbbbababb:
+	a -> data_21_bbbbbababa; R; b
+	b -> data_696_ababaaabbb; R; a
+
+data_21_bbbbbababa:
+	a -> data_22_bbbbbabaab; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_22_bbbbbabaab:
+	a -> data_23_bbbbbabaaa; R; b
+	b -> data_139_bbabbbabaa; R; a
+
+data_23_bbbbbabaaa:
+	a -> data_24_bbbbbaabbb; R; b
+	b -> data_688_ababaabbbb; R; a
+
+data_24_bbbbbaabbb:
+	a -> data_25_bbbbbaabba; R; b
+	b -> data_227_bbaaabbbaa; R; a
+
+data_25_bbbbbaabba:
+	a -> data_26_bbbbbaabab; R; b
+	b -> data_176_bbabaabbbb; R; a
+
+data_26_bbbbbaabab:
+	a -> data_27_bbbbbaabaa; R; b
+	b -> data_716_abaabbaabb; R; a
+
+data_27_bbbbbaabaa:
+	a -> data_28_bbbbbaaabb; R; b
+	b -> data_200_bbaabbabbb; R; a
+
+data_28_bbbbbaaabb:
+	a -> data_29_bbbbbaaaba; R; b
+	b -> data_811_aabbababaa; R; a
+
+data_29_bbbbbaaaba:
+	a -> data_30_bbbbbaaaab; R; b
+	b -> data_527_abbbbbaaaa; R; a
+
+data_30_bbbbbaaaab:
+	a -> data_31_bbbbbaaaaa; R; b
+	b -> data_258_babbbbbbab; R; a
+
+data_31_bbbbbaaaaa:
+	a -> data_32_bbbbabbbbb; R; b
+	b -> data_48_bbbbaabbbb; R; a
+
+data_32_bbbbabbbbb:
+	a -> data_33_bbbbabbbba; R; b
+	b -> data_771_aabbbbbbaa; R; a
+
+data_33_bbbbabbbba:
+	a -> data_34_bbbbabbbab; R; b
+	b -> data_712_abaabbabbb; R; a
+
+data_34_bbbbabbbab:
+	a -> data_35_bbbbabbbaa; R; b
+	b -> data_811_aabbababaa; R; a
+
+data_35_bbbbabbbaa:
+	a -> data_36_bbbbabbabb; R; b
+	b -> data_527_abbbbbaaaa; R; a
+
+data_36_bbbbabbabb:
+	a -> data_37_bbbbabbaba; R; b
+	b -> data_258_babbbbbbab; R; a
+
+data_37_bbbbabbaba:
+	a -> data_38_bbbbabbaab; R; b
+	b -> data_187_bbabaaabaa; R; a
+
+data_38_bbbbabbaab:
+	a -> data_39_bbbbabbaaa; R; b
+	b -> data_560_abbbaabbbb; R; a
+
+data_39_bbbbabbaaa:
+	a -> data_40_bbbbababbb; R; b
+	b -> data_771_aabbbbbbaa; R; a
+
+data_40_bbbbababbb:
+	a -> data_41_bbbbababba; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_41_bbbbababba:
+	a -> data_42_bbbbababab; R; b
+	b -> data_696_ababaaabbb; R; a
+
+data_42_bbbbababab:
+	a -> data_43_bbbbababaa; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_43_bbbbababaa:
+	a -> data_44_bbbbabaabb; R; b
+	b -> data_42_bbbbababab; R; a
+
+data_44_bbbbabaabb:
+	a -> data_45_bbbbabaaba; R; b
+	b -> data_944_aaabaabbbb; R; a
+
+data_45_bbbbabaaba:
+	a -> data_46_bbbbabaaab; R; b
+	b -> data_908_aaabbbaabb; R; a
+
+data_46_bbbbabaaab:
+	a -> data_47_bbbbabaaaa; R; b
+	b -> data_562_abbbaabbab; R; a
+
+data_47_bbbbabaaaa:
+	a -> data_48_bbbbaabbbb; R; b
+	b -> data_736_abaaabbbbb; R; a
+
+data_48_bbbbaabbbb:
+	a -> data_49_bbbbaabbba; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_49_bbbbaabbba:
+	a -> data_50_bbbbaabbab; R; b
+	b -> data_523_abbbbbabaa; R; a
+
+data_50_bbbbaabbab:
+	a -> data_51_bbbbaabbaa; R; b
+	b -> data_699_ababaaabaa; R; a
+
+data_51_bbbbaabbaa:
+	a -> data_52_bbbbaababb; R; b
+	b -> data_14_bbbbbbaaab; R; a
+
+data_52_bbbbaababb:
+	a -> data_53_bbbbaababa; R; b
+	b -> data_195_bbaabbbbaa; R; a
+
+data_53_bbbbaababa:
+	a -> data_54_bbbbaabaab; R; b
+	b -> data_176_bbabaabbbb; R; a
+
+data_54_bbbbaabaab:
+	a -> data_55_bbbbaabaaa; R; b
+	b -> data_712_abaabbabbb; R; a
+
+data_55_bbbbaabaaa:
+	a -> data_56_bbbbaaabbb; R; b
+	b -> data_811_aabbababaa; R; a
+
+data_56_bbbbaaabbb:
+	a -> data_57_bbbbaaabba; R; b
+	b -> data_527_abbbbbaaaa; R; a
+
+data_57_bbbbaaabba:
+	a -> data_58_bbbbaaabab; R; b
+	b -> data_266_babbbbabab; R; a
+
+data_58_bbbbaaabab:
+	a -> data_59_bbbbaaabaa; R; b
+	b -> data_560_abbbaabbbb; R; a
+
+data_59_bbbbaaabaa:
+	a -> data_60_bbbbaaaabb; R; b
+	b -> data_227_bbaaabbbaa; R; a
+
+data_60_bbbbaaaabb:
+	a -> data_61_bbbbaaaaba; R; b
+	b -> data_50_bbbbaabbab; R; a
+
+data_61_bbbbaaaaba:
+	a -> data_62_bbbbaaaaab; R; b
+	b -> data_803_aabbabbbaa; R; a
+
+data_62_bbbbaaaaab:
+	a -> data_63_bbbbaaaaaa; R; b
+	b -> data_174_bbababaaab; R; a
+
+data_63_bbbbaaaaaa:
+	a -> data_64_bbbabbbbbb; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_64_bbbabbbbbb:
+	a -> data_65_bbbabbbbba; R; b
+	b -> data_547_abbbabbbaa; R; a
+
+data_65_bbbabbbbba:
+	a -> data_66_bbbabbbbab; R; b
+	b -> data_526_abbbbbaaab; R; a
+
+data_66_bbbabbbbab:
+	a -> data_67_bbbabbbbaa; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_67_bbbabbbbaa:
+	a -> data_68_bbbabbbabb; R; b
+	b -> data_759_abaaaabaaa; R; a
+
+data_68_bbbabbbabb:
+	a -> data_69_bbbabbbaba; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_69_bbbabbbaba:
+	a -> data_70_bbbabbbaab; R; b
+	b -> data_14_bbbbbbaaab; R; a
+
+data_70_bbbabbbaab:
+	a -> data_71_bbbabbbaaa; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_71_bbbabbbaaa:
+	a -> data_72_bbbabbabbb; R; b
+	b -> data_563_abbbaabbaa; R; a
+
+data_72_bbbabbabbb:
+	a -> data_73_bbbabbabba; R; b
+	b -> data_759_abaaaabaaa; R; a
+
+data_73_bbbabbabba:
+	a -> data_74_bbbabbabab; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_74_bbbabbabab:
+	a -> data_75_bbbabbabaa; R; b
+	b -> data_44_bbbbabaabb; R; a
+
+data_75_bbbabbabaa:
+	a -> data_76_bbbabbaabb; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_76_bbbabbaabb:
+	a -> data_77_bbbabbaaba; R; b
+	b -> data_719_abaabbaaaa; R; a
+
+data_77_bbbabbaaba:
+	a -> data_78_bbbabbaaab; R; b
+	b -> data_468_baaabababb; R; a
+
+data_78_bbbabbaaab:
+	a -> data_79_bbbabbaaaa; R; b
+	b -> data_840_aababbabbb; R; a
+
+data_79_bbbabbaaaa:
+	a -> data_80_bbbababbbb; R; b
+	b -> data_829_aabbaaaaba; R; a
+
+data_80_bbbababbbb:
+	a -> data_81_bbbababbba; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_81_bbbababbba:
+	a -> data_82_bbbababbab; R; b
+	b -> data_696_ababaaabbb; R; a
+
+data_82_bbbababbab:
+	a -> data_83_bbbababbaa; R; b
+	b -> data_189_bbabaaaaba; R; a
+
+data_83_bbbababbaa:
+	a -> data_84_bbbabababb; R; b
+	b -> data_571_abbbaaabaa; R; a
+
+data_84_bbbabababb:
+	a -> data_85_bbbabababa; R; b
+	b -> data_803_aabbabbbaa; R; a
+
+data_85_bbbabababa:
+	a -> data_86_bbbababaab; R; b
+	b -> data_675_abababbbaa; R; a
+
+data_86_bbbababaab:
+	a -> data_87_bbbababaaa; R; b
+	b -> data_515_abbbbbbbaa; R; a
+
+data_87_bbbababaaa:
+	a -> data_88_bbbabaabbb; R; b
+	b -> data_867_aabaabbbaa; R; a
+
+data_88_bbbabaabbb:
+	a -> data_89_bbbabaabba; R; b
+	b -> data_698_ababaaabab; R; a
+
+data_89_bbbabaabba:
+	a -> data_90_bbbabaabab; R; b
+	b -> data_910_aaabbbaaab; R; a
+
+data_90_bbbabaabab:
+	a -> data_91_bbbabaabaa; R; b
+	b -> data_758_abaaaabaab; R; a
+
+data_91_bbbabaabaa:
+	a -> data_92_bbbabaaabb; R; b
+	b -> data_232_bbaaababbb; R; a
+
+data_92_bbbabaaabb:
+	a -> data_93_bbbabaaaba; R; b
+	b -> data_992_aaaaabbbbb; R; a
+
+data_93_bbbabaaaba:
+	a -> data_94_bbbabaaaab; R; b
+	b -> data_1015_aaaaaabaaa; R; a
+
+data_94_bbbabaaaab:
+	a -> data_95_bbbabaaaaa; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_95_bbbabaaaaa:
+	a -> data_96_bbbaabbbbb; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_96_bbbaabbbbb:
+	a -> data_97_bbbaabbbba; R; b
+	b -> data_526_abbbbbaaab; R; a
+
+data_97_bbbaabbbba:
+	a -> data_98_bbbaabbbab; R; b
+	b -> data_3_bbbbbbbbaa; R; a
+
+data_98_bbbaabbbab:
+	a -> data_99_bbbaabbbaa; R; b
+	b -> data_763_abaaaaabaa; R; a
+
+data_99_bbbaabbbaa:
+	a -> data_100_bbbaabbabb; R; b
+	b -> data_885_aabaaababa; R; a
+
+data_100_bbbaabbabb:
+	a -> data_101_bbbaabbaba; R; b
+	b -> data_210_bbaababbab; R; a
+
+data_101_bbbaabbaba:
+	a -> data_102_bbbaabbaab; R; b
+	b -> data_207_bbaabbaaaa; R; a
+
+data_102_bbbaabbaab:
+	a -> data_103_bbbaabbaaa; R; b
+	b -> data_256_babbbbbbbb; R; a
+
+data_103_bbbaabbaaa:
+	a -> data_104_bbbaababbb; R; b
+	b -> data_829_aabbaaaaba; R; a
+
+data_104_bbbaababbb:
+	a -> data_105_bbbaababba; R; b
+	b -> data_11_bbbbbbabaa; R; a
+
+data_105_bbbaababba:
+	a -> data_106_bbbaababab; R; b
+	b -> data_247_bbaaaabaaa; R; a
+
+data_106_bbbaababab:
+	a -> data_107_bbbaababaa; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_107_bbbaababaa:
+	a -> data_108_bbbaabaabb; R; b
+	b -> data_568_abbbaaabbb; R; a
+
+data_108_bbbaabaabb:
+	a -> data_109_bbbaabaaba; R; b
+	b -> data_526_abbbbbaaab; R; a
+
+data_109_bbbaabaaba:
+	a -> data_110_bbbaabaaab; R; b
+	b -> data_831_aabbaaaaaa; R; a
+
+data_110_bbbaabaaab:
+	a -> data_111_bbbaabaaaa; R; b
+	b -> data_468_baaabababb; R; a
+
+data_111_bbbaabaaaa:
+	a -> data_112_bbbaaabbbb; R; b
+	b -> data_867_aabaabbbaa; R; a
+
+data_112_bbbaaabbbb:
+	a -> data_113_bbbaaabbba; R; b
+	b -> data_680_ababababbb; R; a
+
+data_113_bbbaaabbba:
+	a -> data_114_bbbaaabbab; R; b
+	b -> data_898_aaabbbbbab; R; a
+
+data_114_bbbaaabbab:
+	a -> data_115_bbbaaabbaa; R; b
+	b -> data_239_bbaaabaaaa; R; a
+
+data_115_bbbaaabbaa:
+	a -> data_116_bbbaaababb; R; b
+	b -> data_247_bbaaaabaaa; R; a
+
+data_116_bbbaaababb:
+	a -> data_117_bbbaaababa; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_117_bbbaaababa:
+	a -> data_118_bbbaaabaab; R; b
+	b -> data_44_bbbbabaabb; R; a
+
+data_118_bbbaaabaab:
+	a -> data_119_bbbaaabaaa; R; b
+	b -> data_986_aaaabaabab; R; a
+
+data_119_bbbaaabaaa:
+	a -> data_120_bbbaaaabbb; R; b
+	b -> data_936_aaabababbb; R; a
+
+data_120_bbbaaaabbb:
+	a -> data_121_bbbaaaabba; R; b
+	b -> data_896_aaabbbbbbb; R; a
+
+data_121_bbbaaaabba:
+	a -> data_122_bbbaaaabab; R; b
+	b -> data_187_bbabaaabaa; R; a
+
+data_122_bbbaaaabab:
+	a -> data_123_bbbaaaabaa; R; b
+	b -> data_931_aaababbbaa; R; a
+
+data_123_bbbaaaabaa:
+	a -> data_124_bbbaaaaabb; R; b
+	b -> data_867_aabaabbbaa; R; a
+
+data_124_bbbaaaaabb:
+	a -> data_125_bbbaaaaaba; R; b
+	b -> data_738_abaaabbbab; R; a
+
+data_125_bbbaaaaaba:
+	a -> data_126_bbbaaaaaab; R; b
+	b -> data_904_aaabbbabbb; R; a
+
+data_126_bbbaaaaaab:
+	a -> data_127_bbbaaaaaaa; R; b
+	b -> data_758_abaaaabaab; R; a
+
+data_127_bbbaaaaaaa:
+	a -> data_128_bbabbbbbbb; R; b
+	b -> data_236_bbaaabaabb; R; a
+
+data_128_bbabbbbbbb:
+	a -> data_129_bbabbbbbba; R; b
+	b -> data_184_bbabaaabbb; R; a
+
+data_129_bbabbbbbba:
+	a -> data_130_bbabbbbbab; R; b
+	b -> data_47_bbbbabaaaa; R; a
+
+data_130_bbabbbbbab:
+	a -> data_131_bbabbbbbaa; R; b
+	b -> data_398_baabbbaaab; R; a
+
+data_131_bbabbbbbaa:
+	a -> data_132_bbabbbbabb; R; b
+	b -> data_1007_aaaaabaaaa; R; a
+
+data_132_bbabbbbabb:
+	a -> data_133_bbabbbbaba; R; b
+	b -> data_266_babbbbabab; R; a
+
+data_133_bbabbbbaba:
+	a -> data_134_bbabbbbaab; R; b
+	b -> data_827_aabbaaabaa; R; a
+
+data_134_bbabbbbaab:
+	a -> data_135_bbabbbbaaa; R; b
+	b -> data_885_aabaaababa; R; a
+
+data_135_bbabbbbaaa:
+	a -> data_136_bbabbbabbb; R; b
+	b -> data_208_bbaababbbb; R; a
+
+data_136_bbabbbabbb:
+	a -> data_137_bbabbbabba; R; b
+	b -> data_179_bbabaabbaa; R; a
+
+data_137_bbabbbabba:
+	a -> data_138_bbabbbabab; R; b
+	b -> data_832_aababbbbbb; R; a
+
+data_138_bbabbbabab:
+	a -> data_139_bbabbbabaa; R; b
+	b -> data_751_abaaabaaaa; R; a
+
+data_139_bbabbbabaa:
+	a -> data_140_bbabbbaabb; R; b
+	b -> data_468_baaabababb; R; a
+
+data_140_bbabbbaabb:
+	a -> data_141_bbabbbaaba; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_141_bbabbbaaba:
+	a -> data_142_bbabbbaaab; R; b
+	b -> data_829_aabbaaaaba; R; a
+
+data_142_bbabbbaaab:
+	a -> data_143_bbabbbaaaa; R; b
+	b -> data_696_ababaaabbb; R; a
+
+data_143_bbabbbaaaa:
+	a -> data_144_bbabbabbbb; R; b
+	b -> data_58_bbbbaaabab; R; a
+
+data_144_bbabbabbbb:
+	a -> data_145_bbabbabbba; R; b
+	b -> data_714_abaabbabab; R; a
+
+data_145_bbabbabbba:
+	a -> data_146_bbabbabbab; R; b
+	b -> data_986_aaaabaabab; R; a
+
+data_146_bbabbabbab:
+	a -> data_147_bbabbabbaa; R; b
+	b -> data_958_aaabaaaaab; R; a
+
+data_147_bbabbabbaa:
+	a -> data_148_bbabbababb; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_148_bbabbababb:
+	a -> data_149_bbabbababa; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_149_bbabbababa:
+	a -> data_150_bbabbabaab; R; b
+	b -> data_984_aaaabaabbb; R; a
+
+data_150_bbabbabaab:
+	a -> data_151_bbabbabaaa; R; b
+	b -> data_224_bbaaabbbbb; R; a
+
+data_151_bbabbabaaa:
+	a -> data_152_bbabbaabbb; R; b
+	b -> data_234_bbaaababab; R; a
+
+data_152_bbabbaabbb:
+	a -> data_153_bbabbaabba; R; b
+	b -> data_907_aaabbbabaa; R; a
+
+data_153_bbabbaabba:
+	a -> data_154_bbabbaabab; R; b
+	b -> data_864_aabaabbbbb; R; a
+
+data_154_bbabbaabab:
+	a -> data_155_bbabbaabaa; R; b
+	b -> data_958_aaabaaaaab; R; a
+
+data_155_bbabbaabaa:
+	a -> data_156_bbabbaaabb; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_156_bbabbaaabb:
+	a -> data_157_bbabbaaaba; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_157_bbabbaaaba:
+	a -> data_158_bbabbaaaab; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_158_bbabbaaaab:
+	a -> data_159_bbabbaaaaa; R; b
+	b -> data_179_bbabaabbaa; R; a
+
+data_159_bbabbaaaaa:
+	a -> data_160_bbababbbbb; R; b
+	b -> data_59_bbbbaaabaa; R; a
+
+data_160_bbababbbbb:
+	a -> data_161_bbababbbba; R; b
+	b -> data_867_aabaabbbaa; R; a
+
+data_161_bbababbbba:
+	a -> data_162_bbababbbab; R; b
+	b -> data_686_abababaaab; R; a
+
+data_162_bbababbbab:
+	a -> data_163_bbababbbaa; R; b
+	b -> data_184_bbabaaabbb; R; a
+
+data_163_bbababbbaa:
+	a -> data_164_bbababbabb; R; b
+	b -> data_226_bbaaabbbab; R; a
+
+data_164_bbababbabb:
+	a -> data_165_bbababbaba; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_165_bbababbaba:
+	a -> data_166_bbababbaab; R; b
+	b -> data_719_abaabbaaaa; R; a
+
+data_166_bbababbaab:
+	a -> data_167_bbababbaaa; R; b
+	b -> data_398_baabbbaaab; R; a
+
+data_167_bbababbaaa:
+	a -> data_168_bbabababbb; R; b
+	b -> data_696_ababaaabbb; R; a
+
+data_168_bbabababbb:
+	a -> data_169_bbabababba; R; b
+	b -> data_758_abaaaabaab; R; a
+
+data_169_bbabababba:
+	a -> data_170_bbabababab; R; b
+	b -> data_56_bbbbaaabbb; R; a
+
+data_170_bbabababab:
+	a -> data_171_bbabababaa; R; b
+	b -> data_194_bbaabbbbab; R; a
+
+data_171_bbabababaa:
+	a -> data_172_bbababaabb; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_172_bbababaabb:
+	a -> data_173_bbababaaba; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_173_bbababaaba:
+	a -> data_174_bbababaaab; R; b
+	b -> data_179_bbabaabbaa; R; a
+
+data_174_bbababaaab:
+	a -> data_175_bbababaaaa; R; b
+	b -> data_707_abaabbbbaa; R; a
+
+data_175_bbababaaaa:
+	a -> data_176_bbabaabbbb; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_176_bbabaabbbb:
+	a -> data_177_bbabaabbba; R; b
+	b -> data_748_abaaabaabb; R; a
+
+data_177_bbabaabbba:
+	a -> data_178_bbabaabbab; R; b
+	b -> data_247_bbaaaabaaa; R; a
+
+data_178_bbabaabbab:
+	a -> data_179_bbabaabbaa; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_179_bbabaabbaa:
+	a -> data_180_bbabaababb; R; b
+	b -> data_698_ababaaabab; R; a
+
+data_180_bbabaababb:
+	a -> data_181_bbabaababa; R; b
+	b -> data_568_abbbaaabbb; R; a
+
+data_181_bbabaababa:
+	a -> data_182_bbabaabaab; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_182_bbabaabaab:
+	a -> data_183_bbabaabaaa; R; b
+	b -> data_864_aabaabbbbb; R; a
+
+data_183_bbabaabaaa:
+	a -> data_184_bbabaaabbb; R; b
+	b -> data_936_aaabababbb; R; a
+
+data_184_bbabaaabbb:
+	a -> data_185_bbabaaabba; R; b
+	b -> data_224_bbaaabbbbb; R; a
+
+data_185_bbabaaabba:
+	a -> data_186_bbabaaabab; R; b
+	b -> data_1012_aaaaaababb; R; a
+
+data_186_bbabaaabab:
+	a -> data_187_bbabaaabaa; R; b
+	b -> data_691_ababaabbaa; R; a
+
+data_187_bbabaaabaa:
+	a -> data_188_bbabaaaabb; R; b
+	b -> data_885_aabaaababa; R; a
+
+data_188_bbabaaaabb:
+	a -> data_189_bbabaaaaba; R; b
+	b -> data_208_bbaababbbb; R; a
+
+data_189_bbabaaaaba:
+	a -> data_190_bbabaaaaab; R; b
+	b -> data_571_abbbaaabaa; R; a
+
+data_190_bbabaaaaab:
+	a -> data_191_bbabaaaaaa; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_191_bbabaaaaaa:
+	a -> data_192_bbaabbbbbb; R; b
+	b -> data_48_bbbbaabbbb; R; a
+
+data_192_bbaabbbbbb:
+	a -> data_193_bbaabbbbba; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_193_bbaabbbbba:
+	a -> data_194_bbaabbbbab; R; b
+	b -> data_690_ababaabbab; R; a
+
+data_194_bbaabbbbab:
+	a -> data_195_bbaabbbbaa; R; b
+	b -> data_944_aaabaabbbb; R; a
+
+data_195_bbaabbbbaa:
+	a -> data_196_bbaabbbabb; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_196_bbaabbbabb:
+	a -> data_197_bbaabbbaba; R; b
+	b -> data_563_abbbaabbaa; R; a
+
+data_197_bbaabbbaba:
+	a -> data_198_bbaabbbaab; R; b
+	b -> data_189_bbabaaaaba; R; a
+
+data_198_bbaabbbaab:
+	a -> data_199_bbaabbbaaa; R; b
+	b -> data_851_aabababbaa; R; a
+
+data_199_bbaabbbaaa:
+	a -> data_200_bbaabbabbb; R; b
+	b -> data_267_babbbbabaa; R; a
+
+data_200_bbaabbabbb:
+	a -> data_201_bbaabbabba; R; b
+	b -> data_246_bbaaaabaab; R; a
+
+data_201_bbaabbabba:
+	a -> data_202_bbaabbabab; R; b
+	b -> data_746_abaaababab; R; a
+
+data_202_bbaabbabab:
+	a -> data_203_bbaabbabaa; R; b
+	b -> data_770_aabbbbbbab; R; a
+
+data_203_bbaabbabaa:
+	a -> data_204_bbaabbaabb; R; b
+	b -> data_896_aaabbbbbbb; R; a
+
+data_204_bbaabbaabb:
+	a -> data_205_bbaabbaaba; R; b
+	b -> data_986_aaaabaabab; R; a
+
+data_205_bbaabbaaba:
+	a -> data_206_bbaabbaaab; R; b
+	b -> data_958_aaabaaaaab; R; a
+
+data_206_bbaabbaaab:
+	a -> data_207_bbaabbaaaa; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_207_bbaabbaaaa:
+	a -> data_208_bbaababbbb; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_208_bbaababbbb:
+	a -> data_209_bbaababbba; R; b
+	b -> data_984_aaaabaabbb; R; a
+
+data_209_bbaababbba:
+	a -> data_210_bbaababbab; R; b
+	b -> data_234_bbaaababab; R; a
+
+data_210_bbaababbab:
+	a -> data_211_bbaababbaa; R; b
+	b -> data_803_aabbabbbaa; R; a
+
+data_211_bbaababbaa:
+	a -> data_212_bbaabababb; R; b
+	b -> data_515_abbbbbbbaa; R; a
+
+data_212_bbaabababb:
+	a -> data_213_bbaabababa; R; b
+	b -> data_864_aabaabbbbb; R; a
+
+data_213_bbaabababa:
+	a -> data_214_bbaababaab; R; b
+	b -> data_958_aaabaaaaab; R; a
+
+data_214_bbaababaab:
+	a -> data_215_bbaababaaa; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_215_bbaababaaa:
+	a -> data_216_bbaabaabbb; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_216_bbaabaabbb:
+	a -> data_217_bbaabaabba; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_217_bbaabaabba:
+	a -> data_218_bbaabaabab; R; b
+	b -> data_12_bbbbbbaabb; R; a
+
+data_218_bbaabaabab:
+	a -> data_219_bbaabaabaa; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_219_bbaabaabaa:
+	a -> data_220_bbaabaaabb; R; b
+	b -> data_44_bbbbabaabb; R; a
+
+data_220_bbaabaaabb:
+	a -> data_221_bbaabaaaba; R; b
+	b -> data_957_aaabaaaaba; R; a
+
+data_221_bbaabaaaba:
+	a -> data_222_bbaabaaaab; R; b
+	b -> data_568_abbbaaabbb; R; a
+
+data_222_bbaabaaaab:
+	a -> data_223_bbaabaaaaa; R; b
+	b -> data_234_bbaaababab; R; a
+
+data_223_bbaabaaaaa:
+	a -> data_224_bbaaabbbbb; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_224_bbaaabbbbb:
+	a -> data_225_bbaaabbbba; R; b
+	b -> data_174_bbababaaab; R; a
+
+data_225_bbaaabbbba:
+	a -> data_226_bbaaabbbab; R; b
+	b -> data_783_aabbbbaaaa; R; a
+
+data_226_bbaaabbbab:
+	a -> data_227_bbaaabbbaa; R; b
+	b -> data_430_baababaaab; R; a
+
+data_227_bbaaabbbaa:
+	a -> data_228_bbaaabbabb; R; b
+	b -> data_702_ababaaaaab; R; a
+
+data_228_bbaaabbabb:
+	a -> data_229_bbaaabbaba; R; b
+	b -> data_58_bbbbaaabab; R; a
+
+data_229_bbaaabbaba:
+	a -> data_230_bbaaabbaab; R; b
+	b -> data_756_abaaaababb; R; a
+
+data_230_bbaaabbaab:
+	a -> data_231_bbaaabbaaa; R; b
+	b -> data_3_bbbbbbbbaa; R; a
+
+data_231_bbaaabbaaa:
+	a -> data_232_bbaaababbb; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_232_bbaaababbb:
+	a -> data_233_bbaaababba; R; b
+	b -> data_11_bbbbbbabaa; R; a
+
+data_233_bbaaababba:
+	a -> data_234_bbaaababab; R; b
+	b -> data_239_bbaaabaaaa; R; a
+
+data_234_bbaaababab:
+	a -> data_235_bbaaababaa; R; b
+	b -> data_398_baabbbaaab; R; a
+
+data_235_bbaaababaa:
+	a -> data_236_bbaaabaabb; R; b
+	b -> data_50_bbbbaabbab; R; a
+
+data_236_bbaaabaabb:
+	a -> data_237_bbaaabaaba; R; b
+	b -> data_701_ababaaaaba; R; a
+
+data_237_bbaaabaaba:
+	a -> data_238_bbaaabaaab; R; b
+	b -> data_2_bbbbbbbbab; R; a
+
+data_238_bbaaabaaab:
+	a -> data_239_bbaaabaaaa; R; b
+	b -> data_816_aabbaabbbb; R; a
+
+data_239_bbaaabaaaa:
+	a -> data_240_bbaaaabbbb; R; b
+	b -> data_984_aaaabaabbb; R; a
+
+data_240_bbaaaabbbb:
+	a -> data_241_bbaaaabbba; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_241_bbaaaabbba:
+	a -> data_242_bbaaaabbab; R; b
+	b -> data_171_bbabababaa; R; a
+
+data_242_bbaaaabbab:
+	a -> data_243_bbaaaabbaa; R; b
+	b -> data_864_aabaabbbbb; R; a
+
+data_243_bbaaaabbaa:
+	a -> data_244_bbaaaababb; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_244_bbaaaababb:
+	a -> data_245_bbaaaababa; R; b
+	b -> data_14_bbbbbbaaab; R; a
+
+data_245_bbaaaababa:
+	a -> data_246_bbaaaabaab; R; b
+	b -> data_15_bbbbbbaaaa; R; a
+
+data_246_bbaaaabaab:
+	a -> data_247_bbaaaabaaa; R; b
+	b -> data_387_baabbbbbaa; R; a
+
+data_247_bbaaaabaaa:
+	a -> data_248_bbaaaaabbb; R; b
+	b -> data_763_abaaaaabaa; R; a
+
+data_248_bbaaaaabbb:
+	a -> data_249_bbaaaaabba; R; b
+	b -> data_527_abbbbbaaaa; R; a
+
+data_249_bbaaaaabba:
+	a -> data_250_bbaaaaabab; R; b
+	b -> data_687_abababaaaa; R; a
+
+data_250_bbaaaaabab:
+	a -> data_251_bbaaaaabaa; R; b
+	b -> data_832_aababbbbbb; R; a
+
+data_251_bbaaaaabaa:
+	a -> data_252_bbaaaaaabb; R; b
+	b -> data_699_ababaaabaa; R; a
+
+data_252_bbaaaaaabb:
+	a -> data_253_bbaaaaaaba; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_253_bbaaaaaaba:
+	a -> data_254_bbaaaaaaab; R; b
+	b -> data_698_ababaaabab; R; a
+
+data_254_bbaaaaaaab:
+	a -> data_255_bbaaaaaaaa; R; b
+	b -> data_738_abaaabbbab; R; a
+
+data_255_bbaaaaaaaa:
+	a -> data_256_babbbbbbbb; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_256_babbbbbbbb:
+	a -> data_257_babbbbbbba; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_257_babbbbbbba:
+	a -> data_258_babbbbbbab; R; b
+	b -> data_12_bbbbbbaabb; R; a
+
+data_258_babbbbbbab:
+	a -> data_259_babbbbbbaa; R; b
+	b -> data_984_aaaabaabbb; R; a
+
+data_259_babbbbbbaa:
+	a -> data_260_babbbbbabb; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_260_babbbbbabb:
+	a -> data_261_babbbbbaba; R; b
+	b -> data_687_abababaaaa; R; a
+
+data_261_babbbbbaba:
+	a -> data_262_babbbbbaab; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_262_babbbbbaab:
+	a -> data_263_babbbbbaaa; R; b
+	b -> data_206_bbaabbaaab; R; a
+
+data_263_babbbbbaaa:
+	a -> data_264_babbbbabbb; R; b
+	b -> data_783_aabbbbaaaa; R; a
+
+data_264_babbbbabbb:
+	a -> data_265_babbbbabba; R; b
+	b -> data_468_baaabababb; R; a
+
+data_265_babbbbabba:
+	a -> data_266_babbbbabab; R; b
+	b -> data_867_aabaabbbaa; R; a
+
+data_266_babbbbabab:
+	a -> data_267_babbbbabaa; R; b
+	b -> data_515_abbbbbbbaa; R; a
+
+data_267_babbbbabaa:
+	a -> data_268_babbbbaabb; R; b
+	b -> data_867_aabaabbbaa; R; a
+
+data_268_babbbbaabb:
+	a -> data_269_babbbbaaba; R; b
+	b -> data_719_abaabbaaaa; R; a
+
+data_269_babbbbaaba:
+	a -> data_270_babbbbaaab; R; b
+	b -> data_885_aabaaababa; R; a
+
+data_270_babbbbaaab:
+	a -> data_271_babbbbaaaa; R; b
+	b -> data_218_bbaabaabab; R; a
+
+data_271_babbbbaaaa:
+	a -> data_272_babbbabbbb; R; b
+	b -> data_936_aaabababbb; R; a
+
+data_272_babbbabbbb:
+	a -> data_273_babbbabbba; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_273_babbbabbba:
+	a -> data_274_babbbabbab; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_274_babbbabbab:
+	a -> data_275_babbbabbaa; R; b
+	b -> data_568_abbbaaabbb; R; a
+
+data_275_babbbabbaa:
+	a -> data_276_babbbababb; R; b
+	b -> data_558_abbbabaaab; R; a
+
+data_276_babbbababb:
+	a -> data_277_babbbababa; R; b
+	b -> data_819_aabbaabbaa; R; a
+
+data_277_babbbababa:
+	a -> data_278_babbbabaab; R; b
+	b -> data_832_aababbbbbb; R; a
+
+data_278_babbbabaab:
+	a -> data_279_babbbabaaa; R; b
+	b -> data_571_abbbaaabaa; R; a
+
+data_279_babbbabaaa:
+	a -> data_280_babbbaabbb; R; b
+	b -> data_885_aabaaababa; R; a
+
+data_280_babbbaabbb:
+	a -> data_281_babbbaabba; R; b
+	b -> data_216_bbaabaabbb; R; a
+
+data_281_babbbaabba:
+	a -> data_282_babbbaabab; R; b
+	b -> data_898_aaabbbbbab; R; a
+
+data_282_babbbaabab:
+	a -> data_283_babbbaabaa; R; b
+	b -> data_984_aaaabaabbb; R; a
+
+data_283_babbbaabaa:
+	a -> data_284_babbbaaabb; R; b
+	b -> data_938_aaabababab; R; a
+
+data_284_babbbaaabb:
+	a -> data_285_babbbaaaba; R; b
+	b -> data_751_abaaabaaaa; R; a
+
+data_285_babbbaaaba:
+	a -> data_286_babbbaaaab; R; b
+	b -> data_224_bbaaabbbbb; R; a
+
+data_286_babbbaaaab:
+	a -> data_287_babbbaaaaa; R; b
+	b -> data_247_bbaaaabaaa; R; a
+
+data_287_babbbaaaaa:
+	a -> data_288_babbabbbbb; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_288_babbabbbbb:
+	a -> data_289_babbabbbba; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_289_babbabbbba:
+	a -> data_290_babbabbbab; R; b
+	b -> data_568_abbbaaabbb; R; a
+
+data_290_babbabbbab:
+	a -> data_291_babbabbbaa; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_291_babbabbbaa:
+	a -> data_292_babbabbabb; R; b
+	b -> data_875_aabaababaa; R; a
+
+data_292_babbabbabb:
+	a -> data_293_babbabbaba; R; b
+	b -> data_672_abababbbbb; R; a
+
+data_293_babbabbaba:
+	a -> data_294_babbabbaab; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_294_babbabbaab:
+	a -> data_295_babbabbaaa; R; b
+	b -> data_984_aaaabaabbb; R; a
+
+data_295_babbabbaaa:
+	a -> data_296_babbababbb; R; b
+	b -> data_938_aaabababab; R; a
+
+data_296_babbababbb:
+	a -> data_297_babbababba; R; b
+	b -> data_898_aaabbbbbab; R; a
+
+data_297_babbababba:
+	a -> data_298_babbababab; R; b
+	b -> data_989_aaaabaaaba; R; a
+
+data_298_babbababab:
+	a -> data_299_babbababaa; R; b
+	b -> data_308_babbaababb; R; a
+
+data_299_babbababaa:
+	a -> data_300_babbabaabb; R; b
+	b -> data_172_bbababaabb; R; a
+
+data_300_babbabaabb:
+	a -> data_301_babbabaaba; R; b
+	b -> data_957_aaabaaaaba; R; a
+
+data_301_babbabaaba:
+	a -> data_302_babbabaaab; R; b
+	b -> data_11_bbbbbbabaa; R; a
+
+data_302_babbabaaab:
+	a -> data_303_babbabaaaa; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_303_babbabaaaa:
+	a -> data_304_babbaabbbb; R; b
+	b -> data_851_aabababbaa; R; a
+
+data_304_babbaabbbb:
+	a -> data_305_babbaabbba; R; b
+	b -> data_300_babbabaabb; R; a
+
+data_305_babbaabbba:
+	a -> data_306_babbaabbab; R; b
+	b -> data_48_bbbbaabbbb; R; a
+
+data_306_babbaabbab:
+	a -> data_307_babbaabbaa; R; b
+	b -> data_756_abaaaababb; R; a
+
+data_307_babbaabbaa:
+	a -> data_308_babbaababb; R; b
+	b -> data_748_abaaabaabb; R; a
+
+data_308_babbaababb:
+	a -> data_309_babbaababa; R; b
+	b -> data_189_bbabaaaaba; R; a
+
+data_309_babbaababa:
+	a -> data_310_babbaabaab; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_310_babbaabaab:
+	a -> data_311_babbaabaaa; R; b
+	b -> data_46_bbbbabaaab; R; a
+
+data_311_babbaabaaa:
+	a -> data_312_babbaaabbb; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_312_babbaaabbb:
+	a -> data_313_babbaaabba; R; b
+	b -> data_562_abbbaabbab; R; a
+
+data_313_babbaaabba:
+	a -> data_314_babbaaabab; R; b
+	b -> data_207_bbaabbaaaa; R; a
+
+data_314_babbaaabab:
+	a -> data_315_babbaaabaa; R; b
+	b -> data_288_babbabbbbb; R; a
+
+data_315_babbaaabaa:
+	a -> data_316_babbaaaabb; R; b
+	b -> data_811_aabbababaa; R; a
+
+data_316_babbaaaabb:
+	a -> data_317_babbaaaaba; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_317_babbaaaaba:
+	a -> data_318_babbaaaaab; R; b
+	b -> data_189_bbabaaaaba; R; a
+
+data_318_babbaaaaab:
+	a -> data_319_babbaaaaaa; R; b
+	b -> data_555_abbbababaa; R; a
+
+data_319_babbaaaaaa:
+	a -> data_320_bababbbbbb; R; b
+	b -> data_524_abbbbbaabb; R; a
+
+data_320_bababbbbbb:
+	a -> data_321_bababbbbba; R; b
+	b -> data_654_ababbbaaab; R; a
+
+data_321_bababbbbba:
+	a -> data_322_bababbbbab; R; b
+	b -> data_703_ababaaaaaa; R; a
+
+data_322_bababbbbab:
+	a -> data_323_bababbbbaa; R; b
+	b -> data_300_babbabaabb; R; a
+
+data_323_bababbbbaa:
+	a -> data_324_bababbbabb; R; b
+	b -> data_194_bbaabbbbab; R; a
+
+data_324_bababbbabb:
+	a -> data_325_bababbbaba; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_325_bababbbaba:
+	a -> data_326_bababbbaab; R; b
+	b -> data_560_abbbaabbbb; R; a
+
+data_326_bababbbaab:
+	a -> data_327_bababbbaaa; R; b
+	b -> data_707_abaabbbbaa; R; a
+
+data_327_bababbbaaa:
+	a -> data_328_bababbabbb; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_328_bababbabbb:
+	a -> data_329_bababbabba; R; b
+	b -> data_200_bbaabbabbb; R; a
+
+data_329_bababbabba:
+	a -> data_330_bababbabab; R; b
+	b -> data_957_aaabaaaaba; R; a
+
+data_330_bababbabab:
+	a -> data_331_bababbabaa; R; b
+	b -> data_40_bbbbababbb; R; a
+
+data_331_bababbabaa:
+	a -> data_332_bababbaabb; R; b
+	b -> data_811_aabbababaa; R; a
+
+data_332_bababbaabb:
+	a -> data_333_bababbaaba; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_333_bababbaaba:
+	a -> data_334_bababbaaab; R; b
+	b -> data_189_bbabaaaaba; R; a
+
+data_334_bababbaaab:
+	a -> data_335_bababbaaaa; R; b
+	b -> data_555_abbbababaa; R; a
+
+data_335_bababbaaaa:
+	a -> data_336_babababbbb; R; b
+	b -> data_524_abbbbbaabb; R; a
+
+data_336_babababbbb:
+	a -> data_337_babababbba; R; b
+	b -> data_526_abbbbbaaab; R; a
+
+data_337_babababbba:
+	a -> data_338_babababbab; R; b
+	b -> data_703_ababaaaaaa; R; a
+
+data_338_babababbab:
+	a -> data_339_babababbaa; R; b
+	b -> data_288_babbabbbbb; R; a
+
+data_339_babababbaa:
+	a -> data_340_bababababb; R; b
+	b -> data_195_bbaabbbbaa; R; a
+
+data_340_bababababb:
+	a -> data_341_bababababa; R; b
+	b -> data_184_bbabaaabbb; R; a
+
+data_341_bababababa:
+	a -> data_342_babababaab; R; b
+	b -> data_940_aaababaabb; R; a
+
+data_342_babababaab:
+	a -> data_343_babababaaa; R; b
+	b -> data_178_bbabaabbab; R; a
+
+data_343_babababaaa:
+	a -> data_344_bababaabbb; R; b
+	b -> data_202_bbaabbabab; R; a
+
+data_344_bababaabbb:
+	a -> data_345_bababaabba; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_345_bababaabba:
+	a -> data_346_bababaabab; R; b
+	b -> data_560_abbbaabbbb; R; a
+
+data_346_bababaabab:
+	a -> data_347_bababaabaa; R; b
+	b -> data_704_abaabbbbbb; R; a
+
+data_347_bababaabaa:
+	a -> data_348_bababaaabb; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_348_bababaaabb:
+	a -> data_349_bababaaaba; R; b
+	b -> data_562_abbbaabbab; R; a
+
+data_349_bababaaaba:
+	a -> data_350_bababaaaab; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_350_bababaaaab:
+	a -> data_351_bababaaaaa; R; b
+	b -> data_832_aababbbbbb; R; a
+
+data_351_bababaaaaa:
+	a -> data_352_babaabbbbb; R; b
+	b -> data_12_bbbbbbaabb; R; a
+
+data_352_babaabbbbb:
+	a -> data_353_babaabbbba; R; b
+	b -> data_688_ababaabbbb; R; a
+
+data_353_babaabbbba:
+	a -> data_354_babaabbbab; R; b
+	b -> data_712_abaabbabbb; R; a
+
+data_354_babaabbbab:
+	a -> data_355_babaabbbaa; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_355_babaabbbaa:
+	a -> data_356_babaabbabb; R; b
+	b -> data_560_abbbaabbbb; R; a
+
+data_356_babaabbabb:
+	a -> data_357_babaabbaba; R; b
+	b -> data_202_bbaabbabab; R; a
+
+data_357_babaabbaba:
+	a -> data_358_babaabbaab; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_358_babaabbaab:
+	a -> data_359_babaabbaaa; R; b
+	b -> data_560_abbbaabbbb; R; a
+
+data_359_babaabbaaa:
+	a -> data_360_babaababbb; R; b
+	b -> data_779_aabbbbabaa; R; a
+
+data_360_babaababbb:
+	a -> data_361_babaababba; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_361_babaababba:
+	a -> data_362_babaababab; R; b
+	b -> data_701_ababaaaaba; R; a
+
+data_362_babaababab:
+	a -> data_363_babaababaa; R; b
+	b -> data_523_abbbbbabaa; R; a
+
+data_363_babaababaa:
+	a -> data_364_babaabaabb; R; b
+	b -> data_524_abbbbbaabb; R; a
+
+data_364_babaabaabb:
+	a -> data_365_babaabaaba; R; b
+	b -> data_186_bbabaaabab; R; a
+
+data_365_babaabaaba:
+	a -> data_366_babaabaaab; R; b
+	b -> data_706_abaabbbbab; R; a
+
+data_366_babaabaaab:
+	a -> data_367_babaabaaaa; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_367_babaabaaaa:
+	a -> data_368_babaaabbbb; R; b
+	b -> data_571_abbbaaabaa; R; a
+
+data_368_babaaabbbb:
+	a -> data_369_babaaabbba; R; b
+	b -> data_44_bbbbabaabb; R; a
+
+data_369_babaaabbba:
+	a -> data_370_babaaabbab; R; b
+	b -> data_562_abbbaabbab; R; a
+
+data_370_babaaabbab:
+	a -> data_371_babaaabbaa; R; b
+	b -> data_758_abaaaabaab; R; a
+
+data_371_babaaabbaa:
+	a -> data_372_babaaababb; R; b
+	b -> data_46_bbbbabaaab; R; a
+
+data_372_babaaababb:
+	a -> data_373_babaaababa; R; b
+	b -> data_48_bbbbaabbbb; R; a
+
+data_373_babaaababa:
+	a -> data_374_babaaabaab; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_374_babaaabaab:
+	a -> data_375_babaaabaaa; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_375_babaaabaaa:
+	a -> data_376_babaaaabbb; R; b
+	b -> data_851_aabababbaa; R; a
+
+data_376_babaaaabbb:
+	a -> data_377_babaaaabba; R; b
+	b -> data_288_babbabbbbb; R; a
+
+data_377_babaaaabba:
+	a -> data_378_babaaaabab; R; b
+	b -> data_816_aabbaabbbb; R; a
+
+data_378_babaaaabab:
+	a -> data_379_babaaaabaa; R; b
+	b -> data_957_aaabaaaaba; R; a
+
+data_379_babaaaabaa:
+	a -> data_380_babaaaaabb; R; b
+	b -> data_42_bbbbababab; R; a
+
+data_380_babaaaaabb:
+	a -> data_381_babaaaaaba; R; b
+	b -> data_829_aabbaaaaba; R; a
+
+data_381_babaaaaaba:
+	a -> data_382_babaaaaaab; R; b
+	b -> data_851_aabababbaa; R; a
+
+data_382_babaaaaaab:
+	a -> data_383_babaaaaaaa; R; b
+	b -> data_398_baabbbaaab; R; a
+
+data_383_babaaaaaaa:
+	a -> data_384_baabbbbbbb; R; b
+	b -> data_699_ababaaabaa; R; a
+
+data_384_baabbbbbbb:
+	a -> data_385_baabbbbbba; R; b
+	b -> data_524_abbbbbaabb; R; a
+
+data_385_baabbbbbba:
+	a -> data_386_baabbbbbab; R; b
+	b -> data_756_abaaaababb; R; a
+
+data_386_baabbbbbab:
+	a -> data_387_baabbbbbaa; R; b
+	b -> data_179_bbabaabbaa; R; a
+
+data_387_baabbbbbaa:
+	a -> data_388_baabbbbabb; R; b
+	b -> data_893_aabaaaaaba; R; a
+
+data_388_baabbbbabb:
+	a -> data_389_baabbbbaba; R; b
+	b -> data_44_bbbbabaabb; R; a
+
+data_389_baabbbbaba:
+	a -> data_390_baabbbbaab; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_390_baabbbbaab:
+	a -> data_391_baabbbbaaa; R; b
+	b -> data_719_abaabbaaaa; R; a
+
+data_391_baabbbbaaa:
+	a -> data_392_baabbbabbb; R; b
+	b -> data_468_baaabababb; R; a
+
+data_392_baabbbabbb:
+	a -> data_393_baabbbabba; R; b
+	b -> data_843_aababbabaa; R; a
+
+data_393_baabbbabba:
+	a -> data_394_baabbbabab; R; b
+	b -> data_184_bbabaaabbb; R; a
+
+data_394_baabbbabab:
+	a -> data_395_baabbbabaa; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_395_baabbbabaa:
+	a -> data_396_baabbbaabb; R; b
+	b -> data_568_abbbaaabbb; R; a
+
+data_396_baabbbaabb:
+	a -> data_397_baabbbaaba; R; b
+	b -> data_829_aabbaaaaba; R; a
+
+data_397_baabbbaaba:
+	a -> data_398_baabbbaaab; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_398_baabbbaaab:
+	a -> data_399_baabbbaaaa; R; b
+	b -> data_690_ababaabbab; R; a
+
+data_399_baabbbaaaa:
+	a -> data_400_baabbabbbb; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_400_baabbabbbb:
+	a -> data_401_baabbabbba; R; b
+	b -> data_48_bbbbaabbbb; R; a
+
+data_401_baabbabbba:
+	a -> data_402_baabbabbab; R; b
+	b -> data_227_bbaaabbbaa; R; a
+
+data_402_baabbabbab:
+	a -> data_403_baabbabbaa; R; b
+	b -> data_701_ababaaaaba; R; a
+
+data_403_baabbabbaa:
+	a -> data_404_baabbababb; R; b
+	b -> data_515_abbbbbbbaa; R; a
+
+data_404_baabbababb:
+	a -> data_405_baabbababa; R; b
+	b -> data_526_abbbbbaaab; R; a
+
+data_405_baabbababa:
+	a -> data_406_baabbabaab; R; b
+	b -> data_174_bbababaaab; R; a
+
+data_406_baabbabaab:
+	a -> data_407_baabbabaaa; R; b
+	b -> data_703_ababaaaaaa; R; a
+
+data_407_baabbabaaa:
+	a -> data_408_baabbaabbb; R; b
+	b -> data_296_babbababbb; R; a
+
+data_408_baabbaabbb:
+	a -> data_409_baabbaabba; R; b
+	b -> data_814_aabbabaaab; R; a
+
+data_409_baabbaabba:
+	a -> data_410_baabbaabab; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_410_baabbaabab:
+	a -> data_411_baabbaabaa; R; b
+	b -> data_15_bbbbbbaaaa; R; a
+
+data_411_baabbaabaa:
+	a -> data_412_baabbaaabb; R; b
+	b -> data_288_babbabbbbb; R; a
+
+data_412_baabbaaabb:
+	a -> data_413_baabbaaaba; R; b
+	b -> data_715_abaabbabaa; R; a
+
+data_413_baabbaaaba:
+	a -> data_414_baabbaaaab; R; b
+	b -> data_707_abaabbbbaa; R; a
+
+data_414_baabbaaaab:
+	a -> data_415_baabbaaaaa; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_415_baabbaaaaa:
+	a -> data_416_baababbbbb; R; b
+	b -> data_771_aabbbbbbaa; R; a
+
+data_416_baababbbbb:
+	a -> data_417_baababbbba; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_417_baababbbba:
+	a -> data_418_baababbbab; R; b
+	b -> data_227_bbaaabbbaa; R; a
+
+data_418_baababbbab:
+	a -> data_419_baababbbaa; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_419_baababbbaa:
+	a -> data_420_baababbabb; R; b
+	b -> data_654_ababbbaaab; R; a
+
+data_420_baababbabb:
+	a -> data_421_baababbaba; R; b
+	b -> data_56_bbbbaaabbb; R; a
+
+data_421_baababbaba:
+	a -> data_422_baababbaab; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_422_baababbaab:
+	a -> data_423_baababbaaa; R; b
+	b -> data_765_abaaaaaaba; R; a
+
+data_423_baababbaaa:
+	a -> data_424_baabababbb; R; b
+	b -> data_176_bbabaabbbb; R; a
+
+data_424_baabababbb:
+	a -> data_425_baabababba; R; b
+	b -> data_911_aaabbbaaaa; R; a
+
+data_425_baabababba:
+	a -> data_426_baabababab; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_426_baabababab:
+	a -> data_427_baabababaa; R; b
+	b -> data_908_aaabbbaabb; R; a
+
+data_427_baabababaa:
+	a -> data_428_baababaabb; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_428_baababaabb:
+	a -> data_429_baababaaba; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_429_baababaaba:
+	a -> data_430_baababaaab; R; b
+	b -> data_783_aabbbbaaaa; R; a
+
+data_430_baababaaab:
+	a -> data_431_baababaaaa; R; b
+	b -> data_288_babbabbbbb; R; a
+
+data_431_baababaaaa:
+	a -> data_432_baabaabbbb; R; b
+	b -> data_771_aabbbbbbaa; R; a
+
+data_432_baabaabbbb:
+	a -> data_433_baabaabbba; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_433_baabaabbba:
+	a -> data_434_baabaabbab; R; b
+	b -> data_984_aaaabaabbb; R; a
+
+data_434_baabaabbab:
+	a -> data_435_baabaabbaa; R; b
+	b -> data_56_bbbbaaabbb; R; a
+
+data_435_baabaabbaa:
+	a -> data_436_baabaababb; R; b
+	b -> data_226_bbaaabbbab; R; a
+
+data_436_baabaababb:
+	a -> data_437_baabaababa; R; b
+	b -> data_234_bbaaababab; R; a
+
+data_437_baabaababa:
+	a -> data_438_baabaabaab; R; b
+	b -> data_1012_aaaaaababb; R; a
+
+data_438_baabaabaab:
+	a -> data_439_baabaabaaa; R; b
+	b -> data_142_bbabbbaaab; R; a
+
+data_439_baabaabaaa:
+	a -> data_440_baabaaabbb; R; b
+	b -> data_195_bbaabbbbaa; R; a
+
+data_440_baabaaabbb:
+	a -> data_441_baabaaabba; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_441_baabaaabba:
+	a -> data_442_baabaaabab; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_442_baabaaabab:
+	a -> data_443_baabaaabaa; R; b
+	b -> data_189_bbabaaaaba; R; a
+
+data_443_baabaaabaa:
+	a -> data_444_baabaaaabb; R; b
+	b -> data_0; R; a
+
+data_444_baabaaaabb:
+	a -> data_445_baabaaaaba; R; b
+	b -> data_192_bbaabbbbbb; R; a
+
+data_445_baabaaaaba:
+	a -> data_446_baabaaaaab; R; b
+	b -> data_910_aaabbbaaab; R; a
+
+data_446_baabaaaaab:
+	a -> data_447_baabaaaaaa; R; b
+	b -> data_756_abaaaababb; R; a
+
+data_447_baabaaaaaa:
+	a -> data_448_baaabbbbbb; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_448_baaabbbbbb:
+	a -> data_449_baaabbbbba; R; b
+	b -> data_192_bbaabbbbbb; R; a
+
+data_449_baaabbbbba:
+	a -> data_450_baaabbbbab; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_450_baaabbbbab:
+	a -> data_451_baaabbbbaa; R; b
+	b -> data_568_abbbaaabbb; R; a
+
+data_451_baaabbbbaa:
+	a -> data_452_baaabbbabb; R; b
+	b -> data_783_aabbbbaaaa; R; a
+
+data_452_baaabbbabb:
+	a -> data_453_baaabbbaba; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_453_baaabbbaba:
+	a -> data_454_baaabbbaab; R; b
+	b -> data_940_aaababaabb; R; a
+
+data_454_baaabbbaab:
+	a -> data_455_baaabbbaaa; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_455_baaabbbaaa:
+	a -> data_456_baaabbabbb; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_456_baaabbabbb:
+	a -> data_457_baaabbabba; R; b
+	b -> data_56_bbbbaaabbb; R; a
+
+data_457_baaabbabba:
+	a -> data_458_baaabbabab; R; b
+	b -> data_943_aaababaaaa; R; a
+
+data_458_baaabbabab:
+	a -> data_459_baaabbabaa; R; b
+	b -> data_384_baabbbbbbb; R; a
+
+data_459_baaabbabaa:
+	a -> data_460_baaabbaabb; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_460_baaabbaabb:
+	a -> data_461_baaabbaaba; R; b
+	b -> data_523_abbbbbabaa; R; a
+
+data_461_baaabbaaba:
+	a -> data_462_baaabbaaab; R; b
+	b -> data_687_abababaaaa; R; a
+
+data_462_baaabbaaab:
+	a -> data_463_baaabbaaaa; R; b
+	b -> data_893_aabaaaaaba; R; a
+
+data_463_baaabbaaaa:
+	a -> data_464_baaababbbb; R; b
+	b -> data_654_ababbbaaab; R; a
+
+data_464_baaababbbb:
+	a -> data_465_baaababbba; R; b
+	b -> data_56_bbbbaaabbb; R; a
+
+data_465_baaababbba:
+	a -> data_466_baaababbab; R; b
+	b -> data_234_bbaaababab; R; a
+
+data_466_baaababbab:
+	a -> data_467_baaababbaa; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_467_baaababbaa:
+	a -> data_468_baaabababb; R; b
+	b -> data_872_aabaababbb; R; a
+
+data_468_baaabababb:
+	a -> data_469_baaabababa; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_469_baaabababa:
+	a -> data_470_baaababaab; R; b
+	b -> data_746_abaaababab; R; a
+
+data_470_baaababaab:
+	a -> data_471_baaababaaa; R; b
+	b -> data_957_aaabaaaaba; R; a
+
+data_471_baaababaaa:
+	a -> data_472_baaabaabbb; R; b
+	b -> data_178_bbabaabbab; R; a
+
+data_472_baaabaabbb:
+	a -> data_473_baaabaabba; R; b
+	b -> data_911_aaabbbaaaa; R; a
+
+data_473_baaabaabba:
+	a -> data_474_baaabaabab; R; b
+	b -> data_468_baaabababb; R; a
+
+data_474_baaabaabab:
+	a -> data_475_baaabaabaa; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_475_baaabaabaa:
+	a -> data_476_baaabaaabb; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_476_baaabaaabb:
+	a -> data_477_baaabaaaba; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_477_baaabaaaba:
+	a -> data_478_baaabaaaab; R; b
+	b -> data_56_bbbbaaabbb; R; a
+
+data_478_baaabaaaab:
+	a -> data_479_baaabaaaaa; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_479_baaabaaaaa:
+	a -> data_480_baaaabbbbb; R; b
+	b -> data_142_bbabbbaaab; R; a
+
+data_480_baaaabbbbb:
+	a -> data_481_baaaabbbba; R; b
+	b -> data_715_abaabbabaa; R; a
+
+data_481_baaaabbbba:
+	a -> data_482_baaaabbbab; R; b
+	b -> data_573_abbbaaaaba; R; a
+
+data_482_baaaabbbab:
+	a -> data_483_baaaabbbaa; R; b
+	b -> data_686_abababaaab; R; a
+
+data_483_baaaabbbaa:
+	a -> data_484_baaaabbabb; R; b
+	b -> data_48_bbbbaabbbb; R; a
+
+data_484_baaaabbabb:
+	a -> data_485_baaaabbaba; R; b
+	b -> data_234_bbaaababab; R; a
+
+data_485_baaaabbaba:
+	a -> data_486_baaaabbaab; R; b
+	b -> data_1012_aaaaaababb; R; a
+
+data_486_baaaabbaab:
+	a -> data_487_baaaabbaaa; R; b
+	b -> data_555_abbbababaa; R; a
+
+data_487_baaaabbaaa:
+	a -> data_488_baaaababbb; R; b
+	b -> data_50_bbbbaabbab; R; a
+
+data_488_baaaababbb:
+	a -> data_489_baaaababba; R; b
+	b -> data_991_aaaabaaaaa; R; a
+
+data_489_baaaababba:
+	a -> data_490_baaaababab; R; b
+	b -> data_296_babbababbb; R; a
+
+data_490_baaaababab:
+	a -> data_491_baaaababaa; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_491_baaaababaa:
+	a -> data_492_baaaabaabb; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_492_baaaabaabb:
+	a -> data_493_baaaabaaba; R; b
+	b -> data_195_bbaabbbbaa; R; a
+
+data_493_baaaabaaba:
+	a -> data_494_baaaabaaab; R; b
+	b -> data_189_bbabaaaaba; R; a
+
+data_494_baaaabaaab:
+	a -> data_495_baaaabaaaa; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_495_baaaabaaaa:
+	a -> data_496_baaaaabbbb; R; b
+	b -> data_179_bbabaabbaa; R; a
+
+data_496_baaaaabbbb:
+	a -> data_497_baaaaabbba; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_497_baaaaabbba:
+	a -> data_498_baaaaabbab; R; b
+	b -> data_227_bbaaabbbaa; R; a
+
+data_498_baaaaabbab:
+	a -> data_499_baaaaabbaa; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_499_baaaaabbaa:
+	a -> data_500_baaaaababb; R; b
+	b -> data_131_bbabbbbbaa; R; a
+
+data_500_baaaaababb:
+	a -> data_501_baaaaababa; R; b
+	b -> data_690_ababaabbab; R; a
+
+data_501_baaaaababa:
+	a -> data_502_baaaaabaab; R; b
+	b -> data_911_aaabbbaaaa; R; a
+
+data_502_baaaaabaab:
+	a -> data_503_baaaaabaaa; R; b
+	b -> data_427_baabababaa; R; a
+
+data_503_baaaaabaaa:
+	a -> data_504_baaaaaabbb; R; b
+	b -> data_524_abbbbbaabb; R; a
+
+data_504_baaaaaabbb:
+	a -> data_505_baaaaaabba; R; b
+	b -> data_686_abababaaab; R; a
+
+data_505_baaaaaabba:
+	a -> data_506_baaaaaabab; R; b
+	b -> data_703_ababaaaaaa; R; a
+
+data_506_baaaaaabab:
+	a -> data_507_baaaaaabaa; R; b
+	b -> data_296_babbababbb; R; a
+
+data_507_baaaaaabaa:
+	a -> data_508_baaaaaaabb; R; b
+	b -> data_716_abaabbaabb; R; a
+
+data_508_baaaaaaabb:
+	a -> data_509_baaaaaaaba; R; b
+	b -> data_236_bbaaabaabb; R; a
+
+data_509_baaaaaaaba:
+	a -> data_510_baaaaaaaab; R; b
+	b -> data_739_abaaabbbaa; R; a
+
+data_510_baaaaaaaab:
+	a -> data_511_baaaaaaaaa; R; b
+	b -> data_701_ababaaaaba; R; a
+
+data_511_baaaaaaaaa:
+	a -> data_512_abbbbbbbbb; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_512_abbbbbbbbb:
+	a -> data_513_abbbbbbbba; R; b
+	b -> data_187_bbabaaabaa; R; a
+
+data_513_abbbbbbbba:
+	a -> data_514_abbbbbbbab; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_514_abbbbbbbab:
+	a -> data_515_abbbbbbbaa; R; b
+	b -> data_911_aaabbbaaaa; R; a
+
+data_515_abbbbbbbaa:
+	a -> data_516_abbbbbbabb; R; b
+	b -> data_290_babbabbbab; R; a
+
+data_516_abbbbbbabb:
+	a -> data_517_abbbbbbaba; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_517_abbbbbbaba:
+	a -> data_518_abbbbbbaab; R; b
+	b -> data_184_bbabaaabbb; R; a
+
+data_518_abbbbbbaab:
+	a -> data_519_abbbbbbaaa; R; b
+	b -> data_986_aaaabaabab; R; a
+
+data_519_abbbbbbaaa:
+	a -> data_520_abbbbbabbb; R; b
+	b -> data_736_abaaabbbbb; R; a
+
+data_520_abbbbbabbb:
+	a -> data_521_abbbbbabba; R; b
+	b -> data_802_aabbabbbab; R; a
+
+data_521_abbbbbabba:
+	a -> data_522_abbbbbabab; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_522_abbbbbabab:
+	a -> data_523_abbbbbabaa; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_523_abbbbbabaa:
+	a -> data_524_abbbbbaabb; R; b
+	b -> data_172_bbababaabb; R; a
+
+data_524_abbbbbaabb:
+	a -> data_525_abbbbbaaba; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_525_abbbbbaaba:
+	a -> data_526_abbbbbaaab; R; b
+	b -> data_893_aabaaaaaba; R; a
+
+data_526_abbbbbaaab:
+	a -> data_527_abbbbbaaaa; R; b
+	b -> data_163_bbababbbaa; R; a
+
+data_527_abbbbbaaaa:
+	a -> data_528_abbbbabbbb; R; b
+	b -> data_50_bbbbaabbab; R; a
+
+data_528_abbbbabbbb:
+	a -> data_529_abbbbabbba; R; b
+	b -> data_910_aaabbbaaab; R; a
+
+data_529_abbbbabbba:
+	a -> data_530_abbbbabbab; R; b
+	b -> data_758_abaaaabaab; R; a
+
+data_530_abbbbabbab:
+	a -> data_531_abbbbabbaa; R; b
+	b -> data_184_bbabaaabbb; R; a
+
+data_531_abbbbabbaa:
+	a -> data_532_abbbbababb; R; b
+	b -> data_200_bbaabbabbb; R; a
+
+data_532_abbbbababb:
+	a -> data_533_abbbbababa; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_533_abbbbababa:
+	a -> data_534_abbbbabaab; R; b
+	b -> data_143_bbabbbaaaa; R; a
+
+data_534_abbbbabaab:
+	a -> data_535_abbbbabaaa; R; b
+	b -> data_468_baaabababb; R; a
+
+data_535_abbbbabaaa:
+	a -> data_536_abbbbaabbb; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_536_abbbbaabbb:
+	a -> data_537_abbbbaabba; R; b
+	b -> data_563_abbbaabbaa; R; a
+
+data_537_abbbbaabba:
+	a -> data_538_abbbbaabab; R; b
+	b -> data_707_abaabbbbaa; R; a
+
+data_538_abbbbaabab:
+	a -> data_539_abbbbaabaa; R; b
+	b -> data_867_aabaabbbaa; R; a
+
+data_539_abbbbaabaa:
+	a -> data_540_abbbbaaabb; R; b
+	b -> data_687_abababaaaa; R; a
+
+data_540_abbbbaaabb:
+	a -> data_541_abbbbaaaba; R; b
+	b -> data_524_abbbbbaabb; R; a
+
+data_541_abbbbaaaba:
+	a -> data_542_abbbbaaaab; R; b
+	b -> data_756_abaaaababb; R; a
+
+data_542_abbbbaaaab:
+	a -> data_543_abbbbaaaaa; R; b
+	b -> data_163_bbababbbaa; R; a
+
+data_543_abbbbaaaaa:
+	a -> data_544_abbbabbbbb; R; b
+	b -> data_195_bbaabbbbaa; R; a
+
+data_544_abbbabbbbb:
+	a -> data_545_abbbabbbba; R; b
+	b -> data_759_abaaaabaaa; R; a
+
+data_545_abbbabbbba:
+	a -> data_546_abbbabbbab; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_546_abbbabbbab:
+	a -> data_547_abbbabbbaa; R; b
+	b -> data_46_bbbbabaaab; R; a
+
+data_547_abbbabbbaa:
+	a -> data_548_abbbabbabb; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_548_abbbabbabb:
+	a -> data_549_abbbabbaba; R; b
+	b -> data_563_abbbaabbaa; R; a
+
+data_549_abbbabbaba:
+	a -> data_550_abbbabbaab; R; b
+	b -> data_759_abaaaabaaa; R; a
+
+data_550_abbbabbaab:
+	a -> data_551_abbbabbaaa; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_551_abbbabbaaa:
+	a -> data_552_abbbababbb; R; b
+	b -> data_12_bbbbbbaabb; R; a
+
+data_552_abbbababbb:
+	a -> data_553_abbbababba; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_553_abbbababba:
+	a -> data_554_abbbababab; R; b
+	b -> data_719_abaabbaaaa; R; a
+
+data_554_abbbababab:
+	a -> data_555_abbbababaa; R; b
+	b -> data_468_baaabababb; R; a
+
+data_555_abbbababaa:
+	a -> data_556_abbbabaabb; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_556_abbbabaabb:
+	a -> data_557_abbbabaaba; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_557_abbbabaaba:
+	a -> data_558_abbbabaaab; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_558_abbbabaaab:
+	a -> data_559_abbbabaaaa; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_559_abbbabaaaa:
+	a -> data_560_abbbaabbbb; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_560_abbbaabbbb:
+	a -> data_561_abbbaabbba; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_561_abbbaabbba:
+	a -> data_562_abbbaabbab; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_562_abbbaabbab:
+	a -> data_563_abbbaabbaa; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_563_abbbaabbaa:
+	a -> data_564_abbbaababb; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_564_abbbaababb:
+	a -> data_565_abbbaababa; R; b
+	b -> data_571_abbbaaabaa; R; a
+
+data_565_abbbaababa:
+	a -> data_566_abbbaabaab; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_566_abbbaabaab:
+	a -> data_567_abbbaabaaa; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_567_abbbaabaaa:
+	a -> data_568_abbbaaabbb; R; b
+	b -> data_814_aabbabaaab; R; a
+
+data_568_abbbaaabbb:
+	a -> data_569_abbbaaabba; R; b
+	b -> data_246_bbaaaabaab; R; a
+
+data_569_abbbaaabba:
+	a -> data_570_abbbaaabab; R; b
+	b -> data_696_ababaaabbb; R; a
+
+data_570_abbbaaabab:
+	a -> data_571_abbbaaabaa; R; b
+	b -> data_226_bbaaabbbab; R; a
+
+data_571_abbbaaabaa:
+	a -> data_572_abbbaaaabb; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_572_abbbaaaabb:
+	a -> data_573_abbbaaaaba; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_573_abbbaaaaba:
+	a -> data_574_abbbaaaaab; R; b
+	b -> data_562_abbbaabbab; R; a
+
+data_574_abbbaaaaab:
+	a -> data_575_abbbaaaaaa; R; b
+	b -> data_783_aabbbbaaaa; R; a
+
+data_575_abbbaaaaaa:
+	a -> data_576_abbabbbbbb; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_576_abbabbbbbb:
+	a -> data_577_abbabbbbba; R; b
+	b -> data_910_aaabbbaaab; R; a
+
+data_577_abbabbbbba:
+	a -> data_578_abbabbbbab; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_578_abbabbbbab:
+	a -> data_579_abbabbbbaa; R; b
+	b -> data_654_ababbbaaab; R; a
+
+data_579_abbabbbbaa:
+	a -> data_580_abbabbbabb; R; b
+	b -> data_715_abaabbabaa; R; a
+
+data_580_abbabbbabb:
+	a -> data_581_abbabbbaba; R; b
+	b -> data_573_abbbaaaaba; R; a
+
+data_581_abbabbbaba:
+	a -> data_582_abbabbbaab; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_582_abbabbbaab:
+	a -> data_583_abbabbbaaa; R; b
+	b -> data_58_bbbbaaabab; R; a
+
+data_583_abbabbbaaa:
+	a -> data_584_abbabbabbb; R; b
+	b -> data_984_aaaabaabbb; R; a
+
+data_584_abbabbabbb:
+	a -> data_585_abbabbabba; R; b
+	b -> data_736_abaaabbbbb; R; a
+
+data_585_abbabbabba:
+	a -> data_586_abbabbabab; R; b
+	b -> data_782_aabbbbaaab; R; a
+
+data_586_abbabbabab:
+	a -> data_587_abbabbabaa; R; b
+	b -> data_688_ababaabbbb; R; a
+
+data_587_abbabbabaa:
+	a -> data_588_abbabbaabb; R; b
+	b -> data_989_aaaabaaaba; R; a
+
+data_588_abbabbaabb:
+	a -> data_589_abbabbaaba; R; b
+	b -> data_308_babbaababb; R; a
+
+data_589_abbabbaaba:
+	a -> data_590_abbabbaaab; R; b
+	b -> data_683_ababababaa; R; a
+
+data_590_abbabbaaab:
+	a -> data_591_abbabbaaaa; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_591_abbabbaaaa:
+	a -> data_592_abbababbbb; R; b
+	b -> data_171_bbabababaa; R; a
+
+data_592_abbababbbb:
+	a -> data_593_abbababbba; R; b
+	b -> data_236_bbaaabaabb; R; a
+
+data_593_abbababbba:
+	a -> data_594_abbababbab; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_594_abbababbab:
+	a -> data_595_abbababbaa; R; b
+	b -> data_683_ababababaa; R; a
+
+data_595_abbababbaa:
+	a -> data_596_abbabababb; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_596_abbabababb:
+	a -> data_597_abbabababa; R; b
+	b -> data_851_aabababbaa; R; a
+
+data_597_abbabababa:
+	a -> data_598_abbababaab; R; b
+	b -> data_398_baabbbaaab; R; a
+
+data_598_abbababaab:
+	a -> data_599_abbababaaa; R; b
+	b -> data_526_abbbbbaaab; R; a
+
+data_599_abbababaaa:
+	a -> data_600_abbabaabbb; R; b
+	b -> data_178_bbabaabbab; R; a
+
+data_600_abbabaabbb:
+	a -> data_601_abbabaabba; R; b
+	b -> data_984_aaaabaabbb; R; a
+
+data_601_abbabaabba:
+	a -> data_602_abbabaabab; R; b
+	b -> data_936_aaabababbb; R; a
+
+data_602_abbabaabab:
+	a -> data_603_abbabaabaa; R; b
+	b -> data_738_abaaabbbab; R; a
+
+data_603_abbabaabaa:
+	a -> data_604_abbabaaabb; R; b
+	b -> data_246_bbaaaabaab; R; a
+
+data_604_abbabaaabb:
+	a -> data_605_abbabaaaba; R; b
+	b -> data_236_bbaaabaabb; R; a
+
+data_605_abbabaaaba:
+	a -> data_606_abbabaaaab; R; b
+	b -> data_943_aaababaaaa; R; a
+
+data_606_abbabaaaab:
+	a -> data_607_abbabaaaaa; R; b
+	b -> data_398_baabbbaaab; R; a
+
+data_607_abbabaaaaa:
+	a -> data_608_abbaabbbbb; R; b
+	b -> data_642_ababbbbbab; R; a
+
+data_608_abbaabbbbb:
+	a -> data_609_abbaabbbba; R; b
+	b -> data_910_aaabbbaaab; R; a
+
+data_609_abbaabbbba:
+	a -> data_610_abbaabbbab; R; b
+	b -> data_958_aaabaaaaab; R; a
+
+data_610_abbaabbbab:
+	a -> data_611_abbaabbbaa; R; b
+	b -> data_984_aaaabaabbb; R; a
+
+data_611_abbaabbbaa:
+	a -> data_612_abbaabbabb; R; b
+	b -> data_931_aaababbbaa; R; a
+
+data_612_abbaabbabb:
+	a -> data_613_abbaabbaba; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_613_abbaabbaba:
+	a -> data_614_abbaabbaab; R; b
+	b -> data_179_bbabaabbaa; R; a
+
+data_614_abbaabbaab:
+	a -> data_615_abbaabbaaa; R; b
+	b -> data_885_aabaaababa; R; a
+
+data_615_abbaabbaaa:
+	a -> data_616_abbaababbb; R; b
+	b -> data_208_bbaababbbb; R; a
+
+data_616_abbaababbb:
+	a -> data_617_abbaababba; R; b
+	b -> data_719_abaabbaaaa; R; a
+
+data_617_abbaababba:
+	a -> data_618_abbaababab; R; b
+	b -> data_256_babbbbbbbb; R; a
+
+data_618_abbaababab:
+	a -> data_619_abbaababaa; R; b
+	b -> data_187_bbabaaabaa; R; a
+
+data_619_abbaababaa:
+	a -> data_620_abbaabaabb; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_620_abbaabaabb:
+	a -> data_621_abbaabaaba; R; b
+	b -> data_568_abbbaaabbb; R; a
+
+data_621_abbaabaaba:
+	a -> data_622_abbaabaaab; R; b
+	b -> data_227_bbaaabbbaa; R; a
+
+data_622_abbaabaaab:
+	a -> data_623_abbaabaaaa; R; b
+	b -> data_832_aababbbbbb; R; a
+
+data_623_abbaabaaaa:
+	a -> data_624_abbaaabbbb; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_624_abbaaabbbb:
+	a -> data_625_abbaaabbba; R; b
+	b -> data_783_aabbbbaaaa; R; a
+
+data_625_abbaaabbba:
+	a -> data_626_abbaaabbab; R; b
+	b -> data_430_baababaaab; R; a
+
+data_626_abbaaabbab:
+	a -> data_627_abbaaabbaa; R; b
+	b -> data_642_ababbbbbab; R; a
+
+data_627_abbaaabbaa:
+	a -> data_628_abbaaababb; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_628_abbaaababb:
+	a -> data_629_abbaaababa; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_629_abbaaababa:
+	a -> data_630_abbaaabaab; R; b
+	b -> data_524_abbbbbaabb; R; a
+
+data_630_abbaaabaab:
+	a -> data_631_abbaaabaaa; R; b
+	b -> data_944_aaabaabbbb; R; a
+
+data_631_abbaaabaaa:
+	a -> data_632_abbaaaabbb; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_632_abbaaaabbb:
+	a -> data_633_abbaaaabba; R; b
+	b -> data_43_bbbbababaa; R; a
+
+data_633_abbaaaabba:
+	a -> data_634_abbaaaabab; R; b
+	b -> data_236_bbaaabaabb; R; a
+
+data_634_abbaaaabab:
+	a -> data_635_abbaaaabaa; R; b
+	b -> data_247_bbaaaabaaa; R; a
+
+data_635_abbaaaabaa:
+	a -> data_636_abbaaaaabb; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_636_abbaaaaabb:
+	a -> data_637_abbaaaaaba; R; b
+	b -> data_568_abbbaaabbb; R; a
+
+data_637_abbaaaaaba:
+	a -> data_638_abbaaaaaab; R; b
+	b -> data_58_bbbbaaabab; R; a
+
+data_638_abbaaaaaab:
+	a -> data_639_abbaaaaaaa; R; b
+	b -> data_707_abaabbbbaa; R; a
+
+data_639_abbaaaaaaa:
+	a -> data_640_ababbbbbbb; R; b
+	b -> data_867_aabaabbbaa; R; a
+
+data_640_ababbbbbbb:
+	a -> data_641_ababbbbbba; R; b
+	b -> data_763_abaaaaabaa; R; a
+
+data_641_ababbbbbba:
+	a -> data_642_ababbbbbab; R; b
+	b -> data_687_abababaaaa; R; a
+
+data_642_ababbbbbab:
+	a -> data_643_ababbbbbaa; R; b
+	b -> data_875_aabaababaa; R; a
+
+data_643_ababbbbbaa:
+	a -> data_644_ababbbbabb; R; b
+	b -> data_515_abbbbbbbaa; R; a
+
+data_644_ababbbbabb:
+	a -> data_645_ababbbbaba; R; b
+	b -> data_686_abababaaab; R; a
+
+data_645_ababbbbaba:
+	a -> data_646_ababbbbaab; R; b
+	b -> data_246_bbaaaabaab; R; a
+
+data_646_ababbbbaab:
+	a -> data_647_ababbbbaaa; R; b
+	b -> data_751_abaaabaaaa; R; a
+
+data_647_ababbbbaaa:
+	a -> data_648_ababbbabbb; R; b
+	b -> data_746_abaaababab; R; a
+
+data_648_ababbbabbb:
+	a -> data_649_ababbbabba; R; b
+	b -> data_1015_aaaaaabaaa; R; a
+
+data_649_ababbbabba:
+	a -> data_650_ababbbabab; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_650_ababbbabab:
+	a -> data_651_ababbbabaa; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_651_ababbbabaa:
+	a -> data_652_ababbbaabb; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_652_ababbbaabb:
+	a -> data_653_ababbbaaba; R; b
+	b -> data_44_bbbbabaabb; R; a
+
+data_653_ababbbaaba:
+	a -> data_654_ababbbaaab; R; b
+	b -> data_957_aaabaaaaba; R; a
+
+data_654_ababbbaaab:
+	a -> data_655_ababbbaaaa; R; b
+	b -> data_8_bbbbbbabbb; R; a
+
+data_655_ababbbaaaa:
+	a -> data_656_ababbabbbb; R; b
+	b -> data_829_aabbaaaaba; R; a
+
+data_656_ababbabbbb:
+	a -> data_657_ababbabbba; R; b
+	b -> data_851_aabababbaa; R; a
+
+data_657_ababbabbba:
+	a -> data_658_ababbabbab; R; b
+	b -> data_430_baababaaab; R; a
+
+data_658_ababbabbab:
+	a -> data_659_ababbabbaa; R; b
+	b -> data_688_ababaabbbb; R; a
+
+data_659_ababbabbaa:
+	a -> data_660_ababbababb; R; b
+	b -> data_899_aaabbbbbaa; R; a
+
+data_660_ababbababb:
+	a -> data_661_ababbababa; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_661_ababbababa:
+	a -> data_662_ababbabaab; R; b
+	b -> data_684_abababaabb; R; a
+
+data_662_ababbabaab:
+	a -> data_663_ababbabaaa; R; b
+	b -> data_984_aaaabaabbb; R; a
+
+data_663_ababbabaaa:
+	a -> data_664_ababbaabbb; R; b
+	b -> data_234_bbaaababab; R; a
+
+data_664_ababbaabbb:
+	a -> data_665_ababbaabba; R; b
+	b -> data_910_aaabbbaaab; R; a
+
+data_665_ababbaabba:
+	a -> data_666_ababbaabab; R; b
+	b -> data_63_bbbbaaaaaa; R; a
+
+data_666_ababbaabab:
+	a -> data_667_ababbaabaa; R; b
+	b -> data_298_babbababab; R; a
+
+data_667_ababbaabaa:
+	a -> data_668_ababbaaabb; R; b
+	b -> data_719_abaabbaaaa; R; a
+
+data_668_ababbaaabb:
+	a -> data_669_ababbaaaba; R; b
+	b -> data_468_baaabababb; R; a
+
+data_669_ababbaaaba:
+	a -> data_670_ababbaaaab; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_670_ababbaaaab:
+	a -> data_671_ababbaaaaa; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_671_ababbaaaaa:
+	a -> data_672_abababbbbb; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_672_abababbbbb:
+	a -> data_673_abababbbba; R; b
+	b -> data_142_bbabbbaaab; R; a
+
+data_673_abababbbba:
+	a -> data_674_abababbbab; R; b
+	b -> data_815_aabbabaaaa; R; a
+
+data_674_abababbbab:
+	a -> data_675_abababbbaa; R; b
+	b -> data_300_babbabaabb; R; a
+
+data_675_abababbbaa:
+	a -> data_676_abababbabb; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_676_abababbabb:
+	a -> data_677_abababbaba; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_677_abababbaba:
+	a -> data_678_abababbaab; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_678_abababbaab:
+	a -> data_679_abababbaaa; R; b
+	b -> data_756_abaaaababb; R; a
+
+data_679_abababbaaa:
+	a -> data_680_ababababbb; R; b
+	b -> data_184_bbabaaabbb; R; a
+
+data_680_ababababbb:
+	a -> data_681_ababababba; R; b
+	b -> data_978_aaaababbab; R; a
+
+data_681_ababababba:
+	a -> data_682_ababababab; R; b
+	b -> data_58_bbbbaaabab; R; a
+
+data_682_ababababab:
+	a -> data_683_ababababaa; R; b
+	b -> data_814_aabbabaaab; R; a
+
+data_683_ababababaa:
+	a -> data_684_abababaabb; R; b
+	b -> data_246_bbaaaabaab; R; a
+
+data_684_abababaabb:
+	a -> data_685_abababaaba; R; b
+	b -> data_696_ababaaabbb; R; a
+
+data_685_abababaaba:
+	a -> data_686_abababaaab; R; b
+	b -> data_194_bbaabbbbab; R; a
+
+data_686_abababaaab:
+	a -> data_687_abababaaaa; R; b
+	b -> data_234_bbaaababab; R; a
+
+data_687_abababaaaa:
+	a -> data_688_ababaabbbb; R; b
+	b -> data_1012_aaaaaababb; R; a
+
+data_688_ababaabbbb:
+	a -> data_689_ababaabbba; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_689_ababaabbba:
+	a -> data_690_ababaabbab; R; b
+	b -> data_707_abaabbbbaa; R; a
+
+data_690_ababaabbab:
+	a -> data_691_ababaabbaa; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_691_ababaabbaa:
+	a -> data_692_ababaababb; R; b
+	b -> data_227_bbaaabbbaa; R; a
+
+data_692_ababaababb:
+	a -> data_693_ababaababa; R; b
+	b -> data_756_abaaaababb; R; a
+
+data_693_ababaababa:
+	a -> data_694_ababaabaab; R; b
+	b -> data_0; R; a
+
+data_694_ababaabaab:
+	a -> data_695_ababaabaaa; R; b
+	b -> data_940_aaababaabb; R; a
+
+data_695_ababaabaaa:
+	a -> data_696_ababaaabbb; R; b
+	b -> data_739_abaaabbbaa; R; a
+
+data_696_ababaaabbb:
+	a -> data_697_ababaaabba; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_697_ababaaabba:
+	a -> data_698_ababaaabab; R; b
+	b -> data_195_bbaabbbbaa; R; a
+
+data_698_ababaaabab:
+	a -> data_699_ababaaabaa; R; b
+	b -> data_701_ababaaaaba; R; a
+
+data_699_ababaaabaa:
+	a -> data_700_ababaaaabb; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_700_ababaaaabb:
+	a -> data_701_ababaaaaba; R; b
+	b -> data_187_bbabaaabaa; R; a
+
+data_701_ababaaaaba:
+	a -> data_702_ababaaaaab; R; b
+	b -> data_832_aababbbbbb; R; a
+
+data_702_ababaaaaab:
+	a -> data_703_ababaaaaaa; R; b
+	b -> data_911_aaabbbaaaa; R; a
+
+data_703_ababaaaaaa:
+	a -> data_704_abaabbbbbb; R; b
+	b -> data_298_babbababab; R; a
+
+data_704_abaabbbbbb:
+	a -> data_705_abaabbbbba; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_705_abaabbbbba:
+	a -> data_706_abaabbbbab; R; b
+	b -> data_184_bbabaaabbb; R; a
+
+data_706_abaabbbbab:
+	a -> data_707_abaabbbbaa; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_707_abaabbbbaa:
+	a -> data_708_abaabbbabb; R; b
+	b -> data_571_abbbaaabaa; R; a
+
+data_708_abaabbbabb:
+	a -> data_709_abaabbbaba; R; b
+	b -> data_701_ababaaaaba; R; a
+
+data_709_abaabbbaba:
+	a -> data_710_abaabbbaab; R; b
+	b -> data_558_abbbabaaab; R; a
+
+data_710_abaabbbaab:
+	a -> data_711_abaabbbaaa; R; b
+	b -> data_50_bbbbaabbab; R; a
+
+data_711_abaabbbaaa:
+	a -> data_712_abaabbabbb; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_712_abaabbabbb:
+	a -> data_713_abaabbabba; R; b
+	b -> data_189_bbabaaaaba; R; a
+
+data_713_abaabbabba:
+	a -> data_714_abaabbabab; R; b
+	b -> data_851_aabababbaa; R; a
+
+data_714_abaabbabab:
+	a -> data_715_abaabbabaa; R; b
+	b -> data_290_babbabbbab; R; a
+
+data_715_abaabbabaa:
+	a -> data_716_abaabbaabb; R; b
+	b -> data_715_abaabbabaa; R; a
+
+data_716_abaabbaabb:
+	a -> data_717_abaabbaaba; R; b
+	b -> data_573_abbbaaaaba; R; a
+
+data_717_abaabbaaba:
+	a -> data_718_abaabbaaab; R; b
+	b -> data_187_bbabaaabaa; R; a
+
+data_718_abaabbaaab:
+	a -> data_719_abaabbaaaa; R; b
+	b -> data_573_abbbaaaaba; R; a
+
+data_719_abaabbaaaa:
+	a -> data_720_abaababbbb; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_720_abaababbbb:
+	a -> data_721_abaababbba; R; b
+	b -> data_571_abbbaaabaa; R; a
+
+data_721_abaababbba:
+	a -> data_722_abaababbab; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_722_abaababbab:
+	a -> data_723_abaababbaa; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_723_abaababbaa:
+	a -> data_724_abaabababb; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_724_abaabababb:
+	a -> data_725_abaabababa; R; b
+	b -> data_163_bbababbbaa; R; a
+
+data_725_abaabababa:
+	a -> data_726_abaababaab; R; b
+	b -> data_14_bbbbbbaaab; R; a
+
+data_726_abaababaab:
+	a -> data_727_abaababaaa; R; b
+	b -> data_739_abaaabbbaa; R; a
+
+data_727_abaababaaa:
+	a -> data_728_abaabaabbb; R; b
+	b -> data_864_aabaabbbbb; R; a
+
+data_728_abaabaabbb:
+	a -> data_729_abaabaabba; R; b
+	b -> data_224_bbaaabbbbb; R; a
+
+data_729_abaabaabba:
+	a -> data_730_abaabaabab; R; b
+	b -> data_776_aabbbbabbb; R; a
+
+data_730_abaabaabab:
+	a -> data_731_abaabaabaa; R; b
+	b -> data_939_aaabababaa; R; a
+
+data_731_abaabaabaa:
+	a -> data_732_abaabaaabb; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_732_abaabaaabb:
+	a -> data_733_abaabaaaba; R; b
+	b -> data_568_abbbaaabbb; R; a
+
+data_733_abaabaaaba:
+	a -> data_734_abaabaaaab; R; b
+	b -> data_829_aabbaaaaba; R; a
+
+data_734_abaabaaaab:
+	a -> data_735_abaabaaaaa; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_735_abaabaaaaa:
+	a -> data_736_abaaabbbbb; R; b
+	b -> data_699_ababaaabaa; R; a
+
+data_736_abaaabbbbb:
+	a -> data_737_abaaabbbba; R; b
+	b -> data_832_aababbbbbb; R; a
+
+data_737_abaaabbbba:
+	a -> data_738_abaaabbbab; R; b
+	b -> data_652_ababbbaabb; R; a
+
+data_738_abaaabbbab:
+	a -> data_739_abaaabbbaa; R; b
+	b -> data_56_bbbbaaabbb; R; a
+
+data_739_abaaabbbaa:
+	a -> data_740_abaaabbabb; R; b
+	b -> data_943_aaababaaaa; R; a
+
+data_740_abaaabbabb:
+	a -> data_741_abaaabbaba; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_741_abaaabbaba:
+	a -> data_742_abaaabbaab; R; b
+	b -> data_780_aabbbbaabb; R; a
+
+data_742_abaaabbaab:
+	a -> data_743_abaaabbaaa; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_743_abaaabbaaa:
+	a -> data_744_abaaababbb; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_744_abaaababbb:
+	a -> data_745_abaaababba; R; b
+	b -> data_562_abbbaabbab; R; a
+
+data_745_abaaababba:
+	a -> data_746_abaaababab; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_746_abaaababab:
+	a -> data_747_abaaababaa; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_747_abaaababaa:
+	a -> data_748_abaaabaabb; R; b
+	b -> data_783_aabbbbaaaa; R; a
+
+data_748_abaaabaabb:
+	a -> data_749_abaaabaaba; R; b
+	b -> data_298_babbababab; R; a
+
+data_749_abaaabaaba:
+	a -> data_750_abaaabaaab; R; b
+	b -> data_771_aabbbbbbaa; R; a
+
+data_750_abaaabaaab:
+	a -> data_751_abaaabaaaa; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_751_abaaabaaaa:
+	a -> data_752_abaaaabbbb; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_752_abaaaabbbb:
+	a -> data_753_abaaaabbba; R; b
+	b -> data_562_abbbaabbab; R; a
+
+data_753_abaaaabbba:
+	a -> data_754_abaaaabbab; R; b
+	b -> data_771_aabbbbbbaa; R; a
+
+data_754_abaaaabbab:
+	a -> data_755_abaaaabbaa; R; b
+	b -> data_842_aababbabab; R; a
+
+data_755_abaaaabbaa:
+	a -> data_756_abaaaababb; R; b
+	b -> data_238_bbaaabaaab; R; a
+
+data_756_abaaaababb:
+	a -> data_757_abaaaababa; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_757_abaaaababa:
+	a -> data_758_abaaaabaab; R; b
+	b -> data_15_bbbbbbaaaa; R; a
+
+data_758_abaaaabaab:
+	a -> data_759_abaaaabaaa; R; b
+	b -> data_419_baababbbaa; R; a
+
+data_759_abaaaabaaa:
+	a -> data_760_abaaaaabbb; R; b
+	b -> data_524_abbbbbaabb; R; a
+
+data_760_abaaaaabbb:
+	a -> data_761_abaaaaabba; R; b
+	b -> data_234_bbaaababab; R; a
+
+data_761_abaaaaabba:
+	a -> data_762_abaaaaabab; R; b
+	b -> data_783_aabbbbaaaa; R; a
+
+data_762_abaaaaabab:
+	a -> data_763_abaaaaabaa; R; b
+	b -> data_468_baaabababb; R; a
+
+data_763_abaaaaabaa:
+	a -> data_764_abaaaaaabb; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_764_abaaaaaabb:
+	a -> data_765_abaaaaaaba; R; b
+	b -> data_829_aabbaaaaba; R; a
+
+data_765_abaaaaaaba:
+	a -> data_766_abaaaaaaab; R; b
+	b -> data_0; R; a
+
+data_766_abaaaaaaab:
+	a -> data_767_abaaaaaaaa; R; b
+	b -> data_748_abaaabaabb; R; a
+
+data_767_abaaaaaaaa:
+	a -> data_768_aabbbbbbbb; R; b
+	b -> data_246_bbaaaabaab; R; a
+
+data_768_aabbbbbbbb:
+	a -> data_769_aabbbbbbba; R; b
+	b -> data_58_bbbbaaabab; R; a
+
+data_769_aabbbbbbba:
+	a -> data_770_aabbbbbbab; R; b
+	b -> data_568_abbbaaabbb; R; a
+
+data_770_aabbbbbbab:
+	a -> data_771_aabbbbbbaa; R; b
+	b -> data_227_bbaaabbbaa; R; a
+
+data_771_aabbbbbbaa:
+	a -> data_772_aabbbbbabb; R; b
+	b -> data_875_aabaababaa; R; a
+
+data_772_aabbbbbabb:
+	a -> data_773_aabbbbbaba; R; b
+	b -> data_672_abababbbbb; R; a
+
+data_773_aabbbbbaba:
+	a -> data_774_aabbbbbaab; R; b
+	b -> data_224_bbaaabbbbb; R; a
+
+data_774_aabbbbbaab:
+	a -> data_775_aabbbbbaaa; R; b
+	b -> data_771_aabbbbbbaa; R; a
+
+data_775_aabbbbbaaa:
+	a -> data_776_aabbbbabbb; R; b
+	b -> data_832_aababbbbbb; R; a
+
+data_776_aabbbbabbb:
+	a -> data_777_aabbbbabba; R; b
+	b -> data_560_abbbaabbbb; R; a
+
+data_777_aabbbbabba:
+	a -> data_778_aabbbbabab; R; b
+	b -> data_984_aaaabaabbb; R; a
+
+data_778_aabbbbabab:
+	a -> data_779_aabbbbabaa; R; b
+	b -> data_904_aaabbbabbb; R; a
+
+data_779_aabbbbabaa:
+	a -> data_780_aabbbbaabb; R; b
+	b -> data_699_ababaaabaa; R; a
+
+data_780_aabbbbaabb:
+	a -> data_781_aabbbbaaba; R; b
+	b -> data_195_bbaabbbbaa; R; a
+
+data_781_aabbbbaaba:
+	a -> data_782_aabbbbaaab; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_782_aabbbbaaab:
+	a -> data_783_aabbbbaaaa; R; b
+	b -> data_51_bbbbaabbaa; R; a
+
+data_783_aabbbbaaaa:
+	a -> data_784_aabbbabbbb; R; b
+	b -> data_707_abaabbbbaa; R; a
+
+data_784_aabbbabbbb:
+	a -> data_785_aabbbabbba; R; b
+	b -> data_832_aababbbbbb; R; a
+
+data_785_aabbbabbba:
+	a -> data_786_aabbbabbab; R; b
+	b -> data_172_bbababaabb; R; a
+
+data_786_aabbbabbab:
+	a -> data_787_aabbbabbaa; R; b
+	b -> data_944_aaabaabbbb; R; a
+
+data_787_aabbbabbaa:
+	a -> data_788_aabbbababb; R; b
+	b -> data_989_aaaabaaaba; R; a
+
+data_788_aabbbababb:
+	a -> data_789_aabbbababa; R; b
+	b -> data_308_babbaababb; R; a
+
+data_789_aabbbababa:
+	a -> data_790_aabbbabaab; R; b
+	b -> data_128_bbabbbbbbb; R; a
+
+data_790_aabbbabaab:
+	a -> data_791_aabbbabaaa; R; b
+	b -> data_944_aaabaabbbb; R; a
+
+data_791_aabbbabaaa:
+	a -> data_792_aabbbaabbb; R; b
+	b -> data_814_aabbabaaab; R; a
+
+data_792_aabbbaabbb:
+	a -> data_793_aabbbaabba; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_793_aabbbaabba:
+	a -> data_794_aabbbaabab; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_794_aabbbaabab:
+	a -> data_795_aabbbaabaa; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_795_aabbbaabaa:
+	a -> data_796_aabbbaaabb; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_796_aabbbaaabb:
+	a -> data_797_aabbbaaaba; R; b
+	b -> data_160_bbababbbbb; R; a
+
+data_797_aabbbaaaba:
+	a -> data_798_aabbbaaaab; R; b
+	b -> data_911_aaabbbaaaa; R; a
+
+data_798_aabbbaaaab:
+	a -> data_799_aabbbaaaaa; R; b
+	b -> data_258_babbbbbbab; R; a
+
+data_799_aabbbaaaaa:
+	a -> data_800_aabbabbbbb; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_800_aabbabbbbb:
+	a -> data_801_aabbabbbba; R; b
+	b -> data_814_aabbabaaab; R; a
+
+data_801_aabbabbbba:
+	a -> data_802_aabbabbbab; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_802_aabbabbbab:
+	a -> data_803_aabbabbbaa; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_803_aabbabbbaa:
+	a -> data_804_aabbabbabb; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_804_aabbabbabb:
+	a -> data_805_aabbabbaba; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_805_aabbabbaba:
+	a -> data_806_aabbabbaab; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_806_aabbabbaab:
+	a -> data_807_aabbabbaaa; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_807_aabbabbaaa:
+	a -> data_808_aabbababbb; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_808_aabbababbb:
+	a -> data_809_aabbababba; R; b
+	b -> data_563_abbbaabbaa; R; a
+
+data_809_aabbababba:
+	a -> data_810_aabbababab; R; b
+	b -> data_832_aababbbbbb; R; a
+
+data_810_aabbababab:
+	a -> data_811_aabbababaa; R; b
+	b -> data_14_bbbbbbaaab; R; a
+
+data_811_aabbababaa:
+	a -> data_812_aabbabaabb; R; b
+	b -> data_715_abaabbabaa; R; a
+
+data_812_aabbabaabb:
+	a -> data_813_aabbabaaba; R; b
+	b -> data_573_abbbaaaaba; R; a
+
+data_813_aabbabaaba:
+	a -> data_814_aabbabaaab; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_814_aabbabaaab:
+	a -> data_815_aabbabaaaa; R; b
+	b -> data_58_bbbbaaabab; R; a
+
+data_815_aabbabaaaa:
+	a -> data_816_aabbaabbbb; R; b
+	b -> data_989_aaaabaaaba; R; a
+
+data_816_aabbaabbbb:
+	a -> data_817_aabbaabbba; R; b
+	b -> data_308_babbaababb; R; a
+
+data_817_aabbaabbba:
+	a -> data_818_aabbaabbab; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_818_aabbaabbab:
+	a -> data_819_aabbaabbaa; R; b
+	b -> data_207_bbaabbaaaa; R; a
+
+data_819_aabbaabbaa:
+	a -> data_820_aabbaababb; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_820_aabbaababb:
+	a -> data_821_aabbaababa; R; b
+	b -> data_812_aabbabaabb; R; a
+
+data_821_aabbaababa:
+	a -> data_822_aabbaabaab; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_822_aabbaabaab:
+	a -> data_823_aabbaabaaa; R; b
+	b -> data_3_bbbbbbbbaa; R; a
+
+data_823_aabbaabaaa:
+	a -> data_824_aabbaaabbb; R; b
+	b -> data_560_abbbaabbbb; R; a
+
+data_824_aabbaaabbb:
+	a -> data_825_aabbaaabba; R; b
+	b -> data_815_aabbabaaaa; R; a
+
+data_825_aabbaaabba:
+	a -> data_826_aabbaaabab; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_826_aabbaaabab:
+	a -> data_827_aabbaaabaa; R; b
+	b -> data_952_aaabaaabbb; R; a
+
+data_827_aabbaaabaa:
+	a -> data_828_aabbaaaabb; R; b
+	b -> data_989_aaaabaaaba; R; a
+
+data_828_aabbaaaabb:
+	a -> data_829_aabbaaaaba; R; b
+	b -> data_308_babbaababb; R; a
+
+data_829_aabbaaaaba:
+	a -> data_830_aabbaaaaab; R; b
+	b -> data_136_bbabbbabbb; R; a
+
+data_830_aabbaaaaab:
+	a -> data_831_aabbaaaaaa; R; b
+	b -> data_779_aabbbbabaa; R; a
+
+data_831_aabbaaaaaa:
+	a -> data_832_aababbbbbb; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_832_aababbbbbb:
+	a -> data_833_aababbbbba; R; b
+	b -> data_227_bbaaabbbaa; R; a
+
+data_833_aababbbbba:
+	a -> data_834_aababbbbab; R; b
+	b -> data_47_bbbbabaaaa; R; a
+
+data_834_aababbbbab:
+	a -> data_835_aababbbbaa; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_835_aababbbbaa:
+	a -> data_836_aababbbabb; R; b
+	b -> data_699_ababaaabaa; R; a
+
+data_836_aababbbabb:
+	a -> data_837_aababbbaba; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_837_aababbbaba:
+	a -> data_838_aababbbaab; R; b
+	b -> data_771_aabbbbbbaa; R; a
+
+data_838_aababbbaab:
+	a -> data_839_aababbbaaa; R; b
+	b -> data_44_bbbbabaabb; R; a
+
+data_839_aababbbaaa:
+	a -> data_840_aababbabbb; R; b
+	b -> data_562_abbbaabbab; R; a
+
+data_840_aababbabbb:
+	a -> data_841_aababbabba; R; b
+	b -> data_756_abaaaababb; R; a
+
+data_841_aababbabba:
+	a -> data_842_aababbabab; R; b
+	b -> data_643_ababbbbbaa; R; a
+
+data_842_aababbabab:
+	a -> data_843_aababbabaa; R; b
+	b -> data_47_bbbbabaaaa; R; a
+
+data_843_aababbabaa:
+	a -> data_844_aababbaabb; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_844_aababbaabb:
+	a -> data_845_aababbaaba; R; b
+	b -> data_908_aaabbbaabb; R; a
+
+data_845_aababbaaba:
+	a -> data_846_aababbaaab; R; b
+	b -> data_189_bbabaaaaba; R; a
+
+data_846_aababbaaab:
+	a -> data_847_aababbaaaa; R; b
+	b -> data_34_bbbbabbbab; R; a
+
+data_847_aababbaaaa:
+	a -> data_848_aabababbbb; R; b
+	b -> data_739_abaaabbbaa; R; a
+
+data_848_aabababbbb:
+	a -> data_849_aabababbba; R; b
+	b -> data_238_bbaaabaaab; R; a
+
+data_849_aabababbba:
+	a -> data_850_aabababbab; R; b
+	b -> data_706_abaabbbbab; R; a
+
+data_850_aabababbab:
+	a -> data_851_aabababbaa; R; b
+	b -> data_803_aabbabbbaa; R; a
+
+data_851_aabababbaa:
+	a -> data_852_aababababb; R; b
+	b -> data_175_bbababaaaa; R; a
+
+data_852_aababababb:
+	a -> data_853_aababababa; R; b
+	b -> data_266_babbbbabab; R; a
+
+data_853_aababababa:
+	a -> data_854_aabababaab; R; b
+	b -> data_179_bbabaabbaa; R; a
+
+data_854_aabababaab:
+	a -> data_855_aabababaaa; R; b
+	b -> data_688_ababaabbbb; R; a
+
+data_855_aabababaaa:
+	a -> data_856_aababaabbb; R; b
+	b -> data_194_bbaabbbbab; R; a
+
+data_856_aababaabbb:
+	a -> data_857_aababaabba; R; b
+	b -> data_803_aabbabbbaa; R; a
+
+data_857_aababaabba:
+	a -> data_858_aababaabab; R; b
+	b -> data_175_bbababaaaa; R; a
+
+data_858_aababaabab:
+	a -> data_859_aababaabaa; R; b
+	b -> data_266_babbbbabab; R; a
+
+data_859_aababaabaa:
+	a -> data_860_aababaaabb; R; b
+	b -> data_176_bbabaabbbb; R; a
+
+data_860_aababaaabb:
+	a -> data_861_aababaaaba; R; b
+	b -> data_814_aabbabaaab; R; a
+
+data_861_aababaaaba:
+	a -> data_862_aababaaaab; R; b
+	b -> data_194_bbaabbbbab; R; a
+
+data_862_aababaaaab:
+	a -> data_863_aababaaaaa; R; b
+	b -> data_803_aabbabbbaa; R; a
+
+data_863_aababaaaaa:
+	a -> data_864_aabaabbbbb; R; b
+	b -> data_175_bbababaaaa; R; a
+
+data_864_aabaabbbbb:
+	a -> data_865_aabaabbbba; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_865_aabaabbbba:
+	a -> data_866_aabaabbbab; R; b
+	b -> data_779_aabbbbabaa; R; a
+
+data_866_aabaabbbab:
+	a -> data_867_aabaabbbaa; R; b
+	b -> data_15_bbbbbbaaaa; R; a
+
+data_867_aabaabbbaa:
+	a -> data_868_aabaabbabb; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_868_aabaabbabb:
+	a -> data_869_aabaabbaba; R; b
+	b -> data_803_aabbabbbaa; R; a
+
+data_869_aabaabbaba:
+	a -> data_870_aabaabbaab; R; b
+	b -> data_573_abbbaaaaba; R; a
+
+data_870_aabaabbaab:
+	a -> data_871_aabaabbaaa; R; b
+	b -> data_171_bbabababaa; R; a
+
+data_871_aabaabbaaa:
+	a -> data_872_aabaababbb; R; b
+	b -> data_172_bbababaabb; R; a
+
+data_872_aabaababbb:
+	a -> data_873_aabaababba; R; b
+	b -> data_178_bbabaabbab; R; a
+
+data_873_aabaababba:
+	a -> data_874_aabaababab; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_874_aabaababab:
+	a -> data_875_aabaababaa; R; b
+	b -> data_140_bbabbbaabb; R; a
+
+data_875_aabaababaa:
+	a -> data_876_aabaabaabb; R; b
+	b -> data_50_bbbbaabbab; R; a
+
+data_876_aabaabaabb:
+	a -> data_877_aabaabaaba; R; b
+	b -> data_759_abaaaabaaa; R; a
+
+data_877_aabaabaaba:
+	a -> data_878_aabaabaaab; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_878_aabaabaaab:
+	a -> data_879_aabaabaaaa; R; b
+	b -> data_160_bbababbbbb; R; a
+
+data_879_aabaabaaaa:
+	a -> data_880_aabaaabbbb; R; b
+	b -> data_829_aabbaaaaba; R; a
+
+data_880_aabaaabbbb:
+	a -> data_881_aabaaabbba; R; b
+	b -> data_172_bbababaabb; R; a
+
+data_881_aabaaabbba:
+	a -> data_882_aabaaabbab; R; b
+	b -> data_989_aaaabaaaba; R; a
+
+data_882_aabaaabbab:
+	a -> data_883_aabaaabbaa; R; b
+	b -> data_308_babbaababb; R; a
+
+data_883_aabaaabbaa:
+	a -> data_884_aabaaababb; R; b
+	b -> data_160_bbababbbbb; R; a
+
+data_884_aabaaababb:
+	a -> data_885_aabaaababa; R; b
+	b -> data_827_aabbaaabaa; R; a
+
+data_885_aabaaababa:
+	a -> data_886_aabaaabaab; R; b
+	b -> data_50_bbbbaabbab; R; a
+
+data_886_aabaaabaab:
+	a -> data_887_aabaaabaaa; R; b
+	b -> data_910_aaabbbaaab; R; a
+
+data_887_aabaaabaaa:
+	a -> data_888_aabaaaabbb; R; b
+	b -> data_704_abaabbbbbb; R; a
+
+data_888_aabaaaabbb:
+	a -> data_889_aabaaaabba; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_889_aabaaaabba:
+	a -> data_890_aabaaaabab; R; b
+	b -> data_568_abbbaaabbb; R; a
+
+data_890_aabaaaabab:
+	a -> data_891_aabaaaabaa; R; b
+	b -> data_815_aabbabaaaa; R; a
+
+data_891_aabaaaabaa:
+	a -> data_892_aabaaaaabb; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_892_aabaaaaabb:
+	a -> data_893_aabaaaaaba; R; b
+	b -> data_940_aaababaabb; R; a
+
+data_893_aabaaaaaba:
+	a -> data_894_aabaaaaaab; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_894_aabaaaaaab:
+	a -> data_895_aabaaaaaaa; R; b
+	b -> data_0; R; a
+
+data_895_aabaaaaaaa:
+	a -> data_896_aaabbbbbbb; R; b
+	b -> data_771_aabbbbbbaa; R; a
+
+data_896_aaabbbbbbb:
+	a -> data_897_aaabbbbbba; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_897_aaabbbbbba:
+	a -> data_898_aaabbbbbab; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_898_aaabbbbbab:
+	a -> data_899_aaabbbbbaa; R; b
+	b -> data_562_abbbaabbab; R; a
+
+data_899_aaabbbbbaa:
+	a -> data_900_aaabbbbabb; R; b
+	b -> data_771_aabbbbbbaa; R; a
+
+data_900_aaabbbbabb:
+	a -> data_901_aaabbbbaba; R; b
+	b -> data_885_aabaaababa; R; a
+
+data_901_aaabbbbaba:
+	a -> data_902_aaabbbbaab; R; b
+	b -> data_208_bbaababbbb; R; a
+
+data_902_aaabbbbaab:
+	a -> data_903_aaabbbbaaa; R; b
+	b -> data_515_abbbbbbbaa; R; a
+
+data_903_aaabbbbaaa:
+	a -> data_904_aaabbbabbb; R; b
+	b -> data_195_bbaabbbbaa; R; a
+
+data_904_aaabbbabbb:
+	a -> data_905_aaabbbabba; R; b
+	b -> data_570_abbbaaabab; R; a
+
+data_905_aaabbbabba:
+	a -> data_906_aaabbbabab; R; b
+	b -> data_771_aabbbbbbaa; R; a
+
+data_906_aaabbbabab:
+	a -> data_907_aaabbbabaa; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_907_aaabbbabaa:
+	a -> data_908_aaabbbaabb; R; b
+	b -> data_14_bbbbbbaaab; R; a
+
+data_908_aaabbbaabb:
+	a -> data_909_aaabbbaaba; R; b
+	b -> data_814_aabbabaaab; R; a
+
+data_909_aaabbbaaba:
+	a -> data_910_aaabbbaaab; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_910_aaabbbaaab:
+	a -> data_911_aaabbbaaaa; R; b
+	b -> data_15_bbbbbbaaaa; R; a
+
+data_911_aaabbbaaaa:
+	a -> data_912_aaabbabbbb; R; b
+	b -> data_468_baaabababb; R; a
+
+data_912_aaabbabbbb:
+	a -> data_913_aaabbabbba; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_913_aaabbabbba:
+	a -> data_914_aaabbabbab; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_914_aaabbabbab:
+	a -> data_915_aaabbabbaa; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_915_aaabbabbaa:
+	a -> data_916_aaabbababb; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_916_aaabbababb:
+	a -> data_917_aaabbababa; R; b
+	b -> data_571_abbbaaabaa; R; a
+
+data_917_aaabbababa:
+	a -> data_918_aaabbabaab; R; b
+	b -> data_832_aababbbbbb; R; a
+
+data_918_aaabbabaab:
+	a -> data_919_aaabbabaaa; R; b
+	b -> data_14_bbbbbbaaab; R; a
+
+data_919_aaabbabaaa:
+	a -> data_920_aaabbaabbb; R; b
+	b -> data_715_abaabbabaa; R; a
+
+data_920_aaabbaabbb:
+	a -> data_921_aaabbaabba; R; b
+	b -> data_573_abbbaaaaba; R; a
+
+data_921_aaabbaabba:
+	a -> data_922_aaabbaabab; R; b
+	b -> data_35_bbbbabbbaa; R; a
+
+data_922_aaabbaabab:
+	a -> data_923_aaabbaabaa; R; b
+	b -> data_58_bbbbaaabab; R; a
+
+data_923_aaabbaabaa:
+	a -> data_924_aaabbaaabb; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_924_aaabbaaabb:
+	a -> data_925_aaabbaaaba; R; b
+	b -> data_562_abbbaabbab; R; a
+
+data_925_aaabbaaaba:
+	a -> data_926_aaabbaaaab; R; b
+	b -> data_783_aabbbbaaaa; R; a
+
+data_926_aaabbaaaab:
+	a -> data_927_aaabbaaaaa; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_927_aaabbaaaaa:
+	a -> data_928_aaababbbbb; R; b
+	b -> data_908_aaabbbaabb; R; a
+
+data_928_aaababbbbb:
+	a -> data_929_aaababbbba; R; b
+	b -> data_976_aaaababbbb; R; a
+
+data_929_aaababbbba:
+	a -> data_930_aaababbbab; R; b
+	b -> data_3_bbbbbbbbaa; R; a
+
+data_930_aaababbbab:
+	a -> data_931_aaababbbaa; R; b
+	b -> data_690_ababaabbab; R; a
+
+data_931_aaababbbaa:
+	a -> data_932_aaababbabb; R; b
+	b -> data_911_aaabbbaaaa; R; a
+
+data_932_aaababbabb:
+	a -> data_933_aaababbaba; R; b
+	b -> data_264_babbbbabbb; R; a
+
+data_933_aaababbaba:
+	a -> data_934_aaababbaab; R; b
+	b -> data_782_aabbbbaaab; R; a
+
+data_934_aaababbaab:
+	a -> data_935_aaababbaaa; R; b
+	b -> data_759_abaaaabaaa; R; a
+
+data_935_aaababbaaa:
+	a -> data_936_aaabababbb; R; b
+	b -> data_333_bababbaaba; R; a
+
+data_936_aaabababbb:
+	a -> data_937_aaabababba; R; b
+	b -> data_40_bbbbababbb; R; a
+
+data_937_aaabababba:
+	a -> data_938_aaabababab; R; b
+	b -> data_206_bbaabbaaab; R; a
+
+data_938_aaabababab:
+	a -> data_939_aaabababaa; R; b
+	b -> data_780_aabbbbaabb; R; a
+
+data_939_aaabababaa:
+	a -> data_940_aaababaabb; R; b
+	b -> data_739_abaaabbbaa; R; a
+
+data_940_aaababaabb:
+	a -> data_941_aaababaaba; R; b
+	b -> data_688_ababaabbbb; R; a
+
+data_941_aaababaaba:
+	a -> data_942_aaababaaab; R; b
+	b -> data_244_bbaaaababb; R; a
+
+data_942_aaababaaab:
+	a -> data_943_aaababaaaa; R; b
+	b -> data_142_bbabbbaaab; R; a
+
+data_943_aaababaaaa:
+	a -> data_944_aaabaabbbb; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_944_aaabaabbbb:
+	a -> data_945_aaabaabbba; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_945_aaabaabbba:
+	a -> data_946_aaabaabbab; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_946_aaabaabbab:
+	a -> data_947_aaabaabbaa; R; b
+	b -> data_61_bbbbaaaaba; R; a
+
+data_947_aaabaabbaa:
+	a -> data_948_aaabaababb; R; b
+	b -> data_171_bbabababaa; R; a
+
+data_948_aaabaababb:
+	a -> data_949_aaabaababa; R; b
+	b -> data_14_bbbbbbaaab; R; a
+
+data_949_aaabaababa:
+	a -> data_950_aaabaabaab; R; b
+	b -> data_235_bbaaababaa; R; a
+
+data_950_aaabaabaab:
+	a -> data_951_aaabaabaaa; R; b
+	b -> data_834_aababbbbab; R; a
+
+data_951_aaabaabaaa:
+	a -> data_952_aaabaaabbb; R; b
+	b -> data_203_bbaabbabaa; R; a
+
+data_952_aaabaaabbb:
+	a -> data_953_aaabaaabba; R; b
+	b -> data_15_bbbbbbaaaa; R; a
+
+data_953_aaabaaabba:
+	a -> data_954_aaabaaabab; R; b
+	b -> data_511_baaaaaaaaa; R; a
+
+data_954_aaabaaabab:
+	a -> data_955_aaabaaabaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_955_aaabaaabaa:
+	a -> data_956_aaabaaaabb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_956_aaabaaaabb:
+	a -> data_957_aaabaaaaba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_957_aaabaaaaba:
+	a -> data_958_aaabaaaaab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_958_aaabaaaaab:
+	a -> data_959_aaabaaaaaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_959_aaabaaaaaa:
+	a -> data_960_aaaabbbbbb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_960_aaaabbbbbb:
+	a -> data_961_aaaabbbbba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_961_aaaabbbbba:
+	a -> data_962_aaaabbbbab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_962_aaaabbbbab:
+	a -> data_963_aaaabbbbaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_963_aaaabbbbaa:
+	a -> data_964_aaaabbbabb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_964_aaaabbbabb:
+	a -> data_965_aaaabbbaba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_965_aaaabbbaba:
+	a -> data_966_aaaabbbaab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_966_aaaabbbaab:
+	a -> data_967_aaaabbbaaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_967_aaaabbbaaa:
+	a -> data_968_aaaabbabbb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_968_aaaabbabbb:
+	a -> data_969_aaaabbabba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_969_aaaabbabba:
+	a -> data_970_aaaabbabab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_970_aaaabbabab:
+	a -> data_971_aaaabbabaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_971_aaaabbabaa:
+	a -> data_972_aaaabbaabb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_972_aaaabbaabb:
+	a -> data_973_aaaabbaaba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_973_aaaabbaaba:
+	a -> data_974_aaaabbaaab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_974_aaaabbaaab:
+	a -> data_975_aaaabbaaaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_975_aaaabbaaaa:
+	a -> data_976_aaaababbbb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_976_aaaababbbb:
+	a -> data_977_aaaababbba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_977_aaaababbba:
+	a -> data_978_aaaababbab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_978_aaaababbab:
+	a -> data_979_aaaababbaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_979_aaaababbaa:
+	a -> data_980_aaaabababb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_980_aaaabababb:
+	a -> data_981_aaaabababa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_981_aaaabababa:
+	a -> data_982_aaaababaab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_982_aaaababaab:
+	a -> data_983_aaaababaaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_983_aaaababaaa:
+	a -> data_984_aaaabaabbb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_984_aaaabaabbb:
+	a -> data_985_aaaabaabba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_985_aaaabaabba:
+	a -> data_986_aaaabaabab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_986_aaaabaabab:
+	a -> data_987_aaaabaabaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_987_aaaabaabaa:
+	a -> data_988_aaaabaaabb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_988_aaaabaaabb:
+	a -> data_989_aaaabaaaba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_989_aaaabaaaba:
+	a -> data_990_aaaabaaaab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_990_aaaabaaaab:
+	a -> data_991_aaaabaaaaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_991_aaaabaaaaa:
+	a -> data_992_aaaaabbbbb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_992_aaaaabbbbb:
+	a -> data_993_aaaaabbbba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_993_aaaaabbbba:
+	a -> data_994_aaaaabbbab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_994_aaaaabbbab:
+	a -> data_995_aaaaabbbaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_995_aaaaabbbaa:
+	a -> data_996_aaaaabbabb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_996_aaaaabbabb:
+	a -> data_997_aaaaabbaba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_997_aaaaabbaba:
+	a -> data_998_aaaaabbaab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
+
+data_998_aaaaabbaab:
+	a -> data_999_aaaaabbaaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1035_aaaabbaaa:
-	a -> data_1036_aaaababbb; R; b
-	b -> data_792_baaaababb; R; a
+data_999_aaaaabbaaa:
+	a -> data_1000_aaaaababbb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1036_aaaababbb:
-	a -> data_1037_aaaababba; R; b
-	b -> data_618_bbabbbaab; R; a
+data_1000_aaaaababbb:
+	a -> data_1001_aaaaababba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1037_aaaababba:
-	a -> data_1038_aaaababab; R; b
-	b -> data_606_bbbaaabab; R; a
+data_1001_aaaaababba:
+	a -> data_1002_aaaaababab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1038_aaaababab:
-	a -> data_1039_aaaababaa; R; b
-	b -> data_1042_aaaabaaab; R; a
+data_1002_aaaaababab:
+	a -> data_1003_aaaaababaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1039_aaaababaa:
-	a -> data_1040_aaaabaabb; R; b
-	b -> data_881_ababbaaba; R; a
+data_1003_aaaaababaa:
+	a -> data_1004_aaaaabaabb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1040_aaaabaabb:
-	a -> data_1041_aaaabaaba; R; b
-	b -> data_568_bbbbababb; R; a
+data_1004_aaaaabaabb:
+	a -> data_1005_aaaaabaaba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1041_aaaabaaba:
-	a -> data_1042_aaaabaaab; R; b
-	b -> data_599_bbbaabbaa; R; a
+data_1005_aaaaabaaba:
+	a -> data_1006_aaaaabaaab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1042_aaaabaaab:
-	a -> data_1043_aaaabaaaa; R; b
-	b -> data_901_abaabbbba; R; a
+data_1006_aaaaabaaab:
+	a -> data_1007_aaaaabaaaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1043_aaaabaaaa:
-	a -> data_1044_aaaaabbbb; R; b
-	b -> data_850_abbabaaab; R; a
+data_1007_aaaaabaaaa:
+	a -> data_1008_aaaaaabbbb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1044_aaaaabbbb:
-	a -> data_1045_aaaaabbba; R; b
-	b -> data_665_bbaaababa; R; a
+data_1008_aaaaaabbbb:
+	a -> data_1009_aaaaaabbba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1045_aaaaabbba:
-	a -> data_1046_aaaaabbab; R; b
-	b -> data_807_abbbbbbaa; R; a
+data_1009_aaaaaabbba:
+	a -> data_1010_aaaaaabbab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1046_aaaaabbab:
-	a -> data_1047_aaaaabbaa; R; b
-	b -> data_965_aababbbba; R; a
+data_1010_aaaaaabbab:
+	a -> data_1011_aaaaaabbaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1047_aaaaabbaa:
-	a -> data_1048_aaaaababb; R; b
-	b -> data_604_bbbaaabbb; R; a
+data_1011_aaaaaabbaa:
+	a -> data_1012_aaaaaababb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1048_aaaaababb:
-	a -> data_1049_aaaaababa; R; b
-	b -> data_955_aabbabaaa; R; a
+data_1012_aaaaaababb:
+	a -> data_1013_aaaaaababa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1049_aaaaababa:
-	a -> data_1050_aaaaabaab; R; b
-	b -> data_870_ababbbbab; R; a
+data_1013_aaaaaababa:
+	a -> data_1014_aaaaaabaab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1050_aaaaabaab:
-	a -> data_1051_aaaaabaaa; R; b
-	b -> data_665_bbaaababa; R; a
+data_1014_aaaaaabaab:
+	a -> data_1015_aaaaaabaaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1051_aaaaabaaa:
-	a -> data_1052_aaaaaabbb; R; b
-	b -> data_819_abbbbaaaa; R; a
+data_1015_aaaaaabaaa:
+	a -> data_1016_aaaaaaabbb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1052_aaaaaabbb:
-	a -> data_1053_aaaaaabba; R; b
-	b -> data_697_babbababa; R; a
+data_1016_aaaaaaabbb:
+	a -> data_1017_aaaaaaabba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1053_aaaaaabba:
-	a -> data_1054_aaaaaabab; R; b
-	b -> data_740_baabbbbbb; R; a
+data_1017_aaaaaaabba:
+	a -> data_1018_aaaaaaabab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1054_aaaaaabab:
-	a -> data_1055_aaaaaabaa; R; b
-	b -> data_1003_aaabbbaaa; R; a
+data_1018_aaaaaaabab:
+	a -> data_1019_aaaaaaabaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1055_aaaaaabaa:
-	a -> data_1056_aaaaaaabb; R; b
-	b -> data_737_babaaaaba; R; a
+data_1019_aaaaaaabaa:
+	a -> data_1020_aaaaaaaabb; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1056_aaaaaaabb:
-	a -> data_1057_aaaaaaaba; R; b
-	b -> data_565_bbbbabbba; R; a
+data_1020_aaaaaaaabb:
+	a -> data_1021_aaaaaaaaba; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1057_aaaaaaaba:
-	a -> data_1058_aaaaaaaab; R; b
-	b -> data_848_abbabaabb; R; a
+data_1021_aaaaaaaaba:
+	a -> data_1022_aaaaaaaaab; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1058_aaaaaaaab:
-	a -> data_1059_aaaaaaaaa; R; b
-	b -> data_578_bbbbaaaab; R; a
+data_1022_aaaaaaaaab:
+	a -> data_1023_aaaaaaaaaa; R; b
+	b -> data_1023_aaaaaaaaaa; R; a
 
-data_1059_aaaaaaaaa:
+data_1023_aaaaaaaaaa:
 	a -> data_out; R; a
-	b -> data_1059_aaaaaaaaa; R; a
+	b -> data_1023_aaaaaaaaaa; R; a
 
 data_out:
 	a -> test_negative_continue; L; a
@@ -6000,13 +5856,41 @@ create_blank_char_8_push_middle_a:
 	a -> create_blank_char_8_out_a; R; a
 	b -> create_blank_char_8_out_b; R; a
 
+create_blank_char_8_out_b:
+	a -> create_blank_char_9_find_first_a_left; L; b
+	b -> create_blank_char_8_out_b; R; b
+
 create_blank_char_8_out_a:
+	a -> create_blank_char_9_find_first_a_left; L; a
+	b -> ERROR; -; b
+
+create_blank_char_9_find_first_a_left:
+	a -> create_blank_char_9_find_second_a; L; a
+	b -> create_blank_char_9_find_first_a_left; L; b
+
+create_blank_char_9_find_second_a:
+	a -> create_blank_char_9_write_blank_char; R; a
+	b -> create_blank_char_9_find_second_a; L; b
+
+create_blank_char_9_write_blank_char:
+	a -> create_blank_char_9_push_middle_a; R; a
+	b -> create_blank_char_9_find_first_a_right; R; a
+
+create_blank_char_9_find_first_a_right:
+	a -> create_blank_char_9_push_middle_a; R; b
+	b -> create_blank_char_9_find_first_a_right; R; b
+
+create_blank_char_9_push_middle_a:
+	a -> create_blank_char_9_out_a; R; a
+	b -> create_blank_char_9_out_b; R; a
+
+create_blank_char_9_out_a:
 	a -> create_blank_go_left; R; a
 	b -> ERROR; -; b
 
-create_blank_char_8_out_b:
+create_blank_char_9_out_b:
 	a -> create_blank_word_out; R; b
-	b -> create_blank_char_8_out_b; R; b
+	b -> create_blank_char_9_out_b; R; b
 
 create_blank_go_left:
 	a -> create_blank_word_out; L; a
@@ -6133,14 +6017,26 @@ convert_incr_get_out_7:
 	b -> convert_incr_get_out_8; R; b
 
 convert_incr_carry_8:
+	a -> convert_incr_no_carry_9; L; b
+	b -> convert_incr_carry_9; L; a
+
+convert_incr_no_carry_8:
+	a -> convert_incr_no_carry_9; L; a
+	b -> convert_incr_no_carry_9; L; b
+
+convert_incr_get_out_8:
+	a -> convert_incr_get_out_9; R; a
+	b -> convert_incr_get_out_9; R; b
+
+convert_incr_carry_9:
 	a -> convert_incr_get_out_1; R; b
 	b -> ERROR; -; b
 
-convert_incr_no_carry_8:
+convert_incr_no_carry_9:
 	a -> convert_incr_get_out_1; R; a
 	b -> convert_incr_get_out_1; R; b
 
-convert_incr_get_out_8:
+convert_incr_get_out_9:
 	a -> convert_incrout; R; a
 	b -> convert_incrout; R; b
 

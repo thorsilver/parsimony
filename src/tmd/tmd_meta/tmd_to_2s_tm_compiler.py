@@ -24,7 +24,7 @@ os.system("python programmer.py " + dirName)
 print "Generating the processor TM..."
 os.system("python processor.py " + dirName)
 
-print "Converting the intializer TM to a 2-symbol TM..."
+print "Converting the initializer TM to a 2-symbol TM..."
 os.chdir("../../tm/tm4/tm4_meta/")
 os.system("python tm4_to_tm2_converter.py " + dirName + "_init")
 os.system("rm ../tm4_files/" + dirName + "_init.tm4")

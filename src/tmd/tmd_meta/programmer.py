@@ -147,7 +147,9 @@ def findAppropriateNumWordsAndWordSize(numChars):
     wordSize2 = findAppropriateWordSize(numChars)
     numWords2 = 2**wordSize2
    
-    if True:    
+    if numWords1 < numWords2 + 10: 
+        # 10 is the number of additional states in the extractor 
+        # per additional bit per word   
         return numWords1, wordSize1
     return numWords2, wordSize2
 
@@ -425,6 +427,8 @@ def introspect(codeStringInAB):
     
     foundCodeHead.set3("a", SimpleState("OUT"), "R", "a")
     
+    print "States in programmer:", len(listOfStates)
+    
     convertStatesToString(listOfStates, open("../../tm/tm2/tm2_files/" + sys.argv[1] + "_prog.tm2", "w"))
     
 def alphabetMSToTS():
@@ -507,7 +511,7 @@ if __name__ == "__main__":
             
     codeStringInAB = convertToAB(codeString)
     
-#    print len(codeStringInAB)
+    print "Length of binary:", len(codeStringInAB)
         
 #    codeStringInAB = "bbbbb" + codeStringInAB[5:]
         

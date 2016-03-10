@@ -860,6 +860,8 @@ def main():
     inState = writeVariableValuesSkeleton(listOfStates, inState, numberOfVariables, initValueString)    
     outState = writeAuxValues(listOfStates, inState, numberOfVariables, numberOfFunctions)
     
+#    print "States in initializer:", len(listOfStates)
+    
 #   inState = writeProgram(listOfStates, inState, functions, functionVariableDictionary,
 #       functionLabelDictionary, functionDictionary, path)
 

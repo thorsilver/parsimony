@@ -50,6 +50,8 @@ def main():
     inState = firstPrepTopFunction(inState, listOfStates, "first_prep")
     inState = processCentrally(inState, listOfStates)
 	
+#    print "States in processor:", len(listOfStates)
+    
     convertStatesToString(listOfStates, open("../../tm/tm4/tm4_files/" + dirName + "_proc.tm4", "w"))
 	
 

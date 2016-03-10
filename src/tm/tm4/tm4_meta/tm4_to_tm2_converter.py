@@ -434,6 +434,7 @@ if __name__ == "__main__":
 #   for outerState in tm.listOfRealStates:
 
         
+    print "State count:", len(listOfStates)
 
     convertStatesToString(listOfStates, open("../../tm2/tm2_files/" + tmName + ".tm2", "w"))             
 
