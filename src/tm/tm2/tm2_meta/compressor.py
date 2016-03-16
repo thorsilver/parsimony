@@ -13,7 +13,8 @@ if __name__ == "__main__":
         
 #    outString = "{\\tiny \\tt \\noindent \\setstretch{0.5}"    
 
-    outString = "\\scalebox{0.4}{\\tt \\noindent \\setstretch{0.5}\\hbox{"    
+
+    outString = "\\resizebox{17cm}{!}{\\tt\\begin{tabular}{@{}l@{}}"    
         
     numDigitsPerName = len(str(len(tm.listOfRealStates)))        
         
@@ -23,7 +24,8 @@ if __name__ == "__main__":
     stateAbbrevDict["ERROR"] = "ERRO"
     stateAbbrevDict["HALT"] = "HALT"    
                 
-    counter = 0            
+    lineBreakCounter = 0            
+    pageBreakCounter = 0            
                 
     for state in tm.listOfRealStates:
         
@@ -55,12 +57,16 @@ if __name__ == "__main__":
         outString += stateAbbrevDict[state.stateName] + "(" + aString + \
             "|" + bString + ") "
             
-        counter = (counter + 1)%10
-        if counter == 0:
-            outString += "}\\hbox{"     
+        lineBreakCounter = (lineBreakCounter + 1)%9
+        pageBreakCounter = (pageBreakCounter + 1)%891
+        
+        if pageBreakCounter == 0:
+            outString += "\\end{tabular}\\par}\\\\ \\resizebox{17cm}{!}{\\tt\\begin{tabular}{@{}l@{}}"
+        elif lineBreakCounter == 0:
+            outString += "\\\\"     
 
 
-    outString += "}\\par}\n"
+    outString += "\\end{tabular}\\par}\n"
 
     output = open(sys.argv[2], "w")
     output.write(outString)

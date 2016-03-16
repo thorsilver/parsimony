@@ -8,9 +8,9 @@
 \usepackage{setspace}
 \usepackage{courier}
 \usepackage[toc, page]{appendix}
-\usepackage{parskip}
 \usepackage{listings}
 \usepackage{lmodern}
+\usepackage{adjustbox}
 
 \newtheorem{statement}{Statement}
 
@@ -41,36 +41,118 @@
 \begin{document}
 
 \title{A Relatively Small Turing Machine Whose Behavior Is Independent of Set Theory}
-\author{Adam Yedidia}
+\author{Adam Yedidia and Scott Aaronson}
 
 \maketitle
 
 \begin{abstract}
 
-Since the definition of the Busy Beaver function by Rad\'{o} in 1962, an interesting open question has been what the smallest value of $n$ for which $BB(n)$ is independent of ZFC. Is this $n$ approximately 10, or closer to 1,000,000, or is it unfathomably large? In this paper, we show that it is at most \statenum by presenting an explicit description of a \statenumstate Turing machine $Z$ with 1 tape and a 2-symbol alphabet whose behavior cannot be proved in ZFC, assuming ZFC is consistent. The machine is based on work of Harvey Friedman on independent statements involving order-invariant graphs. \cite{friedman}~
-In doing so, we give the first known upper bound on the highest provable Busy Beaver number in ZFC. We also present an explicit description of a \gbstatenumstate Turing machine $G$ that halts if and only if there's a counterexample to Goldbach's conjecture, and an explicit description of a \rmstatenumstate Turing machine $R$ that halts if and only if the Riemann hypothesis is false. In the process of creating $G$, $R$, and $Z$, we make use of a higher-level language, Laconic, which is much more convenient than direct state manipulation. 
+Since the definition of the Busy Beaver function by Rad\'{o} in 1962, an interesting open question has been what the smallest value of $n$ for which $BB(n)$ is independent of ZFC set theory. Is this $n$ approximately 10, or closer to 1,000,000, or is it unfathomably large? In this paper, we show that it is at most \statenum by presenting an explicit description of a \statenumstate Turing machine $Z$ with 1 tape and a 2-symbol alphabet whose behavior cannot be proved in ZFC, assuming ZFC is consistent. The machine is based on work of Harvey Friedman on independent statements involving order-invariant graphs. In doing so, we give the first known upper bound on the highest provable Busy Beaver number in ZFC. We also present an explicit description of a \gbstatenumstate Turing machine $G$ that halts if and only if there is a counterexample to Goldbach's conjecture, and an explicit description of a \rmstatenumstate Turing machine $R$ that halts if and only if the Riemann hypothesis is false. To create $G$, $R$, and $Z$, we develop and use a higher-level language, Laconic, which is much more convenient than direct state manipulation. 
 
 \end{abstract}
 
 \section{Introduction}
 
-This paper is devoted to demonstrating the extreme difficulty of finding the values of the Busy Beaver function beyond a certain point. We cannot ever prove an upper bound on $BB(x)$ for any $x > \gbstatenum$ or $x > \rmstatenum$ without simultaneously providing a proof (or disproof) of the Goldbach or Riemann hypotheses, respectively. And we cannot ever prove an upper bound on $BB(x)$ for any $x > \statenum$ without assuming axioms more powerful than the axioms of ZFC, assuming ZFC is consistent. \\ 
+%\subsection{Contributions}
 
-We demonstrate these results by presenting explicit descriptions of Turing Machines, $G$, $R$, and $Z$ whose \emph{behavior} (whether or not they halt) implies the truth or falsehood of the Goldbach and Riemann hypotheses and the consistency of ZFC, respectively. If one knew a proof that $\bbstatenum < u_G$ for some $u_G$, one could find out if $G$ halts or loops by running $G$ for $u_G$ steps and seeing if it had halted by then; if it had not, we would be certain that $G$ will never halt. Thus, an execution history of $G$ for $u_G$ steps would constitute a proof of the truth or falsehood of Goldbach's conjecture. The same logic holds for $R$, \bbrmstatenum, and the Riemann hypothesis.
+%This paper is devoted to demonstrating the extreme difficulty of finding the values of the Busy Beaver function beyond a certain point. We cannot ever prove an upper bound on $BB(x)$ for any $x \ge \gbstatenum$ or $x \ge \rmstatenum$ without simultaneously providing a proof (or disproof) of the Goldbach or Riemann hypotheses, respectively. And we cannot ever prove an upper bound on $BB(x)$ for any $x \ge \statenum$ without assuming axioms more powerful than those of Zermelo-Fraenkel Set Theory with the Axiom of Choice (a.k.a. ZFC), assuming ZFC is consistent.\footnotemark \\ 
+%\footnotetext{While we will talk about ZFC throughout this paper, rather than simple Zermelo-Fraenkel set theory, this is simply convention brought about by the fact that ZFC is a more powerful and more commonly-used set of axioms. In fact, for the purposes of this paper, the Axiom of Choice is irrelevant: the consistency of ZFC is equivalent to the consistency of simple ZF set theory,~\cite{godelcohen} and ZFC and ZF prove exactly the same arithmetical statements (which include, among other things, Turing machine execution histories).~\cite{schoenfield}}
 
-Moreover, if one knew a proof that $\bbstatenum < u_Z$, one could find out if $Z$ halts or loops by running $Z$ for $u_Z$ steps $Z$ for $u_Z$ stepes and seeing if it had halted by then; if it had not, we would be certain that $Z$ will never halt. Thus, an execution history of $Z$ for $u_Z$ steps would constitute a proof in ZFC (since ZFC can encode arithmetic, and therefore Turing Machine execution histories) of the consistency or inconsistency of ZFC. By G\"{o}del's second incompleteness theorem, such a proof cannot exist if ZFC is consistent. Thus, no proof in ZFC exists of an upper bound on the value of \bbstatenum, assuming ZFC is consistent.
+%We demonstrate these results by presenting explicit descriptions of Turing machines, $G$, $R$, and $Z$ whose \emph{behavior} (whether or not they halt) implies the truth or falsehood of the Goldbach and Riemann hypotheses and the consistency of ZFC, respectively. If one knew a proof that $\bbstatenum < u_G$ for some $u_G$, one could find out if $G$ halts or loops by running $G$ for $u_G$ steps and seeing if it had halted by then; if it had not, we would be certain that $G$ will never halt. Thus, an execution history of $G$ for $u_G$ steps would constitute a proof of the truth or falsehood of Goldbach's conjecture. The same logic holds for $R$, \bbrmstatenum, and the Riemann hypothesis. \\
+
+%Likewise, if one knew a proof that \bbstatenum$ \le u_Z$, one could find out if $Z$ halts or loops by running $Z$ for $u_Z$ steps $Z$ for $u_Z$ steps and seeing if it had halted by then; if it had not, we would be certain that $Z$ will never halt. Thus, an execution history of $Z$ for $u_Z$ steps would constitute a proof in ZFC (since ZFC can encode arithmetic, and therefore Turing machine execution histories) of the consistency or inconsistency of ZFC. By G\"{o}del's second incompleteness theorem, such a proof cannot exist if ZFC is consistent. Thus, no proof in ZFC exists of an upper bound on the value of \bbstatenum, assuming ZFC is consistent.
+
+\subsection{Background and Motivation \label{sec:background}}
+
+\emph{Zermelo-Fraenkel set theory with the axiom of choice}, more commonly known as ZFC, is an axiomatic system invented in the twentieth which has since been used as the foundation of most of modern mathematics. It encodes arithmetic by describing natural numbers as increasing sets of sets. \\
+\\
+Like any axiomatic system capable of encoding arithmetic, ZFC is constrained by G\"{o}del's two incompleteness theorems. The first incompleteness theorem states that if ZFC is \emph{consistent} (it never proves both a statement and its opposite), then ZFC cannot also be \emph{complete} (able to prove every true statement). The second incompleteness theorem states that if ZFC is consistent, then ZFC cannot prove its own consistency. Because we have built modern mathematics on top of ZFC, we can reasonably be said to have assumed ZFC's consistency. This means that we must also believe that ZFC cannot prove its own consistency. This fact carries with it certain surprising conclusions. \\
+
+In particular, consider a Turing machine $Z$ that enumerates, one after the other, each of the provable statements in ZFC. To describe how such a machine might be constructed, $Z$ could start with the axioms and iterate over the inference rules of ZFC, applying each in every possible way to each conclusion that had been reached so far. We might ask $Z$ to halt if it ever reaches a contradiction; in other words, $Z$ will halt if and only if it ever finds a proof of $0 = 1$. Because we know that this machine will enumerate \emph{every} provable statement in ZFC, we know that it will loop if and only if ZFC is consistent. \\
+
+It follows that $Z$ is a Turing machine for which the question of its behavior (whether or not it halts when run indefinitely) is equivalent to the consistency of ZFC. Therefore, just as ZFC cannot prove its own consistency (assuming ZFC is consistent), ZFC also cannot prove that $Z$ will run forever. \\
+
+This is interesting for the following reason. While the undecidability of the halting problem tells us that there cannot exist an algorithmic method for determining whether an \emph{arbitrary} Turing machine loops or halts, $Z$ is an example of a \emph{specific} Turing machine whose behavior cannot be proven one way or the other using the foundation of modern mathematics. Mathematicians and computer scientists think of themselves as being able to determine how a given algorithm will behave if we are given enough time to stare at it; despite this intuition, $Z$ is a machine whose behavior we can never prove without assuming axioms more powerful than those generally assumed in most of modern mathematics. \\
+
+This is only the first surprising fact that follows from G\"{o}del's second incompleteness theorem when applied to ZFC.\footnotemark In the next section, I discuss the Busy Beaver function and the implications for it from a machine like $Z$.
+\footnotetext{While we will talk about ZFC throughout this paper, rather than simple Zermelo-Fraenkel set theory, this is simply convention brought about by the fact that ZFC is a more powerful and more commonly-used set of axioms. In fact, for the purposes of this paper, the Axiom of Choice is irrelevant: the consistency of ZFC is equivalent to the consistency of simple ZF set theory,~\cite{godelcohen} and ZFC and ZF prove exactly the same arithmetical statements (which include, among other things, Turing machine execution histories).~\cite{schoenfield}}
+
+\subsection{Turing Machines \label{sec:tm}}
+
+Informally, a Turing machine is a mathematical desciption of an algorithm. In 1936, Alonzo Church and Alan Turing independently postulated what would eventually become known as the \emph{Church-Turing thesis}, which said that anything that could be done by a computer or by a human with pencil and paper, ignoring resource limitations, could also be done by Turing machine. Turing machines have since become a stand-in used by mathematicians for an algorithm, or a computer program. \\
+
+There are many different definitions for Turing machines, each differing slightly from the other. For example, some definitions for Turing machines allow the machine to have multiple tapes; others only allow it to have one. Some definitions allow an arbitrarily large alphabet, while others only allow two symbols. Some definitions allow the tape head to remain in place, while others require it to move at every time-step. In most research regarding Turing machines, mathematicians don't concern themselves with which of these models to use, because any one of them can simulate the others. However, because this thesis is concerned with upper-bounding the exact number of states required to perform certain tasks, it is important to define precisely what model of Turing machine is being used. \\
+
+Formally, a $k$-state Turing machine used in this thesis is a 7-tuple $M = (Q, \Gamma, b, \Sigma, \delta, q_0, F)$, where: \\ \\
+$Q$ is the set of $k$ \emph{states} $\{q_0, q_1, \dots, q_{k-2}, q_{k-1}\}$ \\
+$\Gamma = \{0, 1\}$ is the set of \emph{tape alphabet symbols} \\
+$b = 0$ is the \emph{blank symbol} \\
+$\Sigma = \empty$ is the set of \emph{input symbols} \\\
+$\delta = Q \times \Gamma \rightarrow (Q \cup F) \times \Gamma \times \{L, R\}$ is the \emph{transition function} \\
+$q_0$ is the \emph{start state} \\
+$F = \{\textrm{ACCEPT}, \textrm{REJECT}, \textrm{ERROR}\}$ is the set of \emph{halting transitions}. \\
+
+A Turing machine's \emph{states} make up the Turing machine's easily-accessible, finite memory. The Turing machine's state is initialized to $q_0$. \\
+
+The \emph{tape alphabet symbols} correspond to the symbols that can be written on the Turing machine's infinite tape. \\
+
+In this thesis, all Turing machines discussed are run on the all-\texttt{0} input. \\
+
+The \emph{transition function} encodes the Turing machine's behavior. It takes two inputs: the current state of the Turing machine (an element of $Q$) and the symbol read off the tape (an element of $\Gamma$). It outputs three separate instructions: what state to enter (an element of $Q$), what symbol to write onto the tape (an element of $\Gamma$) and what direction to move the head in (an element of $\{L, R\}$). A transition function specifies the entire behavior of the Turing machine in all cases. \\
+
+The \emph{start state} is the state that the Turing machine is in at initialization. \\
+
+A \emph{halting transition} is a transition that causes the Turing machine to halt. While having three possible halting transitions is not necessary for the purpose of this thesis, being able to differentiate between three different types of halting (ACCEPT, REJECT, and ERROR) is useful for testing.
+
+\subsection{The Busy Beaver Function}
+
+Consider the set of all Turing machines with $k$ states, for some positive integer $k$. We call a Turing machine $B$ a $k$\emph{-state Busy Beaver} if when run on the empty tape as input, the following is true: \\ \\
+-$B$ halts. \\
+-$B$ runs for at least as many steps before halting as all other halting $k$-state Turing machines. \cite{busybeaver} \\
+
+In other words, a Busy Beaver is a Turing machine is a Turing machine that runs for at least as long as all other Turing machines with as many states as it. Another common definition for a Busy Beaver is a Turing machine that writes as many 1's on the tape as possible; because the number of 1's written is a somewhat arbitrary measure, it is not used in this thesis. \\
+
+The \emph{Busy Beaver function}, written $BB(k)$, takes as input a positive integer $k$ and returns the number of steps it takes for a $k$-Busy Beaver to halt. The Busy Beaver function has many striking properties. To begin with, it is not \emph{computable}; in other words, there does not exist an algorithm that takes $k$ as input and returns $BB(k)$, for arbitrary values of $k$. This follows directly from the undecidability of the halting problem. Suppose an algorithm existed that could compute the Busy Beaver function; then given a $k$-state Turing machine $M$ as input, we could compute $BB(k)$ and run $M$ for $BB(k)$ steps. If, after $BB(k)$ steps, $M$ had not yet halted, we could safely conclude that $M$ would never halt. Thus, if an algorithm $A$ existed to compute the Busy Beaver function, we could construct an algorithm $A'$ to tell us if an arbitrary Turing machine will halt. Because $A'$ cannot exist, $A$ cannot exist either. \\
+
+By the same argument, $BB(k)$ must grow faster than any computable function. (To check this, assume that some computable function $f(k)$ grows faster than $BB(k)$, and substitute $f(k)$ for $BB(k)$ in the rest of the proof.) In particular, the Busy Beaver grows even faster than (for instance) the Ackermann function, a well-known fast-growing function. \\
+
+Partly because the Busy Beaver function grows so quickly, and partly because finding the value of $BB(k)$ for a given $k$ requires so much work (one must fully explore the behavior of all $k$-state Turing machines), few explicit values of the Busy Beaver function are currently known. The known values are: 
+
+$$BB(1) = 1$$
+$$BB(2) = 6$$
+$$BB(3) = 21$$
+$$BB(4) = 107$$
+
+For $BB(5)$ and $BB(6)$, only lower bounds are known: $BB(5) \ge 47,176,870$, and $BB(6) \ge 7.4 \times 10^{36,534}$. Researchers are currently working on pinning down the value of $BB(5)$ exactly, and consider it to possibly be within reach. A summary of the current state of human knowledge about Busy Beaver values can be found at \cite{bbvalues}.\\
+
+
+Another way to discuss the Busy Beaver sequence is to say that modern mathematics has established a \emph{lower bound} of 4 on the highest provable Busy Beaver value. In this thesis, I prove the first known \emph{upper bound} on the highest provable Busy Beaver value in ZFC; that is, I give a value of $k$, $k=$ \bbstatenumcomma such that the value of $BB(k)$ cannot be proven in ZFC. \\
+
+Intuitively, one might expect that while no algorithm may exist to compute $BB(k)$ for \emph{all} values of $k$, we could find the value of $BB(k)$ for any \emph{specific} $k$ using a procedure similar to the one we used to find the value of $BB(k)$ for $k \le 4$. The reason this is not so is closely tied to the existence of a machine like the G\"{o}delian machine $Z$, as described in Section~\ref{sec:background}. Suppose that $Z$ has $k$ states. Because $Z$'s behavior (whether it halts or loops) cannot be proven in ZFC, it follows that the value of $BB(k)$ also cannot be proven in ZFC; if it could, then a proof would exist of $Z$'s behavior in ZFC. Such a proof would consist of a \emph{computation history} for $Z$, which is an explicit step-by-step description of $Z$'s behavior for a certain number of steps. If $Z$ halts, a computation history leading up to $Z$'s halting would be the entire proof; if $Z$ loops, then a computation history that takes $BB(k)$ steps, combined with a proof of the value of $BB(k)$, would constitute a proof that $Z$ will run forever. \\
+
+For this thesis, I constructed a machine like $Z$, for which a proof that $Z$ runs forever would imply that ZFC was consistent. In doing so, I found an explicit upper bound on the highest Busy Beaver value provable in ZFC. My machine, which I shall refer to as $Z$ hereafter, contains \statenum states. Therefore, we will never be able to prove the value of \bbstatenum without assuming more powerful axioms than those of ZFC. This upper bound is presumably very far from tight, but it is a first step.
+
+\subsection{Parsimony}
+
+In most algorithmic study, efficiency is the primary concern. On occasion, space usage is also important. In designing $Z$, however, parsimony is the only thing that matters. We note, however, that one historical analogue is the practice of ``code-golfing'': a recreational pursuit adopted by some programmers in which the goal is to produce a piece of code written in a given programming language, using as few characters as possible. Many examples of programmers code-golfing can be found at \cite{codegolf}.~The goal of designing a Turing machine with as few states as possible to accomplish a certain task, without concern for the machine's efficiency or space usage, can be thought of analogous to code-golfing with a particularly low-level programming language. \\
+
+Even for many algorithms used in practice, simplicity of implementation is a consideration on par with efficiency and space usage. It is difficult to find standards with which to rigorously define the simplicity of an algorithm. To attempt to implement the algorithm while using as few characters as possible in most programming languages would fail to capture well what it is we mean by the simplicity of an algorithm, because the rules would depend too heavily on the idiosyncracies of the specific language used. Part of the charm of Turing machines is that they give us a ``standard reference point'' for measuring complexity, unencumbered by the details of more sophisticated programming languages. This is why Turing machines are so widely studied, and why we consider only them as the tool for measuring complexity; not because they are particularly special, but simply because they are so primitive and so minimal that the specifics of programming them will interfere minimally with what we mean by an algorithm being ``complicated''.
+
+\section{Related Work}
+
+This paper is not the first to attempt to quantify the complexity of arithmetical statements. Calude and Calude~\cite{calude} define a register machine of their own design, and provide quantifications of the complexity of Legendre's conjecture, Fermat's last theorem, Goldbach's conjecture, Dyson's conjecture, the Riemann hypothesis, and the four color theorem. In addition, Koza~\cite{koza} and Pargellis~\cite{pargellis} each invent instruction sets that are particularly well-suited to simply representing self-reproducing programs, and show that starting from a ``primordial soup'' of such instructions distributed about a large memory, along with an increasing number of program threads, a rich ecosystem of increasingly simple and efficient programs start to dominate the ``landscape.'' \\
+
+This paper's advantage over previous work is twofold, however: it is the first to attempt to quantify arithmetic statements as complex as those that would imply the consistency of ZFC. This makes it the first to propose machines whose behavior is independent of the axioms generally considered to be entirely ``safe'' by modern mathematicians. In addition, this paper is the first to use Turing machines as a model of computation, rather than a more powerful model of computation proposed the authors! We consider it important to use the weakest and most common model of computation for complexity comparisons across different mathematical statements. This is because the more powerful and complex the model of computation used, the more of the complexity of the algorithm can be ``shunted'' onto the model of computation, and the greater the potential distortion created by the choice of model. As a reductio ad absurdum, imagine that in our Turing machine model, in addition to allowing normal state transitions based on what symbol is read off the tape, we allowed a special transition to the \texttt{HALT} state which is taken if and only if ZFC is inconsistent. Then we would find that while our Turing machine that is independent of Goldbach's conjecture has \gbstatenum states, our Turing machine that is independent of ZFC has just 1 state! This model of computation clearly fails to capture exactly what we mean by complexity. By using the weakest possible model of computation, and by using one which is generally accepted as the mathematical basis of the algorithm, we hope to avoid this pitfall and make it easier to interpret our results within the larger context of mathematics and computability theory.
 
 \section{Laconic}
 
-The Laconic language is a programming language designed to be both user-friendly and easy to compile down to parsimonious Turing Machine descriptions. Laconic is so named because it's useful for demonstrating the simplicity of an algorithm by writing the shortest program possible that implements the algorithm. A short program will, in turn, compile to a Turing Machine with few states. \\
-
-Laconic can also be interpreted. This will cause the Laconic program to be run line-by-line. Interpreting a Laconic program before compiling it down to a Turing Machine is highly recommended in order to verify the program's correctness. \\
+Laconic is a programming language designed to be both user-friendly and easy to compile down to parsimonious Turing machine descriptions. \\
 
 Laconic is a strongly-typed language. It supports recursive functions. \\
 
-When Laconic is compiled, it is transformed into a TMD program, which is spread across many files (with one file per defined function). The TMD program is meant to represent a sequence of commands that could be given to a multi-tape, 3-symbol Turing Machine, using the Turing Machine abstraction that allows the machine to read and write from one head at a time. 
+Laconic compiles to an intermediate language called TMD. TMD programs are spread across multiple files and grouped into directories. TMD directories are meant to represent a sequence of commands that could be given to a multi-tape, 3-symbol Turing machine, using the Turing machine abstraction that allows the machine to read and write from one head at a time. \\
 
-For an example of a Laconic program, see Appendix~\cite{sec:applac}. For a visual illustration of the compilation process, see Figure~\ref{fig:compilation}
+For an example of a Laconic program, see Appendix~\ref{sec:applac}. For a visual illustration of the compilation process, see Figure~\ref{fig:compilation}.
 
 \begin{figure} 
 \begin{center} 
@@ -81,9 +163,9 @@ For an example of a Laconic program, see Appendix~\cite{sec:applac}. For a visua
 
 \section{TMD}
 
-The TMD language is a programming language designed to help the user describe the behavior of a multi-tape, 3-symbol Turing Machine with a function stack. It allows the user to use three symbols: \texttt{\_}, \texttt{1}, and \texttt{E}. The empty symbol is \texttt{\_}: that is, \texttt{\_} is the only symbol that can appear on the tape an infinite number of times. The tape must always have the form $\texttt{\_}^{\infty}(1|E)^+\texttt{\_}^{\infty}$; in other words, each tape must always contain an infinite number of copies of the \texttt{\_} symbol, followed by a string of \texttt{1}'s and \texttt{E}'s of size at least 1, followed by another infinite copies of the \texttt{\_} symbol. \\
+The TMD language is a programming language designed to help the user describe the behavior of a multi-tape, 3-symbol Turing machine with a function stack. It allows the user to use three symbols: \texttt{\_}, \texttt{1}, and \texttt{E}. The empty symbol is \texttt{\_}: that is, \texttt{\_} is the only symbol that can appear on the tape an infinite number of times. The tape must always have the form $\texttt{\_}^{\infty}(1|E)^+\texttt{\_}^{\infty}$; in other words, each tape must always contain an infinite number of copies of the \texttt{\_} symbol, followed by a string of \texttt{1}'s and \texttt{E}'s of size at least 1, followed by another infinite copies of the \texttt{\_} symbol. \\
 
-What is the purpose of having a language like TMD as an intermediary between Laconic and a description of a single-tape machine? The concept of tapes in a multi-tape Turing Machine and the concept of variables in standard imperative programming languages map to one another very nicely. The idea of the Laconic-to-TMD compiler is to encode the value of each variable on each tape. Then, each Laconic command which manipulates the value of one or more variables compiles down to a TMD function call which manipulates the tapes that correspond to those variables appropriately. \\
+What is the purpose of having a language like TMD as an intermediary between Laconic and a description of a single-tape machine? The concept of tapes in a multi-tape Turing machine and the concept of variables in standard imperative programming languages map to one another very nicely. The idea of the Laconic-to-TMD compiler is to encode the value of each variable on each tape. Then, each Laconic command which manipulates the value of one or more variables compiles down to a TMD function call which manipulates the tapes that correspond to those variables appropriately. \\
 
 As an example, consider the following Laconic command: \\ \\
 \texttt{a=b*c;} 
@@ -93,7 +175,7 @@ This Laconic command assigns the value of \texttt{a} to the value of \texttt{b*c
 
 This function call will result in \texttt{BUILTIN\_add} being run on the three tapes \texttt{a}, \texttt{b}, and \texttt{c}. This will cause the symbols on tape \texttt{a} to take on a representation of an integer whose value is equal to $bc$.
 
-In turn, the TMD code compiles directly to a string of bits that are written onto the tape at the start of the Turing Machine's execution.
+In turn, the TMD code compiles directly to a string of bits that are written onto the tape at the start of the Turing machine's execution.
 
 A TMD directory consists of three types of files:
 
@@ -105,15 +187,21 @@ A TMD directory consists of three types of files:
 
 \section{Compilation and Interpretation}
 
-A directory of TMD functions is converted at compilation time to a string of bits to be written onto the tape, along with other states designed to interpret these bits. The resulting Turing Machine has three main components:
+\subsection{concept}
+
+A directory of TMD functions is converted at compilation time to a string of bits to be written onto the tape, along with other states designed to interpret these bits. The resulting Turing machine has three main components:
 
 \begin{enumerate}
 \item The \emph{initializer} sets up the basic structure of the variable registers and the function stack.
-\item The \emph{programmer} writes down the binary string that corresponds to the compiled TMD code.
+\item The \emph{printer} writes down the binary string that corresponds to the compiled TMD code.
 \item The \emph{processor} interprets the compiled binary, modifying the variable registers and the function stack as necessary.
 \end{enumerate}
 
-The Turing machine's control flow proceeds from the initializer to the the programmer to the interpreter. In other words, initializer states point only to initializer states or to programmer states, programmer states point only to programmer states or to interpreter states, and interpreter states point only to interpreter states or the \texttt{HALT} state. 
+The Turing machine's control flow proceeds from the initializer to the the printer to the interpreter. In other words, initializer states point only to initializer states or to printer states, printer states point only to printer states or to interpreter states, and interpreter states point only to interpreter states or the \texttt{HALT} state. 
+
+This division of labor, while seemingly straightforward, actually constitutes a very important and non-obvious idea. The problem of the compiler is to convert a higher-level representation--a machine with many tapes, a larger alphabet, and a function stack--to the lower-level representation of a machine with a single tape, a 2-symbol alphabet and no function stack. The immediately obvious solution, and the one taught in every computability theory class as a proof of the equivalence of different kinds of Turing machines, is to have every ``state'' in the higher-level machine compile down to many states in the lower-level machine. See Figure~\ref{fig:mttost} for a visual representation of what such a conversion might look like. \\
+
+% TODO
 
 When discussing the layout of the tape symbols and patterns, there are two ways to think about it: one is with a 4-symbol alphabet ($\{\texttt{\_}, \texttt{1}, \texttt{H}, \texttt{E}\}$, empty symbol \texttt{\_}), and one is with a 2-symbol alphabet ($\{\texttt{a}, \texttt{b}\}$, empty symbol \texttt{a}). Naturally, the 2-symbol alphabet version is the one that is ultimately used for the results in this paper, since we advertised a Turing machine that made use of only two symbols. However, in nearly all parts of the Turing machine, the 2-symbol version of the machine is a direct translation of the 4-symbol version, according to the following mapping:
 
@@ -130,44 +218,44 @@ Additionally, the sections that follow may make reference to the \texttt{ERROR} 
 
 The initializer starts by writing a counter onto the tape which encodes how many registers there will be in the program. Using the value in that counter, it creates each register, with demarkation patterns in between registers, and unique identifiers for each register. Each register's value begins with the pattern of non-\texttt{\_} symbols laid out in the \texttt{initvar} file. The initializer also creates the program counter, which starts at 0, and the function stack, which starts out with only a single function call to the top function in the \texttt{functions} file.
 
-Figure~\ref{fig:postinit} is a detailed diagram describing the tape's state when the initializer passes control to the programmer. 
+Figure~\ref{fig:postinit} is a detailed diagram describing the tape's state when the initializer passes control to the printer. 
 
 \begin{figure} 
 \begin{center} 
 \includegraphics[scale=0.42]{figs/postinit.png}
-\caption{This figure shows the state of the Turing machine tape after the initializer completes. The TMD program being expressed in Turing machine form is described in full in Appendix~\ref{sec:apptmd}. The top bar is a high-level description of what each part of the Turing machine tape represents. The middle bar is an encoding of the tape in the standard 4-symbol alphabet; the bottom bar is simply the translation of that tape into the 2-symbol alphabet. This figure is only meant to give the reader a sense for what the machine really looks like when written onto the Turing machine's tape. For a more detailed explanation of how to interpret the tape patterns, see~\cite{ref:github}. \label{fig:postinit}} 
+\caption{This figure shows the state of the Turing machine tape after the initializer completes. The TMD program being expressed in Turing machine form is described in full in Appendix~\ref{sec:apptmd}. The top bar is a high-level description of what each part of the Turing machine tape represents. The middle bar is an encoding of the tape in the standard 4-symbol alphabet; the bottom bar is simply the translation of that tape into the 2-symbol alphabet. This figure is only meant to give the reader a sense for what the machine really looks like when written onto the Turing machine's tape. For a more detailed explanation of how to interpret the tape patterns, see~\cite{github}. \label{fig:postinit}} 
 \end{center} 
 \end{figure}
 
-\subsection{The Programmer}
+\subsection{The Printer}
 
 \subsubsection{Specification}
 
-The programmer writes down a long binary string which encodes the entirety of the TMD program onto the tape.
+The printer writes down a long binary string which encodes the entirety of the TMD program onto the tape.
 
-Figure~\ref{fig:postprog} is a detailed diagram describing the tape's state when the programmer passes control to the processor.
+Figure~\ref{fig:postprog} is a detailed diagram describing the tape's state when the printer passes control to the processor.
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.42]{figs/postprog.png}
-\caption{This figure shows the state of the Turing machine tape after the programmer completes. The TMD program being expressed in Turing machine form is described in full in Appendix~\ref{sec:apptmd}. The top bar is a high-level description of the entire tape; unfortunately, at this point there are so many symbols on the tape that it is impossible to see everything at once. For a detailed view of the first two-thirds of the tape (registers, program counter, and stack), see Figure~\ref{fig:postinit}. The bottom three bars show a zoomed-in view of the program binary. From the top, the second bar gives a high-level description of what each part of the program binary means; the third bar gives the direct correspondence between 4-symbol alphabet symbols on the tape and their meaning in TMD; the fourth and final bar gives the translation of the third bar into the 2-symbol alphabet. For a more detailed explanation of the encoding of TMD into tape symbols, see~\cite{ref:github}. \label{fig:postprog}}
+\caption{This figure shows the state of the Turing machine tape after the printer completes. The TMD program being expressed in Turing machine form is described in full in Appendix~\ref{sec:apptmd}. The top bar is a high-level description of the entire tape; unfortunately, at this point there are so many symbols on the tape that it is impossible to see everything at once. For a detailed view of the first two-thirds of the tape (registers, program counter, and stack), see Figure~\ref{fig:postinit}. The bottom three bars show a zoomed-in view of the program binary. From the top, the second bar gives a high-level description of what each part of the program binary means; the third bar gives the direct correspondence between 4-symbol alphabet symbols on the tape and their meaning in TMD; the fourth and final bar gives the translation of the third bar into the 2-symbol alphabet. For a more detailed explanation of the encoding of TMD into tape symbols, see~\cite{github}. \label{fig:postprog}}
 \end{center}
 \end{figure}
 
 \subsubsection{Introspection}
 
-Writing down a long binary string onto a Turing Machine tape in a parsimonious fashion is not as straightforward a task as it might initially appear. The first idea that comes to mind is to simply use one state per symbol, with each state pointing to the next, as shown in Figure~\ref{fig:naiveprog}. \\
+Writing down a long binary string onto a Turing machine tape in a parsimonious fashion is not as straightforward a task as it might initially appear. The first idea that comes to mind is to simply use one state per symbol, with each state pointing to the next, as shown in Figure~\ref{fig:naiveprog}. \\
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.42]{figs/naiveprog.png}
-\caption{This figure shows a naive implementation of the programmer. In this example, the hypothetical program is ten bits long, and the programmer uses ten states, one for each bit. In the diagram, the blue symbol is the symbol that is read on a transition, the red letter indicates the direction the head moves, and the green symbol indicates the symbol that it written. Note the lack of transitions on reading a \texttt{b}; this is because in this implementation, the programmer will only ever read the empty symbol, which is \texttt{a}, since the head is always proceeding to untouched parts of the tape. It therefore makes no difference what behavior the Turing Machine adopts upon reading a \texttt{b} in states 1-10 (and therefore \texttt{b} transitions are presumed to lead to the \texttt{ERROR} state) \label{fig:naiveprog}}
+\caption{This figure shows a na\"ive implementation of the printer. In this example, the hypothetical program is ten bits long, and the printer uses ten states, one for each bit. In the diagram, the blue symbol is the symbol that is read on a transition, the red letter indicates the direction the head moves, and the green symbol indicates the symbol that it written. Note the lack of transitions on reading a \texttt{b}; this is because in this implementation, the printer will only ever read the empty symbol, which is \texttt{a}, since the head is always proceeding to untouched parts of the tape. It therefore makes no difference what behavior the Turing machine adopts upon reading a \texttt{b} in states 1-10 (and therefore \texttt{b} transitions are presumed to lead to the \texttt{ERROR} state) \label{fig:naiveprog}}
 \end{center}
 \end{figure}
 
 This idea has the advantage of being very straightforward to implement and to understand, and if you don't think about it too hard it even appears to be optimal. Upon closer examination, however, it is apparent that this approach is quite wasteful for all but the smallest binary files. Every \texttt{a} transition points to the next state in the sequence, and none of the \texttt{b} transitions are used at all! Indeed, the only information-bearing part of the state is the single bit contained in the choice of which symbol to write. But in theory, far more information than that could be encoded with each state. In a machine that contains $n$ states, each state could contain $2(\log(n) + 1)$ bits of information: for each of its two transitions could point to any of the $n$ states, and write either an \texttt{a} or a \texttt{b} onto the tape. Of course, this is only in theory; in practice, to extract the information contained in the Turing machine's states and translate it into bits on the tape will be difficult. \\
 
-What we propose here is a scheme inspired by Luke Schaeffer ({\color{red} Is ``inspired'' good? Should I have said ``invented''? ``Proposed''? I want to make sure I'm properly attributing credit.}). It does not achieve the optimal theoretical encoding described above, but is relatively simple to implement and understand, and is within a factor of 2 of optimal for large binary strings. He named Turing machines that use this idea \emph{introspective}.  \\
+What we propose here is a scheme suggested by Luke Schaeffer, and originally conceived by Ben-Amram and Petersen~\cite{benamram}. It does not achieve the optimal theoretical encoding described above, but is relatively simple to implement and understand, and is within a factor of 2 of optimal for large binary strings. He named Turing machines that use this idea \emph{introspective}.  \\
 
 It works as follows. If the binary string contains $k$ bits, then let $w$ be the \emph{word size}. $w$ takes the largest value it can such that $w2^w \le k$. We can split the binary string into $n_w = \left \lceil{\frac{k}{w}}\right \rceil$ different \emph{words} of size $w$ bits each (we can pad the last word with copies of the empty symbol). In our scheme, each word in the bit-string will be represented by a \emph{data state}. Each data state will point to the state representing the next word in the sequence for its \texttt{a} transition, but which state the \texttt{b} transition points will encode the next word. Every \texttt{b} transition will point to one of the last $2^w$ data states, thereby encoding $w$ bits of information. \\
 
@@ -176,20 +264,20 @@ Of course, the encoding is useless until it is specified how to extract the enco
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.42]{figs/introspectprog.png}
-\caption{This figure shows an introspective implementation of the programmer. In this example, the hypothetical program is $k=10$ bits long, and so the word size must be 2 (since $w=2$ is the largest $w$ such that $w2^w \le 10$). There are therefore $n_w = \left \lceil{\frac{k}{w}}\right \rceil = 5$ data states, each encoding two bits. The \texttt{b} transitions carry the information about the encoding; note that each one only points to one of the last four data states. The last four data states have in parentheses what word you mean to encode if you point to them. \label{fig:introspectprog}}
+\caption{This figure shows an introspective implementation of the printer. In this example, the hypothetical program is $k=10$ bits long, and so the word size must be 2 (since $w=2$ is the largest $w$ such that $w2^w \le 10$). There are therefore $n_w = \left \lceil{\frac{k}{w}}\right \rceil = 5$ data states, each encoding two bits. The \texttt{b} transitions carry the information about the encoding; note that each one only points to one of the last four data states. The last four data states have in parentheses what word you mean to encode if you point to them. \label{fig:introspectprog}}
 \end{center}
 \end{figure}
 
-How much have we gained by using an introspective technique for encoding the program binary, instead of the naive approach? Well, it depends on how large the program binary is. By using introspection, we incur an $O(\log k)$ \emph{additive} overhead, because we have to include the extractor in our machine. (Our implementation of the extractor takes $10w + 17$ states.) But in return, we save a \emph{multiplicative} factor of $w$ (which scales with $\log k$) on the number of data states needed. 
+How much have we gained by using an introspective technique for encoding the program binary, instead of the na\"ive approach? Well, it depends on how large the program binary is. By using introspection, we incur an $O(\log k)$ \emph{additive} overhead, because we have to include the extractor in our machine. (Our implementation of the extractor takes $10w + 17$ states.) But in return, we save a \emph{multiplicative} factor of $w$ (which scales with $\log k$) on the number of data states needed. 
 
 Is this worth it? Well, plainly not for the 10-bit example binary shown in Figs.~\ref{fig:naiveprog} and~\ref{fig:introspectprog}. For that binary, we require 69 additional states for the extractor in order to save 5 states on the data states. But a 10-bit binary is unrealistically small; we only made it so small for illustrative purposes. What about for actual programs, such as the small example TMD program used in Figs.~\ref{fig:postinit} or~\ref{fig:postprog} and presented in full in Appendix~\ref{sec:apptmd}? Or what about the compiled Laconic programs that encode statements independent of Goldbach's conjecture, Riemann's hypothesis, and ZFC?
 
-The following table shows the performance of the naive and introspective approaches on each of those four programs.
+The following table shows the performance of the na\"ive and introspective approaches on each of those four programs.
 
 \begin{center}
     \begin{tabular}{||c c c c c c c||}
     \hline
-    Program & Binary Size & $w$ & $n_w$ & Extractor Size & States Naive & States Introspective \\ [0.5ex]
+    Program & Binary Size & $w$ & $n_w$ & Extractor Size & States (Na\"ive) & States (Introspective) \\ [0.5ex]
     \hline\hline
     Example TMD & 116 & 4 & 29 & 57 & 116 & 86 \\
     \hline
@@ -202,7 +290,7 @@ The following table shows the performance of the naive and introspective approac
     \end{tabular}
 \end{center}
      
-As is apparent from the table, using introspective techniques for the programmer creates a big improvement, particularly for large programs. Even for programs so small as to be useless, such as the example TMD program used for illustration in this paper, introspection still improves, if only slightly, over the naive approach. \\
+As is apparent from the table, using introspective techniques for the printer creates a big improvement, particularly for large programs. Even for programs so small as to be useless, such as the example TMD program used for illustration in this paper, introspection still improves, if only slightly, over the na\"ive approach. \\
 
 One very minor but notable detail is the numbers presented for the Riemann program. Ordinarily, with a binary of size 9,532, we would opt to split the program into 1,060 words of 9 bits each plus a 107-state extractor, since 9 is the greatest $w$ such that $w2^w < $9,532. But because 9,532 is so close to the ``magic number'' 10,240, it's actually more parsimonious to pad the program with copies of the empty symbol until it's 10,240 bits long, and split it into 1,024 words of 10 bits each plus a 117-state extractor.
 
@@ -248,12 +336,12 @@ IF $l$ IS A RETURN STATEMENT:
 
 \subsection{Cost Analysis}
 
-Before concluding this section, it is worthwhile to analyze the relative contributions of the initializer, the programmer, and the processor to the machine's final state count. Obviously, which of these contributions is greatest depends heavily on the size of the program being compiled. We have created a table containing the number of states in each of the initializer, programmer, and processor for each of the four different TMD programs we have been analyzing. 
+Before concluding this section, it is worthwhile to analyze the relative contributions of the initializer, the printer, and the processor to the machine's final state count. Obviously, which of these contributions is greatest depends heavily on the size of the program being compiled. We have created a table containing the number of states in each of the initializer, printer, and processor for each of the four different TMD programs we have been analyzing. 
 
 \begin{center}
     \begin{tabular}{||c c c c c||}
     \hline
-    Program & Initializer & Programmer & Processor & Total \\ [0.5ex]
+    Program & Initializer & Printer & Processor & Total \\ [0.5ex]
     \hline\hline
     Example TMD & 349 & 86 & 3,860 & 4,295 \\
     \hline
@@ -266,20 +354,21 @@ Before concluding this section, it is worthwhile to analyze the relative contrib
     \end{tabular}
 \end{center}
 
-As can be seen from this table, the processor makes the larges contribution to every one of the four programs presented in this paper. Improving the processor, therefore, is probably the best approach for improving upon the bounds we present. Equally clear, however, is that for programs more complicated than the ones presented here, the cost of the programmer will grow almost linearly but the cost of the processor will stay the same. Improving the programmer, therefore, and with it the TMD and Laconic languages, is probably the best approach for improving performance for very large and complex programs.
+As can be seen from this table, the processor makes the larges contribution to every one of the four programs presented in this paper. Improving the processor, therefore, is probably the best approach for improving upon the bounds we present. Equally clear, however, is that for programs more complicated than the ones presented here, the cost of the printer will grow almost linearly but the cost of the processor will stay the same. Improving the printer, therefore, and with it the TMD and Laconic languages, is probably the best approach for improving performance for very large and complex programs.
 
 \section{A Turing Machine Whose Behavior is Independent of ZFC}
 
-We present a \statenumstate Turing Machine that is \emph{independent of ZFC}; it would not be possible to prove that this machine would halt or wouldn't halt using the axioms of ZFC, assuming that ZFC is consistent. It is therefore impossible to prove the value of \bbstatenum to be any given value without assuming axioms more powerful than ZFC, assuming that ZFC is consistent. \\
+We present a \statenumstate Turing machine that is \emph{independent of ZFC}; it would not be possible to prove that this machine would halt or wouldn't halt using the axioms of ZFC, assuming that ZFC is consistent. It is therefore impossible to prove the value of \bbstatenum to be any given value without assuming axioms more powerful than ZFC, assuming that ZFC is consistent. \\
 
-For an explicit description of this machine, see~\ref{sec:explicitz}
+For an explicit description of this machine, see Appendix~\ref{sec:explicitz}.
 
 We call this machine $Z$. One way to build this machine would be to start with the axioms of ZFC and apply the inference rules of first-order logic of ZFC repeatedly in each possible way so as to enumerate every statement ZFC could prove, and to halt if ever a contradiction was found. Such a machine's \emph{behavior} (whether or not it ultimately halts) would necessarily be independent of ZFC, because to a proof of the machine's behavior would necessarily imply a proof about the consistency or inconsistency of ZFC. While the idea for this method is simple, to actually construct such a machine would be very involved, because it would require creating a language in which to encode the axioms of ZFC that could be stored on a Turing machine tape. \\
 
 \subsection{Friedman's Mathematical Statement}
 
-Thankfully, a simpler method exists for creating $Z$. Friedman \cite{friedman}~
-was able to derive a graph-theoretical statement whose truth cannot be proved in ZFC if ZFC is consistent, and which is false if ZFC is not consistent. These two properties are what we ultimately need to prove an upper bound on the highest provable Busy Beaver value in ZFC, and they are true of Friedman's statement, which follows: \\
+Thankfully, a simpler method exists for creating $Z$. Friedman~\cite{friedman}
+was able to derive a graph-theoretic statement whose truth implies the consistency of ZFC, and which will halt if ZFC is inconsistent.\footnotemark These two properties are what we ultimately need to prove an upper bound on the highest provable Busy Beaver value in ZFC, and they are true of Friedman's statement, which follows: \\
+\footnotetext{In fact, Friedman's statement is equivalent to the consistency of SRP (``stationary Ramsey property''), which is a system of axioms more powerful than ZFC. Because SRP is strictly more powerful than ZFC (it in fact consists of ZFC plus some additional axioms), the consistency of SRP implies the consistency of ZFC, and the inconsistency of ZFC implies the inconsistency of SRP.}
 
 \begin{statement} \label{eq:friedman}
 For all $k, n, r \ge 0$, every order invariant graph on $[Q]^{\le k}$ has a free $\{x_1,\dots,x_r, \\
@@ -301,9 +390,9 @@ Finally, a set of vertices $X$ \emph{reduces} a set of vertices $Y$ if and only 
 
 \subsection{Implementation Methods}
 
-In order to create $Z$, we needed to design a Turing Machine that would halt if Statement~\ref{eq:friedman} was false, and would loop if Statement~\ref{eq:friedman} was true. Such a Turning Machine's behavior would necessarily be independent of ZFC, because the truth or falsehood of  Statement~\ref{eq:friedman} is itself independent of ZFC.~\cite{friedman} \\
+In order to create $Z$, we needed to design a Turing machine that would halt if Statement~\ref{eq:friedman} was false, and would loop if Statement~\ref{eq:friedman} was true. Such a Turning Machine's behavior would necessarily be independent of ZFC, because the truth or falsehood of  Statement~\ref{eq:friedman} is itself independent of ZFC.~\cite{friedman} \\
 
-To design such a Turing machine, we wrote a Laconic program which encoded Friedman's statements, then compiled the program down to a description of a single-tape, 2-symbol Turing machine. What follows is an extremely brief description of the design of the Laconic program; for the documented Laconic code itself, along with a very detailed explanation of the full compilation process, please see~\cite{ref:github}. \\
+To design such a Turing machine, we wrote a Laconic program which encoded Friedman's statements, then compiled the program down to a description of a single-tape, 2-symbol Turing machine. What follows is an extremely brief description of the design of the Laconic program; for the documented Laconic code itself, along with a detailed explanation of the full compilation process, please see~\cite{github}. \\
 
 Our Laconic program begins by looping over all non-negative values for $k$, $n$, and $r$. For each trio of values $(k, n, r)$, our program generates a list $N$ of all numbers of complexity at most $(8knr)!$. These numbers represent the vertices in our putative order invariant graph. Because Laconic does not support floating-point numbers, the list is entirely composed of integers; it is a list of all numbers that can be written in the form $(((8knr)!)!)((8kni)!)/((8knj)!)$, where $i$ and $j$ are integers satisfying $-(8knr)! \le i \le (8knr)!$ and $1 \le j \le (8knr)!$. (Note that any number that can be expressed in this form is necessarily an integer, because of the large scaling factor in front). \\
 
@@ -327,7 +416,7 @@ When verifying the validity of a graph, checking the first two conditions is tri
 
 \section{$G$}
 
-We present a \gbstatenumstate Turing Machine that is \emph{independent of Goldbach's conjecture}; in other words, to know whether or not this machine halts is to know whether or not Goldbach's conjecture is true. It is therefore impossible to prove the value of \bbgbstatenum without simultaneously implying a proof of the truth or falsehood of Goldbach's conjecture.
+We present a \gbstatenumstate Turing machine that is \emph{independent of Goldbach's conjecture}; in other words, to know whether or not this machine halts is to know whether or not Goldbach's conjecture is true. It is therefore impossible to prove the value of \bbgbstatenum without simultaneously implying a proof of the truth or falsehood of Goldbach's conjecture.
 
 Goldbach's conjecture is stated as follows:
 
@@ -346,7 +435,7 @@ To test the primality of a positive integer $j$, we first test to see if $j = 1$
 
 \section{$R$}
 
-We present a \rmstatenumstate Turing Machine that is \emph{independent of Riemann's hypothesis}; in other words, to know whether or not this machine halts is to know whether or not Riemann's hypothesis is true. It is therefore impossible to prove the value of \bbrmstatenum without simultaneously implying a proof of the truth or falsehood of Riemann's hypothesis.
+We present a \rmstatenumstate Turing machine that is \emph{independent of Riemann's hypothesis}; in other words, to know whether or not this machine halts is to know whether or not Riemann's hypothesis is true. It is therefore impossible to prove the value of \bbrmstatenum without simultaneously implying a proof of the truth or falsehood of Riemann's hypothesis.
 
 Riemann's hypothesis is traditionally stated as follows:
 
@@ -357,7 +446,7 @@ Riemann's hypothesis is traditionally stated as follows:
 
 \subsection{Equivalent Statement}
 
-Instead of encoding the Riemann zeta function into a Laconic program, it is simpler to use the following statement, which has been shown to be equivalent to teh Riemann hypothesis:~\cite{riemann}\\
+Instead of encoding the Riemann zeta function into a Laconic program, it is simpler to use the following statement, which has been shown to be equivalent to the Riemann hypothesis~\cite{riemann}:\\
 
 \begin{statement} \label{eq:riemann}
 For all integers $n \ge 1$, 
@@ -374,56 +463,61 @@ $$\delta(x) = \prod_{n<x}\prod_{j \le n} \eta(j)$$
 
 \subsection{Implementation Methods}
 
-The statement can be manipulated to contain only positive integers as follows:
+This statement is equivalent to the following statement, which contains only positive integers:
 
-$$\left(\left(\sum_{k \le \delta(n)} \frac{1}{k}\right) - \frac{n^2}{2}\right)^2 < 36n^3$$
-$$\left(\left(\sum_{k \le \delta(n)} \frac{\delta(n)!}{k}\right) - \delta(n)!\frac{n^2}{2}\right)^2 < 36n^3(\delta(n)!)^2$$
-$$\left(\sum_{k \le \delta(n)} \frac{\delta(n)!}{k}\right)^2 - 2\left(\sum_{k \le \delta(n)} \frac{\delta(n)!}{k}\right) \left(\delta(n)!\frac{n^2}{2}\right) + \left(\delta(n)!\frac{n^2}{2}\right)^2 < 36n^3(\delta(n)!)^2$$
-$$\left(\sum_{k \le \delta(n)} \frac{\delta(n)!}{k}\right)^2 + \left(\delta(n)!\frac{n^2}{2}\right)^2 < 36n^3(\delta(n)!)^2 + 2\left(\sum_{k \le \delta(n)} \frac{\delta(n)!}{k}\right) \left(\delta(n)!\frac{n^2}{2}\right)$$
-
-Further reorganizing the statement:
-
-$$a(n) = \sum_{k \le \delta(n)!} \frac{\delta(n)!}{k}$$
-$$b(n) = \delta(n)!\frac{n^2}{2}$$
-
-and let
+$$l(n) < r(n)$$ for all positive integers $n$, where
 
 $$l(n) = (a(n))^2 + (b(n))^2$$
 $$r(n) = 36n^3(\delta(n)!)^2 + 2a(n)b(n)$$.
-
-When rewritten in terms of $l$ and $r$, Riemann's hypothesis is equivalent to whether or not $l(n) < r(n)$ for all positive integers $n$. \\
+$$a(n) = \sum_{k \le \delta(n)!} \frac{\delta(n)!}{k}$$
+$$b(n) = \delta(n)!\frac{n^2}{2}$$
 
 To check the Riemann hypothesis, our program computes $a(n)$, $b(n)$, $l(n)$, and $r(n)$, in that order, for each possible value of $n$. If $l(n) \ge r(n)$, our program halts.
 
+\section{Acknowledgements}
+
+%First and foremost, I would like to acknowledge my advisor, Prof. Scott Aaronson, for having suggested this problem to me and for having provided me with indispensable aid throughout. Prof. Aaronson explained the finer points of set theory to me in great detail, and put a huge amount of time into helping me refine my writing into something readable. His kindness, his constant availability to talk, and his friendliness made this Master's thesis a great pleasure to write.
+
+{\color{red} I removed the part where I acknowledge you because I listed you as an author. Is this correct procedure? Also, I went and replaced the ``I's'' in my old acks with ``We's'', but maybe that's not what we want, you know? I'm guessing you probably didn't need Luke Schaeffer's help in understanding the project. So maybe we should revamp these acknowledgements?}
+
+We thank Prof. Harvey Friedman for having done the crucial theoretical work that made this project feasible. Prof. Friedman was endlessly available over email, and provided us with immediate and detailed clarifications when I needed them. At the core, this paper was the combination of Prof. Friedman's ideas plus engineering; without them, this paper would have been far harder to write, and the resulting upper bound would have been far looser.
+
+We thank Luke Schaeffer for his help early on in understanding the project, and later on in the design of the compiler. Luke gave a lot of very helpful advice, and he helped me more than once to find an important optimization that substantially tightened the resulting bound.
+
+We thank Adam Hesterberg for his help with the mathematics discussed in the paper.
+
+We thank Alex Arkhipov for having introduced me to the pursuit of code golf--this entire thesis can be thought of as an academic version of code golfing.
+
 \begin{appendices}
     
-\section{Example Laconic Program: Goldbach's Conjecture \label{sec:applac}}
+\section{Example Laconic Program: Goldbach's Conjecture} \label{sec:applac}
 
-The following is an example Laconic program, which compiles down to the aforementioned Turing Machine $G$ (which halts if and only Goldbach's Conjecture is false).
+The following is an example Laconic program, which compiles down to the aforementioned Turing machine $G$ (which halts if and only Goldbach's Conjecture is false).
 
 \input{goldbach_lac}
 
-For detailed documentation of the Laconic programming language, see~\cite{github}. To find this file specifically, navigate to \texttt{parsimony/src/laconic/laconic\_files/goldbach.lac} at~\cite{github}
+For detailed documentation of the Laconic programming language, see~\cite{github}. To find this file specifically, navigate to \texttt{parsimony/src/laconic/laconic\_files/goldbach.lac} at~\cite{github}.
 
-\section{Example TMD Program \label{sec:apptmd}}
+\section{Example TMD Program} \label{sec:apptmd}
 
 The following is an example TMD directory, which compiles down to a binary string to be written on a Turing machine's tape. It is the example that is used in illustrations throughout this paper, most notably in the example compilation shown in Figs.~\ref{fig:postinit} and~\ref{fig:postprog}. The program calls itself recursively three times until the starting symbol on each tape, \texttt{E}, is replaced with a \texttt{1}, at which point the program halts.
 
 This TMD directory is called \texttt{example\_tmd\_dir}, and contains four files: \texttt{f.tmd}, \texttt{g.tmd}, \texttt{initvar}, and \texttt{functions}. \\ \\
-\texttt{f.tmd}: \\ \\
+
+\texttt{f.tmd}:
 \input{f_tmd}
-\texttt{g.tmd}: \\ \\
+\texttt{g.tmd}:
 \input{g_tmd}
-\texttt{functions}: \\ \\
+\texttt{functions}:
 \input{functions}
-\texttt{initvar}: \\ \\
+\texttt{initvar}:
 \input{initvar} 
 
-For detailed documentation of the TMD programming language, see~\cite{github}. To find this directory specifically, navigate to \texttt{parsimony/src/tmd/tmd\_dirs/example\_tmd\_dir/} at~\cite{github}
+For detailed documentation of the TMD programming language, see~\cite{github}. To find this directory specifically, navigate to \texttt{parsimony/src/tmd/tmd\_dirs/example\_tmd\_dir/} at~\cite{github}.
 
-\section{Explicit Description of $Z$ \label{sec:explicitz}}
+\section{Explicit Description of $Z$} \label{sec:explicitz}
 
-We present below an explicit description of $Z$. In order to prevent the Turing Machine from being outrageously long, our presentation is in a very compressed form. For a more easily readable version of $Z$, complete with descriptive state names, see~\cite{github}. \\
+We present below an explicit description of $Z$. In order to prevent the Turing machine from being outrageously long, our presentation is in a very compressed form. For a more easily readable version of $Z$, complete with descriptive state names, see~\cite{github}. \\
 
 Figure~\ref{fig:syntax} presents useful information for how to interpret the description shown below. In addition, note the following:
 
@@ -431,7 +525,7 @@ Figure~\ref{fig:syntax} presents useful information for how to interpret the des
 
 \item The tape has a 2-symbol alphabet, with tape symbols $\{\texttt{a}, \texttt{b}\}$ and empty symbol \texttt{a} (in other words, \texttt{a} is the only symbol that can appear an infinite times on the tape).
 \item The start state of $Z$ is state \texttt{0000}.
-\item $Z$ will never transition to the \texttt{ERROR} state. Any transition to the \texttt{ERROR} state could be replaced by a transition to any other state (including \texttt{HALT}) and the Turing Machine's behavior would remain identical.
+\item $Z$ will never transition to the \texttt{ERROR} state. Any transition to the \texttt{ERROR} state could be replaced by a transition to any other state (including \texttt{HALT}) and the Turing machine's behavior would remain identical.
 \item $Z$ contains only one transition to the \texttt{HALT} state, out of state \zhaltstate.
 
 \end{enumerate}
@@ -448,13 +542,19 @@ Figure~\ref{fig:syntax} presents useful information for how to interpret the des
 \end{appendices}
 
 \begin{thebibliography}{100}
+\bibitem{godelcohen} G\"odel, K. ``The Consistency of the Axiom of Choice and of the Generalized Continuum-Hypothesis with the Axioms of Set Theory.'' 1939.
+\bibitem{schoenfield} Schoenfield, J. ``The Problem of Predicativity.'' Essays on the foundations of mathematics, Y. Bar-Hillel et al., eds., pp. 132–142. 1961.
+\bibitem{calude} Calude, C., Calude, E. ``Evaluating the Complexity of Mathematical Problems: Part 1,'' ``Evaluating the Complexity of Mathematical Problems: Part 2.''
+\bibitem{koza} Koza, J. ``Spontaneous Emergence of Self-Replicating and Evolutionarily Self-Improving Computer Programs.'' Proceedings of the Third Workshop on Artificial Life. 1993.
+\bibitem{pargellis} Pargellis, A. ``The Spontaneous Generation of Digital `Life.''' 
 \bibitem{friedman} Friedman, H. ``Order Invariant Graphs and Finite Incompleteness.'' https://u.osu.edu/friedman.8/files/2014/01/FIiniteSeqInc062214a-v9w7q4.pdf
 \bibitem{busybeaver} Rado, T. ``On Non-Computable Functions.'' 
 Bell System Technical Journal, 41: 3. May 1962 pp 877-884.
-\bibitem{bbvalues} http://www.drb.insel.de/~heiner/BB/
-\bibitem{codegolf} http://codegolf.stackexchange.com/
-\bibitem{grandconjecture} http://cs.nyu.edu/pipermail/fom/1999-April/003014.html
-\bibitem{bbimpossible} Marxen, H., Buntrock, J.``Attacking the Busy Beaver 5.'' 
+\bibitem{godelcohen} 
+\bibitem{bbvalues} http://www.drb.insel.de/\symbol{126}heiner/BB/ [A list of the known busy beaver values]
+\bibitem{codegolf} http://codegolf.stackexchange.com/ [A place where programmers go for recreational code golfing]
+\bibitem{benamram} Ben-Amram, A., Petersen, H. ``Improved Bounds for Functions Related to Busy Beavers'' Theory of Computing Systems 35, 1-11 (2002)
+\bibitem{bbimpossible} Marxen, H., Buntrock, J. ``Attacking the Busy Beaver 5.'' 
 \bibitem{grothendieck} McLarty, C. ``What Does It Take To Prove Fermat's Last Theorem? Grothendieck and the Logic of Number Theory.'' The Bulletin of Symbolic Logic, Volume 00, Number 0.
 \bibitem{friedmanlist} Friedman, H. ``Order Theoretic Equations, Maximality, and Incompleteness.'' June 7, 2014. http://u.osu.edu/friedman.8/foundational-adventures/downloadable-manuscripts \#78.
 \bibitem{github} https://github.com/adamyedidia/parsimony
