@@ -138,6 +138,139 @@ In most algorithmic study, efficiency is the primary concern. On occasion, space
 
 Even for many algorithms used in practice, simplicity of implementation is a consideration on par with efficiency and space usage. It is difficult to find standards with which to rigorously define the simplicity of an algorithm. To attempt to implement the algorithm while using as few characters as possible in most programming languages would fail to capture well what it is we mean by the simplicity of an algorithm, because the rules would depend too heavily on the idiosyncracies of the specific language used. Part of the charm of Turing machines is that they give us a ``standard reference point'' for measuring complexity, unencumbered by the details of more sophisticated programming languages. This is why Turing machines are so widely studied, and why we consider only them as the tool for measuring complexity; not because they are particularly special, but simply because they are so primitive and so minimal that the specifics of programming them will interfere minimally with what we mean by an algorithm being ``complicated''.
 
+\subsection{Implementation Overview}
+
+To generate descriptions of Turing machines with nice mathematical properties entirely by hand is a truly daunting task. Rather than approach the problem directly, we set out to create tools for generating parsimonious Turing machines while presenting an interface that is comfortably familiar to most programmers (and to us!) \\
+
+In this vein, we created two tools. At the top level is the Laconic programming language, whose syntax and capabilities are similar to those of most programming languages, such as Java or Python. Beneath it we created a lower-level language called Turing Machine Descriptor (TMD). TMD is quite unlike most programming languages, and is better thought of as being a convenient way of describing a multi-tape, 3-symbol Turing machine plus a function stack. The style of multi-tape Turing machine used in TMD is the commonly used ``one-tape-at-a-time'' abstraction: only one tape at a time can be interacted with, for reading, writing, and moving the head. Laconic compiles down to a TMD program, and TMD compiles down to a description of a single-tape, 2-symbol Turing machine. This process is illustrated in Figure~\ref{fig:compilation}. \\
+
+\begin{figure} 
+\begin{center} 
+\includegraphics[scale=0.42]{figs/compilation.png}
+\caption{This figure gives a visual overview of the compilation process. \label{fig:compilation}} 
+\end{center} 
+\end{figure}
+
+We recommend that most programmers hoping to use our tools to generate their own encodings of mathematical statements or algorithms as Turing machines use Laconic. Laconic's interface is perfect for somebody hoping to write in a ``traditional'' language. For programmers hoping to do something non-traditional, however, TMD might be a better choice. For example, if the programmer does not intend to use numbers in their program, or if the programmer wishes to improve upon Laconic's compilation process, writing code directly in TMD is likely to be the better option.
+
+\section{A Turing Machine Whose Behavior is Independent of ZFC}
+
+We present a \statenumstate Turing machine that is \emph{independent of ZFC}; it would not be possible to prove that this machine would halt or wouldn't halt using the axioms of ZFC, assuming that ZFC is consistent. It is therefore impossible to prove the value of \bbstatenum to be any given value without assuming axioms more powerful than ZFC, assuming that ZFC is consistent. \\
+
+For an explicit description of this machine, see Appendix~\ref{sec:explicitz}. \\
+
+We call this machine $Z$. One way to build this machine would be to start with the axioms of ZFC and apply the inference rules of first-order logic of ZFC repeatedly in each possible way so as to enumerate every statement ZFC could prove, and to halt if ever a contradiction was found. Such a machine's \emph{behavior} (whether or not it ultimately halts) would necessarily be independent of ZFC, because to a proof of the machine's behavior would necessarily imply a proof about the consistency or inconsistency of ZFC. While the idea for this method is simple, to actually construct such a machine would be very involved, because it would require creating a language in which to encode the axioms of ZFC that could be stored on a Turing machine tape. \\
+
+\subsection{Friedman's Mathematical Statement}
+
+Thankfully, a simpler method exists for creating $Z$. Friedman~\cite{friedman}
+was able to derive a graph-theoretic statement whose truth implies the consistency of ZFC, and which will halt if ZFC is inconsistent.\footnotemark These two properties are what we ultimately need to prove an upper bound on the highest provable Busy Beaver value in ZFC, and they are true of Friedman's statement, which follows: \\
+\footnotetext{In fact, Friedman's statement is equivalent to the consistency of SRP (``stationary Ramsey property''), which is a system of axioms more powerful than ZFC. Because SRP is strictly more powerful than ZFC (it in fact consists of ZFC plus some additional axioms), the consistency of SRP implies the consistency of ZFC, and the inconsistency of ZFC implies the inconsistency of SRP.}
+
+\begin{statement} \label{eq:friedman}
+For all $k, n, r \ge 0$, every order invariant graph on $[Q]^{\le k}$ has a free $\{x_1,\dots,x_r, \\
+ush(x_1),...,ush(x_r)\}$ of complexity $\le (8knr)!$, each $\{x_1, \dots, x_{(8kni)!}\}$
+reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$. \cite{friedman}
+\end{statement}
+
+A number of \emph{complexity} at most $c$ refers to a number that can be written as a fraction $a/b$, where $a$ and $b$ are both integers less than or equal to $c$. A set has complexity at most $c$ if all the numbers it contains have complexity at most $c$. \\ 
+
+An \emph{order invariant graph} is a graph containing a countably infinite number of nodes. In particular, it has one node for each finite set of rational numbers. The only numbers relevant to the statement are numbers of complexity $(8knr)!$ or smaller. In every description of nodes that follows, the term \emph{node} refers both to the object in the order invariant graph and to the set of numbers that it represents. \\
+
+Also, in an order invariant graph, two nodes $(a,b)$ have an edge between them if and only if each other pair of nodes $(c,d)$ that is \emph{order equivalent} with $(a,b)$ have an edge between them. Two pairs of nodes $(a, b)$ and $(c, d)$ are \emph{order equivalent} if $a$ and $c$ are the same size and $b$ and $d$ are the same size and if for all $1 \le i \le |a|$ and $1 \le j \le |b|$, the $i$-th element of $a$ is less than the $j$-th element of $b$ if and only if the $i$-th element of $c$ is less than the $j$-th element of $d$. \\
+
+To give some trivial examples of order invariant graphs: the graph with no edges is order invariant, as is the complete graph. A less trivial example is a graph on $[Q]^2$, in which each node corresponds to a set of two real numbers, and there is an edge between two nodes if and only if their corresponding sets $a$ and $b$ satisfy $a_1 < b_1 < a_2 < b_2$. (Because edges are undirected in order invariant graphs, such an edge will exist if \emph{either} assignment of the vertices to $a$ and $b$ satisfies the inequality above). \\
+
+The \emph{ush()} function takes as input a set and returns a copy of that set with all non-negative numbers in that set incremented by 1. \\ 
+
+Finally, a set of vertices $X$ \emph{reduces} a set of vertices $Y$ if and only if for all $y \in Y$, there exists $x \in X$ such that $x \le_{rlex} y$ and an edge exists between $x$ and $y$. $x \le_{rlex} y$ if and only if $x = y$ or $x_i < y_i$ where $i$ is least such that $x_i \not= y_i$.~\cite{personalcomm} \\
+
+\subsection{Implementation Methods}
+
+In order to create $Z$, we needed to design a Turing machine that would halt if Statement~\ref{eq:friedman} was false, and would loop if Statement~\ref{eq:friedman} was true. Such a Turning Machine's behavior would necessarily be independent of ZFC, because the truth or falsehood of  Statement~\ref{eq:friedman} is itself independent of ZFC.~\cite{friedman} \\
+
+To design such a Turing machine, we wrote a Laconic program which encoded Friedman's statements, then compiled the program down to a description of a single-tape, 2-symbol Turing machine. What follows is an extremely brief description of the design of the Laconic program; for the documented Laconic code itself, along with a detailed explanation of the full compilation process, please see~\cite{github}. \\
+
+Our Laconic program begins by looping over all non-negative values for $k$, $n$, and $r$. For each trio of values $(k, n, r)$, our program generates a list $N$ of all numbers of complexity at most $(8knr)!$. These numbers represent the vertices in our putative order invariant graph. Because Laconic does not support floating-point numbers, the list is entirely composed of integers; it is a list of all numbers that can be written in the form $(((8knr)!)!)((8kni)!)/((8knj)!)$, where $i$ and $j$ are integers satisfying $-(8knr)! \le i \le (8knr)!$ and $1 \le j \le (8knr)!$. (Note that any number that can be expressed in this form is necessarily an integer, because of the large scaling factor in front). \\
+
+After we generate $N$, we generate the nodes in a potential order invariant graph by adding to $N$ all possible lists of $k$ or fewer numbers from $N$. We call this list of lists $V$. \\
+
+We iterate over all binary lists of length $|V|^2$. Any such list $E$ represents a possible set of edges in the graph. To be more precise, we say that an edge exists between node $i$ and node $j$ (represented by $V_i$ and $V_j$ respectively) if and only if $E_{i|V| + j}$ is 1. \\
+
+For any graph $(V, E)$, we say that it is ``valid'' if the following three conditions hold:
+
+\begin{enumerate}
+
+\item No node has an edge to itself.
+\item If an edge exists between node $i$ and node $j$, an edge also exists between node $j$ and node $i$.
+\item The graph has a free $\{x_1,\dots,x_r, ush(x_1),...,ush(x_r)\}$, each  $\{x_1, \dots, x_{(8kni)!}\}$ reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$.
+
+\end{enumerate}
+
+For each list of nodes $V$, we loop over every possible binary list $E$, and if no pair $(V, E)$ yields a valid graph, we halt. \\
+
+When verifying the validity of a graph, checking the first two conditions is trivial, but the third merits further explanation. In order to verify that a given graph $(V, E)$ has a free \\ $\{x_1,\dots,x_r, ush(x_1),...,ush(x_r)\}$, each  $\{x_1, \dots, x_{(8kni)!}\}$ reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$, we look at every possible subset of the nodes in $V$. For each subset, we verify that it has length $r$, that $ush(x_1),...,ush(x_r)$ all exist in $V$, and for each $i$ such that $(8kni)! \le r$, that $\{x_1, \dots, x_{(8kni)!}\}$ reduces $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$. Once we have found such a subset, we know that the third conditon is satisfied.
+
+\section{A Turing Machine that is Independent of Goldbach's Conjecture}
+
+We present a \gbstatenumstate Turing machine that is \emph{independent of Goldbach's conjecture}; in other words, to know whether or not this machine halts is to know whether or not Goldbach's conjecture is true. It is therefore impossible to prove the value of \bbgbstatenum without simultaneously implying a proof of the truth or falsehood of Goldbach's conjecture.
+
+Goldbach's conjecture is stated as follows:
+
+\begin{statement}
+\emph{Every even integer greater than 2 can be expressed as the sum of two primes.}
+\label{goldbachstatement}
+\end{statement}
+
+\subsection{Implementation Methods}
+
+Because Goldbach's conjecture is quite simply stated, the Laconic program encoding the statement is also quite simple. We very briefly describe it here; once again, the documented source code itself, a detailed explanation of the compilation process, and documentation for the Laconic language are available at~\cite{github}, as is an explicit description of this Turing machine.
+
+In order to create $G$, we loop over all even integers $i > 2$. For each $i$, we loop over all positive integers $j$ such that $0 < j < i$. If no such $j$ exists such that both $j$ and $i - j$ are prime, we halt.
+
+To test the primality of a positive integer $j$, we first test to see if $j = 1$; if it is, we determine that $j$ is not prime. Otherwise, we loop over each integer $k$ such that $1 < k < j$. If a $k$ exists such that $j \% k = 0$ (where \% denotes the modulus operation) then we determine that $j$ is not prime; otherwise, we determine that it is.
+
+\section{A Turing Machine that is Independent of Riemann's Hypothesis}
+
+We present a \rmstatenumstate Turing machine that is \emph{independent of Riemann's hypothesis}; in other words, to know whether or not this machine halts is to know whether or not Riemann's hypothesis is true. It is therefore impossible to prove the value of \bbrmstatenum without simultaneously implying a proof of the truth or falsehood of Riemann's hypothesis. An explicit description of this machine can be found at~\cite{github}
+
+Riemann's hypothesis is traditionally stated as follows:
+
+\begin{statement}
+\emph{The Riemann zeta function has its zeros only at the negative even integers and the complex numbers with real part 1/2.}
+\label{goldbachstatement}
+\end{statement}
+
+\subsection{Equivalent Statement}
+
+Instead of encoding the Riemann zeta function into a Laconic program, it is simpler to use the following statement, which has been shown to be equivalent to the Riemann hypothesis~\cite{riemann}:\\
+
+\begin{statement} \label{eq:riemann}
+For all integers $n \ge 1$, 
+$$\left(\left(\sum_{k \le \delta(n)} \frac{1}{k}\right) - \frac{n^2}{2}\right)^2 < 36n^3$$
+\end{statement}
+
+The function $\delta(n)$ used in Statement~\ref{eq:riemann} is defined as follows: \\
+
+\begin{nscenter}
+$\eta(j)$ if $j = p^k$, $p$ is prime, $k$ is a positive integer \\
+$\eta(j) = 1$ otherwise
+\end{nscenter}
+$$\delta(x) = \prod_{n<x}\prod_{j \le n} \eta(j)$$
+
+\subsection{Implementation Methods}
+
+This statement is equivalent to the following statement, which contains only positive integers:
+
+$$l(n) < r(n)$$ for all positive integers $n$, where
+
+$$l(n) = (a(n))^2 + (b(n))^2$$
+$$r(n) = 36n^3(\delta(n)!)^2 + 2a(n)b(n)$$.
+$$a(n) = \sum_{k \le \delta(n)!} \frac{\delta(n)!}{k}$$
+$$b(n) = \delta(n)!\frac{n^2}{2}$$
+
+To check the Riemann hypothesis, our program computes $a(n)$, $b(n)$, $l(n)$, and $r(n)$, in that order, for each possible value of $n$. If $l(n) \ge r(n)$, our program halts.
+
 \section{Related Work}
 
 This paper is not the first to attempt to quantify the complexity of arithmetical statements. Calude and Calude~\cite{calude} define a register machine of their own design, and provide quantifications of the complexity of Legendre's conjecture, Fermat's last theorem, Goldbach's conjecture, Dyson's conjecture, the Riemann hypothesis, and the four color theorem. In addition, Koza~\cite{koza} and Pargellis~\cite{pargellis} each invent instruction sets that are particularly well-suited to simply representing self-reproducing programs, and show that starting from a ``primordial soup'' of such instructions distributed about a large memory, along with an increasing number of program threads, a rich ecosystem of increasingly simple and efficient programs start to dominate the ``landscape.'' \\
@@ -153,13 +286,6 @@ Laconic is a strongly-typed language. It supports recursive functions. \\
 Laconic compiles to an intermediate language called TMD. TMD programs are spread across multiple files and grouped into directories. TMD directories are meant to represent a sequence of commands that could be given to a multi-tape, 3-symbol Turing machine, using the Turing machine abstraction that allows the machine to read and write from one head at a time. \\
 
 For an example of a Laconic program, see Appendix~\ref{sec:applac}. For a visual illustration of the compilation process, see Figure~\ref{fig:compilation}.
-
-\begin{figure} 
-\begin{center} 
-\includegraphics[scale=0.42]{figs/compilation.png}
-\caption{This figure gives a visual overview of the compilation process. \label{fig:compilation}} 
-\end{center} 
-\end{figure}
 
 \section{TMD}
 
@@ -185,23 +311,7 @@ A TMD directory consists of three types of files:
 \item Any files used to describe TMD functions. These files will all end in a \texttt{.tfn} extension and will only have any relevance to the compiled program if they show up in the functions file.
 \end{enumerate}
 
-\section{Compilation and Interpretation}
-
-\subsection{concept}
-
-A directory of TMD functions is converted at compilation time to a string of bits to be written onto the tape, along with other states designed to interpret these bits. The resulting Turing machine has three main components:
-
-\begin{enumerate}
-\item The \emph{initializer} sets up the basic structure of the variable registers and the function stack.
-\item The \emph{printer} writes down the binary string that corresponds to the compiled TMD code.
-\item The \emph{processor} interprets the compiled binary, modifying the variable registers and the function stack as necessary.
-\end{enumerate}
-
-The Turing machine's control flow proceeds from the initializer to the the printer to the interpreter. In other words, initializer states point only to initializer states or to printer states, printer states point only to printer states or to interpreter states, and interpreter states point only to interpreter states or the \texttt{HALT} state. 
-
-This division of labor, while seemingly straightforward, actually constitutes a very important and non-obvious idea. The problem of the compiler is to convert a higher-level representation--a machine with many tapes, a larger alphabet, and a function stack--to the lower-level representation of a machine with a single tape, a 2-symbol alphabet and no function stack. The immediately obvious solution, and the one taught in every computability theory class as a proof of the equivalence of different kinds of Turing machines, is to have every ``state'' in the higher-level machine compile down to many states in the lower-level machine. See Figure~\ref{fig:mttost} for a visual representation of what such a conversion might look like. \\
-
-% TODO
+\section{Compilation and Processing}
 
 When discussing the layout of the tape symbols and patterns, there are two ways to think about it: one is with a 4-symbol alphabet ($\{\texttt{\_}, \texttt{1}, \texttt{H}, \texttt{E}\}$, empty symbol \texttt{\_}), and one is with a 2-symbol alphabet ($\{\texttt{a}, \texttt{b}\}$, empty symbol \texttt{a}). Naturally, the 2-symbol alphabet version is the one that is ultimately used for the results in this paper, since we advertised a Turing machine that made use of only two symbols. However, in nearly all parts of the Turing machine, the 2-symbol version of the machine is a direct translation of the 4-symbol version, according to the following mapping:
 
@@ -214,6 +324,55 @@ When discussing the layout of the tape symbols and patterns, there are two ways 
 
 Additionally, the sections that follow may make reference to the \texttt{ERROR} state. Transitions to the \texttt{ERROR} state are stand-ins for transitions that will never be taken under any circumstances; as will be obvious in the sections that follow, there may be circumstances under which this situation can arise (although it is often indication that the Turing machine was not designed as parsimoniously as it could have been).
 
+\subsection{Concept}
+
+A directory of TMD functions is converted at compilation time to a string of bits to be written onto the tape, along with other states designed to interpret these bits. The resulting Turing machine has three main components, or \emph{submachines}:
+
+\begin{enumerate}
+\item The \emph{initializer} sets up the basic structure of the variable registers and the function stack.
+\item The \emph{printer} writes down the binary string that corresponds to the compiled TMD code.
+\item The \emph{processor} interprets the compiled binary, modifying the variable registers and the function stack as necessary.
+\end{enumerate}
+
+The Turing machine's control flow proceeds from the initializer to the the printer to the interpreter. In other words, initializer states point only to initializer states or to printer states, printer states point only to printer states or to interpreter states, and interpreter states point only to interpreter states or the \texttt{HALT} state. 
+
+This division of labor, while seemingly straightforward, actually constitutes a very important and non-obvious idea. The problem of the compiler is to convert a higher-level representation--a machine with many tapes, a larger alphabet, and a function stack--to the lower-level representation of a machine with a single tape, a 2-symbol alphabet and no function stack. The immediately obvious solution, and the one taught in every computability theory class as a proof of the equivalence of different kinds of Turing machines, is to have every ``state'' in the higher-level machine compile down to many states in the lower-level machine. See Figure~\ref{fig:mttost} for a visual representation of what such a conversion might look like. \\
+
+\begin{figure} 
+\begin{center} 
+\includegraphics[scale=0.42]{figs/mttost.png}
+\caption{This figure is a figure used in~\cite{thesis} to describe the multi-tape to single-tape conversion process. The details of this figure are no longer important, because a different design is used in this paper. The important take-away is that for every state transition in the multi-tape machine (an example of which is shown at the top of the figure), there must be a corresponding group of states whose sole purpose is to play the role of this state transition in the single-tape machine--to search for the right register in which to find the tape's stored value, to update it, and so on. This leads to a multiplicative overhead dependent on how many states are needed to represent the single transition.  \label{fig:mttost}} 
+\end{center} 
+\end{figure}
+
+While simple, this approach is suboptimal. As is nearly always true when designing systems to be parsimonious, the clue that improvement is possible lies in the presence of repetition. Each state transition in the higher-level machine is converted to a group of lower-level states with the same basic structure. Why not instead explain how to perform this conversion exactly once, and then apply the conversion many times?
+
+This idea is at the core of the division of labor described previously. The basic idea is to begin by writing a description of the higher-level machine onto the tape, and then to ``run'' the higher-level machine by reading what is on the tape with a set of states that understands how to interpret the encoded higher-level machine. We will refer to this idea as \emph{on-tape processing}, for the fact that the program is being processed is written on the tape as it is executed. This is in constrast to the earlier-described na\"ive scheme, in which the program being processed is expressed entirely within the states of the Turing machine.
+
+In this paper, we use TMD as the representation of the higher-level machine.\footnotemark The printer writes the TMD program onto the tape, and the processor executes it. In some sense, the processor represents the single explanation of how to perform the conversion shown in Figure~\ref{fig:mttost}. As a result of using this scheme, we incur a constant \emph{additive} overhead--we have to include the processor in our final Turing machine--but we avoid the constant \emph{multiplicative} overhead required for the na\"ive scheme. 
+\footnotetext{Note that instead of TMD, any language could be used instead to do what we did, assuming the designer provides both a processor and an encoding for the language. We chose TMD because it made the interpreter easy to write, but other minimalist languages, like Unlambda, Brainfuck, or Iota, might be good candidates for parsimonious designs, with the additional advantage of being already known to some programmers! Thanks to Luke Schaeffer for this point.}
+
+Is this additive overhead small enough to be worth it? We have found that it is. Our implementation of the processor requires 3,860 states. (See Section~\ref{sec:cost} for a detailed breakdown of the state cost by submachine.) In contrast to this additive overhead of 3,860, the na\"ive approach incurs a large multiplicative overhead that depends in part on how many states must be used to represent each higher-level state transition, and in part on how efficient an encoding scheme can be devised for the on-tape approach. The following table compares the performance of on-tape processing to the performance of an implementation that used the na\"ive approach.\footnotemark The comparison is shown for three kinds of machines: a machine that halts if and only if Goldbach's conjecture is false, a machine that halts if and only if Riemann's conjecture is false, and a machine whose behavior is independent of ZFC. The TMD program used as an example throughout this paper is excluded from the comparison, because TMD in its current form is not used in the na\"ive implementation, making the comparison meaningless.
+\footnotetext{This implementation was written by Yedidia, one of this paper's authors, for his Master's thesis.~\cite{thesis}}
+
+\begin{center}
+    \begin{tabular}{||c c c||}
+    \hline
+    Program & States (Na\"ive) & States (On-Tape Processing) \\ [0.5ex]
+    \hline
+    Goldbach & \gbstatenum & 7,902 \\
+    \hline
+    Riemann & \rmstatenum & 36,146 \\
+    \hline 
+    ZFC & \statenum & 340,943 \\
+    \hline
+    \end{tabular}
+\end{center}
+
+As can be seen from this table, the method of on-tape interpretation results in huge gains, particularly in large and complex programs. \\
+
+The subsections that follow describe each of the three submachines--the initializer, the printer, and the processor--in greater detail.
+ 
 \subsection{The Initializer}
 
 The initializer starts by writing a counter onto the tape which encodes how many registers there will be in the program. Using the value in that counter, it creates each register, with demarkation patterns in between registers, and unique identifiers for each register. Each register's value begins with the pattern of non-\texttt{\_} symbols laid out in the \texttt{initvar} file. The initializer also creates the program counter, which starts at 0, and the function stack, which starts out with only a single function call to the top function in the \texttt{functions} file.
@@ -334,7 +493,7 @@ IF $l$ IS A RETURN STATEMENT:
 \item Go back to START.
 \end{enumerate}
 
-\subsection{Cost Analysis}
+\subsection{Cost Analysis} \label{sec:cost}
 
 Before concluding this section, it is worthwhile to analyze the relative contributions of the initializer, the printer, and the processor to the machine's final state count. Obviously, which of these contributions is greatest depends heavily on the size of the program being compiled. We have created a table containing the number of states in each of the initializer, printer, and processor for each of the four different TMD programs we have been analyzing. 
 
@@ -345,134 +504,22 @@ Before concluding this section, it is worthwhile to analyze the relative contrib
     \hline\hline
     Example TMD & 349 & 86 & 3,860 & 4,295 \\
     \hline
-    Goldbach & 369 & 659 & 3,860 & 4,888 \\
+    Goldbach & 369 & 659 & 3,860 & \gbstatenum \\
     \hline
-    Riemann & 371 & 1,141 & 3,860 & 5,372 \\
+    Riemann & 371 & 1,141 & 3,860 & \rmstatenum \\
     \hline 
-    ZFC & 389 & 3,392 & 3,860 & 7,641 \\
+    ZFC & 389 & 3,392 & 3,860 & \statenum \\
     \hline
     \end{tabular}
 \end{center}
 
 As can be seen from this table, the processor makes the larges contribution to every one of the four programs presented in this paper. Improving the processor, therefore, is probably the best approach for improving upon the bounds we present. Equally clear, however, is that for programs more complicated than the ones presented here, the cost of the printer will grow almost linearly but the cost of the processor will stay the same. Improving the printer, therefore, and with it the TMD and Laconic languages, is probably the best approach for improving performance for very large and complex programs.
 
-\section{A Turing Machine Whose Behavior is Independent of ZFC}
+\section{Future Work}
 
-We present a \statenumstate Turing machine that is \emph{independent of ZFC}; it would not be possible to prove that this machine would halt or wouldn't halt using the axioms of ZFC, assuming that ZFC is consistent. It is therefore impossible to prove the value of \bbstatenum to be any given value without assuming axioms more powerful than ZFC, assuming that ZFC is consistent. \\
+How much further can $Z$'s state count be reduced? This is unclear, and we as authors hesitate to say with certainty that future programmers won't find more clever techniques for reducing the state count. We think that huge improvements are likely to be very difficult, however, for the following reason. At this point, as can be seen at the end of the previous section, the processor takes more states than the other two submachines combined. Making the processor much more parsimonious will be difficult, however, because it was written by hand, rather than being the output of automatic transformations. Without a complete redesign of the entire system, perhaps scrapping the entire idea of on-tape processing and replacing it with something better, big improvements are very unlikely. Of course, small optimizations will forever be possible, and our work is far from perfect. \\
 
-For an explicit description of this machine, see Appendix~\ref{sec:explicitz}.
-
-We call this machine $Z$. One way to build this machine would be to start with the axioms of ZFC and apply the inference rules of first-order logic of ZFC repeatedly in each possible way so as to enumerate every statement ZFC could prove, and to halt if ever a contradiction was found. Such a machine's \emph{behavior} (whether or not it ultimately halts) would necessarily be independent of ZFC, because to a proof of the machine's behavior would necessarily imply a proof about the consistency or inconsistency of ZFC. While the idea for this method is simple, to actually construct such a machine would be very involved, because it would require creating a language in which to encode the axioms of ZFC that could be stored on a Turing machine tape. \\
-
-\subsection{Friedman's Mathematical Statement}
-
-Thankfully, a simpler method exists for creating $Z$. Friedman~\cite{friedman}
-was able to derive a graph-theoretic statement whose truth implies the consistency of ZFC, and which will halt if ZFC is inconsistent.\footnotemark These two properties are what we ultimately need to prove an upper bound on the highest provable Busy Beaver value in ZFC, and they are true of Friedman's statement, which follows: \\
-\footnotetext{In fact, Friedman's statement is equivalent to the consistency of SRP (``stationary Ramsey property''), which is a system of axioms more powerful than ZFC. Because SRP is strictly more powerful than ZFC (it in fact consists of ZFC plus some additional axioms), the consistency of SRP implies the consistency of ZFC, and the inconsistency of ZFC implies the inconsistency of SRP.}
-
-\begin{statement} \label{eq:friedman}
-For all $k, n, r \ge 0$, every order invariant graph on $[Q]^{\le k}$ has a free $\{x_1,\dots,x_r, \\
-ush(x_1),...,ush(x_r)\}$ of complexity $\le (8knr)!$, each $\{x_1, \dots, x_{(8kni)!}\}$
-reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$. \cite{friedman}
-\end{statement}
-
-A number of \emph{complexity} at most $c$ refers to a number that can be written as a fraction $a/b$, where $a$ and $b$ are both integers less than or equal to $c$. A set has complexity at most $c$ if all the numbers it contains have complexity at most $c$. \\ 
-
-An \emph{order invariant graph} is a graph containing a countably infinite number of nodes. In particular, it has one node for each finite set of rational numbers. The only numbers relevant to the statement are numbers of complexity $(8knr)!$ or smaller. In every description of nodes that follows, the term \emph{node} refers both to the object in the order invariant graph and to the set of numbers that it represents. \\
-
-Also, in an order invariant graph, two nodes $(a,b)$ have an edge between them if and only if each other pair of nodes $(c,d)$ that is \emph{order equivalent} with $(a,b)$ have an edge between them. Two pairs of nodes $(a, b)$ and $(c, d)$ are \emph{order equivalent} if $a$ and $c$ are the same size and $b$ and $d$ are the same size and if for all $1 \le i \le |a|$ and $1 \le j \le |b|$, the $i$-th element of $a$ is less than the $j$-th element of $b$ if and only if the $i$-th element of $c$ is less than the $j$-th element of $d$. \\
-
-To give some trivial examples of order invariant graphs: the graph with no edges is order invariant, as is the complete graph. A less trivial example is a graph on $[Q]^2$, in which each node corresponds to a set of two real numbers, and there is an edge between two nodes if and only if their corresponding sets $a$ and $b$ satisfy $a_1 < b_1 < a_2 < b_2$. (Because edges are undirected in order invariant graphs, such an edge will exist if \emph{either} assignment of the vertices to $a$ and $b$ satisfies the inequality above). \\
-
-The \emph{ush()} function takes as input a set and returns a copy of that set with all non-negative numbers in that set incremented by 1. \\ 
-
-Finally, a set of vertices $X$ \emph{reduces} a set of vertices $Y$ if and only if for all $y \in Y$, there exists $x \in X$ such that $x \le_{rlex} y$ and an edge exists between $x$ and $y$. $x \le_{rlex} y$ if and only if $x = y$ or $x_i < y_i$ where $i$ is least such that $x_i \not= y_i$.~\cite{personalcomm} \\
-
-\subsection{Implementation Methods}
-
-In order to create $Z$, we needed to design a Turing machine that would halt if Statement~\ref{eq:friedman} was false, and would loop if Statement~\ref{eq:friedman} was true. Such a Turning Machine's behavior would necessarily be independent of ZFC, because the truth or falsehood of  Statement~\ref{eq:friedman} is itself independent of ZFC.~\cite{friedman} \\
-
-To design such a Turing machine, we wrote a Laconic program which encoded Friedman's statements, then compiled the program down to a description of a single-tape, 2-symbol Turing machine. What follows is an extremely brief description of the design of the Laconic program; for the documented Laconic code itself, along with a detailed explanation of the full compilation process, please see~\cite{github}. \\
-
-Our Laconic program begins by looping over all non-negative values for $k$, $n$, and $r$. For each trio of values $(k, n, r)$, our program generates a list $N$ of all numbers of complexity at most $(8knr)!$. These numbers represent the vertices in our putative order invariant graph. Because Laconic does not support floating-point numbers, the list is entirely composed of integers; it is a list of all numbers that can be written in the form $(((8knr)!)!)((8kni)!)/((8knj)!)$, where $i$ and $j$ are integers satisfying $-(8knr)! \le i \le (8knr)!$ and $1 \le j \le (8knr)!$. (Note that any number that can be expressed in this form is necessarily an integer, because of the large scaling factor in front). \\
-
-After we generate $N$, we generate the nodes in a potential order invariant graph by adding to $N$ all possible lists of $k$ or fewer numbers from $N$. We call this list of lists $V$. \\
-
-We iterate over all binary lists of length $|V|^2$. Any such list $E$ represents a possible set of edges in the graph. To be more precise, we say that an edge exists between node $i$ and node $j$ (represented by $V_i$ and $V_j$ respectively) if and only if $E_{i|V| + j}$ is 1. \\
-
-For any graph $(V, E)$, we say that it is ``valid'' if the following three conditions hold:
-
-\begin{enumerate}
-
-\item No node has an edge to itself.
-\item If an edge exists between node $i$ and node $j$, an edge also exists between node $j$ and node $i$.
-\item The graph has a free $\{x_1,\dots,x_r, ush(x_1),...,ush(x_r)\}$, each  $\{x_1, \dots, x_{(8kni)!}\}$ reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$.
-
-\end{enumerate}
-
-For each list of nodes $V$, we loop over every possible binary list $E$, and if no pair $(V, E)$ yields a valid graph, we halt. \\
-
-When verifying the validity of a graph, checking the first two conditions is trivial, but the third merits further explanation. In order to verify that a given graph $(V, E)$ has a free \\ $\{x_1,\dots,x_r, ush(x_1),...,ush(x_r)\}$, each  $\{x_1, \dots, x_{(8kni)!}\}$ reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$, we look at every possible subset of the nodes in $V$. For each subset, we verify that it has length $r$, that $ush(x_1),...,ush(x_r)$ all exist in $V$, and for each $i$ such that $(8kni)! \le r$, that $\{x_1, \dots, x_{(8kni)!}\}$ reduces $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$. Once we have found such a subset, we know that the third conditon is satisfied.
-
-\section{$G$}
-
-We present a \gbstatenumstate Turing machine that is \emph{independent of Goldbach's conjecture}; in other words, to know whether or not this machine halts is to know whether or not Goldbach's conjecture is true. It is therefore impossible to prove the value of \bbgbstatenum without simultaneously implying a proof of the truth or falsehood of Goldbach's conjecture.
-
-Goldbach's conjecture is stated as follows:
-
-\begin{statement}
-\emph{Every even integer greater than 2 can be expressed as the sum of two primes.}
-\label{goldbachstatement}
-\end{statement}
-
-\subsection{Implementation Methods}
-
-Because Goldbach's conjecture is quite simply stated, the Laconic program encoding the statement is also quite simple. We very briefly describe it here; once again, the documented source code itself, a detailed explanation of the compilation process, and documentation for the Laconic language are available at~\cite{github}.
-
-In order to create $G$, we loop over all even integers $i > 2$. For each $i$, we loop over all positive integers $j$ such that $0 < j < i$. If no such $j$ exists such that both $j$ and $i - j$ are prime, we halt.
-
-To test the primality of a positive integer $j$, we first test to see if $j = 1$; if it is, we determine that $j$ is not prime. Otherwise, we loop over each integer $k$ such that $1 < k < j$. If a $k$ exists such that $j \% k = 0$ (where \% denotes the modulus operation) then we determine that $j$ is not prime; otherwise, we determine that it is.
-
-\section{$R$}
-
-We present a \rmstatenumstate Turing machine that is \emph{independent of Riemann's hypothesis}; in other words, to know whether or not this machine halts is to know whether or not Riemann's hypothesis is true. It is therefore impossible to prove the value of \bbrmstatenum without simultaneously implying a proof of the truth or falsehood of Riemann's hypothesis.
-
-Riemann's hypothesis is traditionally stated as follows:
-
-\begin{statement}
-\emph{The Riemann zeta function has its zeros only at the negative even integers and the complex numbers with real part 1/2.}
-\label{goldbachstatement}
-\end{statement}
-
-\subsection{Equivalent Statement}
-
-Instead of encoding the Riemann zeta function into a Laconic program, it is simpler to use the following statement, which has been shown to be equivalent to the Riemann hypothesis~\cite{riemann}:\\
-
-\begin{statement} \label{eq:riemann}
-For all integers $n \ge 1$, 
-$$\left(\left(\sum_{k \le \delta(n)} \frac{1}{k}\right) - \frac{n^2}{2}\right)^2 < 36n^3$$
-\end{statement}
-
-The function $\delta(n)$ used in Statement~\ref{eq:riemann} is defined as follows: \\
-
-\begin{nscenter}
-$\eta(j)$ if $j = p^k$, $p$ is prime, $k$ is a positive integer \\
-$\eta(j) = 1$ otherwise
-\end{nscenter}
-$$\delta(x) = \prod_{n<x}\prod_{j \le n} \eta(j)$$
-
-\subsection{Implementation Methods}
-
-This statement is equivalent to the following statement, which contains only positive integers:
-
-$$l(n) < r(n)$$ for all positive integers $n$, where
-
-$$l(n) = (a(n))^2 + (b(n))^2$$
-$$r(n) = 36n^3(\delta(n)!)^2 + 2a(n)b(n)$$.
-$$a(n) = \sum_{k \le \delta(n)!} \frac{\delta(n)!}{k}$$
-$$b(n) = \delta(n)!\frac{n^2}{2}$$
-
-To check the Riemann hypothesis, our program computes $a(n)$, $b(n)$, $l(n)$, and $r(n)$, in that order, for each possible value of $n$. If $l(n) \ge r(n)$, our program halts.
+Other possibilities for future work are using the Laconic language for the powerful tool that it is: a language that can be used to easily measure the simplicity of a mathematical statement or algorithm. Perhaps Laconic will be used to measure the complexity of other well-known conjectures, or perhaps even to compare different algorithms for solving the same problem to each other (e.g. to try to rigorously quantify the notion that an insertion sort is simpler than a merge sort)!
 
 \section{Acknowledgements}
 
@@ -537,6 +584,7 @@ Figure~\ref{fig:syntax} presents useful information for how to interpret the des
 \end{center} 
 \end{figure}
 
+\clearpage
 \input{zfc_tm}
 
 \end{appendices}
