@@ -1,0 +1,7 @@
+input x !0 
+
+// Auto-generated code for function one
+
+function BUILTIN_assign1 !0
+function BUILTIN_assign x !0
+return

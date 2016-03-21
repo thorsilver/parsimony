@@ -1,0 +1,7 @@
+input x
+
+// get to the beginning of a value.
+// NON-STANDARD
+
+GET_BACK_TO_START: [x] 1 (L, GET_BACK_TO_START); E (L, GET_BACK_TO_START); _ (R)
+return

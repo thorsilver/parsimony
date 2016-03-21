@@ -39,7 +39,14 @@ A label is an indicator attached to a line of code. Using tape commands, the lin
 
 \subsection{Function Calls}
 
-TMD functions can contain calls to other functions. Function calls contain the name of the function being called, followed by which tapes will be passed as arguments to the function. An example of a function call might be: \\ \\
+Function calls call a TMD function defined within the directory, placing the newborn function call at the top of the function stack with a new program counter of 0 (indicating that the first line of the called function should be the first to be read). The return address of the function call is the line following the function call. \\
+
+Function calls have the following form: \\ \\
+\texttt{function }[function name]([argument name]$)^*$ \\
+
+When a function call is executed, the function that is described by the file [function name]\texttt{.tmd} is executed, starting with its top line. If no file [function name]\texttt{.tmd} exists within the program directory, an error is thrown at compile-time or upon interpreting the function call. \\ 
+
+An example of a function call might be: \\ \\
 \texttt{function add x y}
 
 \subsection{Tape Commands}
@@ -66,6 +73,21 @@ As an example, the reaction \texttt{1 (E, -, LABEL)} would indicate that in resp
 An example of a full tape command might be the following: \\
 \texttt{FIND_E: [x] 1 (R, FIND_E); E ()} \\
 
-This tape command would indicate that on the tape named \texttt{x}, if a \texttt{1} is read off the tape, then a \texttt{1} should be written back onto the tape (because that is default), the head should move right, and the line of code should be re-executed. If an \texttt{E} is read off the tape, then an \texttt{E} should be written back onto the tape, the head should not move, and execution should proceed to the next line of code. Because no reaction is provided in the case where a \texttt{\_} is read off the tape, an error will be thrown if that is the symbol that is read.
+This tape command would indicate that on the tape named \texttt{x}, if a \texttt{1} is read off the tape, then a \texttt{1} should be written back onto the tape (because that is the default), the head should move right, and the line of code should be re-executed. If an \texttt{E} is read off the tape, then an \texttt{E} should be written back onto the tape, the head should not move, and execution should proceed to the next line of code (because those are the defaults). Because no reaction is provided in the case where a \texttt{\_} is read off the tape, an error will be thrown if that is the symbol that is read, both in interpretation and in the Turing machine that results from compilation. \\
+
+It should be noted that while there is no difference between explicitly writing out the default and leaving it implied for head moves and for symbol writes (so, for example, a TMD program including the line \texttt{[x] 1 (1)} will compile to an identical machine as a program including the line \texttt{[x] 1 ()}), there \emph{is} a difference between explicitly writing out the default and leaving it implied for jumps. This difference manifests itself only in terms of parsimony and not in terms of behavior, and therefore is only visible when compiling the program, not when interpreting it (since during interpretation, only behavior matters). This is because while in the case of an explicit jump, the jump address must be written out onto the tape, there is a much shorter abbreviation for the default if it is simply a jump to the next line. Figure~\ref{fig:defaultjump} shows this case in more detail.
+
+\begin{figure} 
+\begin{center} 
+\includegraphics[scale=0.4]{figs/defaultjump.png}
+\caption{This figure shows two code snippets. The two snippets will have identical behavior when interpreted or compiled, because the default is to jump to the next line. However, the bottom snippet will compile to a more parsimonious Turing machine (albeit one that behaves identically) because the compiler will know to use the default abbreviation for ``go to the next line,'' whereas in the top case the compiler will have to write out the jump address for the line labelled \texttt{NEXT_LINE}. Therefore, it is recommended that programmers concerned with parsimony use the approach shown by the bottom snippet. \label{fig:defaultjump}} 
+\end{center} 
+\end{figure}
+
+\subsection{Return Statements}
+
+Return statements indicate the end of a function's execution. After a function returns, that function's call is popped off the function stack, and execution continues at the line of code following the line that called the function that just returned. If the function stack is empty, and there is no function to return to, 
+
+
 
 \end{document}

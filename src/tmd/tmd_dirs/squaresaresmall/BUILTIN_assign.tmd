@@ -1,0 +1,11 @@
+input x y
+
+// assigns x to the value of y
+
+function BUILTIN_clear x
+READ_Y: [y] 1 (R); E (SAW_E, R); _ (GO_LEFT_X, L)
+SAW_1: [x] _ (1, R, READ_Y); E (1, R, READ_Y)
+SAW_E: [x] _ (E, R, READ_Y); E (E, R, READ_Y)
+GO_LEFT_X: [x] _ (L)
+GBTS: function BUILTIN_getBackToStart2 x y
+return

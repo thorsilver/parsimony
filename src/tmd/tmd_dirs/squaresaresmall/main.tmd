@@ -1,0 +1,12 @@
+input a b !0 !1 !2 
+
+// Auto-generated code for function main
+
+WHILE_TEST_0: function BUILTIN_assign !0 b
+function BUILTIN_assign5 !1
+function BUILTIN_greaterThan !2 !1 !0
+[!2] E (WHILE_STATE_0_FALSE); 1 ()
+function square a b !0 !1 !2 
+function incr a !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

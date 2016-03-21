@@ -10,8 +10,7 @@ function BUILTIN_assign !1 h2
 function BUILTIN_or !2 !0 !1
 [!2] E (IF_STATE_0_FALSE); 1 ()
 return
-IF_STATE_0_FALSE: function zero i !0 
-function lessThanLength i a h1 !0 !1 !2 
+IF_STATE_0_FALSE: function zeroAndLessThanLength i a h1 !0 !1 !2 
 WHILE_TEST_0: function BUILTIN_assign !0 h1
 [!0] E (WHILE_STATE_0_FALSE); 1 ()
 function zero j !0 

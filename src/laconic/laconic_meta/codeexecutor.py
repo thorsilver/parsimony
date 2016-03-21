@@ -134,7 +134,7 @@ class CodeExecutor(LaconicListener):
     # For executing a single nondefcommand
     # returns a truth value that is True if there was a return statement that occurred
     # ( and that therefore the function that wraps the nondefprog should end)
-    def executeNonDefCommand(self, command, mapping):
+    def executeNonDefCommand(self, command, mapping):  
         if command.funcproccall() != None:    
             callBody = command.funcproccall().funcproccallbody()
             
@@ -210,6 +210,12 @@ class CodeExecutor(LaconicListener):
             return False
             
         elif command.returnstate() != None:
+            if command.returnstate().getText() == "halt;":
+                try:
+                    assert len(self.stack) == 0
+                except:
+                    raise Exception("You can't have a halt statement inside of a function!")
+                
             return True
         
         elif command.printstate() != None:
@@ -448,7 +454,7 @@ class CodeExecutor(LaconicListener):
             return []
             
     def evaluateList2expr(self, ctx, mapping):
-#        print "list2", ctx, ctx.getText()
+ #       print "list2", ctx, ctx.getText(), ctx.listexpr(0), ctx.listexpr(0)
         
         if ctx.OPERATOR_APPEND2() != None:        
 #            print mapping
@@ -469,14 +475,15 @@ class CodeExecutor(LaconicListener):
             
         elif ctx.list2expr(0) != None:            
             
- #           print "parens"
+#            print "parens"
             
             # This is the parens case
             # There better not be any cases after this one containing list2exprs
             return self.evaluateList2expr(ctx.list2expr(0), mapping)
             
-        elif ctx.listexpr(0) != None:
-            
+#        elif ctx.listexpr(0) != None:
+        elif "," in ctx.getText():
+                
 #            print ctx.getText()
 #            print ctx.listexpr(0).getText()
 #            print "byo"

@@ -1,0 +1,9 @@
+input x y
+
+// shift x and y past their signs
+
+[x] E (R); 1 (SHIFT_Y)
+[x] _ (L); 1 ()
+SHIFT_Y: [y] E (R); 1 (RETURN)
+[y] _ (L); 1 ()
+RETURN: return

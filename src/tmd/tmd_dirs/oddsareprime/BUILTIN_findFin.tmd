@@ -1,0 +1,7 @@
+input x
+
+// get to the end of a value.
+// NON-STANDARD FUNCTION
+
+FIND_FIN: [x] 1 (R, FIND_FIN); E (R, FIND_FIN); _ (L)
+return 

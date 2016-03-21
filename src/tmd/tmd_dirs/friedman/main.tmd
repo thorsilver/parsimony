@@ -1,4 +1,4 @@
-input h8 h9 maxKNR h2 h3 h1 h6 h7 h4 h5 hll numVertices eightKN graph eightKNRFacFac hl8 hl7 hl6 hl5 hl4 hl3 hl2 hl1 edges h10 h11 k h13 h14 n r h12 !0 !1 !2 !3 
+input h8 h9 maxKNR h2 h3 h1 h6 h7 h4 h5 hll numVertices eightKN ordering graph eightKNRFacFac hl8 hl7 hl6 hl5 hl4 hl3 hl2 hl1 edges h10 h11 k h13 h14 h15 n unPermutedGraph r h12 !0 !1 !2 !3 
 
 // Auto-generated code for function main
 
@@ -20,35 +20,43 @@ WHILE_TEST_3: function BUILTIN_assign !0 r
 function BUILTIN_assign !1 maxKNR
 function BUILTIN_greaterOrEqual !2 !1 !0
 [!2] E (WHILE_STATE_3_FALSE); 1 ()
-function everyGraph k n r h1 h2 h3 h4 hl1 hl2 hl3 eightKN eightKNRFacFac numVertices graph !0 !1 !2 
+function everyGraph k n r h1 h2 h3 h4 h5 hl1 hl2 hl3 eightKN eightKNRFacFac numVertices unPermutedGraph !0 !1 !2 
+function zeroes numVertices h1 ordering !0 !1 !2 
+function zero h2 !0 
+WHILE_TEST_4: function BUILTIN_assign !0 h2
+function BUILTIN_assignNot !1 !0
+[!1] E (WHILE_STATE_4_FALSE); 1 ()
+function containsDuplicates ordering h1 h2 h3 h4 h5 !0 !1 !2 
+function BUILTIN_assign !0 h5
+function BUILTIN_assignNot !1 !0
+[!1] E (IF_STATE_0_FALSE); 1 ()
+function index2Map unPermutedGraph ordering h1 h2 hl1 graph !0 !1 !2 
 function BUILTIN_assign !0 numVertices
 function BUILTIN_assign !1 numVertices
 function BUILTIN_multiply !2 !0 !1
 function BUILTIN_assign h1 !2
-function zeroAndEmpty h2 edges !0 
-WHILE_TEST_4: function BUILTIN_assign !0 h2
-function BUILTIN_assign !1 h1
-function BUILTIN_greaterThan !2 !1 !0
-[!2] E (WHILE_STATE_4_FALSE); 1 ()
-function zero h3 !0 
-function appendAndIncr edges h3 h2 !0 !1 !2 
-[!0] E (WHILE_TEST_4); 1 (WHILE_TEST_4)
-WHILE_STATE_4_FALSE: WHILE_TEST_5: function BUILTIN_assign !0 h3
+function zeroes h1 h2 edges !0 !1 !2 
+WHILE_TEST_5: function BUILTIN_assign !0 h3
 function BUILTIN_assignNot !1 !0
 [!1] E (WHILE_STATE_5_FALSE); 1 ()
-function checkGraphForOrderInvariance graph edges numVertices hl1 hl2 hl3 hl4 h1 h2 h3 h4 h5 h6 h7 h8 h9 h10 h11 h12 h13 h14 !0 !1 !2 !3 
+function checkGraphForOrderInvariance graph edges numVertices hl1 hl2 hl3 hl4 h1 h2 h3 h4 h5 h6 h7 h8 h9 h10 h11 h12 h13 h15 h14 !0 !1 !2 !3 
 function BUILTIN_assign !0 h14
-[!0] E (IF_STATE_0_FALSE); 1 ()
-function hasAFree graph edges numVertices eightKN eightKNRFacFac k n r h1 h2 h3 h4 h5 h6 h7 h8 hl1 hl2 hl3 hl4 hl5 hl6 hl7 hl8 hll h9 !0 !1 !2 !3 
+[!0] E (IF_STATE_1_FALSE); 1 ()
+function hasAFree graph edges numVertices eightKN eightKNRFacFac k n r h1 h2 h3 h4 h5 h6 h7 h8 h9 hl1 hl2 hl3 hl4 hl5 hl6 hl7 hl8 hll h9 !0 !1 !2 !3 
 function BUILTIN_assign !0 h9
 function BUILTIN_assignNot !1 !0
-[!1] E (IF_STATE_1_FALSE); 1 ()
+[!1] E (IF_STATE_2_FALSE); 1 ()
 return
-IF_STATE_1_FALSE: IF_STATE_0_FALSE: function incrementList edges h1 h2 h4 h3 hl1 !0 !1 !2 
+IF_STATE_2_FALSE: IF_STATE_1_FALSE: function two h5 !0 
+function incrementList edges h5 h1 h2 h4 h3 hl1 !0 !1 !2 
 function BUILTIN_assign !0 hl1
 function BUILTIN_assign edges !0
 [!0] E (WHILE_TEST_5); 1 (WHILE_TEST_5)
-WHILE_STATE_5_FALSE: function incr r !0 !1 !2 
+WHILE_STATE_5_FALSE: IF_STATE_0_FALSE: function incrementList ordering numVertices h1 h3 h4 h2 hl2 !0 !1 !2 
+function BUILTIN_assign !0 hl2
+function BUILTIN_assign ordering !0
+[!0] E (WHILE_TEST_4); 1 (WHILE_TEST_4)
+WHILE_STATE_4_FALSE: function incr r !0 !1 !2 
 [!0] E (WHILE_TEST_3); 1 (WHILE_TEST_3)
 WHILE_STATE_3_FALSE: function incr n !0 !1 !2 
 [!0] E (WHILE_TEST_2); 1 (WHILE_TEST_2)

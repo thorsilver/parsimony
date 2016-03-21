@@ -1,0 +1,68 @@
+/* A short Laconic program dedicated to checking the conjecture that all odd numbers are prime. */
+
+func one(x) {
+    x = 1;
+    return;
+}
+
+func incr(x) {
+    x = x + 1;
+    return;
+}
+
+/* Computes x modulo y */
+func modulus(x, y, out) {
+    out = x;
+    
+    while (out >= y) {
+        out = out - y;
+    }
+    
+    return;
+}
+
+/* Figures out if x is composite, and puts the output in y */
+/* Does not modify x, modifies y */
+func isComposite(x, h, y) {
+    if (x == 1) {
+        one(y);
+        return;
+    }
+    
+    y = 2;
+    
+    while (x > y) {
+        modulus(x, y, h);
+    
+        if (h == 0) {
+            one(y);
+            return;
+        }
+        incr(y);
+    }
+    
+    y = 0;
+    return;
+}
+
+int oddNumber;
+int h;
+int compositeFound;
+
+one(oddNumber);
+
+/* The while loop is always on */
+while (oddNumber) {
+    incr(oddNumber);
+    incr(oddNumber);
+    isComposite(oddNumber, h, compositeFound);
+        
+    if (compositeFound) {
+        halt;
+    }
+
+    print oddNumber;
+}
+
+/* This line will never be reached */
+halt;

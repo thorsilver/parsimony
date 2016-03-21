@@ -1,0 +1,4136 @@
+States: 689
+
+START start:
+	_ -> write_var_counter_H; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_counter_H:
+	_ -> write_var_counter_out; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_counter_out:
+	_ -> write_var_value_underscore_2; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_value_underscore_2:
+	_ -> write_var_value_name_space_0; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_value_name:
+	_ -> write_var_value_underscore_3; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_value_underscore_3:
+	_ -> write_var_value_underscore_4; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_value_underscore_4:
+	_ -> write_var_value_underscore_5; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_value_underscore_5:
+	_ -> write_var_value_underscore_6; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_value_underscore_6:
+	_ -> write_var_value_initvalue_0; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_value_find_H_1:
+	_ -> write_var_value_find_H_1; L; _
+	1 -> write_var_value_find_H_1; L; 1
+	H -> write_var_value_decrement_counter; L; H
+	E -> write_var_value_find_H_1; L; E
+
+write_var_value_decrement_counter:
+	_ -> write_var_value_delete_1; R; _
+	1 -> write_var_value_find_H_2; -; E
+	H -> ERROR; -; H
+	E -> write_var_value_decrement_counter; L; 1
+
+write_var_value_delete_1:
+	_ -> ERROR; -; _
+	1 -> write_var_value_find_H_2; -; _
+	H -> write_var_value_out; R; H
+	E -> ERROR; -; E
+
+write_var_value_find_H_2:
+	_ -> write_var_value_find_H_2; R; _
+	1 -> write_var_value_find_H_2; R; 1
+	H -> write_var_value_find_H_3; R; H
+	E -> write_var_value_find_H_2; R; E
+
+write_var_value_find_H_3:
+	_ -> write_var_value_find_H_3; R; _
+	1 -> write_var_value_find_H_3; R; 1
+	H -> write_var_counter_out; R; _
+	E -> write_var_value_find_H_3; R; E
+
+write_var_value_name_space_0:
+	_ -> write_var_value_name; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_value_initvalue_0:
+	_ -> write_var_value_initvalue_1; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_value_initvalue_1:
+	_ -> write_var_value_find_H_1; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_value_out:
+	_ -> write_var_value_out; R; _
+	1 -> write_var_incr_mark; -; 1
+	H -> ERROR; -; H
+	E -> write_var_incr_mark; -; E
+
+write_var_incr_mark:
+	_ -> write_var_incr_find_fin; R; H
+	1 -> write_var_incr_mark; R; 1
+	H -> write_var_incr_mark; R; H
+	E -> write_var_incr_mark; R; E
+
+write_var_incr_find_fin:
+	_ -> write_var_incr_find_fin; R; _
+	1 -> write_var_incr_find_fin; R; 1
+	H -> write_var_incr_get_past_value_left; L; H
+	E -> write_var_incr_find_fin; R; E
+
+write_var_incr_get_past_value_left:
+	_ -> write_var_incr_find_id; -; _
+	1 -> write_var_incr_get_past_value_left; L; 1
+	H -> write_var_incr_get_past_value_left; L; H
+	E -> write_var_incr_get_past_value_left; L; E
+
+write_var_incr_find_id:
+	_ -> write_var_incr_find_id; L; _
+	1 -> write_var_incr_id; -; 1
+	H -> write_var_incr_find_value_right; -; _
+	E -> write_var_incr_id; -; E
+
+write_var_incr_id:
+	_ -> write_var_incr_find_value_left; L; E
+	1 -> write_var_incr_id; L; E
+	H -> ERROR; -; H
+	E -> write_var_incr_find_underscore; -; 1
+
+write_var_incr_find_underscore:
+	_ -> write_var_incr_find_value_left; -; _
+	1 -> write_var_incr_find_underscore; L; 1
+	H -> write_var_incr_find_underscore; L; H
+	E -> write_var_incr_find_underscore; L; E
+
+write_var_incr_find_value_left:
+	_ -> write_var_incr_find_value_left; L; _
+	1 -> write_var_incr_get_past_value_left; -; 1
+	H -> ERROR; -; H
+	E -> write_var_incr_get_past_value_left; -; E
+
+write_var_incr_find_value_right:
+	_ -> write_var_incr_find_value_right; R; _
+	1 -> write_var_incr_get_past_value_right; -; 1
+	H -> ERROR; -; H
+	E -> write_var_incr_get_past_value_right; -; E
+
+write_var_incr_get_past_value_right:
+	_ -> write_var_value_out; -; _
+	1 -> write_var_incr_get_past_value_right; R; 1
+	H -> write_var_incr_out; R; _
+	E -> write_var_incr_get_past_value_right; R; E
+
+write_var_incr_out:
+	_ -> write_var_heads_write_H; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_heads_write_H:
+	_ -> write_var_heads_find_value; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_var_heads_find_value:
+	_ -> write_var_heads_find_value; L; _
+	1 -> write_var_heads_get_past_value; -; 1
+	H -> write_var_heads_get_to_fin; R; H
+	E -> write_var_heads_get_past_value; -; E
+
+write_var_heads_get_past_value:
+	_ -> write_var_heads_find_id; L; H
+	1 -> write_var_heads_get_past_value; L; 1
+	H -> write_var_heads_get_past_value; L; H
+	E -> write_var_heads_get_past_value; L; E
+
+write_var_heads_find_id:
+	_ -> write_var_heads_find_id; L; _
+	1 -> write_var_heads_get_past_id; -; 1
+	H -> ERROR; -; H
+	E -> write_var_heads_get_past_id; -; E
+
+write_var_heads_get_past_id:
+	_ -> write_var_heads_find_value; -; _
+	1 -> write_var_heads_get_past_id; L; 1
+	H -> write_var_heads_get_past_id; L; H
+	E -> write_var_heads_get_past_id; L; E
+
+write_var_heads_get_to_fin:
+	_ -> write_var_heads_get_to_fin; R; _
+	1 -> write_var_heads_get_to_fin; R; 1
+	H -> write_var_heads_recog_pattern_H; R; H
+	E -> write_var_heads_get_to_fin; R; E
+
+write_var_heads_recog_pattern_H:
+	_ -> write_var_heads_out; R; H
+	1 -> write_var_heads_get_to_fin; R; 1
+	H -> write_var_heads_recog_pattern_H; R; H
+	E -> write_var_heads_get_to_fin; R; E
+
+write_var_heads_out:
+	_ -> write_aux_underscore_2; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_underscore_2:
+	_ -> write_aux_underscore_3; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_underscore_3:
+	_ -> write_aux_line_number_space_0; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_E_1:
+	_ -> write_aux_underscore_4; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_underscore_4:
+	_ -> write_aux_counter_in; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_E_2:
+	_ -> write_aux_H; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_H:
+	_ -> write_aux_out; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_line_number_space_0:
+	_ -> write_aux_line_number_space_1; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_line_number_space_1:
+	_ -> write_aux_line_number_space_2; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_line_number_space_2:
+	_ -> write_aux_E_1; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_counter_in:
+	_ -> write_aux_counter_1; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_counter_H:
+	_ -> write_aux_counter_out; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_counter_1:
+	_ -> write_aux_counter_H; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_counter_out:
+	_ -> write_aux_function_name_space_0; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_function_name_space_0:
+	_ -> write_aux_function_name_space_1; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_function_name_space_1:
+	_ -> write_aux_function_name_space_2; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_function_name_space_2:
+	_ -> write_aux_E_2; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_out:
+	_ -> write_aux_out; L; _
+	1 -> write_aux_out; L; 1
+	H -> write_aux_var_decr_counter; L; H
+	E -> write_aux_out; L; E
+
+write_aux_var_decr_counter:
+	_ -> write_aux_var_delete_1; R; _
+	1 -> write_aux_var_get_past_H; -; E
+	H -> ERROR; -; H
+	E -> write_aux_var_decr_counter; L; 1
+
+write_aux_var_delete_1:
+	_ -> ERROR; -; _
+	1 -> write_aux_var_get_past_H; -; _
+	H -> write_aux_var_out; R; _
+	E -> ERROR; -; E
+
+write_aux_var_get_past_H:
+	_ -> write_aux_var_get_past_H; R; _
+	1 -> write_aux_var_get_past_H; R; 1
+	H -> write_aux_var_find_new_var; R; H
+	E -> write_aux_var_get_past_H; R; E
+
+write_aux_var_find_new_var:
+	_ -> write_aux_var_find_new_var; R; _
+	1 -> write_aux_var_find_new_var; R; 1
+	H -> write_aux_var_write_E; R; _
+	E -> write_aux_var_find_new_var; R; E
+
+write_aux_var_write_E:
+	_ -> write_aux_var_write_H; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_var_write_H:
+	_ -> write_aux_out; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_var_out:
+	_ -> write_aux_var_out; R; _
+	1 -> write_aux_var_out; R; 1
+	H -> write_aux_var_out; R; H
+	E -> write_aux_incr_go_right_twice; R; E
+
+write_aux_incr_go_right_twice:
+	_ -> write_aux_incr_go_right_twice_move_by_1; R; _
+	1 -> write_aux_incr_go_right_twice_move_by_1; R; 1
+	H -> write_aux_incr_go_right_twice_move_by_1; R; H
+	E -> write_aux_incr_go_right_twice_move_by_1; R; E
+
+write_aux_incr_write_H_1:
+	_ -> write_aux_incr_get_to_fin; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_incr_get_to_fin:
+	_ -> write_aux_incr_get_to_fin; R; _
+	1 -> write_aux_incr_get_to_fin; R; 1
+	H -> write_aux_incr_incr; L; H
+	E -> write_aux_incr_get_to_fin; R; E
+
+write_aux_incr_incr:
+	_ -> write_aux_incr_push_E; R; _
+	1 -> write_aux_incr_incr; L; E
+	H -> write_aux_incr_push_E; R; H
+	E -> write_aux_incr_get_past_number; -; 1
+
+write_aux_incr_push__:
+	_ -> write_aux_incr_push__; R; _
+	1 -> write_aux_incr_push_1; R; _
+	H -> write_aux_incr_exit_push; R; _
+	E -> write_aux_incr_push_E; R; _
+
+write_aux_incr_push_1:
+	_ -> write_aux_incr_push__; R; 1
+	1 -> write_aux_incr_push_1; R; 1
+	H -> write_aux_incr_exit_push; R; 1
+	E -> write_aux_incr_push_E; R; 1
+
+write_aux_incr_push_E:
+	_ -> write_aux_incr_push__; R; E
+	1 -> write_aux_incr_push_1; R; E
+	H -> write_aux_incr_exit_push; R; E
+	E -> write_aux_incr_push_E; R; E
+
+write_aux_incr_exit_push:
+	_ -> write_aux_incr_find_pushy; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_incr_find_pushy:
+	_ -> write_aux_incr_find_pushy; L; _
+	1 -> write_aux_incr_incr; -; 1
+	H -> write_aux_incr_move_H; R; _
+	E -> write_aux_incr_find_pushy; L; E
+
+write_aux_incr_get_past_number:
+	_ -> write_aux_incr_incr; L; _
+	1 -> write_aux_incr_get_past_number; L; 1
+	H -> write_aux_incr_move_H; R; _
+	E -> write_aux_incr_get_past_number; L; E
+
+write_aux_incr_move_H:
+	_ -> write_aux_incr_get_to_fin; R; H
+	1 -> write_aux_incr_move_H; R; 1
+	H -> write_aux_incr_write_E; R; _
+	E -> write_aux_incr_move_H; R; E
+
+write_aux_incr_write_E:
+	_ -> write_aux_incr_underscore_1; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_incr_underscore_1:
+	_ -> write_aux_incr_underscore_2; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_incr_underscore_2:
+	_ -> write_aux_incr_write_H_2; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_incr_write_H_2:
+	_ -> write_aux_incr_out; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_incr_go_right_twice_move_by_1:
+	_ -> write_aux_incr_write_H_1; R; _
+	1 -> write_aux_incr_write_H_1; R; 1
+	H -> write_aux_incr_write_H_1; R; H
+	E -> write_aux_incr_write_H_1; R; E
+
+write_code_f_5_underscore_1:
+	_ -> write_code_f_5ln_H; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_5ln_H:
+	_ -> write_code_f_5_funcname_preamble_E; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_5_a_underscore:
+	_ -> write_code_f_5_a_name_0; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_5_a_name_0:
+	_ -> write_code_f_6_underscore_1; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_5_funcname_preamble_E:
+	_ -> write_code_f_5_funcname_0; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_5_funcname_0:
+	_ -> write_code_f_5_a_underscore; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_ln_underscore_2:
+	_ -> write_code_f_6ln_H; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_underscore_1:
+	_ -> write_code_f_6_ln_underscore_2; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6ln_H:
+	_ -> write_code_f_6_varname_preamble_1; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_1_underscore:
+	_ -> write_code_f_6_1_one; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_1_one:
+	_ -> write_code_f_6_1_read; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_1_read:
+	_ -> write_code_f_6_1_write; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_1_write:
+	_ -> write_code_f_6_1_headmove; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_1_headmove:
+	_ -> write_code_f_6_1_linenumber_0; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_1_linenumber_0:
+	_ -> write_code_f_6_1_linenumber_1; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_1_linenumber_1:
+	_ -> write_code_f_6_E_underscore; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_E_underscore:
+	_ -> write_code_f_6_E_one; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_E_one:
+	_ -> write_code_f_6_E_read; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_E_read:
+	_ -> write_code_f_6_E_write; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_E_write:
+	_ -> write_code_f_6_E_headmove; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_E_headmove:
+	_ -> write_code_f_7_underscore_1; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_varname_preamble_1:
+	_ -> write_code_f_6_varname_0; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_6_varname_0:
+	_ -> write_code_f_6_1_underscore; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_7_ln_underscore_2:
+	_ -> write_code_f_7ln_H; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_7_underscore_1:
+	_ -> write_code_f_7_ln_underscore_2; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_7ln_H:
+	_ -> write_code_f_7_funcname_preamble_E; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_7_b_underscore:
+	_ -> write_code_f_7_b_name_0; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_7_b_name_0:
+	_ -> write_code_f_7_c_underscore; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_7_c_underscore:
+	_ -> write_code_f_7_c_name_0; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_7_c_name_0:
+	_ -> write_code_f_7_c_name_1; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_7_c_name_1:
+	_ -> write_code_f_7_a_underscore; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_7_a_underscore:
+	_ -> write_code_f_7_a_name_0; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_7_a_name_0:
+	_ -> write_code_f_8_underscore_1; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_7_funcname_preamble_E:
+	_ -> write_code_f_7_funcname_0; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_7_funcname_0:
+	_ -> write_code_f_7_b_underscore; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_8_ln_underscore_2:
+	_ -> write_code_f_8ln_H; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_8_underscore_1:
+	_ -> write_code_f_8_ln_underscore_2; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_8ln_H:
+	_ -> write_code_g_underscore_1; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_aux_incr_out:
+	_ -> write_code_f_underscore_2; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_underscore_2:
+	_ -> write_code_f_underscore_3; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_underscore_3:
+	_ -> write_code_f_0; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_f_0:
+	_ -> write_code_f_5_underscore_1; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_5_underscore_1:
+	_ -> write_code_g_5ln_H; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_5ln_H:
+	_ -> write_code_g_5_varname_preamble_1; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_5_E_underscore:
+	_ -> write_code_g_5_E_one; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_5_E_one:
+	_ -> write_code_g_5_E_read; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_5_E_read:
+	_ -> write_code_g_5_E_write; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_5_E_write:
+	_ -> write_code_g_5_E_headmove; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_5_E_headmove:
+	_ -> write_code_g_6_underscore_1; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_5_varname_preamble_1:
+	_ -> write_code_g_5_varname_0; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_5_varname_0:
+	_ -> write_code_g_5_E_underscore; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_6_ln_underscore_2:
+	_ -> write_code_g_6ln_H; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_6_underscore_1:
+	_ -> write_code_g_6_ln_underscore_2; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_6ln_H:
+	_ -> write_code_skeleton_out; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_underscore_1:
+	_ -> write_code_g_underscore_2; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_underscore_2:
+	_ -> write_code_g_underscore_3; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_underscore_3:
+	_ -> write_code_g_0; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_g_0:
+	_ -> write_code_g_5_underscore_1; R; E
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_skeleton_out:
+	_ -> write_code_incr_ln_H; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_incr_ln_H:
+	_ -> write_code_incr_ln_find_ln; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_incr_ln_find_ln:
+	_ -> write_code_incr_ln_find_ln; L; _
+	1 -> write_code_incr_ln_find_ln; L; 1
+	H -> write_code_incr_ln_incr_ln; L; H
+	E -> write_code_incr_ln_find_ln; L; E
+
+write_code_incr_ln_incr_ln:
+	_ -> write_code_incr_ln_push_E; R; _
+	1 -> write_code_incr_ln_incr_ln; L; E
+	H -> write_code_incr_ln_move_incr_end_1; R; H
+	E -> write_code_incr_ln_find_ln; L; 1
+
+write_code_incr_ln_push__:
+	_ -> write_code_incr_ln_push__; R; _
+	1 -> write_code_incr_ln_push_1; R; _
+	H -> write_code_incr_ln_exit_push; R; _
+	E -> write_code_incr_ln_push_E; R; _
+
+write_code_incr_ln_push_1:
+	_ -> write_code_incr_ln_push__; R; 1
+	1 -> write_code_incr_ln_push_1; R; 1
+	H -> write_code_incr_ln_push_H; R; 1
+	E -> write_code_incr_ln_push_E; R; 1
+
+write_code_incr_ln_push_H:
+	_ -> write_code_incr_ln_push__; R; H
+	1 -> write_code_incr_ln_push_1; R; H
+	H -> write_code_incr_ln_push_H; R; H
+	E -> write_code_incr_ln_push_E; R; H
+
+write_code_incr_ln_push_E:
+	_ -> write_code_incr_ln_push__; R; E
+	1 -> write_code_incr_ln_push_1; R; E
+	H -> write_code_incr_ln_push_H; R; E
+	E -> write_code_incr_ln_push_E; R; E
+
+write_code_incr_ln_exit_push:
+	_ -> write_code_incr_ln_find_pushy_ln_1; L; H
+	1 -> write_code_incr_ln_push_1; R; H
+	H -> write_code_incr_ln_push_H; R; H
+	E -> write_code_incr_ln_push_E; R; H
+
+write_code_incr_ln_find_pushy_ln_1:
+	_ -> write_code_incr_ln_find_pushy_ln_1; L; _
+	1 -> write_code_incr_ln_find_pushy_ln_1; L; 1
+	H -> write_code_incr_ln_find_pushy_ln_2; L; H
+	E -> write_code_incr_ln_find_pushy_ln_1; L; E
+
+write_code_incr_ln_find_pushy_ln_2:
+	_ -> write_code_incr_ln_incr_ln; -; _
+	1 -> write_code_incr_ln_incr_ln; -; 1
+	H -> write_code_incr_ln_move_incr_end_1; R; H
+	E -> write_code_incr_ln_find_pushy_ln_1; L; E
+
+write_code_incr_ln_move_incr_end_1:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> write_code_incr_ln_move_incr_end_2; R; H
+	E -> ERROR; -; E
+
+write_code_incr_ln_move_incr_end_2:
+	_ -> write_code_incr_ln_check_for_fin; R; _
+	1 -> write_code_incr_ln_move_incr_end_2; R; 1
+	H -> write_code_incr_ln_get_to_fin; R; _
+	E -> write_code_incr_ln_move_incr_end_2; R; E
+
+write_code_incr_ln_check_for_fin:
+	_ -> write_code_incr_ln_check_for_fin; R; _
+	1 -> write_code_incr_ln_move_incr_end_2; R; 1
+	H -> write_code_incr_ln_get_to_next_function; L; H
+	E -> write_code_incr_ln_move_incr_end_2; R; E
+
+write_code_incr_ln_get_to_fin:
+	_ -> write_code_incr_ln_get_to_fin_recog_pattern__; R; _
+	1 -> write_code_incr_ln_get_to_fin; R; 1
+	H -> write_code_incr_ln_get_to_fin; R; H
+	E -> write_code_incr_ln_get_to_fin; R; E
+
+write_code_incr_ln_get_to_next_function:
+	_ -> write_code_incr_ln_get_to_next_function; L; _
+	1 -> write_code_incr_ln_get_to_next_function; L; 1
+	H -> write_code_incr_ln_get_to_next_function_recog_pattern_H; L; _
+	E -> write_code_incr_ln_get_to_next_function; L; E
+
+write_code_incr_ln_check_if_last_function:
+	_ -> write_code_incr_ln_find_ln; -; _
+	1 -> ERROR; -; 1
+	H -> write_code_incr_ln_out; R; H
+	E -> ERROR; -; E
+
+write_code_incr_ln_get_to_fin_recog_pattern__:
+	_ -> write_code_incr_ln_get_to_fin_recog_pattern__; R; _
+	1 -> write_code_incr_ln_get_to_fin; R; 1
+	H -> write_code_incr_ln_find_ln; L; H
+	E -> write_code_incr_ln_get_to_fin; R; E
+
+write_code_incr_ln_get_to_next_function_recog_pattern_H:
+	_ -> write_code_incr_ln_get_to_next_function; L; _
+	1 -> write_code_incr_ln_get_to_next_function; L; 1
+	H -> write_code_incr_ln_check_if_last_function; L; _
+	E -> write_code_incr_ln_get_to_next_function; L; E
+
+write_code_incr_ln_out:
+	_ -> write_code_mark_fn_check_for_line; R; _
+	1 -> write_code_mark_fn_read_symbol_read; R; 1
+	H -> write_code_mark_fn_out; L; H
+	E -> ERROR; -; E
+
+write_code_mark_fn_read_symbol_read:
+	_ -> write_code_mark_fn_read_symbol_written; R; _
+	1 -> write_code_mark_fn_read_symbol_written; R; 1
+	H -> write_code_mark_fn_read_symbol_written; R; H
+	E -> write_code_mark_fn_read_symbol_written; R; E
+
+write_code_mark_fn_read_symbol_written:
+	_ -> write_code_mark_fn_read_head_move; R; _
+	1 -> write_code_mark_fn_read_head_move; R; 1
+	H -> write_code_mark_fn_read_head_move; R; H
+	E -> write_code_mark_fn_read_head_move; R; E
+
+write_code_mark_fn_read_head_move:
+	_ -> write_code_mark_fn_get_past_var_name; R; _
+	1 -> write_code_mark_fn_get_past_var_name; R; 1
+	H -> write_code_mark_fn_get_past_var_name; R; H
+	E -> write_code_mark_fn_get_past_var_name; R; E
+
+write_code_mark_fn_check_for_line:
+	_ -> write_code_mark_fn_check_for_func; R; _
+	1 -> write_code_mark_fn_get_past_ln; R; 1
+	H -> ERROR; -; H
+	E -> write_code_mark_fn_get_past_ln; R; E
+
+write_code_mark_fn_get_past_ln:
+	_ -> write_code_mark_fn_check_for_line_type; R; _
+	1 -> write_code_mark_fn_get_past_ln; R; 1
+	H -> write_code_mark_fn_get_past_ln; R; H
+	E -> write_code_mark_fn_get_past_ln; R; E
+
+write_code_mark_fn_check_for_line_type:
+	_ -> write_code_incr_ln_out; R; _
+	1 -> write_code_mark_fn_get_past_var_name; -; 1
+	H -> ERROR; -; H
+	E -> write_code_mark_fn_get_past_arg_name; -; E
+
+write_code_mark_fn_get_past_var_name:
+	_ -> write_code_incr_ln_out; R; _
+	1 -> write_code_mark_fn_get_past_var_name; R; 1
+	H -> write_code_mark_fn_get_past_var_name; R; H
+	E -> write_code_mark_fn_get_past_var_name; R; E
+
+write_code_mark_fn_get_past_arg_name:
+	_ -> write_code_mark_fn_check_for_arg; R; _
+	1 -> write_code_mark_fn_get_past_arg_name; R; 1
+	H -> write_code_mark_fn_get_past_arg_name; R; H
+	E -> write_code_mark_fn_get_past_arg_name; R; E
+
+write_code_mark_fn_check_for_arg:
+	_ -> write_code_mark_fn_check_for_line; R; _
+	1 -> write_code_mark_fn_get_past_arg_name; -; 1
+	H -> ERROR; -; H
+	E -> write_code_mark_fn_get_past_arg_name; -; E
+
+write_code_mark_fn_check_for_func:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> write_code_incr_ln_out; R; H
+
+write_code_mark_fn_out:
+	_ -> write_code_mark_fn_out; L; _
+	1 -> write_code_mark_fn_out; L; 1
+	H -> write_code_incr_fn_incr; L; H
+	E -> write_code_mark_fn_out; L; E
+
+write_code_incr_fn_incr:
+	_ -> write_code_incr_fn_push_E; R; _
+	1 -> write_code_incr_fn_incr; L; E
+	H -> write_code_incr_fn_move_incr_end_1; R; H
+	E -> write_code_mark_fn_out; L; 1
+
+write_code_incr_fn_push__:
+	_ -> write_code_incr_fn_push__; R; _
+	1 -> write_code_incr_fn_push_1; R; _
+	H -> write_code_incr_fn_exit_push; R; _
+	E -> write_code_incr_fn_push_E; R; _
+
+write_code_incr_fn_push_1:
+	_ -> write_code_incr_fn_push__; R; 1
+	1 -> write_code_incr_fn_push_1; R; 1
+	H -> write_code_incr_fn_push_H; R; 1
+	E -> write_code_incr_fn_push_E; R; 1
+
+write_code_incr_fn_push_H:
+	_ -> write_code_incr_fn_push__; R; H
+	1 -> write_code_incr_fn_push_1; R; H
+	H -> write_code_incr_fn_push_H; R; H
+	E -> write_code_incr_fn_push_E; R; H
+
+write_code_incr_fn_push_E:
+	_ -> write_code_incr_fn_push__; R; E
+	1 -> write_code_incr_fn_push_1; R; E
+	H -> write_code_incr_fn_push_H; R; E
+	E -> write_code_incr_fn_push_E; R; E
+
+write_code_incr_fn_exit_push:
+	_ -> write_code_incr_fn_find_pushy_1; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+write_code_incr_fn_find_pushy_1:
+	_ -> write_code_incr_fn_find_pushy_1; L; _
+	1 -> write_code_incr_fn_find_pushy_1; L; 1
+	H -> write_code_incr_fn_find_pushy_2; L; H
+	E -> write_code_incr_fn_find_pushy_1; L; E
+
+write_code_incr_fn_find_pushy_2:
+	_ -> write_code_incr_fn_incr; -; _
+	1 -> write_code_incr_fn_incr; -; 1
+	H -> write_code_incr_fn_move_incr_end_1; R; H
+	E -> write_code_incr_fn_find_pushy_1; -; E
+
+write_code_incr_fn_move_incr_end_1:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> write_code_incr_fn_move_incr_end_2; R; H
+	E -> ERROR; -; E
+
+write_code_incr_fn_move_incr_end_2:
+	_ -> write_code_incr_fn_check_for_fin; R; _
+	1 -> write_code_incr_fn_move_incr_end_2; R; 1
+	H -> write_code_incr_fn_get_to_fin; R; _
+	E -> write_code_incr_fn_move_incr_end_2; R; E
+
+write_code_incr_fn_check_for_fin:
+	_ -> write_code_incr_fn_move_incr_end_2; -; _
+	1 -> write_code_incr_fn_move_incr_end_2; -; 1
+	H -> write_code_incr_fn_out; L; H
+	E -> write_code_incr_fn_move_incr_end_2; -; E
+
+write_code_incr_fn_get_to_fin:
+	_ -> write_code_incr_fn_recog_pattern__; R; _
+	1 -> write_code_incr_fn_get_to_fin; R; 1
+	H -> write_code_incr_fn_get_to_fin; R; H
+	E -> write_code_incr_fn_get_to_fin; R; E
+
+write_code_incr_fn_recog_pattern__:
+	_ -> write_code_incr_fn_recog_pattern__; R; _
+	1 -> write_code_incr_fn_get_to_fin; R; 1
+	H -> write_code_mark_fn_out; L; H
+	E -> write_code_incr_fn_get_to_fin; R; E
+
+write_code_incr_fn_out:
+	_ -> write_code_incr_fn_out; L; _
+	1 -> write_code_incr_fn_out; L; 1
+	H -> first_prep_mark_first_fn_recog_pattern_H; L; H
+	E -> write_code_incr_fn_out; L; E
+
+first_prep_mark_first_fn:
+	_ -> first_prep_mark_first_fn_move_by_1; R; _
+	1 -> first_prep_mark_first_fn_move_by_1; R; 1
+	H -> first_prep_mark_first_fn_move_by_1; R; H
+	E -> first_prep_mark_first_fn_move_by_1; R; E
+
+first_prep_write_H_1:
+	_ -> first_prep_get_to_fin; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+first_prep_get_to_fin:
+	_ -> first_prep_get_to_fin; R; _
+	1 -> first_prep_get_to_fin; R; 1
+	H -> first_prep_write_H_2; R; H
+	E -> first_prep_get_to_fin; R; E
+
+first_prep_write_H_2:
+	_ -> first_prep_write_H_3; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+first_prep_write_H_3:
+	_ -> first_prep_get_past_fin; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+first_prep_get_past_fin:
+	_ -> first_prep_find_H; -; _
+	1 -> ERROR; -; 1
+	H -> first_prep_get_past_fin; L; H
+	E -> ERROR; -; E
+
+first_prep_find_H:
+	_ -> first_prep_find_H; L; _
+	1 -> first_prep_find_H; L; 1
+	H -> first_prep_out; L; H
+	E -> first_prep_find_H; L; E
+
+first_prep_mark_first_fn_recog_pattern_H:
+	_ -> write_code_incr_fn_out; L; _
+	1 -> write_code_incr_fn_out; L; 1
+	H -> first_prep_mark_first_fn; R; H
+	E -> write_code_incr_fn_out; L; E
+
+first_prep_mark_first_fn_move_by_1:
+	_ -> first_prep_write_H_1; R; _
+	1 -> first_prep_write_H_1; R; 1
+	H -> first_prep_write_H_1; R; H
+	E -> first_prep_write_H_1; R; E
+
+first_prep_out:
+	_ -> first_prep_out; L; _
+	1 -> cpu_prep_top_func_get_to_start_last_func; -; 1
+	H -> first_prep_out; -; _
+	E -> cpu_prep_top_func_get_to_start_last_func; -; E
+
+cpu_prep_top_func_get_to_start_last_func:
+	_ -> cpu_prep_top_func_get_to_start_last_func_recog_pattern__; L; _
+	1 -> cpu_prep_top_func_get_to_start_last_func; L; 1
+	H -> cpu_prep_top_func_get_to_start_last_func; L; H
+	E -> cpu_prep_top_func_get_to_start_last_func; L; E
+
+cpu_prep_top_func_write_H_2:
+	_ -> cpu_prep_top_func_out; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_prep_top_func_get_to_start_last_func_recog_pattern__:
+	_ -> cpu_prep_top_func_write_H_2; R; _
+	1 -> cpu_prep_top_func_get_to_start_last_func; L; 1
+	H -> cpu_prep_top_func_get_to_start_last_func; L; H
+	E -> cpu_prep_top_func_get_to_start_last_func; L; E
+
+cpu_prep_top_func_out:
+	_ -> cpu_match_top_func_read_here_out__; L; _
+	1 -> cpu_match_top_func_read_here_write_1; L; H
+	H -> ERROR; -; H
+	E -> cpu_match_top_func_read_here_write_E; L; H
+
+cpu_match_top_func_read_here_write_1:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_match_top_func_read_here_out_1; R; 1
+	E -> ERROR; -; E
+
+cpu_match_top_func_read_here_write_E:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_match_top_func_read_here_out_E; R; E
+	E -> ERROR; -; E
+
+cpu_match_top_func_read_here_out__:
+	_ -> cpu_match_top_func_finished_here_shift_symbol; R; _
+	1 -> cpu_match_top_func_read_here_out__; L; 1
+	H -> cpu_match_top_func_read_here_out__; L; H
+	E -> cpu_match_top_func_read_here_out__; L; E
+
+cpu_match_top_func_finished_here_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_finished_here_shift_1; R; H
+	H -> cpu_match_top_func_finished_here_out; -; H
+	E -> cpu_match_top_func_finished_here_shift_E; R; H
+
+cpu_match_top_func_finished_here_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_finished_here_shift_1; R; 1
+	H -> cpu_match_top_func_finished_here_out; -; 1
+	E -> cpu_match_top_func_finished_here_shift_E; R; 1
+
+cpu_match_top_func_finished_here_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_finished_here_shift_1; R; E
+	H -> cpu_match_top_func_finished_here_out; -; E
+	E -> cpu_match_top_func_finished_here_shift_E; R; E
+
+cpu_match_top_func_read_here_out_1:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_match_top_func_got_past_H_1; R; H
+	E -> ERROR; -; E
+
+cpu_match_top_func_read_here_out_E:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_match_top_func_got_past_H_E; R; H
+	E -> ERROR; -; E
+
+cpu_match_top_func_finished_here_out:
+	_ -> cpu_match_top_func_finished_here_out; R; _
+	1 -> cpu_match_top_func_finished_here_out; R; 1
+	H -> cpu_match_top_func_remember___out; R; H
+	E -> cpu_match_top_func_finished_here_out; R; E
+
+cpu_match_top_func_got_past_H_1:
+	_ -> cpu_match_top_func_got_past_H_1; R; _
+	1 -> cpu_match_top_func_got_past_H_1; R; 1
+	H -> cpu_match_top_func_remember_1_out; R; H
+	E -> cpu_match_top_func_got_past_H_1; R; E
+
+cpu_match_top_func_got_past_H_E:
+	_ -> cpu_match_top_func_got_past_H_E; R; _
+	1 -> cpu_match_top_func_got_past_H_E; R; 1
+	H -> cpu_match_top_func_remember_E_out; R; H
+	E -> cpu_match_top_func_got_past_H_E; R; E
+
+cpu_match_top_func_remember___out:
+	_ -> cpu_match_top_func_out_success; L; _
+	1 -> cpu_match_top_func_out_fail; -; 1
+	H -> ERROR; -; H
+	E -> cpu_match_top_func_out_fail; -; E
+
+cpu_match_top_func_remember_1_out:
+	_ -> cpu_match_top_func_out_fail; -; _
+	1 -> cpu_match_top_func_check_1_write_symbol; L; H
+	H -> ERROR; -; H
+	E -> cpu_match_top_func_out_fail; -; E
+
+cpu_match_top_func_check_1_write_symbol:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_match_top_func_out_continue; -; 1
+	E -> ERROR; -; E
+
+cpu_match_top_func_remember_E_out:
+	_ -> cpu_match_top_func_out_fail; -; _
+	1 -> cpu_match_top_func_out_fail; -; 1
+	H -> ERROR; -; H
+	E -> cpu_match_top_func_check_E_write_symbol; L; H
+
+cpu_match_top_func_check_E_write_symbol:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_match_top_func_out_continue; -; E
+	E -> ERROR; -; E
+
+cpu_match_top_func_out_continue:
+	_ -> cpu_match_top_func_out_continue; L; _
+	1 -> cpu_match_top_func_out_continue; L; 1
+	H -> cpu_prep_top_func_out; R; H
+	E -> cpu_match_top_func_out_continue; L; E
+
+cpu_match_top_func_failure_check_for_reaction:
+	_ -> cpu_match_top_func_failure_check_for_line; R; _
+	1 -> cpu_match_top_func_failure_read_symbol_read; R; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_match_top_func_failure_read_symbol_read:
+	_ -> cpu_match_top_func_failure_reading_basic_info_move_by_1; R; _
+	1 -> cpu_match_top_func_failure_reading_basic_info_move_by_1; R; 1
+	H -> cpu_match_top_func_failure_reading_basic_info_move_by_1; R; H
+	E -> cpu_match_top_func_failure_reading_basic_info_move_by_1; R; E
+
+cpu_match_top_func_failure_check_for_line:
+	_ -> cpu_match_top_func_failure_return_failed_func; L; H
+	1 -> cpu_match_top_func_failure_get_past_ln; R; 1
+	H -> ERROR; -; H
+	E -> cpu_match_top_func_failure_get_past_ln; R; E
+
+cpu_match_top_func_failure_get_past_ln:
+	_ -> cpu_match_top_func_failure_check_for_line_type; R; _
+	1 -> cpu_match_top_func_failure_get_past_ln; R; 1
+	H -> cpu_match_top_func_failure_get_past_ln; R; H
+	E -> cpu_match_top_func_failure_get_past_ln; R; E
+
+cpu_match_top_func_failure_check_for_line_type:
+	_ -> cpu_match_top_func_failure_check_for_reaction; R; _
+	1 -> cpu_match_top_func_out_fail; -; 1
+	H -> ERROR; -; H
+	E -> cpu_match_top_func_failure_get_past_arg_name; -; E
+
+cpu_match_top_func_out_fail:
+	_ -> cpu_match_top_func_failure_check_for_reaction; R; _
+	1 -> cpu_match_top_func_out_fail; R; 1
+	H -> cpu_match_top_func_out_fail; R; H
+	E -> cpu_match_top_func_out_fail; R; E
+
+cpu_match_top_func_failure_get_past_arg_name:
+	_ -> cpu_match_top_func_failure_check_for_arg; R; _
+	1 -> cpu_match_top_func_failure_get_past_arg_name; R; 1
+	H -> cpu_match_top_func_failure_get_past_arg_name; R; H
+	E -> cpu_match_top_func_failure_get_past_arg_name; R; E
+
+cpu_match_top_func_failure_check_for_arg:
+	_ -> cpu_match_top_func_failure_check_for_line; R; _
+	1 -> cpu_match_top_func_failure_get_past_arg_name; -; 1
+	H -> ERROR; -; H
+	E -> cpu_match_top_func_failure_get_past_arg_name; -; E
+
+cpu_match_top_func_failure_return_failed_func:
+	_ -> cpu_match_top_func_failure_return_failed_func; L; _
+	1 -> cpu_match_top_func_failure_return_failed_func; L; 1
+	H -> cpu_match_top_func_failure_out; -; H
+	E -> cpu_match_top_func_failure_return_failed_func; L; E
+
+cpu_match_top_func_failure_reading_basic_info_move_by_1:
+	_ -> cpu_match_top_func_failure_reading_basic_info_move_by_2; R; _
+	1 -> cpu_match_top_func_failure_reading_basic_info_move_by_2; R; 1
+	H -> cpu_match_top_func_failure_reading_basic_info_move_by_2; R; H
+	E -> cpu_match_top_func_failure_reading_basic_info_move_by_2; R; E
+
+cpu_match_top_func_failure_reading_basic_info_move_by_2:
+	_ -> cpu_match_top_func_out_fail; R; _
+	1 -> cpu_match_top_func_out_fail; R; 1
+	H -> cpu_match_top_func_out_fail; R; H
+	E -> cpu_match_top_func_out_fail; R; E
+
+cpu_match_top_func_failure_out:
+	_ -> cpu_match_top_func_remove_failed_H_shift_symbol; R; _
+	1 -> cpu_match_top_func_failure_out; L; 1
+	H -> cpu_match_top_func_failure_out; L; H
+	E -> cpu_match_top_func_failure_out; L; E
+
+cpu_match_top_func_remove_failed_H_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_remove_failed_H_shift_1; R; _
+	H -> cpu_match_top_func_remove_failed_H_out; -; _
+	E -> cpu_match_top_func_remove_failed_H_shift_E; R; _
+
+cpu_match_top_func_remove_failed_H_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_remove_failed_H_shift_1; R; 1
+	H -> cpu_match_top_func_remove_failed_H_out; -; 1
+	E -> cpu_match_top_func_remove_failed_H_shift_E; R; 1
+
+cpu_match_top_func_remove_failed_H_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_remove_failed_H_shift_1; R; E
+	H -> cpu_match_top_func_remove_failed_H_out; -; E
+	E -> cpu_match_top_func_remove_failed_H_shift_E; R; E
+
+cpu_match_top_func_remove_failed_H_out:
+	_ -> cpu_match_top_func_remove_failed_H_out; L; _
+	1 -> cpu_match_top_func_remove_failed_H_out; L; 1
+	H -> cpu_match_top_func_failed_out; -; H
+	E -> cpu_match_top_func_remove_failed_H_out; L; E
+
+cpu_match_top_func_failed_out:
+	_ -> cpu_match_top_func_reset_aux_on_failure_shift_symbol; R; _
+	1 -> cpu_match_top_func_failed_out; L; 1
+	H -> cpu_match_top_func_failed_out; L; H
+	E -> cpu_match_top_func_failed_out; L; E
+
+cpu_match_top_func_reset_aux_on_failure_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_reset_aux_on_failure_shift_1; R; H
+	H -> cpu_match_top_func_get_back_to_start_ln; -; H
+	E -> cpu_match_top_func_reset_aux_on_failure_shift_E; R; H
+
+cpu_match_top_func_reset_aux_on_failure_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_reset_aux_on_failure_shift_1; R; 1
+	H -> cpu_match_top_func_get_back_to_start_ln; -; 1
+	E -> cpu_match_top_func_reset_aux_on_failure_shift_E; R; 1
+
+cpu_match_top_func_reset_aux_on_failure_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_reset_aux_on_failure_shift_1; R; E
+	H -> cpu_match_top_func_get_back_to_start_ln; -; E
+	E -> cpu_match_top_func_reset_aux_on_failure_shift_E; R; E
+
+cpu_match_top_func_get_back_to_start_ln:
+	_ -> cpu_match_top_func_get_back_to_start_ln; L; _
+	1 -> cpu_match_top_func_get_back_to_start_ln; L; 1
+	H -> cpu_prep_top_func_out; R; H
+	E -> cpu_match_top_func_get_back_to_start_ln; L; E
+
+cpu_match_top_func_out_success:
+	_ -> cpu_match_top_func_goodnumber_rectify_shift_symbol; R; _
+	1 -> cpu_match_top_func_out_success; L; 1
+	H -> cpu_match_top_func_out_success; L; H
+	E -> cpu_match_top_func_out_success; L; E
+
+cpu_match_top_func_goodnumber_rectify_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_goodnumber_rectify_shift_1; R; H
+	H -> cpu_match_top_func_goodnumber_rectify_out; -; H
+	E -> cpu_match_top_func_goodnumber_rectify_shift_E; R; H
+
+cpu_match_top_func_goodnumber_rectify_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_goodnumber_rectify_shift_1; R; 1
+	H -> cpu_match_top_func_goodnumber_rectify_out; -; 1
+	E -> cpu_match_top_func_goodnumber_rectify_shift_E; R; 1
+
+cpu_match_top_func_goodnumber_rectify_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_goodnumber_rectify_shift_1; R; E
+	H -> cpu_match_top_func_goodnumber_rectify_out; -; E
+	E -> cpu_match_top_func_goodnumber_rectify_shift_E; R; E
+
+cpu_match_top_func_goodnumber_rectify_out:
+	_ -> cpu_match_top_func_goodnumber_rectify_out; L; _
+	1 -> cpu_match_top_func_goodnumber_rectify_out; L; 1
+	H -> cpu_match_top_func_got_past_H_success; L; H
+	E -> cpu_match_top_func_goodnumber_rectify_out; L; E
+
+cpu_match_top_func_got_past_H_success:
+	_ -> cpu_match_top_func_got_past_H_success; L; _
+	1 -> cpu_match_top_func_got_past_H_success; L; 1
+	H -> cpu_match_top_func_succeeded_out; R; H
+	E -> cpu_match_top_func_got_past_H_success; L; E
+
+cpu_match_top_func_succeeded_out:
+	_ -> cpu_match_top_func_victorious_rectify_shift_symbol; R; _
+	1 -> cpu_match_top_func_succeeded_out; L; 1
+	H -> cpu_match_top_func_succeeded_out; L; H
+	E -> cpu_match_top_func_succeeded_out; L; E
+
+cpu_match_top_func_victorious_rectify_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_victorious_rectify_shift_1; R; _
+	H -> cpu_match_top_func_victorious_rectify_out; -; _
+	E -> cpu_match_top_func_victorious_rectify_shift_E; R; _
+
+cpu_match_top_func_victorious_rectify_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_victorious_rectify_shift_1; R; 1
+	H -> cpu_match_top_func_victorious_rectify_out; -; 1
+	E -> cpu_match_top_func_victorious_rectify_shift_E; R; 1
+
+cpu_match_top_func_victorious_rectify_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_match_top_func_victorious_rectify_shift_1; R; E
+	H -> cpu_match_top_func_victorious_rectify_out; -; E
+	E -> cpu_match_top_func_victorious_rectify_shift_E; R; E
+
+cpu_match_top_func_victorious_rectify_out:
+	_ -> cpu_prep_line_get_past_stack_recog_pattern__; L; _
+	1 -> cpu_match_top_func_victorious_rectify_out; L; 1
+	H -> cpu_match_top_func_victorious_rectify_out; L; H
+	E -> cpu_match_top_func_victorious_rectify_out; L; E
+
+cpu_prep_line_find_ln:
+	_ -> cpu_prep_line_find_ln; L; _
+	1 -> cpu_prep_line_get_to_start_ln; -; 1
+	H -> ERROR; -; H
+	E -> cpu_prep_line_get_to_start_ln; -; E
+
+cpu_prep_line_get_to_start_ln:
+	_ -> cpu_prep_line_mark_first_line; R; H
+	1 -> cpu_prep_line_get_to_start_ln; L; 1
+	H -> cpu_prep_line_get_to_start_ln; L; H
+	E -> cpu_prep_line_get_to_start_ln; L; E
+
+cpu_prep_line_mark_first_line:
+	_ -> cpu_prep_line_mark_first_line; R; _
+	1 -> cpu_prep_line_mark_first_line; R; 1
+	H -> cpu_prep_line_get_past_fn; R; _
+	E -> cpu_prep_line_mark_first_line; R; E
+
+cpu_prep_line_get_past_fn:
+	_ -> cpu_prep_line_write_H; R; _
+	1 -> cpu_prep_line_get_past_fn; R; 1
+	H -> cpu_prep_line_get_past_fn; R; H
+	E -> cpu_prep_line_get_past_fn; R; E
+
+cpu_prep_line_write_H:
+	_ -> cpu_prep_line_get_to_ln; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_prep_line_get_to_ln:
+	_ -> cpu_prep_line_get_to_ln; L; _
+	1 -> cpu_prep_line_get_to_ln; L; 1
+	H -> cpu_prep_line_out; R; H
+	E -> cpu_prep_line_get_to_ln; L; E
+
+cpu_prep_line_get_past_stack_recog_pattern__:
+	_ -> cpu_prep_line_get_past_stack_recog_pattern___; L; _
+	1 -> cpu_match_top_func_victorious_rectify_out; L; 1
+	H -> cpu_match_top_func_victorious_rectify_out; L; H
+	E -> cpu_match_top_func_victorious_rectify_out; L; E
+
+cpu_prep_line_get_past_stack_recog_pattern___:
+	_ -> cpu_prep_line_find_ln; -; _
+	1 -> cpu_match_top_func_victorious_rectify_out; L; 1
+	H -> cpu_match_top_func_victorious_rectify_out; L; H
+	E -> cpu_match_top_func_victorious_rectify_out; L; E
+
+cpu_prep_line_out:
+	_ -> cpu_match_line_read_here_out__; L; _
+	1 -> cpu_match_line_read_here_write_1; L; H
+	H -> ERROR; -; H
+	E -> cpu_match_line_read_here_write_E; L; H
+
+cpu_match_line_read_here_write_1:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_match_line_read_here_out_1; R; 1
+	E -> ERROR; -; E
+
+cpu_match_line_read_here_write_E:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_match_line_read_here_out_E; R; E
+	E -> ERROR; -; E
+
+cpu_match_line_read_here_out__:
+	_ -> cpu_match_line_finished_here_shift_symbol; R; _
+	1 -> cpu_match_line_read_here_out__; L; 1
+	H -> cpu_match_line_read_here_out__; L; H
+	E -> cpu_match_line_read_here_out__; L; E
+
+cpu_match_line_finished_here_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_finished_here_shift_1; R; H
+	H -> cpu_match_line_finished_here_out; -; H
+	E -> cpu_match_line_finished_here_shift_E; R; H
+
+cpu_match_line_finished_here_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_finished_here_shift_1; R; 1
+	H -> cpu_match_line_finished_here_out; -; 1
+	E -> cpu_match_line_finished_here_shift_E; R; 1
+
+cpu_match_line_finished_here_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_finished_here_shift_1; R; E
+	H -> cpu_match_line_finished_here_out; -; E
+	E -> cpu_match_line_finished_here_shift_E; R; E
+
+cpu_match_line_read_here_out_1:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_match_line_got_past_H_1; R; H
+	E -> ERROR; -; E
+
+cpu_match_line_read_here_out_E:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_match_line_got_past_H_E; R; H
+	E -> ERROR; -; E
+
+cpu_match_line_finished_here_out:
+	_ -> cpu_match_line_finished_here_out; R; _
+	1 -> cpu_match_line_finished_here_out; R; 1
+	H -> cpu_match_line_remember___out; R; H
+	E -> cpu_match_line_finished_here_out; R; E
+
+cpu_match_line_got_past_H_1:
+	_ -> cpu_match_line_got_past_H_1; R; _
+	1 -> cpu_match_line_got_past_H_1; R; 1
+	H -> cpu_match_line_remember_1_out; R; H
+	E -> cpu_match_line_got_past_H_1; R; E
+
+cpu_match_line_got_past_H_E:
+	_ -> cpu_match_line_got_past_H_E; R; _
+	1 -> cpu_match_line_got_past_H_E; R; 1
+	H -> cpu_match_line_remember_E_out; R; H
+	E -> cpu_match_line_got_past_H_E; R; E
+
+cpu_match_line_remember___out:
+	_ -> cpu_match_line_out_success; L; _
+	1 -> cpu_match_line_out_fail; -; 1
+	H -> ERROR; -; H
+	E -> cpu_match_line_out_fail; -; E
+
+cpu_match_line_remember_1_out:
+	_ -> cpu_match_line_out_fail; -; _
+	1 -> cpu_match_line_check_1_write_symbol; L; H
+	H -> ERROR; -; H
+	E -> cpu_match_line_out_fail; -; E
+
+cpu_match_line_check_1_write_symbol:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_match_line_out_continue; -; 1
+	E -> ERROR; -; E
+
+cpu_match_line_remember_E_out:
+	_ -> cpu_match_line_out_fail; -; _
+	1 -> cpu_match_line_out_fail; -; 1
+	H -> ERROR; -; H
+	E -> cpu_match_line_check_E_write_symbol; L; H
+
+cpu_match_line_check_E_write_symbol:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_match_line_out_continue; -; E
+	E -> ERROR; -; E
+
+cpu_match_line_out_continue:
+	_ -> cpu_match_line_out_continue; L; _
+	1 -> cpu_match_line_out_continue; L; 1
+	H -> cpu_prep_line_out; R; H
+	E -> cpu_match_line_out_continue; L; E
+
+cpu_match_line_out_fail:
+	_ -> cpu_match_line_failure_check_for_line_type; R; _
+	1 -> cpu_match_line_out_fail; R; 1
+	H -> cpu_match_line_out_fail; R; H
+	E -> cpu_match_line_out_fail; R; E
+
+cpu_match_line_failure_check_for_reaction:
+	_ -> cpu_match_line_failure_return_failed_line; L; H
+	1 -> cpu_match_line_failure_read_symbol_read; R; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_match_line_failure_read_symbol_read:
+	_ -> cpu_match_line_failure_reading_basic_info_move_by_1; R; _
+	1 -> cpu_match_line_failure_reading_basic_info_move_by_1; R; 1
+	H -> cpu_match_line_failure_reading_basic_info_move_by_1; R; H
+	E -> cpu_match_line_failure_reading_basic_info_move_by_1; R; E
+
+cpu_match_line_failure_check_for_line_type:
+	_ -> cpu_match_line_failure_check_for_reaction; R; _
+	1 -> cpu_match_line_failure_get_past_var_name; -; 1
+	H -> ERROR; -; H
+	E -> cpu_match_line_failure_get_past_arg_name; -; E
+
+cpu_match_line_failure_get_past_var_name:
+	_ -> cpu_match_line_failure_check_for_reaction; R; _
+	1 -> cpu_match_line_failure_get_past_var_name; R; 1
+	H -> cpu_match_line_failure_get_past_var_name; R; H
+	E -> cpu_match_line_failure_get_past_var_name; R; E
+
+cpu_match_line_failure_get_past_arg_name:
+	_ -> cpu_match_line_failure_check_for_arg; R; _
+	1 -> cpu_match_line_failure_get_past_arg_name; R; 1
+	H -> cpu_match_line_failure_get_past_arg_name; R; H
+	E -> cpu_match_line_failure_get_past_arg_name; R; E
+
+cpu_match_line_failure_check_for_arg:
+	_ -> cpu_match_line_failure_return_failed_line; L; H
+	1 -> cpu_match_line_failure_get_past_arg_name; -; 1
+	H -> ERROR; -; H
+	E -> cpu_match_line_failure_get_past_arg_name; -; E
+
+cpu_match_line_failure_return_failed_line:
+	_ -> cpu_match_line_failure_return_failed_line; L; _
+	1 -> cpu_match_line_failure_return_failed_line; L; 1
+	H -> cpu_match_line_failure_out; -; H
+	E -> cpu_match_line_failure_return_failed_line; L; E
+
+cpu_match_line_failure_reading_basic_info_move_by_1:
+	_ -> cpu_match_line_failure_reading_basic_info_move_by_2; R; _
+	1 -> cpu_match_line_failure_reading_basic_info_move_by_2; R; 1
+	H -> cpu_match_line_failure_reading_basic_info_move_by_2; R; H
+	E -> cpu_match_line_failure_reading_basic_info_move_by_2; R; E
+
+cpu_match_line_failure_reading_basic_info_move_by_2:
+	_ -> cpu_match_line_failure_get_past_var_name; R; _
+	1 -> cpu_match_line_failure_get_past_var_name; R; 1
+	H -> cpu_match_line_failure_get_past_var_name; R; H
+	E -> cpu_match_line_failure_get_past_var_name; R; E
+
+cpu_match_line_failure_out:
+	_ -> cpu_match_line_remove_failed_H_shift_symbol; R; _
+	1 -> cpu_match_line_failure_out; L; 1
+	H -> cpu_match_line_failure_out; L; H
+	E -> cpu_match_line_failure_out; L; E
+
+cpu_match_line_remove_failed_H_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_remove_failed_H_shift_1; R; _
+	H -> cpu_match_line_remove_failed_H_out; -; _
+	E -> cpu_match_line_remove_failed_H_shift_E; R; _
+
+cpu_match_line_remove_failed_H_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_remove_failed_H_shift_1; R; 1
+	H -> cpu_match_line_remove_failed_H_out; -; 1
+	E -> cpu_match_line_remove_failed_H_shift_E; R; 1
+
+cpu_match_line_remove_failed_H_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_remove_failed_H_shift_1; R; E
+	H -> cpu_match_line_remove_failed_H_out; -; E
+	E -> cpu_match_line_remove_failed_H_shift_E; R; E
+
+cpu_match_line_remove_failed_H_out:
+	_ -> cpu_match_line_remove_failed_H_out; L; _
+	1 -> cpu_match_line_remove_failed_H_out; L; 1
+	H -> cpu_match_line_failed_out; -; H
+	E -> cpu_match_line_remove_failed_H_out; L; E
+
+cpu_match_line_failed_out:
+	_ -> cpu_match_line_reset_aux_on_failure_shift_symbol; R; _
+	1 -> cpu_match_line_failed_out; L; 1
+	H -> cpu_match_line_failed_out; L; H
+	E -> cpu_match_line_failed_out; L; E
+
+cpu_match_line_reset_aux_on_failure_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_reset_aux_on_failure_shift_1; R; H
+	H -> cpu_match_line_get_back_to_start_ln; -; H
+	E -> cpu_match_line_reset_aux_on_failure_shift_E; R; H
+
+cpu_match_line_reset_aux_on_failure_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_reset_aux_on_failure_shift_1; R; 1
+	H -> cpu_match_line_get_back_to_start_ln; -; 1
+	E -> cpu_match_line_reset_aux_on_failure_shift_E; R; 1
+
+cpu_match_line_reset_aux_on_failure_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_reset_aux_on_failure_shift_1; R; E
+	H -> cpu_match_line_get_back_to_start_ln; -; E
+	E -> cpu_match_line_reset_aux_on_failure_shift_E; R; E
+
+cpu_match_line_get_back_to_start_ln:
+	_ -> cpu_match_line_get_back_to_start_ln; L; _
+	1 -> cpu_match_line_get_back_to_start_ln; L; 1
+	H -> cpu_prep_line_out; R; H
+	E -> cpu_match_line_get_back_to_start_ln; L; E
+
+cpu_match_line_out_success:
+	_ -> cpu_match_line_goodnumber_rectify_shift_symbol; R; _
+	1 -> cpu_match_line_out_success; L; 1
+	H -> cpu_match_line_out_success; L; H
+	E -> cpu_match_line_out_success; L; E
+
+cpu_match_line_goodnumber_rectify_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_goodnumber_rectify_shift_1; R; H
+	H -> cpu_match_line_goodnumber_rectify_out; -; H
+	E -> cpu_match_line_goodnumber_rectify_shift_E; R; H
+
+cpu_match_line_goodnumber_rectify_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_goodnumber_rectify_shift_1; R; 1
+	H -> cpu_match_line_goodnumber_rectify_out; -; 1
+	E -> cpu_match_line_goodnumber_rectify_shift_E; R; 1
+
+cpu_match_line_goodnumber_rectify_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_goodnumber_rectify_shift_1; R; E
+	H -> cpu_match_line_goodnumber_rectify_out; -; E
+	E -> cpu_match_line_goodnumber_rectify_shift_E; R; E
+
+cpu_match_line_goodnumber_rectify_out:
+	_ -> cpu_match_line_goodnumber_rectify_out; L; _
+	1 -> cpu_match_line_goodnumber_rectify_out; L; 1
+	H -> cpu_match_line_got_past_H_success; L; H
+	E -> cpu_match_line_goodnumber_rectify_out; L; E
+
+cpu_match_line_got_past_H_success:
+	_ -> cpu_match_line_got_past_H_success; L; _
+	1 -> cpu_match_line_got_past_H_success; L; 1
+	H -> cpu_match_line_succeeded_out; R; H
+	E -> cpu_match_line_got_past_H_success; L; E
+
+cpu_match_line_succeeded_out:
+	_ -> cpu_match_line_victorious_rectify_shift_symbol; R; _
+	1 -> cpu_match_line_succeeded_out; L; 1
+	H -> cpu_match_line_succeeded_out; L; H
+	E -> cpu_match_line_succeeded_out; L; E
+
+cpu_match_line_victorious_rectify_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_victorious_rectify_shift_1; R; _
+	H -> cpu_match_line_victorious_rectify_out; -; _
+	E -> cpu_match_line_victorious_rectify_shift_E; R; _
+
+cpu_match_line_victorious_rectify_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_victorious_rectify_shift_1; R; 1
+	H -> cpu_match_line_victorious_rectify_out; -; 1
+	E -> cpu_match_line_victorious_rectify_shift_E; R; 1
+
+cpu_match_line_victorious_rectify_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_match_line_victorious_rectify_shift_1; R; E
+	H -> cpu_match_line_victorious_rectify_out; -; E
+	E -> cpu_match_line_victorious_rectify_shift_E; R; E
+
+cpu_match_line_victorious_rectify_out:
+	_ -> cpu_read_line_type_get_past_aux_ln; R; _
+	1 -> cpu_read_line_type_get_past_aux_ln; R; 1
+	H -> cpu_read_line_type_get_past_aux_ln; R; H
+	E -> cpu_read_line_type_get_past_aux_ln; R; E
+
+cpu_read_line_type_get_past_aux_ln:
+	_ -> cpu_read_line_type_write_H; R; _
+	1 -> cpu_read_line_type_get_past_aux_ln; R; 1
+	H -> cpu_read_line_type_get_past_aux_ln; R; H
+	E -> cpu_read_line_type_get_past_aux_ln; R; E
+
+cpu_read_line_type_write_H:
+	_ -> cpu_read_line_type_find_first_func; -; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_read_line_type_find_first_func:
+	_ -> cpu_read_line_type_find_first_func; R; _
+	1 -> cpu_read_line_type_find_first_func; R; 1
+	H -> cpu_read_line_type_find_first_func; R; H
+	E -> cpu_read_line_type_find_aux_fin; -; E
+
+cpu_read_line_type_find_aux_fin:
+	_ -> cpu_read_line_type_find_aux_fin_recog_pattern__; R; _
+	1 -> cpu_read_line_type_find_aux_fin; R; 1
+	H -> cpu_read_line_type_find_aux_fin; R; H
+	E -> cpu_read_line_type_find_aux_fin; R; E
+
+cpu_read_line_type_write_1:
+	_ -> cpu_read_line_type_create_underscore_push__; R; 1
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_read_line_type_find_aux:
+	_ -> cpu_read_line_type_find_aux; L; _
+	1 -> cpu_read_line_type_find_aux; L; 1
+	H -> cpu_read_line_type_check_if_should_push_more; R; H
+	E -> cpu_read_line_type_find_aux; L; E
+
+cpu_read_line_type_check_if_should_push_more:
+	_ -> cpu_read_line_type_find_line; -; _
+	1 -> cpu_read_line_type_create_underscore_push__; -; _
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_read_line_type_find_line:
+	_ -> cpu_read_line_type_find_line; R; _
+	1 -> cpu_read_line_type_find_line; R; 1
+	H -> cpu_read_line_type_get_past_ln; R; _
+	E -> cpu_read_line_type_find_line; R; E
+
+cpu_read_line_type_get_past_ln:
+	_ -> cpu_read_line_type_read_type; R; _
+	1 -> cpu_read_line_type_get_past_ln; R; 1
+	H -> cpu_read_line_type_get_past_ln; R; H
+	E -> cpu_read_line_type_get_past_ln; R; E
+
+cpu_read_line_type_read_type:
+	_ -> cpu_read_line_type_out_return; -; _
+	1 -> cpu_read_line_type_out_direct; L; H
+	H -> ERROR; -; H
+	E -> cpu_read_line_type_out_function; R; E
+
+cpu_read_line_type_find_aux_fin_recog_pattern__:
+	_ -> cpu_read_line_type_find_aux_fin_recog_pattern___; R; _
+	1 -> cpu_read_line_type_find_aux_fin; R; 1
+	H -> cpu_read_line_type_find_aux_fin; R; H
+	E -> cpu_read_line_type_find_aux_fin; R; E
+
+cpu_read_line_type_find_aux_fin_recog_pattern___:
+	_ -> cpu_read_line_type_write_1; R; H
+	1 -> cpu_read_line_type_find_aux_fin; R; 1
+	H -> cpu_read_line_type_find_aux_fin; R; H
+	E -> cpu_read_line_type_find_aux_fin; R; E
+
+cpu_read_line_type_create_underscore_push_1:
+	_ -> cpu_read_line_type_create_underscore_push__; R; 1
+	1 -> cpu_read_line_type_create_underscore_push_1; R; 1
+	H -> cpu_read_line_type_create_underscore_push_H; R; 1
+	E -> cpu_read_line_type_create_underscore_push_E; R; 1
+
+cpu_read_line_type_create_underscore_push_H:
+	_ -> cpu_read_line_type_create_underscore_push__; R; H
+	1 -> cpu_read_line_type_create_underscore_push_1; R; H
+	H -> cpu_read_line_type_create_underscore_push_HH; R; H
+	E -> cpu_read_line_type_create_underscore_push_E; R; H
+
+cpu_read_line_type_create_underscore_push_E:
+	_ -> cpu_read_line_type_create_underscore_push__; R; E
+	1 -> cpu_read_line_type_create_underscore_push_1; R; E
+	H -> cpu_read_line_type_create_underscore_push_H; R; E
+	E -> cpu_read_line_type_create_underscore_push_E; R; E
+
+cpu_read_line_type_create_underscore_push__:
+	_ -> cpu_read_line_type_create_underscore_push__; R; _
+	1 -> cpu_read_line_type_create_underscore_push_1; R; _
+	H -> cpu_read_line_type_create_underscore_push_H; R; _
+	E -> cpu_read_line_type_create_underscore_push_E; R; _
+
+cpu_read_line_type_create_underscore_push_HH:
+	_ -> cpu_read_line_type_create_underscore_push__; R; H
+	1 -> cpu_read_line_type_create_underscore_push_1; R; H
+	H -> cpu_read_line_type_create_underscore_push_exit; R; H
+	E -> cpu_read_line_type_create_underscore_push_E; R; H
+
+cpu_read_line_type_create_underscore_push_exit:
+	_ -> cpu_read_line_type_create_underscore_push_get_past_fin; -; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_read_line_type_create_underscore_push_get_past_fin:
+	_ -> cpu_read_line_type_create_underscore_push_out; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_read_line_type_create_underscore_push_get_past_fin; L; H
+	E -> ERROR; -; E
+
+cpu_read_line_type_create_underscore_push_out:
+	_ -> cpu_read_line_type_create_underscore_push_out; L; _
+	1 -> cpu_read_line_type_create_underscore_push_out; L; 1
+	H -> cpu_read_line_type_find_aux; L; H
+	E -> cpu_read_line_type_create_underscore_push_out; L; E
+
+cpu_read_line_type_out_direct:
+	_ -> cpu_read_line_type_out_direct; L; _
+	1 -> cpu_read_line_type_out_direct; L; 1
+	H -> cpu_direct_command_prep_copy_var_find_H; -; _
+	E -> cpu_read_line_type_out_direct; L; E
+
+cpu_direct_command_prep_copy_var_find_H:
+	_ -> cpu_direct_command_prep_copy_var_find_H; R; _
+	1 -> cpu_direct_command_prep_copy_var_find_H; R; 1
+	H -> cpu_direct_command_prep_copy_var_out; R; H
+	E -> cpu_direct_command_prep_copy_var_find_H; R; E
+
+cpu_direct_command_prep_copy_var_out:
+	_ -> cpu_direct_command_copy_var_name_rectify; L; _
+	1 -> cpu_direct_command_copy_var_name_write_1; L; H
+	H -> ERROR; -; H
+	E -> cpu_direct_command_copy_var_name_write_E; L; H
+
+cpu_direct_command_copy_var_name_write_1:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_direct_command_copy_var_name_remember_1; -; 1
+	E -> ERROR; -; E
+
+cpu_direct_command_copy_var_name_write_E:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_direct_command_copy_var_name_remember_E; -; E
+	E -> ERROR; -; E
+
+cpu_direct_command_copy_var_name_write_H:
+	_ -> cpu_direct_command_copy_var_name_symbol_copied; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_direct_command_copy_var_name_remember_1:
+	_ -> cpu_direct_command_copy_var_name_remember_1; L; _
+	1 -> cpu_direct_command_copy_var_name_remember_1; L; 1
+	H -> cpu_direct_command_copy_var_name_write_H; R; 1
+	E -> cpu_direct_command_copy_var_name_remember_1; L; E
+
+cpu_direct_command_copy_var_name_remember_E:
+	_ -> cpu_direct_command_copy_var_name_remember_E; L; _
+	1 -> cpu_direct_command_copy_var_name_remember_E; L; 1
+	H -> cpu_direct_command_copy_var_name_write_H; R; E
+	E -> cpu_direct_command_copy_var_name_remember_E; L; E
+
+cpu_direct_command_copy_var_name_symbol_copied:
+	_ -> cpu_direct_command_copy_var_name_symbol_copied; R; _
+	1 -> cpu_direct_command_copy_var_name_symbol_copied; R; 1
+	H -> cpu_direct_command_prep_copy_var_out; R; H
+	E -> cpu_direct_command_copy_var_name_symbol_copied; R; E
+
+cpu_direct_command_copy_var_name_rectify:
+	_ -> cpu_direct_command_copy_var_name_done_copy_shift_symbol; R; _
+	1 -> cpu_direct_command_copy_var_name_rectify; L; 1
+	H -> cpu_direct_command_copy_var_name_rectify; L; H
+	E -> cpu_direct_command_copy_var_name_rectify; L; E
+
+cpu_direct_command_copy_var_name_done_copy_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_copy_var_name_done_copy_shift_1; R; 1
+	H -> cpu_direct_command_copy_var_name_done_copy_out; -; 1
+	E -> cpu_direct_command_copy_var_name_done_copy_shift_E; R; 1
+
+cpu_direct_command_copy_var_name_done_copy_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_copy_var_name_done_copy_shift_1; R; 1
+	H -> cpu_direct_command_copy_var_name_done_copy_out; -; 1
+	E -> cpu_direct_command_copy_var_name_done_copy_shift_E; R; 1
+
+cpu_direct_command_copy_var_name_done_copy_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_copy_var_name_done_copy_shift_1; R; E
+	H -> cpu_direct_command_copy_var_name_done_copy_out; -; E
+	E -> cpu_direct_command_copy_var_name_done_copy_shift_E; R; E
+
+cpu_direct_command_copy_var_name_done_copy_out:
+	_ -> cpu_direct_command_copy_var_name_out; L; H
+	1 -> cpu_direct_command_copy_var_name_done_copy_out; R; 1
+	H -> cpu_direct_command_copy_var_name_done_copy_out; R; H
+	E -> cpu_direct_command_copy_var_name_done_copy_out; R; E
+
+cpu_direct_command_copy_var_name_out:
+	_ -> cpu_direct_command_copy_var_name_out; L; _
+	1 -> cpu_direct_command_copy_var_name_out; L; 1
+	H -> cpu_direct_command_prep_index_find_E; R; H
+	E -> cpu_direct_command_copy_var_name_out; L; E
+
+cpu_direct_command_prep_index_find_E:
+	_ -> cpu_direct_command_prep_index_find_E; R; _
+	1 -> cpu_direct_command_prep_index_find_E; R; 1
+	H -> cpu_direct_command_prep_index_find_E; R; H
+	E -> cpu_direct_command_prep_index_find_end_stack; -; E
+
+cpu_direct_command_prep_index_find_end_stack:
+	_ -> cpu_direct_command_prep_index_find_end_stack_recog_pattern__; R; _
+	1 -> cpu_direct_command_prep_index_find_end_stack; R; 1
+	H -> cpu_direct_command_prep_index_find_end_stack; R; H
+	E -> cpu_direct_command_prep_index_find_end_stack; R; E
+
+cpu_direct_command_prep_index_go_left:
+	_ -> cpu_direct_command_prep_index_find_start_last_func; L; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_direct_command_prep_index_find_start_last_func:
+	_ -> cpu_direct_command_prep_index_find_start_last_func_recog_pattern__; L; _
+	1 -> cpu_direct_command_prep_index_find_start_last_func; L; 1
+	H -> cpu_direct_command_prep_index_find_start_last_func; L; H
+	E -> cpu_direct_command_prep_index_find_start_last_func; L; E
+
+cpu_direct_command_prep_index_write_H:
+	_ -> cpu_direct_command_prep_index_get_to_index; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_direct_command_prep_index_get_to_index:
+	_ -> cpu_direct_command_prep_index_get_to_index; L; _
+	1 -> cpu_direct_command_prep_index_get_to_index; L; 1
+	H -> cpu_direct_command_prep_index_out; L; H
+	E -> cpu_direct_command_prep_index_get_to_index; L; E
+
+cpu_direct_command_prep_index_find_end_stack_recog_pattern__:
+	_ -> cpu_direct_command_prep_index_find_end_stack_recog_pattern___; R; _
+	1 -> cpu_direct_command_prep_index_find_end_stack; R; 1
+	H -> cpu_direct_command_prep_index_find_end_stack; R; H
+	E -> cpu_direct_command_prep_index_find_end_stack; R; E
+
+cpu_direct_command_prep_index_find_end_stack_recog_pattern___:
+	_ -> cpu_direct_command_prep_index_go_left; L; _
+	1 -> cpu_direct_command_prep_index_find_end_stack; R; 1
+	H -> cpu_direct_command_prep_index_find_end_stack; R; H
+	E -> cpu_direct_command_prep_index_find_end_stack; R; E
+
+cpu_direct_command_prep_index_find_start_last_func_recog_pattern__:
+	_ -> cpu_direct_command_prep_index_write_H; R; _
+	1 -> cpu_direct_command_prep_index_find_start_last_func; L; 1
+	H -> cpu_direct_command_prep_index_find_start_last_func; L; H
+	E -> cpu_direct_command_prep_index_find_start_last_func; L; E
+
+cpu_direct_command_prep_index_out:
+	_ -> cpu_direct_command_index_stack_delete_1; R; _
+	1 -> cpu_direct_command_index_stack_get_past_H; -; E
+	H -> ERROR; -; H
+	E -> cpu_direct_command_prep_index_out; L; 1
+
+cpu_direct_command_index_stack_delete_1:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_index_stack_get_past_H; R; _
+	H -> cpu_direct_command_index_stack_out; R; _
+	E -> ERROR; -; E
+
+cpu_direct_command_index_stack_get_past_H:
+	_ -> cpu_direct_command_index_stack_get_past_H; R; _
+	1 -> cpu_direct_command_index_stack_get_past_H; R; 1
+	H -> cpu_direct_command_index_stack_find_H; R; H
+	E -> cpu_direct_command_index_stack_get_past_H; R; E
+
+cpu_direct_command_index_stack_find_H:
+	_ -> cpu_direct_command_index_stack_find_H; R; _
+	1 -> cpu_direct_command_index_stack_find_H; R; 1
+	H -> cpu_direct_command_index_stack_move_H; R; _
+	E -> cpu_direct_command_index_stack_find_H; R; E
+
+cpu_direct_command_index_stack_move_H:
+	_ -> cpu_direct_command_index_stack_get_to_index; L; H
+	1 -> cpu_direct_command_index_stack_move_H; R; 1
+	H -> cpu_direct_command_index_stack_move_H; R; H
+	E -> cpu_direct_command_index_stack_move_H; R; E
+
+cpu_direct_command_index_stack_get_to_index:
+	_ -> cpu_direct_command_index_stack_get_to_index; L; _
+	1 -> cpu_direct_command_index_stack_get_to_index; L; 1
+	H -> cpu_direct_command_prep_index_out; L; H
+	E -> cpu_direct_command_index_stack_get_to_index; L; E
+
+cpu_direct_command_index_stack_out:
+	_ -> cpu_direct_command_index_stack_out; L; _
+	1 -> cpu_direct_command_index_stack_out; L; 1
+	H -> _get_to_vars_recog_pattern_H; L; H
+	E -> cpu_direct_command_index_stack_out; L; E
+
+cpu_direct_command_prep_find_var_find_value:
+	_ -> cpu_direct_command_prep_find_var_find_value; L; _
+	1 -> cpu_direct_command_prep_find_var_get_past_value; -; 1
+	H -> cpu_direct_command_prep_find_var_find_value; L; H
+	E -> cpu_direct_command_prep_find_var_get_past_value; -; E
+
+cpu_direct_command_prep_find_var_get_past_value:
+	_ -> cpu_direct_command_prep_find_var_find_id; -; _
+	1 -> cpu_direct_command_prep_find_var_get_past_value; L; 1
+	H -> cpu_direct_command_prep_find_var_get_past_value; L; H
+	E -> cpu_direct_command_prep_find_var_get_past_value; L; E
+
+cpu_direct_command_prep_find_var_find_id:
+	_ -> cpu_direct_command_prep_find_var_find_id; L; _
+	1 -> cpu_direct_command_prep_find_var_get_past_id; -; 1
+	H -> cpu_direct_command_prep_find_var_find_id; L; H
+	E -> cpu_direct_command_prep_find_var_get_past_id; -; E
+
+cpu_direct_command_prep_find_var_get_past_id:
+	_ -> cpu_direct_command_prep_find_var_get_to_aux; -; H
+	1 -> cpu_direct_command_prep_find_var_get_past_id; L; 1
+	H -> cpu_direct_command_prep_find_var_get_past_id; L; H
+	E -> cpu_direct_command_prep_find_var_get_past_id; L; E
+
+cpu_direct_command_prep_find_var_get_to_aux:
+	_ -> cpu_direct_command_prep_find_var_get_to_aux; R; _
+	1 -> cpu_direct_command_prep_find_var_get_to_aux; R; 1
+	H -> cpu_direct_command_prep_find_var_get_to_aux_recog_pattern_H; R; H
+	E -> cpu_direct_command_prep_find_var_get_to_aux; R; E
+
+cpu_direct_command_prep_find_var_get_to_var_name:
+	_ -> cpu_direct_command_prep_find_var_get_to_var_name; R; _
+	1 -> cpu_direct_command_prep_find_var_get_to_var_name; R; 1
+	H -> cpu_direct_command_prep_find_var_out; R; _
+	E -> cpu_direct_command_prep_find_var_get_to_var_name; R; E
+
+_get_to_vars_recog_pattern_H:
+	_ -> cpu_direct_command_index_stack_out; L; _
+	1 -> cpu_direct_command_index_stack_out; L; 1
+	H -> cpu_direct_command_prep_find_var_find_value; L; H
+	E -> cpu_direct_command_index_stack_out; L; E
+
+cpu_direct_command_prep_find_var_get_to_aux_recog_pattern_H:
+	_ -> cpu_direct_command_prep_find_var_get_to_aux; R; _
+	1 -> cpu_direct_command_prep_find_var_get_to_aux; R; 1
+	H -> cpu_direct_command_prep_find_var_get_to_var_name; R; H
+	E -> cpu_direct_command_prep_find_var_get_to_aux; R; E
+
+cpu_direct_command_prep_find_var_out:
+	_ -> cpu_direct_command_find_var_read_here_out__; L; _
+	1 -> cpu_direct_command_find_var_read_here_out_1; L; H
+	H -> ERROR; -; H
+	E -> cpu_direct_command_find_var_read_here_out_E; L; H
+
+cpu_direct_command_find_var_read_here_out__:
+	_ -> cpu_direct_command_find_var_remember__; L; H
+	1 -> cpu_direct_command_find_var_read_here_out__; L; 1
+	H -> cpu_direct_command_find_var_read_here_out__; L; H
+	E -> cpu_direct_command_find_var_read_here_out__; L; E
+
+cpu_direct_command_find_var_remember__:
+	_ -> cpu_direct_command_find_var_remember__; L; _
+	1 -> cpu_direct_command_find_var_remember__; L; 1
+	H -> cpu_direct_command_find_var_remember___get_to_vars_recog_pattern_H; L; H
+	E -> cpu_direct_command_find_var_remember__; L; E
+
+cpu_direct_command_find_var_remember___find_value_no_H:
+	_ -> cpu_direct_command_find_var_remember___find_value_no_H; L; _
+	1 -> cpu_direct_command_find_var_remember___get_past_value_no_H; -; 1
+	H -> cpu_direct_command_find_var_remember___find_value_seen_H; L; H
+	E -> cpu_direct_command_find_var_remember___get_past_value_no_H; -; E
+
+cpu_direct_command_find_var_remember___find_value_seen_H:
+	_ -> cpu_direct_command_find_var_remember___find_value_seen_H; L; _
+	1 -> cpu_direct_command_find_var_remember___get_past_value_seen_H; -; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_find_var_remember___get_past_value_seen_H; -; E
+
+cpu_direct_command_find_var_remember___get_past_value_no_H:
+	_ -> cpu_direct_command_find_var_remember___find_id_no_H; -; _
+	1 -> cpu_direct_command_find_var_remember___get_past_value_no_H; L; 1
+	H -> cpu_direct_command_find_var_remember___get_past_value_seen_H; L; H
+	E -> cpu_direct_command_find_var_remember___get_past_value_no_H; L; E
+
+cpu_direct_command_find_var_remember___get_past_value_seen_H:
+	_ -> cpu_direct_command_find_var_remember___find_id_seen_H; -; _
+	1 -> cpu_direct_command_find_var_remember___get_past_value_seen_H; L; 1
+	H -> cpu_direct_command_find_var_remember___get_past_value_seen_H; L; H
+	E -> cpu_direct_command_find_var_remember___get_past_value_seen_H; L; E
+
+cpu_direct_command_find_var_remember___find_id_no_H:
+	_ -> cpu_direct_command_find_var_remember___find_id_no_H; L; _
+	1 -> ERROR; -; 1
+	H -> cpu_direct_command_find_var_remember___find_id_seen_H; L; H
+	E -> ERROR; -; E
+
+cpu_direct_command_find_var_remember___find_id_seen_H:
+	_ -> cpu_direct_command_find_var_remember___find_id_seen_H; L; _
+	1 -> cpu_direct_command_find_var_remember___get_past_id; -; 1
+	H -> cpu_direct_command_find_var_remember___out; R; H
+	E -> cpu_direct_command_find_var_remember___get_past_id; -; E
+
+cpu_direct_command_find_var_remember___get_past_id:
+	_ -> cpu_direct_command_find_var_remember___find_value_no_H; -; _
+	1 -> cpu_direct_command_find_var_remember___get_past_id; L; 1
+	H -> cpu_direct_command_find_var_remember___out; R; H
+	E -> cpu_direct_command_find_var_remember___get_past_id; L; E
+
+cpu_direct_command_find_var_remember___get_to_vars_recog_pattern_H:
+	_ -> cpu_direct_command_find_var_remember__; L; _
+	1 -> cpu_direct_command_find_var_remember__; L; 1
+	H -> cpu_direct_command_find_var_remember___find_value_no_H; L; H
+	E -> cpu_direct_command_find_var_remember__; L; E
+
+cpu_direct_command_find_var_read_here_out_1:
+	_ -> cpu_direct_command_find_var_read_here_out_1; L; _
+	1 -> cpu_direct_command_find_var_read_here_out_1; L; 1
+	H -> cpu_direct_command_find_var_remember_1_get_to_vars_recog_pattern_H; L; H
+	E -> cpu_direct_command_find_var_read_here_out_1; L; E
+
+cpu_direct_command_find_var_remember_1_find_value:
+	_ -> cpu_direct_command_find_var_remember_1_find_value; L; _
+	1 -> cpu_direct_command_find_var_remember_1_get_past_value; -; 1
+	H -> cpu_direct_command_find_var_remember_1_find_value; L; H
+	E -> cpu_direct_command_find_var_remember_1_get_past_value; -; E
+
+cpu_direct_command_find_var_remember_1_get_past_value:
+	_ -> cpu_direct_command_find_var_remember_1_find_id; -; _
+	1 -> cpu_direct_command_find_var_remember_1_get_past_value; L; 1
+	H -> cpu_direct_command_find_var_remember_1_get_past_value; L; H
+	E -> cpu_direct_command_find_var_remember_1_get_past_value; L; E
+
+cpu_direct_command_find_var_remember_1_find_id:
+	_ -> cpu_direct_command_find_var_remember_1_find_id; L; _
+	1 -> cpu_direct_command_find_var_remember_1_get_past_id; -; 1
+	H -> cpu_direct_command_find_var_remember_1_find_id; L; H
+	E -> cpu_direct_command_find_var_remember_1_get_past_id; -; E
+
+cpu_direct_command_find_var_remember_1_get_past_id:
+	_ -> cpu_direct_command_find_var_remember_1_find_value; -; _
+	1 -> cpu_direct_command_find_var_remember_1_get_past_id; L; 1
+	H -> cpu_direct_command_find_var_remember_1_out; R; H
+	E -> cpu_direct_command_find_var_remember_1_get_past_id; L; E
+
+cpu_direct_command_find_var_remember_1_get_to_vars_recog_pattern_H:
+	_ -> cpu_direct_command_find_var_read_here_out_1; L; _
+	1 -> cpu_direct_command_find_var_read_here_out_1; L; 1
+	H -> cpu_direct_command_find_var_remember_1_find_value; L; H
+	E -> cpu_direct_command_find_var_read_here_out_1; L; E
+
+cpu_direct_command_find_var_read_here_out_E:
+	_ -> cpu_direct_command_find_var_read_here_out_E; L; _
+	1 -> cpu_direct_command_find_var_read_here_out_E; L; 1
+	H -> cpu_direct_command_find_var_remember_E_get_to_vars_recog_pattern_H; L; H
+	E -> cpu_direct_command_find_var_read_here_out_E; L; E
+
+cpu_direct_command_find_var_remember_E_find_value:
+	_ -> cpu_direct_command_find_var_remember_E_find_value; L; _
+	1 -> cpu_direct_command_find_var_remember_E_get_past_value; -; 1
+	H -> cpu_direct_command_find_var_remember_E_find_value; L; H
+	E -> cpu_direct_command_find_var_remember_E_get_past_value; -; E
+
+cpu_direct_command_find_var_remember_E_get_past_value:
+	_ -> cpu_direct_command_find_var_remember_E_find_id; -; _
+	1 -> cpu_direct_command_find_var_remember_E_get_past_value; L; 1
+	H -> cpu_direct_command_find_var_remember_E_get_past_value; L; H
+	E -> cpu_direct_command_find_var_remember_E_get_past_value; L; E
+
+cpu_direct_command_find_var_remember_E_find_id:
+	_ -> cpu_direct_command_find_var_remember_E_find_id; L; _
+	1 -> cpu_direct_command_find_var_remember_E_get_past_id; -; 1
+	H -> cpu_direct_command_find_var_remember_E_find_id; L; H
+	E -> cpu_direct_command_find_var_remember_E_get_past_id; -; E
+
+cpu_direct_command_find_var_remember_E_get_past_id:
+	_ -> cpu_direct_command_find_var_remember_E_find_value; -; _
+	1 -> cpu_direct_command_find_var_remember_E_get_past_id; L; 1
+	H -> cpu_direct_command_find_var_remember_E_out; R; H
+	E -> cpu_direct_command_find_var_remember_E_get_past_id; L; E
+
+cpu_direct_command_find_var_remember_E_get_to_vars_recog_pattern_H:
+	_ -> cpu_direct_command_find_var_read_here_out_E; L; _
+	1 -> cpu_direct_command_find_var_read_here_out_E; L; 1
+	H -> cpu_direct_command_find_var_remember_E_find_value; L; H
+	E -> cpu_direct_command_find_var_read_here_out_E; L; E
+
+cpu_direct_command_find_var_remember___out:
+	_ -> cpu_direct_command_find_var_out_success; L; _
+	1 -> cpu_direct_command_find_varout_fail__; -; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_find_varout_fail__; -; E
+
+cpu_direct_command_find_var_remember_1_out:
+	_ -> cpu_direct_command_find_var_out_fail_1; -; _
+	1 -> cpu_direct_command_find_var_check_1_write_symbol; L; H
+	H -> ERROR; -; H
+	E -> cpu_direct_command_find_var_out_fail_1; -; E
+
+cpu_direct_command_find_var_check_1_write_symbol:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_direct_command_find_var_out_continue_1; -; 1
+	E -> ERROR; -; E
+
+cpu_direct_command_find_var_remember_E_out:
+	_ -> cpu_direct_command_find_var_out_fail__; -; _
+	1 -> cpu_direct_command_find_var_out_fail__; -; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_find_var_check_E_write_symbol; L; H
+
+cpu_direct_command_find_var_check_E_write_symbol:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_direct_command_find_var_out_continue_E; -; E
+	E -> ERROR; -; E
+
+cpu_direct_command_find_var_out_continue_1:
+	_ -> cpu_direct_command_find_var_out_continue_1; R; _
+	1 -> cpu_direct_command_find_var_out_continue_1; R; 1
+	H -> cpu_direct_command_find_var_got_past_H_1; R; H
+	E -> cpu_direct_command_find_var_out_continue_1; R; E
+
+cpu_direct_command_find_var_out_continue_E:
+	_ -> cpu_direct_command_find_var_out_continue_E; R; _
+	1 -> cpu_direct_command_find_var_out_continue_E; R; 1
+	H -> cpu_direct_command_find_var_got_past_H_E; R; H
+	E -> cpu_direct_command_find_var_out_continue_E; R; E
+
+cpu_direct_command_find_var_got_past_H_1:
+	_ -> cpu_direct_command_find_var_got_past_H_1; R; _
+	1 -> cpu_direct_command_find_var_got_past_H_1; R; 1
+	H -> cpu_direct_command_find_var_continue_1_get_to_aux_recog_pattern_H; R; H
+	E -> cpu_direct_command_find_var_got_past_H_1; R; E
+
+cpu_direct_command_find_var_continue_1_find_H:
+	_ -> cpu_direct_command_find_var_continue_1_find_H; R; _
+	1 -> cpu_direct_command_find_var_continue_1_find_H; R; 1
+	H -> cpu_direct_command_prep_find_var_out; R; 1
+	E -> cpu_direct_command_find_var_continue_1_find_H; R; E
+
+cpu_direct_command_find_var_continue_1_get_to_aux_recog_pattern_H:
+	_ -> cpu_direct_command_find_var_got_past_H_1; R; _
+	1 -> cpu_direct_command_find_var_got_past_H_1; R; 1
+	H -> cpu_direct_command_find_var_continue_1_find_H; R; H
+	E -> cpu_direct_command_find_var_got_past_H_1; R; E
+
+cpu_direct_command_find_var_got_past_H_E:
+	_ -> cpu_direct_command_find_var_got_past_H_E; R; _
+	1 -> cpu_direct_command_find_var_got_past_H_E; R; 1
+	H -> cpu_direct_command_find_var_continue_E_get_to_aux_recog_pattern_H; R; H
+	E -> cpu_direct_command_find_var_got_past_H_E; R; E
+
+cpu_direct_command_find_var_continue_E_find_H:
+	_ -> cpu_direct_command_find_var_continue_E_find_H; R; _
+	1 -> cpu_direct_command_find_var_continue_E_find_H; R; 1
+	H -> cpu_direct_command_prep_find_var_out; R; E
+	E -> cpu_direct_command_find_var_continue_E_find_H; R; E
+
+cpu_direct_command_find_var_continue_E_get_to_aux_recog_pattern_H:
+	_ -> cpu_direct_command_find_var_got_past_H_E; R; _
+	1 -> cpu_direct_command_find_var_got_past_H_E; R; 1
+	H -> cpu_direct_command_find_var_continue_E_find_H; R; H
+	E -> cpu_direct_command_find_var_got_past_H_E; R; E
+
+cpu_direct_command_find_var_reset_H:
+	_ -> cpu_direct_command_find_var_head_back_again; L; H
+	1 -> cpu_direct_command_find_var_reset_H; L; 1
+	H -> cpu_direct_command_find_var_reset_H; L; H
+	E -> cpu_direct_command_find_var_reset_H; L; E
+
+cpu_direct_command_find_var_out_fail_1:
+	_ -> cpu_direct_command_find_var_out_fail_1; R; _
+	1 -> cpu_direct_command_find_var_out_fail_1; R; 1
+	H -> cpu_direct_command_find_var_failure_1_get_to_aux_recog_pattern_H; R; H
+	E -> cpu_direct_command_find_var_out_fail_1; R; E
+
+cpu_direct_command_find_var_failure_1_find_H:
+	_ -> cpu_direct_command_find_var_failure_1_find_H; R; _
+	1 -> cpu_direct_command_find_var_failure_1_find_H; R; 1
+	H -> cpu_direct_command_find_var_reset_H; -; 1
+	E -> cpu_direct_command_find_var_failure_1_find_H; R; E
+
+cpu_direct_command_find_var_failure_1_get_to_aux_recog_pattern_H:
+	_ -> cpu_direct_command_find_var_out_fail_1; R; _
+	1 -> cpu_direct_command_find_var_out_fail_1; R; 1
+	H -> cpu_direct_command_find_var_failure_1_find_H; R; H
+	E -> cpu_direct_command_find_var_out_fail_1; R; E
+
+cpu_direct_command_find_var_out_fail__:
+	_ -> cpu_direct_command_find_var_out_fail__; R; _
+	1 -> cpu_direct_command_find_var_out_fail__; R; 1
+	H -> cpu_direct_command_find_var_failure_E_get_to_aux_recog_pattern_H; R; H
+	E -> cpu_direct_command_find_var_out_fail__; R; E
+
+cpu_direct_command_find_var_failure_E_find_H:
+	_ -> cpu_direct_command_find_var_failure_E_find_H; R; _
+	1 -> cpu_direct_command_find_var_failure_E_find_H; R; 1
+	H -> cpu_direct_command_find_var_reset_H; -; E
+	E -> cpu_direct_command_find_var_failure_E_find_H; R; E
+
+cpu_direct_command_find_var_failure_E_get_to_aux_recog_pattern_H:
+	_ -> cpu_direct_command_find_var_out_fail__; R; _
+	1 -> cpu_direct_command_find_var_out_fail__; R; 1
+	H -> cpu_direct_command_find_var_failure_E_find_H; R; H
+	E -> cpu_direct_command_find_var_out_fail__; R; E
+
+cpu_direct_command_find_var_head_back_again:
+	_ -> cpu_direct_command_find_var_head_back_again; L; _
+	1 -> cpu_direct_command_find_var_head_back_again; L; 1
+	H -> cpu_direct_command_find_var_time_to_move_on_get_to_vars_recog_pattern_H; L; H
+	E -> cpu_direct_command_find_var_head_back_again; L; E
+
+cpu_direct_command_find_var_time_to_move_on_find_value:
+	_ -> cpu_direct_command_find_var_time_to_move_on_find_value; L; _
+	1 -> cpu_direct_command_find_var_time_to_move_on_get_past_value; -; 1
+	H -> cpu_direct_command_find_var_time_to_move_on_find_value; L; H
+	E -> cpu_direct_command_find_var_time_to_move_on_get_past_value; -; E
+
+cpu_direct_command_find_var_time_to_move_on_get_past_value:
+	_ -> cpu_direct_command_find_var_time_to_move_on_find_id; -; _
+	1 -> cpu_direct_command_find_var_time_to_move_on_get_past_value; L; 1
+	H -> cpu_direct_command_find_var_time_to_move_on_get_past_value; L; H
+	E -> cpu_direct_command_find_var_time_to_move_on_get_past_value; L; E
+
+cpu_direct_command_find_var_time_to_move_on_find_id:
+	_ -> cpu_direct_command_find_var_time_to_move_on_find_id; L; _
+	1 -> cpu_direct_command_find_var_time_to_move_on_get_past_id; -; 1
+	H -> cpu_direct_command_find_var_time_to_move_on_find_id; L; H
+	E -> cpu_direct_command_find_var_time_to_move_on_get_past_id; -; E
+
+cpu_direct_command_find_var_time_to_move_on_get_past_id:
+	_ -> cpu_direct_command_find_var_time_to_move_on_find_value; -; _
+	1 -> cpu_direct_command_find_var_time_to_move_on_get_past_id; L; 1
+	H -> cpu_direct_command_find_varout_fail__; -; H
+	E -> cpu_direct_command_find_var_time_to_move_on_get_past_id; L; E
+
+cpu_direct_command_find_var_time_to_move_on_get_to_vars_recog_pattern_H:
+	_ -> cpu_direct_command_find_var_head_back_again; L; _
+	1 -> cpu_direct_command_find_var_head_back_again; L; 1
+	H -> cpu_direct_command_find_var_time_to_move_on_find_value; L; H
+	E -> cpu_direct_command_find_var_head_back_again; L; E
+
+cpu_direct_command_find_varout_fail__:
+	_ -> cpu_direct_command_find_var_failure_find_var; -; _
+	1 -> cpu_direct_command_find_varout_fail__; L; 1
+	H -> cpu_direct_command_find_varout_fail__; L; H
+	E -> cpu_direct_command_find_varout_fail__; L; E
+
+cpu_direct_command_find_var_failure_find_var:
+	_ -> cpu_direct_command_find_var_failure_find_var; L; _
+	1 -> cpu_direct_command_find_var_failure_get_past_var; -; 1
+	H -> cpu_direct_command_find_var_failure_find_var; L; H
+	E -> cpu_direct_command_find_var_failure_get_past_var; -; E
+
+cpu_direct_command_find_var_failure_get_past_var:
+	_ -> cpu_direct_command_find_var_failure_find_id; -; _
+	1 -> cpu_direct_command_find_var_failure_get_past_var; L; 1
+	H -> cpu_direct_command_find_var_failure_get_past_var; L; H
+	E -> cpu_direct_command_find_var_failure_get_past_var; L; E
+
+cpu_direct_command_find_var_failure_find_id:
+	_ -> cpu_direct_command_find_var_failure_find_id; L; _
+	1 -> cpu_direct_command_find_var_failure_get_past_id; -; 1
+	H -> cpu_direct_command_find_var_failure_find_id; L; H
+	E -> cpu_direct_command_find_var_failure_get_past_id; -; E
+
+cpu_direct_command_find_var_failure_get_past_id:
+	_ -> cpu_direct_command_find_var_failure_get_past_tape_head; R; H
+	1 -> cpu_direct_command_find_var_failure_get_past_id; L; 1
+	H -> cpu_direct_command_find_var_failure_get_past_id; L; H
+	E -> cpu_direct_command_find_var_failure_get_past_id; L; E
+
+cpu_direct_command_find_var_failure_get_past_tape_head:
+	_ -> cpu_direct_command_find_var_failure_get_past_tape_head; R; _
+	1 -> cpu_direct_command_find_var_failure_get_past_tape_head; R; 1
+	H -> cpu_direct_command_find_var_failure_get_back_to_failed_var; R; H
+	E -> cpu_direct_command_find_var_failure_get_past_tape_head; R; E
+
+cpu_direct_command_find_var_failure_get_back_to_failed_var:
+	_ -> cpu_direct_command_find_var_failure_get_back_to_failed_var; R; _
+	1 -> cpu_direct_command_find_var_failure_get_back_to_failed_var; R; 1
+	H -> cpu_direct_command_find_var_failure_out; -; H
+	E -> cpu_direct_command_find_var_failure_get_back_to_failed_var; R; E
+
+cpu_direct_command_find_var_failure_out:
+	_ -> cpu_direct_command_find_var_remove_failed_H_shift_symbol; R; _
+	1 -> cpu_direct_command_find_var_failure_out; L; 1
+	H -> cpu_direct_command_find_var_failure_out; L; H
+	E -> cpu_direct_command_find_var_failure_out; L; E
+
+cpu_direct_command_find_var_remove_failed_H_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_find_var_remove_failed_H_shift_1; R; _
+	H -> cpu_direct_command_find_var_remove_failed_H_out; -; _
+	E -> cpu_direct_command_find_var_remove_failed_H_shift_E; R; _
+
+cpu_direct_command_find_var_remove_failed_H_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_find_var_remove_failed_H_shift_1; R; 1
+	H -> cpu_direct_command_find_var_remove_failed_H_out; -; 1
+	E -> cpu_direct_command_find_var_remove_failed_H_shift_E; R; 1
+
+cpu_direct_command_find_var_remove_failed_H_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_find_var_remove_failed_H_shift_1; R; E
+	H -> cpu_direct_command_find_var_remove_failed_H_out; -; E
+	E -> cpu_direct_command_find_var_remove_failed_H_shift_E; R; E
+
+cpu_direct_command_find_var_remove_failed_H_out:
+	_ -> cpu_direct_command_find_var_remove_failed_H_out; R; _
+	1 -> cpu_direct_command_find_var_remove_failed_H_out; R; 1
+	H -> cpu_direct_command_find_var_failed_get_to_aux_recog_pattern_H; R; H
+	E -> cpu_direct_command_find_var_remove_failed_H_out; R; E
+
+cpu_direct_command_find_var_failed_find_H:
+	_ -> cpu_direct_command_find_var_failed_find_H; R; _
+	1 -> cpu_direct_command_find_var_failed_find_H; R; 1
+	H -> cpu_direct_command_prep_find_var_out; R; _
+	E -> cpu_direct_command_find_var_failed_find_H; R; E
+
+cpu_direct_command_find_var_failed_get_to_aux_recog_pattern_H:
+	_ -> cpu_direct_command_find_var_remove_failed_H_out; R; _
+	1 -> cpu_direct_command_find_var_remove_failed_H_out; R; 1
+	H -> cpu_direct_command_find_var_failed_find_H; R; H
+	E -> cpu_direct_command_find_var_remove_failed_H_out; R; E
+
+cpu_direct_command_find_var_out_success:
+	_ -> cpu_direct_command_find_var_goodnumber_rectify_shift_symbol; R; _
+	1 -> cpu_direct_command_find_var_out_success; L; 1
+	H -> cpu_direct_command_find_var_out_success; L; H
+	E -> cpu_direct_command_find_var_out_success; L; E
+
+cpu_direct_command_find_var_goodnumber_rectify_shift_symbol:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_find_var_goodnumber_rectify_shift_1; R; H
+	H -> cpu_direct_command_find_var_goodnumber_rectify_out; -; H
+	E -> cpu_direct_command_find_var_goodnumber_rectify_shift_E; R; H
+
+cpu_direct_command_find_var_goodnumber_rectify_shift_1:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_find_var_goodnumber_rectify_shift_1; R; 1
+	H -> cpu_direct_command_find_var_goodnumber_rectify_out; -; 1
+	E -> cpu_direct_command_find_var_goodnumber_rectify_shift_E; R; 1
+
+cpu_direct_command_find_var_goodnumber_rectify_shift_E:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_find_var_goodnumber_rectify_shift_1; R; E
+	H -> cpu_direct_command_find_var_goodnumber_rectify_out; -; E
+	E -> cpu_direct_command_find_var_goodnumber_rectify_shift_E; R; E
+
+cpu_direct_command_find_var_goodnumber_rectify_out:
+	_ -> cpu_direct_command_find_var_goodnumber_rectify_out; R; _
+	1 -> cpu_direct_command_find_var_goodnumber_rectify_out; R; 1
+	H -> cpu_direct_command_find_var_read_tape; R; H
+	E -> cpu_direct_command_find_var_goodnumber_rectify_out; R; E
+
+cpu_direct_command_find_var_read_tape:
+	_ -> cpu_direct_command_find_var_read__; -; _
+	1 -> cpu_direct_command_find_var_read_1; -; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_find_var_read_E; -; E
+
+cpu_direct_command_find_var_read__:
+	_ -> cpu_direct_command_find_var_read__; R; _
+	1 -> cpu_direct_command_find_var_read__; R; 1
+	H -> cpu_direct_command_find_var_came_home___get_to_aux_recog_pattern_H; R; H
+	E -> cpu_direct_command_find_var_read__; R; E
+
+cpu_direct_command_find_var_came_home___find_H:
+	_ -> cpu_direct_command_find_var_came_home___find_H; R; _
+	1 -> cpu_direct_command_find_var_came_home___find_H; R; 1
+	H -> cpu_direct_command_find_var_came_home___out; -; _
+	E -> cpu_direct_command_find_var_came_home___find_H; R; E
+
+cpu_direct_command_find_var_came_home___get_to_aux_recog_pattern_H:
+	_ -> cpu_direct_command_find_var_read__; R; _
+	1 -> cpu_direct_command_find_var_read__; R; 1
+	H -> cpu_direct_command_find_var_came_home___find_H; R; H
+	E -> cpu_direct_command_find_var_read__; R; E
+
+cpu_direct_command_find_var_read_1:
+	_ -> cpu_direct_command_find_var_read_1; R; _
+	1 -> cpu_direct_command_find_var_read_1; R; 1
+	H -> cpu_direct_command_find_var_came_home_1_get_to_aux_recog_pattern_H; R; H
+	E -> cpu_direct_command_find_var_read_1; R; E
+
+cpu_direct_command_find_var_came_home_1_find_H:
+	_ -> cpu_direct_command_find_var_came_home_1_find_H; R; _
+	1 -> cpu_direct_command_find_var_came_home_1_find_H; R; 1
+	H -> cpu_direct_command_find_var_came_home_1_out; -; _
+	E -> cpu_direct_command_find_var_came_home_1_find_H; R; E
+
+cpu_direct_command_find_var_came_home_1_get_to_aux_recog_pattern_H:
+	_ -> cpu_direct_command_find_var_read_1; R; _
+	1 -> cpu_direct_command_find_var_read_1; R; 1
+	H -> cpu_direct_command_find_var_came_home_1_find_H; R; H
+	E -> cpu_direct_command_find_var_read_1; R; E
+
+cpu_direct_command_find_var_read_E:
+	_ -> cpu_direct_command_find_var_read_E; R; _
+	1 -> cpu_direct_command_find_var_read_E; R; 1
+	H -> cpu_direct_command_find_var_came_home_E_get_to_aux_recog_pattern_H; R; H
+	E -> cpu_direct_command_find_var_read_E; R; E
+
+cpu_direct_command_find_var_came_home_E_find_H:
+	_ -> cpu_direct_command_find_var_came_home_E_find_H; R; _
+	1 -> cpu_direct_command_find_var_came_home_E_find_H; R; 1
+	H -> cpu_direct_command_find_var_came_home_E_out; -; _
+	E -> cpu_direct_command_find_var_came_home_E_find_H; R; E
+
+cpu_direct_command_find_var_came_home_E_get_to_aux_recog_pattern_H:
+	_ -> cpu_direct_command_find_var_read_E; R; _
+	1 -> cpu_direct_command_find_var_read_E; R; 1
+	H -> cpu_direct_command_find_var_came_home_E_find_H; R; H
+	E -> cpu_direct_command_find_var_read_E; R; E
+
+cpu_direct_command_find_var_came_home___out:
+	_ -> cpu_direct_command_find_var_came_home___out; R; _
+	1 -> cpu_direct_command_find_var_came_home___out; R; 1
+	H -> cpu_direct_command_find_var_out__; R; _
+	E -> cpu_direct_command_find_var_came_home___out; R; E
+
+cpu_direct_command_find_var_came_home_1_out:
+	_ -> cpu_direct_command_find_var_came_home_1_out; R; _
+	1 -> cpu_direct_command_find_var_came_home_1_out; R; 1
+	H -> cpu_direct_command_find_var_out_1; R; _
+	E -> cpu_direct_command_find_var_came_home_1_out; R; E
+
+cpu_direct_command_find_var_came_home_E_out:
+	_ -> cpu_direct_command_find_var_came_home_E_out; R; _
+	1 -> cpu_direct_command_find_var_came_home_E_out; R; 1
+	H -> cpu_direct_command_find_var_out_E; R; _
+	E -> cpu_direct_command_find_var_came_home_E_out; R; E
+
+cpu_direct_command_find_var_out__:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction___read_symbol; R; H
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_direct_command_deal_with_tape_find_reaction___read_symbol:
+	_ -> cpu_direct_command_deal_with_tape_find_reaction___out; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction___undo_H; L; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction___undo_H; L; E
+
+cpu_direct_command_deal_with_tape_find_reaction___undo_H:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction___get_past_basic_info; R; 1
+	E -> ERROR; -; E
+
+cpu_direct_command_deal_with_tape_find_reaction___get_past_basic_info:
+	_ -> cpu_direct_command_deal_with_tape_find_reaction___get_past_info_move_by_1; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction___get_past_info_move_by_1; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction___get_past_info_move_by_1; R; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction___get_past_info_move_by_1; R; E
+
+cpu_direct_command_deal_with_tape_find_reaction___get_past_goto:
+	_ -> cpu_direct_command_find_var_out__; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction___get_past_goto; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction___get_past_goto; R; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction___get_past_goto; R; E
+
+cpu_direct_command_deal_with_tape_find_reaction___get_past_info_move_by_1:
+	_ -> cpu_direct_command_deal_with_tape_find_reaction___get_past_info_move_by_2; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction___get_past_info_move_by_2; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction___get_past_info_move_by_2; R; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction___get_past_info_move_by_2; R; E
+
+cpu_direct_command_deal_with_tape_find_reaction___get_past_info_move_by_2:
+	_ -> cpu_direct_command_deal_with_tape_find_reaction___get_past_goto; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction___get_past_goto; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction___get_past_goto; R; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction___get_past_goto; R; E
+
+cpu_direct_command_find_var_out_1:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction_1_read_symbol; R; H
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_direct_command_deal_with_tape_find_reaction_1_read_symbol:
+	_ -> cpu_direct_command_deal_with_tape_find_reaction_1_undo_H; L; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction_1_out; R; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction_1_undo_H; L; E
+
+cpu_direct_command_deal_with_tape_find_reaction_1_undo_H:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_basic_info; R; 1
+	E -> ERROR; -; E
+
+cpu_direct_command_deal_with_tape_find_reaction_1_get_past_basic_info:
+	_ -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_info_move_by_1; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_info_move_by_1; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_info_move_by_1; R; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_info_move_by_1; R; E
+
+cpu_direct_command_deal_with_tape_find_reaction_1_get_past_goto:
+	_ -> cpu_direct_command_find_var_out_1; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_goto; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_goto; R; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_goto; R; E
+
+cpu_direct_command_deal_with_tape_find_reaction_1_get_past_info_move_by_1:
+	_ -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_info_move_by_2; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_info_move_by_2; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_info_move_by_2; R; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_info_move_by_2; R; E
+
+cpu_direct_command_deal_with_tape_find_reaction_1_get_past_info_move_by_2:
+	_ -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_goto; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_goto; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_goto; R; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction_1_get_past_goto; R; E
+
+cpu_direct_command_find_var_out_E:
+	_ -> ERROR; -; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction_E_read_symbol; R; H
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_direct_command_deal_with_tape_find_reaction_E_read_symbol:
+	_ -> cpu_direct_command_deal_with_tape_find_reaction_E_undo_H; L; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction_E_undo_H; L; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction_E_out; R; E
+
+cpu_direct_command_deal_with_tape_find_reaction_E_undo_H:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_basic_info; R; 1
+	E -> ERROR; -; E
+
+cpu_direct_command_deal_with_tape_find_reaction_E_get_past_basic_info:
+	_ -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_info_move_by_1; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_info_move_by_1; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_info_move_by_1; R; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_info_move_by_1; R; E
+
+cpu_direct_command_deal_with_tape_find_reaction_E_get_past_goto:
+	_ -> cpu_direct_command_find_var_out_E; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_goto; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_goto; R; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_goto; R; E
+
+cpu_direct_command_deal_with_tape_find_reaction_E_get_past_info_move_by_1:
+	_ -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_info_move_by_2; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_info_move_by_2; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_info_move_by_2; R; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_info_move_by_2; R; E
+
+cpu_direct_command_deal_with_tape_find_reaction_E_get_past_info_move_by_2:
+	_ -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_goto; R; _
+	1 -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_goto; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_goto; R; H
+	E -> cpu_direct_command_deal_with_tape_find_reaction_E_get_past_goto; R; E
+
+cpu_direct_command_deal_with_tape_find_reaction___out:
+	_ -> cpu_direct_command_deal_with_tape_read_head_move; R; _
+	1 -> cpu_direct_command_deal_with_tape_rotate_forward; -; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_rotate_backward; -; E
+
+cpu_direct_command_deal_with_tape_find_reaction_1_out:
+	_ -> cpu_direct_command_deal_with_tape_rotate_backward; -; _
+	1 -> cpu_direct_command_deal_with_tape_read_head_move; R; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_rotate_forward; -; E
+
+cpu_direct_command_deal_with_tape_find_reaction_E_out:
+	_ -> cpu_direct_command_deal_with_tape_rotate_forward; -; _
+	1 -> cpu_direct_command_deal_with_tape_rotate_backward; -; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_read_head_move; R; E
+
+cpu_direct_command_deal_with_tape_rotate_backward:
+	_ -> cpu_direct_command_deal_with_tape_rotate_backward; L; _
+	1 -> cpu_direct_command_deal_with_tape_rotate_backward; L; 1
+	H -> cpu_direct_command_deal_with_tape_got_past_H_back; L; H
+	E -> cpu_direct_command_deal_with_tape_rotate_backward; L; E
+
+cpu_direct_command_deal_with_tape_rotate_forward:
+	_ -> cpu_direct_command_deal_with_tape_rotate_forward; L; _
+	1 -> cpu_direct_command_deal_with_tape_rotate_forward; L; 1
+	H -> cpu_direct_command_deal_with_tape_got_past_H_forward; L; H
+	E -> cpu_direct_command_deal_with_tape_rotate_forward; L; E
+
+cpu_direct_command_deal_with_tape_read_head_move:
+	_ -> cpu_direct_command_deal_with_tape_dont_move_head; -; _
+	1 -> cpu_direct_command_deal_with_tape_move_head_left; -; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_move_head_right; -; E
+
+cpu_direct_command_deal_with_tape_write_forward:
+	_ -> cpu_direct_command_deal_with_tape_get_past_var; -; 1
+	1 -> cpu_direct_command_deal_with_tape_get_past_var; -; E
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_get_past_var; -; _
+
+cpu_direct_command_deal_with_tape_write_backward:
+	_ -> cpu_direct_command_deal_with_tape_get_past_var; -; E
+	1 -> cpu_direct_command_deal_with_tape_get_past_var; -; _
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_get_past_var; -; 1
+
+cpu_direct_command_deal_with_tape_get_past_var:
+	_ -> cpu_direct_command_deal_with_tape___; R; _
+	1 -> cpu_direct_command_deal_with_tape_get_past_var; R; 1
+	H -> cpu_direct_command_deal_with_tape_get_past_var; R; H
+	E -> cpu_direct_command_deal_with_tape_get_past_var; R; E
+
+cpu_direct_command_deal_with_tape_home_for_head_move:
+	_ -> cpu_direct_command_deal_with_tape_get_to_write_move_by_1; R; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_write_move_by_1; R; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_write_move_by_1; R; H
+	E -> cpu_direct_command_deal_with_tape_get_to_write_move_by_1; R; E
+
+cpu_direct_command_deal_with_tape_read_swapped_symbol_L:
+	_ -> cpu_direct_command_deal_with_tape_swap__; R; H
+	1 -> cpu_direct_command_deal_with_tape_swap_1; R; H
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_swap_E; R; H
+
+cpu_direct_command_deal_with_tape_read_swapped_symbol_R:
+	_ -> cpu_direct_command_deal_with_tape_swap__; L; H
+	1 -> cpu_direct_command_deal_with_tape_swap_1; L; H
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_swap_E; L; H
+
+cpu_direct_command_deal_with_tape_swap__:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_home_for_goto; -; _
+	E -> ERROR; -; E
+
+cpu_direct_command_deal_with_tape_swap_1:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_home_for_goto; -; 1
+	E -> ERROR; -; E
+
+cpu_direct_command_deal_with_tape_swap_E:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_home_for_goto; -; E
+	E -> ERROR; -; E
+
+cpu_direct_command_deal_with_tape_get_home_for_goto:
+	_ -> cpu_direct_command_deal_with_tape_get_home_for_goto; R; _
+	1 -> cpu_direct_command_deal_with_tape_get_home_for_goto; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_ln_recog_pattern_H; R; H
+	E -> cpu_direct_command_deal_with_tape_get_home_for_goto; R; E
+
+cpu_direct_command_deal_with_tape_find_ln:
+	_ -> cpu_direct_command_deal_with_tape_find_ln; R; _
+	1 -> cpu_direct_command_deal_with_tape_mark_end_ln; -; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_mark_end_ln; -; E
+
+cpu_direct_command_deal_with_tape_mark_end_ln:
+	_ -> cpu_direct_command_deal_with_tape_get_back_to_reaction; R; H
+	1 -> cpu_direct_command_deal_with_tape_mark_end_ln; R; 1
+	H -> cpu_direct_command_deal_with_tape_mark_end_ln; R; H
+	E -> cpu_direct_command_deal_with_tape_mark_end_ln; R; E
+
+cpu_direct_command_deal_with_tape_get_back_to_reaction:
+	_ -> cpu_direct_command_deal_with_tape_get_back_to_reaction; R; _
+	1 -> cpu_direct_command_deal_with_tape_get_back_to_reaction; R; 1
+	H -> cpu_direct_command_deal_with_tape_get_past_basic_info; R; H
+	E -> cpu_direct_command_deal_with_tape_get_back_to_reaction; R; E
+
+cpu_direct_command_deal_with_tape_get_past_basic_info:
+	_ -> cpu_direct_command_deal_with_tape_get_past_basic_info_move_by_1; R; _
+	1 -> cpu_direct_command_deal_with_tape_get_past_basic_info_move_by_1; R; 1
+	H -> cpu_direct_command_deal_with_tape_get_past_basic_info_move_by_1; R; H
+	E -> cpu_direct_command_deal_with_tape_get_past_basic_info_move_by_1; R; E
+
+cpu_direct_command_deal_with_tape_check_if_real_goto:
+	_ -> cpu_direct_command_deal_with_tape_out_incr; -; _
+	1 -> cpu_direct_command_deal_with_tape_out_goto; -; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_deal_with_tape_out_goto; -; E
+
+cpu_direct_command_deal_with_tape_got_past_H_back:
+	_ -> cpu_direct_command_deal_with_tape_got_past_H_back; L; _
+	1 -> cpu_direct_command_deal_with_tape_got_past_H_back; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_back_get_to_vars_recog_pattern_H; L; H
+	E -> cpu_direct_command_deal_with_tape_got_past_H_back; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_back_find_value:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_back_find_value; L; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_back_get_past_value; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_back_find_value; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_back_get_past_value; -; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_back_get_past_value:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_back_find_id; -; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_back_get_past_value; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_back_get_past_value; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_back_get_past_value; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_back_find_id:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_back_find_id; L; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_back_get_past_id; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_back_find_id; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_back_get_past_id; -; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_back_get_past_id:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_back_find_value; -; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_back_get_past_id; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_back_out; R; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_back_get_past_id; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_back_get_to_vars_recog_pattern_H:
+	_ -> cpu_direct_command_deal_with_tape_got_past_H_back; L; _
+	1 -> cpu_direct_command_deal_with_tape_got_past_H_back; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_back_find_value; L; H
+	E -> cpu_direct_command_deal_with_tape_got_past_H_back; L; E
+
+cpu_direct_command_deal_with_tape_got_past_H_forward:
+	_ -> cpu_direct_command_deal_with_tape_got_past_H_forward; L; _
+	1 -> cpu_direct_command_deal_with_tape_got_past_H_forward; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_forward_get_to_vars_recog_pattern_H; L; H
+	E -> cpu_direct_command_deal_with_tape_got_past_H_forward; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_forward_find_value:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_forward_find_value; L; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_forward_get_past_value; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_forward_find_value; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_forward_get_past_value; -; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_forward_get_past_value:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_forward_find_id; -; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_forward_get_past_value; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_forward_get_past_value; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_forward_get_past_value; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_forward_find_id:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_forward_find_id; L; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_forward_get_past_id; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_forward_find_id; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_forward_get_past_id; -; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_forward_get_past_id:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_forward_find_value; -; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_forward_get_past_id; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_forward_out; R; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_forward_get_past_id; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_forward_get_to_vars_recog_pattern_H:
+	_ -> cpu_direct_command_deal_with_tape_got_past_H_forward; L; _
+	1 -> cpu_direct_command_deal_with_tape_got_past_H_forward; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_forward_find_value; L; H
+	E -> cpu_direct_command_deal_with_tape_got_past_H_forward; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_back_out:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_back_out; R; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_back_out; R; 1
+	H -> cpu_direct_command_deal_with_tape_write_backward; R; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_back_out; R; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_forward_out:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_forward_out; R; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_forward_out; R; 1
+	H -> cpu_direct_command_deal_with_tape_write_forward; R; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_forward_out; R; E
+
+cpu_direct_command_deal_with_tape__1:
+	_ -> cpu_direct_command_deal_with_tape___; R; 1
+	1 -> cpu_direct_command_deal_with_tape__1; R; 1
+	H -> cpu_direct_command_deal_with_tape__H; R; 1
+	E -> cpu_direct_command_deal_with_tape__E; R; 1
+
+cpu_direct_command_deal_with_tape__H:
+	_ -> cpu_direct_command_deal_with_tape___; R; H
+	1 -> cpu_direct_command_deal_with_tape__1; R; H
+	H -> cpu_direct_command_deal_with_tape__HH; R; H
+	E -> cpu_direct_command_deal_with_tape__E; R; H
+
+cpu_direct_command_deal_with_tape__E:
+	_ -> cpu_direct_command_deal_with_tape___; R; E
+	1 -> cpu_direct_command_deal_with_tape__1; R; E
+	H -> cpu_direct_command_deal_with_tape__H; R; E
+	E -> cpu_direct_command_deal_with_tape__E; R; E
+
+cpu_direct_command_deal_with_tape___:
+	_ -> cpu_direct_command_deal_with_tape___; R; _
+	1 -> cpu_direct_command_deal_with_tape__1; R; _
+	H -> cpu_direct_command_deal_with_tape__H; R; _
+	E -> cpu_direct_command_deal_with_tape__E; R; _
+
+cpu_direct_command_deal_with_tape__HH:
+	_ -> cpu_direct_command_deal_with_tape___; R; H
+	1 -> cpu_direct_command_deal_with_tape__1; R; H
+	H -> cpu_direct_command_deal_with_tape__exit; R; H
+	E -> cpu_direct_command_deal_with_tape__E; R; H
+
+cpu_direct_command_deal_with_tape__exit:
+	_ -> cpu_direct_command_deal_with_tape__get_past_fin; -; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_direct_command_deal_with_tape__get_past_fin:
+	_ -> cpu_direct_command_deal_with_tape__out; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_direct_command_deal_with_tape__get_past_fin; L; H
+	E -> ERROR; -; E
+
+cpu_direct_command_deal_with_tape__out:
+	_ -> cpu_direct_command_deal_with_tape__out; L; _
+	1 -> cpu_direct_command_deal_with_tape__out; L; 1
+	H -> cpu_direct_command_deal_with_tape_home_for_head_move; R; H
+	E -> cpu_direct_command_deal_with_tape__out; L; E
+
+cpu_direct_command_deal_with_tape_get_to_write_move_by_1:
+	_ -> cpu_direct_command_deal_with_tape_read_head_move; R; _
+	1 -> cpu_direct_command_deal_with_tape_read_head_move; R; 1
+	H -> cpu_direct_command_deal_with_tape_read_head_move; R; H
+	E -> cpu_direct_command_deal_with_tape_read_head_move; R; E
+
+cpu_direct_command_deal_with_tape_dont_move_head:
+	_ -> cpu_direct_command_deal_with_tape_dont_move_head; L; _
+	1 -> cpu_direct_command_deal_with_tape_dont_move_head; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID___get_to_vars_recog_pattern_H; L; H
+	E -> cpu_direct_command_deal_with_tape_dont_move_head; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID___find_value:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID___find_value; L; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID___get_past_value; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID___find_value; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID___get_past_value; -; E
+
+cpu_direct_command_deal_with_tape_get_to_ID___get_past_value:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID___find_id; -; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID___get_past_value; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID___get_past_value; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID___get_past_value; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID___find_id:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID___find_id; L; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID___get_past_id; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID___find_id; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID___get_past_id; -; E
+
+cpu_direct_command_deal_with_tape_get_to_ID___get_past_id:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID___find_value; -; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID___get_past_id; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_home_for_goto; -; _
+	E -> cpu_direct_command_deal_with_tape_get_to_ID___get_past_id; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID___get_to_vars_recog_pattern_H:
+	_ -> cpu_direct_command_deal_with_tape_dont_move_head; L; _
+	1 -> cpu_direct_command_deal_with_tape_dont_move_head; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID___find_value; L; H
+	E -> cpu_direct_command_deal_with_tape_dont_move_head; L; E
+
+cpu_direct_command_deal_with_tape_move_head_left:
+	_ -> cpu_direct_command_deal_with_tape_move_head_left; L; _
+	1 -> cpu_direct_command_deal_with_tape_move_head_left; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_L_get_to_vars_recog_pattern_H; L; H
+	E -> cpu_direct_command_deal_with_tape_move_head_left; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_L_find_value:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_L_find_value; L; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_L_get_past_value; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_L_find_value; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_L_get_past_value; -; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_L_get_past_value:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_L_find_id; -; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_L_get_past_value; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_L_get_past_value; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_L_get_past_value; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_L_find_id:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_L_find_id; L; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_L_get_past_id; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_L_find_id; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_L_get_past_id; -; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_L_get_past_id:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_L_find_value; -; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_L_get_past_id; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_L_out; R; _
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_L_get_past_id; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_L_get_to_vars_recog_pattern_H:
+	_ -> cpu_direct_command_deal_with_tape_move_head_left; L; _
+	1 -> cpu_direct_command_deal_with_tape_move_head_left; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_L_find_value; L; H
+	E -> cpu_direct_command_deal_with_tape_move_head_left; L; E
+
+cpu_direct_command_deal_with_tape_move_head_right:
+	_ -> cpu_direct_command_deal_with_tape_move_head_right; L; _
+	1 -> cpu_direct_command_deal_with_tape_move_head_right; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_R_get_to_vars_recog_pattern_H; L; H
+	E -> cpu_direct_command_deal_with_tape_move_head_right; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_R_find_value:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_R_find_value; L; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_R_get_past_value; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_R_find_value; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_R_get_past_value; -; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_R_get_past_value:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_R_find_id; -; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_R_get_past_value; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_R_get_past_value; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_R_get_past_value; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_R_find_id:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_R_find_id; L; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_R_get_past_id; -; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_R_find_id; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_R_get_past_id; -; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_R_get_past_id:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_R_find_value; -; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_R_get_past_id; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_R_out; R; _
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_R_get_past_id; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_R_get_to_vars_recog_pattern_H:
+	_ -> cpu_direct_command_deal_with_tape_move_head_right; L; _
+	1 -> cpu_direct_command_deal_with_tape_move_head_right; L; 1
+	H -> cpu_direct_command_deal_with_tape_get_to_ID_R_find_value; L; H
+	E -> cpu_direct_command_deal_with_tape_move_head_right; L; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_L_out:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_L_out; R; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_L_out; R; 1
+	H -> cpu_direct_command_deal_with_tape_read_swapped_symbol_L; L; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_L_out; R; E
+
+cpu_direct_command_deal_with_tape_get_to_ID_R_out:
+	_ -> cpu_direct_command_deal_with_tape_get_to_ID_R_out; R; _
+	1 -> cpu_direct_command_deal_with_tape_get_to_ID_R_out; R; 1
+	H -> cpu_direct_command_deal_with_tape_read_swapped_symbol_R; R; H
+	E -> cpu_direct_command_deal_with_tape_get_to_ID_R_out; R; E
+
+cpu_direct_command_deal_with_tape_find_ln_recog_pattern_H:
+	_ -> cpu_direct_command_deal_with_tape_get_home_for_goto; R; _
+	1 -> cpu_direct_command_deal_with_tape_get_home_for_goto; R; 1
+	H -> cpu_direct_command_deal_with_tape_find_ln; R; H
+	E -> cpu_direct_command_deal_with_tape_get_home_for_goto; R; E
+
+cpu_direct_command_deal_with_tape_get_past_basic_info_move_by_1:
+	_ -> cpu_direct_command_deal_with_tape_get_past_basic_info_move_by_2; R; _
+	1 -> cpu_direct_command_deal_with_tape_get_past_basic_info_move_by_2; R; 1
+	H -> cpu_direct_command_deal_with_tape_get_past_basic_info_move_by_2; R; H
+	E -> cpu_direct_command_deal_with_tape_get_past_basic_info_move_by_2; R; E
+
+cpu_direct_command_deal_with_tape_get_past_basic_info_move_by_2:
+	_ -> cpu_direct_command_deal_with_tape_check_if_real_goto; R; _
+	1 -> cpu_direct_command_deal_with_tape_check_if_real_goto; R; 1
+	H -> cpu_direct_command_deal_with_tape_check_if_real_goto; R; H
+	E -> cpu_direct_command_deal_with_tape_check_if_real_goto; R; E
+
+cpu_direct_command_deal_with_tape_out_incr:
+	_ -> cpu_direct_command_deal_with_tape_out_incr; L; _
+	1 -> cpu_direct_command_deal_with_tape_out_incr; L; 1
+	H -> cpu_direct_command_incr_ln_remove_H_1; L; 1
+	E -> cpu_direct_command_deal_with_tape_out_incr; L; E
+
+cpu_direct_command_incr_ln_remove_H_1:
+	_ -> cpu_direct_command_incr_ln_remove_H_1; L; _
+	1 -> cpu_direct_command_incr_ln_remove_H_1; L; 1
+	H -> cpu_direct_command_incr_ln_incr; L; H
+	E -> cpu_direct_command_incr_ln_remove_H_1; L; E
+
+cpu_direct_command_incr_ln_incr:
+	_ -> cpu_direct_command_incr_ln_remove_H_2; -; E
+	1 -> cpu_direct_command_incr_ln_incr; L; E
+	H -> ERROR; -; H
+	E -> cpu_direct_command_incr_ln_remove_H_2; -; 1
+
+cpu_direct_command_incr_ln_remove_H_2:
+	_ -> cpu_direct_command_incr_ln_remove_H_2; R; _
+	1 -> cpu_direct_command_incr_ln_remove_H_2; R; 1
+	H -> cpu_done_processing_line; -; _
+	E -> cpu_direct_command_incr_ln_remove_H_2; R; E
+
+cpu_direct_command_deal_with_tape_out_goto:
+	_ -> cpu_direct_command_deal_with_tape_out_goto; L; _
+	1 -> cpu_direct_command_deal_with_tape_out_goto; L; 1
+	H -> cpu_direct_command_copy_goto_find_ln; L; H
+	E -> cpu_direct_command_deal_with_tape_out_goto; L; E
+
+cpu_direct_command_copy_goto_find_ln:
+	_ -> cpu_direct_command_copy_goto_find_ln; L; _
+	1 -> cpu_direct_command_copy_goto_find_ln; L; 1
+	H -> cpu_direct_command_copy_goto_clear; L; H
+	E -> cpu_direct_command_copy_goto_find_ln; L; E
+
+cpu_direct_command_copy_goto_clear:
+	_ -> cpu_direct_command_copy_goto_get_past_H; -; _
+	1 -> cpu_direct_command_copy_goto_clear; L; _
+	H -> ERROR; -; H
+	E -> cpu_direct_command_copy_goto_clear; L; _
+
+cpu_direct_command_copy_goto_get_past_H:
+	_ -> cpu_direct_command_copy_goto_get_past_H; R; _
+	1 -> cpu_direct_command_copy_goto_get_past_H; R; 1
+	H -> cpu_direct_command_copy_goto_go_home; R; H
+	E -> cpu_direct_command_copy_goto_get_past_H; R; E
+
+cpu_direct_command_copy_goto_go_home:
+	_ -> cpu_direct_command_copy_goto_go_home; R; _
+	1 -> cpu_direct_command_copy_goto_go_home; R; 1
+	H -> cpu_direct_command_copy_goto_get_past_basic_info; R; 1
+	E -> cpu_direct_command_copy_goto_go_home; R; E
+
+cpu_direct_command_copy_goto_get_past_basic_info:
+	_ -> cpu_direct_command_copy_goto_past_basic_info_move_by_1; R; _
+	1 -> cpu_direct_command_copy_goto_past_basic_info_move_by_1; R; 1
+	H -> cpu_direct_command_copy_goto_past_basic_info_move_by_1; R; H
+	E -> cpu_direct_command_copy_goto_past_basic_info_move_by_1; R; E
+
+cpu_direct_command_copy_goto_read_symbol:
+	_ -> cpu_direct_command_copy_goto_remove_H; -; _
+	1 -> cpu_direct_command_copy_goto_find_ln_1; L; H
+	H -> ERROR; -; H
+	E -> cpu_direct_command_copy_goto_find_ln_E; L; H
+
+cpu_direct_command_copy_goto_find_ln_1:
+	_ -> cpu_direct_command_copy_goto_find_ln_1; L; _
+	1 -> cpu_direct_command_copy_goto_find_ln_1; L; 1
+	H -> cpu_direct_command_copy_goto_write_1_1; L; H
+	E -> cpu_direct_command_copy_goto_find_ln_1; L; E
+
+cpu_direct_command_copy_goto_find_ln_E:
+	_ -> cpu_direct_command_copy_goto_find_ln_E; L; _
+	1 -> cpu_direct_command_copy_goto_find_ln_E; L; 1
+	H -> cpu_direct_command_copy_goto_write_E_E; L; H
+	E -> cpu_direct_command_copy_goto_find_ln_E; L; E
+
+cpu_direct_command_copy_goto_write_1_1:
+	_ -> cpu_direct_command_copy_goto_get_past_H_1; -; 1
+	1 -> cpu_direct_command_copy_goto_write_1_1; L; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_copy_goto_write_E_1; L; 1
+
+cpu_direct_command_copy_goto_write_E_1:
+	_ -> cpu_direct_command_copy_goto_get_past_H_1; -; E
+	1 -> cpu_direct_command_copy_goto_write_1_1; L; E
+	H -> ERROR; -; H
+	E -> cpu_direct_command_copy_goto_write_E_1; L; E
+
+cpu_direct_command_copy_goto_write_1_E:
+	_ -> cpu_direct_command_copy_goto_get_past_H_E; -; 1
+	1 -> cpu_direct_command_copy_goto_write_1_E; L; 1
+	H -> ERROR; -; H
+	E -> cpu_direct_command_copy_goto_write_E_E; L; 1
+
+cpu_direct_command_copy_goto_write_E_E:
+	_ -> cpu_direct_command_copy_goto_get_past_H_E; -; E
+	1 -> cpu_direct_command_copy_goto_write_1_E; L; E
+	H -> ERROR; -; H
+	E -> cpu_direct_command_copy_goto_write_E_E; L; E
+
+cpu_direct_command_copy_goto_get_past_H_1:
+	_ -> cpu_direct_command_copy_goto_get_past_H_1; R; _
+	1 -> cpu_direct_command_copy_goto_get_past_H_1; R; 1
+	H -> cpu_direct_command_copy_goto_go_home_1; R; H
+	E -> cpu_direct_command_copy_goto_get_past_H_1; R; E
+
+cpu_direct_command_copy_goto_get_past_H_E:
+	_ -> cpu_direct_command_copy_goto_get_past_H_E; R; _
+	1 -> cpu_direct_command_copy_goto_get_past_H_E; R; 1
+	H -> cpu_direct_command_copy_goto_go_home_E; R; H
+	E -> cpu_direct_command_copy_goto_get_past_H_E; R; E
+
+cpu_direct_command_copy_goto_go_home_1:
+	_ -> cpu_direct_command_copy_goto_go_home_1; R; _
+	1 -> cpu_direct_command_copy_goto_go_home_1; R; 1
+	H -> cpu_direct_command_copy_goto_read_symbol; R; 1
+	E -> cpu_direct_command_copy_goto_go_home_1; R; E
+
+cpu_direct_command_copy_goto_go_home_E:
+	_ -> cpu_direct_command_copy_goto_go_home_E; R; _
+	1 -> cpu_direct_command_copy_goto_go_home_E; R; 1
+	H -> cpu_direct_command_copy_goto_read_symbol; R; E
+	E -> cpu_direct_command_copy_goto_go_home_E; R; E
+
+cpu_direct_command_copy_goto_remove_H:
+	_ -> cpu_direct_command_copy_goto_remove_H; L; _
+	1 -> cpu_direct_command_copy_goto_remove_H; L; 1
+	H -> cpu_done_processing_line; -; _
+	E -> cpu_direct_command_copy_goto_remove_H; L; E
+
+cpu_direct_command_copy_goto_past_basic_info_move_by_1:
+	_ -> cpu_direct_command_copy_goto_past_basic_info_move_by_2; R; _
+	1 -> cpu_direct_command_copy_goto_past_basic_info_move_by_2; R; 1
+	H -> cpu_direct_command_copy_goto_past_basic_info_move_by_2; R; H
+	E -> cpu_direct_command_copy_goto_past_basic_info_move_by_2; R; E
+
+cpu_direct_command_copy_goto_past_basic_info_move_by_2:
+	_ -> cpu_direct_command_copy_goto_read_symbol; R; _
+	1 -> cpu_direct_command_copy_goto_read_symbol; R; 1
+	H -> cpu_direct_command_copy_goto_read_symbol; R; H
+	E -> cpu_direct_command_copy_goto_read_symbol; R; E
+
+cpu_read_line_type_out_function:
+	_ -> cpu_function_call_copy_func_name_out; R; _
+	1 -> cpu_function_call_copy_func_name_copy_1; L; H
+	H -> ERROR; -; H
+	E -> cpu_function_call_copy_func_name_copy_E; L; H
+
+cpu_function_call_copy_func_name_copy_1:
+	_ -> cpu_function_call_copy_func_name_copy_1; L; _
+	1 -> cpu_function_call_copy_func_name_copy_1; L; 1
+	H -> cpu_function_call_copy_func_name_copy_1_H; R; 1
+	E -> cpu_function_call_copy_func_name_copy_1; L; E
+
+cpu_function_call_copy_func_name_copy_E:
+	_ -> cpu_function_call_copy_func_name_copy_E; L; _
+	1 -> cpu_function_call_copy_func_name_copy_E; L; 1
+	H -> cpu_function_call_copy_func_name_copy_E_H; R; E
+	E -> cpu_function_call_copy_func_name_copy_E; L; E
+
+cpu_function_call_copy_func_name_copy_1_1:
+	_ -> cpu_function_call_copy_func_name_copy_1__; R; 1
+	1 -> cpu_function_call_copy_func_name_copy_1_1; R; 1
+	H -> cpu_function_call_copy_func_name_copy_1_H; R; 1
+	E -> cpu_function_call_copy_func_name_copy_1_E; R; 1
+
+cpu_function_call_copy_func_name_copy_1_H:
+	_ -> cpu_function_call_copy_func_name_copy_1__; R; H
+	1 -> cpu_function_call_copy_func_name_copy_1_1; R; H
+	H -> cpu_function_call_copy_func_name_copy_1_HH; R; H
+	E -> cpu_function_call_copy_func_name_copy_1_E; R; H
+
+cpu_function_call_copy_func_name_copy_1_E:
+	_ -> cpu_function_call_copy_func_name_copy_1__; R; E
+	1 -> cpu_function_call_copy_func_name_copy_1_1; R; E
+	H -> cpu_function_call_copy_func_name_copy_1_H; R; E
+	E -> cpu_function_call_copy_func_name_copy_1_E; R; E
+
+cpu_function_call_copy_func_name_copy_1__:
+	_ -> cpu_function_call_copy_func_name_copy_1__; R; _
+	1 -> cpu_function_call_copy_func_name_copy_1_1; R; _
+	H -> cpu_function_call_copy_func_name_copy_1_H; R; _
+	E -> cpu_function_call_copy_func_name_copy_1_E; R; _
+
+cpu_function_call_copy_func_name_copy_1_HH:
+	_ -> cpu_function_call_copy_func_name_copy_1__; R; H
+	1 -> cpu_function_call_copy_func_name_copy_1_1; R; H
+	H -> cpu_function_call_copy_func_name_copy_1_exit; R; H
+	E -> cpu_function_call_copy_func_name_copy_1_E; R; H
+
+cpu_function_call_copy_func_name_copy_1_exit:
+	_ -> cpu_function_call_copy_func_name_copy_1_get_past_fin; -; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_name_copy_1_get_past_fin:
+	_ -> cpu_function_call_copy_func_name_copy_1_out; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_function_call_copy_func_name_copy_1_get_past_fin; L; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_name_copy_E_1:
+	_ -> cpu_function_call_copy_func_name_copy_E__; R; 1
+	1 -> cpu_function_call_copy_func_name_copy_E_1; R; 1
+	H -> cpu_function_call_copy_func_name_copy_E_H; R; 1
+	E -> cpu_function_call_copy_func_name_copy_E_E; R; 1
+
+cpu_function_call_copy_func_name_copy_E_H:
+	_ -> cpu_function_call_copy_func_name_copy_E__; R; H
+	1 -> cpu_function_call_copy_func_name_copy_E_1; R; H
+	H -> cpu_function_call_copy_func_name_copy_E_HH; R; H
+	E -> cpu_function_call_copy_func_name_copy_E_E; R; H
+
+cpu_function_call_copy_func_name_copy_E_E:
+	_ -> cpu_function_call_copy_func_name_copy_E__; R; E
+	1 -> cpu_function_call_copy_func_name_copy_E_1; R; E
+	H -> cpu_function_call_copy_func_name_copy_E_H; R; E
+	E -> cpu_function_call_copy_func_name_copy_E_E; R; E
+
+cpu_function_call_copy_func_name_copy_E__:
+	_ -> cpu_function_call_copy_func_name_copy_E__; R; _
+	1 -> cpu_function_call_copy_func_name_copy_E_1; R; _
+	H -> cpu_function_call_copy_func_name_copy_E_H; R; _
+	E -> cpu_function_call_copy_func_name_copy_E_E; R; _
+
+cpu_function_call_copy_func_name_copy_E_HH:
+	_ -> cpu_function_call_copy_func_name_copy_E__; R; H
+	1 -> cpu_function_call_copy_func_name_copy_E_1; R; H
+	H -> cpu_function_call_copy_func_name_copy_E_exit; R; H
+	E -> cpu_function_call_copy_func_name_copy_E_E; R; H
+
+cpu_function_call_copy_func_name_copy_E_exit:
+	_ -> cpu_function_call_copy_func_name_copy_E_get_past_fin; -; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_name_copy_E_get_past_fin:
+	_ -> cpu_function_call_copy_func_name_copy_E_out; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_function_call_copy_func_name_copy_E_get_past_fin; L; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_name_copy_1_out:
+	_ -> cpu_function_call_copy_func_name_copy_1_out; L; _
+	1 -> cpu_function_call_copy_func_name_copy_1_out; L; 1
+	H -> cpu_read_line_type_out_function; R; 1
+	E -> cpu_function_call_copy_func_name_copy_1_out; L; E
+
+cpu_function_call_copy_func_name_copy_E_out:
+	_ -> cpu_function_call_copy_func_name_copy_E_out; L; _
+	1 -> cpu_function_call_copy_func_name_copy_E_out; L; 1
+	H -> cpu_read_line_type_out_function; R; E
+	E -> cpu_function_call_copy_func_name_copy_E_out; L; E
+
+cpu_function_call_copy_func_name_out:
+	_ -> cpu_function_call_copy_func_args_copy_index_out; L; H
+	1 -> cpu_function_call_copy_func_args_copy_index_get_past_H_L_1; L; H
+	H -> ERROR; -; H
+	E -> cpu_function_call_copy_func_args_copy_index_get_past_H_L_E; L; H
+
+cpu_function_call_copy_func_args_copy_index_get_past_H_L_1:
+	_ -> cpu_function_call_copy_func_args_copy_index_get_past_H_L_1; L; _
+	1 -> cpu_function_call_copy_func_args_copy_index_get_past_H_L_1; L; 1
+	H -> cpu_function_call_copy_func_args_copy_index_copy_1; L; H
+	E -> cpu_function_call_copy_func_args_copy_index_get_past_H_L_1; L; E
+
+cpu_function_call_copy_func_args_copy_index_get_past_H_L_E:
+	_ -> cpu_function_call_copy_func_args_copy_index_get_past_H_L_E; L; _
+	1 -> cpu_function_call_copy_func_args_copy_index_get_past_H_L_E; L; 1
+	H -> cpu_function_call_copy_func_args_copy_index_copy_E; L; H
+	E -> cpu_function_call_copy_func_args_copy_index_get_past_H_L_E; L; E
+
+cpu_function_call_copy_func_args_copy_index_copy_1:
+	_ -> cpu_function_call_copy_func_args_copy_index_copy_1; L; _
+	1 -> cpu_function_call_copy_func_args_copy_index_copy_1; L; 1
+	H -> cpu_function_call_copy_func_args_copy_index_write_H_1; R; 1
+	E -> cpu_function_call_copy_func_args_copy_index_copy_1; L; E
+
+cpu_function_call_copy_func_args_copy_index_copy_E:
+	_ -> cpu_function_call_copy_func_args_copy_index_copy_E; L; _
+	1 -> cpu_function_call_copy_func_args_copy_index_copy_E; L; 1
+	H -> cpu_function_call_copy_func_args_copy_index_write_H_E; R; E
+	E -> cpu_function_call_copy_func_args_copy_index_copy_E; L; E
+
+cpu_function_call_copy_func_args_copy_index_write_H_1:
+	_ -> cpu_function_call_copy_func_args_copy_index_get_past_H_R_1; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_args_copy_index_write_H_E:
+	_ -> cpu_function_call_copy_func_args_copy_index_get_past_H_R_E; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_args_copy_index_get_past_H_R_1:
+	_ -> cpu_function_call_copy_func_args_copy_index_get_past_H_R_1; R; _
+	1 -> cpu_function_call_copy_func_args_copy_index_get_past_H_R_1; R; 1
+	H -> cpu_function_call_copy_func_args_copy_index_get_home_1; R; H
+	E -> cpu_function_call_copy_func_args_copy_index_get_past_H_R_1; R; E
+
+cpu_function_call_copy_func_args_copy_index_get_past_H_R_E:
+	_ -> cpu_function_call_copy_func_args_copy_index_get_past_H_R_E; R; _
+	1 -> cpu_function_call_copy_func_args_copy_index_get_past_H_R_E; R; 1
+	H -> cpu_function_call_copy_func_args_copy_index_get_home_E; R; H
+	E -> cpu_function_call_copy_func_args_copy_index_get_past_H_R_E; R; E
+
+cpu_function_call_copy_func_args_copy_index_get_home_1:
+	_ -> cpu_function_call_copy_func_args_copy_index_get_home_1; R; _
+	1 -> cpu_function_call_copy_func_args_copy_index_get_home_1; R; 1
+	H -> cpu_function_call_copy_func_name_out; R; 1
+	E -> cpu_function_call_copy_func_args_copy_index_get_home_1; R; E
+
+cpu_function_call_copy_func_args_copy_index_get_home_E:
+	_ -> cpu_function_call_copy_func_args_copy_index_get_home_E; R; _
+	1 -> cpu_function_call_copy_func_args_copy_index_get_home_E; R; 1
+	H -> cpu_function_call_copy_func_name_out; R; E
+	E -> cpu_function_call_copy_func_args_copy_index_get_home_E; R; E
+
+cpu_function_call_copy_func_args_copy_index_out:
+	_ -> cpu_function_call_copy_func_args_copy_index_out; L; _
+	1 -> cpu_function_call_copy_func_args_copy_index_out; L; 1
+	H -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_H; R; _
+	E -> cpu_function_call_copy_func_args_copy_index_out; L; E
+
+cpu_function_call_copy_func_args_prep_index_get_past_H:
+	_ -> cpu_function_call_copy_func_args_prep_index_get_past_H; L; _
+	1 -> cpu_function_call_copy_func_args_prep_index_get_past_H; L; 1
+	H -> cpu_function_call_copy_func_args_prep_index_get_past_underscores; L; H
+	E -> cpu_function_call_copy_func_args_prep_index_get_past_H; L; E
+
+cpu_function_call_copy_func_args_prep_index_get_past_underscores:
+	_ -> cpu_function_call_copy_func_args_prep_index_get_past_underscores_recog_pattern__; L; _
+	1 -> cpu_function_call_copy_func_args_prep_index_get_past_underscores; L; 1
+	H -> cpu_function_call_copy_func_args_prep_index_get_past_underscores; L; H
+	E -> cpu_function_call_copy_func_args_prep_index_get_past_underscores; L; E
+
+cpu_function_call_copy_func_args_prep_index_find_start_last_func:
+	_ -> cpu_function_call_copy_func_args_prep_index_mark_last_func_recog_pattern__; L; _
+	1 -> cpu_function_call_copy_func_args_prep_index_find_start_last_func; L; 1
+	H -> cpu_function_call_copy_func_args_prep_index_find_start_last_func; L; H
+	E -> cpu_function_call_copy_func_args_prep_index_find_start_last_func; L; E
+
+cpu_function_call_copy_func_args_prep_index_write_H:
+	_ -> cpu_function_call_copy_func_args_prep_index_find_index; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_args_prep_index_find_index:
+	_ -> cpu_function_call_copy_func_args_prep_index_find_index; L; _
+	1 -> cpu_function_call_copy_func_args_prep_index_find_index; L; 1
+	H -> cpu_function_call_copy_func_args_prep_index_out; L; H
+	E -> cpu_function_call_copy_func_args_prep_index_find_index; L; E
+
+cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_1:
+	_ -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore__; R; 1
+	1 -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_1; R; 1
+	H -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_H; R; 1
+	E -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_E; R; 1
+
+cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_H:
+	_ -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore__; R; H
+	1 -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_1; R; H
+	H -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_HH; R; H
+	E -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_E; R; H
+
+cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_E:
+	_ -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore__; R; E
+	1 -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_1; R; E
+	H -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_H; R; E
+	E -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_E; R; E
+
+cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore__:
+	_ -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore__; R; _
+	1 -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_1; R; _
+	H -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_H; R; _
+	E -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_E; R; _
+
+cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_HH:
+	_ -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore__; R; H
+	1 -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_1; R; H
+	H -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_exit; R; H
+	E -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_E; R; H
+
+cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_exit:
+	_ -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_get_past_fin; -; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_get_past_fin:
+	_ -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_out; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_get_past_fin; L; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_out:
+	_ -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_out; L; _
+	1 -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_out; L; 1
+	H -> cpu_function_call_copy_func_args_prep_index_get_past_H; L; H
+	E -> cpu_function_call_copy_func_args_prep_index_push_tack_on_underscore_out; L; E
+
+cpu_function_call_copy_func_args_prep_index_get_past_underscores_recog_pattern__:
+	_ -> cpu_function_call_copy_func_args_prep_index_find_start_last_func; L; _
+	1 -> cpu_function_call_copy_func_args_prep_index_get_past_underscores; L; 1
+	H -> cpu_function_call_copy_func_args_prep_index_get_past_underscores; L; H
+	E -> cpu_function_call_copy_func_args_prep_index_get_past_underscores; L; E
+
+cpu_function_call_copy_func_args_prep_index_mark_last_func_recog_pattern__:
+	_ -> cpu_function_call_copy_func_args_prep_index_write_H; R; _
+	1 -> cpu_function_call_copy_func_args_prep_index_find_start_last_func; L; 1
+	H -> cpu_function_call_copy_func_args_prep_index_find_start_last_func; L; H
+	E -> cpu_function_call_copy_func_args_prep_index_find_start_last_func; L; E
+
+cpu_function_call_copy_func_args_prep_index_out:
+	_ -> cpu_function_call_copy_func_args_index_into_stack_delete_1; R; _
+	1 -> cpu_function_call_copy_func_args_index_into_stack_get_past_H; -; E
+	H -> ERROR; -; H
+	E -> cpu_function_call_copy_func_args_prep_index_out; L; 1
+
+cpu_function_call_copy_func_args_index_into_stack_delete_1:
+	_ -> ERROR; -; _
+	1 -> cpu_function_call_copy_func_args_index_into_stack_get_past_H; R; _
+	H -> cpu_function_call_copy_func_args_index_into_stack_out; R; _
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_args_index_into_stack_get_past_H:
+	_ -> cpu_function_call_copy_func_args_index_into_stack_get_past_H; R; _
+	1 -> cpu_function_call_copy_func_args_index_into_stack_get_past_H; R; 1
+	H -> cpu_function_call_copy_func_args_index_into_stack_find_H; R; H
+	E -> cpu_function_call_copy_func_args_index_into_stack_get_past_H; R; E
+
+cpu_function_call_copy_func_args_index_into_stack_find_H:
+	_ -> cpu_function_call_copy_func_args_index_into_stack_find_H; R; _
+	1 -> cpu_function_call_copy_func_args_index_into_stack_find_H; R; 1
+	H -> cpu_function_call_copy_func_args_index_into_stack_move_H; R; _
+	E -> cpu_function_call_copy_func_args_index_into_stack_find_H; R; E
+
+cpu_function_call_copy_func_args_index_into_stack_move_H:
+	_ -> cpu_function_call_copy_func_args_index_into_stack_get_to_index; L; H
+	1 -> cpu_function_call_copy_func_args_index_into_stack_move_H; R; 1
+	H -> cpu_function_call_copy_func_args_index_into_stack_move_H; R; H
+	E -> cpu_function_call_copy_func_args_index_into_stack_move_H; R; E
+
+cpu_function_call_copy_func_args_index_into_stack_get_to_index:
+	_ -> cpu_function_call_copy_func_args_index_into_stack_get_to_index; L; _
+	1 -> cpu_function_call_copy_func_args_index_into_stack_get_to_index; L; 1
+	H -> cpu_function_call_copy_func_args_prep_index_out; L; H
+	E -> cpu_function_call_copy_func_args_index_into_stack_get_to_index; L; E
+
+cpu_function_call_copy_func_args_index_into_stack_out:
+	_ -> cpu_function_call_copy_func_args_index_into_stack_out; R; _
+	1 -> cpu_function_call_copy_func_args_index_into_stack_out; R; 1
+	H -> cpu_function_call_copy_func_args_prep_copy_arg_out; R; _
+	E -> cpu_function_call_copy_func_args_index_into_stack_out; R; E
+
+cpu_function_call_copy_func_args_prep_copy_arg_out:
+	_ -> cpu_function_call_copy_func_args_copy_arg_out; -; _
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_1; R; H
+	H -> ERROR; -; H
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_E; R; H
+
+cpu_function_call_copy_func_args_copy_arg_copy_1:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_1; R; _
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_1; R; 1
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_1_H; R; 1
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_1; R; E
+
+cpu_function_call_copy_func_args_copy_arg_copy_E:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_E; R; _
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_E; R; 1
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_E_H; R; E
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_E; R; E
+
+cpu_function_call_copy_func_args_copy_arg_got_past_H_1:
+	_ -> cpu_function_call_copy_func_args_copy_arg_got_past_H_1; L; _
+	1 -> cpu_function_call_copy_func_args_copy_arg_got_past_H_1; L; 1
+	H -> cpu_function_call_copy_func_args_copy_arg_got_past_other_H_1; L; H
+	E -> cpu_function_call_copy_func_args_copy_arg_got_past_H_1; L; E
+
+cpu_function_call_copy_func_args_copy_arg_got_past_H_E:
+	_ -> cpu_function_call_copy_func_args_copy_arg_got_past_H_E; L; _
+	1 -> cpu_function_call_copy_func_args_copy_arg_got_past_H_E; L; 1
+	H -> cpu_function_call_copy_func_args_copy_arg_got_past_other_H_E; L; H
+	E -> cpu_function_call_copy_func_args_copy_arg_got_past_H_E; L; E
+
+cpu_function_call_copy_func_args_copy_arg_got_past_other_H_1:
+	_ -> cpu_function_call_copy_func_args_copy_arg_got_past_other_H_1; L; _
+	1 -> cpu_function_call_copy_func_args_copy_arg_got_past_other_H_1; L; 1
+	H -> cpu_function_call_copy_func_args_prep_copy_arg_out; R; 1
+	E -> cpu_function_call_copy_func_args_copy_arg_got_past_other_H_1; L; E
+
+cpu_function_call_copy_func_args_copy_arg_got_past_other_H_E:
+	_ -> cpu_function_call_copy_func_args_copy_arg_got_past_other_H_E; L; _
+	1 -> cpu_function_call_copy_func_args_copy_arg_got_past_other_H_E; L; 1
+	H -> cpu_function_call_copy_func_args_prep_copy_arg_out; R; E
+	E -> cpu_function_call_copy_func_args_copy_arg_got_past_other_H_E; L; E
+
+cpu_function_call_copy_func_args_copy_arg_copy_1_1:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_1__; R; 1
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_1_1; R; 1
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_1_H; R; 1
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_1_E; R; 1
+
+cpu_function_call_copy_func_args_copy_arg_copy_1_H:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_1__; R; H
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_1_1; R; H
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_1_HH; R; H
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_1_E; R; H
+
+cpu_function_call_copy_func_args_copy_arg_copy_1_E:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_1__; R; E
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_1_1; R; E
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_1_H; R; E
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_1_E; R; E
+
+cpu_function_call_copy_func_args_copy_arg_copy_1__:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_1__; R; _
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_1_1; R; _
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_1_H; R; _
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_1_E; R; _
+
+cpu_function_call_copy_func_args_copy_arg_copy_1_HH:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_1__; R; H
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_1_1; R; H
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_1_exit; R; H
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_1_E; R; H
+
+cpu_function_call_copy_func_args_copy_arg_copy_1_exit:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_1_get_past_fin; -; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_args_copy_arg_copy_1_get_past_fin:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_1_out; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_1_get_past_fin; L; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_args_copy_arg_copy_E_1:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_E__; R; 1
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_E_1; R; 1
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_E_H; R; 1
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_E_E; R; 1
+
+cpu_function_call_copy_func_args_copy_arg_copy_E_H:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_E__; R; H
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_E_1; R; H
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_E_HH; R; H
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_E_E; R; H
+
+cpu_function_call_copy_func_args_copy_arg_copy_E_E:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_E__; R; E
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_E_1; R; E
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_E_H; R; E
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_E_E; R; E
+
+cpu_function_call_copy_func_args_copy_arg_copy_E__:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_E__; R; _
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_E_1; R; _
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_E_H; R; _
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_E_E; R; _
+
+cpu_function_call_copy_func_args_copy_arg_copy_E_HH:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_E__; R; H
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_E_1; R; H
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_E_exit; R; H
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_E_E; R; H
+
+cpu_function_call_copy_func_args_copy_arg_copy_E_exit:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_E_get_past_fin; -; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_args_copy_arg_copy_E_get_past_fin:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_E_out; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_function_call_copy_func_args_copy_arg_copy_E_get_past_fin; L; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_args_copy_arg_copy_1_out:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_1_out; L; _
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_1_out; L; 1
+	H -> cpu_function_call_copy_func_args_copy_arg_got_past_H_1; L; H
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_1_out; L; E
+
+cpu_function_call_copy_func_args_copy_arg_copy_E_out:
+	_ -> cpu_function_call_copy_func_args_copy_arg_copy_E_out; L; _
+	1 -> cpu_function_call_copy_func_args_copy_arg_copy_E_out; L; 1
+	H -> cpu_function_call_copy_func_args_copy_arg_got_past_H_E; L; H
+	E -> cpu_function_call_copy_func_args_copy_arg_copy_E_out; L; E
+
+cpu_function_call_copy_func_args_copy_arg_out:
+	_ -> cpu_function_call_copy_func_args_copy_arg_out; L; _
+	1 -> cpu_function_call_copy_func_args_copy_arg_out; L; 1
+	H -> cpu_function_call_copy_func_args_prep_copy_index_find_ln; R; H
+	E -> cpu_function_call_copy_func_args_copy_arg_out; L; E
+
+cpu_function_call_copy_func_args_prep_copy_index_find_ln:
+	_ -> cpu_function_call_copy_func_args_prep_copy_index_find_ln; R; _
+	1 -> cpu_function_call_copy_func_args_prep_copy_index_get_past_ln; -; 1
+	H -> ERROR; -; H
+	E -> cpu_function_call_copy_func_args_prep_copy_index_get_past_ln; -; E
+
+cpu_function_call_copy_func_args_prep_copy_index_get_past_ln:
+	_ -> cpu_function_call_copy_func_args_prep_copy_index_write_H; R; _
+	1 -> cpu_function_call_copy_func_args_prep_copy_index_get_past_ln; R; 1
+	H -> cpu_function_call_copy_func_args_prep_copy_index_get_past_ln; R; H
+	E -> cpu_function_call_copy_func_args_prep_copy_index_get_past_ln; R; E
+
+cpu_function_call_copy_func_args_prep_copy_index_write_H:
+	_ -> cpu_function_call_copy_func_args_prep_copy_index_get_past_H; R; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_func_args_prep_copy_index_get_past_H:
+	_ -> cpu_function_call_copy_func_args_prep_copy_index_get_past_H; R; _
+	1 -> cpu_function_call_copy_func_args_prep_copy_index_get_past_H; R; 1
+	H -> cpu_function_call_copy_func_args_prep_copy_index_find_arg; R; H
+	E -> cpu_function_call_copy_func_args_prep_copy_index_get_past_H; R; E
+
+cpu_function_call_copy_func_args_prep_copy_index_find_arg:
+	_ -> cpu_function_call_copy_func_args_prep_copy_index_find_arg; R; _
+	1 -> cpu_function_call_copy_func_args_prep_copy_index_find_arg; R; 1
+	H -> cpu_function_call_copy_func_args_prep_copy_index_check_for_other_arg; R; _
+	E -> cpu_function_call_copy_func_args_prep_copy_index_find_arg; R; E
+
+cpu_function_call_copy_func_args_prep_copy_index_check_for_other_arg:
+	_ -> cpu_function_call_copy_func_args_prep_copy_index_done_out; -; _
+	1 -> cpu_function_call_copy_func_name_out; -; 1
+	H -> ERROR; -; H
+	E -> cpu_function_call_copy_func_name_out; -; E
+
+cpu_function_call_copy_func_args_prep_copy_index_done_out:
+	_ -> cpu_function_call_copy_func_args_prep_copy_index_done_out; L; _
+	1 -> cpu_function_call_copy_func_args_prep_copy_index_done_out; L; 1
+	H -> cpu_function_call_prep_copy_ln_remove_H; L; H
+	E -> cpu_function_call_copy_func_args_prep_copy_index_done_out; L; E
+
+cpu_function_call_prep_copy_ln_remove_H:
+	_ -> cpu_function_call_prep_copy_ln_remove_H; L; _
+	1 -> cpu_function_call_prep_copy_ln_remove_H; L; 1
+	H -> cpu_function_call_prep_copy_ln_find_ln; -; _
+	E -> cpu_function_call_prep_copy_ln_remove_H; L; E
+
+cpu_function_call_prep_copy_ln_find_ln:
+	_ -> cpu_function_call_prep_copy_ln_find_ln; L; _
+	1 -> cpu_function_call_prep_copy_ln_mark_ln; -; 1
+	H -> ERROR; -; H
+	E -> cpu_function_call_prep_copy_ln_mark_ln; -; E
+
+cpu_function_call_prep_copy_ln_mark_ln:
+	_ -> cpu_function_call_prep_copy_ln_out; -; H
+	1 -> cpu_function_call_prep_copy_ln_mark_ln; L; 1
+	H -> cpu_function_call_prep_copy_ln_mark_ln; L; H
+	E -> cpu_function_call_prep_copy_ln_mark_ln; L; E
+
+cpu_function_call_prep_copy_ln_out:
+	_ -> cpu_function_call_copy_ln_write_E; L; _
+	1 -> cpu_function_call_copy_ln_swap_1; L; H
+	H -> cpu_function_call_copy_ln_copy__; R; H
+	E -> cpu_function_call_copy_ln_swap_E; L; H
+
+cpu_function_call_copy_ln_swap_1:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_function_call_copy_ln_get_past_H_1; R; 1
+	E -> ERROR; -; E
+
+cpu_function_call_copy_ln_swap_E:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_function_call_copy_ln_get_past_H_E; R; E
+	E -> ERROR; -; E
+
+cpu_function_call_copy_ln_get_past_H_1:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_function_call_copy_ln_copy_1; R; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_ln_get_past_H_E:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_function_call_copy_ln_copy_E; R; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_ln_copy__:
+	_ -> cpu_function_call_copy_ln_copy__; R; _
+	1 -> cpu_function_call_copy_ln_copy__; R; 1
+	H -> cpu_function_call_copy_ln_push_H; R; _
+	E -> cpu_function_call_copy_ln_copy__; R; E
+
+cpu_function_call_copy_ln_copy_1:
+	_ -> cpu_function_call_copy_ln_copy_1; R; _
+	1 -> cpu_function_call_copy_ln_copy_1; R; 1
+	H -> cpu_function_call_copy_ln_push_H; R; 1
+	E -> cpu_function_call_copy_ln_copy_1; R; E
+
+cpu_function_call_copy_ln_copy_E:
+	_ -> cpu_function_call_copy_ln_copy_E; R; _
+	1 -> cpu_function_call_copy_ln_copy_E; R; 1
+	H -> cpu_function_call_copy_ln_push_H; R; E
+	E -> cpu_function_call_copy_ln_copy_E; R; E
+
+cpu_function_call_copy_ln_get_home:
+	_ -> cpu_function_call_copy_ln_get_home; L; _
+	1 -> cpu_function_call_copy_ln_get_home; L; 1
+	H -> cpu_function_call_prep_copy_ln_out; R; H
+	E -> cpu_function_call_copy_ln_get_home; L; E
+
+cpu_function_call_copy_ln_write_E:
+	_ -> ERROR; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_function_call_copy_ln_clear; L; E
+	E -> ERROR; -; E
+
+cpu_function_call_copy_ln_clear:
+	_ -> cpu_function_call_copy_ln_get_past_ln; -; _
+	1 -> cpu_function_call_copy_ln_clear; L; _
+	H -> ERROR; -; H
+	E -> cpu_function_call_copy_ln_clear; L; _
+
+cpu_function_call_copy_ln_get_past_ln:
+	_ -> cpu_function_call_copy_ln_get_past_ln; R; _
+	1 -> cpu_function_call_copy_ln_get_past_ln; R; 1
+	H -> cpu_function_call_copy_ln_get_past_ln; R; H
+	E -> cpu_done_processing_line; R; E
+
+cpu_function_call_copy_ln_push_1:
+	_ -> cpu_function_call_copy_ln_push__; R; 1
+	1 -> cpu_function_call_copy_ln_push_1; R; 1
+	H -> cpu_function_call_copy_ln_push_H; R; 1
+	E -> cpu_function_call_copy_ln_push_E; R; 1
+
+cpu_function_call_copy_ln_push_H:
+	_ -> cpu_function_call_copy_ln_push__; R; H
+	1 -> cpu_function_call_copy_ln_push_1; R; H
+	H -> cpu_function_call_copy_ln_push_HH; R; H
+	E -> cpu_function_call_copy_ln_push_E; R; H
+
+cpu_function_call_copy_ln_push_E:
+	_ -> cpu_function_call_copy_ln_push__; R; E
+	1 -> cpu_function_call_copy_ln_push_1; R; E
+	H -> cpu_function_call_copy_ln_push_H; R; E
+	E -> cpu_function_call_copy_ln_push_E; R; E
+
+cpu_function_call_copy_ln_push__:
+	_ -> cpu_function_call_copy_ln_push__; R; _
+	1 -> cpu_function_call_copy_ln_push_1; R; _
+	H -> cpu_function_call_copy_ln_push_H; R; _
+	E -> cpu_function_call_copy_ln_push_E; R; _
+
+cpu_function_call_copy_ln_push_HH:
+	_ -> cpu_function_call_copy_ln_push__; R; H
+	1 -> cpu_function_call_copy_ln_push_1; R; H
+	H -> cpu_function_call_copy_ln_push_exit; R; H
+	E -> cpu_function_call_copy_ln_push_E; R; H
+
+cpu_function_call_copy_ln_push_exit:
+	_ -> cpu_function_call_copy_ln_push_get_past_fin; -; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_ln_push_get_past_fin:
+	_ -> cpu_function_call_copy_ln_push_out; -; _
+	1 -> ERROR; -; 1
+	H -> cpu_function_call_copy_ln_push_get_past_fin; L; H
+	E -> ERROR; -; E
+
+cpu_function_call_copy_ln_push_out:
+	_ -> cpu_function_call_copy_ln_push_out; L; _
+	1 -> cpu_function_call_copy_ln_push_out; L; 1
+	H -> cpu_function_call_copy_ln_get_home; L; H
+	E -> cpu_function_call_copy_ln_push_out; L; E
+
+cpu_read_line_type_out_return:
+	_ -> cpu_read_line_type_out_return; L; _
+	1 -> cpu_read_line_type_out_return; L; 1
+	H -> cpu_return_prep_copy_return_address_find_return_address; L; _
+	E -> cpu_read_line_type_out_return; L; E
+
+cpu_return_prep_copy_return_address_find_return_address:
+	_ -> cpu_return_prep_copy_return_address_find_return_address; L; _
+	1 -> cpu_return_prep_copy_return_address_get_to_start_return_address; -; 1
+	H -> ERROR; -; H
+	E -> cpu_return_prep_copy_return_address_get_to_start_return_address; -; E
+
+cpu_return_prep_copy_return_address_get_to_start_return_address:
+	_ -> cpu_return_prep_copy_return_address_remove_H; L; H
+	1 -> cpu_return_prep_copy_return_address_get_to_start_return_address; L; 1
+	H -> cpu_return_prep_copy_return_address_get_to_start_return_address; L; H
+	E -> cpu_return_prep_copy_return_address_get_to_start_return_address; L; E
+
+cpu_return_prep_copy_return_address_remove_H:
+	_ -> cpu_return_prep_copy_return_address_remove_H; L; _
+	1 -> cpu_return_prep_copy_return_address_remove_H; L; 1
+	H -> cpu_return_prep_copy_return_address_write_H; L; _
+	E -> cpu_return_prep_copy_return_address_remove_H; L; E
+
+cpu_return_prep_copy_return_address_write_H:
+	_ -> cpu_return_prep_copy_return_address_clear; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+
+cpu_return_prep_copy_return_address_clear:
+	_ -> cpu_return_prep_copy_return_address_get_past_H; -; _
+	1 -> cpu_return_prep_copy_return_address_clear; L; _
+	H -> ERROR; -; H
+	E -> cpu_return_prep_copy_return_address_clear; L; _
+
+cpu_return_prep_copy_return_address_get_past_H:
+	_ -> cpu_return_prep_copy_return_address_get_past_H; R; _
+	1 -> cpu_return_prep_copy_return_address_get_past_H; R; 1
+	H -> cpu_return_prep_copy_return_address_get_to_return_address; R; H
+	E -> cpu_return_prep_copy_return_address_get_past_H; R; E
+
+cpu_return_prep_copy_return_address_get_to_return_address:
+	_ -> cpu_return_prep_copy_return_address_get_to_return_address; R; _
+	1 -> cpu_return_prep_copy_return_address_get_to_return_address; R; 1
+	H -> cpu_return_prep_copy_return_address_out; R; _
+	E -> cpu_return_prep_copy_return_address_get_to_return_address; R; E
+
+cpu_return_prep_copy_return_address_out:
+	_ -> cpu_return_copy_return_address_out; -; _
+	1 -> cpu_return_copy_return_address_get_to_ln_1; L; H
+	H -> ERROR; -; H
+	E -> cpu_return_copy_return_address_get_to_ln_E; L; H
+
+cpu_return_copy_return_address_get_to_ln_1:
+	_ -> cpu_return_copy_return_address_get_to_ln_1; L; _
+	1 -> cpu_return_copy_return_address_get_to_ln_1; L; 1
+	H -> cpu_return_copy_return_address_write_1_1; L; H
+	E -> cpu_return_copy_return_address_get_to_ln_1; L; E
+
+cpu_return_copy_return_address_get_to_ln_E:
+	_ -> cpu_return_copy_return_address_get_to_ln_E; L; _
+	1 -> cpu_return_copy_return_address_get_to_ln_E; L; 1
+	H -> cpu_return_copy_return_address_write_E_E; L; H
+	E -> cpu_return_copy_return_address_get_to_ln_E; L; E
+
+cpu_return_copy_return_address_write_1_1:
+	_ -> cpu_return_copy_return_address_get_past_H_1; -; 1
+	1 -> cpu_return_copy_return_address_write_1_1; L; 1
+	H -> ERROR; -; H
+	E -> cpu_return_copy_return_address_write_E_1; L; 1
+
+cpu_return_copy_return_address_write_E_1:
+	_ -> cpu_return_copy_return_address_get_past_H_1; -; E
+	1 -> cpu_return_copy_return_address_write_1_1; L; E
+	H -> ERROR; -; H
+	E -> cpu_return_copy_return_address_write_E_1; L; E
+
+cpu_return_copy_return_address_write_1_E:
+	_ -> cpu_return_copy_return_address_get_past_H_E; -; 1
+	1 -> cpu_return_copy_return_address_write_1_E; L; 1
+	H -> ERROR; -; H
+	E -> cpu_return_copy_return_address_write_E_E; L; 1
+
+cpu_return_copy_return_address_write_E_E:
+	_ -> cpu_return_copy_return_address_get_past_H_E; -; E
+	1 -> cpu_return_copy_return_address_write_1_E; L; E
+	H -> ERROR; -; H
+	E -> cpu_return_copy_return_address_write_E_E; L; E
+
+cpu_return_copy_return_address_get_past_H_1:
+	_ -> cpu_return_copy_return_address_get_past_H_1; R; _
+	1 -> cpu_return_copy_return_address_get_past_H_1; R; 1
+	H -> cpu_return_copy_return_address_get_home_1; R; H
+	E -> cpu_return_copy_return_address_get_past_H_1; R; E
+
+cpu_return_copy_return_address_get_past_H_E:
+	_ -> cpu_return_copy_return_address_get_past_H_E; R; _
+	1 -> cpu_return_copy_return_address_get_past_H_E; R; 1
+	H -> cpu_return_copy_return_address_get_home_E; R; H
+	E -> cpu_return_copy_return_address_get_past_H_E; R; E
+
+cpu_return_copy_return_address_get_home_1:
+	_ -> cpu_return_copy_return_address_get_home_1; R; _
+	1 -> cpu_return_copy_return_address_get_home_1; R; 1
+	H -> cpu_return_prep_copy_return_address_out; R; 1
+	E -> cpu_return_copy_return_address_get_home_1; R; E
+
+cpu_return_copy_return_address_get_home_E:
+	_ -> cpu_return_copy_return_address_get_home_E; R; _
+	1 -> cpu_return_copy_return_address_get_home_E; R; 1
+	H -> cpu_return_prep_copy_return_address_out; R; E
+	E -> cpu_return_copy_return_address_get_home_E; R; E
+
+cpu_return_copy_return_address_out:
+	_ -> cpu_return_pop_top_func_seen_underscore; L; _
+	1 -> cpu_return_copy_return_address_out; L; _
+	H -> ERROR; -; H
+	E -> cpu_return_copy_return_address_out; L; _
+
+cpu_return_pop_top_func_seen_underscore:
+	_ -> cpu_return_pop_top_func_check_if_stack_empty; L; _
+	1 -> cpu_return_copy_return_address_out; L; _
+	H -> ERROR; -; H
+	E -> cpu_return_copy_return_address_out; L; _
+
+cpu_return_pop_top_func_check_if_stack_empty:
+	_ -> HALT; -; _
+	1 -> cpu_return_pop_top_func_remove_H; R; 1
+	H -> ERROR; -; H
+	E -> cpu_return_pop_top_func_remove_H; R; E
+
+cpu_return_pop_top_func_remove_H:
+	_ -> cpu_return_pop_top_func_remove_H; L; _
+	1 -> cpu_return_pop_top_func_remove_H; L; 1
+	H -> cpu_return_pop_top_func_increment; L; _
+	E -> cpu_return_pop_top_func_remove_H; L; E
+
+cpu_return_pop_top_func_increment:
+	_ -> cpu_return_pop_top_func_get_past_return_address; -; E
+	1 -> cpu_return_pop_top_func_increment; L; E
+	H -> ERROR; -; H
+	E -> cpu_return_pop_top_func_get_past_return_address; -; 1
+
+cpu_return_pop_top_func_get_past_return_address:
+	_ -> cpu_done_processing_line; R; _
+	1 -> cpu_return_pop_top_func_get_past_return_address; R; 1
+	H -> cpu_return_pop_top_func_get_past_return_address; R; H
+	E -> cpu_return_pop_top_func_get_past_return_address; R; E
+
+cpu_done_processing_line:
+	_ -> cpu_done_processing_line; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> cpu_standard_prep_not_return_get_to_end_of_stack; -; E
+
+cpu_standard_prep_not_return_get_to_end_of_stack:
+	_ -> cpu_standard_prep_not_return_find_end_stack_recog_pattern__; R; _
+	1 -> cpu_standard_prep_not_return_get_to_end_of_stack; R; 1
+	H -> cpu_standard_prep_not_return_get_to_end_of_stack; R; H
+	E -> cpu_standard_prep_not_return_get_to_end_of_stack; R; E
+
+cpu_standard_prep_not_return_find_end_stack_recog_pattern__:
+	_ -> cpu_standard_prep_not_return_find_end_stack_recog_pattern___; R; _
+	1 -> cpu_standard_prep_not_return_get_to_end_of_stack; R; 1
+	H -> cpu_standard_prep_not_return_get_to_end_of_stack; R; H
+	E -> cpu_standard_prep_not_return_get_to_end_of_stack; R; E
+
+cpu_standard_prep_not_return_find_end_stack_recog_pattern___:
+	_ -> cpu_done_processing_line_return; -; _
+	1 -> cpu_standard_prep_not_return_get_to_end_of_stack; R; 1
+	H -> cpu_standard_prep_not_return_get_to_end_of_stack; R; H
+	E -> cpu_standard_prep_not_return_get_to_end_of_stack; R; E
+
+cpu_done_processing_line_return:
+	_ -> cpu_done_processing_line_return; R; _
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> cpu_standard_prep_write_H; L; E
+
+cpu_standard_prep_write_H:
+	_ -> first_prep_out; L; H
+	1 -> ERROR; -; 1
+	H -> ERROR; -; H
+	E -> ERROR; -; E
+

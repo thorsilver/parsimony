@@ -106,17 +106,17 @@ class SingleTapeTuringMachine:
                 break
 
             if self.state.stateName == "ACCEPT":
-                print "Turing machine accepted."
+                print "Turing machine accepted after", stepCounter, "steps."
                 halted = True
                 break
         
             if self.state.stateName == "REJECT":
-                print "Turing machine rejected."
+                print "Turing machine rejected after", stepCounter, "steps."
                 halted = True
                 break
         
             if self.state.stateName == "HALT":
-                print "Turing machine halted."
+                print "Turing machine halted after", stepCounter, "steps."
                 halted = True
                 break
                 

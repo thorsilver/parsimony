@@ -102,7 +102,9 @@ class CodeWriter(LaconicListener):
         try:
             assert funcProcName in self.funcProcDictionary
         except:
-            pront("Error: unrecognized function name", funcProcName)
+            pront("Error: unrecognized function name " + funcProcName)
+            pront("The following functions are recognized: " + \
+                 str(self.funcProcDictionary.keys()))
             raise
 
         args = ctx.funcproccallbody()

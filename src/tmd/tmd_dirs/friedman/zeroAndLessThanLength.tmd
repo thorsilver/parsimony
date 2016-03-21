@@ -1,0 +1,7 @@
+input i l h !0 !1 !2 
+
+// Auto-generated code for function zeroAndLessThanLength
+
+function zero i !0 
+function lessThanLength i l h !0 !1 !2 
+return

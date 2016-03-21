@@ -1,0 +1,13 @@
+input l2 indexList i h hl output !0 !1 !2 
+
+// Auto-generated code for function index2Map
+
+function empty2 output !0 !1 
+function zeroAndLessThanLength i indexList h !0 !1 !2 
+WHILE_TEST_0: function BUILTIN_assign !0 h
+[!0] E (WHILE_STATE_0_FALSE); 1 ()
+function index2 l2 i hl !0 !1 !2 
+function append2 output hl !0 !1 !2 
+function incrAndLessThanLength i indexList h !0 !1 !2 
+[!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

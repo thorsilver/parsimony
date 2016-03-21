@@ -33,5 +33,10 @@ if __name__ == "__main__":
     output = None
     if ("-f" in args):
         output = open("../tm2_histories/" + name + "_history.txt", "w")
+        
+        try:
+            assert "-s" in args
+        except:
+            raise Exception("You can't include the -f flag without also specifying a maximum step count with the -s flag!")
 
     sttm.run(quiet, numSteps, output)

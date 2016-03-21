@@ -1,0 +1,8 @@
+input x y
+
+// get to the beginning of two values.
+// NON-STANDARD
+
+function BUILTIN_getBackToStart x
+function BUILTIN_getBackToStart y
+return

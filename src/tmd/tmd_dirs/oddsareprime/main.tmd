@@ -1,0 +1,15 @@
+input oddNumber compositeFound h !0 !1 !2 
+
+// Auto-generated code for function main
+
+function one oddNumber !0 
+WHILE_TEST_0: function BUILTIN_assign !0 oddNumber
+[!0] E (WHILE_STATE_0_FALSE); 1 ()
+function incr oddNumber !0 !1 !2 
+function incr oddNumber !0 !1 !2 
+function isComposite oddNumber h compositeFound !0 !1 !2 
+function BUILTIN_assign !0 compositeFound
+[!0] E (IF_STATE_0_FALSE); 1 ()
+return
+IF_STATE_0_FALSE: [!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
+WHILE_STATE_0_FALSE: return

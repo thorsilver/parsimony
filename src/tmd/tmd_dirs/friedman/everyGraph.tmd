@@ -1,4 +1,4 @@
-input k n r num denom h1 h2 eltsInGraph hl1 hl2 eightKN eightKNRFacFac numVertices graph !0 !1 !2 
+input k n r num denom h1 h2 h3 eltsInGraph hl1 hl2 eightKN eightKNRFacFac numVertices graph !0 !1 !2 
 
 // Auto-generated code for function everyGraph
 
@@ -37,7 +37,7 @@ function appendAndIncr eltsInGraph h1 denom !0 !1 !2
 [!0] E (WHILE_TEST_1); 1 (WHILE_TEST_1)
 WHILE_STATE_1_FALSE: function incr num !0 !1 !2 
 [!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
-WHILE_STATE_0_FALSE: function toTheLessThanOrEqualToK eltsInGraph k hl1 hl2 h1 h2 numVertices num denom graph !0 !1 !2 
+WHILE_STATE_0_FALSE: function toTheLessThanOrEqualToK eltsInGraph k hl1 hl2 h1 h2 h3 numVertices num denom graph !0 !1 !2 
 function BUILTIN_assign !0 graph
 function BUILTIN_len2 !1 !0
 function BUILTIN_assign numVertices !1

@@ -74,7 +74,7 @@ class SingleTapeTuringMachine:
                     currentStateBeingModified.setHeadMove(symbol, headMove)
                     currentStateBeingModified.setWrite(symbol, write)
 
-    def run(self, quiet=False, numSteps=float("Inf"), output=None):
+    def run(self, quiet=False, limited=False, numSteps=float("Inf"), output=None):
         self.state = self.startState
 
         stepCounter = 0
@@ -83,7 +83,7 @@ class SingleTapeTuringMachine:
         while stepCounter < float(numSteps):
 #           if stepCounter > 20000 and stepCounter < 23000:
             if True:
-                if not quiet:
+                if not quiet and ((stepCounter % 10000 == 0) or (not limited)):
                     self.printTape(-2, 340, output)
             
 #           print stepCounter, float(numSteps), stepCounter < float(numSteps)
@@ -96,17 +96,17 @@ class SingleTapeTuringMachine:
                 break
 
             if self.state.stateName == "ACCEPT":
-                print "Turing machine accepted."
+                print "Turing machine accepted after", stepCounter, "steps."
                 halted = True
                 break
         
             if self.state.stateName == "REJECT":
-                print "Turing machine rejected."
+                print "Turing machine rejected after", stepCounter, "steps."
                 halted = True
                 break
         
             if self.state.stateName == "HALT":
-                print "Turing machine halted."
+                print "Turing machine halted after", stepCounter, "steps."
                 halted = True
                 break
                 
@@ -232,6 +232,7 @@ if __name__ == "__main__":
     except:
         raise Exception("Usage: python tm4_simulator.py [-q] [-s] [# steps before aborting] [-f] [name of TM4 file]\n \
             Enable -q if you want no program output\n \
+            Enable -l if you want limited program output\n \
             Enable -s followed by the max number of steps if you want to stop interpreting after a certain number of commands\n \
             Enable -f if you want to dump the history into a file in tm4_histories instead of the standard output.")
         
@@ -240,6 +241,8 @@ if __name__ == "__main__":
 
     quiet = ("-q" in args)
 
+    limited = ("-l" in args)
+
     numSteps = float("Inf") # default value
     if ("-s" in args):
         numSteps = args[args.index("-s") + 1]
@@ -247,5 +250,10 @@ if __name__ == "__main__":
     output = None
     if ("-f" in args):
         output = open("../tm4_histories/" + name + "_history.txt", "w")
+        
+        try:
+            assert "-s" in args
+        except:
+            raise Exception("You can't include the -f flag without also specifying a maximum step count with the -s flag!")
 
-    sttm.run(quiet, numSteps, output)
+    sttm.run(quiet, limited, numSteps, output)

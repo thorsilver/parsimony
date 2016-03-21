@@ -1,0 +1,13 @@
+input x
+
+// computes not x (if x > 0, sets x to 0; if x <= 0, sets x to 1).
+// Unary assumed
+
+[x] 1 (RETURN_FALSE); E (RETURN_TRUE)
+
+RETURN_FALSE: function BUILTIN_clear x
+return
+
+RETURN_TRUE: function BUILTIN_clear x
+function BUILTIN_add1 x
+return

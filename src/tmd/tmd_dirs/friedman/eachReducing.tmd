@@ -1,8 +1,7 @@
-input freeSet graph edges numVertices k n eightKN i c1 h1 h2 h3 h4 oneCounter eightKNIFac reducer union hl1 hl2 oxidizer output !0 !1 !2 !3 
+input freeSet graph edges numVertices k n r eightKN i c1 h1 h2 h3 h4 h5 oneCounter eightKNIFac reducer union hl1 hl2 oxidizer output !0 !1 !2 !3 
 
 // Auto-generated code for function eachReducing
 
-function one output !0 
 function one i !0 
 function one h1 !0 
 WHILE_TEST_0: function BUILTIN_assign !0 h1
@@ -12,43 +11,50 @@ function BUILTIN_assign !1 i
 function BUILTIN_multiply !2 !0 !1
 function BUILTIN_assign h2 !2
 function factorial h2 h1 eightKNIFac !0 !1 !2 
-function doubleZeroAndEmpty c1 oneCounter reducer !0 
+function BUILTIN_assign !0 eightKNIFac
+function BUILTIN_assign !1 r
+function BUILTIN_greaterThan !2 !0 !1
+[!2] E (IF_STATE_0_FALSE); 1 ()
+function one output !0 
+return
+IF_STATE_0_FALSE: function doubleZeroAndEmpty c1 oneCounter reducer !0 
 WHILE_TEST_1: function BUILTIN_assign !0 h2
 [!0] E (WHILE_STATE_1_FALSE); 1 ()
 function indexAndAppendAndIncr freeSet c1 reducer h1 !0 !1 !2 
 function BUILTIN_assign !0 h1
-[!0] E (IF_STATE_0_FALSE); 1 ()
+[!0] E (IF_STATE_1_FALSE); 1 ()
 function incr oneCounter !0 !1 !2 
-IF_STATE_0_FALSE: function lessThanLength c1 freeSet h1 !0 !1 !2 
+IF_STATE_1_FALSE: function lessThanLength c1 freeSet h1 !0 !1 !2 
 function BUILTIN_assign !0 oneCounter
 function BUILTIN_assign !1 eightKNIFac
 function BUILTIN_equal !2 !0 !1
 function BUILTIN_assign !0 h1
 function BUILTIN_assignNot !1 !0
 function BUILTIN_or !0 !2 !1
-[!0] E (IF_STATE_1_FALSE); 1 ()
-function zero h2 !0 
-IF_STATE_1_FALSE: [!0] E (WHILE_TEST_1); 1 (WHILE_TEST_1)
-WHILE_STATE_1_FALSE: function BUILTIN_assign !0 h1
 [!0] E (IF_STATE_2_FALSE); 1 ()
+function zero h2 !0 
+IF_STATE_2_FALSE: [!0] E (WHILE_TEST_1); 1 (WHILE_TEST_1)
+WHILE_STATE_1_FALSE: function BUILTIN_assign !0 h1
+[!0] E (IF_STATE_3_FALSE); 1 ()
 WHILE_TEST_2: function BUILTIN_assign !0 h1
 [!0] E (WHILE_STATE_2_FALSE); 1 ()
-function appendAndIncr freeSet h2 c1 !0 !1 !2 
+function appendAndIncr reducer h2 c1 !0 !1 !2 
 function lessThanLength c1 freeSet h1 !0 !1 !2 
 [!0] E (WHILE_TEST_2); 1 (WHILE_TEST_2)
 WHILE_STATE_2_FALSE: function doubleZeroAndEmpty c1 oneCounter union !0 
+function one h1 !0 
 WHILE_TEST_3: function BUILTIN_assign !0 h1
 [!0] E (WHILE_STATE_3_FALSE); 1 ()
 function index freeSet c1 h1 !0 !1 !2 
-function incr c1 !0 !1 !2 
 function BUILTIN_assign !0 h1
-[!0] E (IF_STATE_3_FALSE); 1 ()
+[!0] E (IF_STATE_4_FALSE); 1 ()
 function incr oneCounter !0 !1 !2 
 function index2 graph c1 hl1 !0 !1 !2 
 function vertexUnion union hl1 h1 h2 h3 h4 hl2 !0 !1 !2 
 function BUILTIN_assign !0 hl2
 function BUILTIN_assign union !0
-IF_STATE_3_FALSE: function BUILTIN_assign !0 oneCounter
+IF_STATE_4_FALSE: function incr c1 !0 !1 !2 
+function BUILTIN_assign !0 oneCounter
 function BUILTIN_assign !1 i
 function BUILTIN_greaterThan !2 !1 !0
 function BUILTIN_assign h1 !2
@@ -62,13 +68,14 @@ function append hl1 c1 !0 !1 !2
 function incr c1 !0 !1 !2 
 [!0] E (WHILE_TEST_4); 1 (WHILE_TEST_4)
 WHILE_STATE_4_FALSE: function vertexUnion hl1 hl2 h1 h2 h3 h4 union !0 !1 !2 
-function toTheLessThanOrEqualToK union k hl1 oxidizer c1 h1 h2 h3 h4 hl2 !0 !1 !2 
+function toTheLessThanOrEqualToK union k hl1 oxidizer c1 h1 h2 h3 h4 h5 hl2 !0 !1 !2 
 function turnToVertexIndexForm graph hl2 c1 oneCounter h1 h2 h3 h4 union hl1 oxidizer !0 !1 !2 
-function reduces reducer oxidizer graph edges numVertices hl1 hl2 c1 oneCounter h1 h2 h3 output !0 !1 !2 !3 
+function reduces reducer oxidizer graph edges numVertices hl1 hl2 c1 oneCounter h1 h2 h3 h4 h5 output !0 !1 !2 !3 
 function BUILTIN_assign !0 output
 function BUILTIN_assignNot !1 !0
-[!1] E (IF_STATE_4_FALSE); 1 ()
+[!1] E (IF_STATE_5_FALSE); 1 ()
 return
-IF_STATE_4_FALSE: IF_STATE_2_FALSE: function incr i !0 !1 !2 
+IF_STATE_5_FALSE: IF_STATE_3_FALSE: function one h1 !0 
+function incr i !0 !1 !2 
 [!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
 WHILE_STATE_0_FALSE: return

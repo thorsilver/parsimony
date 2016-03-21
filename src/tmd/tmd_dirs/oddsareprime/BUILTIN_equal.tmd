@@ -1,0 +1,9 @@
+input x y z
+
+// computes x = (y == z) (sets x to 1 if true, and 0 if false)
+// Unary assumed
+
+function BUILTIN_greaterOrEqual x y z
+[x] 1 (); E (RETURN_FALSE)
+function BUILTIN_greaterOrEqual x z y
+RETURN_FALSE: return

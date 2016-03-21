@@ -1,0 +1,38 @@
+input x y z
+
+// assign x to y + z. Assumes signed unary.
+
+// this is a surprisingly complicated function 
+// because of the signedness; there's probably 
+// plenty of opportunity for optimizations.
+
+function BUILTIN_clear x
+[y] 1 (POS_Y); E (R)
+[y] _ (L) ; E (); 1 ()
+
+NEG_Y: [z] 1 (NEG_Y_POS_Z); E (R)
+[z] _ (L) ; E (); 1 ()
+
+NEG_Y_NEG_Z: function BUILTIN_appendE x
+ADD_BOTH: function BUILTIN_addTo x y
+[x] E (ADD_Z)
+
+NEG_Y_POS_Z: function BUILTIN_walkTogether y z
+[y] 1 (); E (ADD_Z)
+function BUILTIN_appendE x
+ADD_Y: function BUILTIN_addTo x y
+[x] E (GBTS)
+
+ADD_Z: function BUILTIN_addTo x z
+[x] E (GBTS)
+
+POS_Y: [z] 1 (ADD_BOTH); E (R)
+[z] _ (L); E (); 1 ()
+
+POS_Y_NEG_Z: function BUILTIN_walkTogether y z
+[y] 1 (ADD_Y); E ()
+function BUILTIN_appendE x
+[x] E (ADD_Z)
+
+GBTS: function BUILTIN_getBackToStart3 x y z
+return

@@ -1,0 +1,18 @@
+input x y z
+
+// x = y * z. Signed unary assumed.
+
+function BUILTIN_clear x
+
+// shift both numbers
+function BUILTIN_doubleShift y z
+[x] E (READ_Y)
+
+// do the actual multiplication
+ADD_Z_TO_X: function BUILTIN_addToWithSignedSupport x z
+READ_Y: [y] 1 (R, ADD_Z_TO_X); E ()
+GET_BACK_TO_START: function BUILTIN_getBackToStart3 x y z
+
+// negate as necessary
+function BUILTIN_multiplyBySign x y z
+return

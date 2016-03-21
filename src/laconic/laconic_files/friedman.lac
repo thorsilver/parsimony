@@ -71,6 +71,13 @@ func one(x) {
 
 /*----------------------------------------------------------*/
 
+func two(x) {
+    x = 2;
+    return;
+}
+
+/*----------------------------------------------------------*/
+
 /* Executes l <- [] */
 
 func empty(l) {
@@ -188,6 +195,14 @@ func andWith(x, y) {
 
 func lessThanLength(x, l, o) {
     o = x < (#l);
+    return;
+}
+
+/*----------------------------------------------------------*/
+
+func zeroAndLessThanLength(i, l, h) {
+    zero(i);
+    lessThanLength(i, l, h);
     return;
 }
 
@@ -314,9 +329,7 @@ func isOrderEquivalent(a, b, c, d, i, j, h1, h2, h3, h4, h5, h6, output) {
     element of b if and only if the i-th element of c is less than the
     j-th element of d */
     
-    zero(i);
-    
-    lessThanLength(i, a, h1);
+    zeroAndLessThanLength(i, a, h1);
     
     /* while i < len(a) */
     while (h1) {
@@ -348,7 +361,7 @@ func isOrderEquivalent(a, b, c, d, i, j, h1, h2, h3, h4, h5, h6, output) {
     return;
 }
 
-/* isOrderEquivalent test suite 
+/* isOrderEquivalent test bench 
 
 list a;
 list b;
@@ -410,7 +423,7 @@ func ush(x, eightKNRFacFac, h, i, output) {
     return;
 }
 
-/* ush test suite 
+/* ush test bench 
 
 list x;
 int eightKNRFacFac;
@@ -460,7 +473,7 @@ func ush2(l2, eightKNRFacFac, i, h1, h2, hl1, hl2, output) {
     return;
 }
 
-/* ush2 test suite 
+/* ush2 test bench 
 
 list2 l2;
 int eightKNRFacFac;
@@ -492,8 +505,8 @@ that x_i != y_i
 x: inp list
 y: inp list
 i: hold int
-h1: int
-h2: int
+h1: hold int
+h2: hold int
 output: out int
 */
 
@@ -532,7 +545,7 @@ func ltrlex(x, y, i, h1, h2, output) {
     return;
 }
 
-/* ltrlex test suite 
+/* ltrlex test bench 
 
 int x;
 int y;
@@ -570,7 +583,7 @@ func edgeIndex(edges, numVertices, i, j, output) {
     return;
 }
 
-/* edgeIndex test suite 
+/* edgeIndex test bench 
 
 int numVertices;
 list edges;
@@ -609,7 +622,7 @@ h3: hold int
 output: out int
 */
 
-func reduces(X, Y, graph, edges, numVertices, x, y, c1, c2, h1, h2, h3, output) { 
+func reduces(X, Y, graph, edges, numVertices, x, y, c1, c2, h1, h2, h3, h4, h5, output) { 
     zeroAndOne(c1, h1);
     
     /* ...for all y \in Y... */
@@ -632,13 +645,11 @@ func reduces(X, Y, graph, edges, numVertices, x, y, c1, c2, h1, h2, h3, output) 
                     x = graph @* c2;
                     
                     /* ...such that x ltrlex y... */
-                    ltrlex(x, y, h2, h3);
+                    ltrlex(x, y, h2, h4, h5, h3);
                     
                     /* ...and an edge exists between x and y...*/
                     edgeIndex(edges, numVertices, c1, c2, h2);
-                    
-                    /* h1 = h1 | (h2 & h3); */
-                    
+                                        
                     andWith(h2, h3);
                     orWith(h1, h2);
                     
@@ -661,6 +672,35 @@ func reduces(X, Y, graph, edges, numVertices, x, y, c1, c2, h1, h2, h3, output) 
     one(output);
     return;
 }
+
+/* reduces test bench 
+
+list X; list Y;
+list2 graph;
+list edges;
+int numVertices;
+
+list x; list y; int c1; int c2; int h1; int h2; int h3; int h4; int h5; int output;
+
+graph = :[1,4,5], [2], [~2,4], [~1,0]:;
+
+X = [1,0,1,0];
+Y = [1,1,0,1];
+
+edges = [0,1,1,0,
+         1,0,0,1,
+         1,0,0,1,
+         0,1,1,0];
+
+numVertices = 4;
+
+x = [3]; y = [3]; c1 = 3; c2 = 3; h1 = 3; h2 = 3; h3 = 3; h4 = 3; h5 = 3; output = 3;
+
+reduces(X, Y, graph, edges, numVertices, x, y, c1, c2, h1, h2, h3, h4, h5, output);
+
+print output;
+
+halt; */
 
 /*----------------------------------------------------------*/
 
@@ -710,7 +750,7 @@ func isFree(vertexSet, numVertices, edges, c1, c2, h1, h2, output) {
     return;
 }
 
-/* isFree test suite 
+/* isFree test bench 
 
 list vertexSet;
 int numVertices;
@@ -753,7 +793,7 @@ func factorial(x, c, output) {
     return;
 }
 
-/* factorial test suite 
+/* factorial test bench 
 
 int x;
 int c;
@@ -794,7 +834,7 @@ func xor(a, b, c) {
     return;
 }
 
-/* xor test suite 
+/* xor test bench 
 
 int a;
 int b;
@@ -813,6 +853,7 @@ print c; */
 
 /* 
 l: inp list
+base: inp int
 i: hold int
 currentEntry: hold int
 sumBit: hold int
@@ -820,7 +861,7 @@ overflow: out int
 newList: out list
 */
 
-func incrementList(l, i, currentEntry, sumBit, overflow, newList) {
+func incrementList(l, base, i, currentEntry, sumBit, overflow, newList) {
     one(overflow); 
     
     zeroAndEmptyAndLessThanLength(i, l, sumBit, newList);
@@ -828,9 +869,13 @@ func incrementList(l, i, currentEntry, sumBit, overflow, newList) {
     /* while (i < (# l)) */
     while (sumBit) {
         currentEntry = l @ i;
-        xor(currentEntry, overflow, sumBit);
+        sumBit = currentEntry + overflow;
 
-        andWith(overflow, currentEntry);
+        zero(overflow);
+
+        if (sumBit == base) {
+            zeroAndOne(sumBit, overflow);
+        }
         
         appendAndIncrAndLessThanLength(newList, i, l, sumBit);
     } 
@@ -838,26 +883,30 @@ func incrementList(l, i, currentEntry, sumBit, overflow, newList) {
     return;
 }
 
-/* incrementList test suite 
+/* incrementList test bench 
 
 list l;
+int base;
 int i;
 int overflow;
 int currentEntry;
 int sumBit;
 list newList;
 
-l = [1,1,0,1];
+l = [2,1,0,1];
+base = 3;
 i = ~2;
 overflow = 3;
 currentEntry = ~5;
 sumBit = 4;
 newList = [3]; 
 
-incrementList(l, i, currentEntry, sumBit, overflow, newList); 
+incrementList(l, base, i, currentEntry, sumBit, overflow, newList); 
 
 print overflow;
-print newList;  */
+print newList;  
+
+halt; */
 
 /*----------------------------------------------------------*/
 
@@ -894,7 +943,7 @@ func union(l1, l2, i, h1, h2, output) {
 be useless for my purposes. It takes unions of sets of vertices when what 
 I want is unions of vertices. */
 
-/* union test suite 
+/* union test bench 
 
 list l1;
 list l2;
@@ -965,7 +1014,7 @@ func vertexUnion(v1, v2, i1, i2, h1, h2, output) {
     return;
 }
 
-/* vertexUnion test suite 
+/* vertexUnion test bench 
 
 list v1;
 list v2;
@@ -1101,6 +1150,7 @@ k: inp int
 mapper: hold list
 potentialVertex: hold list
 i: hold int
+base: hold int
 h1: hold int
 h2: hold int
 h3: hold int
@@ -1111,7 +1161,7 @@ output: out list2
 /* Takes as input a set, and returns a set of all subsets of that set 
 of size less than or equal to k. */
 
-func toTheLessThanOrEqualToK(set, k, mapper, potentialVertex, i, h1, h2, h3, h4, output) {
+func toTheLessThanOrEqualToK(set, k, mapper, potentialVertex, i, base, h1, h2, h3, h4, output) {
     empty2(output);
     
     /* initialize mapper1 to [0]*(#set) */
@@ -1134,7 +1184,8 @@ func toTheLessThanOrEqualToK(set, k, mapper, potentialVertex, i, h1, h2, h3, h4,
         }
                 
         /* increment the list */
-        incrementList(mapper, h2, h3, h4, h1, potentialVertex);
+        two(base);
+        incrementList(mapper, base, h2, h3, h4, h1, potentialVertex);
         mapper = potentialVertex;
     }
     
@@ -1148,6 +1199,7 @@ int k;
 list mapper;
 list potentialVertex;
 int i;
+int base;
 int h1;
 int h2;
 int h3;
@@ -1159,15 +1211,18 @@ k = 2;
 mapper = [4];
 potentialVertex = [4];
 i = 4;
+base = 4;
 h1 = 4;
 h2 = 4;
 h3 = 4;
 h4 = 4;
 output = :[4]:;
 
-toTheLessThanOrEqualToK(set, k, mapper, potentialVertex, i, h1, h2, h3, h4, output);
+toTheLessThanOrEqualToK(set, k, mapper, potentialVertex, i, base, h1, h2, h3, h4, output);
 
-print output; */
+print output; 
+
+halt; */
 
 /*----------------------------------------------------------*/
 
@@ -1178,7 +1233,7 @@ print output; */
 l: inp list
 i: hold int
 h: hold int
-x: out in
+x: out int
 */
 
 
@@ -1196,6 +1251,51 @@ func sum(l, i, h, x) {
     return;
 }
 
+/*----------------------------------------------------------*/
+
+/* Map the values of l2 onto output using indexList */
+
+/*
+l2: inp list2
+indexList: inp list
+i: hold int
+h: hold int
+hl: hold list
+output: hold list2
+*/
+
+func index2Map(l2, indexList, i, h, hl, output) {
+    empty2(output);
+        
+    zeroAndLessThanLength(i, indexList, h);
+    
+    while (h) {
+        index2(l2, i, hl);
+        append2(output, hl);
+        
+        incrAndLessThanLength(i, indexList, h);
+    }
+    
+    return;
+}
+
+/* index2Map test bench 
+
+list l2; list indexList; 
+
+int i; int h; list hl; list2 output;
+
+l2 = :[2,4], [3], []:;
+indexList = [1,1,2];
+
+i=3;h=3;hl=[3];output=:[3]:;
+
+index2Map(l2, indexList, i, h, hl, output);
+
+print output;
+
+halt;
+*/
 
 /*----------------------------------------------------------*/
 
@@ -1314,6 +1414,151 @@ output = 4;
 index2Of(l, l2, h1, h2, h3, h4, hl, output);
 
 print output; */
+
+/*----------------------------------------------------------*/
+
+/* finds out if a given value is in a given list */
+
+/* 
+l: inp list
+val: inp int
+i: hold int
+h: hold int
+output: out int
+*/
+
+/* UNUSED FOR NOW */
+
+/*
+func listIn(l, val, i, h, output) {
+    zero(i);
+    lessThanLength(i, l, h);
+    
+    while (h) {
+        index(l, i, h);
+        if (h == val) {
+            one(output);
+            return;
+        }
+        incrAndLessThanLength(i, l, h);
+    }
+    
+    zero(output);
+    return;
+}
+*/
+
+/* listin test bench 
+
+list l;
+int val;
+int i;
+int h;
+int output;
+
+l = [2,~6];
+val = ~6;
+
+i=3; h=3; output=3;
+
+listIn(l, val, i, h, output);
+
+print output;
+
+halt;
+*/
+
+/*----------------------------------------------------------*/
+
+/* See if a list contains duplicates */ 
+
+/*
+l: inp list
+i: hold int
+h1: hold int
+h2: hold int
+h3: hold int 
+output: out int;
+*/
+
+func containsDuplicates(l, c1, c2, h1, h2, output) {
+    
+    zeroAndLessThanLength(c1, l, h1);
+    
+    while (h1) {
+        index(l, c1, h1);
+        
+        zeroAndLessThanLength(c2, l, h2);
+        
+        while (h2) {
+            index(l, c2, h2);
+            
+            if (c1 != c2) {
+                if (h1 == h2) {
+                    one(output);
+                    return;
+                }
+            }
+            
+            incrAndLessThanLength(c2, l, h2);
+        }
+        
+        incrAndLessThanLength(c1, l, h1);
+    }
+    zero(output);
+    return;
+}
+
+/* containsDuplicates test bench 
+
+list l; 
+
+int i; int h1; int h2; int h3; int output;
+
+l = [5,2,5,1];
+i=3;h1=3;h2=3;h3=3;output=3;
+
+containsDuplicates(l,i,h1,h2,h3,output);
+
+print output;
+
+halt;
+*/
+
+/*----------------------------------------------------------*/
+
+/* outputs a list of all zeroes of size x */
+
+/* 
+x: inp int
+i: hold int
+output: hold list
+*/
+
+func zeroes(x, i, output) {
+    zeroAndEmpty(i, output);
+    
+    while(i < x) { 
+        output = output ^ 0;
+        incr(i);
+    }
+    return;
+}
+
+/* zeroes test bench 
+
+int x;
+int i; list output;
+
+x = 5;
+i=3;output=[3];
+
+zeroes(x, i, output);
+
+print output;
+
+halt;
+*/
 
 /*----------------------------------------------------------*/
 
@@ -1475,13 +1720,14 @@ h6: hold int
 h7: hold int
 h8: hold int
 h9: hold int
+h10: hold int
 output: out int
 */
 
 /* This function is the first of the Great Functions. */
 
 func checkGraphForOrderInvariance(graph, edges, numVertices, a, b, c, d, 
-    aIndex, bIndex, cIndex, dIndex, h1, h2, h3, h4, h5, h6, h7, h8, h9, output) {
+    aIndex, bIndex, cIndex, dIndex, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, output) {
       
     doubleZero(aIndex, output);
 
@@ -1502,8 +1748,10 @@ func checkGraphForOrderInvariance(graph, edges, numVertices, a, b, c, d,
                         doubleIndex2OneList(graph, aIndex, bIndex, a, b);
                         doubleIndex2OneList(graph, cIndex, dIndex, c, d);
                  
-                        /* h9 is whether or not (a,b) is order equivalent to (c,d) */
+                        /* h9 is whether or not (a,b) is order equivalent to (c,d) or (d,c) */
                         isOrderEquivalent(a,b,c,d,h1,h2,h3,h4,h5,h6,h7,h8,h9);
+                        isOrderEquivalent(a,b,d,c,h1,h2,h3,h4,h5,h6,h7,h8,h10);
+                        h9 = h9 | h10;
                         
                         /* h1 is whether or not a and b have an edge */
                         edgeIndex(edges, numVertices, aIndex, bIndex, h1);
@@ -1511,11 +1759,19 @@ func checkGraphForOrderInvariance(graph, edges, numVertices, a, b, c, d,
                         /* h2 is whether or not c and d have an edge */
                         edgeIndex(edges, numVertices, cIndex, dIndex, h2);
                         
-                        if (((h1 + h2) + h9) == 2) {
-                            /* exactly one of the pairs has an edge, and the pairs are order equivalent;
-                            or both pairs have edges, but the pairs are not order equivalent */
+                        /* The pairs of vertices must not be identical */
+                        
+                        if ((aIndex != dIndex) | (bIndex != cIndex)) {
+                            if (((h1 + h2) + h9) == 2) {
+                                print aIndex; print bIndex; print cIndex; print dIndex;
+                                print a; print b; print c; print d;
+                                print h1; print h2; print h9;
                             
-                            return;
+                                /* exactly one of the pairs has an edge, and the pairs are order equivalent;
+                                or both pairs have edges, but the pairs are not order equivalent */
+                            
+                                return;
+                            }
                         }
                     }
                     incr(dIndex);
@@ -1536,11 +1792,49 @@ func checkGraphForOrderInvariance(graph, edges, numVertices, a, b, c, d,
             
             incr(bIndex);
         }
+        
+        /* This checks that no vertex has an edge to itself. */
+        h1 = aIndex;
+        edgeIndex(edges, numVertices, aIndex, h1, h2);
+        if (h2) {
+            return;
+        }
+        
         incr(aIndex);
     } 
     one(output);
     return;
 } 
+
+/* checkGraphForOrderInvariance test bench 
+
+list2 graph; list edges; int numVertices; list a;
+list b; list c; list d; int aIndex; int bIndex;
+int cIndex; int dIndex; int h1; int h2; int h3;
+int h4; int h5; int h6; int h7; int h8; int h9;
+int h10; int output;
+
+graph = :[1,4], [2,5], [4], [3,7]:;
+edges = [0,1,0,1,
+         1,0,0,1,
+         0,0,0,0,
+         1,1,0,0];
+numVertices = 4;
+
+a = [~3]; b = [~3]; c = [~3]; d = [~3];
+aIndex = ~3; bIndex = ~3; cIndex = 3;
+dIndex = 3; h1 = 3; h2 = 3; h3 = 3; 
+h4 = 3; h5 = 3; h6 = 3; h7 = 3; h8 = 3;
+h9 = 3; h10 = 3; output = 3;
+
+checkGraphForOrderInvariance(graph, edges, numVertices,
+a,b,c,d,aIndex,bIndex,cIndex,dIndex,h1,h2,h3,h4,h5,h6,h7,
+h8,h9,h10,output);
+
+print output;
+
+halt;
+*/
 
 /*----------------------------------------------------------*/
 
@@ -1553,13 +1847,15 @@ edges: inp list
 numVertices: inp int
 k: inp int
 n: inp int
-eightKN: inp int
+r: inp int
+eightKN: inp/hold int
 i: hold int
 c1: hold int
 h1: hold int
 h2: hold int
 h3: hold int
 h4: hold int
+h5: hold int
 oneCounter: hold int
 eightKNIFac: hold int
 reducer: hold list
@@ -1572,14 +1868,18 @@ output: hold int
 
 /* This is the second of the Great Functions. */
 
-func eachReducing(freeSet, graph, edges, numVertices, k, n, eightKN, i, c1, h1, h2, h3, h4, oneCounter, eightKNIFac, reducer, union, hl1, hl2, oxidizer, output) {
-    one(output);
+func eachReducing(freeSet, graph, edges, numVertices, k, n, r, eightKN, i, c1, h1, h2, h3, h4, h5, oneCounter, eightKNIFac, reducer, union, hl1, hl2, oxidizer, output) {
     one(i);
     one(h1);
     
     while (h1) {
         h2 = eightKN * i;
         factorial(h2, h1, eightKNIFac);
+                
+        if (eightKNIFac > r) {
+            one(output);
+            return;
+        }
         
         doubleZeroAndEmpty(c1, oneCounter, reducer);
         
@@ -1605,33 +1905,35 @@ func eachReducing(freeSet, graph, edges, numVertices, k, n, eightKN, i, c1, h1, 
         if (h1) {
             while (h1) {
                 /* h2 is guaranteed to be 0 here because we just left the previous while loop */
-                appendAndIncr(freeSet, h2, c1);
+                appendAndIncr(reducer, h2, c1);
                 lessThanLength(c1, freeSet, h1);
             }
             
             /* now we have to set up the oxidizer */
             
             doubleZeroAndEmpty(c1, oneCounter, union);
-                        
-                        
+                                   
+            one(h1);
+            
             /* set up [x_1 U ... U x_i] */            
             while (h1) {
             
                 index(freeSet, c1, h1);
-                incr(c1);
             
                 if (h1) {
                     incr(oneCounter);
                 
                     index2(graph, c1, hl1);
+                                        
                     vertexUnion(union, hl1, h1, h2, h3, h4, hl2);
-                    
+                                                            
                     union = hl2;
                 }
                 
+                incr(c1);
                 h1 = (oneCounter < i);
             }
-            
+                        
             /* set up {0,...,n} */
             zeroAndEmpty(c1, hl1);
             
@@ -1645,24 +1947,56 @@ func eachReducing(freeSet, graph, edges, numVertices, k, n, eightKN, i, c1, h1, 
             vertexUnion(hl1, hl2, h1, h2, h3, h4, union);
             
             /* get [x_1 U ... U x_i U {0, ..., n}]^{<=k} */
-            toTheLessThanOrEqualToK(union, k, hl1, oxidizer, c1, h1, h2, h3, h4, hl2);
-            
+            toTheLessThanOrEqualToK(union, k, hl1, oxidizer, c1, h1, h2, h3, h4, h5, hl2);
+                        
             /* put [x_1 U ... U x_i U {0, ..., n}]^{<=k} into vertex-index form */
             turnToVertexIndexForm(graph, hl2, c1, oneCounter, h1, h2, h3, h4, union, hl1, oxidizer);
-            
+                        
             /* check if {x_1, ..., x_{8kni!}} reduces [x_1 U ... U x_i U {0, ..., n}]^{<=k} */
-            reduces(reducer, oxidizer, graph, edges, numVertices, hl1, hl2, c1, oneCounter, h1, h2, h3, output);
-            
+            reduces(reducer, oxidizer, graph, edges, numVertices, hl1, hl2, c1, oneCounter, h1, h2, h3, h4, h5, output);
+                        
             if (!output) {
                 return;
             }
         }
         
+        one(h1);
         incr(i);
     }
     
     return;
 } 
+
+/* eachReducing test bench 
+
+list freeSet; list2 graph; list edges; int numVertices; int k; int n; int r; int eightKN;  
+
+int i; int c1; int h1; int h2; int h3; int h4; int h5; int oneCounter; int eightKNIFac;
+list reducer; list union; list hl1; list hl2; list oxidizer; int output;
+
+graph = :[0, 1], [~2], [4], [0], [1]:;
+
+freeSet = [1, 1, 1, 0, 0];
+edges = [0,1,0,1,1,
+         1,0,1,1,1,
+         0,1,0,1,1,
+         1,1,1,0,1,
+         1,1,1,1,0];
+numVertices = 5;
+k = 1;
+n = 1;
+r = 3;
+eightKN = 2;
+
+i=3;c1=3;h1=3;h2=3;h3=3;h4=3;h5=3;oneCounter=3;eightKNIFac=3;reducer=[3];union=[3];
+hl1=[3];hl2=[3];oxidizer=[3];output=3;
+
+eachReducing(freeSet,graph,edges,numVertices,k,n,r,eightKN,i,c1,h1,h2,h3,h4,h5,
+    oneCounter,eightKNIFac,reducer,union,hl1,hl2,oxidizer,output);
+    
+print output;
+
+halt; */
 
 /*----------------------------------------------------------*/
 
@@ -1701,54 +2035,58 @@ hl6: hold list
 viFreeSet: hold list
 standardFreeSet: hold list2
 ushFreeSet: hold list2
+output: out int;
 */
 
 /* This is the third of the Great Functions. This is also the One That Halts. */
 
 func hasAFree(graph, edges, numVertices, eightKN, eightKNRFacFac, k, n, r, h1, h2, h3, h4, h5, 
-    h6, h7, h8, hl1, hl2, hl3, hl4, hl5, hl6, viFreeSet, standardFreeSet, ushFreeSet, output) {
+    h6, h7, h8, h9, hl1, hl2, hl3, hl4, hl5, hl6, viFreeSet, standardFreeSet, ushFreeSet, output) {
     
     /* initialize freeSet to [0]*(#* graph) */
-    zeroAndEmpty(h2, viFreeSet);
-    lessThanLength2(h2, graph, h1);
-    while (h1) {
-        zero(h1);
-        appendAndIncr(viFreeSet, h1, h2);
-        lessThanLength2(h2, graph, h1);
-    }
+    zeroes(numVertices, h1, viFreeSet);
+    
+    zero(h1);
     
     /* as long as freeSet does not overflow */
     while (!h1) {
-        map2(graph, viFreeSet, h1, h2, standardFreeSet);
-        ush2(standardFreeSet, eightKNRFacFac, h1, h2, h3, hl1, hl2, ushFreeSet);
-        /* set up the potentially free set out of ushes */
+        /* the set must have size r */    
+        sum(viFreeSet, h1, h2, h3);
         
-        /* then convert it back to vertex-index form */
+        if (h3 == r) {
+    
+            map2(graph, viFreeSet, h1, h2, standardFreeSet);
+            ush2(standardFreeSet, eightKNRFacFac, h1, h2, h3, hl1, hl2, ushFreeSet);
+            /* set up the potentially free set out of ushes */
         
-        standardFreeSet = standardFreeSet ||* ushFreeSet;
+            /* then convert it back to vertex-index form */
         
-        turnToVertexIndexForm(graph, standardFreeSet, h1, h2, h3, h4, h5, hl1, hl2, h6, hl3);
+            standardFreeSet = standardFreeSet ||* ushFreeSet;
         
-        /* is this joint set fitting in the graph? i.e. does it have the right complexity? */
-        /* ...of complexity (8knr)!... */
+            turnToVertexIndexForm(graph, standardFreeSet, h1, h2, h3, h4, h5, hl1, hl2, h6, hl3);
         
-        if (h6) {
-            /* is the set free? */
-            isFree(hl3, numVertices, edges, h1, h2, h3, h4, h5);
+            /* is this joint set fitting in the graph? i.e. does it have the right complexity? */
+            /* ...of complexity (8knr)!... */
+        
+            if (h6) {
+                /* is the set free? */
+                isFree(hl3, numVertices, edges, h1, h2, h3, h4, h5);
             
-            if (h5) {
-                /* does each {x_1, ..., x_{8kni!}} reduce [x_1 U ... U x_i U {0, ..., n}]^{<=k}? */
-                eachReducing(hl3, graph, edges, numVertices, k, n, eightKN, h1, h2, h3, h4, h5, h6, h7, h8,
-                    hl1, hl2, hl4, hl5, hl6, output);
+                if (h5) {
+                    /* does each {x_1, ..., x_{8kni!}} reduce [x_1 U ... U x_i U {0, ..., n}]^{<=k}? */
+                    eachReducing(hl3, graph, edges, numVertices, k, n, r, eightKN, h1, h2, h3, h4, h5, h6, h7, h8, h9,
+                        hl1, hl2, hl4, hl5, hl6, output);
                     
-                if (output) {
-                    /* Then this order invariant graph does indeed have the property we wanted! */ 
-                    return;
+                    if (output) {                
+                        /* Then this order invariant graph does indeed have the property we wanted! */ 
+                        return;
+                    }
                 }
-            }
-        } 
+            } 
+        }
         
-        incrementList(viFreeSet, h2, h3, h4, h1, hl1);
+        two(h5);
+        incrementList(viFreeSet, h5, h2, h3, h4, h1, hl1);
         viFreeSet = hl1;
     }
     
@@ -1761,6 +2099,74 @@ func hasAFree(graph, edges, numVertices, eightKN, eightKNRFacFac, k, n, r, h1, h
     
     /* SNAPPP */
 } 
+
+/*
+graph: inp list2
+edges: inp list
+numVertices: inp int
+eightKN: inp int
+eightKNRFacFac: inp int
+k: inp int
+n: inp int
+r: inp int
+h1: hold int
+h2: hold int
+h3: hold int
+h4: hold int
+h5: hold int
+h6: hold int
+h7: hold int
+h8: hold int
+h9: hold int
+hl1: hold list
+hl2: hold list
+hl3: hold list
+hl4: hold list
+hl5: hold list
+hl6: hold list
+viFreeSet: hold list
+standardFreeSet: hold list2
+ushFreeSet: hold list2
+output: out int
+*/
+
+/* Every order invariant graph on [Q]^{<=k} has a free 
+{x_1, ..., x_r, ush(x_1), ..., ush(x_r)} of complexity (8knr)! each {x_1, ..., x_{8kni!}} 
+reducing [x_1 U ... U x_i U {0, ..., n}]^{<=k} */
+
+/* hasAFree test bench 
+
+list2 graph; list edges; int numVertices; int eightKN; int eightKNRFacFac;
+int k; int n; int r; 
+
+int h1; int h2; int h3; int h4; int h5; int h6; int h7; int h8; int h9; 
+list hl1; list hl2; list hl3; list hl4; list hl5; list hl6; list viFreeSet;
+list2 standardFreeSet; list2 ushFreeSet; int output;
+
+graph = :[0, 1], [~2], [~1], [0], [1]:;
+edges = [0,1,0,1,1,
+         1,0,1,1,1,
+         0,1,0,1,1,
+         1,1,1,0,1,
+         1,1,1,1,0];
+numVertices = 5;
+eightKN = 2;
+eightKNRFacFac = 1;
+k = 1;
+n = 1;
+r = 3;
+
+h1=3;h2=3;h3=3;h4=3;h5=3;h6=3;h7=3;h8=3;h9=3;hl1=[3];hl2=[3];hl3=[3];hl4=[3];
+hl5=[3];hl6=[3];viFreeSet=[3];standardFreeSet=:[3]:;ushFreeSet=:[3]:;output=3;
+
+hasAFree(graph,edges,numVertices,eightKN,eightKNRFacFac,k,n,r,h1,h2,h3,h4,h5,
+    h6,h7,h8,h9,hl1,hl2,hl3,hl4,hl5,hl6,viFreeSet,standardFreeSet,ushFreeSet,
+    output);
+    
+print output;
+
+halt; 
+*/
 
 /*----------------------------------------------------------*/
 
@@ -1786,9 +2192,8 @@ graph: out list2
 
 /* This is the fourth, and final, Great Function. */
 
-func everyGraph(k, n, r, num, denom, h1, h2, eltsInGraph, 
+func everyGraph(k, n, r, num, denom, h1, h2, h3, eltsInGraph, 
     hl1, hl2, eightKN, eightKNRFacFac, numVertices, graph) {
-
     
     /* This is 8 but can be changed to 1 for debugging; remember to change it back!! */
     eightKN = (8*k)*n;
@@ -1812,7 +2217,7 @@ func everyGraph(k, n, r, num, denom, h1, h2, eltsInGraph,
     
         while (denom < h2) {        
             h1 = (num * eightKNRFacFac) / denom;
-                        
+                                                            
             appendAndIncr(eltsInGraph, h1, denom);
         }
         
@@ -1820,12 +2225,34 @@ func everyGraph(k, n, r, num, denom, h1, h2, eltsInGraph,
     }    
     
     /* Take the set of all low-complexity numbers to the <=k */
-    toTheLessThanOrEqualToK(eltsInGraph, k, hl1, hl2, h1, h2, numVertices, num, denom, graph);
+    toTheLessThanOrEqualToK(eltsInGraph, k, hl1, hl2, h1, h2, h3, numVertices, num, denom, graph);
     
     numVertices = #* graph;
     
     return;
 }    
+
+/* everyGraph test bench (to run, change 8 to a 1 or it'll never finish)
+
+int k; int n; int r; 
+
+int num; int denom; int h1; int h2; int h3; list eltsInGraph; list hl1; list hl2;
+int eightKN; int eightKNRFacFac; int numVertices; list2 graph;
+
+k = 2;
+n = 1;
+r = 1;
+
+h1=3;h2=3;h3=3;num=3;denom=3;eltsInGraph=3;hl1=[3];hl2=[3];eightKN=3;eightKNRFacFac=3;
+numVertices=3;graph=:[3]:;
+
+everyGraph(k,n,r,num,denom,h1,h2,h3,eltsInGraph,hl1,hl2,eightKN,eightKNRFacFac,
+    numVertices,graph);
+    
+print eightKN; print eightKNRFacFac; print numVertices; print graph;
+
+halt;
+*/
 
 /*----------------------------------------------------------*/
 /*--------------------  FINAL  BOSS  -----------------------*/
@@ -1853,7 +2280,9 @@ int h11;
 int h12;
 int h13;
 int h14;
+int h15;
 list edges;
+list ordering;
 list hl1;
 list hl2;
 list hl3;
@@ -1863,6 +2292,7 @@ list hl6;
 list hl7;
 list hl8;
 list2 hll;
+list2 unPermutedGraph;
 list2 graph;
 
 /*
@@ -1888,50 +2318,67 @@ while (maxKNR) {
             one(r);
             
             while (r <= maxKNR) {
-                everyGraph(k, n, r, h1, h2, h3, h4, hl1, hl2, hl3, eightKN, eightKNRFacFac, numVertices, graph);
+                everyGraph(k, n, r, h1, h2, h3, h4, h5, hl1, hl2, hl3, eightKN, eightKNRFacFac, numVertices, unPermutedGraph);
                 
-                /* generate all possible edge-sets */
+                /* generate every permutation of this graph */
+                /* This is necessary because eachReducing cares about the ordering of the graph */
                 
-                h1 = numVertices * numVertices;
+                zeroes(numVertices, h1, ordering);
+                /* as long as we don't see an overflow from the permutation list */
+                                                
+                zero(h2);
                 
-                /* initialize edges to [0]*(h1) */
+                while (!h2) {
                 
-                zeroAndEmpty(h2, edges);
+                    containsDuplicates(ordering, h1, h2, h3, h4, h5);
                 
-                while (h2 < h1) {
-                    zero(h3);
-                    appendAndIncr(edges, h3, h2);
-                }
+                    if (!h5) {
                 
-                /* as long as we don't see an overflow from the edge binary list */
-                while (!h3) {
+                        index2Map(unPermutedGraph, ordering, h1, h2, hl1, graph);
+                
+                        /* generate all possible edge-sets */
+                
+                        h1 = numVertices * numVertices;
+                
+                        /* initialize edges to [0]*(h1) */
+                
+                        zeroes(h1, h2, edges);
+                
+                        /* as long as we don't see an overflow from the edge binary list */
+                        while (!h3) {
                     
-                    /* check that these edges make sense and are order invariant and all that jazz */
+                            /* check that these edges make sense and are order invariant and all that jazz */
                     
-                    checkGraphForOrderInvariance(graph, edges, numVertices, hl1, hl2, hl3, hl4, h1, h2, 
-                        h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14);
+                            checkGraphForOrderInvariance(graph, edges, numVertices, hl1, hl2, hl3, hl4, h1, h2, 
+                                h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h15, h14);
                         
-                    /* h14 = 1; */
-                    /* this is only here for debugging purposes! Remove this later! */    
+                            /* h14 = 1; */
+                            /* this is only here for debugging purposes! Remove this later! */    
                         
-                    if (h14) {
-                        /* then it passes the test! */
-                        /* It MUST then contain a set with the right properties, or the machine will halt. */
+                            if (h14) {
+                                /* then it passes the test! */
+                                /* It MUST then contain a set with the right properties, or the machine will halt. */
                         
-                        hasAFree(graph, edges, numVertices, eightKN, eightKNRFacFac, k, n, r, h1, h2, h3, h4, h5, 
-                            h6, h7, h8, hl1, hl2, hl3, hl4, hl5, hl6, hl7, hl8, hll, h9);
+                                hasAFree(graph, edges, numVertices, eightKN, eightKNRFacFac, k, n, r, h1, h2, h3, h4, h5, 
+                                    h6, h7, h8, h9, hl1, hl2, hl3, hl4, hl5, hl6, hl7, hl8, hll, h9);
                             
-                        if (!h9) {
-                            halt;
-                        }        
+                                if (!h9) {
+                                    halt;
+                                }        
+                            }
+                    
+                
+                            /* we must make a new edge-set */
+                    
+                            two(h5);
+                            incrementList(edges, h5, h1, h2, h4, h3, hl1);
+                            edges = hl1;
+                        } 
                     }
                     
-                
-                    /* we must make a new edge-set */
-                
-                    incrementList(edges, h1, h2, h4, h3, hl1);
-                    edges = hl1;
-                } 
+                    incrementList(ordering, numVertices, h1, h3, h4, h2, hl2);
+                    ordering = hl2;
+                }    
                 incr(r);
             }
             incr(n);

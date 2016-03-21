@@ -1,0 +1,7 @@
+input x
+
+// increment x by 1. Assumes unary.
+// NON-STANDARD
+
+INCR: [x] E (1, R, INCR); _ (E)
+return

@@ -1,0 +1,10 @@
+input x y
+
+// x += y. Assumes you're at the end of one of the numbers and are ready to just increment
+
+// NON-STANDARD
+
+READ_Y: [y] 1 (R); E (GBTE)
+INCR_X: [x] E (1, R, INCR_X); _ (E, READ_Y)
+GBTE: function BUILTIN_getBackToE y
+return
