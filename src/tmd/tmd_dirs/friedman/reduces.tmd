@@ -28,6 +28,8 @@ function BUILTIN_assign !0 graph
 function BUILTIN_assign !1 c2
 function BUILTIN_list2index !2 !0 !1
 function BUILTIN_assign x !2
+function lEqual x y h2 h4 h5 h3 !0 !1 !2 
+function orWith h1 h3 !0 !1 !2 
 function ltrlex x y h2 h4 h5 h3 !0 !1 !2 
 function edgeIndex edges numVertices c1 c2 h2 !0 !1 !2 !3 
 function andWith h2 h3 !0 !1 !2 

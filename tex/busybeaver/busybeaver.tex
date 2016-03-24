@@ -15,12 +15,12 @@
 
 \newtheorem{statement}{Statement}
 
-\newcommand{\statenumstate}{7,641-state }
-\newcommand{\statenum}{7,641 }
-\newcommand{\statenumcomma}{7,641, }
-\newcommand{\bbstatenum}{$BB($7,641) }
-\newcommand{\bbstatenumcomma}{$BB($7,641), }
-\newcommand{\bbstatenumperiod}{$BB($7,641). }
+\newcommand{\statenumstate}{8,013-state }
+\newcommand{\statenum}{8,013 }
+\newcommand{\statenumcomma}{8,013, }
+\newcommand{\bbstatenum}{$BB($8,013) }
+\newcommand{\bbstatenumcomma}{$BB($8,013), }
+\newcommand{\bbstatenumperiod}{$BB($8,013). }
 
 \newcommand{\zhaltstate}{\texttt{7593}}
 \newcommand{\ghaltstate}{\texttt{5135}}
@@ -43,8 +43,15 @@
 \begin{document}
 
 \title{A Relatively Small Turing Machine Whose Behavior Is Independent of Set Theory}
-\author{Adam Yedidia and Scott Aaronson}
-
+\author{
+    Adam Yedidia\\
+    \small\texttt{MIT}\\
+    \small\texttt{adamy@mit.edu}
+    \and
+    Scott Aaronson\\
+    \small\texttt{MIT}\\
+    \small\texttt{aaronson@csail.mit.edu}
+}
 \maketitle
 
 \begin{abstract}
@@ -177,7 +184,7 @@ was able to derive a graph-theoretic statement whose truth implies the consisten
 \footnotetext{In fact, Friedman's statement is equivalent to the consistency of SRP (``stationary Ramsey property''), which is a system of axioms more powerful than ZFC. Because SRP is strictly more powerful than ZFC (it in fact consists of ZFC plus some additional axioms), the consistency of SRP implies the consistency of ZFC, and the inconsistency of ZFC implies the inconsistency of SRP.}
 
 \begin{statement} \label{eq:friedman}
-For all $k, n, r \ge 0$, every order invariant graph on $[\mathbb{Q}]^{\le k}$ has a free $\{x_1,\dots,x_r, \\
+For all $k, n, r > 0$, every order invariant graph on $[\mathbb{Q}]^{\le k}$ has a free $\{x_1,\dots,x_r, \\
 \textrm{ush}(x_1),...,\textrm{ush}(x_r)\}$ of complexity $\le (8knr)!$, each $\{x_1, \dots, x_{(8kni)!}\}$
 reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$. \cite{friedman}
 \end{statement}
@@ -530,19 +537,18 @@ We thank Adam Hesterberg for his help with the mathematics discussed in the pape
 We thank Alex Arkhipov for introducing us to the term ``code golfing.''
 
 \begin{thebibliography}{100}
-\bibitem{godelcohen} G\"odel, K. ``The Consistency of the Axiom of Choice and of the Generalized Continuum-Hypothesis with the Axioms of Set Theory.'' 1939.
+\bibitem{godelcohen} G\"odel, K. ``The Consistency of the Axiom of Choice and of the Generalized Continuum-Hypothesis with the Axioms of Set Theory.'' Published in 1940 by the Princeton University Press. Annals of Mathematics Studies.
 \bibitem{schoenfield} Schoenfield, J. ``The Problem of Predicativity.'' Essays on the foundations of mathematics, Y. Bar-Hillel et al., eds., pp. 132-142. 1961.
-\bibitem{calude} Calude, C., Calude, E. ``Evaluating the Complexity of Mathematical Problems: Part 1,'' ``Evaluating the Complexity of Mathematical Problems: Part 2.''
+\bibitem{calude} Calude, C., Calude, E. ``Evaluating the Complexity of Mathematical Problems: Part 1,'' ``Evaluating the Complexity of Mathematical Problems: Part 2.'' Printed in \emph{Computation, Physics and Beyond: International Workshop on Theoretical Computer Science, WTCS 2012.} 
 \bibitem{koza} Koza, J. ``Spontaneous Emergence of Self-Replicating and Evolutionarily Self-Improving Computer Programs.'' Proceedings of the Third Workshop on Artificial Life. 1993.
-\bibitem{pargellis} Pargellis, A. ``The Spontaneous Generation of Digital `Life.''' 
+\bibitem{pargellis} Pargellis, A. ``The Spontaneous Generation of Digital `Life.''' Proceedings of the Ninth International Conference on the Simulation and Synthesis of Living Systems. 
 \bibitem{friedman} Friedman, H. ``Order Invariant Graphs and Finite Incompleteness.'' https://u.osu.edu/friedman.8/files/2014/01/FIiniteSeqInc062214a-v9w7q4.pdf
 \bibitem{busybeaver} Rado, T. ``On Non-Computable Functions.'' 
 Bell System Technical Journal, 41: 3. May 1962 pp 877-884.
-\bibitem{godelcohen}
 \bibitem{bbvalues} http://www.drb.insel.de/\symbol{126}heiner/BB/ [A list of the known busy beaver values]
 \bibitem{codegolf} http://codegolf.stackexchange.com/ [A place where programmers go for recreational code golfing]
 \bibitem{benamram} Ben-Amram, A., Petersen, H. ``Improved Bounds for Functions Related to Busy Beavers'' Theory of Computing Systems 35, 1-11 (2002)
-\bibitem{bbimpossible} Marxen, H., Buntrock, J. ``Attacking the Busy Beaver 5.'' 
+\bibitem{bbimpossible} Marxen, H., Buntrock, J. ``Attacking the Busy Beaver 5.'' Proceedings of the 2005 Workshop on Unconventional Computing.
 \bibitem{grothendieck} McLarty, C. ``What Does It Take To Prove Fermat's Last Theorem? Grothendieck and the Logic of Number Theory.'' The Bulletin of Symbolic Logic, Volume 00, Number 0.
 \bibitem{friedmanlist} Friedman, H. ``Order Theoretic Equations, Maximality, and Incompleteness.'' June 7, 2014. http://u.osu.edu/friedman.8/foundational-adventures/downloadable-manuscripts \#78.
 \bibitem{github} https://github.com/adamyedidia/parsimony
@@ -580,6 +586,8 @@ For detailed documentation of the TMD programming language, see~\cite{github}. T
 
 We present below an explicit description of $Z$. To prevent the Turing machine from being outrageously long, our presentation is in a very compressed form. For a more easily readable version of $Z$, complete with descriptive state names, see~\cite{github}. 
 
+We ran this Turing Machine for 10,000,000,000 steps (more than half a day on our simulators) and within that time it did not halt. We note, however, that it was designed for parsimony and not for efficiency, and that this ``experiment'' is of little consequence! We similarly designed and ran a Turing machine designed to test the conjecture that all perfect squares are less than 5, and it ran for 2,895,083,899 steps (a couple hours on our simulators) before it found the counterexample 9 and halted.
+
 Figure~\ref{fig:syntax} presents useful information for how to interpret the description shown below. In addition, note the following:
 
 \begin{enumerate}
@@ -597,8 +605,7 @@ Figure~\ref{fig:syntax} presents useful information for how to interpret the des
 \caption{This figure explains how to read a description of a single state. Note that ``\texttt{ERROR-}'' or ``\texttt{HALT--}'' denote transitions to the \texttt{ERROR} or \texttt{HALT} states, respectively (no further information is provided because what symbol is written and which direction the head moves are at that point irrelevant.) \label{fig:syntax}} 
 \end{center} 
 \end{figure}
-
-\clearpage
+%\clearpage
 \input{zfc_tm}
 
 \end{appendices}

@@ -499,6 +499,63 @@ print output; */
 
 /*----------------------------------------------------------*/
 
+/* tests if two lists are equal */
+
+/*
+l1: inp list
+l2: inp list
+i: hold int
+h1: hold int
+h2: hold int
+output: out int
+*/
+
+func lEqual(l1, l2, i, h1, h2, output) {
+    zero(output);
+
+    notSameLength(l1, l2, i);
+    if (i) {
+        return;
+    }
+    
+    /* i is guaranteed to be 0 here */
+    lessThanLength(i, l1, h1);
+    
+    while (h1) {
+        indexTwice(l1, l2, i, h1, h2);
+        if (h1 != h2) {
+            return;
+        }
+        
+        incrAndLessThanLength(i, l1, h1);
+    }
+    
+    one(output);
+    return;
+} 
+
+/* lEqual test bench 
+
+list l1;
+list l2;
+int i;
+int h1;
+int h2;
+int output;
+
+l1 = [3,4];
+l2 = [3,5];
+i = 4;
+h1 = 4;
+h2 = 4;
+output = 4;
+
+lEqual(l1, l2, i, h1, h2, output);
+
+print output; */
+
+/*----------------------------------------------------------*/
+
 /* x ltrlex y if and only if x = y or x_i < y_i where i is least such 
 that x_i != y_i 
 
@@ -643,6 +700,10 @@ func reduces(X, Y, graph, edges, numVertices, x, y, c1, c2, h1, h2, h3, h4, h5, 
             while (c2 < numVertices) {
                 if (X @ c2) {
                     x = graph @* c2;
+                    
+                    /* in case x = y */
+                    lEqual(x, y, h2, h4, h5, h3); 
+                    orWith(h1, h3); 
                     
                     /* ...such that x ltrlex y... */
                     ltrlex(x, y, h2, h4, h5, h3);
@@ -1296,63 +1357,6 @@ print output;
 
 halt;
 */
-
-/*----------------------------------------------------------*/
-
-/* tests if two lists are equal */
-
-/*
-l1: inp list
-l2: inp list
-i: inp int
-h1: inp int
-h2: inp int
-output: out int
-*/
-
-func lEqual(l1, l2, i, h1, h2, output) {
-    zero(output);
-
-    notSameLength(l1, l2, i);
-    if (i) {
-        return;
-    }
-    
-    /* i is guaranteed to be 0 here */
-    lessThanLength(i, l1, h1);
-    
-    while (h1) {
-        indexTwice(l1, l2, i, h1, h2);
-        if (h1 != h2) {
-            return;
-        }
-        
-        incrAndLessThanLength(i, l1, h1);
-    }
-    
-    one(output);
-    return;
-} 
-
-/* lEqual test bench 
-
-list l1;
-list l2;
-int i;
-int h1;
-int h2;
-int output;
-
-l1 = [3,4];
-l2 = [3,5];
-i = 4;
-h1 = 4;
-h2 = 4;
-output = 4;
-
-lEqual(l1, l2, i, h1, h2, output);
-
-print output; */
 
 /*----------------------------------------------------------*/
 

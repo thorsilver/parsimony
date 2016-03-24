@@ -14,7 +14,7 @@ if __name__ == "__main__":
 #    outString = "{\\tiny \\tt \\noindent \\setstretch{0.5}"    
 
 
-    outString = "\\resizebox{17cm}{!}{\\tt\\begin{tabular}{@{}l@{}}"    
+    outString = "\\centering\\resizebox{17cm}{!}{\\tt\\begin{tabular}{@{}l@{}}"    
         
     numDigitsPerName = len(str(len(tm.listOfRealStates)))        
         
