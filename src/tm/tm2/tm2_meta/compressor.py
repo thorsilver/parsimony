@@ -13,8 +13,11 @@ if __name__ == "__main__":
         
 #    outString = "{\\tiny \\tt \\noindent \\setstretch{0.5}"    
 
-
-    outString = "\\centering\\resizebox{17cm}{!}{\\tt\\begin{tabular}{@{}l@{}}"    
+#    outString = "\\centering\\resizebox{17cm}{!}{\\tt\\begin{tabular}{@{}l@{}}"    
+ 
+#    outString = "{\\noindent \\tiny \\tt"
+        
+    outString = "{\\fontsize{4.5}{4}\\selectfont\\tt\\noindent"    
         
     numDigitsPerName = len(str(len(tm.listOfRealStates)))        
         
@@ -61,12 +64,15 @@ if __name__ == "__main__":
         pageBreakCounter = (pageBreakCounter + 1)%891
         
         if pageBreakCounter == 0:
-            outString += "\\end{tabular}\\par}\\\\ \\resizebox{17cm}{!}{\\tt\\begin{tabular}{@{}l@{}}"
+#            outString += "\\end{tabular}\\par}\\\\ \\resizebox{17cm}{!}{\\tt\\begin{tabular}{@{}l@{}}"
+            pass
         elif lineBreakCounter == 0:
-            outString += "\\\\"     
+#            outString += "\\\\"     
+            pass
 
+#    outString += "\\end{tabular}\\par}\n"
 
-    outString += "\\end{tabular}\\par}\n"
+    outString += "\\par}\n"
 
     output = open(sys.argv[2], "w")
     output.write(outString)
