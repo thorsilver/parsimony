@@ -236,8 +236,6 @@ For each list of nodes $V$, we loop over every possible binary list $E$, and if 
 
 When verifying the validity of a graph, checking the first two conditions is trivial, but the third merits further explanation. In order to verify that a given graph $(V, E)$ has a free \\ $\{x_1,\dots,x_r, ush(x_1),...,ush(x_r)\}$, each  $\{x_1, \dots, x_{(8kni)!}\}$ reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$, we look at every possible subset of the nodes in $V$. For each subset, we verify that it has length $r$, that $\textrm{ush}(x_1),...,\textrm{ush}(x_r)$ all exist in $V$, and for each $i$ such that $(8kni)! \le r$, that $\{x_1, \dots, x_{(8kni)!}\}$ reduces $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$. Once we have found such a subset, we know that the third conditon is satisfied.
 
-{\color{red} I want to argue that the home for the paragraph from Appendix C about actually running the machine belongs in Appendix C instead of here. First, I think that the paragraph is not as technically ``serious'' as the rest of the material in this subsection. Second, I think that we're likely to have two sorts of readers: ``mathematicians'' and ``engineers.'' This subsection definitely belongs to the mathematicians; Appendix C, with its goofy font and giant list of states, is the home of the engineers. Mathematicians won't care what happens when you run the Turing machine, but engineers will be curious to hear if we tried it. And the paragraph fits nicely in Appendix C, since we're talking about the nitty-gritty details of $Z$.}
-
 \section{A Turing Machine that Encodes Goldbach's Conjecture} \label{sec:g}
 
 We present a \gbstatenumstate Turing machine that \emph{encodes Goldbach's conjecture}; in other words, to know whether this machine halts is to know whether Goldbach's conjecture is true. It is therefore impossible to prove the value of \bbgbstatenum without simultaneously proving or disproving Goldbach's conjecture.
@@ -357,7 +355,7 @@ While simple, this approach is suboptimal in terms of the number of states. As i
 This idea is at the core of the division of labor described previously. We begin by writing a description of the higher-level machine onto the tape, and then ``run'' the higher-level machine by reading what is on the tape with a set of states that understands how to interpret the encoded higher-level machine. We refer to this idea as \emph{on-tape processing}.
 
 In this paper, we use TMD as the representation of the higher-level machine.\footnotemark
-\footnotetext{Note that instead of TMD, the on-tape processing scheme could be used for any language, assuming the designer provides both a processor and an encoding for that language. We chose TMD because it made the interpreter easy to write, but other minimalist languages, like Unlambda~\cite{unlambda}, Brainf*ck~\cite{brainfuck}, or Iota and Jot~\cite{iota}, might be good candidates for parsimonious designs, with the additional advantage of being already known to some programmers! Thanks to Luke Schaeffer for this point. {\color{red} I don't think these languages need to be mentioned in the Related Work section---they have little to do with the Busy Beaver sequence or parsimony in general. They're just languages with very few primitives.}}
+\footnotetext{Note that instead of TMD, the on-tape processing scheme could be used for any language, assuming the designer provides both a processor and an encoding for that language. We chose TMD because it made the interpreter easy to write, but other minimalist languages, like Unlambda~\cite{unlambda}, Brainf*ck~\cite{brainfuck}, or Iota and Jot~\cite{iota}, might be good candidates for parsimonious designs, with the additional advantage of being already known to some programmers! Thanks to Luke Schaeffer for this point.}
 The printer writes the TMD program onto the tape, and the processor executes it. As a result of using this scheme, we incur a constant \emph{additive} overhead---we have to include the processor in our final Turing machine---but we avoid the constant \emph{multiplicative} overhead required for the na\"ive scheme. 
 
 Is this additive overhead small enough to be worth it? We found that it is. Our implementation of the processor requires 3,860 states. (See Section~\ref{sec:cost} for a detailed breakdown of the state cost by submachine.) In contrast to this additive overhead of 3,860, the na\"ive approach incurs a large multiplicative overhead that depends in part on how many states must be used to represent each higher-level state transition, and in part on how efficient an encoding scheme can be devised for the on-tape approach. The following table compares the performance of on-tape processing to the performance of an implementation that used the na\"ive approach. The comparison is shown for three kinds of machines: a machine that halts if and only if Goldbach's conjecture is false, a machine that halts if and only if the Riemann hypothesis is false, and a machine whose behavior is independent of ZFC. 
@@ -450,7 +448,6 @@ This is plainly not worth it for the 10-bit example binary shown in Figs.~\ref{f
 \end{center}
 
 One minor detail concerns the numbers presented for the Riemann program. Ordinarily, with a binary of size 9,532, we would opt to split the program into 1,060 words of 9 bits each plus a 107-state extractor, since 9 is the greatest $w$ such that $w2^w <$ 9,532. But because 9,532 is so close to the ``magic number'' 10,240, it's actually more parsimonious to pad the program with copies of the blank symbol until it's 10,240 bits long, and split it into 1,024 words of 10 bits each plus a 117-state extractor.
-{\color{red} It's okay to take the greatest $w$ such that $w2^w <$ 9,532, because we use $n_w = \left \lceil{\frac{9532}{w}}\right \rceil$ data states (and NOT $2^w$ data states, as I believe you are assuming, and which you correctly note would be insufficient to encode the whole bit-string). The scheme that I originally used was what you are suggesting (take the least $w$ such that $w2^w \ge$ 9,532, and use $2^w$ data states) but after I emailed as much to you and Luke, Luke pointed out that we could do better by a multiplicative factor between 1 and 2 by taking $w$ to be one smaller and just having more some extra data states that can't be pointed to; that way, you don't have all that wasted space at the end! (In fact, Luke's method is \emph{almost} always better than the one I originally suggest here and that you suggested in your comments, so what I actually do is check which of the two methods uses less states and use that one; that's what this paragraph is all about.)}
 
 
 \subsection{The Processor}
@@ -531,8 +528,6 @@ We thank Prof. Harvey Friedman for having done the crucial theoretical work that
 
 We thank Luke Schaeffer for his early help, as well as his help designing introspective Turing machines. 
 
-We thank Adam Hesterberg for his help explaining the meaning of various common mathematical terms used in Friedman's work. {\color{red} This sentence fits just fine in my thesis, but maybe it should be removed now that you are an author---I imagine that you would have understood the meaning of those mathematical terms just fine without asking Adam! \texttt{:)}} 
-
 We thank Alex Arkhipov for introducing us to the term ``code golfing.''
 
 Supported by an Alan T. Waterman Award from the National Science Foundation, under grant no. 1249349.
@@ -541,7 +536,7 @@ Supported by an Alan T. Waterman Award from the National Science Foundation, und
 \bibitem{iota} Barker, C. ``Iota and Jot: the simplest languages?'' http://semarch.linguistics.fas.nyu.edu/barker/Iota/ [A website describing the Iota and Jot programming languages]
 \bibitem{benamram} Ben-Amram, A., Petersen, H. ``Improved Bounds for Functions Related to Busy Beavers'' Theory of Computing Systems 35, 1-11 (2002) 
 \bibitem{bbfour} Brady, A.H. ``Solution of the Non-computable `Busy Beaver' game for $k=4$.'' Abstracts for: ACM Computer Science Conference (Washington, DC, February 18-20, 1975), p. 27, ACM, 1975.
-\bibitem{riemann} Browder, F. ``Mathematical Developments Arising from Hilbert Problems.'' American Mathematical Society. Volume 28, Part 1. {\color{red} I tried to find a page number for this, but among all the papers I found that cited this, nobody else provided a page number for some reason. Perhaps Part 1 of Volume 28 of the AMS only has one page in it?}
+\bibitem{riemann} Browder, F. ``Mathematical Developments Arising from Hilbert Problems.'' American Mathematical Society. Volume 28, Part 1. 
 \bibitem{calude} Calude, C., Calude, E. ``Evaluating the Complexity of Mathematical Problems: Part 1,'' ``Evaluating the Complexity of Mathematical Problems: Part 2.'' Complex Systems 18, pp. 387-401. 2010.
 \bibitem{friedman} Friedman, H. ``Order Invariant Graphs and Finite Incompleteness.'' https://u.osu.edu/friedman.8/files/2014/01/FIiniteSeqInc062214a-v9w7q4.pdf
 \bibitem{friedmanlist} Friedman, H. ``Order Theoretic Equations, Maximality, and Incompleteness.'' June 7, 2014. http://u.osu.edu/friedman.8/foundational-adventures/downloadable-manuscripts \#78.
@@ -549,14 +544,14 @@ Supported by an Alan T. Waterman Award from the National Science Foundation, und
 \bibitem{koza} Koza, J. ``Spontaneous Emergence of Self-Replicating and Evolutionarily Self-Improving Computer Programs.'' in Artificial Life III (SFI Studies in the Sciences of Complexity, vol. XVII), C. G. Langton, Ed. Reading, MA: Addison-Wesley. pp. 225-262. 1994. 
 \bibitem{bbsmall} Lin, S., Rado, T. ``Computer Studies of Turing Machine Problems.'' Published in Journal of the ACM, Volume 12, Issue 2, April 1965. Pages 196-212.
 \bibitem{unlambda} Madore, D. ``The Unlambda Programming Language.'' http://www.madore.org/~david/programs/unlambda/ [A website describing the Unlambda programming language]
-\bibitem{bbimpossible} Marxen, H., Buntrock, J. ``Attacking the Busy Beaver 5.'' Bull EATCS, Vol. 40, pp. 247-251. 1990. {\color{red} You wrote: ``Ref. [8] should probably have H. Marxen as the {`author.'}'' I'm unsure what you mean---haven't I already listed H. Marxen as the author here?}
+\bibitem{bbimpossible} Marxen, H., Buntrock, J. ``Attacking the Busy Beaver 5.'' Bull EATCS, Vol. 40, pp. 247-251. 1990. 
+\bibitem{bbvalues} Marxen, H. http://www.drb.insel.de/\symbol{126}heiner/BB/ [A list of the known busy beaver values]
 \bibitem{brainfuck} M\"uller, U. ``Brainfuck.'' http://www.muppetlabs.com/~breadbox/bf/ [A website describing the Brainf*ck programming language]
 \bibitem{pargellis} Pargellis, A. ``The Spontaneous Generation of Digital {`Life.'}'' Physica D, 91, 86-96. 1996.
 \bibitem{busybeaver} Rado, T. ``On Non-Computable Functions.'' Bell System Technical Journal, 41: 3. May 1962 pp 877-884.
 \bibitem{schoenfield} Schoenfield, J. ``The Problem of Predicativity.'' Essays on the foundations of mathematics, Y. Bar-Hillel et al., eds., pp. 132-142. 1961.
-\bibitem{bbvalues} http://www.drb.insel.de/\symbol{126}heiner/BB/ [A list of the known busy beaver values]
+\bibitem{github} Yedidia, A. https://github.com/adamyedidia/parsimony A link to a GitHub repository containing all programs, Turing machines related to this paper, along with related documentation. 
 \bibitem{codegolf} http://codegolf.stackexchange.com/ [A place where programmers go for recreational code golfing]
-\bibitem{github} https://github.com/adamyedidia/parsimony A link to a GitHub repository containing all programs, Turing machines related to this paper, along with related documentation. 
 \end{thebibliography}
 
 \begin{appendices}
@@ -588,11 +583,16 @@ For detailed documentation of the TMD programming language, see~\cite{github}. T
 
 \section{Explicit Listing of $Z$} \label{sec:explicitz}
 
+\begin{figure}[h]
+\begin{center} 
+\includegraphics[scale=0.4]{figs/syntax.png}
+\caption{This figure explains how to read a description of a single state. Note that ``\texttt{ERROR-}'' or ``\texttt{HALT--}'' denote transitions to the \texttt{ERROR} or \texttt{HALT} states, respectively (no further information is provided because what symbol is written and which direction the head moves are at that point irrelevant). \label{fig:syntax}} 
+\end{center} 
+\end{figure}
+
 We present below an explicit listing of $Z$. For a more easily readable version of $Z$, complete with descriptive state names, see~\cite{github}. 
 
 We ran this Turing Machine for 10,000,000,000 steps (more than half a day on our simulators) and within that time it did not halt. We note, however, that it was designed for parsimony and not for efficiency, and that this ``experiment'' is of little consequence! We similarly designed and ran a Turing machine designed to test the conjecture that all perfect squares are less than 5, and it ran for 2,895,083,899 steps (a couple hours on our simulators) before it found the counterexample 9 and halted.
-
-{\color{red} See Section 3.2 for why I kept the paragraph here}
 
 Figure~\ref{fig:syntax} presents useful information for how to interpret the description shown below. In addition, note the following:
 
@@ -605,12 +605,6 @@ Figure~\ref{fig:syntax} presents useful information for how to interpret the des
 
 \end{enumerate}
 
-\begin{figure} 
-\begin{center} 
-\includegraphics[scale=0.4]{figs/syntax.png}
-\caption{This figure explains how to read a description of a single state. Note that ``\texttt{ERROR-}'' or ``\texttt{HALT--}'' denote transitions to the \texttt{ERROR} or \texttt{HALT} states, respectively (no further information is provided because what symbol is written and which direction the head moves are at that point irrelevant). \label{fig:syntax}} 
-\end{center} 
-\end{figure}
 %\clearpage
 \input{zfc_tm}
 
