@@ -858,6 +858,8 @@ def main():
 	except:  
 		raise Exception("No functions.tff file found in directory " + path) 
 
+#    print functions.read()
+
 	functionLabelDictionary, functionDictionary = getFunctionLabelDictionary(functions, path)
 	functionVariableDictionary = getFunctionVariableDictionary(functions, path)
 

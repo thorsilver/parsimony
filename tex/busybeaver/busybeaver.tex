@@ -206,7 +206,9 @@ The \emph{ush()} function takes as input a set and returns a copy of that set wi
 
 For vertices $x$ and $y$, $x \le_{rlex} y$ if and only if $x = y$ or $x_i < y_i$ where $i$ is least such that $x_i \not= y_i$.
 
-Finally, a set of vertices $X$ \emph{reduces} a set of vertices $Y$ if and only if for all $y \in Y$, there exists $x \in X$ such that $x \le_{rlex} y$ and an edge exists between $x$ and $y$.
+Finally, a set of vertices $X$ \emph{reduces} a set of vertices $Y$ if and only if for all $y \in Y$, there exists $x \in X$ such that 
+either $x = y$ or
+$x \le_{rlex} y$ and an edge exists between $x$ and $y$.
 
 \subsection{Implementation Methods}
 
