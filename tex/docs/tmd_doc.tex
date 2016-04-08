@@ -2,6 +2,7 @@
 
 \usepackage{graphicx}
 \usepackage{courier}
+\usepackage{underscore}
 
 \title{TMD Documentation}
 \author{Adam Yedidia}
@@ -10,9 +11,9 @@
     
 \maketitle
 
-This document is intended for users who wish to learn how to program in TMD. For users who only want to know how to run or compile a TMD directory, without needing to create one of their own, information on how to do that is available in the \texttt{tmd\_readme.pdf} file. The video tutorial at the root of this repository also explains how to run or compile TMD directories. \\
+This document is intended for users who wish to learn how to program in TMD. For users who only want to know how to run or compile a TMD directory, without needing to create one of their own, information on how to do that is available in the \texttt{tmd_readme.pdf} file. The video tutorial at the root of this repository also explains how to run or compile TMD directories. \\
 
-The top-level representation is a program written in the TMD language, which is a language designed to give the user a simple interface with which to program a multi-tape, 3-symbol Turing Machine with a function stack. Each of the many tapes in the execution of the program is infinite in one direction. \\
+The top-level representation of TMD is a program written in the TMD language, which is a language designed to give the user a simple interface with which to program a multi-tape, 3-symbol Turing Machine with a function stack. Each of the many tapes in the execution of the program is infinite in one direction. \\
 
 TMD code can be processed in two ways. First, it can be \emph{interpreted}; that is, it can be directly evaluated line-by-line. This is generally done to verify a program's correct behavior, and to correct errors which would result in thrown exceptions in the interpreter but might lead to undefined behavior in the compiled Turing machine (because the compiled Turing machine is optimized for parsimony, whereas the interpreter need not be). \\
 
@@ -77,7 +78,7 @@ Any type of reaction that is excluded from a parenthetical will be presumed to b
 
 As an example, the reaction \texttt{1 (E, -, LABEL)} would indicate that in response to reading a \texttt{1} on the tape, an \texttt{E} should be written, the head should not move, and the next line of code to be executed should be labelled LABEL. It would have identical behavior to the reaction \texttt{1 (E, LABEL)}, because \texttt{-} is the default behavior for which direction to move the head. \\
 
-An example of a full tape command might be the following: \\
+An example of a full tape command might be the following: \\ \\
 \texttt{FIND\_E: [x] 1 (R, FIND\_E); E ()} \\
 
 This tape command would indicate that on the tape named \texttt{x}, if a \texttt{1} is read off the tape, then a \texttt{1} should be written back onto the tape (because that is the default), the head should move right, and the line of code should be re-executed. If an \texttt{E} is read off the tape, then an \texttt{E} should be written back onto the tape, the head should not move, and execution should proceed to the next line of code (because those are the defaults). Because no reaction is provided in the case where a \texttt{\_} is read off the tape, an error will be thrown if that is the symbol that is read, both in interpretation and in the Turing machine that results from compilation. \\
@@ -109,13 +110,16 @@ In the compiled TMD binary, the functions near the top of the \texttt{functions}
 
 Every TMD directory must contain a file named \texttt{initvar} (no extension). The \texttt{initvar} file contains a sequence of \texttt{1} and \texttt{E} symbols; this will be the sequence of symbols on each tape at initialization. So, for example, if the \texttt{initvar} file contains the string \texttt{11E1}, then each tape will be initialized with the values $\texttt{\_11E1}(\texttt{\_})^{\infty}$. \\
 
-At initialization, every tape's head will begin just above the first non-\texttt{\_} symbol.
+At initialization, every tape's head will begin above the first non-\texttt{\_} symbol. \\
 
 No \texttt{initvar} file may contain characters other than \texttt{1} and \texttt{E}. The \texttt{initvar} file cannot be empty.
 
 \section{Example}
 
-I have provided a simple example of a TMD directory to make it easier to understand what's going on. It can be found at \texttt{parsimony/src/tmd/tmd\_dirs/example\_tmd\_dir}. Before reading on, please navigate to this directory---I will make reference to its contents in this section. \\
+I have provided a simple example of a TMD directory to make it easier to understand what's going on. It can be found at: \\ \\
+\texttt{parsimony/src/tmd/tmd\_dirs/example\_tmd\_dir/} \\ 
+
+Before reading on, please navigate to this directory---I will make reference to its contents in this section. \\
 
 What happens when this program is run? Well, to know where the program starts, we look at the \texttt{functions} file. The \texttt{functions} file lists two functions, \texttt{f} and \texttt{g}. To know how the program starts, we mostly care about which function is at the top of the list; in this case, that's \texttt{f}. Therefore, execution is going to start at the top of the file describing \texttt{f}. At the top of the file describing \texttt{f} we see the line ``\texttt{input a b c}''; because \texttt{f} is the first function, this tells us that our program execution will make use of three tapes, named \texttt{a}, \texttt{b}, and \texttt{c}, respectively. \\
 
@@ -151,6 +155,11 @@ The line we were on in the original call to \texttt{f} was also the last line of
 
 Now the stack is empty. If ever the stack is empty, execution halts. Therefore, we halt here, leaving the three tapes containing a \texttt{1}.
 
-For a pictorial representation of what happened here, navigate to \texttt{parsimony/src/tmd/tmd\_meta/} and enter the command \texttt{python tmd\_interpreter.py example\_tmd\_dir}. Then, read the output file \texttt{example\_tmd\_dir\_history.txt}, found in the \texttt{parsimony/src/tmd/tmd\_histories/} directory.
+For a pictorial representation of what happened here, navigate to: \\ \\
+\texttt{parsimony/src/tmd/tmd\_meta/} \\ \\
+and enter the command: \\ \\
+\texttt{python tmd\_interpreter.py -f -s 1000 example\_tmd\_dir} \\
+
+Then, read the output file \texttt{example\_tmd\_dir\_history.txt}, which can be found at: \\ \\  \texttt{parsimony/src/tmd/tmd\_histories/}
 
 \end{document}

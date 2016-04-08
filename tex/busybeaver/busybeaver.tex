@@ -12,6 +12,10 @@
 \usepackage{lmodern}
 \usepackage{adjustbox}
 \usepackage{amssymb}
+\usepackage{underscore}
+\usepackage{textcomp}
+\usepackage[english]{babel}
+\usepackage{url}
 
 \newtheorem{statement}{Statement}
 
@@ -444,7 +448,7 @@ This is plainly not worth it for the $10$-bit example binary shown in Figs.~\ref
     \hline
     Riemann & 9,532 & 10 & 1,024 & 117 & 9,532 & 1,141 \\
     \hline
-    ZFC & 35,906 & 11 & 3,265 & 127 & 35,906 & 3,392 \\
+    ZFC & 38,426 & 11 & 3,494 & 127 & 38,426 & 3,621 \\
     \hline
     \end{tabular}
 \end{center}
@@ -507,7 +511,7 @@ It's worthwhile to analyze the relative contributions of the initializer, the pr
     \hline
     Riemann & 371 & 1,141 & 3,860 & \rmstatenum \\
     \hline
-    ZFC & 389 & 3,392 & 3,860 & \statenum \\
+    ZFC & 389 & 3,621 & 3,860 & \statenum \\
     \hline
     \end{tabular}
 \end{center}
@@ -535,26 +539,35 @@ We thank Alex Arkhipov for introducing us to the term ``code golfing.''
 Supported by an Alan T.\ Waterman Award from the National Science Foundation, under grant no.\ 1249349.
 
 \begin{thebibliography}{100}
-\bibitem{iota} Barker, C. ``Iota and Jot: the simplest languages?'' http://semarch.linguistics.fas.nyu.edu/barker/Iota/ [A website describing the Iota and Jot programming languages]
+\bibitem{iota} Barker, C. ``Iota and Jot: the Simplest Languages?'' 
+http://semarch.linguistics.fas.nyu.edu/barler/Iota/
+[A website describing the Iota and Jot programming languages]
 \bibitem{benamram} Ben-Amram, A., Petersen, H. ``Improved Bounds for Functions Related to Busy Beavers'' Theory of Computing Systems 35, 1-11 (2002)
 \bibitem{bbfour} Brady, A.H. ``Solution of the Non-computable `Busy Beaver' game for $k=4$.'' Abstracts for: ACM Computer Science Conference (Washington, DC, February 18-20, 1975), p. 27, ACM, 1975.
 \bibitem{riemann} Browder, F. ``Mathematical Developments Arising from Hilbert Problems.'' American Mathematical Society. Volume 28, Part 1.
 \bibitem{calude} Calude, C., Calude, E. ``Evaluating the Complexity of Mathematical Problems: Part 1,'' ``Evaluating the Complexity of Mathematical Problems: Part 2.'' Complex Systems 18, pp. 387-401. 2010.
 \bibitem{chaitin} Chaitin, G. ``The Limits of Mathematics.'' pp. 79. 1994.
-\bibitem{friedman} Friedman, H. ``Order Invariant Graphs and Finite Incompleteness.'' https://u.osu.edu/friedman.8/files/2014/01/FIiniteSeqInc062214a-v9w7q4.pdf
-\bibitem{friedmanlist} Friedman, H. ``Order Theoretic Equations, Maximality, and Incompleteness.'' June 7, 2014. http://u.osu.edu/friedman.8/foundational-adventures/downloadable-manuscripts \#78.
+\bibitem{friedman} Friedman, H. ``Order Invariant Graphs and Finite Incompleteness.'' \url{https://u.osu.edu/friedman.8/files/2014/01/FIiniteSeqInc062214a-v9w7q4.pdf}
+\bibitem{friedmanlist} Friedman, H. ``Order Theoretic Equations, Maximality, and Incompleteness.'' June 7, 2014. \url{http://u.osu.edu/friedman.8/foundational-adventures/downloadable-manuscripts} \\ 
+\#78.
 \bibitem{godelcohen} G\"odel, K. ``The Consistency of the Axiom of Choice and of the Generalized Continuum-Hypothesis with the Axioms of Set Theory.'' Published in 1940 by the Princeton University Press. Annals of Mathematics Studies.
 \bibitem{koza} Koza, J. ``Spontaneous Emergence of Self-Replicating and Evolutionarily Self-Improving Computer Programs.'' in Artificial Life III (SFI Studies in the Sciences of Complexity, vol. XVII), C. G. Langton, Ed. Reading, MA: Addison-Wesley. pp. 225-262. 1994.
 \bibitem{bbsmall} Lin, S., Rado, T. ``Computer Studies of Turing Machine Problems.'' Published in Journal of the ACM, Volume 12, Issue 2, April 1965. Pages 196-212.
-\bibitem{unlambda} Madore, D. ``The Unlambda Programming Language.'' http://www.madore.org/~david/programs/unlambda/ [A website describing the Unlambda programming language]
+\bibitem{unlambda} Madore, D. ``The Unlambda Programming Language.'' \url{http://www.madore.org/~david/programs/unlambda/} \\
+{[A website describing the Unlambda programming language]}
 \bibitem{bbimpossible} Marxen, H., Buntrock, J. ``Attacking the Busy Beaver 5.'' Bull EATCS, Vol. 40, pp. 247-251. 1990.
-\bibitem{bbvalues} Marxen, H. http://www.drb.insel.de/\symbol{126}heiner/BB/ [A list of the known busy beaver values]
-\bibitem{brainfuck} M\"uller, U. ``Brainfuck.'' http://www.muppetlabs.com/~breadbox/bf/ [A website describing the Brainf*ck programming language]
+\bibitem{bbvalues} Marxen, H. 
+\url{http://www.drb.insel.de/~heiner/BB/} \\ 
+{[A list of the known busy beaver values]}
+\bibitem{brainfuck} M\"uller, U. ``Brainfuck.'' \url{http://www.muppetlabs.com/~breadbox/bf/} \\
+{[A website describing the Brainf*ck programming language]}
 \bibitem{pargellis} Pargellis, A. ``The Spontaneous Generation of Digital {`Life.'}'' Physica D, 91, 86-96. 1996.
 \bibitem{busybeaver} Rado, T. ``On Non-Computable Functions.'' Bell System Technical Journal, 41: 3. May 1962 pp 877-884.
 \bibitem{schoenfield} Schoenfield, J. ``The Problem of Predicativity.'' Essays on the foundations of mathematics, Y. Bar-Hillel et al., eds., pp. 132-142. 1961.
-\bibitem{github} Yedidia, A. https://github.com/adamyedidia/parsimony A link to a GitHub repository containing all programs, Turing machines related to this paper, along with related documentation.
-\bibitem{codegolf} http://codegolf.stackexchange.com/ [A place where programmers go for recreational code golfing]
+\bibitem{github} Yedidia, A. \url{https://github.com/adamyedidia/parsimony} \\
+{[A link to a GitHub repository containing all programs and Turing machines related to this paper, with accompanying documentation.]}
+\bibitem{codegolf} \url{http://codegolf.stackexchange.com/} \\
+{[A place where programmers go for recreational code golfing]}
 \end{thebibliography}
 
 \begin{appendices}
@@ -563,7 +576,7 @@ Supported by an Alan T.\ Waterman Award from the National Science Foundation, un
 
 The following is an example Laconic program, which compiles down to the Turing machine $G$ mentioned in Section~\ref{sec:g} (which halts if and only Goldbach's Conjecture is false).
 
-\input{goldbach_lac}
+\input{goldbachlac}
 
 For detailed documentation of the Laconic programming language, see~\cite{github}. \ To find this file specifically, navigate to \texttt{parsimony/src/laconic/laconic\_files/goldbach.lac} at~\cite{github}.
 
@@ -574,9 +587,9 @@ The following is an example TMD directory, which compiles down to a binary strin
 This TMD directory is called \texttt{example\_tmd\_dir}, and contains four files: \texttt{f.tmd}, \texttt{g.tmd}, \texttt{initvar}, and \texttt{functions}. \\ \\
 
 \texttt{f.tmd}:
-\input{f_tmd}
+\input{ftmd}
 \texttt{g.tmd}:
-\input{g_tmd}
+\input{gtmd}
 \texttt{functions}:
 \input{functions}
 \texttt{initvar}:
@@ -609,7 +622,7 @@ Figure~\ref{fig:syntax} explains how to interpret the description shown below. \
 \end{enumerate}
 
 %\clearpage
-\input{zfc_tm}
+\input{zfctm}
 
 \end{appendices}
 

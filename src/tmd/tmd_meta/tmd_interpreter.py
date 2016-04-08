@@ -223,6 +223,12 @@ def main():
     if "-f" in sys.argv:
         outputFile = open(HISTORY_PATH + dirName + "_tmd_history.txt", "w")
         outputFile.write("\n")
+        
+        try:
+            assert "-s" in sys.argv
+        except:
+            raise Exception("You can't include the -f flag without also specifying a maximum step count with the -s flag!")
+        
     else:
         outputFile = None
     
