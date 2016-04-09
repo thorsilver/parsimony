@@ -16,6 +16,7 @@
 \usepackage{textcomp}
 \usepackage[english]{babel}
 \usepackage{url}
+\usepackage{csquotes}
 
 \newtheorem{statement}{Statement}
 
@@ -172,9 +173,9 @@ We recommend that programmers hoping to use our tools to generate their own enco
 
 Gregory Chaitin raised the problem of proving a version of our result in his book \emph{The Limits of Mathematics}. \ He wrote:
 
-\quotation
+\begin{displayquote}
 \noindent I would like to have somebody program out Zermelo-Fraenkel set theory in my version of LISP, which is pretty close to normal LISP as far as this task in concerned, just to see how many bits of complexity mathematicians normally assume \dots If you programmed ZF, you'd get a really sharp incompleteness result. \ It wouldn't say that you can get at most $H(ZF) + 15328$ bits of [Chaitin's halting probability] $\Omega$, it would say, perhaps, at most 96000 bits! \ We'd have a much more definite incompleteness theorem.
-\endquotation
+\end{displayquote}
 
 We did not program ZF set theory in LISP, but we programmed it in an even simpler language---thereby answering Chaitin's call for an explicit number of bits to attach to the complexity of ZF set theory.
 
