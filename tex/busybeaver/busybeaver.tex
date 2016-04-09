@@ -138,7 +138,7 @@ Intuitively, one might expect that while no algorithm may exist to compute $BB(k
 
 In this paper we construct a machine like $Z$, for which a proof that $Z$ runs forever would imply that ZFC was consistent. \ In doing so, we give an explicit upper bound on the highest Busy Beaver value provable in ZFC assuming the consistency of a slightly stronger set theory. \ Our machine, which we shall refer to as $Z$ hereafter, contains \statenum states. \ Therefore, we will never be able to prove the value of \bbstatenum without assuming more powerful axioms than those of ZFC. \ This upper bound is presumably very far from tight, but it is a first step.
 
-Even to achieve a state count of \statenum, we will need three nontrivial ideas: Harvey Friedman's order-theoretic statements, \emph{on-tape processing}, and \emph{introspective encoding}. \ Without all three ideas, we found that the state count would be in the tens of thousands, hundreds of thousands, or even millions. \ We briefly introduce these ideas in the following subsection, and explore them in much greater detail in Section \ref{COMP}. \ The implementation of these ideas constitutes this paper's main technical contribution.
+Even to achieve a state count of \statenumcomma we will need three nontrivial ideas: Harvey Friedman's order-theoretic statements, \emph{on-tape processing}, and \emph{introspective encoding}. \ Without all three ideas, we found that the state count would be in the tens of thousands, hundreds of thousands, or even millions. \ We briefly introduce these ideas in the following subsection, and explore them in much greater detail in Section \ref{COMP}. \ The implementation of these ideas constitutes this paper's main technical contribution.
 
 \subsection{Parsimony}
 
@@ -152,7 +152,7 @@ The first idea is simply to use the research done by Friedman into finding simpl
 
 The second idea, on-tape processing, is a way to encode high-level commands into a Turing machine parsimoniously. \ Instead of converting commands to groups of states directly, which incurs a multiplicative overhead based on how large these groups need to be, on-tape processing begins by writing the commands onto the tape, using as efficient an encoding as possible. \ Then, once the commands are on the tape, the commands are processed by a single group of states that understands how to interpret them.
 
-The third idea, introspective Turing machines, is a way to write long strings onto the tape using as few states as possible. \ The idea is to encode information one of each state's transitions, instead of encoding information in each state's write field. \ This is advantageous because there are many choices for which state to point a transition to, but only two choices for what bit to write. \ Therefore, more information can be encoded in each state using this method.
+The third idea, introspective Turing machines, is a way to write long strings onto the tape using as few states as possible. \ The idea is to encode information one of each state's transitions, instead of encoding information in each state's write field. \ This is advantageous because there are many choices for which state to point a transition to, but only two choices for which bit to write. \ Therefore, more information can be encoded in each state using this method.
 
 \subsection{Implementation Overview}
 
@@ -171,7 +171,7 @@ We recommend that programmers hoping to use our tools to generate their own enco
 
 \section{Related Work}
 
-Gregory Chaitin raised the problem of proving a version of our result in his book \emph{The Limits of Mathematics}. \ He wrote:
+Gregory Chaitin raised the problem of proving a version of our result in his book \emph{The Limits of Mathematics}.~\cite{chaitin} \ He wrote:
 
 \begin{displayquote}
 \noindent I would like to have somebody program out Zermelo-Fraenkel set theory in my version of LISP, which is pretty close to normal LISP as far as this task in concerned, just to see how many bits of complexity mathematicians normally assume \dots If you programmed ZF, you'd get a really sharp incompleteness result. \ It wouldn't say that you can get at most $H(ZF) + 15328$ bits of [Chaitin's halting probability] $\Omega$, it would say, perhaps, at most 96000 bits! \ We'd have a much more definite incompleteness theorem.
@@ -292,7 +292,7 @@ $$\delta(x) = \prod_{n<x}\prod_{j \le n} \eta(j)$$
 \subsection{Implementation Methods}
 
 Statement \ref{eq:riemann} is equivalent to the following statement, which contains only positive integers\footnotemark:
-\footnotetext{Although it is not immediately obvious at first glance, $\frac{\delta(n)!}{k}$ is necessarily an integer for all $k \le \delta(n)$, and $\frac{\delta(n)!}{2}$ is an integer for all $n > 1$.}
+\footnotetext{Although it is not immediately obvious, $\frac{\delta(n)!}{k}$ is necessarily an integer for all $k \le \delta(n)$, and $\frac{\delta(n)!}{2}$ is an integer for all $n > 1$.}
 
 $$l(n) < r(n)$$ for all positive integers $n$, where
 
@@ -529,7 +529,7 @@ Improving the printer, and with it the TMD and Laconic languages, is probably th
 
 \section{Future Work}
 
-This paper still leaves a three orders-of-magnitude gap between the smallest $n$, namely \statenum, for which $BB(n)$ is known to be independent of ZF set theory, and the largest $n$, namely $4$, for which $BB(n)$ is known to be determinable. \ We regard it as a fascinating problem to pin down the truth here: for example, is it conceivable that $BB(10)$ or even $BB(6)$ might be independent of ZF? \ If so, that would arguably force a qualitative change in our understanding of the G\"{o}del incompleteness phenomenon---showing that incompleteness from strong set theories rears its head for much simpler arithmetical questions than had previously been known.
+This paper still leaves a three orders-of-magnitude gap between the smallest $n$, namely \statenumcomma for which $BB(n)$ is known to be independent of ZF set theory, and the largest $n$, namely $4$, for which $BB(n)$ is known to be determinable. \ We regard it as a fascinating problem to pin down the truth here: for example, is it conceivable that $BB(10)$ or even $BB(6)$ might be independent of ZF? \ If so, that would arguably force a qualitative change in our understanding of the G\"{o}del incompleteness phenomenon---showing that incompleteness from strong set theories rears its head for much simpler arithmetical questions than had previously been known.
 
 A more immediate question is how much further $Z$'s state count can be reduced. \ Without a significant new insight, further order-of-magnitude reductions seem unlikely via tweaks to our existing system: note that such tweaks would need to reduce the sizes of both the printer and the processor by an order of magnitude. \ However, improvement is possible by (for example) a redesigned processor, combined with a simpler independent mathematical statement than Friedman's.
 
@@ -539,7 +539,7 @@ Other future work might involve further use of our Laconic language to upper-bou
 
 %First and foremost, I would like to acknowledge my advisor, Prof. Scott Aaronson, for having suggested this problem to me and for having provided me with indispensable aid throughout. Prof. Aaronson explained the finer points of set theory to me in great detail, and put a huge amount of time into helping me refine my writing into something readable. His kindness, his constant availability to talk, and his friendliness made this Master's thesis a great pleasure to write.
 
-We thank Prof.\ Harvey Friedman for having done the crucial theoretical work that made this project feasible. \ Prof.\ Friedman was endlessly available over email, and provided us with immediate and detailed clarifications when we needed them.
+We thank Prof.\ Harvey Friedman for having done the crucial theoretical work that made this project feasible. \ Prof.\ Friedman was endlessly available over email, and provided us with detailed clarifications when we needed them.
 
 We thank Luke Schaeffer for his early help, as well as his help designing introspective Turing machines.
 

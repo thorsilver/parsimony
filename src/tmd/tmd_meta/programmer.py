@@ -427,7 +427,7 @@ def introspect(codeStringInAB):
     
     foundCodeHead.set3("a", SimpleState("OUT"), "R", "a")
     
-    print "States in programmer:", len(listOfStates)
+    print "States in printer:", len(listOfStates)
     
     convertStatesToString(listOfStates, open("../../tm/tm2/tm2_files/" + sys.argv[1] + "_prog.tm2", "w"))
     

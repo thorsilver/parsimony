@@ -29,7 +29,7 @@ os.chdir("../../tm/tm4/tm4_meta/")
 os.system("python tm4_to_tm2_converter.py " + dirName + "_init")
 os.system("rm ../tm4_files/" + dirName + "_init.tm4")
 
-print "Converting the processor TM to a 2-symbol TM..."
+print "Converting the printer TM to a 2-symbol TM..."
 #os.system("python ../../tm/tm4/tm4_meta/tm4_to_tm2_converter.py " + dirName + "_proc")
 os.system("python tm4_to_tm2_converter.py " + dirName + "_proc")
 os.system("rm ../tm4_files/" + dirName + "_proc.tm4")

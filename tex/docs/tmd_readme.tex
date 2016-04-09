@@ -2,6 +2,7 @@
 
 \usepackage{graphicx}
 \usepackage{courier}
+\usepackage{underscore}
 
 \title{TMD ReadMe}
 \author{Adam Yedidia}
@@ -20,10 +21,36 @@ Second, TMD code can be \emph{compiled} down to a description of a single-tape, 
 
 \section{Preparation}
 
-Before a TMD directory can be processed in any way, first it must exist in a place where it can be found. Make sure that the target directory is located in the \texttt{parsimony/src/tmd/tmd\_dirs/} directory. (If you created your TMD directory via compilation from Laconic, it will already exist in the right place.)
+Before a TMD directory can be processed in any way, first it must exist in a place where it can be found. Make sure that the target directory is located at: \\ \\
+\texttt{parsimony/src/tmd/tmd_dirs/} \\ 
+
+(If you created your TMD directory via compilation from Laconic, it will already exist in the right place.) \\
+
+Then, BEFORE running any of the commands described below, navigate to: \\ \\
+\texttt{parsimony/src/tmd/tmd_meta/}
 
 \section{Interpretation}
 
-To interpret a TMD 
+To interpret a TMD directory---to run the code as a TMD program, and see what would happen to a multi-tape Turing machine with a stack if the TMD program's commands were run explicitly---run the command: \\ \\ 
+\texttt{python tmd_interpreter.py }[name of TMD directory] \\
+
+After this command is run, the interpreter will dump a multi-tape TM history to standard output. If you'd prefer that not happen, the \texttt{-q} (\underline{q}uiet) flag will cause the interpreter to not output any TM history. The \texttt{-s} (max \underline{s}teps) flag, followed by an integer $k$, will cause the interpreter to only run $k$ TMD commands before stopping. Finally, the \texttt{-f} (\underline{f}ile output) flag will cause the interpeter to dump the TM history to a history file. The \texttt{-f} flag can only be used if the \texttt{-s} flag is also enabled. Watch out---if you run the TM for many steps, this can create some truly enormous files! The created TM history file will show up at: \\ \\
+\texttt{parsimony/src/tmd/tmd_histories/}[name of TMD directory]\texttt{_history.txt}
+
+\section{Compilation}
+
+To compile a TMD directory---to transform it into a 2-symbol Turing machine---run the command: \\ \\
+\texttt{python tmd_compiler_2s_tm_compiler.py }[name of TMD directory] \\
+
+This will cause a parsimonious 2-symbol Turing machine with equivalent behavior to your TMD program to appear at: \\ \\
+\texttt{parsimony/src/tm/tm2/tm2_files/}[name of TMD directory]\texttt{.tm2}
+
+If you'd prefer to transform your TMD directory to a 4-symbol Turing machine, run the command: \\ \\
+\texttt{python tmd_compiler_4s_tm_compiler.py }[name of TMD directory] \\
+
+This will cause a 4-symbol Turing machine with equivalent behavior to your TMD program to appear at: \\ \\
+\texttt{parsimony/src/tm/tm4/tm4_files/}[name of TMD directory]\texttt{.tm4} \\
+
+Note that unlike the 2-symbol compiler, the 4-symbol compiler is not parsimonious; the 4-symbol Turing machine you'll end up with will have plenty of states. This option is primarily intended for if you want to watch a Turing machine execute which can be thought of as an equivalently-behaved but much-easier-to-read version of the 2-symbol machine. The lack of efficiency in states in the 4-symbol machine comes from the fact that the introspection algorithm is harder to implement with 4 symbols than with 2, and people are generally not interested in results relating to 4-symbol Turing machines in any case.
 
 \end{document}
