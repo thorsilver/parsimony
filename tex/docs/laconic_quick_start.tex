@@ -1,0 +1,75 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\usepackage{courier}
+\usepackage{underscore}
+\usepackage{listings}
+
+\title{Laconic Quick Start Documentation}
+\author{Adam Yedidia}
+
+\begin{document}
+    
+\maketitle 
+
+This document is meant to be a quick introduction to the Laconic language. After reading this, I expect that an experienced programmer will be more than ready to start writing Laconic programs of their own, especially if they also look at some of the example programs as a template. However, this document is not a complete introduction to Laconic, and will leave gaps in knowledge which can be filled by reading \texttt{laconic_ops.pdf} or \texttt{laconic_}
+
+Laconic is an imperative language. Users accomplish what they wish by declaring and modifying variables using sequences of commands that are separated by semicolons. Users may also define functions, which behave similarly to how they do in most languages.
+
+\section{Data Types}
+
+There are three types of variables: \texttt{int}s, \texttt{list}s, and \texttt{list2}s. An \texttt{int} is a signed integer with no maximum or minimum value, a \texttt{list} is a list of \texttt{int}s (like in Python), and a \texttt{list2} is a list of \texttt{list}s. \\ 
+
+To declare a variable, write the data type followed by the variable name, for example: \\ \\
+\texttt{int myInteger;} \\ 
+
+\section{Variable Assignment and Manipulation}
+
+Variables are assigned to values like in most languages, with the \texttt{=} operator. Variables can be combined in complex expressions, i.e. \texttt{(a+b)*c}, but full parenthesization is required. \\
+
+Variable assignment to \texttt{list}s or \texttt{list2}s automatically copies the relevant value, instead of assigning to a pointer like in Python.
+
+\section{Functions}
+
+Functions are defined with the keyword \texttt{func}. Like in Java, the function arguments are contained in parentheses, and the function body is contained in curly-braces (unlike in Java, argument type is not specified). For example: \\ \\
+{ \tt 
+\begin{lstlisting}
+func addY(x, y) {
+    x = x + y;
+    return;
+}
+\end{lstlisting}
+}
+
+Functions are called with statements such as (for example) ``\texttt{addY(a, b);}''. \\
+
+Functions are different from how they are in most programming languages in a few important ways.
+\begin{enumerate}
+    \item Functions have no return value. They effect change by changing the values of the variables that are passed into the function. All variables passed into the function, including \texttt{int}s, are subject to modification by the function.
+    \item Only variables can be passed into functions, and each variable can only be passed in once. (So commands like ``\texttt{addY(a, 5);}'' or ``\texttt{addY(a, a);}'' are illegal.)
+    \item Functions do not have internal variables (so variables cannot be defined inside functions). Any variables needed to perform computation must be passed in as arguments, even if they are only useful for temporary storage. 
+\end{enumerate}
+
+\section{If and While Statements}
+
+Laconic supports \texttt{if} and \texttt{while} statements. Syntax is the same as in Java or C, (for example): \\ \\
+\texttt{while (x < y) \{x = x+1;\}}
+
+\section{Halting}
+
+To halt execution (and make the Turing machine that the code compiles to halt), use the \texttt{halt} command. For example, ``\texttt{halt;}''. Halt commands may not appear within functions.
+
+\section{Printing}
+
+To print the value of a variable, use ``\texttt{print}'' followed by the name of the variable. For example, ``\texttt{print x;}''.
+
+\section{Other resources}
+
+See \texttt{laconic_readme.pdf} for an explanation for how to compile or interpret a Laconic program. The directory at: \\ \\
+\texttt{parsimony/src/laconic/laconic_files/} \\ \\
+contains examples of Laconic programs. \\
+
+See \texttt{laconic_ops.pdf} for an enumeration of all operations possible in Laconic. Laconic's grammar is available at: \\ \\
+\texttt{parsimony/src/laconic/laconic_meta/Laconic.g4}
+
+\end{document}

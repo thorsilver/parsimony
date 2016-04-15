@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\usepackage{courier}
+\usepackage{underscore}
+\setlength\parindent{0pt}
+
+\title{Laconic Operation Documentation}
+\author{Adam Yedidia}
+
+\begin{document}
+    
+\maketitle
+
+This document enumerates all the primitive operations in Laconic. It is recommended that users start by reading \texttt{laconic_quick_start.pdf} to get a sense for how Laconic works. \\
+
+Remember that operations can be combined into complex expressions (i.e. \texttt{(a+b)*c}) but that full parenthesization is required! Also, recall that \texttt{int}s are signed integers with no maximum or minimum value, \texttt{list}s are Python-style lists of \texttt{int}s, and \texttt{list2}s are Python-style lists of \texttt{list}s. 
+
+\section{Integer Operations}
+
+Assume in the operations below that \texttt{x} and \texttt{y} are variables of type \texttt{int} with values $x$ and $y$, respectively. \\
+
+All the operations below yield values of type \texttt{int}.
+
+\subsection{Addition}
+
+The expression \texttt{x+y} yields the value $x+y$.
+
+\subsection{Subtraction}
+
+The expression \texttt{x-y} yields the value $x-y$.
+
+\subsection{Multiplication}
+
+The expression \texttt{x*y} yields the value $xy$.
+
+\subsection{Integer Division}
+
+The expression \texttt{x/y} yields the value $s(xy)\left\lfloor|\frac{x}{y}|\right\rfloor$, where $s()$ is the sign function. In plain English, integer division in Laconic rounds numbers to the lowest-magnitude adjacent number. This means that \texttt{3/2} would yield the value 1, and \texttt{(0-3)/2} would yield the value $-1$. \\
+
+If \texttt{y} is 0, Laconic will throw a runtime error if interpreted, and the compiled TMD or Turing machine will enter an infinite loop.
+
+\subsection{Negation}
+
+The expression \texttt{{\raise.17ex\hbox{$\scriptstyle\sim$}}x} yields the value $-x$. Note the strange negation operator.
+
+\subsection{Equality}
+
+The expression \texttt{x==y} yields the value 1 if $x=y$, and the value 0 otherwise.
+
+\subsection{Inequality}
+
+The expression \texttt{x!=y} yields the value 1 if $x\not=y$, and the value 0 otherwise.
+
+\subsection{Greater Than}
+
+The expression \texttt{x>y} yields the value 1 if $x>y$, and the value 0 otherwise.
+
+\subsection{Less Than}
+
+The expression \texttt{x<y} yields the value 1 if $x<y$, and the value 0 otherwise.
+
+\subsection{Greater or Equal}
+
+The expression \texttt{x>=y} yields the value 1 if $x\ge y$, and the value 0 otherwise.
+
+\subsection{Less Than or Equal}
+
+The expression \texttt{x<=y} yields the value 1 if $x\le y$, and the value 0 otherwise.
+
+\subsection{And}
+
+The expression \texttt{x\&y} yields the value 1 if $x>0$ and $y>0$, and the value 0 otherwise. Note that negative values of $x$ and $y$ are interpreted as ``false'' values for the purposes of ``boolean'' operations.
+
+\subsection{Or}
+
+The expression \texttt{x|y} yields the value 1 if $x>0$ or $y>0$, and the value 0 otherwise.
+
+\subsection{Not}
+
+The expression \texttt{!x} yields the value 1 if $x\le 0$, and the value 0 otherwise.
+
+\section{List and List2 Operations}
+
+Assume in the operations below that \texttt{x} is a variable of type \texttt{int}, \texttt{l} is a variable of type \texttt{list}, and that \texttt{L} is a variable of type \texttt{list2}. Assume that these variables have values of $x$, $l$, and $L$, respectively.
+
+\subsection{Indexing}
+
+The expression \texttt{l@x} yields the \texttt{int} value of the $x^{\textrm{th}}$ element of $l$, assuming 0-indexing. If $x\le |l|$, a runtime error is thrown in both the interpreted and compiled versions of the code.\\
+
+The expression \texttt{L@*x} yields the \texttt{list} value of the $x^{\textrm{th}}$ element of $L$, assuming 0-indexing. If $x\le |L|$, a runtime error is thrown in both the interpreted and compiled versions of the code. \\
+
+In general, \texttt{list2} operations use the same symbol as the corresponding \texttt{list} operations, but with a \texttt{*} at the end.
+
+\subsection{Appending}
+
+The expression \texttt{l\char`\^x} yields the \texttt{list} value of $l||[x]$, where $||$ denotes the concatenation operation. \\
+
+The expression \texttt{L\char`\^*l} yields the \texttt{list2} value of $L||[l]$, where $||$ denotes the concatenation operation.
+
+\subsection{Length} 
+
+The expression \texttt{\#l} yields the \texttt{int} value of $|l|$. \\
+
+The expression \texttt{\#*L} yields the \texttt{int} value of $|L|$. 
+
+\subsection{Concatenation}
+
+In the expressions below, the variables \texttt{l1}, \texttt{l2}, \texttt{L1}, and \texttt{L2} have types \texttt{list}, \texttt{list}, \texttt{list2}, and \texttt{list2}, with values of $l_1$, $l_2$, $L_1$, and $L_2$, respectively. \\
+
+The expression \texttt{l1||l2} yields the \texttt{list} value of $l_1||l_2$, where $||$ denotes the concatenation operation. \\
+
+The expression \texttt{L1||*L2} yields the \texttt{list2} value of $L_1||L_2$, where $||$ denotes the concatenation operation.
+
+\end{document}

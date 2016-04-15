@@ -40,13 +40,13 @@ After this command is run, the interpreter will dump a multi-tape TM history to 
 \section{Compilation}
 
 To compile a TMD directory---to transform it into a 2-symbol Turing machine---run the command: \\ \\
-\texttt{python tmd_compiler_2s_tm_compiler.py }[name of TMD directory] \\
+\texttt{python tmd_to_2s_tm_compiler.py }[name of TMD directory] \\
 
 This will cause a parsimonious 2-symbol Turing machine with equivalent behavior to your TMD program to appear at: \\ \\
 \texttt{parsimony/src/tm/tm2/tm2_files/}[name of TMD directory]\texttt{.tm2}
 
 If you'd prefer to transform your TMD directory to a 4-symbol Turing machine, run the command: \\ \\
-\texttt{python tmd_compiler_4s_tm_compiler.py }[name of TMD directory] \\
+\texttt{python tmd_to_4s_tm_compiler.py }[name of TMD directory] \\
 
 This will cause a 4-symbol Turing machine with equivalent behavior to your TMD program to appear at: \\ \\
 \texttt{parsimony/src/tm/tm4/tm4_files/}[name of TMD directory]\texttt{.tm4} \\
