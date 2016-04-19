@@ -1,4 +1,4 @@
-input freeSet graph edges numVertices k n r eightKN i c1 h1 h2 h3 h4 h5 oneCounter eightKNIFac reducer union hl1 hl2 oxidizer output !0 !1 !2 !3 
+input freeSet graph edges numVertices k n r eightKN i c1 h1 h2 h3 h4 h5 oneCounter eightKNIFac reducer union hl1 hl2 oxidizer output !0 !1 !2 !3 !4 
 
 // Auto-generated code for function eachReducing
 
@@ -70,7 +70,7 @@ function incr c1 !0 !1 !2
 WHILE_STATE_4_FALSE: function vertexUnion hl1 hl2 h1 h2 h3 h4 union !0 !1 !2 
 function toTheLessThanOrEqualToK union k hl1 oxidizer c1 h1 h2 h3 h4 h5 hl2 !0 !1 !2 
 function turnToVertexIndexForm graph hl2 c1 oneCounter h1 h2 h3 h4 union hl1 oxidizer !0 !1 !2 
-function reduces reducer oxidizer graph edges numVertices hl1 hl2 c1 oneCounter h1 h2 h3 h4 h5 output !0 !1 !2 !3 
+function reduces reducer oxidizer graph edges numVertices hl1 hl2 c1 oneCounter h1 h2 h3 h4 h5 output !0 !1 !2 !3 !4 
 function BUILTIN_assign !0 output
 function BUILTIN_assignNot !1 !0
 [!1] E (IF_STATE_5_FALSE); 1 ()

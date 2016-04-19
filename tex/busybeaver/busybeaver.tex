@@ -20,14 +20,14 @@
 
 \newtheorem{statement}{Statement}
 
-\newcommand{\statenumstate}{7,870-state }
-\newcommand{\statenum}{7,870 }
-\newcommand{\statenumcomma}{7,870, }
-\newcommand{\bbstatenum}{$BB($7,870) }
-\newcommand{\bbstatenumcomma}{$BB($7,870), }
-\newcommand{\bbstatenumperiod}{$BB($7,870). }
+\newcommand{\statenumstate}{7,918-state }
+\newcommand{\statenum}{7,918 }
+\newcommand{\statenumcomma}{7,918, }
+\newcommand{\bbstatenum}{$BB($7,918) }
+\newcommand{\bbstatenumcomma}{$BB($7,918), }
+\newcommand{\bbstatenumperiod}{$BB($7,918). }
 
-\newcommand{\zhaltstate}{\texttt{7593}}
+\newcommand{\zhaltstate}{\texttt{7870}}
 \newcommand{\ghaltstate}{\texttt{5135}}
 \newcommand{\rhaltstate}{\texttt{5137}}
 
@@ -148,7 +148,7 @@ Part of the charm of Turing machines is that they give us a ``standard reference
 
 In this paper, we use three ideas for generating parsimonious Turing machines: Harvey Friedman's mathematical statements, \emph{on-tape processing}, and \emph{introspective} Turing machines. \ The last of these ideas was proposed, under a different name and with some variations, by Ben-Amram and Petersen in 2002.~\cite{benamram} \ These three ideas are explained in more detail in Subsections~\ref{sec:friedmanstate},~\ref{sec:ontape}, and~\ref{sec:introspect}, respectively, but we summarize them very briefly here.
 
-The first idea is simply to use the research done by Friedman into finding simple-to-express statements that are equivalent to the consistency of various axiomatic systems. \ In particular, we use a statement discovered by Friedman to be equivalent to the consistency of a set theory known to be stronger than ZFC (and whose consistency, therefore, would imply the consistency of ZFC).~\cite{friedman}
+The first idea is simply to use the research done by Friedman into finding simple-to-express statements that are equivalent to the consistency of various axiomatic systems. \ In particular, we use a statement discovered by Friedman to be equivalent to the consistency of a set theory stronger than ZFC (and whose consistency, therefore, would imply the consistency of ZFC).~\cite{friedman}
 
 The second idea, on-tape processing, is a way to encode high-level commands into a Turing machine parsimoniously. \ Instead of converting commands to groups of states directly, which incurs a multiplicative overhead based on how large these groups need to be, on-tape processing begins by writing the commands onto the tape, using as efficient an encoding as possible. \ Then, once the commands are on the tape, the commands are processed by a single group of states that understands how to interpret them.
 
@@ -187,7 +187,7 @@ This paper differs from the previous work in two ways: firstly, it is the first 
 
 \section{A Turing Machine that Cannot Be Shown to Run Forever Using ZFC}
 
-We present a \statenumstate Turing machine whose behavior is \emph{independent of ZFC}; it is not possible to prove that this machine halts or doesn't halt using the axioms of ZFC, assuming that a slightly stronger set theory is consistent. \ It's therefore impossible to prove the value of \bbstatenum to be any given value without assuming axioms more powerful than ZFC, assuming that ZFC is consistent.
+We present a \statenumstate Turing machine whose behavior is \emph{independent of ZFC}; it is not possible to prove that this machine halts or doesn't halt using the axioms of ZFC, assuming that a stronger set theory is consistent. \ It's therefore impossible to prove the value of \bbstatenum to be any given value without assuming axioms more powerful than ZFC, assuming that ZFC is consistent.
 
 For an explicit listing of this machine, see Appendix~\ref{sec:explicitz}.
 
@@ -206,17 +206,24 @@ For all $k, n, r > 0$, every order invariant graph on $[\mathbb{Q}]^{\le k}$ has
 reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$. \cite{friedman}
 \end{statement}
 
-A number of \emph{complexity} at most $c$ refers to a number that can be written as a fraction $a/b$, where $a$ and $b$ are both integers less than or equal to $c$. \ A set has complexity at most $c$ if all the numbers it contains have complexity at most $c$.
+If $s$ is a set, the operation $(.)^{\le k}$ refers to the set of all subsets of $s$ with size at most $k$.
+
+A graph on $[\mathbb{Q}]^{\le k}$ is an irreflexive symmetric relation on $[\mathbb{Q}]^{\le k}$. In other words, it can be thought of as a graph whose vertices are elements of $[\mathbb{Q}]^{\le k}$, and whose edges are undirected, connect pairs of vertices, and never connect vertices to themselves.
+
+A \emph{free} set is a set such that no pair of elements in that set are connected by an edge.
+
+A number of \emph{complexity} at most $c$ refers to a number that can be written as a fraction $a/b$, where $a$ and $b$ are both integers with absolute value less than or equal to $c$. \ A set has complexity at most $c$ if all the numbers it contains have complexity at most $c$.
 
 An \emph{order invariant graph} is a graph containing a countably infinite number of nodes. \ In particular, it has one node for each finite set of rational numbers. \ The only numbers relevant to the statement are numbers of complexity $(8knr)!$ or smaller. \ In every description of nodes that follows, the term \emph{node} refers both to the object in the order invariant graph and to the set of numbers that it represents.
 
 In an order invariant graph, two nodes $(a,b)$ have an edge between them if and only if each other pair of nodes $(c,d)$ that is \emph{order equivalent} with $(a,b)$ has an edge between them. \ Two pairs of nodes $(a, b)$ and $(c, d)$ are \emph{order equivalent} if $a$ and $c$ are the same size and $b$ and $d$ are the same size and if for all $1 \le i \le |a|$ and $1 \le j \le |b|$, the $i$-th element of $a$ is less than the $j$-th element of $b$ if and only if the $i$-th element of $c$ is less than the $j$-th element of $d$.
 
-To give some trivial examples of order invariant graphs: the graph with no edges is order invariant, as is the complete graph. \ A less trivial example is a graph on $[\mathbb{Q}]^2$, in which each node corresponds to a set of two rational numbers of a given complexity, and there is an edge between two nodes if and only if their corresponding sets $a$ and $b$ satisfy $a_1 < b_1 < a_2 < b_2$. \ (Because edges are undirected in order invariant graphs, such an edge will exist if \emph{either} assignment of the vertices to $a$ and $b$ satisfies the inequality above.)
+To give some trivial examples of order invariant graphs: the graph with no edges is order invariant, as is the complete graph. \ A less trivial example is a graph on $[\mathbb{Q}]^{\le 2}$, in which each node corresponds to a set of two rational numbers of a given complexity, and there is an edge between two nodes if and only if their corresponding sets $a$ and $b$ satisfy $|a| = |b| = 2$ and $a_1 < b_1 < a_2 < b_2$. \ (Because edges are undirected in order invariant graphs, such an edge will exist if \emph{either} assignment of the vertices to $a$ and $b$ satisfies the inequality above.)
 
 The \emph{ush()} function takes as input a set and returns a copy of that set with all non-negative numbers in that set incremented by $1$.
 
-For vertices $x$ and $y$, $x \le_{rlex} y$ if and only if $x = y$ or $x_i < y_i$ where $i$ is least such that $x_i \not= y_i$.
+For vertices $x$ and $y$, $x \le_{rlex} y$ if and only if $x = y$ or $x_{|x|-i} < y_{|y|-i}$ where $i$ is least such that $x_{|x|-i} \not= y_{|y|-i}$.\footnotemark (The $\le_{rlex}$ operation creates a lexicographic ordering over the vertices, weighting the last and largest elements of those vertices most heavily.)
+\footnotetext{Friedman recommended in private communication that we use the $\le_{rlex}$ comparator to compare vertices, instead of comparing their maximum elements as described in his manuscript.~\cite{friedmancomm}}
 
 Finally, a set of vertices $X$ \emph{reduces} a set of vertices $Y$ if and only if for all $y \in Y$, there exists $x \in X$ such that 
 either $x = y$ or
@@ -224,7 +231,7 @@ $x \le_{rlex} y$ and an edge exists between $x$ and $y$.
 
 \subsection{Implementation Methods}
 
-To create $Z$, we needed to design a Turing machine that halts if Statement~\ref{eq:friedman} is false, and loops if Statement~\ref{eq:friedman} is true. \ Such a Turing Machine's behavior is necessarily independent of ZFC, because the truth or falsehood of Statement~\ref{eq:friedman} is independent of ZFC, assuming the consistency of SRP, a slightly more powerful set theory.~\cite{friedman}
+To create $Z$, we needed to design a Turing machine that halts if Statement~\ref{eq:friedman} is false, and loops if Statement~\ref{eq:friedman} is true. \ Such a Turing Machine's behavior is necessarily independent of ZFC, because the truth or falsehood of Statement~\ref{eq:friedman} is independent of ZFC, assuming the consistency of SRP.~\cite{friedman} SRP is an extension of ZFC by certain relatively mild large cardinal hypotheses, and is widely regarded by set theorists as consistent. For more information about SRP, see [?].~\cite{friedmancomm}
 
 To design such a Turing machine, we wrote a Laconic program which encodes Friedman's statement, then compiled the program down to a description of a single-tape, $2$-symbol Turing machine. \ What follows is an extremely brief description of the design of the Laconic program; for the documented Laconic code itself, along with a detailed explanation of the full compilation process, see~\cite{github}.
 
@@ -455,7 +462,7 @@ This is plainly not worth it for the $10$-bit example binary shown in Figs.~\ref
     \hline
     Riemann & 9,532 & 10 & 1,024 & 117 & 9,532 & 1,141 \\
     \hline
-    ZFC & 38,426 & 11 & 3,494 & 127 & 38,426 & 3,621 \\
+    ZFC & 38,956 & 11 & 3,542 & 127 & 38,956 & 3,621 \\
     \hline
     \end{tabular}
 \end{center}
@@ -557,6 +564,7 @@ http://semarch.linguistics.fas.nyu.edu/barler/Iota/
 \bibitem{calude} Calude, C., Calude, E. ``Evaluating the Complexity of Mathematical Problems: Part 1,'' ``Evaluating the Complexity of Mathematical Problems: Part 2.'' Complex Systems 18, pp. 387-401. 2010.
 \bibitem{chaitin} Chaitin, G. ``The Limits of Mathematics.'' pp. 79. 1994.
 \bibitem{friedman} Friedman, H. ``Order Invariant Graphs and Finite Incompleteness.'' \url{https://u.osu.edu/friedman.8/files/2014/01/FIiniteSeqInc062214a-v9w7q4.pdf}
+\bibitem{friedmancomm} Personal communications with H. Friedman.
 \bibitem{friedmanlist} Friedman, H. ``Order Theoretic Equations, Maximality, and Incompleteness.'' June 7, 2014. \url{http://u.osu.edu/friedman.8/foundational-adventures/downloadable-manuscripts} \\ 
 \#78.
 \bibitem{godelcohen} G\"odel, K. ``The Consistency of the Axiom of Choice and of the Generalized Continuum-Hypothesis with the Axioms of Set Theory.'' Published in 1940 by the Princeton University Press. Annals of Mathematics Studies.

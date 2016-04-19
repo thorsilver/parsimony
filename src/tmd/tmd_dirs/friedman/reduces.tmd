@@ -1,4 +1,4 @@
-input X Y graph edges numVertices x y c1 c2 h1 h2 h3 h4 h5 output !0 !1 !2 !3 
+input X Y graph edges numVertices x y c1 c2 h1 h2 h3 h4 h5 output !0 !1 !2 !3 !4 
 
 // Auto-generated code for function reduces
 
@@ -30,7 +30,7 @@ function BUILTIN_list2index !2 !0 !1
 function BUILTIN_assign x !2
 function lEqual x y h2 h4 h5 h3 !0 !1 !2 
 function orWith h1 h3 !0 !1 !2 
-function ltrlex x y h2 h4 h5 h3 !0 !1 !2 
+function ltrlex x y h2 h4 h5 h3 !0 !1 !2 !3 !4 
 function edgeIndex edges numVertices c1 c2 h2 !0 !1 !2 !3 
 function andWith h2 h3 !0 !1 !2 
 function orWith h1 h2 !0 !1 !2 

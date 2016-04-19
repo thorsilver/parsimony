@@ -1,4 +1,4 @@
-input graph edges numVertices eightKN eightKNRFacFac k n r h1 h2 h3 h4 h5 h6 h7 h8 h9 hl1 hl2 hl3 hl4 hl5 hl6 viFreeSet standardFreeSet ushFreeSet output !0 !1 !2 !3 
+input graph edges numVertices eightKN eightKNRFacFac k n r h1 h2 h3 h4 h5 h6 h7 h8 h9 hl1 hl2 hl3 hl4 hl5 hl6 viFreeSet standardFreeSet ushFreeSet output !0 !1 !2 !3 !4 
 
 // Auto-generated code for function hasAFree
 
@@ -24,7 +24,7 @@ function BUILTIN_assign !0 h6
 function isFree hl3 numVertices edges h1 h2 h3 h4 h5 !0 !1 !2 !3 
 function BUILTIN_assign !0 h5
 [!0] E (IF_STATE_2_FALSE); 1 ()
-function eachReducing hl3 graph edges numVertices k n r eightKN h1 h2 h3 h4 h5 h6 h7 h8 h9 hl1 hl2 hl4 hl5 hl6 output !0 !1 !2 !3 
+function eachReducing hl3 graph edges numVertices k n r eightKN h1 h2 h3 h4 h5 h6 h7 h8 h9 hl1 hl2 hl4 hl5 hl6 output !0 !1 !2 !3 !4 
 function BUILTIN_assign !0 output
 [!0] E (IF_STATE_3_FALSE); 1 ()
 return

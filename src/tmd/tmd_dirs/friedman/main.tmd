@@ -1,4 +1,4 @@
-input h8 h9 maxKNR h2 h3 h1 h6 h7 h4 h5 hll numVertices eightKN ordering graph eightKNRFacFac hl8 hl7 hl6 hl5 hl4 hl3 hl2 hl1 edges h10 h11 k h13 h14 h15 n unPermutedGraph r h12 !0 !1 !2 !3 
+input h8 h9 maxKNR h2 h3 h1 h6 h7 h4 h5 hll numVertices eightKN ordering graph eightKNRFacFac hl8 hl7 hl6 hl5 hl4 hl3 hl2 hl1 edges h10 h11 k h13 h14 h15 n unPermutedGraph r h12 !0 !1 !2 !3 !4 
 
 // Auto-generated code for function main
 
@@ -42,7 +42,7 @@ function BUILTIN_assignNot !1 !0
 function checkGraphForOrderInvariance graph edges numVertices hl1 hl2 hl3 hl4 h1 h2 h3 h4 h5 h6 h7 h8 h9 h10 h11 h12 h13 h15 h14 !0 !1 !2 !3 
 function BUILTIN_assign !0 h14
 [!0] E (IF_STATE_1_FALSE); 1 ()
-function hasAFree graph edges numVertices eightKN eightKNRFacFac k n r h1 h2 h3 h4 h5 h6 h7 h8 h9 hl1 hl2 hl3 hl4 hl5 hl6 hl7 hl8 hll h9 !0 !1 !2 !3 
+function hasAFree graph edges numVertices eightKN eightKNRFacFac k n r h1 h2 h3 h4 h5 h6 h7 h8 h9 hl1 hl2 hl3 hl4 hl5 hl6 hl7 hl8 hll h9 !0 !1 !2 !3 !4 
 function BUILTIN_assign !0 h9
 function BUILTIN_assignNot !1 !0
 [!1] E (IF_STATE_2_FALSE); 1 ()

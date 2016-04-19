@@ -53,6 +53,15 @@ func doubleIndex(l1, l2, i1, i2, o1, o2) {
 
 /*----------------------------------------------------------*/
 
+/* Indexes starting from the last element */
+
+func indexFromBack(l, i, o) {
+    o = l @ ((#l)-(i+1));
+    return;
+}
+
+/*----------------------------------------------------------*/
+
 /* Executes x <- 0 */
 
 func zero(x) {
@@ -559,6 +568,8 @@ print output; */
 /* x ltrlex y if and only if x = y or x_i < y_i where i is least such 
 that x_i != y_i 
 
+if it's a tie then go by length (dictionary-style)
+
 x: inp list
 y: inp list
 i: hold int
@@ -569,15 +580,17 @@ output: out int
 
 func ltrlex(x, y, i, h1, h2, output) {
     
-    doubleZero(i, output);
+    doubleZero(i, output); 
     
     /* while ((i < (# x)) & (i < (# y))) */
     lessThanLengthTwice(i, x, y, h1, h2);
     
     while (h1 & h2) {
-        
-        indexTwice(x, y, i, h1, h2);
     
+        /* index from the back */
+        indexFromBack(x, i, h1);
+        indexFromBack(y, i, h2);
+        
         if (h1 < h2) {
             one(output);
             return;
@@ -592,15 +605,13 @@ func ltrlex(x, y, i, h1, h2, output) {
         lessThanLengthTwice(i, x, y, h1, h2);
     }
     
-    notSameLength(x, y, h1);
-    
-    if (h1) {
+    if ((#x) > (#y)) {
         return;
     }
     
-    output = 1;
+    one(output);
     return;
-}
+} 
 
 /* ltrlex test bench 
 
@@ -611,7 +622,7 @@ int h1;
 int h2;
 int output;
 
-x = [~2,5,7];
+x = [5,3,~1,7];
 y = [~2,5,6];
 i = 3;
 h1 = 4;
@@ -620,7 +631,9 @@ output = 2;
 
 ltrlex(x, y, i, h1, h2, output);
 
-print output; */
+print output; 
+
+halt; */
 
 /*----------------------------------------------------------*/
 
@@ -706,7 +719,7 @@ func reduces(X, Y, graph, edges, numVertices, x, y, c1, c2, h1, h2, h3, h4, h5, 
                     orWith(h1, h3); 
                     
                     /* ...such that x ltrlex y... */
-                    ltrlex(x, y, h2, h4, h5, h3);
+                    ltrlex(x, y, h2, h4, h5, h3); 
                     
                     /* ...and an edge exists between x and y...*/
                     edgeIndex(edges, numVertices, c1, c2, h2);

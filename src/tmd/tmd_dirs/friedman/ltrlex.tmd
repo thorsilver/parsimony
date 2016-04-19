@@ -1,4 +1,4 @@
-input x y i h1 h2 output !0 !1 !2 
+input x y i h1 h2 output !0 !1 !2 !3 !4 
 
 // Auto-generated code for function ltrlex
 
@@ -8,7 +8,8 @@ WHILE_TEST_0: function BUILTIN_assign !0 h1
 function BUILTIN_assign !1 h2
 function BUILTIN_and !2 !0 !1
 [!2] E (WHILE_STATE_0_FALSE); 1 ()
-function indexTwice x y i h1 h2 !0 !1 !2 
+function indexFromBack x i h1 !0 !1 !2 !3 !4 
+function indexFromBack y i h2 !0 !1 !2 !3 !4 
 function BUILTIN_assign !0 h1
 function BUILTIN_assign !1 h2
 function BUILTIN_greaterThan !2 !1 !0
@@ -23,10 +24,12 @@ return
 IF_STATE_1_FALSE: function incr i !0 !1 !2 
 function lessThanLengthTwice i x y h1 h2 !0 !1 !2 
 [!0] E (WHILE_TEST_0); 1 (WHILE_TEST_0)
-WHILE_STATE_0_FALSE: function notSameLength x y h1 !0 !1 !2 
-function BUILTIN_assign !0 h1
+WHILE_STATE_0_FALSE: function BUILTIN_assign !0 x
+function BUILTIN_len !1 !0
+function BUILTIN_assign !0 y
+function BUILTIN_len !2 !0
+function BUILTIN_greaterThan !0 !1 !2
 [!0] E (IF_STATE_2_FALSE); 1 ()
 return
-IF_STATE_2_FALSE: function BUILTIN_assign1 !0
-function BUILTIN_assign output !0
+IF_STATE_2_FALSE: function one output !0 
 return

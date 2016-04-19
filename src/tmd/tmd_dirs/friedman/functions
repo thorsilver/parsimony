@@ -9,6 +9,7 @@ lessThanLength
 index
 BUILTIN_add1
 BUILTIN_assignNot
+BUILTIN_add
 BUILTIN_appendE
 BUILTIN_multiply
 BUILTIN_greaterOrEqual
@@ -16,16 +17,17 @@ BUILTIN_getBackToStart2
 index2
 incrAndLessThanLength
 BUILTIN_incr
-BUILTIN_add
 BUILTIN_notEqual
 edgeIndex
 BUILTIN_equal
 BUILTIN_or
+BUILTIN_listindex
 BUILTIN_findFin
 doubleZero
 appendAndIncr
+BUILTIN_len
 BUILTIN_addTo
-BUILTIN_listindex
+BUILTIN_negate
 BUILTIN_getBackToStart3
 empty
 BUILTIN_and
@@ -38,9 +40,7 @@ indexAndAppendAndIncr
 append
 zeroAndLessThanLength
 empty2
-notSameLength
 BUILTIN_assign1
-BUILTIN_negate
 zeroAndEmpty
 BUILTIN_notInPlace
 appendAndIncrAndLessThanLength
@@ -50,8 +50,8 @@ two
 zeroAndOne
 lessThanLength2
 BUILTIN_getBackToE
-BUILTIN_len
 factorial
+notSameLength
 BUILTIN_len2
 BUILTIN_assign2
 doubleIndex
@@ -70,9 +70,9 @@ BUILTIN_walkTogether
 BUILTIN_doubleShift
 doubleZeroAndEmpty
 sum
+indexFromBack
 aIsLessThanBAndCIsAtLeastD
 incrAndLessThanLength2
-indexTwice
 vertexUnion
 BUILTIN_listappend
 BUILTIN_multiplyBySign
@@ -90,6 +90,7 @@ isFree
 ush
 andWith
 containsDuplicates
+BUILTIN_subtract
 BUILTIN_list2append
 checkGraphForOrderInvariance
 ush2
@@ -99,6 +100,7 @@ hasAFree
 reduces
 BUILTIN_intneg
 ltrlex
+indexTwice
 BUILTIN_assign3
 BUILTIN_assign5
 BUILTIN_assign4
