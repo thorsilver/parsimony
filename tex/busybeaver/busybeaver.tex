@@ -123,7 +123,7 @@ The \emph{Busy Beaver function}, written $BB(k)$, equals the number of steps it 
 
 By the same argument, $BB(k)$ must grow faster than any computable function. \ (To check this, assume that some computable function $f(k)$ grows faster than $BB(k)$, and substitute $f(k)$ for $BB(k)$ in the rest of the proof.) \ In particular, the Busy Beaver grows even faster than (for instance) the Ackermann function, a well-known fast-growing function.
 
-Because finding the value of $BB(k)$ for a given $k$ requires so much work (one must fully explore the behavior of all $k$-state Turing machines), few explicit values of the Busy Beaver function are known. \ The known values are~\cite{bbsmall}~\cite{bbfour}:
+Because finding the value of $BB(k)$ for a given $k$ requires so much work (one must fully explore the behavior of all $k$-state Turing machines), few explicit values of the Busy Beaver function are known. \ The known values are~\cite{bbfour,bbsmall}:
 
 $$BB(1) = 1$$
 $$BB(2) = 6$$
@@ -146,7 +146,7 @@ In most algorithmic study, efficiency is the primary concern. \ In designing $Z$
 
 Part of the charm of Turing machines is that they give us a ``standard reference point'' for measuring complexity, unencumbered by the details of more sophisticated programming languages. \ Also, with Turing machines, there can be no suspicion that we engineered a programming formalism just for the purpose of code-golfing, or for making the concepts we want artificially simple to describe. \ This is why we prefer Turing machines as a tool for measuring complexity; not because they are particularly special, but simply because they are so primitive that their specifics will interfere minimally with what we mean by an algorithm being ``complicated.''
 
-In this paper, we use three ideas for generating parsimonious Turing machines: Harvey Friedman's mathematical statements, \emph{on-tape processing}, and \emph{introspective} Turing machines. \ The last of these ideas was proposed, under a different name and with some variations, by Ben-Amram and Petersen in 2002.~\cite{benamram} \ These three ideas are explained in more detail in Subsections~\ref{sec:friedmanstate},~\ref{sec:ontape}, and~\ref{sec:introspect}, respectively, but we summarize them very briefly here.
+In this paper, we use three ideas for generating parsimonious Turing machines: Harvey Friedman's mathematical statements, \emph{on-tape processing}, and \emph{introspective} Turing machines. \ The last of these ideas was proposed, under a different name and with some variations, by Ben-Amram and Petersen in 2002 \cite{benamram}. \ These three ideas are explained in more detail in Subsections~\ref{sec:friedmanstate},~\ref{sec:ontape}, and~\ref{sec:introspect}, respectively, but we summarize them very briefly here.
 
 The first idea is simply to use the research done by Friedman into finding simple-to-express statements that are equivalent to the consistency of various axiomatic systems. \ In particular, we use a statement discovered by Friedman to be equivalent to the consistency of a set theory stronger than ZFC (and whose consistency, therefore, would imply the consistency of ZFC).~\cite{friedman}
 
@@ -222,16 +222,14 @@ To give some trivial examples of order invariant graphs: the graph with no edges
 
 The \emph{ush()} function takes as input a set and returns a copy of that set with all non-negative numbers in that set incremented by $1$.
 
-For vertices $x$ and $y$, $x \le_{rlex} y$ if and only if $x = y$ or $x_{|x|-i} < y_{|y|-i}$ where $i$ is least such that $x_{|x|-i} \not= y_{|y|-i}$.\footnotemark (The $\le_{rlex}$ operation creates a lexicographic ordering over the vertices, weighting the last and largest elements of those vertices most heavily.)
-\footnotetext{Friedman recommended in private communication that we use the $\le_{rlex}$ comparator to compare vertices, instead of comparing their maximum elements as described in his manuscript.~\cite{friedmancomm}}
+For vertices $x$ and $y$, $x \le_{rlex} y$ if and only if $x = y$ or $x_{|x|-i} < y_{|y|-i}$ where $i$ is the least integer such that $x_{|x|-i} \not= y_{|y|-i}$.\footnote{Friedman recommended in private communication that we use the $\le_{rlex}$ comparator to compare vertices, instead of comparing their maximum elements as described in his manuscript.} \ (The $\le_{rlex}$ operation creates a lexicographic ordering over the vertices, weighting the last and largest elements of those vertices most heavily.)
 
-Finally, a set of vertices $X$ \emph{reduces} a set of vertices $Y$ if and only if for all $y \in Y$, there exists $x \in X$ such that 
-either $x = y$ or
-$x \le_{rlex} y$ and an edge exists between $x$ and $y$.
+Finally, a set of vertices $X$ \emph{reduces} a set of vertices $Y$ if and only if for all $y \in Y$, there exists $x \in X$ such that
+either $x = y$ or $x \le_{rlex} y$ and an edge exists between $x$ and $y$.
 
 \subsection{Implementation Methods}
 
-To create $Z$, we needed to design a Turing machine that halts if Statement~\ref{eq:friedman} is false, and loops if Statement~\ref{eq:friedman} is true. \ Such a Turing Machine's behavior is necessarily independent of ZFC, because the truth or falsehood of Statement~\ref{eq:friedman} is independent of ZFC, assuming the consistency of SRP.~\cite{friedman} SRP is an extension of ZFC by certain relatively mild large cardinal hypotheses, and is widely regarded by set theorists as consistent. For more information about SRP, see [?].~\cite{friedmancomm}
+To create $Z$, we needed to design a Turing machine that halts if Statement~\ref{eq:friedman} is false, and loops if Statement~\ref{eq:friedman} is true. \ Such a Turing Machine's behavior is necessarily independent of ZFC, because the truth or falsehood of Statement~\ref{eq:friedman} is independent of ZFC, assuming the consistency of SRP.~\cite{friedman} SRP is an extension of ZFC by certain relatively mild large cardinal hypotheses, and is widely regarded by set theorists as consistent. For more information about SRP, see~\cite{srp}.
 
 To design such a Turing machine, we wrote a Laconic program which encodes Friedman's statement, then compiled the program down to a description of a single-tape, $2$-symbol Turing machine. \ What follows is an extremely brief description of the design of the Laconic program; for the documented Laconic code itself, along with a detailed explanation of the full compilation process, see~\cite{github}.
 
@@ -555,7 +553,7 @@ We thank Alex Arkhipov for introducing us to the term ``code golfing.''
 Supported by an Alan T.\ Waterman Award from the National Science Foundation, under grant no.\ 1249349.
 
 \begin{thebibliography}{100}
-\bibitem{iota} Barker, C. ``Iota and Jot: the Simplest Languages?'' 
+\bibitem{iota} Barker, C. ``Iota and Jot: the Simplest Languages?''
 http://semarch.linguistics.fas.nyu.edu/barler/Iota/
 [A website describing the Iota and Jot programming languages]
 \bibitem{benamram} Ben-Amram, A., Petersen, H. ``Improved Bounds for Functions Related to Busy Beavers'' Theory of Computing Systems 35, 1-11 (2002)
@@ -565,16 +563,17 @@ http://semarch.linguistics.fas.nyu.edu/barler/Iota/
 \bibitem{chaitin} Chaitin, G. ``The Limits of Mathematics.'' pp. 79. 1994.
 \bibitem{friedman} Friedman, H. ``Order Invariant Graphs and Finite Incompleteness.'' \url{https://u.osu.edu/friedman.8/files/2014/01/FIiniteSeqInc062214a-v9w7q4.pdf}
 \bibitem{friedmancomm} Personal communications with H. Friedman.
-\bibitem{friedmanlist} Friedman, H. ``Order Theoretic Equations, Maximality, and Incompleteness.'' June 7, 2014. \url{http://u.osu.edu/friedman.8/foundational-adventures/downloadable-manuscripts} \\ 
+\bibitem{friedmanlist} Friedman, H. ``Order Theoretic Equations, Maximality, and Incompleteness.'' June 7, 2014. \url{http://u.osu.edu/friedman.8/foundational-adventures/downloadable-manuscripts} \\
 \#78.
+\bibitem{srp} Friedman H. ``The Upper Shift Kernel Theorems.'' October 9, 2010. \url{https://u.osu.edu/friedman.8/files/2014/01/KernStruThm100910-1lu0b8v.pdf}
 \bibitem{godelcohen} G\"odel, K. ``The Consistency of the Axiom of Choice and of the Generalized Continuum-Hypothesis with the Axioms of Set Theory.'' Published in 1940 by the Princeton University Press. Annals of Mathematics Studies.
 \bibitem{koza} Koza, J. ``Spontaneous Emergence of Self-Replicating and Evolutionarily Self-Improving Computer Programs.'' in Artificial Life III (SFI Studies in the Sciences of Complexity, vol. XVII), C. G. Langton, Ed. Reading, MA: Addison-Wesley. pp. 225-262. 1994.
 \bibitem{bbsmall} Lin, S., Rado, T. ``Computer Studies of Turing Machine Problems.'' Published in Journal of the ACM, Volume 12, Issue 2, April 1965. Pages 196-212.
 \bibitem{unlambda} Madore, D. ``The Unlambda Programming Language.'' \url{http://www.madore.org/~david/programs/unlambda/} \\
 {[A website describing the Unlambda programming language]}
 \bibitem{bbimpossible} Marxen, H., Buntrock, J. ``Attacking the Busy Beaver 5.'' Bull EATCS, Vol. 40, pp. 247-251. 1990.
-\bibitem{bbvalues} Marxen, H. 
-\url{http://www.drb.insel.de/~heiner/BB/} \\ 
+\bibitem{bbvalues} Marxen, H.
+\url{http://www.drb.insel.de/~heiner/BB/} \\
 {[A list of the known busy beaver values]}
 \bibitem{brainfuck} M\"uller, U. ``Brainfuck.'' \url{http://www.muppetlabs.com/~breadbox/bf/} \\
 {[A website describing the Brainf*ck programming language]}
