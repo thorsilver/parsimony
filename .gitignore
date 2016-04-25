@@ -5,3 +5,5 @@ src/tm/tm4/tm4_histories/*.txt
 *.log
 *.aux
 *.DS_STORE
+*.class
+*.java

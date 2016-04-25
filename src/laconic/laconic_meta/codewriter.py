@@ -158,20 +158,14 @@ class CodeWriter(LaconicListener):
                 pront("Function call", funcProcName, "has too many arguments.")
                 raise
                 
-            # ok procs just don't work for the time being
-            
+            # "procs", a.k.a macros, not implemented at the moment.
             
             self.currentFunc.add("")
 
     def manageRegs(self, ctx, listOfExprs, marker):
         ctx.associatedReg = self.currentFunc.findSmallestUnfilledReg()
         self.currentFunc.fillReg(ctx.associatedReg)
-        
- #       print ctx.getText()
- #       print marker
- #       if ctx.getText() == "x<(#l)":
- #           print ctx.OPERATOR_COMPARE().getText()
-        
+                       
         self.currentFunc.add(self.dealWithExpr(ctx, [ctx.associatedReg] + 
             [expr.associatedReg for expr in listOfExprs], marker))
             
@@ -243,7 +237,7 @@ class CodeWriter(LaconicListener):
             self.manageRegs(ctx, [ctx.intexpr(0), ctx.intexpr(1)], "intop")
             
     def exitListexpr(self, ctx):
-        
+                        
         # 0 listexprs possibilities:
         # list2expr '[' intexpr ']'
         # '[' (intexpr ',')* intexpr ']'
@@ -252,7 +246,7 @@ class CodeWriter(LaconicListener):
         if (ctx.listexpr(0) == None):
             
             if ctx.list2expr() != None:
-                # list2expr '[' intexpr ']'
+                # list2expr '@*' intexpr
                 self.manageRegs(ctx, [ctx.list2expr(), ctx.intexpr(0)], "list2index")
                 
             elif ctx.intexpr(0) != None:
@@ -310,13 +304,14 @@ class CodeWriter(LaconicListener):
             
             
     def exitList2expr(self, ctx):
+                
         # 0 list2expr possibilities:
         # '[' (listexpr ',')* listexpr ']'
         # '[' ']'
         # VAR
         if ctx.list2expr(0) == None:
-            
-            if ctx.listexpr(0) != None:
+                                                                        
+            if ctx.listexpr(0) != None:                
                 # '[' (listexpr ',')* listexpr ']'
                 listOfExprs = []
                 exprCounter = 0
@@ -342,7 +337,7 @@ class CodeWriter(LaconicListener):
                 self.manageRegs(ctx, [], "list2var")
                 
             else:
-                # '[' ']'
+                # ':' ':'
                 self.manageRegs(ctx, [], "emptylist2")
 
         # 1 list2expr possibilities:
@@ -439,6 +434,7 @@ class CodeWriter(LaconicListener):
 
     def exitAssign(self, ctx):
         # should be just one reg full, since it's the root of the expression tree
+        
         assert len(self.currentFunc.filledRegs) == 1
         self.currentFunc.add("function " + self.BUILTIN_SYMBOL + "assign " + ctx.VAR().getText() + " " + stringify(self.currentFunc.filledRegs[0]) + "\n")
 
@@ -458,7 +454,7 @@ class CodeWriter(LaconicListener):
         # This doesn't get used every time, only when it fits the
         # situation
         regListInStringForm = listSum([" " + stringify(i) for i in listOfRegs]) + "\n"
-        
+                
         if marker == "intint":
             assert len(listOfRegs) == 1
             if ctx.INT().getText() == "0":

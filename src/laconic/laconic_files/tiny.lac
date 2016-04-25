@@ -1,14 +1,10 @@
-int w;
-int x;
-int y;
+list a;
+list2 b;
+list2 c;
+list w;
+list x;
+list y;
 int z;
 
-w = [3,~3];
-x = [2,~2];
-
-y = w || x;
-z = y @ 1;
-
-print z;
-
+b = ::;
 halt;

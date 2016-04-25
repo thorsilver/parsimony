@@ -1,0 +1,182 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\usepackage{courier}
+\usepackage{underscore}
+\setcounter{secnumdepth}{4}
+
+\title{Laconic to TMD Compilation}
+\author{Adam Yedidia}
+
+\begin{document}
+    
+\maketitle
+
+This document is an explanation of the Laconic-to-TMD compilation process. It won't be useful to users who only want to know how to use Laconic files, or how to write Laconic files of their own. Rather, it is intended for an audience who is simply curious about how the algorithm works, or wants to write their own language which will compile down to TMD. \\
+
+Each part of the logic in a Laconic program transforms into an equivalent section of TMD code. In the below sections, it is explained how this happens for each Laconic command. \\
+
+Every Laconic compiler presented in this repository makes use of the algorithm described herein. So, for example, the compiler that transforms Laconic programs into 2-symbol Turing machines just calls this compiler, and then calls the compiler that transforms TMD programs into 2-symbol Turing machines. The same is true for compilation to 4-symbol Turing machines.
+
+\section{Variable Values} \label{sec:varvalues}
+
+In Laconic, variables can have any value corresponding to an integer, a list of integers, or a list of lists of integers. In TMD, ``variables'' and ``tapes'' refer to the same thing, and correspondingly the ``value'' of a ``variable'' is simply the symbols currently on the tape. \\
+
+Recall that in TMD, the tape alphabet is (\texttt{_}, \texttt{1}, \texttt{E}), and that tapes must take the form \texttt{_}$(\texttt{1}|\texttt{E})^*\texttt{_}^\infty$. We call the second symbol on the tape the ``home position'' of that tape.
+
+\subsection{\texttt{int} Values}
+
+\subsubsection{Non-Negative Integers}
+
+To represent the value of an \texttt{int} \texttt{x} with value $x \ge 0$, the tape representation is: \\ \\
+\texttt{_}$\texttt{1}^x\texttt{E}\texttt{_}^\infty$ \\
+
+So, for example, the value 5 would be represented as: \\ \\
+\texttt{_11111E___}\dots
+
+\subsubsection{Negative Integers}
+
+To represent the value of an \texttt{int} \texttt{x} with value $x < 0$, the tape representation is: \\ \\
+\texttt{_}$\texttt{E1}^{-x}\texttt{E_}^\infty$ \\ 
+
+So, for example, the value -3 would be represented as: \\ \\
+\texttt{_E111E___}\dots 
+%In the subsections following this one, I call the part of the tape containing only \texttt{1}'s and \texttt{E}'s.
+
+\subsection{\texttt{list} Values}
+
+To represent the value of a \texttt{list} that contains integer values $e_1$, $e_2$, $e_3$, and so on, the tape representation is: \\ \\
+$\texttt{_E}((e_1>0)?\texttt{1}:\texttt{E})\texttt{1}^{|e_1|}\texttt{E}((e_2>0)?\texttt{1}:\texttt{E})\texttt{1}^{|e_2|}\texttt{E}((e_3>0)?\texttt{1}:\texttt{E})\texttt{1}^{|e_3|}\texttt{E}\dots\texttt{_}^\infty$ \\
+
+In other words, the tape representation of the \texttt{list} begins with an \texttt{E} in the home position, and then for each element of the \texttt{list}, there would be a \texttt{1} if the element positive and an \texttt{E} otherwise, followed by a number of \texttt{1}'s equal to the magnitude of the number, followed by an \texttt{E}. So, for example, the value $[5, -2, 0]$ would be represented as: \\ \\
+\texttt{_E111111EE11EEE___}\dots
+
+\subsection{\texttt{list2} Values}
+
+To represent the value of a \texttt{list2} that contains \texttt{list} values $l_1$, $l_2$, and so on, each of which contains \texttt{int} values $e_{11}$, $e_{12}$, and so on, and $e_{21}$, $e_{22}$, and so on, and so on, the tape representation is: \\ \\
+$\texttt{_EE1}((e_{11}>0)?\texttt{1}:\texttt{E1})\texttt{1}^{|e_{11}|}\texttt{E1}
+((e_{12}>0)?\texttt{1}:\texttt{E1})\texttt{1}^{|e_{12}|}\texttt{E1}\dots\texttt{EE1}
+((e_{11}>0)?\texttt{1}:\texttt{E1})\texttt{1}^{|e_{11}|}\texttt{E1}
+((e_{11}>0)?\texttt{1}:\texttt{E1})\texttt{1}^{|e_{11}|}\texttt{E1}\dots\dots\texttt{E_}^\infty$ \\
+
+In other words, the tape representation of each list in the \texttt{list2} begins with \texttt{EE1}, and then for each \texttt{list} in the \texttt{list2}, the \texttt{int}s in those \texttt{list}s are preceded by a \texttt{1} if the number is positive and a \texttt{E1} otherwise, followed by a number of \texttt{1}'s equal to the magnitude of the number, followed by a \texttt{E1}. Then, to signal the end of a \texttt{list}, the sequence \texttt{EE1} is used. Finally, to signal the end of the entire \texttt{list2}, the symbol \texttt{E} is used, followed by infinite underscores. So, for example, the value $[[3,-1], [], [0,4]]$ would be represented as: \\ \\
+\texttt{_EE11111E1E11E1EE1EE1E1E111111E1E___}\dots
+
+\section{Laconic Operations}
+
+Each operation in Laconic has a corresponding TMD function which performs the operation. As an example, the Laconic operation \texttt{a*b} will compile down to a call to the TMD function \texttt{BUILTIN_multiply}. \\
+
+The following is the full mapping between Laconic operations and TMD functions: \\ \\
+
+\begin{center}
+    \begin{centering}
+    \begin{tabular}{||c c c||}
+    \hline
+    Operation & Laconic symbol & TMD function \\ [0.5ex]
+    \hline
+    Addition & \texttt{+} & \texttt{BUILTIN_add} \\
+    \hline
+    Subtraction & \texttt{-} & \texttt{BUILTIN_subtract} \\
+    \hline
+    Multiplication & \texttt{*} & \texttt{BUILTIN_multiply}\\
+    \hline
+    Integer Division & \texttt{/} & \texttt{BUILTIN_divide}\\
+    \hline
+    Negation & \texttt{~} & \texttt{BUILTIN_intneg}\\
+    \hline
+    Equality & \texttt{==} & \texttt{BUILTIN_equal}\\
+    \hline
+    Inequality & \texttt{!=} & \texttt{BUILTIN_notEqual}\\
+    \hline
+    Greater Than & \texttt{>} & \texttt{BUILTIN_greaterThan}\\
+    \hline
+    Less Than & \texttt{<} & \texttt{BUILTIN_greaterThan} (arguments reversed)\\
+    \hline
+    Greater or Equal & \texttt{>=} & \texttt{BUILTIN_greaterOrEqual}\\
+    \hline
+    Less Than or Equal & \texttt{<=} & \texttt{BUILTIN_greaterOrEqual} (arguments reversed)\\
+    \hline
+    And & \texttt{\&} & \texttt{BUILTIN_and}\\
+    \hline
+    Or & \texttt{|} & \texttt{BUILTIN_or}\\
+    \hline
+    Not & \texttt{!} & \texttt{BUILTIN_assignNot}\\
+    \hline
+    List Index & \texttt{@} & \texttt{BUILTIN_listindex}\\
+    \hline
+    List2 Index & \texttt{@*} & \texttt{BUILTIN_list2index}\\
+    \hline
+    List Append & \texttt{\^} & \texttt{BUILTIN_append}\\
+    \hline
+    List2 Append & \texttt{\^{}*} & \texttt{BUILTIN_list2append}\\
+    \hline
+    List Length & \texttt{\#} & \texttt{BUILTIN_len}\\
+    \hline
+    List2 Length & \texttt{\#*} & \texttt{BUILTIN_len2}\\
+    \hline
+    List Concatenation & \texttt{||} & \texttt{BUILTIN_concatenate}\\
+    \hline
+    Explicit Integer & --- & \texttt{BUILTIN_assign*}\\
+    \hline
+    Explicit List Description & \texttt{[]} & \texttt{BUILTIN_listAssemble*}\\
+    \hline 
+    Explicit List2 Description & \texttt{::} & \texttt{BUILTIN_list2Assemble*}\\
+    \end{tabular}
+    \end{centering}
+\end{center}
+
+The above TMD functions are all available for perusal at: \\ \\
+\texttt{parsimony/src/tmd/laconic_std_library/} \\
+
+Note that for explicit descriptions of \texttt{int}s, \texttt{list}s, or \texttt{list2}s, there are separate functions callable based on the size of the relevant value. This means that it is important to avoid putting integers larger than 20 or so, or lists of similar length, into the program explicitly. (Building them up implicitly, of course, is fine.) I would recommend against doing this, because probably at this point it is more parsimonious to describe the number or list implicitly, but if necessary one can use the programs \texttt{assemblexgen.py} and \texttt{assignxgen.py}, which can be found in the \texttt{tmd_meta} directory, to generate larger explicit-description functions. \\
+
+The Laconic Standard Library has more than just the functions shown in the table above. It also contains many helper functions which are called by the functions above. \\
+
+The Laconic Standard Library's functions all begin with the string ``\texttt{BUILTIN_}''. It is therefore a very bad idea to begin your function names in TMD or Laconic with that string. \\
+
+Every function in the Laconic Standard Library was written by me in order to compute the desired operation. Each one is composed entirely of explicit tape commands, return statements, and calls to other built-in functions.
+
+\section{Complex Expressions}
+
+Complex expressions are expressions that are made up of multiple operations, such as (a+b)*c, for example. There is no order of operations to worry about, since full parenthesization is required. \\
+
+Compiling a complex expression is somewhat more tricky than compiling a single operation, since the built-in functions can only handle one operation at a time. The solution is to hold temporary results in \emph{holder variables}, which are created automatically by the compiler. They are created as necessary and reused when their contents become irrelevant. They are recognizable by the fact that their names all begin with the \texttt{!} symbol. They exist only in the compiled TMD, of course. \\
+
+When a variable is assigned to the value of a (potentially complex) expression, a series of function calls to built-in functions (potentially involving holder variables) is the result in the compiled TMD. Then, the built-in function \texttt{BUILTIN_assign} is called to transfer the held value of the result of the complex expression to the variable. \\
+
+\section{If Statements}
+
+In Laconic, an \texttt{if} statement has the following form: \\ \\
+\texttt{if (}[\emph{expression}]\texttt{)\{}[\emph{function body}]\texttt{\}} \\
+
+This is compiled down to a section of TMD code that looks like the following: \\ \\
+{}[Sequence of commands designed to load the value of \emph{expression} into the holder variable $h$] \\
+\texttt{[}$h$\texttt{] E (IF_STATE_}$i$\texttt{_FALSE); 1 ()} \\
+{}[Compiled version of \emph{function body}] \\
+\texttt{IF_STATE_}$i$\texttt{_FALSE:} [Continuation of the program] \\
+
+In a Laconic program, the function body is evaluated if and only if the expression evaluates to a positive integer (and the expression is forbidden from being a \texttt{list} or \texttt{list2}). As can be seen above, in the compiled TMD, the function body is evaluated if and only if the home-position tape symbol in the result of the expression is not an \texttt{E}. As can be seen from Section~\ref{sec:varvalues}, this corresponds precisely to the scenarios when the value of the expression is equal to a positive integer. 
+
+\section{While Statements}
+
+In Laconic, a \texttt{while} statement has the following form: \\ \\ 
+\texttt{while (}[\emph{expression}]\texttt{)\{}[\emph{function body}]\texttt{\}} \\
+
+This is compiled down to a section of TMD code that looks like the following: \\ \\
+\texttt{WHILE_TEST_}$i$\texttt{:} [Sequence of commands designed to load the value of \emph{expression} into the holder variable $h$] \\
+\texttt{[}$h$\texttt{] E (WHILE_STATE_}$i$\texttt{_FALSE); 1 ()} \\ 
+{}[Compiled version of \emph{function body}] \\
+\texttt{[}$h$\texttt{] E (WHILE_TEST_}$i$\texttt{); 1 (WHILE_TEST_}$i$\texttt{)} \\
+\texttt{WHILE_STATE_}$i$\texttt{_FALSE:} [Continuation of the program] 
+
+In a Laconic program, the function body is evaluated repeatedly until the expression evaluates to a non-positive integer (and the expression is forbidden from being a \texttt{list} or \texttt{list2}). As can be seen above, in the compiled TMD, the function body is evaluated repeatedly until the home-position tape symbol in the result of the expression is an \texttt{E}. As can be seen from Section~\ref{sec:varvalues}, this corresponds precisely to the scenarios when the value of the expression is equal to a non-positive integer.
+
+\section{Function and Variable Compilation} 
+
+Each Laconic function defined within a Laconic program is given its own corresponding TMD function file. There is additionally a TMD function created named \texttt{main}, which is given its own function file and contains all of the logic that exists in the Laconic program outside of function definitions. The function \texttt{main} is called first in the TMD program, and is accordingly put at the top of the \texttt{functions.tff} file. \\
+
+The input line of \texttt{main.tmd} contains every variable declared in the Laconic file, along with every holder variable needed in \texttt{main} or in any of the other functions defined in the Laconic program. \\
+
+Once \texttt{main} is fully converted to TMD as described in the sections above, 
+
+\end{document}

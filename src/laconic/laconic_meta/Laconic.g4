@@ -2,7 +2,7 @@ grammar Laconic;
 
 // The grammar for the Laconic language.
 
-prog: trueprog ;
+prog: trueprog;
 trueprog: (command)* EOF ;
 command:  (funcdef | procdef | declare | nondefcommand)  ;
 
@@ -16,9 +16,9 @@ funcprocbody:  funcproccallbody  '{' nondefprog '}' ;
 
 declare: (intdecl | listdecl | list2decl) ;
 
-intdecl: 'int'  VAR ('=' expr)? ';' ;
-listdecl: 'list'  VAR ('=' expr)? ';' ;
-list2decl: 'list2'  VAR ('=' expr)? ';' ;
+intdecl: 'int'  VAR ';' ;
+listdecl: 'list'  VAR ';' ;
+list2decl: 'list2'  VAR ';' ;
 
 funcproccall: funcproccallbody  ';' ;
 
@@ -52,39 +52,37 @@ returnstate: ('return' | 'halt')  ';' ;
 
 
 intexpr:   intexpr OPERATOR_MUL_DIV intexpr     // intop DONE 
-    |   intexpr OPERATOR_ADD_SUB intexpr        // intop DONE 
-    |   intexpr OPERATOR_COMPARE intexpr        // intop DONE
-    |   intexpr OPERATOR_BOOLEAN intexpr        // intop DONE 
-    |   listexpr OPERATOR_INDEX intexpr         // listindex DONE
-    |   OPERATOR_NOT intexpr                    // intnot DONE 
-    |   '(' intexpr ')'                         // DONE 
-    |   OPERATOR_NEGATE intexpr                 // intneg DONE
-    |   OPERATOR_LENGTH listexpr                // len DONE
-    |   OPERATOR_LENGTH2 list2expr              // len2 DONE
-    |   INT                                     // intint DONE 
-    |   VAR                                     // intvar DONE 
-    ;
+       |   intexpr OPERATOR_ADD_SUB intexpr        // intop DONE 
+       |   intexpr OPERATOR_COMPARE intexpr        // intop DONE
+       |   intexpr OPERATOR_BOOLEAN intexpr        // intop DONE 
+       |   listexpr OPERATOR_INDEX intexpr         // listindex DONE
+       |   OPERATOR_NOT intexpr                    // intnot DONE 
+       |   '(' intexpr ')'                         // DONE 
+       |   OPERATOR_NEGATE intexpr                 // intneg DONE
+       |   OPERATOR_LENGTH listexpr                // len DONE
+       |   OPERATOR_LENGTH2 list2expr              // len2 DONE
+       |   INT                                     // intint DONE 
+       |   VAR                                     // intvar DONE 
+       ;
     
 listexpr:
-    |   list2expr OPERATOR_INDEX2 intexpr       // list2index DONE
-    |   listexpr OPERATOR_APPEND intexpr        // listappend DONE
-    |   listexpr OPERATOR_CONCAT listexpr       // listconcat DONE
-    |   '(' listexpr ')'                        // DONE
-    |   '[' (intexpr ',')* intexpr ']'          // constlist DONE
-    |   '[' ']'                                 // emptylist DONE
-    |   VAR                                     // listvar DONE
-    ;
-
-    // This is a giant hack!! Ask Zach how to fix this ASAP!
+        |   list2expr OPERATOR_INDEX2 intexpr       // list2index DONE
+        |   listexpr OPERATOR_APPEND intexpr        // listappend DONE
+        |   listexpr OPERATOR_CONCAT listexpr       // listconcat DONE
+        |   '(' listexpr ')'                        // DONE
+        |   BEGIN_LIST (intexpr ',')* intexpr END_LIST          // constlist DONE
+        |   BEGIN_LIST END_LIST                     // emptylist DONE
+        |   VAR                                     // listvar DONE
+        ;
     
 list2expr:
-    |   list2expr OPERATOR_APPEND2 listexpr      // list2append DONE
-    |   list2expr OPERATOR_CONCAT2 list2expr     // list2concat
-    |   '(' list2expr ')'                       // DONE
-    |   ':' (listexpr ',')* listexpr ':'        // constlist2 DONE
-    |   ':' ':'                                     // emptylist2 DONE
-    |  VAR                                      // list2var DONE
-    ;
+         |   list2expr OPERATOR_APPEND2 listexpr      // list2append DONE
+         |   list2expr OPERATOR_CONCAT2 list2expr     // list2concat
+         |   '(' list2expr ')'                       // DONE
+         |   BEGIN_LIST2 (listexpr ',')* listexpr END_LIST2        // constlist2 DONE
+         |   BEGIN_LIST2 BEGIN_LIST2                  // emptylist2 DONE
+         |  VAR                                      // list2var DONE
+         ;
 
 OPERATOR_MUL_DIV: ('*' | '/' | '%') ;
 OPERATOR_ADD_SUB: ('+' | '-') ;
@@ -100,6 +98,10 @@ OPERATOR_INDEX: ('@') ;
 OPERATOR_INDEX2: ('@*') ;
 OPERATOR_LENGTH: ('#') ;
 OPERATOR_LENGTH2: ('#*') ;
+BEGIN_LIST: ('[');
+END_LIST: (']');
+BEGIN_LIST2: ':';
+END_LIST2: ':';
 
 COMMENT : '/*'.*?'*/' -> skip;
 WS : [\t\n\r ]+ -> skip;
