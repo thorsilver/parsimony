@@ -99,7 +99,7 @@ $\Gamma = \{a, b\}$ is the set of \emph{tape alphabet symbols} \\
 $\Sigma = \empty$ is the set of \emph{input symbols} \\\
 $\delta = Q \times \Gamma \rightarrow (Q \cup F) \times \Gamma \times \{L, R\}$ is the \emph{transition function} \\
 $q_0$ is the \emph{start state} \\
-$F = \{\textrm{ACCEPT}, \textrm{REJECT}, \textrm{ERROR}\}$ is the set of \emph{halting transitions}. \\
+$F = \{\textrm{HALT}, \textrm{ERROR}\}$ is the set of \emph{halting transitions}. \\
 
 A Turing machine's \emph{states} make up the Turing machine's easily-accessible, finite memory. \ The Turing machine's state is initialized to $q_0$.
 
@@ -111,7 +111,7 @@ The \emph{transition function} encodes the Turing machine's behavior. \ It takes
 
 The \emph{start state} is the state that the Turing machine is in at initialization.
 
-A \emph{halting transition} is a transition that causes the Turing machine to halt. \ While having three possible halting transitions is not necessary for our purposes, being able to differentiate between three different types of halting (ACCEPT, REJECT, and ERROR) is useful for testing.
+A \emph{halting transition} is a transition that causes the Turing machine to halt. \ While having three possible halting transitions is not necessary for our purposes, being able to differentiate between different types of halting (HALT and ERROR) is useful for testing.
 
 \subsection{The Busy Beaver Function}
 
@@ -138,7 +138,7 @@ Intuitively, one might expect that while no algorithm may exist to compute $BB(k
 
 In this paper we construct a machine like $Z$, for which a proof that $Z$ runs forever would imply that ZFC was consistent. \ In doing so, we give an explicit upper bound on the highest Busy Beaver value provable in ZFC assuming the consistency of a slightly stronger set theory. \ Our machine, which we shall refer to as $Z$ hereafter, contains \statenum states. \ Therefore, we will never be able to prove the value of \bbstatenum without assuming more powerful axioms than those of ZFC. \ This upper bound is presumably very far from tight, but it is a first step.
 
-Even to achieve a state count of \statenumcomma we will need three nontrivial ideas: Harvey Friedman's order-theoretic statements, \emph{on-tape processing}, and \emph{introspective encoding}. \ Without all three ideas, we found that the state count would be in the tens of thousands, hundreds of thousands, or even millions. \ We briefly introduce these ideas in the following subsection, and explore them in much greater detail in Section \ref{COMP}. \ The implementation of these ideas constitutes this paper's main technical contribution.
+Even to achieve a state count of \statenumcomma we will need three nontrivial ideas: Harvey Friedman's order-theoretic statements, \emph{on-tape processing}, and \emph{introspective encoding}. \ Without all three ideas, we found that the state count would be in the tens of thousands, hundreds of thousands, or even millions. \ We briefly introduce these ideas in the following subsection, and explore them in much greater detail in Section \ref{sec:compandproc}. \ The implementation of these ideas constitutes this paper's main technical contribution.
 
 \subsection{Parsimony}
 
@@ -341,7 +341,7 @@ A TMD directory consists of three types of files:
 \end{enumerate}
 
 \section{Compilation and Processing}
-\label{COMP}
+\label{sec:compandproc}
 
 There are two ways to think about the layout of the tape symbols: with a $4$-symbol alphabet ($\{\texttt{\_}, \texttt{1}, \texttt{H}, \texttt{E}\}$, blank symbol \texttt{\_}), and with a $2$-symbol alphabet ($\{\texttt{a}, \texttt{b}\}$, blank symbol \texttt{a}). \ The $2$-symbol alphabet version is the one that's ultimately used for the results in this paper, since we advertised a Turing machine that used only two symbols. \ However, in nearly all parts of the Turing machine, the $2$-symbol version of the machine is a direct translation of the $4$-symbol version, according to the following mapping:
 
@@ -437,7 +437,7 @@ Writing down a long binary string onto a Turing machine tape in a parsimonious f
 \end{center}
 \end{figure}
 
-On closer examination, however, this approach is quite wasteful for all but the smallest binary files. \ Every \texttt{a} transition points to the next state in the sequence, and none of the \texttt{b} transitions are used at all! \ Indeed, the only information-bearing part of the state is the single bit contained in the choice of which symbol to write. \ But in theory, far more information than that could be encoded in each state. \ In a machine with $n$ states, each state could contain $2(\log_2(n) + 1)$ bits of information, because each of its two transitions could point to any of the $n$ states, and write either an \texttt{a} or a \texttt{b} onto the tape. \ Of course, this is only in theory; in practice, to extract the information contained in the Turing machine's states and translate it into bits on the tape is nontrivial.
+On closer examination, however, this approach is quite wasteful for all but the smallest binary files. \ Every \texttt{a} transition points to the next state in the sequence, and none of the \texttt{b} transitions are used at all! \ Indeed, the only information-bearing part of the state is the single bit contained in the choice of which symbol to write. \ But in theory, far more information than that could be encoded in each state. \ In a machine with $n$ states, each state could contain $2(\log_2(n) + 1)$ bits of information, because each of its two transitions could point to any of the $n$ states, and write either an \texttt{a} or a \texttt{b} onto the tape. \ Of course, this is only in theory; in practice, to extract the information contained in therefore Turing machine's states and translate it into bits on the tape is nontrivial.
 
 We will use a scheme originally conceived by Ben-Amram and Petersen~\cite{benamram} and refined further and suggested to us by Luke Schaeffer. \ It does not achieve the optimal theoretical encoding described above, but is relatively simple to implement and understand, and is within a factor of $2$ of optimal for large binary strings. \ Schaeffer named Turing machines that use this idea \emph{introspective}.
 

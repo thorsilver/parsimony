@@ -49,8 +49,6 @@ assign: VAR  '='  expr  ';' ;
 
 returnstate: ('return' | 'halt')  ';' ;
 
-
-
 intexpr:   intexpr OPERATOR_MUL_DIV intexpr     // intop DONE 
        |   intexpr OPERATOR_ADD_SUB intexpr        // intop DONE 
        |   intexpr OPERATOR_COMPARE intexpr        // intop DONE
@@ -65,8 +63,7 @@ intexpr:   intexpr OPERATOR_MUL_DIV intexpr     // intop DONE
        |   VAR                                     // intvar DONE 
        ;
     
-listexpr:
-        |   list2expr OPERATOR_INDEX2 intexpr       // list2index DONE
+listexpr:   list2expr OPERATOR_INDEX2 intexpr       // list2index DONE
         |   listexpr OPERATOR_APPEND intexpr        // listappend DONE
         |   listexpr OPERATOR_CONCAT listexpr       // listconcat DONE
         |   '(' listexpr ')'                        // DONE
@@ -75,12 +72,11 @@ listexpr:
         |   VAR                                     // listvar DONE
         ;
     
-list2expr:
-         |   list2expr OPERATOR_APPEND2 listexpr      // list2append DONE
+list2expr:   list2expr OPERATOR_APPEND2 listexpr      // list2append DONE
          |   list2expr OPERATOR_CONCAT2 list2expr     // list2concat
          |   '(' list2expr ')'                       // DONE
-         |   BEGIN_LIST2 (listexpr ',')* listexpr END_LIST2        // constlist2 DONE
-         |   BEGIN_LIST2 BEGIN_LIST2                  // emptylist2 DONE
+         |   BEGINEND_LIST2 (listexpr ',')* listexpr BEGINEND_LIST2        // constlist2 DONE
+         |   BEGINEND_LIST2 BEGINEND_LIST2                  // emptylist2 DONE
          |  VAR                                      // list2var DONE
          ;
 
@@ -100,8 +96,7 @@ OPERATOR_LENGTH: ('#') ;
 OPERATOR_LENGTH2: ('#*') ;
 BEGIN_LIST: ('[');
 END_LIST: (']');
-BEGIN_LIST2: ':';
-END_LIST2: ':';
+BEGINEND_LIST2: ':';
 
 COMMENT : '/*'.*?'*/' -> skip;
 WS : [\t\n\r ]+ -> skip;

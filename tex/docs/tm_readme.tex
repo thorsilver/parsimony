@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\usepackage{courier}
+\usepackage{underscore}
+
+\title{Turing Machine ReadMe}
+\author{Adam Yedidia}
+
+\begin{document}
+    
+\maketitle
+
+This document is intended for users who want to know how to run a Turing machine which is in the format described by \texttt{tm_def.pdf}.
+
+\section{Preparation}
+
+Before a Turing Machine can be run, first it must exist in a place where it can be found. Make sure that the target directory is located at: \\ \\
+\texttt{parsimony/src/tm/tm2/tm2_files/} (if it is a 2-symbol machine) \\
+or \\
+\texttt{parsimony/src/tm/tm4/tm4_files/} (if it is a 4-symbol machine) \\ 
+
+(If you created your Turing machine via compilation from a higher-level language, it will already exist in the right place.) \\
+
+Then, BEFORE running any of the commands described below, navigate to: \\ \\
+\texttt{parsimony/src/tm/tm2/tm2_files/} (if it is a 2-symbol machine) \\
+or \\
+\texttt{parsimony/src/tm/tm4/tm4_files/} (if it is a 4-symbol machine) 
+
+\section{Running the Turing Machine}
+
+To run a Turing machine, run the command: \\ \\ 
+\texttt{python tm2_simulator.py }[name of TM file without \texttt{.tm2} extension] (for 2-symbol machines)\\
+or \\
+\texttt{python tm4_simulator.py }[name of TM file without \texttt{.tm4} extension] (for 4-symbol machines)\\
+
+After this command is run, the simulator will dump the TM history to standard output. If you'd prefer that not happen, the \texttt{-q} (\underline{q}uiet) flag will cause the interpreter to not output any TM history. The \texttt{-s} (max \underline{s}teps) flag, followed by an integer $k$, will cause the interpreter to only run $k$ steps. The \texttt{-f} (\underline{f}ile output) flag will cause the interpeter to dump the TM history to a history file. The \texttt{-f} flag can only be used if the \texttt{-s} flag is also enabled. Finally, the \texttt{-l} (\underline{l}imited output) flag will cause only one step in 10,000 to be displayed (this flag is only available for simulation of 4-symbol machines). Watch out---if you run the TM for many steps, this can create some truly enormous files! The created TM history file will show up at: \\ \\
+\texttt{parsimony/src/tm/tm2/tm2_histories/}[name of TMD directory]\texttt{_history.txt} (for 2-symbol machines) \\
+or \\
+\texttt{parsimony/src/tm/tm4/tm4_histories/}[name of TMD directory]\texttt{_history.txt} (for 4-symbol machines) \\
+
+\end{document}

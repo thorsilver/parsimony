@@ -12,7 +12,7 @@ else:
 def serializedATN():
     with StringIO() as buf:
         buf.write(u"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3")
-        buf.write(u"+\u0140\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t")
+        buf.write(u"*\u0140\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t")
         buf.write(u"\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r")
         buf.write(u"\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4")
         buf.write(u"\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30")
@@ -41,7 +41,7 @@ def serializedATN():
         buf.write(u"!\3!\3!\3!\7!\u0128\n!\f!\16!\u012b\13!\3!\3!\3!\3!\3")
         buf.write(u"!\3!\5!\u0133\n!\3!\3!\3!\3!\3!\3!\7!\u013b\n!\f!\16")
         buf.write(u"!\u013e\13!\3!\2\5<>@\"\2\4\6\b\n\f\16\20\22\24\26\30")
-        buf.write(u"\32\34\36 \"$&(*,.\60\62\64\668:<>@\2\3\3\2\24\25\u014a")
+        buf.write(u"\32\34\36 \"$&(*,.\60\62\64\668:<>@\2\3\3\2\24\25\u0148")
         buf.write(u"\2B\3\2\2\2\4G\3\2\2\2\6P\3\2\2\2\bU\3\2\2\2\n`\3\2\2")
         buf.write(u"\2\fb\3\2\2\2\16e\3\2\2\2\20h\3\2\2\2\22p\3\2\2\2\24")
         buf.write(u"r\3\2\2\2\26v\3\2\2\2\30z\3\2\2\2\32~\3\2\2\2\34\u0081")
@@ -63,14 +63,14 @@ def serializedATN():
         buf.write(u"\5\20\t\2g\17\3\2\2\2hi\5\34\17\2ij\7\5\2\2jk\5\b\5\2")
         buf.write(u"kl\7\6\2\2l\21\3\2\2\2mq\5\24\13\2nq\5\26\f\2oq\5\30")
         buf.write(u"\r\2pm\3\2\2\2pn\3\2\2\2po\3\2\2\2q\23\3\2\2\2rs\7\7")
-        buf.write(u"\2\2st\7*\2\2tu\7\b\2\2u\25\3\2\2\2vw\7\t\2\2wx\7*\2")
-        buf.write(u"\2xy\7\b\2\2y\27\3\2\2\2z{\7\n\2\2{|\7*\2\2|}\7\b\2\2")
+        buf.write(u"\2\2st\7)\2\2tu\7\b\2\2u\25\3\2\2\2vw\7\t\2\2wx\7)\2")
+        buf.write(u"\2xy\7\b\2\2y\27\3\2\2\2z{\7\n\2\2{|\7)\2\2|}\7\b\2\2")
         buf.write(u"}\31\3\2\2\2~\177\5\34\17\2\177\u0080\7\b\2\2\u0080\33")
-        buf.write(u"\3\2\2\2\u0081\u0082\7*\2\2\u0082\u0087\7\13\2\2\u0083")
-        buf.write(u"\u0084\7*\2\2\u0084\u0086\7\f\2\2\u0085\u0083\3\2\2\2")
+        buf.write(u"\3\2\2\2\u0081\u0082\7)\2\2\u0082\u0087\7\13\2\2\u0083")
+        buf.write(u"\u0084\7)\2\2\u0084\u0086\7\f\2\2\u0085\u0083\3\2\2\2")
         buf.write(u"\u0086\u0089\3\2\2\2\u0087\u0085\3\2\2\2\u0087\u0088")
         buf.write(u"\3\2\2\2\u0088\u008a\3\2\2\2\u0089\u0087\3\2\2\2\u008a")
-        buf.write(u"\u008b\7*\2\2\u008b\u008c\7\r\2\2\u008c\35\3\2\2\2\u008d")
+        buf.write(u"\u008b\7)\2\2\u008b\u008c\7\r\2\2\u008c\35\3\2\2\2\u008d")
         buf.write(u"\u008e\7\16\2\2\u008e\u008f\7\13\2\2\u008f\u0090\5\64")
         buf.write(u"\33\2\u0090\u0091\7\r\2\2\u0091\u0092\7\5\2\2\u0092\u0093")
         buf.write(u"\5.\30\2\u0093\u0094\7\6\2\2\u0094\37\3\2\2\2\u0095\u0096")
@@ -81,7 +81,7 @@ def serializedATN():
         buf.write(u"!\3\2\2\2\u00a1\u00a2\7\20\2\2\u00a2\u00a3\7\13\2\2\u00a3")
         buf.write(u"\u00a4\5\62\32\2\u00a4\u00a5\7\r\2\2\u00a5\u00a6\7\5")
         buf.write(u"\2\2\u00a6\u00a7\5,\27\2\u00a7\u00a8\7\6\2\2\u00a8#\3")
-        buf.write(u"\2\2\2\u00a9\u00aa\7\21\2\2\u00aa\u00ab\7*\2\2\u00ab")
+        buf.write(u"\2\2\2\u00a9\u00aa\7\21\2\2\u00aa\u00ab\7)\2\2\u00ab")
         buf.write(u"\u00ac\7\b\2\2\u00ac%\3\2\2\2\u00ad\u00ae\7\22\2\2\u00ae")
         buf.write(u"\u00af\7\13\2\2\u00af\u00b0\5\60\31\2\u00b0\u00b1\7\r")
         buf.write(u"\2\2\u00b1\u00b2\7\5\2\2\u00b2\u00b3\5(\25\2\u00b3\u00b4")
@@ -93,7 +93,7 @@ def serializedATN():
         buf.write(u"\5<\37\2\u00c3\63\3\2\2\2\u00c4\u00c5\5<\37\2\u00c5\65")
         buf.write(u"\3\2\2\2\u00c6\u00ca\5<\37\2\u00c7\u00ca\5> \2\u00c8")
         buf.write(u"\u00ca\5@!\2\u00c9\u00c6\3\2\2\2\u00c9\u00c7\3\2\2\2")
-        buf.write(u"\u00c9\u00c8\3\2\2\2\u00ca\67\3\2\2\2\u00cb\u00cc\7*")
+        buf.write(u"\u00c9\u00c8\3\2\2\2\u00ca\67\3\2\2\2\u00cb\u00cc\7)")
         buf.write(u"\2\2\u00cc\u00cd\7\23\2\2\u00cd\u00ce\5\66\34\2\u00ce")
         buf.write(u"\u00cf\7\b\2\2\u00cf9\3\2\2\2\u00d0\u00d1\t\2\2\2\u00d1")
         buf.write(u"\u00d2\7\b\2\2\u00d2;\3\2\2\2\u00d3\u00d4\b\37\1\2\u00d4")
@@ -102,8 +102,8 @@ def serializedATN():
         buf.write(u"\t\u00da\u00db\7\30\2\2\u00db\u00e7\5<\37\7\u00dc\u00dd")
         buf.write(u"\7\13\2\2\u00dd\u00de\5<\37\2\u00de\u00df\7\r\2\2\u00df")
         buf.write(u"\u00e7\3\2\2\2\u00e0\u00e1\7\"\2\2\u00e1\u00e7\5> \2")
-        buf.write(u"\u00e2\u00e3\7#\2\2\u00e3\u00e7\5@!\2\u00e4\u00e7\7+")
-        buf.write(u"\2\2\u00e5\u00e7\7*\2\2\u00e6\u00d3\3\2\2\2\u00e6\u00d8")
+        buf.write(u"\u00e2\u00e3\7#\2\2\u00e3\u00e7\5@!\2\u00e4\u00e7\7*")
+        buf.write(u"\2\2\u00e5\u00e7\7)\2\2\u00e6\u00d3\3\2\2\2\u00e6\u00d8")
         buf.write(u"\3\2\2\2\u00e6\u00da\3\2\2\2\u00e6\u00dc\3\2\2\2\u00e6")
         buf.write(u"\u00e0\3\2\2\2\u00e6\u00e2\3\2\2\2\u00e6\u00e4\3\2\2")
         buf.write(u"\2\u00e6\u00e5\3\2\2\2\u00e7\u00f6\3\2\2\2\u00e8\u00e9")
@@ -114,7 +114,7 @@ def serializedATN():
         buf.write(u"\u00f5\5<\37\f\u00f4\u00e8\3\2\2\2\u00f4\u00eb\3\2\2")
         buf.write(u"\2\u00f4\u00ee\3\2\2\2\u00f4\u00f1\3\2\2\2\u00f5\u00f8")
         buf.write(u"\3\2\2\2\u00f6\u00f4\3\2\2\2\u00f6\u00f7\3\2\2\2\u00f7")
-        buf.write(u"=\3\2\2\2\u00f8\u00f6\3\2\2\2\u00f9\u0112\b \1\2\u00fa")
+        buf.write(u"=\3\2\2\2\u00f8\u00f6\3\2\2\2\u00f9\u00fa\b \1\2\u00fa")
         buf.write(u"\u00fb\5@!\2\u00fb\u00fc\7!\2\2\u00fc\u00fd\5<\37\2\u00fd")
         buf.write(u"\u0112\3\2\2\2\u00fe\u00ff\7\13\2\2\u00ff\u0100\5> \2")
         buf.write(u"\u0100\u0101\7\r\2\2\u0101\u0112\3\2\2\2\u0102\u0108")
@@ -123,31 +123,30 @@ def serializedATN():
         buf.write(u"\2\u0108\u0106\3\2\2\2\u0108\u0109\3\2\2\2\u0109\u010b")
         buf.write(u"\3\2\2\2\u010a\u0108\3\2\2\2\u010b\u010c\5<\37\2\u010c")
         buf.write(u"\u010d\7%\2\2\u010d\u0112\3\2\2\2\u010e\u010f\7$\2\2")
-        buf.write(u"\u010f\u0112\7%\2\2\u0110\u0112\7*\2\2\u0111\u00f9\3")
-        buf.write(u"\2\2\2\u0111\u00fa\3\2\2\2\u0111\u00fe\3\2\2\2\u0111")
-        buf.write(u"\u0102\3\2\2\2\u0111\u010e\3\2\2\2\u0111\u0110\3\2\2")
-        buf.write(u"\2\u0112\u011b\3\2\2\2\u0113\u0114\f\7\2\2\u0114\u0115")
-        buf.write(u"\7\36\2\2\u0115\u011a\5> \b\u0116\u0117\f\b\2\2\u0117")
-        buf.write(u"\u0118\7\34\2\2\u0118\u011a\5<\37\2\u0119\u0113\3\2\2")
-        buf.write(u"\2\u0119\u0116\3\2\2\2\u011a\u011d\3\2\2\2\u011b\u0119")
-        buf.write(u"\3\2\2\2\u011b\u011c\3\2\2\2\u011c?\3\2\2\2\u011d\u011b")
-        buf.write(u"\3\2\2\2\u011e\u0133\b!\1\2\u011f\u0120\7\13\2\2\u0120")
-        buf.write(u"\u0121\5@!\2\u0121\u0122\7\r\2\2\u0122\u0133\3\2\2\2")
-        buf.write(u"\u0123\u0129\7&\2\2\u0124\u0125\5> \2\u0125\u0126\7\f")
-        buf.write(u"\2\2\u0126\u0128\3\2\2\2\u0127\u0124\3\2\2\2\u0128\u012b")
-        buf.write(u"\3\2\2\2\u0129\u0127\3\2\2\2\u0129\u012a\3\2\2\2\u012a")
-        buf.write(u"\u012c\3\2\2\2\u012b\u0129\3\2\2\2\u012c\u012d\5> \2")
-        buf.write(u"\u012d\u012e\7\'\2\2\u012e\u0133\3\2\2\2\u012f\u0130")
-        buf.write(u"\7&\2\2\u0130\u0133\7&\2\2\u0131\u0133\7*\2\2\u0132\u011e")
-        buf.write(u"\3\2\2\2\u0132\u011f\3\2\2\2\u0132\u0123\3\2\2\2\u0132")
-        buf.write(u"\u012f\3\2\2\2\u0132\u0131\3\2\2\2\u0133\u013c\3\2\2")
-        buf.write(u"\2\u0134\u0135\f\7\2\2\u0135\u0136\7\37\2\2\u0136\u013b")
-        buf.write(u"\5@!\b\u0137\u0138\f\b\2\2\u0138\u0139\7\35\2\2\u0139")
-        buf.write(u"\u013b\5> \2\u013a\u0134\3\2\2\2\u013a\u0137\3\2\2\2")
-        buf.write(u"\u013b\u013e\3\2\2\2\u013c\u013a\3\2\2\2\u013c\u013d")
-        buf.write(u"\3\2\2\2\u013dA\3\2\2\2\u013e\u013c\3\2\2\2\24GPU`p\u0087")
-        buf.write(u"\u00c9\u00e6\u00f4\u00f6\u0108\u0111\u0119\u011b\u0129")
-        buf.write(u"\u0132\u013a\u013c")
+        buf.write(u"\u010f\u0112\7%\2\2\u0110\u0112\7)\2\2\u0111\u00f9\3")
+        buf.write(u"\2\2\2\u0111\u00fe\3\2\2\2\u0111\u0102\3\2\2\2\u0111")
+        buf.write(u"\u010e\3\2\2\2\u0111\u0110\3\2\2\2\u0112\u011b\3\2\2")
+        buf.write(u"\2\u0113\u0114\f\7\2\2\u0114\u0115\7\36\2\2\u0115\u011a")
+        buf.write(u"\5> \b\u0116\u0117\f\b\2\2\u0117\u0118\7\34\2\2\u0118")
+        buf.write(u"\u011a\5<\37\2\u0119\u0113\3\2\2\2\u0119\u0116\3\2\2")
+        buf.write(u"\2\u011a\u011d\3\2\2\2\u011b\u0119\3\2\2\2\u011b\u011c")
+        buf.write(u"\3\2\2\2\u011c?\3\2\2\2\u011d\u011b\3\2\2\2\u011e\u011f")
+        buf.write(u"\b!\1\2\u011f\u0120\7\13\2\2\u0120\u0121\5@!\2\u0121")
+        buf.write(u"\u0122\7\r\2\2\u0122\u0133\3\2\2\2\u0123\u0129\7&\2\2")
+        buf.write(u"\u0124\u0125\5> \2\u0125\u0126\7\f\2\2\u0126\u0128\3")
+        buf.write(u"\2\2\2\u0127\u0124\3\2\2\2\u0128\u012b\3\2\2\2\u0129")
+        buf.write(u"\u0127\3\2\2\2\u0129\u012a\3\2\2\2\u012a\u012c\3\2\2")
+        buf.write(u"\2\u012b\u0129\3\2\2\2\u012c\u012d\5> \2\u012d\u012e")
+        buf.write(u"\7&\2\2\u012e\u0133\3\2\2\2\u012f\u0130\7&\2\2\u0130")
+        buf.write(u"\u0133\7&\2\2\u0131\u0133\7)\2\2\u0132\u011e\3\2\2\2")
+        buf.write(u"\u0132\u0123\3\2\2\2\u0132\u012f\3\2\2\2\u0132\u0131")
+        buf.write(u"\3\2\2\2\u0133\u013c\3\2\2\2\u0134\u0135\f\7\2\2\u0135")
+        buf.write(u"\u0136\7\37\2\2\u0136\u013b\5@!\b\u0137\u0138\f\b\2\2")
+        buf.write(u"\u0138\u0139\7\35\2\2\u0139\u013b\5> \2\u013a\u0134\3")
+        buf.write(u"\2\2\2\u013a\u0137\3\2\2\2\u013b\u013e\3\2\2\2\u013c")
+        buf.write(u"\u013a\3\2\2\2\u013c\u013d\3\2\2\2\u013dA\3\2\2\2\u013e")
+        buf.write(u"\u013c\3\2\2\2\24GPU`p\u0087\u00c9\u00e6\u00f4\u00f6")
+        buf.write(u"\u0108\u0111\u0119\u011b\u0129\u0132\u013a\u013c")
         return buf.getvalue()
 
 
@@ -164,7 +163,11 @@ class LaconicParser ( Parser ):
     literalNames = [ u"<INVALID>", u"'func'", u"'proc'", u"'{'", u"'}'", 
                      u"'int'", u"';'", u"'list'", u"'list2'", u"'('", u"','", 
                      u"')'", u"'while'", u"'for'", u"'if'", u"'print'", 
-                     u"'ifelse'", u"'='", u"'return'", u"'halt'" ]
+                     u"'ifelse'", u"'='", u"'return'", u"'halt'", u"<INVALID>", 
+                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
+                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
+                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
+                     u"<INVALID>", u"<INVALID>", u"<INVALID>", u"':'" ]
 
     symbolicNames = [ u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
                       u"<INVALID>", u"<INVALID>", u"<INVALID>", u"<INVALID>", 
@@ -176,8 +179,8 @@ class LaconicParser ( Parser ):
                       u"OPERATOR_APPEND", u"OPERATOR_APPEND2", u"OPERATOR_CONCAT", 
                       u"OPERATOR_CONCAT2", u"OPERATOR_INDEX", u"OPERATOR_INDEX2", 
                       u"OPERATOR_LENGTH", u"OPERATOR_LENGTH2", u"BEGIN_LIST", 
-                      u"END_LIST", u"BEGIN_LIST2", u"END_LIST2", u"COMMENT", 
-                      u"WS", u"VAR", u"INT" ]
+                      u"END_LIST", u"BEGINEND_LIST2", u"COMMENT", u"WS", 
+                      u"VAR", u"INT" ]
 
     RULE_prog = 0
     RULE_trueprog = 1
@@ -257,12 +260,11 @@ class LaconicParser ( Parser ):
     OPERATOR_LENGTH2=33
     BEGIN_LIST=34
     END_LIST=35
-    BEGIN_LIST2=36
-    END_LIST2=37
-    COMMENT=38
-    WS=39
-    VAR=40
-    INT=41
+    BEGINEND_LIST2=36
+    COMMENT=37
+    WS=38
+    VAR=39
+    INT=40
 
     def __init__(self, input):
         super(LaconicParser, self).__init__(input)
@@ -2037,9 +2039,6 @@ class LaconicParser ( Parser ):
             self.state = 271
             la_ = self._interp.adaptivePredict(self._input,11,self._ctx)
             if la_ == 1:
-                pass
-
-            elif la_ == 2:
                 self.state = 248
                 self.list2expr(0)
                 self.state = 249
@@ -2048,7 +2047,7 @@ class LaconicParser ( Parser ):
                 self.intexpr(0)
                 pass
 
-            elif la_ == 3:
+            elif la_ == 2:
                 self.state = 252
                 self.match(LaconicParser.T__8)
                 self.state = 253
@@ -2057,7 +2056,7 @@ class LaconicParser ( Parser ):
                 self.match(LaconicParser.T__10)
                 pass
 
-            elif la_ == 4:
+            elif la_ == 3:
                 self.state = 256
                 self.match(LaconicParser.BEGIN_LIST)
                 self.state = 262
@@ -2079,14 +2078,14 @@ class LaconicParser ( Parser ):
                 self.match(LaconicParser.END_LIST)
                 pass
 
-            elif la_ == 5:
+            elif la_ == 4:
                 self.state = 268
                 self.match(LaconicParser.BEGIN_LIST)
                 self.state = 269
                 self.match(LaconicParser.END_LIST)
                 pass
 
-            elif la_ == 6:
+            elif la_ == 5:
                 self.state = 270
                 self.match(LaconicParser.VAR)
                 pass
@@ -2155,11 +2154,11 @@ class LaconicParser ( Parser ):
                 return self.getTypedRuleContext(LaconicParser.List2exprContext,i)
 
 
-        def BEGIN_LIST2(self, i=None):
+        def BEGINEND_LIST2(self, i=None):
             if i is None:
-                return self.getTokens(LaconicParser.BEGIN_LIST2)
+                return self.getTokens(LaconicParser.BEGINEND_LIST2)
             else:
-                return self.getToken(LaconicParser.BEGIN_LIST2, i)
+                return self.getToken(LaconicParser.BEGINEND_LIST2, i)
 
         def listexpr(self, i=None):
             if i is None:
@@ -2167,9 +2166,6 @@ class LaconicParser ( Parser ):
             else:
                 return self.getTypedRuleContext(LaconicParser.ListexprContext,i)
 
-
-        def END_LIST2(self):
-            return self.getToken(LaconicParser.END_LIST2, 0)
 
         def VAR(self):
             return self.getToken(LaconicParser.VAR, 0)
@@ -2205,9 +2201,6 @@ class LaconicParser ( Parser ):
             self.state = 304
             la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
             if la_ == 1:
-                pass
-
-            elif la_ == 2:
                 self.state = 285
                 self.match(LaconicParser.T__8)
                 self.state = 286
@@ -2216,9 +2209,9 @@ class LaconicParser ( Parser ):
                 self.match(LaconicParser.T__10)
                 pass
 
-            elif la_ == 3:
+            elif la_ == 2:
                 self.state = 289
-                self.match(LaconicParser.BEGIN_LIST2)
+                self.match(LaconicParser.BEGINEND_LIST2)
                 self.state = 295
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
@@ -2235,17 +2228,17 @@ class LaconicParser ( Parser ):
                 self.state = 298
                 self.listexpr(0)
                 self.state = 299
-                self.match(LaconicParser.END_LIST2)
+                self.match(LaconicParser.BEGINEND_LIST2)
+                pass
+
+            elif la_ == 3:
+                self.state = 301
+                self.match(LaconicParser.BEGINEND_LIST2)
+                self.state = 302
+                self.match(LaconicParser.BEGINEND_LIST2)
                 pass
 
             elif la_ == 4:
-                self.state = 301
-                self.match(LaconicParser.BEGIN_LIST2)
-                self.state = 302
-                self.match(LaconicParser.BEGIN_LIST2)
-                pass
-
-            elif la_ == 5:
                 self.state = 303
                 self.match(LaconicParser.VAR)
                 pass
