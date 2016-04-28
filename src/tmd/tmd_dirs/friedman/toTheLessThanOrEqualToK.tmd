@@ -2,7 +2,7 @@ input set k mapper potentialVertex i base h1 h2 h3 h4 output !0 !1 !2
 
 // Auto-generated code for function toTheLessThanOrEqualToK
 
-function empty2 output !0 !1 
+function empty2 output !0 
 function zeroAndEmptyAndLessThanLength i set h1 mapper !0 !1 !2 
 WHILE_TEST_0: function BUILTIN_assign !0 h1
 [!0] E (WHILE_STATE_0_FALSE); 1 ()

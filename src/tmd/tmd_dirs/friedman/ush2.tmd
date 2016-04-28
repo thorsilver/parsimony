@@ -2,7 +2,7 @@ input l2 eightKNRFacFac i h1 h2 hl1 hl2 output !0 !1 !2
 
 // Auto-generated code for function ush2
 
-function empty2 output !0 !1 
+function empty2 output !0 
 function zeroAndLessThanLength2 i l2 h1 !0 !1 !2 
 WHILE_TEST_0: function BUILTIN_assign !0 h1
 [!0] E (WHILE_STATE_0_FALSE); 1 ()

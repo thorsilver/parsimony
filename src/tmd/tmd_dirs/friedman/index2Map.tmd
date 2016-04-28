@@ -2,7 +2,7 @@ input l2 indexList i h hl output !0 !1 !2
 
 // Auto-generated code for function index2Map
 
-function empty2 output !0 !1 
+function empty2 output !0 
 function zeroAndLessThanLength i indexList h !0 !1 !2 
 WHILE_TEST_0: function BUILTIN_assign !0 h
 [!0] E (WHILE_STATE_0_FALSE); 1 ()
