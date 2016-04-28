@@ -4,7 +4,7 @@
 \usepackage{courier}
 \usepackage{underscore}
 
-\title{TMD ReadMe}
+\title{Laconic ReadMe}
 \author{Adam Yedidia}
 
 \begin{document}
@@ -29,27 +29,28 @@ Then, BEFORE running any of the commands described below, navigate to: \\ \\
 
 \section{Interpretation}
 
-To interpret a Laconic file---to run the Laconic program as though it was in a normal programming language, and evaluate, and see what would happen to a multi-tape Turing machine with a stack if the TMD program's commands were run explicitly---run the command: \\ \\ 
-\texttt{python tmd_interpreter.py }[name of TMD directory] \\
+To interpret a Laconic file---to run the Laconic program as though it was in a normal programming language, and see what would happen if the Laconic program's commands were run explicitly---run the command: \\ \\ 
+\texttt{python laconic_interpreter.py }[name of Laconic program without \texttt{.lac} extension] \\
 
 After you run this command, the interpreter will evaluate the program until an error is thrown or the program halts. It will also print any variables that you ask it to print.
 
 \section{Compilation}
 
-To compile a Laconic program 
-
 To compile a Laconic program---to transform it into a 2-symbol Turing machine---run the command: \\ \\
-\texttt{python tmd_to_2s_tm_compiler.py }[name of TMD directory] \\
+\texttt{python laconic_to_2s_tm_compiler.py }[name of Laconic program without \texttt{.lac} extension] \\
 
-This will cause a parsimonious 2-symbol Turing machine with equivalent behavior to your TMD program to appear at: \\ \\
-\texttt{parsimony/src/tm/tm2/tm2_files/}[name of TMD directory]\texttt{.tm2}
+This will cause a parsimonious 2-symbol Turing machine with equivalent behavior to your Laconic program to appear at: \\ \\
+\texttt{parsimony/src/tm/tm2/tm2_files/}[name of Laconic program without \texttt{.lac} extension]\texttt{.tm2}
 
-If you'd prefer to transform your TMD directory to a 4-symbol Turing machine, run the command: \\ \\
-\texttt{python tmd_to_4s_tm_compiler.py }[name of TMD directory] \\
+If you'd prefer to transform your Laconic program to a 4-symbol Turing machine, run the command: \\ \\
+\texttt{python laconic_to_4s_tm_compiler.py }[name of Laconic program without \texttt{.lac} extension] \\
 
-This will cause a 4-symbol Turing machine with equivalent behavior to your TMD program to appear at: \\ \\
-\texttt{parsimony/src/tm/tm4/tm4_files/}[name of TMD directory]\texttt{.tm4} \\
+This will cause a 4-symbol Turing machine with equivalent behavior to your Laconic program to appear at: \\ \\
+\texttt{parsimony/src/tm/tm4/tm4_files/}[name of Laconic program without \texttt{.lac} extension]\texttt{.tm4} \\
 
-Note that unlike the 2-symbol compiler, the 4-symbol compiler is not parsimonious; the 4-symbol Turing machine you'll end up with will have plenty of states. This option is primarily intended for if you want to watch a Turing machine execute which can be thought of as an equivalently-behaved but much-easier-to-read version of the 2-symbol machine. The lack of efficiency in states in the 4-symbol machine comes from the fact that the introspection algorithm is harder to implement with 4 symbols than with 2, and people are generally not interested in results relating to 4-symbol Turing machines in any case.
+Note that unlike the 2-symbol compiler, the 4-symbol compiler is not parsimonious; the 4-symbol Turing machine you'll end up with will have plenty of states. This option is primarily intended for if you want to watch a Turing machine execute which can be thought of as an equivalently-behaved but much-easier-to-read version of the 2-symbol machine. The lack of efficiency in states in the 4-symbol machine comes from the fact that the introspection algorithm is harder to implement with 4 symbols than with 2, and people are generally not interested in results relating to 4-symbol Turing machines in any case. \\
+
+Finally, you can compile a Laconic program just to TMD: \\ \\
+\texttt{python laconic_to_tmd_compiler.py }[name of Laconic program without \texttt{.lac} extension]
 
 \end{document}
