@@ -2,6 +2,8 @@
 
 Hello, stranger! This repository contains papers, tools, and documentation related to the study of parsimonious Turing machine generation. This project's only dependency is on Python 2.7, although in order to clone the repository you will also need to have Git.
 
+This(https://www.youtube.com/watch?v=Rt_SfOkk0YM) is a short tutorial video intended to give a brief explanation of how to use the tools in this repository. This(https://www.youtube.com/watch?v=QtO8EWwggx4&feature=youtu.be) is a somewhat longer video that goes into more detail about how the compilation process works, and what the Turing machines you generate are really doing.
+
 At the highest level, we have Laconic, which is a language designed to be easily usable without any specialized knowledge of Turing machines. To find documentation explaining how Laconic works and how to use it, navigate to: 
 
 ```
