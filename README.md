@@ -1,6 +1,8 @@
 # parsimony
 
-Hello, stranger! This repository contains papers, tools, and documentation related to the study of parsimonious Turing machine generation. This project's only dependency is on Python 2.7, although in order to clone the repository you will also need to have Git.
+Hello, stranger! This repository contains papers, tools, and documentation related to the study of parsimonious Turing machine generation. Update: This project depends on Python 2.7 and on ANTLR4, although in order to clone the repository you will also need to have Git. (Assuming you have Python >= 2.7.9 or >= 3.4, you already have pip, Python's package manager, in which case you can install ANTLR4 easily with the command ```pip install antlr4-python2-runtime```. Thanks to Shawn Ligocki for pointing this out.)
+
+
 
 [This](https://www.youtube.com/watch?v=Rt_SfOkk0YM) is a short tutorial video intended to give a brief explanation of how to use the tools in this repository. [This](https://www.youtube.com/watch?v=QtO8EWwggx4&feature=youtu.be) is a somewhat longer video that goes into more detail about how the compilation process works, and what the Turing machines you generate are really doing.
 
