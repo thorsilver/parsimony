@@ -26,6 +26,7 @@
 \newcommand{\bbstatenum}{$BB($7,910) }
 \newcommand{\bbstatenumcomma}{$BB($7,910), }
 \newcommand{\bbstatenumperiod}{$BB($7,910). }
+\newcommand{\bbbitsperiod}{157,819.}
 
 \newcommand{\zhaltstate}{\texttt{7862}}
 \newcommand{\ghaltstate}{\texttt{5135}}
@@ -61,7 +62,7 @@
 
 \begin{abstract}
 
-Since the definition of the Busy Beaver function by Rad\'{o} in 1962, an interesting open question has been what the smallest value of $n$ for which $BB(n)$ is independent of ZFC set theory. \ Is this $n$ approximately $10$, or closer to 1,000,000, or is it even larger? \ In this paper, we show that it is at most \statenum by presenting an explicit description of a \statenumstate Turing machine $Z$ with 1 tape and a 2-symbol alphabet that cannot be proved to run forever in ZFC (even though it presumably does), assuming ZFC is consistent. \ The machine is based on work of Harvey Friedman on independent statements involving order-invariant graphs. \ In doing so, we give the first known upper bound on the highest provable Busy Beaver number in ZFC. \ We also present a \gbstatenumstate Turing machine $G$ that halts if and only if there is a counterexample to Goldbach's conjecture, and a \rmstatenumstate Turing machine $R$ that halts if and only if the Riemann hypothesis is false. \ To create $G$, $R$, and $Z$, we develop and use a higher-level language, Laconic, which is much more convenient than direct state manipulation.
+Since the definition of the Busy Beaver function by Rad\'{o} in 1962, an interesting open question has been what the smallest value of $n$ for which $BB(n)$ is independent of ZFC set theory. \ Is this $n$ approximately $10$, or closer to 1,000,000, or is it even larger? \ In this paper, we show that it is at most \statenum by presenting an explicit description of a \statenumstate Turing machine $Z$ with 1 tape and a 2-symbol alphabet that cannot be proved to run forever in ZFC (even though it presumably does), assuming ZFC is consistent. \ The machine is based on work of Harvey Friedman on independent statements involving order-invariant graphs. \ In doing so, we give the first known upper bound on the highest provable Busy Beaver number in ZFC. \ To create $Z$, we develop and use a higher-level language, Laconic, which is much more convenient than direct state manipulation. \ We also use Laconic to design two Turing machines, $G$ and $R$, that halt if and only if there are counterexamples to Goldbach's conjecture and Riemann's hypothesis, respectively.
 
 \end{abstract}
 
@@ -84,7 +85,7 @@ Like any axiomatic system capable of encoding arithmetic, ZFC is constrained by 
 
 In particular, consider a Turing machine $Z$ that enumerates, one after the other, each of the provable statements in ZFC. \ To describe how such a machine might be constructed, $Z$ could iterate over the axioms and inference rules of ZFC, applying each in every possible way to each conclusion or pair of conclusions that had been reached so far. \ We might ask $Z$ to halt if it ever reaches a contradiction; in other words, $Z$ will halt if and only if it finds a proof of $0 = 1$. \ Because this machine will enumerate \emph{every} provable statement in ZFC, it will run forever if and only if ZFC is consistent.
 
-It follows that $Z$ is a Turing machine for which the question of its behavior (whether or not it halts when run indefinitely) is equivalent to the consistency of ZFC.\footnote{While we will talk about ZFC throughout this paper, rather than simple ZF set theory, this is simply a convention. \ For our purposes, the Axiom of Choice is irrelevant: the consistency of ZFC is equivalent to the consistency of simple ZF set theory,~\cite{godelcohen} and ZFC and ZF prove exactly the same arithmetical statements (which include, among other things, statements about whether Turing machines halt).~\cite{schoenfield}} \ Therefore, just as ZFC cannot prove its own consistency (assuming ZFC is consistent), ZFC also cannot prove that $Z$ will run forever.
+It follows that $Z$ is a Turing machine for which the question of its behavior (whether or not it halts when run indefinitely) is equivalent to the consistency of ZFC.\footnote{While we will talk about ZFC throughout this paper, rather than simple ZF set theory, this is simply a convention. \ For our purposes, the Axiom of Choice is irrelevant: the consistency of ZFC is equivalent to the consistency of simple ZF set theory,~\cite{godelcohen} and ZFC and ZF prove exactly the same arithmetical statements (which include, among other things, statements about whether Turing machines halt).~\cite{schoenfield}} \ Therefore, just as ZFC cannot prove its own consistency (assuming ZFC is consistent), ZFC also cannot prove that $Z$ will run forever. In other words, the statement, ``$Z$ will run forever'' is \emph{independent of} ZFC.
 
 This is interesting because, while the undecidability of the halting problem tells us that there cannot exist an algorithmic method for determining whether an \emph{arbitrary} Turing machine loops or halts, $Z$ is an example of a \emph{specific} Turing machine whose behavior cannot be proven one way or the other using the foundation of modern mathematics. \ Mathematicians and computer scientists think of themselves as being able to determine how a given algorithm will behave if given enough time to stare at it; despite this intuition, $Z$ is a machine whose behavior we can never prove without assuming axioms more powerful than those generally assumed in modern mathematics.
 
@@ -92,14 +93,14 @@ This is interesting because, while the undecidability of the halting problem tel
 
 There are many slightly different definitions of Turing machines. \ For example, some definitions allow the machine to have multiple tapes; others only allow it to have one; some allow an arbitrarily large alphabet, while others allow only two symbols, and so on. \ In most research regarding Turing machines, mathematicians don't concern themselves with which of these models to use, because any one can simulate the others (usually efficiently). \ However, because this work is concerned with upper-bounding the exact number of states required to perform certain tasks, it's important to define the model precisely. \ The model we choose here is traditional for the Busy Beaver function. 
 
-Formally, a $k$-state Turing machine is a 7-tuple $M = (Q, \Gamma, b, \Sigma, \delta, q_0, F)$, where: \\ \\
+Formally, a $k$-state Turing machine is a 7-tuple $M = (Q, \Gamma, a, \Sigma, \delta, q_0, F)$, where: \\ \\
 $Q$ is the set of $k$ \emph{states} $\{q_0, q_1, \dots, q_{k-2}, q_{k-1}\}$ \\
 $\Gamma = \{a, b\}$ is the set of \emph{tape alphabet symbols} \\
 \texttt{a} is the \emph{blank symbol} \\
-$\Sigma = \empty$ is the set of \emph{input symbols} \\\
+$\Sigma = \empty$ is the set of \emph{input symbols} \\
 $\delta = Q \times \Gamma \rightarrow (Q \cup F) \times \Gamma \times \{L, R\}$ is the \emph{transition function} \\
 $q_0$ is the \emph{start state} \\
-$F = \{\textrm{HALT}, \textrm{ERROR}\}$ is the set of \emph{halting transitions}. \\
+$F = \{\textrm{HALT}, \textrm{ERROR}\}$ is the set of \emph{halting states}. \\
 
 A Turing machine's \emph{states} make up the Turing machine's easily-accessible, finite memory. \ The Turing machine's state is initialized to $q_0$.
 
@@ -107,11 +108,11 @@ The \emph{tape alphabet symbols} correspond to the symbols that can be written o
 
 In this work, all Turing machines are run on the all-\texttt{a} input.
 
-The \emph{transition function} encodes the Turing machine's behavior. \ It takes two inputs: the current state of the Turing machine (an element of $Q$) and the symbol read off the tape (an element of $\Gamma$). \ It outputs three instructions: what state to enter (an element of $Q$), what symbol to write onto the tape (an element of $\Gamma$) and what direction to move the head in (an element of $\{L, R\}$). \ A transition function specifies the entire behavior of the Turing machine in all cases.
+The \emph{transition function} encodes the Turing machine's behavior. \ It takes two inputs: the current state of the Turing machine (an element of $Q \cup F$) and the symbol read off the tape (an element of $\Gamma$). \ It outputs three instructions: what state to enter (an element of $Q \cup F$), what symbol to write onto the tape (an element of $\Gamma$) and what direction to move the head in (an element of $\{L, R\}$). \ A transition function specifies the entire behavior of the Turing machine in all cases.
 
 The \emph{start state} is the state that the Turing machine is in at initialization.
 
-A \emph{halting transition} is a transition that causes the Turing machine to halt. \ While having three possible halting transitions is not necessary for our purposes, being able to differentiate between different types of halting (HALT and ERROR) is useful for testing.
+A \emph{halting transition} is a transition to a halting state, which causes the Turing machine to halt. \ While having three possible halting transitions is not necessary for our purposes, being able to differentiate between different types of halting (HALT and ERROR) is useful for testing.
 
 \subsection{The Busy Beaver Function}
 
@@ -130,7 +131,7 @@ $$BB(2) = 6$$
 $$BB(3) = 21$$
 $$BB(4) = 107$$
 
-For $BB(5)$ and $BB(6)$, only lower bounds are known: $BB(5) \ge$ 47,176,870, and $BB(6) \ge 7.4 \times 10^{\textrm{36,534}}$. \ Researchers have worked on pinning down the value of $BB(5)$ exactly, and some consider it to be possibly within reach. \ A summary of the current state of human knowledge about Busy Beaver values can be found at \cite{bbvalues}.
+For $BB(5)$, $BB(6)$, and $BB(7)$ only lower bounds are known: $BB(5) \ge$ 47,176,870, $BB(6) > 7.4 \times 10^{\textrm{36,534}}$, and $BB(7) > 10^{10^{10^{10^{10^7}}}}$. Additionally, $BB(22)$ is known to be larger than Graham's Number (a famous huge number from Ramsey theory, obtained by iterating the Ackermann function 64 times)~\cite{bbvalues}\cite{bigbbvalues}\cite{grahamsnumber}. \ Researchers have worked on pinning down the value of $BB(5)$ exactly, and some consider it to be possibly within reach.
 
 Another way to discuss the Busy Beaver sequence is to say that modern mathematics has established a \emph{lower bound} of $4$ on the highest provable Busy Beaver value. \ In this paper, we prove the first known \emph{upper bound} on the highest provable Busy Beaver value in ZFC; that is, we give a value of $k$, namely \statenumcomma such that the value of $BB(k)$ cannot be proven in ZFC.
 
@@ -148,7 +149,8 @@ Part of the charm of Turing machines is that they give us a ``standard reference
 
 In this paper, we use three ideas for generating parsimonious Turing machines: Harvey Friedman's mathematical statements, \emph{on-tape processing}, and \emph{introspective} Turing machines. \ The last of these ideas was proposed, under a different name and with some variations, by Ben-Amram and Petersen in 2002 \cite{benamram}. \ These three ideas are explained in more detail in Subsections~\ref{sec:friedmanstate},~\ref{sec:ontape}, and~\ref{sec:introspect}, respectively, but we summarize them very briefly here.
 
-The first idea is simply to use the research done by Friedman into finding simple-to-express statements that are equivalent to the consistency of various axiomatic systems. \ In particular, we use a statement discovered by Friedman to be equivalent to the consistency of a set theory stronger than ZFC (and whose consistency, therefore, would imply the consistency of ZFC).~\cite{friedman}
+The first idea is simply to use the research done by Friedman into finding simple-to-express statements that are equivalent to the consistency of various axiomatic systems. \ In particular, we use a statement discovered by Friedman to be equivalent to the consistency of a set theory stronger than ZFC (and whose consistency, therefore, would imply the consistency of ZFC).\footnotemark~\cite{friedman}
+\footnotetext{It is unclear whether using Friedman's statements in fact does decrease the state usage of the Turing machines created, or whether a direct approach would perform better.~\cite{comments} However, we find it much easier to reason about programs encoding graph-theoretic statements than programs that enumerate proofs using first-order logic!}
 
 The second idea, on-tape processing, is a way to encode high-level commands into a Turing machine parsimoniously. \ Instead of converting commands to groups of states directly, which incurs a multiplicative overhead based on how large these groups need to be, on-tape processing begins by writing the commands onto the tape, using as efficient an encoding as possible. \ Then, once the commands are on the tape, the commands are processed by a single group of states that understands how to interpret them.
 
@@ -174,16 +176,18 @@ We recommend that programmers hoping to use our tools to generate their own enco
 Gregory Chaitin raised the problem of proving a version of our result in his book \emph{The Limits of Mathematics}.~\cite{chaitin} \ He wrote:
 
 \begin{displayquote}
-\noindent I would like to have somebody program out Zermelo-Fraenkel set theory in my version of LISP, which is pretty close to normal LISP as far as this task in concerned, just to see how many bits of complexity mathematicians normally assume \dots If you programmed ZF, you'd get a really sharp incompleteness result. \ It wouldn't say that you can get at most $H(ZF) + 15328$ bits of [Chaitin's halting probability] $\Omega$, it would say, perhaps, at most 96000 bits! \ We'd have a much more definite incompleteness theorem.
+\noindent I would like to have somebody program out Zermelo-Fraenkel set theory in my version of LISP, which is pretty close to normal LISP as far as this task is concerned, just to see how many bits of complexity mathematicians normally assume \dots If you programmed ZF, you'd get a really sharp incompleteness result. \ It wouldn't say that you can get at most $H(ZF) + 15328$ bits of [Chaitin's halting probability] $\Omega$, it would say, perhaps, at most 96000 bits! \ We'd have a much more definite incompleteness theorem.
 \end{displayquote}
 
-We did not program ZF set theory in LISP, but we programmed it in an even simpler language---thereby answering Chaitin's call for an explicit number of bits to attach to the complexity of ZF set theory.
+We did not program ZF set theory in LISP, but we programmed it in an even simpler language---thereby answering Chaitin's call for an explicit number of bits to attach to the complexity of ZF set theory. (As many as required to fully describe our Turing machine---or more precisely, \bbbitsperiod)
 
 This paper is not the first to attempt to quantify the complexity of arithmetical statements. \ Calude and Calude~\cite{calude} define a register machine of their own design, and provide quantifications of the complexity of Legendre's conjecture, Fermat's last theorem, Goldbach's conjecture, Dyson's conjecture, the Riemann hypothesis, and the four color theorem.\footnotemark
 \footnotetext{Because Fermat's last theorem and the four color theorem have been proved, their ``complexity'' is now known to be $1$---the minimum number of states in a Turing machine that runs forever.}
 In addition, Koza~\cite{koza} and Pargellis~\cite{pargellis} each invent instruction sets that are particularly well-suited to representing self-reproducing programs simply, and show that starting from a ``primordial soup'' of such instructions distributed about a large memory, along with an increasing number of program threads, a rich ecosystem of increasingly efficient self-reproducing programs start to dominate the ``landscape.''
 
-This paper differs from the previous work in two ways: firstly, it is the first to give explicit, relatively small machines whose behavior is provably independent of the standard axioms of modern mathematics. \ Secondly, to our knowledge, this paper is the first concrete study of parsimony to use Turing machines as the model of computation---rather than (for example) a new programming language proposed by the authors! \ We consider it important to use the weakest and most common model of computation for complexity comparisons across different mathematical statements. \ This is because the more powerful and complex the model of computation used, the more of the complexity of the algorithm can be ``shunted'' onto the model of computation, and the greater the potential distortion created by the choice of model. \ As a reductio ad absurdum, we could imagine a programming language that included ``test the Riemann hypothesis'' and ``test the consistency of ZFC'' as primitive operations. \ By using the ``weakest'' model of computation that is commonly known, and one which is generally accepted as the mathematical basis of algorithms, we hope to avoid this pitfall and make it easier to interpret our results in a model-independent way.
+Also similar to the work of this paper is the famous search for a universal Turing machine. \ A \emph{universal} Turing machine is a Turing machine that can simulate another Turing machine, when provided a description of the other machine on its input tape. \ The smallest universal Turing machine is a 2-state, 3-symbol Turing machine, found by Smith~\cite{universal}.
+
+This paper differs from the previous work in two ways: firstly, it is the first to give explicit, relatively small machines whose behavior is provably independent of the standard axioms of modern mathematics. \ Secondly, to our knowledge, this paper is the first concrete study of parsimony to use Turing machines themselves as the model of computation---rather than (for example) a new programming language proposed by the authors, or a complex on-tape description of Turing machines! \ We consider it important to use the weakest and most common model of computation for complexity comparisons across different mathematical statements. \ This is because the more powerful and complex the model of computation used, the more of the complexity of the algorithm can be ``shunted'' onto the model of computation, and the greater the potential distortion created by the choice of model. \ As a reductio ad absurdum, we could imagine a programming language that included ``test the Riemann hypothesis'' and ``test the consistency of ZFC'' as primitive operations. \ Along a similar vein, very small universal Turing machines typically use a very complex description format for the input machine. \ In this way, the complexity can again be ``shunted'' away from the Turing machine itself. \ By using the ``weakest'' model of computation that is commonly known, and by requiring that the input tape at initialization be empty, we hope to avoid this pitfall and make it easier to interpret our results in a model-independent way. 
 
 \section{A Turing Machine that Cannot Be Shown to Run Forever Using ZFC}
 
@@ -202,8 +206,7 @@ Here is Friedman's statement (the notation will be explained in the rest of this
 
 \begin{statement} \label{eq:friedman}
 For all $k, n, r > 0$, every order invariant graph on $[\mathbb{Q}]^{\le k}$ has a free $\{x_1,\dots,x_r, \\
-\textrm{ush}(x_1),...,\textrm{ush}(x_r)\}$ of complexity $\le (8knr)!$, each $\{x_1, \dots, x_{(8kni)!}\}$
-reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$. \cite{friedman}
+\textrm{ush}(x_1),...,\textrm{ush}(x_r)\}$ of complexity $\le (8knr)!$, each $\{x_1, \dots, x_{(8kni)!}\}$, for $i > 0$ and $(8kni!) \le r$, reducing $[x_1 \cup \dots \cup x_i \cup \{0,\dots,n\}]^{\le k}$. \cite{friedman}
 \end{statement}
 
 If $s$ is a set, the operation $(.)^{\le k}$ refers to the set of all subsets of $s$ with size at most $k$.
@@ -233,7 +236,7 @@ To create $Z$, we needed to design a Turing machine that halts if Statement~\ref
 
 To design such a Turing machine, we wrote a Laconic program which encodes Friedman's statement, then compiled the program down to a description of a single-tape, $2$-symbol Turing machine. \ What follows is an extremely brief description of the design of the Laconic program; for the documented Laconic code itself, along with a detailed explanation of the full compilation process, see~\cite{github}.
 
-Our Laconic program begins by looping over all non-negative values for $k$, $n$, and $r$. \ For each trio $(k, n, r)$, our program generates a list $N$ of all numbers of complexity at most $(8knr)!$. \ These numbers represent the vertices in our putative order invariant graph. \ Because Laconic does not support floating-point numbers, the list is entirely composed of integers; it is a list of all numbers that can be written in the form $(((8knr)!)!)((8kni)!)/((8knj)!)$, where $i$ and $j$ are integers satisfying $-(8knr)! \le i \le (8knr)!$ and $1 \le j \le (8knr)!$. \ (Note that any number that can be expressed in this form is necessarily an integer, because of the large scaling factor in front.)
+Our Laconic program begins by looping over all non-negative values for $k$, $n$, and $r$. \ For each trio $(k, n, r)$, our program generates a list $N$ of all numbers of complexity at most $(8knr)!$. \ These numbers represent the vertices in our putative order invariant graph. \ Because Laconic does not support floating-point numbers, the list is entirely composed of integers; it is a list of all numbers that can be written in the form $(((8knr)!)!)\frac{i}{j}$, where $i$ and $j$ are integers satisfying $-(8knr)! \le i \le (8knr)!$ and $1 \le j \le (8knr)!$. \ (Note that any number that can be expressed in this form is necessarily an integer, because of the large scaling factor in front.)
 
 After we generate $N$, we generate the nodes in a potential order invariant graph by adding to $N$ all possible lists of $k$ or fewer numbers from $N$. \ We call this list of lists $V$.
 
@@ -255,7 +258,8 @@ When verifying the validity of a graph, checking the first two conditions is tri
 
 \section{A Turing Machine that Encodes Goldbach's Conjecture} \label{sec:g}
 
-We present a \gbstatenumstate Turing machine that \emph{encodes Goldbach's conjecture}; in other words, to know whether this machine halts is to know whether Goldbach's conjecture is true. \ It is therefore impossible to prove the value of \bbgbstatenum without simultaneously proving or disproving Goldbach's conjecture.
+We present a \gbstatenumstate Turing machine that \emph{encodes Goldbach's conjecture}; in other words, to know whether this machine halts is to know whether Goldbach's conjecture is true. \ It is therefore impossible to prove the value of \bbgbstatenum without simultaneously proving or disproving Goldbach's conjecture.\footnotemark
+\footnotetext{We note that our tools were primarily meant to encode complex statements into Turing machines, such as the Statement~\ref{eq:friedman}. Goldbach's conjecture is quite simple, and as such, it is probably possible to make a dramatically smaller machine through a more direct approach.~\cite{comments}}
 
 Recall that Goldbach's conjecture is as follows:
 
@@ -286,7 +290,7 @@ For all integers $n \ge 1$,
 $$\left(\left(\sum_{k \le \delta(n)} \frac{1}{k}\right) - \frac{n^2}{2}\right)^2 < 36n^3$$
 \end{statement}
 
-The function $\delta(n)$ used in Statement~\ref{eq:riemann} is defined as follows:
+The function $\delta(n)$ used in Statement~\ref{eq:riemann} is defined as follows: \\
 
 \begin{nscenter}
 $\eta(j) = p$ if $j = p^k$, $p$ is prime, $k$ is a positive integer \\
@@ -325,7 +329,7 @@ What is the purpose of having a language like TMD as an intermediary between Lac
 As an example, consider the following Laconic command: \\ \\
 \texttt{a=b*c;} \\
 
-This Laconic command assigns the value of \texttt{a} to the value of \texttt{b*c}. \ It compiles down to the following TMD function call: \\ \\
+This Laconic command assigns the value of \texttt{b*c} to the variable \texttt{a}. \ It compiles down to the following TMD function call: \\ \\
 \texttt{function BUILTIN\_multiply a b c} \\
 
 This function call will result in \texttt{BUILTIN\_multiply} being run on the three tapes \texttt{a}, \texttt{b}, and \texttt{c}. \ This will cause the symbols on tape \texttt{a} to take on a representation of an integer whose value is equal to $bc$.
@@ -336,21 +340,18 @@ A TMD directory consists of three types of files:
 
 \begin{enumerate}
 \item The \texttt{functions} file. \ This file contains a list of the names of all the functions used by the TMD program. \ The top function in the file is pushed onto the stack at initialization. \ When this top function returns, the Turing machine halts.
-\item The \texttt{initvar} file. \ This file contains the non-blank symbols that start in each register at initialization.
+\item The \texttt{initvar} file. \ This file contains the non-blank symbols that start in each register (or tape) at initialization.
 \item Any files used to describe TMD functions. \ These files all end in a \texttt{.tfn} extension and only have any relevance to the compiled program if they show up in the functions file.
 \end{enumerate}
 
 \section{Compilation and Processing}
 \label{sec:compandproc}
 
-There are two ways to think about the layout of the tape symbols: with a $4$-symbol alphabet ($\{\texttt{\_}, \texttt{1}, \texttt{H}, \texttt{E}\}$, blank symbol \texttt{\_}), and with a $2$-symbol alphabet ($\{\texttt{a}, \texttt{b}\}$, blank symbol \texttt{a}). \ The $2$-symbol alphabet version is the one that's ultimately used for the results in this paper, since we advertised a Turing machine that used only two symbols. \ However, in nearly all parts of the Turing machine, the $2$-symbol version of the machine is a direct translation of the $4$-symbol version, according to the following mapping:
-
-\begin{itemize}
-\item $\texttt{\_} \leftrightarrow \texttt{aa}$
-\item $\texttt{1} \leftrightarrow \texttt{ab}$
-\item $\texttt{H} \leftrightarrow \texttt{ba}$
-\item $\texttt{E} \leftrightarrow \texttt{bb}$
-\end{itemize}
+There are two ways to think about the layout of the tape symbols: with a $4$-symbol alphabet ($\{\texttt{\_}, \texttt{1}, \texttt{H}, \texttt{E}\}$, blank symbol \texttt{\_}), and with a $2$-symbol alphabet ($\{\texttt{a}, \texttt{b}\}$, blank symbol \texttt{a}). \ The $2$-symbol alphabet version is the one that's ultimately used for the results in this paper, since we advertised a Turing machine that used only two symbols. \ However, in nearly all parts of the Turing machine, the $2$-symbol version of the machine is a direct translation of the $4$-symbol version, according to the following mapping: \\ \\
+$\texttt{\_} \leftrightarrow \texttt{aa}$ \\ 
+$\texttt{1} \leftrightarrow \texttt{ab}$ \\
+$\texttt{H} \leftrightarrow \texttt{ba}$ \\
+$\texttt{E} \leftrightarrow \texttt{bb}$ \\
 
 The sections that follow sometimes refer to the \texttt{ERROR} state. \ Transitions to the \texttt{ERROR} state should never be taken under any circumstances, and are useful for debugging purposes.
 
@@ -441,7 +442,7 @@ On closer examination, however, this approach is quite wasteful for all but the 
 
 We will use a scheme originally conceived by Ben-Amram and Petersen~\cite{benamram} and refined further and suggested to us by Luke Schaeffer. \ It does not achieve the optimal theoretical encoding described above, but is relatively simple to implement and understand, and is within a factor of $2$ of optimal for large binary strings. \ Schaeffer named Turing machines that use this idea \emph{introspective}.
 
-Introspection works as follows. \ If the binary string contains $k$ bits, then let $w$ be the \emph{word size}. The word size $w$ takes the largest value it can such that $w2^w \le k$. \ We can split the binary string into $n_w = \left \lceil{\frac{k}{w}}\right \rceil$ \emph{words} of $w$ bits each (we can pad the last word with copies of the blank symbol). \ In our scheme, each word in the bit-string is represented by a \emph{data state}. \ Each data state points to the state representing the next word in the sequence for its \texttt{a} transition, but which state the \texttt{b} transition points to encodes the next word. \ Every \texttt{b} transition points to one of the last $2^w$ data states, thereby encoding $w$ bits of information.
+Introspection works as follows. \ If the binary string contains $k$ bits, then let $w$ be the \emph{word size}. The word size $w$ takes the largest value it can such that $w2^w \le k$. \ We can split the binary string into $n_w = \left \lceil{\frac{k}{w}}\right \rceil$ \emph{words} of $w$ bits each (we can pad the last word with the blank symbol). \ In our scheme, each word in the bit-string is represented by a \emph{data state}. \ Each data state points to the state representing the next word in the sequence for its \texttt{a} transition, but which state the \texttt{b} transition points to encodes the next word. \ Every \texttt{b} transition points to one of the last $2^w$ data states, thereby encoding $w$ bits of information.
 
 Of course, the encoding is useless until we specify how to extract the encoded bit-string from the data states. \ The extraction scheme works as follows. \ To query the $i^\textrm{th}$ data state for the bits it encodes, we run the data states on the string $\texttt{a}^{i-1}\texttt{b}\texttt{a}^{\infty}$ (a string of $i-1$ \texttt{a}'s followed by a \texttt{b} in the $i^\textrm{th}$ position). \ After running the data states on that string, what remains on the tape is the string $\texttt{b}^{i-1}\texttt{a}\texttt{b}^r\texttt{a}^{\infty}$, assuming that the $i^\textrm{th}$ data state pointed to the $r^\textrm{th}$-to-last data state. \ Thus, what we're left with is essentially a unary encoding of the ``value'' of the word in binary. \ Thus, the job of the extractor is to set up a binary counter which removes one \texttt{b} at a time and increments the counter appropriately. \ Then, afterward, the extractor reverts the tape back to the form $\texttt{a}^i\texttt{b}\texttt{a}^{\infty}$, shifts all symbols on the tape over by $w$ bits, and repeats the process. \ Finally, when the state beyond the last data state sees a \texttt{b} on the tape, we know that the process has completed, and we can pass control to the processor. \ Figure~\ref{fig:introspectprog} shows the whole procedure.
 
@@ -536,7 +537,8 @@ Improving the printer, and with it the TMD and Laconic languages, is probably th
 
 This paper still leaves a three orders-of-magnitude gap between the smallest $n$, namely \statenumcomma for which $BB(n)$ is known to be independent of ZF set theory, and the largest $n$, namely $4$, for which $BB(n)$ is known to be determinable. \ We regard it as a fascinating problem to pin down the truth here: for example, is it conceivable that $BB(10)$ or even $BB(6)$ might be independent of ZF? \ If so, that would arguably force a qualitative change in our understanding of the G\"{o}del incompleteness phenomenon---showing that incompleteness from strong set theories rears its head for much simpler arithmetical questions than had previously been known.
 
-A more immediate question is how much further $Z$'s state count can be reduced. \ Without a significant new insight, further order-of-magnitude reductions seem unlikely via tweaks to our existing system: note that such tweaks would need to reduce the sizes of both the printer and the processor by an order of magnitude. \ However, improvement is possible by (for example) a redesigned processor, combined with a simpler independent mathematical statement than Friedman's.
+A more immediate question is how much further $Z$'s state count can be reduced. \ It seems very likely that $Z$'s state count can, will (assuming further inquiry) be reduced. There are a variety of ways that this might happen, but the most promising approach is probably to adapt the processor-printer model to use a better language than TMD---a language whose processor contains fewer states, whose binary encodings of programs will require fewer bits, or ideally, both. A few ideas have been suggested~\cite{comments}, but the most popular suggestion is some sort of Lambda-Calculus-based processor.
+% Without a significant new insight, further order-of-magnitude reductions seem unlikely via tweaks to our existing system: note that such tweaks would need to reduce the sizes of both the printer and the processor by an order of magnitude. \ However, improvement is possible by (for example) a redesigned processor, combined with a simpler independent mathematical statement than Friedman's.
 
 Other future work might involve further use of our Laconic language to upper-bound the `complexities' of mathematical statements and algorithms, in as standardized and model-independent a way as possible. \ Perhaps Laconic could be used to measure the complexity of other well-known conjectures, or even to compare different algorithms for solving the same problem to each other (e.g., to try to quantify the notion that an insertion sort is simpler than a merge sort)!
 
@@ -553,6 +555,7 @@ We thank Alex Arkhipov for introducing us to the term ``code golfing.''
 Supported by an Alan T.\ Waterman Award from the National Science Foundation, under grant no.\ 1249349.
 
 \begin{thebibliography}{100}
+\bibitem{comments} Aaronson, S. ``The 8000th Busy Beaver number eludes ZF set theory: new paper by Adam Yedidia and me.'' May 3, 2016. \url{http://www.scottaaronson.com/blog/?p=2725#comments} [Scott Aaronson publicized a preprint of our results on his blog, and many of his readers offered helpful comments and suggestions for future improvements.]
 \bibitem{iota} Barker, C. ``Iota and Jot: the Simplest Languages?''
 http://semarch.linguistics.fas.nyu.edu/barler/Iota/
 [A website describing the Iota and Jot programming languages]
@@ -561,6 +564,9 @@ http://semarch.linguistics.fas.nyu.edu/barler/Iota/
 \bibitem{riemann} Browder, F. ``Mathematical Developments Arising from Hilbert Problems.'' American Mathematical Society. Volume 28, Part 1.
 \bibitem{calude} Calude, C., Calude, E. ``Evaluating the Complexity of Mathematical Problems: Part 1,'' ``Evaluating the Complexity of Mathematical Problems: Part 2.'' Complex Systems 18, pp. 387-401. 2010.
 \bibitem{chaitin} Chaitin, G. ``The Limits of Mathematics.'' pp. 79. 1994.
+\bibitem{bigbbvalues} Cloudy176, Wythagoras. ``A good bound for S(7)?'' 2014. \url{http://googology.wikia.com/wiki/User_blog:Wythagoras/A_good_bound_for_S%287%29%3F}
+\bibitem{grahamsnumber} Deedlit11, Wythagoras. ``Okay, more Turing machines.'' 2013.
+\url{http://googology.wikia.com/wiki/User_blog:Deedlit11/Okay,_more_Turing_machines}
 \bibitem{friedman} Friedman, H. ``Order Invariant Graphs and Finite Incompleteness.'' \url{https://u.osu.edu/friedman.8/files/2014/01/FIiniteSeqInc062214a-v9w7q4.pdf}
 \bibitem{friedmancomm} Personal communications with H. Friedman.
 \bibitem{friedmanlist} Friedman, H. ``Order Theoretic Equations, Maximality, and Incompleteness.'' June 7, 2014. \url{http://u.osu.edu/friedman.8/foundational-adventures/downloadable-manuscripts} \\
@@ -580,6 +586,7 @@ http://semarch.linguistics.fas.nyu.edu/barler/Iota/
 \bibitem{pargellis} Pargellis, A. ``The Spontaneous Generation of Digital {`Life.'}'' Physica D, 91, 86-96. 1996.
 \bibitem{busybeaver} Rado, T. ``On Non-Computable Functions.'' Bell System Technical Journal, 41: 3. May 1962 pp 877-884.
 \bibitem{schoenfield} Schoenfield, J. ``The Problem of Predicativity.'' Essays on the foundations of mathematics, Y. Bar-Hillel et al., eds., pp. 132-142. 1961.
+\bibitem{universal} Smith, A. ``Universality of Wolfram's 2, 3 Turing Machine.'' Submitted for the Wolfram 2, 3 Turing Machine Research Prize. http://www.wolframscience.com/prizes/tm23/TM23Proof.pdf
 \bibitem{github} Yedidia, A. \url{https://github.com/adamyedidia/parsimony} \\
 {[A link to a GitHub repository containing all programs and Turing machines related to this paper, with accompanying documentation.]}
 \bibitem{codegolf} \url{http://codegolf.stackexchange.com/} \\
