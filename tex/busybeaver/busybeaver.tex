@@ -91,7 +91,7 @@ This is interesting because, while the undecidability of the halting problem tel
 
 \subsection{Turing Machines \label{sec:tm}}
 
-There are many slightly different definitions of Turing machines. \ For example, some definitions allow the machine to have multiple tapes; others only allow it to have one; some allow an arbitrarily large alphabet, while others allow only two symbols, and so on. \ In most research regarding Turing machines, mathematicians don't concern themselves with which of these models to use, because any one can simulate the others (usually efficiently). \ However, because this work is concerned with upper-bounding the exact number of states required to perform certain tasks, it's important to define the model precisely. \ The model we choose here is traditional for the Busy Beaver function. 
+There are many slightly different definitions of Turing machines. \ For example, some definitions allow the machine to have multiple tapes; others only allow it to have one; some allow an arbitrarily large alphabet, while others allow only two symbols, and so on. \ In most research regarding Turing machines, mathematicians don't concern themselves with which of these models to use, because any one can simulate the others (usually efficiently). \ However, because this work is concerned with upper-bounding the exact number of states required to perform certain tasks, it's important to define the model precisely. \ The model we choose here is traditional for the Busy Beaver function.
 
 Formally, a $k$-state Turing machine is a 7-tuple $M = (Q, \Gamma, a, \Sigma, \delta, q_0, F)$, where: \\ \\
 $Q$ is the set of $k$ \emph{states} $\{q_0, q_1, \dots, q_{k-2}, q_{k-1}\}$ \\
@@ -131,7 +131,13 @@ $$BB(2) = 6$$
 $$BB(3) = 21$$
 $$BB(4) = 107$$
 
-For $BB(5)$, $BB(6)$, and $BB(7)$ only lower bounds are known: $BB(5) \ge$ 47,176,870, $BB(6) > 7.4 \times 10^{\textrm{36,534}}$, and $BB(7) > 10^{10^{10^{10^{10^7}}}}$. Additionally, $BB(22)$ is known to be larger than Graham's Number (a famous huge number from Ramsey theory, obtained by iterating the Ackermann function 64 times)~\cite{bbvalues}\cite{bigbbvalues}\cite{grahamsnumber}. \ Researchers have worked on pinning down the value of $BB(5)$ exactly, and some consider it to be possibly within reach.
+For $BB(5)$, $BB(6)$, and $BB(7)$ only lower bounds are known~\cite{bbvalues,bigbbvalues}:
+
+$$BB(5) \ge \textrm{47,176,870}$$
+$$BB(6) > 7.4 \times 10^{\textrm{36,534}}$$
+$$BB(7) > 10^{10^{10^{10^{10^7}}}}$$
+
+Additionally, $BB(22)$ is known to be larger than Graham's Number (a famous huge number from Ramsey theory, obtained by iterating the Ackermann function 64 times)~\cite{grahamsnumber}. \ Researchers have worked on pinning down the value of $BB(5)$ exactly, and some consider it to be possibly within reach.
 
 Another way to discuss the Busy Beaver sequence is to say that modern mathematics has established a \emph{lower bound} of $4$ on the highest provable Busy Beaver value. \ In this paper, we prove the first known \emph{upper bound} on the highest provable Busy Beaver value in ZFC; that is, we give a value of $k$, namely \statenumcomma such that the value of $BB(k)$ cannot be proven in ZFC.
 
@@ -149,8 +155,7 @@ Part of the charm of Turing machines is that they give us a ``standard reference
 
 In this paper, we use three ideas for generating parsimonious Turing machines: Harvey Friedman's mathematical statements, \emph{on-tape processing}, and \emph{introspective} Turing machines. \ The last of these ideas was proposed, under a different name and with some variations, by Ben-Amram and Petersen in 2002 \cite{benamram}. \ These three ideas are explained in more detail in Subsections~\ref{sec:friedmanstate},~\ref{sec:ontape}, and~\ref{sec:introspect}, respectively, but we summarize them very briefly here.
 
-The first idea is simply to use the research done by Friedman into finding simple-to-express statements that are equivalent to the consistency of various axiomatic systems. \ In particular, we use a statement discovered by Friedman to be equivalent to the consistency of a set theory stronger than ZFC (and whose consistency, therefore, would imply the consistency of ZFC).\footnotemark~\cite{friedman}
-\footnotetext{It is unclear whether using Friedman's statements in fact does decrease the state usage of the Turing machines created, or whether a direct approach would perform better.~\cite{comments} However, we find it much easier to reason about programs encoding graph-theoretic statements than programs that enumerate proofs using first-order logic!}
+The first idea is simply to use the research done by Friedman into finding simple-to-express statements that are equivalent to the consistency of various axiomatic systems. \ In particular, we use a statement discovered by Friedman to be equivalent to the consistency of a set theory stronger than ZFC (and whose consistency, therefore, would imply the consistency of ZFC).\footnote{Admittedly, it's not obvious that using Friedman's current statements \emph{does} decrease the state count of the Turing machines. \ It's possible that one could do as well or better by directly searching for contradictions in ZFC, and indeed, recent unpublished work by Stefan O'Rear has given some evidence for that~\cite{comments}. \ On the other hand, Friedman's statements can be translated into code without using the apparatus of first-order logic, which arguably gives us a conceptual simplification. \ In addition, statements like Friedman's seem like the most plausible path forward for \emph{further} reductions in the state count, beyond whatever lower limit one hits when one needs to encode the ZFC axioms explicitly.}~\cite{friedman}
 
 The second idea, on-tape processing, is a way to encode high-level commands into a Turing machine parsimoniously. \ Instead of converting commands to groups of states directly, which incurs a multiplicative overhead based on how large these groups need to be, on-tape processing begins by writing the commands onto the tape, using as efficient an encoding as possible. \ Then, once the commands are on the tape, the commands are processed by a single group of states that understands how to interpret them.
 
@@ -185,9 +190,9 @@ This paper is not the first to attempt to quantify the complexity of arithmetica
 \footnotetext{Because Fermat's last theorem and the four color theorem have been proved, their ``complexity'' is now known to be $1$---the minimum number of states in a Turing machine that runs forever.}
 In addition, Koza~\cite{koza} and Pargellis~\cite{pargellis} each invent instruction sets that are particularly well-suited to representing self-reproducing programs simply, and show that starting from a ``primordial soup'' of such instructions distributed about a large memory, along with an increasing number of program threads, a rich ecosystem of increasingly efficient self-reproducing programs start to dominate the ``landscape.''
 
-Also similar to the work of this paper is the famous search for a universal Turing machine. \ A \emph{universal} Turing machine is a Turing machine that can simulate another Turing machine, when provided a description of the other machine on its input tape. \ The smallest universal Turing machine is a 2-state, 3-symbol Turing machine, found by Smith~\cite{universal}.
+This paper differs from the previous work in two ways: firstly, it's the first to give explicit, relatively small machines whose behavior is provably independent of the standard axioms of modern mathematics. \ Secondly, to our knowledge, this paper is the first concrete study of parsimony to use Turing machines themselves as the model of computation---rather than (for example) a new programming language proposed by the authors, or a complex on-tape description of Turing machines! \ We consider it important to use the weakest and most common model of computation for complexity comparisons across different mathematical statements. \ This is because the more powerful and complex the model of computation used, the more of the complexity of the algorithm can be ``shunted'' onto the model of computation, and the greater the potential distortion created by the choice of model. \ As a reductio ad absurdum, we could imagine a programming language that included ``test the Riemann hypothesis'' and ``test the consistency of ZFC'' as primitive operations. \ By using the ``weakest'' model of computation that's commonly known, we hope to avoid this pitfall and make it easier to interpret our results in a model-independent way.
 
-This paper differs from the previous work in two ways: firstly, it is the first to give explicit, relatively small machines whose behavior is provably independent of the standard axioms of modern mathematics. \ Secondly, to our knowledge, this paper is the first concrete study of parsimony to use Turing machines themselves as the model of computation---rather than (for example) a new programming language proposed by the authors, or a complex on-tape description of Turing machines! \ We consider it important to use the weakest and most common model of computation for complexity comparisons across different mathematical statements. \ This is because the more powerful and complex the model of computation used, the more of the complexity of the algorithm can be ``shunted'' onto the model of computation, and the greater the potential distortion created by the choice of model. \ As a reductio ad absurdum, we could imagine a programming language that included ``test the Riemann hypothesis'' and ``test the consistency of ZFC'' as primitive operations. \ Along a similar vein, very small universal Turing machines typically use a very complex description format for the input machine. \ In this way, the complexity can again be ``shunted'' away from the Turing machine itself. \ By using the ``weakest'' model of computation that is commonly known, and by requiring that the input tape at initialization be empty, we hope to avoid this pitfall and make it easier to interpret our results in a model-independent way. 
+Also related to the work of this paper is the famous search for the smallest universal Turing machine. \ Here a \emph{universal Turing machine} is a Turing machine that can simulate any other Turing machine, when a description of the latter is provided on its input tape. \ The smallest-known universal Turing machine has only $2$ states and a $3$-symbol alphabet, and was found by Alex Smith~\cite{universal} in 2007. \ From the perspective of this paper, the problem is that the known small universal Turing machines achieve their small size only at the cost of an extremely complicated description format for the input machine. \ I.e., most of the complexity gets ``shunted'' from the Turing machine itself to the input encoding format. \ By contrast, with small Turing machines to test $Con(ZFC)$, the Riemann Hypothesis, the Goldbach Conjecture, etc., and which run on an initially blank tape, there's no analogous trick for hiding the statement's complexity.
 
 \section{A Turing Machine that Cannot Be Shown to Run Forever Using ZFC}
 
@@ -258,23 +263,22 @@ When verifying the validity of a graph, checking the first two conditions is tri
 
 \section{A Turing Machine that Encodes Goldbach's Conjecture} \label{sec:g}
 
-We present a \gbstatenumstate Turing machine that \emph{encodes Goldbach's conjecture}; in other words, to know whether this machine halts is to know whether Goldbach's conjecture is true. \ It is therefore impossible to prove the value of \bbgbstatenum without simultaneously proving or disproving Goldbach's conjecture.\footnotemark
-\footnotetext{We note that our tools were primarily meant to encode complex statements into Turing machines, such as the Statement~\ref{eq:friedman}. Goldbach's conjecture is quite simple, and as such, it is probably possible to make a dramatically smaller machine through a more direct approach.~\cite{comments}}
+We present a \gbstatenumstate Turing machine that \emph{encodes Goldbach's Conjecture}; in other words, to know whether this machine halts is to know whether Goldbach's Conjecture is true. \ It's therefore impossible to prove the value of \bbgbstatenum without simultaneously proving or disproving Goldbach's Conjecture.\footnote{Note that our tools were primarily meant to encode complex statements into Turing machines, such as Statement~\ref{eq:friedman}. \ Because Goldbach's Conjecture is so simple, it's feasible in that case to make dramatically smaller Turing machines through a more direct approach.  Indeed, after a preprint of this paper was circulated online, ``Jared S'' and ``code golf addict'' created Turing machines for Goldbach's Conjecture with $47$ and $31$ states respectively~\cite{comments}, though these machines have not yet been tested in detail.}
 
-Recall that Goldbach's conjecture is as follows:
+Recall that Goldbach's Conjecture is as follows:
 
 \begin{statement}
 \emph{Every even integer greater than 2 can be expressed as the sum of two primes.}
 \label{goldbachstatement}
 \end{statement}
 
-Because Goldbach's conjecture is so simple to state, the Laconic program encoding the statement is also quite simple. \ It can be found in Appendix~\ref{sec:applac}. \ A detailed explanation of the compilation process, documentation for the Laconic language, and an explicit description of this Turing machine are available at~\cite{github}.
+Because Goldbach's Conjecture is so simple to state, the Laconic program encoding the statement is also quite simple. \ It can be found in Appendix~\ref{sec:applac}. \ A detailed explanation of the compilation process, documentation for the Laconic language, and an explicit description of this Turing machine are available at~\cite{github}.
 
-\section{A Turing Machine that Encodes Riemann's Hypothesis}
+\section{A Turing Machine that Encodes the Riemann Hypothesis}
 
-We present a \rmstatenumstate Turing machine that \emph{encodes Riemann's hypothesis}; in other words, to know whether this machine halts is to know whether Riemann's hypothesis is true. \ An explicit description of this machine can be found at~\cite{github}
+We present a \rmstatenumstate Turing machine that \emph{encodes the Riemann Hypothesis}; in other words, to know whether this machine halts is to know whether the Riemann Hypothesis is true. \ An explicit description of this machine can be found at~\cite{github}
 
-Riemann's hypothesis is traditionally stated as follows:
+The Riemann Hypothesis is traditionally stated as follows:
 
 \begin{statement}
 \emph{The Riemann zeta function has its zeros only at the negative even integers and the complex numbers with real part 1/2.}
@@ -283,7 +287,7 @@ Riemann's hypothesis is traditionally stated as follows:
 
 \subsection{Equivalent Statement}
 
-Instead of encoding the Riemann zeta function into a Laconic program, it is simpler to use the following statement, which was shown by Lagarias~\cite{riemann} to be equivalent to the Riemann hypothesis:
+Instead of encoding the Riemann zeta function into a Laconic program, it is simpler to use the following statement, which was shown by Lagarias~\cite{riemann} to be equivalent to the Riemann Hypothesis:
 
 \begin{statement} \label{eq:riemann}
 For all integers $n \ge 1$,
@@ -300,7 +304,7 @@ $$\delta(x) = \prod_{n<x}\prod_{j \le n} \eta(j)$$
 
 \subsection{Implementation Methods}
 
-Statement \ref{eq:riemann} is equivalent to the following statement, which contains only positive integers\footnotemark:
+Statement \ref{eq:riemann} is equivalent to the following statement, which involves only positive integers\footnotemark:
 \footnotetext{Although it is not immediately obvious, $\frac{\delta(n)!}{k}$ is necessarily an integer for all $k \le \delta(n)$, and $\frac{\delta(n)!}{2}$ is an integer for all $n > 1$.}
 
 $$l(n) < r(n)$$ for all positive integers $n$, where
@@ -348,7 +352,7 @@ A TMD directory consists of three types of files:
 \label{sec:compandproc}
 
 There are two ways to think about the layout of the tape symbols: with a $4$-symbol alphabet ($\{\texttt{\_}, \texttt{1}, \texttt{H}, \texttt{E}\}$, blank symbol \texttt{\_}), and with a $2$-symbol alphabet ($\{\texttt{a}, \texttt{b}\}$, blank symbol \texttt{a}). \ The $2$-symbol alphabet version is the one that's ultimately used for the results in this paper, since we advertised a Turing machine that used only two symbols. \ However, in nearly all parts of the Turing machine, the $2$-symbol version of the machine is a direct translation of the $4$-symbol version, according to the following mapping: \\ \\
-$\texttt{\_} \leftrightarrow \texttt{aa}$ \\ 
+$\texttt{\_} \leftrightarrow \texttt{aa}$ \\
 $\texttt{1} \leftrightarrow \texttt{ab}$ \\
 $\texttt{H} \leftrightarrow \texttt{ba}$ \\
 $\texttt{E} \leftrightarrow \texttt{bb}$ \\
@@ -537,20 +541,19 @@ Improving the printer, and with it the TMD and Laconic languages, is probably th
 
 This paper still leaves a three orders-of-magnitude gap between the smallest $n$, namely \statenumcomma for which $BB(n)$ is known to be independent of ZF set theory, and the largest $n$, namely $4$, for which $BB(n)$ is known to be determinable. \ We regard it as a fascinating problem to pin down the truth here: for example, is it conceivable that $BB(10)$ or even $BB(6)$ might be independent of ZF? \ If so, that would arguably force a qualitative change in our understanding of the G\"{o}del incompleteness phenomenon---showing that incompleteness from strong set theories rears its head for much simpler arithmetical questions than had previously been known.
 
-A more immediate question is how much further $Z$'s state count can be reduced. \ It seems very likely that $Z$'s state count can, will (assuming further inquiry) be reduced. There are a variety of ways that this might happen, but the most promising approach is probably to adapt the processor-printer model to use a better language than TMD---a language whose processor contains fewer states, whose binary encodings of programs will require fewer bits, or ideally, both. A few ideas have been suggested~\cite{comments}, but the most popular suggestion is some sort of Lambda-Calculus-based processor.
-% Without a significant new insight, further order-of-magnitude reductions seem unlikely via tweaks to our existing system: note that such tweaks would need to reduce the sizes of both the printer and the processor by an order of magnitude. \ However, improvement is possible by (for example) a redesigned processor, combined with a simpler independent mathematical statement than Friedman's.
+A more immediate question is how much further $Z$'s state count can be reduced. \ We are optimistic about the possibility of further reductions. \ For example, one could adapt the processor-printer model to use a better language than TMD. \ Ideally, one wants a language whose processor contains fewer states than TMD's, and whose typical programs are \emph{also} shorter than TMD programs. \ A few ideas have been proposed for this~\cite{comments}, many of them related in some way to lambda calculus.
 
 Other future work might involve further use of our Laconic language to upper-bound the `complexities' of mathematical statements and algorithms, in as standardized and model-independent a way as possible. \ Perhaps Laconic could be used to measure the complexity of other well-known conjectures, or even to compare different algorithms for solving the same problem to each other (e.g., to try to quantify the notion that an insertion sort is simpler than a merge sort)!
 
 \section{Acknowledgements}
-
-%First and foremost, I would like to acknowledge my advisor, Prof. Scott Aaronson, for having suggested this problem to me and for having provided me with indispensable aid throughout. Prof. Aaronson explained the finer points of set theory to me in great detail, and put a huge amount of time into helping me refine my writing into something readable. His kindness, his constant availability to talk, and his friendliness made this Master's thesis a great pleasure to write.
 
 We thank Prof.\ Harvey Friedman for having done the crucial theoretical work that made this project feasible. \ Prof.\ Friedman was endlessly available over email, and provided us with detailed clarifications when we needed them.
 
 We thank Luke Schaeffer for his early help, as well as his help designing introspective Turing machines.
 
 We thank Alex Arkhipov for introducing us to the term ``code golfing.''
+
+We thank the commenters on Scott Aaronson's blog~\cite{comments} for their ideas and suggestions.
 
 Supported by an Alan T.\ Waterman Award from the National Science Foundation, under grant no.\ 1249349.
 
