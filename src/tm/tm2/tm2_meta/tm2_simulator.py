@@ -4,6 +4,8 @@ import sys
 from state import *
 from tmsim import *
 
+# The TM simulator, originally written by Adam Yedidia and improved to be much faster by Carl Bolz. Thank you Carl!
+
 if __name__ == "__main__":
     name = sys.argv[-1]
     fileName = name + ".tm2"

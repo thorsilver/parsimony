@@ -3,6 +3,8 @@ import sys
 
 from state import *
 
+# The TM simulator, originally written by Adam Yedidia and improved to be much faster by Carl Bolz. Thank you Carl!
+
 def getStateName(line):
     colonLoc = string.find(line, ":")
     
