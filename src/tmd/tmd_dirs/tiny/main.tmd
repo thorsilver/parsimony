@@ -1,7 +1,11 @@
-input a c b w y x z !0 
+input a c b w y x z !0 !1 !2 !3 
 
 // Auto-generated code for function main
 
-function BUILTIN_emptylist2 !0
-function BUILTIN_assign b !0
+function BUILTIN_assign5 !0
+function BUILTIN_assign2 !1
+function BUILTIN_intneg !2 !1
+function BUILTIN_clear  !1
+function BUILTIN_listAssemble3 !3 !0 !2 !1
+function BUILTIN_assign a !3
 return

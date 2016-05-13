@@ -23,8 +23,6 @@ A TMD program is contained in a directory. It is a collection of \emph{functions
 
 A TMD program also contains two special files which contain important information about the multi-tape Turing Machine: a file named {\tt functions.tff} and a file named {\tt initvar}. \\ 
 
-What follows is a brief description of the syntax of the TMD language. A much more detailed description is available at~\cite{github}. The brief description contained here should be enough for a reader to gain a reasonable understanding of the programs written for this paper; any reader wishing to write her own programs is strongly encouraged read the more detailed documentation before proceeding.
-
 \section{TMD Files}
 
 Most of the logic contained within a TMD program lies in its TMD files, each of which describes one function in the program. TMD functions can make reference to the tapes in the machine and read the symbol under the head of each tape, much as a standard multi-tape TM can. In addition, TMD functions can call other TMD functions, pushing those functions to the top of the stack. Finally, TMD functions can return, popping themselves from the function stack. \\

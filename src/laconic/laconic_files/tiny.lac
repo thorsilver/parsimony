@@ -6,13 +6,15 @@ list x;
 list y;
 int z;
 
-print z;
+a = [5,~2,0];
+
+/*print z;
 
 b = :[3,4], [~5, 3], []:;
 c = ::;
 
 c = b ||* c;
 
-print c;
+print c;*/
 
 halt;

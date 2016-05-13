@@ -56,8 +56,8 @@ In other words, the tape representation of the \texttt{list} begins with an \tex
 To represent the value of a \texttt{list2} that contains \texttt{list} values $l_1$, $l_2$, and so on, each of which contains \texttt{int} values $e_{11}$, $e_{12}$, and so on, and $e_{21}$, $e_{22}$, and so on, and so on, the tape representation is: \\ \\
 $\texttt{_EE1}((e_{11}>0)?\texttt{1}:\texttt{E1})\texttt{1}^{|e_{11}|}\texttt{E1}
 ((e_{12}>0)?\texttt{1}:\texttt{E1})\texttt{1}^{|e_{12}|}\texttt{E1}\dots\texttt{EE1}
-((e_{11}>0)?\texttt{1}:\texttt{E1})\texttt{1}^{|e_{11}|}\texttt{E1}
-((e_{11}>0)?\texttt{1}:\texttt{E1})\texttt{1}^{|e_{11}|}\texttt{E1}\dots\dots\texttt{E_}^\infty$ \\
+((e_{21}>0)?\texttt{1}:\texttt{E1})\texttt{1}^{|e_{21}|}\texttt{E1}
+((e_{22}>0)?\texttt{1}:\texttt{E1})\texttt{1}^{|e_{22}|}\texttt{E1}\dots\dots\texttt{E_}^\infty$ \\
 
 In other words, the tape representation of each list in the \texttt{list2} begins with \texttt{EE1}, and then for each \texttt{list} in the \texttt{list2}, the \texttt{int}s in those \texttt{list}s are preceded by a \texttt{1} if the number is positive and a \texttt{E1} otherwise, followed by a number of \texttt{1}'s equal to the magnitude of the number, followed by a \texttt{E1}. Then, to signal the end of a \texttt{list}, the sequence \texttt{EE1} is used. Finally, to signal the end of the entire \texttt{list2}, the symbol \texttt{E} is used, followed by infinite underscores. So, for example, the value $[[3,-1], [], [0,4]]$ would be represented as: \\ \\
 \texttt{_EE11111E1E11E1EE1EE1E1E111111E1E___}\dots
