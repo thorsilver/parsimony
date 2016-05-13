@@ -18,6 +18,7 @@ if __name__ == "__main__":
     except:
         raise Exception("Usage: python tm2_simulator.py [-q] [-s] [# steps before aborting] [-f] [name of TM2 file]\n \
             Enable -q if you want no program output\n \
+            Enable -l if you want limited program output \n \
             Enable -s followed by the max number of steps if you want to stop interpreting after a certain number of commands\n \
             Enable -f if you want to dump the history into a file in tm2_histories instead of the standard output.")
     
@@ -25,6 +26,8 @@ if __name__ == "__main__":
     args = sys.argv[1:-1]
 
     quiet = ("-q" in args)
+
+    limited = ("-l" in args)
 
     numSteps = float("Inf") # default value
     if ("-s" in args):
@@ -39,4 +42,4 @@ if __name__ == "__main__":
         except:
             raise Exception("You can't include the -f flag without also specifying a maximum step count with the -s flag!")
 
-    sttm.run(quiet, numSteps, output)
+    sttm.run(quiet, limited, numSteps, output)

@@ -87,7 +87,7 @@ class SingleTapeTuringMachine:
                     currentStateBeingModified.setHeadMove(symbol, headMove)
                     currentStateBeingModified.setWrite(symbol, write)
 
-    def run(self, quiet=False, numSteps=float("Inf"), output=None):
+    def run(self, quiet=False, limited=False, numSteps=float("Inf"), output=None):
         
         self.state = self.startState
 
@@ -95,7 +95,7 @@ class SingleTapeTuringMachine:
         halted = False
 
         while stepCounter < float(numSteps):
-            if not quiet:
+            if not quiet and ((stepCounter % 10000 == 0) or (not limited)):
                 self.printTape(-2, 340, output)
             
             stepCounter += 1
