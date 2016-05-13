@@ -29,7 +29,8 @@ if __name__ == "__main__":
 
     limited = ("-l" in args)
 
-    numSteps = float("Inf") # default value
+    numSteps = sys.maxint # default value
+
     if ("-s" in args):
         numSteps = args[args.index("-s") + 1]
 
