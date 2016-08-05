@@ -79,7 +79,7 @@ Since the definition of the Busy Beaver function by Rad\'{o} in 1962, an interes
 
 \subsection{Background and Motivation \label{sec:background}}
 
-\emph{Zermelo-Fraenkel set theory with the axiom of choice}, more commonly known as ZFC, is an axiomatic system invented in the twentieth which has since been used as the foundation of most of modern mathematics. \ It encodes arithmetic by describing natural numbers as increasing sets of sets.
+\emph{Zermelo-Fraenkel set theory with the axiom of choice}, more commonly known as ZFC, is an axiomatic system invented in the twentieth century which has since been used as the foundation of most of modern mathematics. \ It encodes arithmetic by describing natural numbers as increasing sets of sets.
 
 Like any axiomatic system capable of encoding arithmetic, ZFC is constrained by G\"{o}del's two incompleteness theorems. \ The first incompleteness theorem states that if ZFC is \emph{consistent} (it never proves both a statement and its opposite), then ZFC cannot also be \emph{complete} (able to prove every true statement). \ The second incompleteness theorem states that if ZFC is consistent, then ZFC cannot prove its own consistency. \ Because we have built modern mathematics on top of ZFC, we can reasonably be said to have assumed ZFC's consistency. \ This means that we must also believe that ZFC cannot prove its own consistency. \ This fact carries with it certain surprising conclusions.
 
@@ -191,7 +191,7 @@ In addition, Koza~\cite{koza} and Pargellis~\cite{pargellis} each invent instruc
 
 This paper differs from the previous work in two ways: firstly, it's the first to give explicit, relatively small machines whose behavior is provably independent of the standard axioms of modern mathematics. \ Secondly, to our knowledge, this paper is the first concrete study of parsimony to use Turing machines themselves as the model of computation---rather than (for example) a new programming language proposed by the authors, or a complex on-tape description of Turing machines! \ We consider it important to use the weakest and most common model of computation for complexity comparisons across different mathematical statements. \ This is because the more powerful and complex the model of computation used, the more of the complexity of the algorithm can be ``shunted'' onto the model of computation, and the greater the potential distortion created by the choice of model. \ As a reductio ad absurdum, we could imagine a programming language that included ``test the Riemann Hypothesis'' and ``test the consistency of ZFC'' as primitive operations. \ By using the ``weakest'' model of computation that's commonly known, we hope to avoid this pitfall and make it easier to interpret our results in a model-independent way.
 
-Also related to the work of this paper is the famous search for the smallest universal Turing machine. \ Here a \emph{universal Turing machine} is a Turing machine that can simulate any other Turing machine, when a description of the latter is provided on its input tape. \ The smallest-known universal Turing machine has only $2$ states and a $3$-symbol alphabet, and was found by Alex Smith~\cite{universal} in 2007. \ From the perspective of this paper, the problem is that the known small universal Turing machines achieve their small size only at the cost of an extremely complicated description format for the input machine. \ I.e., most of the complexity gets ``shunted'' from the Turing machine itself to the input encoding format. \ By contrast, with small Turing machines to test $Con(ZFC)$, the Riemann Hypothesis, Goldbach's Conjecture, etc., and which run on an initially blank tape, there's no analogous trick for hiding the statement's complexity.
+Also related to the work of this paper is the famous search for the smallest universal Turing machine, which has a relatively long history. \ A survey is available at~\cite{universalsurvey}. \ Here a \emph{universal Turing machine} is a Turing machine that can simulate any other Turing machine, when a description of the latter is provided on its input tape. \ The smallest-known universal Turing machine has only $2$ states and a $3$-symbol alphabet. \ It was found and conjectured to be universal by Stephen Wolfram~\cite{newscience} and then proved to be universal by Alex Smith~\cite{universal} in 2007. \ From the perspective of this paper, the problem is that the known small universal Turing machines achieve their small size only at the cost of an extremely complicated description format for the input machine. \ I.e., most of the complexity gets ``shunted'' from the Turing machine itself to the input encoding format. \ By contrast, with small Turing machines to test $Con(ZFC)$, the Riemann Hypothesis, Goldbach's Conjecture, etc., and which run on an initially blank tape, there's no analogous trick for hiding the statement's complexity.
 
 \section{A Turing Machine that Cannot Be Shown to Run Forever Using ZFC}
 
@@ -204,7 +204,7 @@ We call this machine $Z$. \ One way to build this machine would be to start with
 \subsection{Friedman's Mathematical Statement} \label{sec:friedmanstate}
 
 Thankfully, a simpler method exists for creating $Z$. \ Friedman~\cite{friedman}
-was able to derive a graph-theoretic statement whose truth implies the consistency of ZFC, and which will be false if ZFC is inconsistent.\footnotemark
+was able to derive a graph theoretic statement whose truth implies the consistency of ZFC, and which will be false if ZFC is inconsistent.\footnotemark
 \footnotetext{In fact, Friedman's statement is equivalent to the consistency of SRP (``stationary Ramsey property''), which is a system of axioms more powerful than ZFC. \ Because SRP is strictly more powerful than ZFC (it in fact consists of ZFC plus some additional axioms), the consistency of SRP implies the consistency of ZFC, and the inconsistency of ZFC implies the inconsistency of SRP.} \
 Here is Friedman's statement (the notation will be explained in the rest of this section):
 
@@ -591,6 +591,8 @@ http://semarch.linguistics.fas.nyu.edu/barler/Iota/
 \bibitem{busybeaver} Rado, T. ``On Non-Computable Functions.'' Bell System Technical Journal, 41: 3. May 1962 pp 877-884.
 \bibitem{schoenfield} Schoenfield, J. ``The Problem of Predicativity.'' Essays on the foundations of mathematics, Y. Bar-Hillel et al., eds., pp. 132-142. 1961.
 \bibitem{universal} Smith, A. ``Universality of Wolfram's 2, 3 Turing Machine.'' Submitted for the Wolfram 2, 3 Turing Machine Research Prize. http://www.wolframscience.com/prizes/tm23/TM23Proof.pdf
+\bibitem{newscience} Wolfram, S. ``A New Kind of Science.'' p. 709
+\bibitem{universalsurvey} Woods, D. and Neary, T. ``The Complexity of Small Universal Turing Machines: a Survey.'' Theoretical Copmuter Science, 410(4), pp. 443-450. 2009.
 \bibitem{github} Yedidia, A. \url{https://github.com/adamyedidia/parsimony} \\
 {[A link to a GitHub repository containing all programs and Turing machines related to this paper, with accompanying documentation.]}
 \bibitem{codegolf} \url{http://codegolf.stackexchange.com/} \\
